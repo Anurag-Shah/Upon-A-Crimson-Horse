@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = iqta
+government_rank = 1
+primary_culture = persian
+religion = shiite
+technology_group = muslim
+capital = 429 # Isfahan
+religious_school = ismaili_school
+
+1504.1.1 = {
+	religious_school = jafari_school
+}
+
+1444.1.1 = {
+	monarch = {
+		name = "Mahmudshah" 
+		dynasty = "Jalal-ud-din" # No clue of dynasty, though it is known that this is Firuzshah's brother 
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}

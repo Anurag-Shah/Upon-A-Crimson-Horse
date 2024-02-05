@@ -1,0 +1,6 @@
+culture = lao
+religion = buddhism
+trade_goods = tea
+base_tax = 3 
+base_production = 3
+base_manpower = 3

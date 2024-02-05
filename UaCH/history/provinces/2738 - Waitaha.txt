@@ -1,0 +1,7 @@
+culture = polynesian
+religion = animism
+latent_trade_goods = {
+base_tax = 3 
+base_production = 3
+base_manpower = 2
+native_size = 10
