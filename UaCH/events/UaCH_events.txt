@@ -1,0 +1,26 @@
+namespace = UaCH
+
+country_event = {
+	id = UaCH.1 
+	title = UaCH.1.t 
+	desc = UaCH.1.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		tag = TIM
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = "UaCH.1.a"
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+}

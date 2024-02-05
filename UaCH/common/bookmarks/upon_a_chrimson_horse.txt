@@ -1,0 +1,11 @@
+bookmark =
+{
+	name = "UPON_A_CHRIMSON_HORSE"
+	desc = "UPON_A_CHRIMSON_HORSE_DESC"
+	date = 1444.11.11
+	
+	center = 446
+	default = yes
+	
+	country = TIM
+}
