@@ -21,11 +21,6 @@ fort_15th = yes
 extra_cost = 8
 center_of_trade = 1
 
-1409.5.13 = { #Ulugh Beg is made Governor of Samarkand
-	owner = TRS
-	controller = TRS
-	add_core = TRS
-}
 1448.3.1 = { #Ulugh Beg takes Herat and reunites the core of the Timurid Empire
 	owner = TIM
 	controller = TIM

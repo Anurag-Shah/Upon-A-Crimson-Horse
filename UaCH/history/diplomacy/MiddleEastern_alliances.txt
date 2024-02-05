@@ -66,6 +66,22 @@ dependency = {
 	start_date = 1444.1.1
 	end_date = 1447.3.13 #Death of Shah Rokh
 }
+#Balkh
+dependency = {
+	subject_type = "governor"
+	first = TIM
+	second = BLK
+	start_date = 1444.1.1
+	end_date = 1447.3.13 #Death of Shah Rokh
+}
+#Khutallan
+dependency = {
+	subject_type = "governor"
+	first = TIM
+	second = KHU
+	start_date = 1444.1.1
+	end_date = 1447.3.13 #Death of Shah Rokh
+}
 
 #End of Timurid Princes
 

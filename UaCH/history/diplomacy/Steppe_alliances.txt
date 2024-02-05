@@ -59,3 +59,12 @@ union = {
 	end_date = 1468.1.1
 }
 
+# Kazakh, Vassal of Uzbek
+
+union = {
+	first = SHY
+	second = KZH
+	start_date = 1444.1.1
+	end_date = 1468.1.1
+}
+

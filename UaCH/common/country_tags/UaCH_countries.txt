@@ -1,0 +1,3 @@
+BLK	= "countries/Balkh.txt"
+KHU	= "countries/Khutallan.txt"
+BDK	= "countries/Badakhstan.txt"
