@@ -228,7 +228,7 @@ uach_mechanics = {
 
 
 		# Raise a tax: gain income at the cost of base unrest
-		uach_conscript_men = {
+		uach_raise_a_tax = {
 			icon = GFX_efficient_tax_farming_button
 			cooldown_years = 1
 			cooldown_token = iqta_mechanic
