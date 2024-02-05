@@ -1,0 +1,6 @@
+﻿l_english:
+    governor: "Governor"
+    governor_title: "Governor"
+    governor_is_our: "$NAME|Y$ is our Governor."
+    governor_long_desc: "A Governor is a somewhat autonomous administrative division of the Timurid Empire, established for the princes of the Timurid dynasty."
+    governor_title_plural: "Governors"

@@ -1,7 +1,8 @@
 #Shah Rokhs Empire
 
 #Ulugh Begh
-vassal = {
+dependency = {
+	subject_type = "governor"
 	first = TIM
 	second = TRS
 	start_date = 1444.1.1
@@ -9,35 +10,72 @@ vassal = {
 }
 #Muhammad bin Baysonqor
 #Starts as independent as Shah Rukh/Goharshad has already decided to move against him in late 1444.
-# vassal = {
-	# first = TIM
-	# second = QOM
-	# start_date = 1444.1.1
-	# end_date = 1446.1.1 #Shah Rokh falls ill in 1444, Muhammad sees his chance and rebels on the invitation of the Isfahan city council in 1446.
-# }
+#PDX misunderstood the series of events. :p
+dependency = {
+	subject_type = "governor"
+	first = TIM
+	second = QOM
+	start_date = 1444.1.1
+	end_date = 1446.1.1 #Shah Rokh falls ill in 1444, Muhammad sees his chance and rebels on the invitation of the Isfahan city council in 1446.
+}
 #Sons of Soyurghatmish
-vassal = {
+dependency = {
+	subject_type = "governor"
 	first = TIM
 	second = AFG
 	start_date = 1444.1.1
 	end_date = 1447.3.13 #Death of Shah Rokh
 }
 #Abdallah bin Ibrahim, the Child ruler.
-vassal = {
+dependency = {
+	subject_type = "governor"
 	first = TIM
 	second = FRS
 	start_date = 1444.1.1
 	end_date = 1447.3.13 #Death of Shah Rokh
 }
 #Babur bin Baysonqor
-vassal = {
+dependency = {
+	subject_type = "governor"
 	first = TIM
 	second = KHO
 	start_date = 1444.1.1
 	end_date = 1447.3.13 #Death of Shah Rokh
 }
+#Isfahan
+dependency = {
+	subject_type = "governor"
+	first = TIM
+	second = ISF
+	start_date = 1444.1.1
+	end_date = 1447.3.13 #Death of Shah Rokh
+}
+#Yazd
+dependency = {
+	subject_type = "governor"
+	first = TIM
+	second = YZD
+	start_date = 1444.1.1
+	end_date = 1447.3.13 #Death of Shah Rokh
+}
+#Kerman
+dependency = {
+	subject_type = "governor"
+	first = TIM
+	second = KRM
+	start_date = 1444.1.1
+	end_date = 1447.3.13 #Death of Shah Rokh
+}
 
 #End of Timurid Princes
+
+#Qongirat under Ulugh Beg
+vassal = {
+	first = TRS
+	second = KHI
+	start_date = 1444.1.1
+	end_date = 1446.12.1
+}
 
 #Atabegs of Samtskhe under Georgia
 vassal = {
@@ -241,7 +279,8 @@ vassal = {
 }
 
 #Sistan
-vassal = {
+dependency = {
+	subject_type = "governor"
 	first = TIM
 	second = SIS
 	start_date = 1444.1.1 #1383 
