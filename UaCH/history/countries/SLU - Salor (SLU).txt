@@ -1,0 +1,18 @@
+# The Salur, leaders of a Turkmeni tribal confederation in the region.
+government = tribal
+add_government_reform = steppe_horde
+primary_culture = turkmeni
+religion = sunni
+technology_group = nomad_group
+capital = 438	# Karakum
+religious_school = hanafi_school
+
+1444.1.1 = {
+	monarch = {
+		name = "Abish" # Cannot find name, so random name it is.
+		dynasty = "Salyr"
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}

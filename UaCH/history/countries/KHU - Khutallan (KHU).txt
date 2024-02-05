@@ -1,0 +1,19 @@
+# Khutallan governorship
+technology_group = uzbekh
+primary_culture = afghan
+religion = sunni
+government = monarchy
+add_government_reform = iqta
+capital = 1968 # Kulob
+religious_school = hanafi_school
+
+1444.1.1 = {
+	monarch = {
+		name = "Abu Bakr"
+		dynasty = "Timurid"
+		birth_date = 1408.1.1 # Random date
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
