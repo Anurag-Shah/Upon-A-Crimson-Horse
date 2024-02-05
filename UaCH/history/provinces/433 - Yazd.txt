@@ -1,7 +1,7 @@
 #433 - Yadz
 
-owner = TIM
-controller = TIM
+owner = YZD
+controller = YZD
 culture = persian
 religion = zoroastrian
 capital = "Yazd"

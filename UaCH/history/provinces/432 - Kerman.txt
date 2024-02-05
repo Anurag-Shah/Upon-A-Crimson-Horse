@@ -1,7 +1,7 @@
 #432 - Kerman
 
-owner = TIM
-controller = TIM
+owner = KRM
+controller = KRM
 culture = persian
 religion = sunni
 capital = "Kerman"

@@ -1,7 +1,7 @@
 #2222 - Ardakan
 
-owner = TIM
-controller = TIM
+owner = YZD
+controller = YZD
 culture = persian
 religion = sunni
 capital = "Ardakan"

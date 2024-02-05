@@ -49,3 +49,13 @@ vassal = {
 	start_date = 1740.1.1
 	end_date = 1747.6.19
 }
+
+# Sibir, Personal Union of Uzbek
+
+union = {
+	first = SHY
+	second = KAZ
+	start_date = 1444.1.1
+	end_date = 1468.1.1
+}
+

@@ -69,7 +69,7 @@ vassal = {
 }
 
 #Chagatai Subject
-vassal = {
+union = {
 	first = CHG
 	second = KAS
 	start_date = 1444.1.1

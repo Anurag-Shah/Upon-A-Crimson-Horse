@@ -7,13 +7,14 @@ historical_rival = SHY
 capital = 1969	# Sozak
 religious_school = hanafi_school
 
-1465.1.1 = {
+1444.1.1 = {
 	monarch = {
 		name = "Kerey"
 		dynasty = "Genghisid"
 		adm = 0
 		dip = 1
 		mil = 4
+		birth_date = 1424.1.1
 	}
 }
 

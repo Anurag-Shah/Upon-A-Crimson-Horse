@@ -9,6 +9,18 @@ capital = 1973	# Urgench
 fixed_capital = 1973 # Cannot move capital away from this province & no power cost to move to it
 religious_school = hanafi_school
 
+# Early Khiva governors (Qongirat, under Transoxiana)
+
+1444.1.1 = {
+	monarch = {
+		name = "Abdullah" # Randomly made up ruler
+		dynasty = "Khongirad"
+		dip = 3
+		adm = 3
+		mil = 3
+	}
+}
+
 # Khiva (Khwarizm)
 1511.1.1 = {
 	monarch = {
