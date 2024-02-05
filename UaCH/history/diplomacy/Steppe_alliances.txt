@@ -54,7 +54,7 @@ vassal = {
 
 union = {
 	first = SHY
-	second = KAZ
+	second = SIB
 	start_date = 1444.1.1
 	end_date = 1468.1.1
 }
