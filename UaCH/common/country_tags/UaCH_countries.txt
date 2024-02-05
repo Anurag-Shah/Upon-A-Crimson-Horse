@@ -1,3 +1,5 @@
 BLK	= "countries/Balkh.txt"
 KHU	= "countries/Khutallan.txt"
 BDK	= "countries/Badakhstan.txt"
+SLU	= "countries/Salor.txt"
+LRE	= "countries/Larestan.txt"

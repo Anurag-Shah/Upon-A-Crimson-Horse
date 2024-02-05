@@ -93,6 +93,14 @@ vassal = {
 	end_date = 1446.12.1
 }
 
+#Lar autonomy in Fars
+vassal = {
+	first = FRS
+	second = LRE
+	start_date = 1444.1.1
+	end_date = 1446.12.1
+}
+
 #Atabegs of Samtskhe under Georgia
 vassal = {
 	first = GEO
