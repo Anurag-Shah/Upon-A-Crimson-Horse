@@ -1,6 +1,6 @@
 ﻿l_english:
-    governor: "Governor"
-    governor_title: "Governor"
-    governor_is_our: "$NAME|Y$ is our Governor."
-    governor_long_desc: "A Governor is a somewhat autonomous administrative division of the Timurid Empire, established for the princes of the Timurid dynasty."
-    governor_title_plural: "Governors"
+    governor: "Emirate"
+    governor_title: "Emirate"
+    governor_is_our: "$NAME|Y$ is our Emirate."
+    governor_long_desc: "A Emirate is a somewhat autonomous administrative division of the Timurid Empire, established for the princes of the Timurid dynasty. A descendant of traditional Iranian decentralization and the succession laws of the steppe nomads, these Emirates could be reformed into local governorships, or will be the death of the Timurid realm."
+    governor_title_plural: "Emirates"
