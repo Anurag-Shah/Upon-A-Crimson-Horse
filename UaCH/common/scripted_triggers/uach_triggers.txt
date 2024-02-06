@@ -1,3 +1,14 @@
-dummy_trigger = {
-	always = yes
+# This trigger is to check if a country is a Timurid Governor
+is_governor = {
+	has_reform = uach_governor
+}
+
+# This trigger is to check if a country is a Timurid Prince
+is_prince = {
+	has_reform = uach_prince
+}
+
+# This trigger is to check if a country is an interloper
+is_interloper = {
+	has_country_flag = uach_interloper
 }
