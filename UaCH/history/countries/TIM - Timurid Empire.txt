@@ -97,6 +97,7 @@ change_estate_land_share = {
 	add_ruler_modifier = {
 		name = shahrukhs_empire
 	}
+	set_ruler_flag = timurids_peace_ruler
 }
 
 1444.6.1 = { #Serious illness of Shahrukh. Goharshad makes Firuzshah (governor of Balkh) swear bayqat to Ala al-Dawla
