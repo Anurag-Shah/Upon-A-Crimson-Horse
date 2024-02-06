@@ -6,3 +6,7 @@
   uach_shah_rukh_or_death:0 "Either §YShah Rukh§! or a ruler that reunified the @TIM §YTimurids§! has died."
   uach_nuh_uh:0 "§RThere is nothing to do but accept our fate.§!"
   uach_via_timur_legacy_buttons:0 "This disaster will only end once someone uses either §YReclaim Timur's Legacy§! or §YEnd Timur's Legacy§!."
+  
+  # UI loc
+  timurid_faction: "Timurid Envoys"
+  # No need to define the rest of the faction
