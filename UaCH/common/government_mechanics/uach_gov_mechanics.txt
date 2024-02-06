@@ -254,65 +254,64 @@ uach_mechanics_governor = {
 		always = yes
 	}
 
-	# Raise a tax: gain income at the cost of base unrest
-	uach_raise_a_tax = {
-		icon = UACH_GFX_tax_button
-		cooldown_years = 1
-		cooldown_token = iqta_mechanic
-		cooldown_desc = UACH_GOV_REFORM_COOLDOWN
+	interactions = {
+		# Raise a tax: gain income at the cost of base unrest
+		uach_raise_a_tax = {
+			icon = UACH_GFX_tax_button
+			cooldown_years = 1
+			cooldown_token = iqta_mechanic
+			cooldown_desc = UACH_GOV_REFORM_COOLDOWN
 
-		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = WAIT_FOR_SC_TO_START_BITCH_TT
-				has_global_flag = uach_succession_crisis_started
+			trigger = {
+				custom_trigger_tooltip = {
+					tooltip = WAIT_FOR_SC_TO_START_BITCH_TT
+					has_global_flag = uach_succession_crisis_started
+				}
 			}
-		}
-		effect = {
-			add_years_of_income = 1.5
-			custom_tooltip = uach_conscript_men_effect_tt
-			hidden_effect = {
-				every_province = {
-					limit = {
-						controlled_by = PREV
+			effect = {
+				add_years_of_income = 1.5
+				custom_tooltip = uach_conscript_men_effect_tt
+				hidden_effect = {
+					every_province = {
+						limit = {
+							controlled_by = PREV
+						}
+						add_unrest = 3
 					}
-					add_unrest = 3
+				}
+			}
+			ai_chance = {
+				# This is the default choice for the AI, factor will never be 0
+				# This is because we like rebels!
+				# Rebels are free troops that add random chaos to the civil war
+				# This is a good thing
+				# Because I am evil
+				factor = 10
+				modifier = {
+					factor = 0.2
+					is_in_deficit = no
+				}
+				modifier = {
+					factor = 0.1
+					NOT = { num_of_loans = 1 }
+				}
+				modifier = {
+					factor = 2
+					num_of_loans = 5
+				}
+				modifier = {
+					factor = 4
+					num_of_loans = 10
+				}
+				modifier = {
+					factor = 6
+					num_of_loans = 15
 				}
 			}
 		}
-		ai_chance = {
-			# This is the default choice for the AI, factor will never be 0
-			# This is because we like rebels!
-			# Rebels are free troops that add random chaos to the civil war
-			# This is a good thing
-			# Because I am evil
-			factor = 10
-			modifier = {
-				factor = 0.2
-				is_in_deficit = no
-			}
-			modifier = {
-				factor = 0.1
-				NOT = { num_of_loans = 1 }
-			}
-			modifier = {
-				factor = 2
-				num_of_loans = 5
-			}
-			modifier = {
-				factor = 4
-				num_of_loans = 10
-			}
-			modifier = {
-				factor = 6
-				num_of_loans = 15
-			}
-		}
-	}
 
+		
 
-
-	
-	interactions = {
 		# Request foreign support
 		uach_request_foreign_support = {
 			icon = UACH_GFX_foreign_support_button
