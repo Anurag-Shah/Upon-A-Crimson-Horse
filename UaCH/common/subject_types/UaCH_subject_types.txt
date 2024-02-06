@@ -13,6 +13,7 @@ governor = {
 	gets_help_with_rebels = yes
 	forms_trade_companies = no
 	can_have_subjects_of_other_types = yes
+	takes_diplo_slot = no
 
 	max_government_rank = 1
 
