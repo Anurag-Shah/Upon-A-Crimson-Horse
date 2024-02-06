@@ -1,5 +1,5 @@
 uach_governor = {
-	icon = "muslim"
+	icon = "shogunate"
 	allow_normal_conversion = no
 	potential = {
 		always = yes
@@ -20,16 +20,21 @@ uach_governor = {
 		factor = 1
 	}
 
-	government_abilities = { uach_mechanics }
+	government_abilities = { uach_mechanics_governor }
 }
 
 uach_prince = {
-	icon = "muslim"
+	icon = "shogunate"
 	allow_normal_conversion = no
 	potential = {
 		always = yes
 		# Should never become invalid
 	}
+
+	trigger = {
+		always = yes
+	}
+
 	valid_for_nation_designer = no
 
 	queen = no
@@ -39,7 +44,6 @@ uach_prince = {
 		global_unrest = -1
 		estate_nobles_loyalty_modifier = 0.1
 		reduced_liberty_desire = 10
-		liberty_desire = 25
 	}
 
 	conditional = {
@@ -48,5 +52,5 @@ uach_prince = {
 		factor = 1
 	}
 
-	government_abilities = { uach_mechanics }
+	government_abilities = { uach_mechanics_prince }
 }

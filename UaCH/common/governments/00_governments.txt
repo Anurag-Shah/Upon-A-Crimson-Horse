@@ -115,6 +115,9 @@ monarchy = {
 				pronoiar_monarchy_reform #custom nation
 				#Egypt 
 				egyptian_government_reform
+				#UACH
+				uach_prince
+				uach_governor
 			}
 		}
 		hereditary_vs_nobility = {
