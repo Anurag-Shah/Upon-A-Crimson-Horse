@@ -1,0 +1,35 @@
+mnt_one_small_suffering = {
+	liberty_desire = 10
+	country_admin_power = 1
+	country_diplomatic_power = 1
+	country_military_power = 1
+}
+
+mnt_livespan_increaes = {
+	monarch_lifespan = 0.5
+}
+
+mnt_isf_liberty_desire = {
+	liberty_desire = 30
+}
+
+mnt_isf_liberty_desire_60 = {
+	liberty_desire = 60
+}
+
+mnt_trs_betrayl_honored_body = {
+	diplomatic_reputation = 3
+	monthly_favor_modifier = 0.33
+}
+
+uach_shah_rukhs_mausoleum = {
+	# TODO
+}
+
+uach_shah_rukhs_mausoleum_desecrated = {
+	manpower_recovery_speed = 0.3
+}
+
+uach_shah_rukhs_mausoleum_completed = {
+	manpower_recovery_speed = 2
+}

@@ -1,0 +1,4 @@
+is_governor_or_prince = {
+	# TODO
+	always = no
+}
