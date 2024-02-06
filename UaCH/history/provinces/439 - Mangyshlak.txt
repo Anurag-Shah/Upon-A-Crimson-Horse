@@ -1,7 +1,7 @@
 #439 - Mangyshlak
 
-owner = NOG
-controller = NOG
+owner = SLU
+controller = SLU
 culture = nogaybak
 religion = sunni
 capital = "Mangyshlak"
@@ -11,6 +11,7 @@ base_tax = 1
 base_production = 1
 base_manpower = 1
 is_city = yes
+add_core = SLU
 add_core = NOG
 
 

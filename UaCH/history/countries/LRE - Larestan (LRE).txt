@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = iqta
+government_rank = 1
+primary_culture = persian
+religion = shiite
+technology_group = muslim
+capital = 2223 # Lar
+
+1444.1.1 = {
+	monarch = {
+		name = " Abu Bakr" # Dude's actual reign is unknown, so I just threw him in here.
+		dynasty = "Miladi"
+		adm = 3
+		dip = 3
+		mil = 1
+	}
+}
