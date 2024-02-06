@@ -2,10 +2,11 @@ uach_governor = {
 	icon = "shogunate"
 	allow_normal_conversion = no
 	potential = {
-		always = yes
-		# Should never become invalid
+		is_governor = yes
 	}
 	valid_for_nation_designer = no
+	locked_government_type = yes
+	lock_level_when_selected = yes
 
 	queen = no
 	modifiers = {
@@ -26,9 +27,10 @@ uach_governor = {
 uach_prince = {
 	icon = "shogunate"
 	allow_normal_conversion = no
+	locked_government_type = yes
+	lock_level_when_selected = yes
 	potential = {
-		always = yes
-		# Should never become invalid
+		is_prince = yes
 	}
 
 	trigger = {
