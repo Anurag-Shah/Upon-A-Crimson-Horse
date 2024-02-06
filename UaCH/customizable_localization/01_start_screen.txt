@@ -1,0 +1,73 @@
+#AVIALABLE CUSTOM LOCALISATION KEYS
+#When adding new custom loc keys, add them to the appropriate category (or add a new one) and describe them. Name the strings "String_X" where x is its content.
+# To not display anything, you can use 'localisation_key = ""'
+# Please add one example sentence for each key.
+
+#As this list grow organize with categories.
+#Current loc keys in this file:
+#StartScreenUpLeft
+#StartScreenUpRight
+#StartScreenDownLeft
+#StartScreenDownRight
+
+### Main title of start screen
+#Ex: "The Empire of Man, 2017"
+defined_text = {
+    name = StartScreenTitle
+	random = no
+	
+	text = {
+        localisation_key = string_screen_title_khiva
+        trigger = {
+			tag = KHI
+        }
+    }
+	
+	text = {
+        localisation_key = string_screen_title_kok
+        trigger = {
+			tag = KOK
+        }
+    }
+}
+
+### Upper left title textbox
+#Ex: "Sweden's Situation"
+defined_text = {
+    name = StartScreenUpLeftTitle
+	random = no #Pick first that fits
+
+	text = {
+		localisation_key = string_start_title_khiva
+		trigger = {
+			tag = KHI
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_kok
+		trigger = {
+			tag = KOK
+		}
+	}
+	
+}
+
+defined_text = {
+    name = StartScreenUpLeftDesc
+	random = no
+	
+	text = {
+        localisation_key = string_start_khiva
+        trigger = {
+			tag = KHI
+        }
+    }
+
+	text = {
+        localisation_key = string_start_kok
+        trigger = {
+			tag = KOK
+        }
+    }	
+}
