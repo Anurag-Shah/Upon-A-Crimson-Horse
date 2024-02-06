@@ -1,5 +1,5 @@
 government = monarchy
-add_government_reform = iqta
+add_government_reform = uach_prince
 technology_group = muslim
 religion = sunni
 primary_culture = afghani
