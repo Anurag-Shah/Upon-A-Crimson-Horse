@@ -20,4 +20,11 @@ spriteTypes = {
 		loadType = "INGAME"
 		transparencecheck = yes
 	}
+
+	spriteType = {
+		name = "UACH_GFX_strengthen_claim_button"
+		texturefile = "gfx//interface//wartime_interactions/strengthen_claim_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
 }

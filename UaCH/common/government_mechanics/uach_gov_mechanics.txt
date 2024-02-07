@@ -146,7 +146,7 @@ uach_mechanics_prince = {
 		
 		# Raise support for claimant
 		uach_raise_claimant_support = {
-			icon = TODO
+			icon = UACH_GFX_strengthen_claim_button
 			cooldown_years = 1
 			cooldown_token = iqta_mechanic
 			cooldown_desc = UACH_GOV_REFORM_COOLDOWN
