@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = uach_governor
+government_rank = 1
+primary_culture = persian
+religion = shiite
+technology_group = muslim
+capital = 433 # Kerman
+
+1443.1.1 = {
+	monarch = {
+		name = "Ala-ud-Daula"
+		culture = persian
+		dynasty = "Injuid"
+		birth_date = 1430.1.1
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}

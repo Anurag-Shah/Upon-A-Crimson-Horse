@@ -1,0 +1,176 @@
+BLK_ideas = {
+	start = {
+		advisor_cost=-0.1
+		defensiveness = 0.10
+	}
+	
+	bonus = {
+		trade_efficiency = 0.10
+	}	
+
+	trigger = {
+		tag = BLK
+	}
+	free = yes
+	
+	blk_noble_n_great_city = {
+		build_cost = -0.15
+		build_time = -0.25
+	}
+	blk_trade_hub = {
+		trade_range_modifier = 0.25
+		trade_steering = 0.25
+	}
+	blk_legacy_of_bactria = {
+		cavalry_cost = -0.5
+		cavalry_shock = 1
+	}
+	blk_umm_al_belad = {
+		development_cost = -0.1
+	}
+	blk_crossroad_of_faiths = {
+		tolerance_heathen = 1
+	}
+	blk_speedy_messengers	 = {
+		envoy_travel_time = -0.20
+		movement_speed = 0.15
+	}
+	blk_rebuild_citadel = {
+		mil_tech_cost_modifier = -0.1
+		fort_maintenance_modifier = -0.2
+	}
+}
+
+
+ISF_ideas = {
+	start = {
+		advisor_cost=-0.1
+		defensiveness = 0.10
+	}
+	
+	bonus = {
+		trade_efficiency = 0.10
+	}	
+
+	trigger = {
+		tag = ISF
+	}
+	free = yes
+	
+	isf_idea_1 = {
+		build_cost = -0.15
+		build_time = -0.25
+	}
+	isf_idea_2 = {
+		trade_range_modifier = 0.25
+		trade_steering = 0.25
+	}
+	isf_idea_3 = {
+		cavalry_cost = -0.5
+		cavalry_shock = 1
+	}
+	isf_idea_4 = {
+		development_cost = -0.1
+	}
+	isf_idea_5 = {
+		tolerance_heathen = 1
+	}
+	isf_idea_6	 = {
+		envoy_travel_time = -0.20
+		movement_speed = 0.15
+	}
+	isf_idea_7 = {
+		mil_tech_cost_modifier = -0.1
+		fort_maintenance_modifier = -0.2
+	}
+}
+
+
+
+YZD_ideas = {
+	start = {
+		advisor_cost=-0.1
+		defensiveness = 0.10
+	}
+	
+	bonus = {
+		trade_efficiency = 0.10
+	}	
+
+	trigger = {
+		tag = YZD
+	}
+	free = yes
+	
+	yzd_idea_1 = {
+		build_cost = -0.15
+		build_time = -0.25
+	}
+	yzd_idea_2 = {
+		trade_range_modifier = 0.25
+		trade_steering = 0.25
+	}
+	yzd_idea_3 = {
+		cavalry_cost = -0.5
+		cavalry_shock = 1
+	}
+	yzd_idea_4 = {
+		development_cost = -0.1
+	}
+	yzd_idea_5 = {
+		tolerance_heathen = 1
+	}
+	yzd_idea_6	 = {
+		envoy_travel_time = -0.20
+		movement_speed = 0.15
+	}
+	yzd_idea_7 = {
+		mil_tech_cost_modifier = -0.1
+		fort_maintenance_modifier = -0.2
+	}
+}
+
+
+
+KRM_ideas = {
+	start = {
+		advisor_cost=-0.1
+		defensiveness = 0.10
+	}
+	
+	bonus = {
+		trade_efficiency = 0.10
+	}	
+
+	trigger = {
+		tag = KRM
+	}
+	free = yes
+	
+	krm_idea_1 = {
+		build_cost = -0.15
+		build_time = -0.25
+	}
+	krm_idea_2 = {
+		trade_range_modifier = 0.25
+		trade_steering = 0.25
+	}
+	krm_idea_3 = {
+		cavalry_cost = -0.5
+		cavalry_shock = 1
+	}
+	krm_idea_4 = {
+		development_cost = -0.1
+	}
+	krm_idea_5 = {
+		tolerance_heathen = 1
+	}
+	krm_idea_6	 = {
+		envoy_travel_time = -0.20
+		movement_speed = 0.15
+	}
+	krm_idea_7 = {
+		mil_tech_cost_modifier = -0.1
+		fort_maintenance_modifier = -0.2
+	}
+}
