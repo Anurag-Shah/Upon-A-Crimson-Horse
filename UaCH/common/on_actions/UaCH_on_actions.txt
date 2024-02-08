@@ -1,0 +1,24 @@
+on_startup = {
+    if = {
+        limit = {
+            NOT = { has_global_flag = uach_init_ui }
+        }
+        every_country = {
+            limit = {
+                OR = {
+                    is_prince = yes
+                    is_governor = yes
+                    is_interloper = yes
+                    any_neighbor_country = {
+                        OR = {
+                            is_prince = yes
+                            is_governor = yes                      
+                        }
+                    }
+                }
+            }
+            add_faction = timurid_faction
+        }
+        set_global_flag = uach_init_ui
+    }
+}

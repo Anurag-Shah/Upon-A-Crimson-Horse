@@ -5,3 +5,4 @@ picture="thumbnail.png"
 tags={
 	"Gameplay"
 }
+replace_path = "gfx/loadingscreens"

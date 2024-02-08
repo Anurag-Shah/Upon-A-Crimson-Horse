@@ -1,5 +1,5 @@
 government = monarchy
-add_government_reform = iqta
+add_government_reform = uach_governor
 primary_culture = khorasani
 religion = sunni
 government_rank = 1

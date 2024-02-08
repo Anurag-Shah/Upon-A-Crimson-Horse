@@ -1,0 +1,58 @@
+uach_governor = {
+	icon = "shogunate"
+	allow_normal_conversion = no
+	potential = {
+		is_governor = yes
+	}
+	valid_for_nation_designer = no
+	locked_government_type = yes
+	lock_level_when_selected = yes
+
+	queen = no
+	modifiers = {
+		global_tax_modifier = 0.2
+		manpower_recovery_speed	= 0.2
+		estate_nobles_loyalty_modifier = 0.1
+	}
+
+	conditional = {
+	}
+	ai = {
+		factor = 1
+	}
+
+	government_abilities = { uach_mechanics_governor }
+}
+
+uach_prince = {
+	icon = "shogunate"
+	allow_normal_conversion = no
+	locked_government_type = yes
+	lock_level_when_selected = yes
+	potential = {
+		is_prince = yes
+	}
+
+	trigger = {
+		always = yes
+	}
+
+	valid_for_nation_designer = no
+
+	queen = no
+	modifiers = {
+		mercenary_cost = -0.15
+		legitimacy = 1
+		global_unrest = -1
+		estate_nobles_loyalty_modifier = 0.1
+		reduced_liberty_desire = 10
+	}
+
+	conditional = {
+	}
+	ai = {
+		factor = 1
+	}
+
+	government_abilities = { uach_mechanics_prince }
+}

@@ -2,9 +2,9 @@ governor = {
 	copy_from = default
 	
 	# Graphics:
-	sprite = GFX_icon_vassal
-	diplomacy_overlord_sprite = GFX_diplomacy_leadvassal
-	diplomacy_subject_sprite = GFX_diplomacy_amvassal
+	sprite = GFX_icon_emirate
+	diplomacy_overlord_sprite = GFX_diplomacy_leademirate
+	diplomacy_subject_sprite = GFX_diplomacy_amemirate
 
 	# Properties:
 	transfer_trade_if_merchant_republic = yes
@@ -13,6 +13,7 @@ governor = {
 	gets_help_with_rebels = yes
 	forms_trade_companies = no
 	can_have_subjects_of_other_types = yes
+	takes_diplo_slot = no
 
 	max_government_rank = 1
 
