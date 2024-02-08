@@ -1,0 +1,42 @@
+BLK_ideas = {
+	start = {
+		advisor_cost=-0.1
+		defensiveness = 0.10
+	}
+	
+	bonus = {
+		trade_efficiency = 0.10
+	}	
+
+	trigger = {
+		tag = BLK
+	}
+	free = yes
+	
+	blk_noble_n_great_city = {
+		build_cost = -0.15
+		build_time = -0.25
+	}
+	blk_trade_hub = {
+		trade_range_modifier = 0.25
+		trade_steering = 0.25
+	}
+	blk_legacy_of_bactria = {
+		cavalry_cost = -0.5
+		cavalry_shock = 1
+	}
+	blk_umm_al_belad = {
+		development_cost = -0.1
+	}
+	blk_crossroad_of_faiths = {
+		tolerance_heathen = 1
+	}
+	blk_speedy_messengers	 = {
+		envoy_travel_time = -0.20
+		movement_speed = 0.15
+	}
+	blk_rebuild_citadel = {
+		mil_tech_cost_modifier = -0.1
+		fort_maintenance_modifier = -0.2
+	}
+}

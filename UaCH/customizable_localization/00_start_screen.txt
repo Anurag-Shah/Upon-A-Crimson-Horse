@@ -50,7 +50,20 @@ defined_text = {
 			tag = ARD
         }
     }
+    
+	text = {
+        localisation_key = string_screen_title_SIS
+        trigger = {
+			tag = SIS
+        }
+    }
 	
+	text = {
+        localisation_key = string_screen_title_BLK
+        trigger = {
+			tag = BLK
+        }
+    }
 	
 	text = {
         localisation_key = string_screen_title
@@ -58,8 +71,7 @@ defined_text = {
 			always = yes
         }
     }
-	
-	
+
 }
 
 ### Upper left title textbox
@@ -90,6 +102,20 @@ defined_text = {
 		}
 	}
 	
+	text = {
+		localisation_key = string_start_title_SIS
+		trigger = {
+			tag = SIS
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_BLK
+		trigger = {
+			tag = BLK
+		}
+	}
+
 	#Africa
 	
 	#India
@@ -593,24 +619,38 @@ defined_text = {
 	text = {
         localisation_key = string_start_TRS
         trigger = {
-			tag = TRS
+			    tag = TRS
         }
     }
 
 	text = {
         localisation_key = string_start_AFG
         trigger = {
-			tag = AFG
+			    tag = AFG
         }
     }	
 	
 	text = {
         localisation_key = string_start_ARD
         trigger = {
-			tag = ARD
+			    tag = ARD
         }
     }
 	
+	text = {
+        localisation_key = string_start_SIS
+        trigger = {
+			    tag = SIS
+        }
+    }	
+	
+	text = {
+      localisation_key = string_start_BLK
+      trigger = {
+			  tag = BLK
+      }
+  }	
+    
 	#Africa
 	text = { # Maghreb
         localisation_key = string_start_maghreb

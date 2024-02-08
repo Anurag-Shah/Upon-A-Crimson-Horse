@@ -1,0 +1,7 @@
+timurid_faction = {
+	monarch_power = MIL # Funny
+	always = no
+
+	modifier = {
+	}
+}

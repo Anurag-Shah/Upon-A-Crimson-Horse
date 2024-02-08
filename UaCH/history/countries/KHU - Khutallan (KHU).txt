@@ -3,7 +3,7 @@ technology_group = uzbekh
 primary_culture = afghan
 religion = sunni
 government = monarchy
-add_government_reform = iqta
+add_government_reform = uach_prince
 capital = 1968 # Kulob
 religious_school = hanafi_school
 
