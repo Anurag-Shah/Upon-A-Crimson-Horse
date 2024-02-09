@@ -86,6 +86,34 @@ defined_text = {
         }
     }
 	
+		text = {
+        localisation_key = string_screen_title_SLU
+        trigger = {
+			tag = SLU
+        }
+    }
+	
+		text = {
+        localisation_key = string_screen_title_BDK
+        trigger = {
+			tag = BDK
+        }
+    }
+	
+		text = {
+        localisation_key = string_screen_title_LRE
+        trigger = {
+			tag = LRE
+        }
+    }
+	
+		text = {
+        localisation_key = string_screen_title_KHU
+        trigger = {
+			tag = KHU
+        }
+    }
+	
 	
 	text = {
         localisation_key = string_screen_title
@@ -159,6 +187,36 @@ defined_text = {
 			tag = KRM
 		}
 	}
+	
+	text = {
+		localisation_key = string_start_title_SLU
+		trigger = {
+			tag = SLU
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_KHU
+		trigger = {
+			tag = KHU
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_LRE
+		trigger = {
+			tag = LRE
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_BDK
+		trigger = {
+			tag = BDK
+		}
+	}
+	
+	
 	
 	#Africa
 	
@@ -715,6 +773,37 @@ defined_text = {
 			tag = YZD
         }
     }	
+	
+	
+	text = {
+        localisation_key = string_start_LRE
+        trigger = {
+			tag = LRE
+        }
+    }	
+	
+	text = {
+        localisation_key = string_start_KHU
+        trigger = {
+			tag = KHU
+        }
+    }	
+	
+	text = {
+        localisation_key = string_start_BDK
+        trigger = {
+			tag = BDK
+        }
+    }	
+	
+	text = {
+        localisation_key = string_start_SLU
+        trigger = {
+			tag = SLU
+        }
+    }	
+	
+	
 	
 	
 	#Africa
