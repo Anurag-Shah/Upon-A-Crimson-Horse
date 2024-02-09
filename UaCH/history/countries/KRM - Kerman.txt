@@ -7,6 +7,21 @@ technology_group = muslim
 capital = 432 # Kerman
 religious_school = ismaili_school
 
+1443.1.1 = {
+	monarch = {
+		name = "Zain al-Abidin"
+		culture = persian
+		dynasty = "Mozzafarid"
+		birth_date = 1370.1.1
+		adm = 1
+		dip = 4
+		mil = 3
+	}
+}
+
+
+
+
 1504.1.1 = {
 	religious_school = jafari_school
 }

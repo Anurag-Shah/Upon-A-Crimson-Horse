@@ -11,7 +11,7 @@ religious_school = shafii_school
 
 1439.1.1 = {
 	monarch = {
-		name = "Yahya"
+		name = "Nizam al-Din Yahya"
 		dynasty = "Mihrabanid"
 		birth_date = 1417.1.1
 		adm = 2
