@@ -1,0 +1,24 @@
+custom_icon = {
+	name = timurids_window_bg
+    potential = { has_faction = timurid_faction }
+}
+
+custom_icon = {
+	name = timurids_princes_banner
+    potential = { has_faction = timurid_faction }
+}
+
+custom_text_box = {
+    name = timurids_princes_banner_text
+    potential = { has_faction = timurid_faction }
+}
+
+custom_icon = {
+	name = timurids_governors_banner
+    potential = { has_faction = timurid_faction }
+}
+
+custom_text_box = {
+    name = timurids_governors_banner_text
+    potential = { has_faction = timurid_faction }
+}

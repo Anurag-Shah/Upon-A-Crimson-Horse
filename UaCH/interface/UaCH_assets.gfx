@@ -20,4 +20,10 @@ spriteTypes = {
 	  	name = "GFX_icon_emirate"
 	 	texturefile = "gfx/interface/icon_emirate.dds"
 	}
+	
+	# UI
+	spriteType = {
+	  	name = "GFX_timurids_window_bg"
+	 	texturefile = "gfx/interface/ui/timurids_window_bg.dds"
+	}
 }
