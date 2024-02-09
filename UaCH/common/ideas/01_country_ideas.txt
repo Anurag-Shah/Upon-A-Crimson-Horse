@@ -245,7 +245,7 @@ SLU_ideas = {
 	}
 	slu_idea_7 = {
 		monthly_splendor = 1
-		attack_bonus_in_capital_terrain = yes 
+		ignore_coring_distance = yes
 	}
 }
 
