@@ -1,0 +1,11 @@
+is_governor_or_prince = {
+	OR = {
+		is_prince = yes
+		is_governor = yes
+	}
+}
+
+is_marked_for_new_ruler_after_defeat = {
+	is_subject_of = ROOT
+	has_country_flag = UaCH_enforced_new_ruler_on_claimant	
+}

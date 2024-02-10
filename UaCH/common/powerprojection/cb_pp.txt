@@ -1,0 +1,11 @@
+won_against_claimant = {
+	power = 5
+	yearly_decay = 5
+	max = 60
+}
+
+enforced_loyalty_on_governor = {
+	power = 5
+	yearly_decay = 5
+	max = 60
+}

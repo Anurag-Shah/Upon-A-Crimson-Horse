@@ -1,0 +1,36 @@
+cb_challange_claimant = {
+	valid_for_subject = no
+	ai_peace_desire = -80
+
+	# TODO add and remove the cb when ever applicable
+	is_triggered_only = yes
+	months = -1
+
+	prerequisites_self = {
+		is_part_of_second_crisis = yes
+	}
+
+	prerequisites = {
+		is_part_of_second_crisis = yes
+	}
+
+	war_goal = w_superiority_claimant
+}
+
+cb_enforce_loyalty_governor = {
+	valid_for_subject = no
+	ai_peace_desire = -80
+
+	is_triggered_only = yes
+	months = -1
+
+	prerequisites_self = {
+		# is_part_of_second_crisis = yes
+	}
+
+	prerequisites = {
+		# is_part_of_second_crisis = yes
+	}
+
+	war_goal = w_enforce_loyalty_governor
+}

@@ -1,5 +1,6 @@
 namespace = UaCH
 
+# The Ailing Emperor
 country_event = {
 	id = UaCH.1 
 	title = UaCH.1.t 
@@ -12,6 +13,9 @@ country_event = {
 	mean_time_to_happen = {
 		days = 1
 	}
+
+	fire_only_once = yes
+
 	option = {
 		name = "UaCH.1.a"
 		
@@ -24,3 +28,1571 @@ country_event = {
 		}
 	}
 }
+
+# Secret Plot
+country_event = {
+	id = UaCH.2 
+	title = UaCH.2.t 
+	desc = UaCH.2.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		tag = TIM
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	fire_only_once = yes
+
+	# Reomve Firuzshah
+	option = {
+		name = "UaCH.2.a"
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# A stern talk should do the trick
+	option = {
+		name = "UaCH.2.b"
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+# Fate of Firuzshah
+country_event = {
+	id = UaCH.3 
+	title = UaCH.3.t 
+	desc = UaCH.3.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		tag = TIM
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	# The Shame
+	option = {
+		name = "UaCH.3.a"
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+# Gawhar Shad's Regency
+country_event = {
+	id = UaCH.4 
+	title = UaCH.4.t 
+	desc = UaCH.4.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		tag = TIM
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	# One small scuffle is nothing
+	option = {
+		name = "UaCH.4.a"
+		
+		add_country_modifier = {
+			name = mnt_one_small_suffering
+			duration = 3650
+		}
+
+		custom_tooltip = mnt_speeds_up_disaster
+		custom_tooltip = mnt_gawhar_shad_will_puppet_ruler
+
+		# TODO increase chance of Muhammad Juki's death
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# I’m sorry, my love, but I’ve seen your intentions.
+	option = {
+		name = "UaCH.4.b"
+		
+		add_stability = -1
+		add_ruler_modifier = {
+			name = mnt_livespan_increaes
+		}
+
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -20
+		}
+
+		custom_tooltip = mnt_gawhar_and_military_will_rebel_on_monarch_death
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+# Illness of Muhammad Juki
+country_event = {
+	id = UaCH.5 
+	title = UaCH.5.t 
+	desc = UaCH.5.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		tag = TIM
+
+		# TODO check for the specific heir?
+	}
+	mean_time_to_happen = {
+		months = 15
+	}
+
+	# Chronic illness? Why do I hear about this only now?
+	option = {
+		name = "UaCH.5.a"
+		
+		random_list = {
+			90 = {
+				kill_heir = {  }
+			}
+			10 = { 
+				random_list = {
+					33 = {
+						change_heir_adm = 1
+					}
+					33 = {
+						change_heir_dip = 1
+					}
+					33 = {
+						change_heir_mil = 1
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# Chronic illness you say?
+	option = {
+		name = "UaCH.5.b"
+		
+		kill_heir = {  }
+
+		capital_scope = {
+			add_building = temple
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+# Conspiring in Isfahan
+country_event = {
+	id = UaCH.6 
+	title = UaCH.6.t 
+	desc = UaCH.6.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		tag = TIM
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	# A golden opportunity!
+	option = {
+		name = "UaCH.6.a"
+				
+		ISF = { 
+			add_country_modifier = {
+				name = mnt_isf_liberty_desire
+				duration = 3650
+			}
+			if = {
+				limit = {
+					exists = QOM
+				}
+				create_alliance = QOM
+			}
+		}
+
+		set_country_flag = uach_QOM_assisted_ISF
+		set_country_flag = isfh_rebels
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 100
+				always = yes
+			}
+		}
+	}
+
+	# Lets support them with money!
+	option = {
+		name = "UaCH.6.b"
+		
+		add_treasury = -100
+		ISF = {
+			add_country_modifier = {
+				name = mnt_isf_liberty_desire_60
+				duration = 3650
+			}
+		}
+
+		set_country_flag = isfh_rebels
+		
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 0
+				always = no
+			}
+		}
+	}
+
+	# We only need to wait for their downfall.
+	option = {
+		name = "UaCH.6.c"
+		
+		add_prestige = 10
+		
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 0
+				always = no
+			}
+		}
+	}
+}
+
+# Choosing a successor
+country_event = {
+	id = UaCH.7 
+	title = UaCH.7.t 
+	desc = UaCH.7.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		tag = TIM
+	}
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	# The favorite of the Nobility, Ala-al Dawla Mirza.
+	option = {
+		name = "UaCH.7.a"
+		
+		define_heir = {
+			name = "Ala-al Dawla Mirza"
+			dynasty = "Timurid"
+			adm = 0
+			dip = 0
+			mil = 0
+		}
+
+		add_estate_influence_modifier = {
+			influence = 10
+			duration = -1
+		}
+
+		custom_tooltip = mnt_warning_of_bypassing_consort_event
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# My most prosperous son, Ulugh Beg
+	option = {
+		name = "UaCH.7.b"
+		
+		define_heir = {
+			name = "Ulugh Beg"
+			dynasty = "Timurid"	
+			adm = 0
+			dip = 0
+			mil = 0	
+		}
+
+		custom_tooltip = mnt_warning_of_moving_to_transoxiana_on_death
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# My favorite, Muhammad Juki
+	option = {
+		name = "UaCH.7.c"
+		trigger = {
+			has_heir = "Muhammad Juki"
+		}
+		
+		add_stability = 1
+		add_estate_influence_modifier = {
+			influence = -10
+			duration = -1
+			estate = estate_nobles
+		}
+
+		custom_tooltip = mnt_gawhar_shad_more_likely_to_rebel_slower_disaster
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# There is still time for this…
+	option = {
+		name = "UaCH.7.d"
+		
+		# Anything in here?
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+# Rebellion in Isfahan
+country_event = {
+	id = UaCH.8 
+	title = UaCH.8.t 
+	desc = UaCH.8.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		OR = {
+			tag = ISF
+			has_country_flag = isfh_rebels
+		}
+	}
+	mean_time_to_happen = {
+		months = 30
+	}
+
+	immediate = {
+		every_country = {
+			limit = {
+				is_governor_or_prince = yes
+				NOT = { tag = TIM }
+			}
+			country_event = {
+				id = UaCH.9
+				days = 1
+			}
+		}
+	}
+
+	# Send our demands to the governors!
+	option = {
+		name = "UaCH.8.a"
+		
+		ISF = {
+			declare_war_with_cb = {
+				casus_belli = cb_war_for_tim_throne # TODO
+				who = Tim
+			}			
+		}		
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# Expel him, lest you bring Shah Rukhs wrath on our head!
+	option = {
+		name = "UaCH.8.b"
+		
+		add_stability = -3
+		add_legitimacy = -100
+		# TODO LD modifier?
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+# Muhammads demands - recieving side
+country_event = {
+	id = UaCH.9 
+	title = UaCH.9.t 
+	desc = UaCH.9.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		tag = TIM
+	}
+
+	is_triggered_only = yes
+
+	# Submit.
+	option = {
+		name = "UaCH.9.a"
+		
+		create_alliance = ISF
+		ISF = {
+			add_favors = {
+				who = THIS
+				amount = 25
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					tag = AFG
+					tag = TRS
+				}
+
+				# TODO how to do the relative strength towards TIM?
+			}
+		}
+	}
+
+	# This is not our fight 
+	option = {
+		name = "UaCH.9.b"
+		
+		# TODO should whitepeace on independence war are we at war here? or does this need to be done somewhere else?
+		white_peace = ISF
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				tag = TRS
+			}
+		}
+	}
+
+	# Never! 
+	option = {
+		name = "UaCH.9.c"
+		
+		# Tag will fight ISF
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				tag = AFG
+			}
+		}
+	}
+}
+
+# ISF wins
+country_event = {
+	id = UaCH.10 
+	title = UaCH.10.t 
+	desc = UaCH.10.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		is_governor_or_prince = yes
+					NOT = { tag = ISF }
+	}
+
+	is_triggered_only = yes
+
+	# Submit!
+	option = {
+		name = "UaCH.10.a"
+		
+		add_stability = -3
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+# ISF wins - receiving side
+country_event = {
+	id = UaCH.11 
+	title = UaCH.11.t 
+	desc = UaCH.11.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		OR = {
+			tag = ISF
+			AND = {
+				is_governor_or_prince = yes
+				OR = {
+					alliance_with = ISF
+					is_subject_of = QOM
+				}
+			}			
+		}
+	}
+
+	is_triggered_only = yes
+
+	# Submit!
+	option = {
+		name = "UaCH.11.a"
+		
+		add_stability = -3
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+# TIM wins
+country_event = {
+	id = UaCH.12 
+	title = UaCH.12.t 
+	desc = UaCH.12.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		tag = TIM
+	}
+
+	is_triggered_only = yes
+
+	# Scorn them all.
+	option = {
+		name = "UaCH.12.a"
+		
+		ISF = {
+			every_ally = {
+				add_stability = -2
+				add_legitimacy = -50
+			}
+			add_stability = -2
+			add_legitimacy = -50
+		}
+
+		if = {
+			limit = {
+				exists = QOM
+				ROOT = {
+					# TODO this correct?
+					OR = {
+						is_in_war = {
+							attacker_leader = QOM
+						}
+						is_in_war = {
+							defender_leader = QOM
+						}
+					}
+				}
+			}
+			QOM = {
+				add_stability = -2
+				add_legitimacy = -50
+			}
+		}
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+# Death of Shah Rukh
+country_event = {
+	id = UaCH.13 
+	title = flavor_tim.1.t 
+	desc = flavor_tim.1.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TIM
+		NOT = { has_global_flag = death_of_shah_rukh }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = { 
+		set_global_flag = death_of_shah_rukh 
+		country_event = {
+			id = UaCH.18
+			days = 120
+		}
+	}
+	
+	# My time has come!
+	option = { 
+		name = "flavor_tim.1.a" 
+		custom_tooltip = flavor_tim.1.a.tt
+		hidden_effect = {
+
+			every_country = {
+				limit = {
+					is_governor_or_prince = yes
+					NOT = { tag = TIM }
+				}
+				country_event = {
+					id = UaCH.14
+					days = 1
+				}
+			}
+
+			TIM = {
+				country_event = {
+					id = UaCH.15
+					days = 30
+				}
+			}
+
+			every_country = {
+				limit = {
+					NOT = { tag = ROOT }
+					OR = {
+						is_neighbor_of = ROOT
+						dynasty = Timurid
+						any_owned_province = {
+							is_core = TIM
+						}
+						any_neighbor_country = {
+							dynasty = Timurid
+						}
+					}
+				}
+				country_event = { id = flavor_tim.2 }
+			}
+		}
+	}
+}
+
+# Death of Shah Rukh - vassals
+country_event = {
+	id = UaCH.14 
+	title = flavor_tim.2.t
+	desc = flavor_tim.2.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+
+	# My time has come!
+	option = {
+		name = "flavor_tim.2.a" 
+		trigger = { dynasty = Timurid }
+		custom_tooltip = flavor_tim.2.a.tt
+	}
+
+	# lol no comment here
+	option = {
+		name = "flavor_tim.2.b"
+		trigger = { NOT = { dynasty = Timurid } }
+		custom_tooltip = flavor_tim.2.a.tt
+		if = {
+			limit = {
+				NOT = { dynasty = "Timurid" }
+				government = monarchy
+				NOT = { tag = HLR }
+				NOT = { tag = ROM }
+				NOT = { tag = MUG }
+				NOT = { tag = PER }
+				OR = {
+					culture_group = iranian
+					primary_culture = uzbehk
+					primary_culture = turkmeni
+				}
+				NOT = { primary_culture = azerbaijani }
+				NOT = { has_reform = tribal_federation }
+				religion_group = muslim
+			}
+		custom_tooltip = flavor_tim.2.b.tt
+		}
+	}
+}
+
+# The body of Shah Rukh
+country_event = {
+	id = UaCH.15 
+	title = UaCH.15.t 
+	desc = UaCH.15.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TIM
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		TRS = {
+			country_event = {
+				id = UaCH.16
+				days = 30
+			}
+			country_event = {
+				id = UaCH.55
+				days = 111
+			}
+		}
+		TIM = {
+			country_event = {
+				id = UaCH.17
+				days = 60
+			}
+			country_event = {
+				id = UaCH.55
+				days = 111
+			}
+		}
+	}
+	
+	# Send a small honor guard.
+	option = { 
+		name = "UaCH.15.a" 
+
+		add_legitimacy = 15
+		TRS = {
+			add_manpower = 20000
+			add_treasury = 500
+		}
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# A true heir should  be able to handle this.
+	option = {
+		name = "UaCH.15.b"
+		
+		add_legitimacy = 25
+		add_prestige = 20
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					has_ruler = "Muhammad Juki"
+				}
+				TRS = {
+					add_manpower = 10000
+					add_treasury = 250
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# Assemble the Royal guard!
+	option = {
+		name = "flavor_tim.3.c"
+		
+		add_years_of_income = -2
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+# Betrayl - TRS side
+country_event = {
+	id = UaCH.16 
+	title = UaCH.16.t 
+	desc = UaCH.16.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TRS
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	# Steal that body!
+	option = { 
+		name = "UaCH.16.a" 
+
+		add_liberty_desire = 50
+		capital_scope = {
+			add_unit_construction = {
+				type = cavalry
+				cost = 0
+				speed = 1
+				amount = 6
+			}
+		}
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				liberty_desire = 15
+			}
+			modifier = {
+				factor = 0
+				NOT = { liberty_desire = 15 } 
+			}
+		}
+	}
+
+	# Honor that body!
+	option = {
+		name = "UaCH.16.b"
+		
+		add_country_modifier = {
+			name = mnt_trs_betrayl_honored_body
+			duration = 18250 # 50 years
+		}
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+# Betrayl
+country_event = {
+	id = UaCH.17 
+	title = UaCH.17.t 
+	desc = UaCH.17.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TIM
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	# Intolerable!
+	option = { 
+		name = "UaCH.17.a" 
+
+		TRS = {
+			add_liberty_desire = 100
+			# TODO TRS delcares war on tim in 6 months
+		}
+		
+		ai_chance = {
+			factor = 1
+			
+			# TODO
+		}
+	}
+
+	# I'm dying of shame.
+	option = {
+		name = "UaCH.17.b"
+		
+		if = {
+			limit = {
+				has_ruler = "Muhammad Juki"
+			}
+			kill_ruler = yes
+		}
+		
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# Accept the new reality
+	option = {
+		name = "UaCH.17.c"
+		
+		every_subject_country = {
+			TRS = {
+				vassalize = PREV
+			}
+		}
+		
+		TRS = {
+			vassalize = TIM
+		}
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	# An ambitious young man, too bad about his father...
+	option = {
+		name = "UaCH.17.d"
+		
+		# TODO when does TRS declare war for tim thrown
+		random_list = {
+			50 = {
+				country_event = {
+					id = UaCH.49
+					days = 60
+				}
+			}
+			25 = {
+				country_event = {
+					id = UaCH.50
+					days = 60
+				}
+			}
+			25 = {
+				country_event = {
+					id = UaCH.51
+					days = 30
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# A Chance to Return
+country_event = {
+	id = UaCH.18 
+	title = UaCH.18.t 
+	desc = UaCH.18.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = TIM
+			tag = LRI
+			all_province = {
+				is_core = QOM
+				owned_by_subject_of = ROOT
+			}
+			QOM = {
+				has_country_flag = uach_QOM_assisted_ISF
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		# TODO not finished calls of events
+	}
+	
+	# I will not be denied!
+	option = { 
+		name = "UaCH.18.a" 
+
+		TIM = {
+			release = QOM
+		}
+		every_province = {
+			limit = {
+				is_core = QOM
+				owned_by_subject_of = TIM
+				owned_by = TIM
+			}
+			cede_province = QOM
+		}
+		
+		if = {
+			limit = {
+				exists = LRI
+			}
+			QOM = {
+				vassalize = LRI
+			}
+		}
+
+		if = {
+			limit = {
+				exists = LRI
+			}
+			ARD = {
+				vassalize = QOM
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# Hey, Gurkani, get this idiot for us.
+	option = {
+		name = "UaCH.18.b"
+		
+		# TODO become unique subject of TIM
+
+		custom_tooltip = uach_we_will_never_have_a_chance_to_return
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+# Return of Muhammad Juki (former allies)
+country_event = {
+	id = UaCH.19 
+	title = UaCH.19.t 
+	desc = UaCH.19.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	# Our rightful suzerain has returned!
+	option = { 
+		name = "UaCH.19.a" 
+
+		QOM = {
+			vassalize = ROOT
+		}
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# We aren't interested in someone who lost once before.
+	option = {
+		name = "UaCH.19.b"
+		
+		QOM = {
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = ROOT
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+# Return of Muhammad Juki (TIM)
+country_event = {
+	id = UaCH.20 
+	title = UaCH.20.t 
+	desc = UaCH.20.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TIM
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	# Our rightful suzerain has returned!
+	option = { 
+		name = "UaCH.20.a" 
+
+		QOM = {
+			vassalize = ROOT
+		}
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# We aren't interested in someone who lost once before.
+	option = {
+		name = "UaCH.20.b"
+		
+		QOM = {
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = ROOT
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+
+# Betrayal - Abdul Latifs stays loyal
+country_event = {
+	id = UaCH.49 
+	title = UaCH.49.t 
+	desc = UaCH.49.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TRS
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	# Good. Good. Our forces will be operational by then.
+	option = { 
+		name = "UaCH.49.a" 
+
+		add_legitimacy = 25
+		TIM = {
+			set_country_flag = uach_may_intercept_body
+		}
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+# Betrayal - Abdul Latifs defects
+country_event = {
+	id = UaCH.50 
+	title = UaCH.50.t 
+	desc = UaCH.50.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TRS
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	# Insolent boy!
+	option = { 
+		name = "UaCH.50.a" 
+
+		add_legitimacy = -25
+		set_country_flag = uach_may_intercept_body
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+}
+
+# Betrayal - Abdul Latifs demands
+country_event = {
+	id = UaCH.51 
+	title = UaCH.51.t 
+	desc = UaCH.51.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TIM
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	# Offer him riches beyond measure.
+	option = { 
+		name = "UaCH.51.a" 
+
+		add_treasury = -500
+		random_list = {
+			80 = {}
+			20 = {
+				country_event = {
+					id = UaCH.50
+				}
+			}
+		}
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# Offer him lands and titles. 
+	option = { 
+		name = "UaCH.51.b" 
+
+		# TODO offered him titles effect after dealt with Ulugh Beg
+		random_list = {
+			55 = {}
+			45 = {
+				country_event = {
+					id = UaCH.50
+				}
+			}
+		}
+						
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# Make him heir to the Empire.
+	option = { 
+		name = "UaCH.51.c" 
+
+		kill_heir = {  }
+		define_heir = {
+			name = "Abdul Latif"
+			dynasty = "Timurid"
+			adm = 0
+			dip = 0
+			mil = 0
+			age = 25
+		}
+						
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}
+
+	# He will gain no such thing! 
+	option = { 
+		name = "UaCH.51.d" 
+
+		add_prestige = 25
+		add_mil_power = 50
+		random_list = {
+			90 = {}
+			10 = {
+				country_event = {
+					id = UaCH.50
+				}
+			}
+		}
+						
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				# TODO
+			}
+		}
+	}	
+}
+
+# Decision - Intercept the body
+country_event = {
+	id = UaCH.54 
+	title = UaCH.54.t 
+	desc = UaCH.54.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	# We ride! 
+	option = { 
+		name = "UaCH.51.a" 
+
+		random_list = {
+			50 = {
+
+			}
+			50 = {
+				custom_tooltip = uach_becomes_holder_of_body
+				# TODO Set holder of body and enable for others again				
+			}
+		}
+
+	}
+}
+
+# The body arrives
+country_event = {
+	id = UaCH.55 
+	title = UaCH.55.t 
+	desc = UaCH.55.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	# Do it.
+	option = { 
+		name = "UaCH.55.a" 
+
+		add_treasury = -200
+
+		capital_scope = {
+			add_province_modifier = {
+				name = uach_shah_rukhs_mausoleum
+				duration = -1
+			}
+			set_province_flag = uach_shah_rukhs_mausoleum
+		}
+	}
+}
+
+# Stolen
+country_event = {
+	id = UaCH.56 
+	title = UaCH.56.t 
+	desc = UaCH.56.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		capital_scope = {
+			has_province_modifier = uach_shah_rukhs_mausoleum
+			OR = {
+				AND = {
+					NOT = { owner = { tag = TRS } }
+					sieged_by = TIM
+				}
+				AND = {
+					NOT = { owner = { tag = TIM } }
+					sieged_by = TRS
+				}
+			}
+		}
+	}
+	
+	# Tragedy!
+	option = { 
+		name = "UaCH.56.a" 
+
+		capital_scope = {
+			remove_province_modifier = uach_shah_rukhs_mausoleum
+		}
+
+		add_country_modifier = {
+			name = uach_shah_rukhs_mausoleum_desecrated
+			duration = 365
+		}
+	}
+}
+
+# The mausoleum is complete
+country_event = {
+	id = UaCH.57 
+	title = UaCH.57.t 
+	desc = UaCH.57.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		capital_scope = {
+			has_province_modifier = uach_shah_rukhs_mausoleum
+			had_province_flag = {
+				flag = uach_shah_rukhs_mausoleum
+				days = 365
+			}
+		}
+	}
+	
+	# With this, peace shall be upon this land.
+	option = { 
+		name = "UaCH.57.a" 
+
+		every_subject_country = {
+			add_liberty_desire = -15
+			add_country_modifier = {
+				name = uach_shah_rukhs_mausoleum_completed
+				duration = 730
+			}
+		}
+	}
+}
+
+
