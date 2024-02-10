@@ -50,7 +50,7 @@ defined_text = {
 			tag = ARD
         }
     }
-    
+	
 	text = {
         localisation_key = string_screen_title_SIS
         trigger = {
@@ -66,12 +66,63 @@ defined_text = {
     }
 	
 	text = {
+        localisation_key = string_screen_title_ISF
+        trigger = {
+			tag = ISF
+        }
+    }
+	
+	text = {
+        localisation_key = string_screen_title_YZD
+        trigger = {
+			tag = YZD
+        }
+    }
+	
+	text = {
+        localisation_key = string_screen_title_KRM
+        trigger = {
+			tag = KRM
+        }
+    }
+	
+		text = {
+        localisation_key = string_screen_title_SLU
+        trigger = {
+			tag = SLU
+        }
+    }
+	
+		text = {
+        localisation_key = string_screen_title_BDK
+        trigger = {
+			tag = BDK
+        }
+    }
+	
+		text = {
+        localisation_key = string_screen_title_LRE
+        trigger = {
+			tag = LRE
+        }
+    }
+	
+		text = {
+        localisation_key = string_screen_title_KHU
+        trigger = {
+			tag = KHU
+        }
+    }
+	
+	
+	text = {
         localisation_key = string_screen_title
         trigger = {
 			always = yes
         }
     }
-
+	
+	
 }
 
 ### Upper left title textbox
@@ -115,7 +166,58 @@ defined_text = {
 			tag = BLK
 		}
 	}
-
+	
+	text = {
+		localisation_key = string_start_title_YZD
+		trigger = {
+			tag = YZD
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_ISF
+		trigger = {
+			tag = ISF
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_KRM
+		trigger = {
+			tag = KRM
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_SLU
+		trigger = {
+			tag = SLU
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_KHU
+		trigger = {
+			tag = KHU
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_LRE
+		trigger = {
+			tag = LRE
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_BDK
+		trigger = {
+			tag = BDK
+		}
+	}
+	
+	
+	
 	#Africa
 	
 	#India
@@ -619,38 +721,91 @@ defined_text = {
 	text = {
         localisation_key = string_start_TRS
         trigger = {
-			    tag = TRS
+			tag = TRS
         }
     }
 
 	text = {
         localisation_key = string_start_AFG
         trigger = {
-			    tag = AFG
+			tag = AFG
         }
     }	
 	
 	text = {
         localisation_key = string_start_ARD
         trigger = {
-			    tag = ARD
+			tag = ARD
         }
     }
 	
 	text = {
         localisation_key = string_start_SIS
         trigger = {
-			    tag = SIS
+			tag = SIS
         }
     }	
 	
 	text = {
-      localisation_key = string_start_BLK
-      trigger = {
-			  tag = BLK
-      }
-  }	
-    
+        localisation_key = string_start_BLK
+        trigger = {
+			tag = BLK
+        }
+    }	
+	
+	text = {
+        localisation_key = string_start_KRM
+        trigger = {
+			tag = KRM
+        }
+    }	
+	
+	text = {
+        localisation_key = string_start_ISF
+        trigger = {
+			tag = ISF
+        }
+    }	
+	
+	text = {
+        localisation_key = string_start_YZD
+        trigger = {
+			tag = YZD
+        }
+    }	
+	
+	
+	text = {
+        localisation_key = string_start_LRE
+        trigger = {
+			tag = LRE
+        }
+    }	
+	
+	text = {
+        localisation_key = string_start_KHU
+        trigger = {
+			tag = KHU
+        }
+    }	
+	
+	text = {
+        localisation_key = string_start_BDK
+        trigger = {
+			tag = BDK
+        }
+    }	
+	
+	text = {
+        localisation_key = string_start_SLU
+        trigger = {
+			tag = SLU
+        }
+    }	
+	
+	
+	
+	
 	#Africa
 	text = { # Maghreb
         localisation_key = string_start_maghreb

@@ -9,8 +9,8 @@ religious_school = hanafi_school
 
 1444.1.1 = {
 	monarch = {
-		name = "Abish" # Cannot find name, so random name it is.
-		dynasty = "Salyr"
+		name = "Ali" # Cannot find name, so random name it is./could find a name. C
+		dynasty = "Salgurid" #/and a dynasty
 		adm = 2
 		dip = 4
 		mil = 2
