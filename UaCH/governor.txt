@@ -1,0 +1,12 @@
+every_neighbor_country = {
+	reverse_add_casus_belli = {
+		target = ROOT
+		type = cb_challange_claimant
+		months = 12
+   }
+	reverse_add_casus_belli = {
+		target = ROOT
+		type = cb_enforce_loyalty_governor
+		months = 12
+   }
+}

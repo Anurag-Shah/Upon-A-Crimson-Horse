@@ -12,3 +12,16 @@ is_prince = {
 is_interloper = {
 	has_country_flag = uach_interloper
 }
+
+# This trigger is to check if a country is taking place in the crisis
+is_part_of_second_crisis = {
+	always = yes
+	# is_interloper = yes
+	# is_prince = yes
+	# is_governor = yes
+}
+
+# This trigger is to check if a country supported x in the second crisis
+has_supported_x_in_second_crisis = {
+	has_country_flag = uach_supported_$WHO$_in_second_crisis	
+}

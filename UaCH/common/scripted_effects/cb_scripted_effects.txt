@@ -1,0 +1,18 @@
+transfer_subjects_as_governors = {	
+	$FROM$ = {
+		every_subject_country = {
+			create_subject = {
+				subject_type = governor
+				who = $TO$
+			}
+		}
+	}
+}
+
+uach_return_to_civil_war = {
+	#TODO
+}
+
+demote_to_prince = {
+	#TODO
+}

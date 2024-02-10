@@ -1,0 +1,141 @@
+namespace = UaCH.CB
+
+country_event = {
+	id = UaCH.CB.1 
+	title = UaCH.CB.1.t 
+	desc = UaCH.CB.1.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		# This flag is set in the po to mark a country to be targeted by the event.
+		random_country = {
+			limit = {
+				is_marked_for_new_ruler_after_defeat = yes
+			}
+			save_event_target_as = claimant_lost_war
+			clr_country_flag = UaCH_enforced_new_ruler_on_claimant
+			transfer_subjects_as_governors = { FROM = THIS TO = ROOT }
+			ROOT = {
+				vassalize = THIS
+				THIS = {
+					add_country_modifier = {
+						name = uach_reduced_liberty_desire_50
+						duration = 7300
+					}
+				}
+				# Demote to governor
+				remove_government_reform = uach_prince
+				add_government_reform = uach_governor
+			}
+		}
+	}
+
+	# Elect ruler from Burghers
+	option = {
+		name = "UaCH.CB.1.a"
+		
+		event_target:claimant_lost_war = {
+			define_ruler = {
+				dynasty = ROOT
+				min_age = 16
+			}
+	
+			add_country_modifier = {
+				name = uach_enforced_burgher_ruler
+				duration = 3650
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+
+	# Elect ruler from Nobles
+	option = {
+		name = "UaCH.CB.1.b"
+		
+		event_target:claimant_lost_war = {
+			define_ruler = {
+				dynasty = ROOT
+				min_age = 16
+			}
+	
+			add_country_modifier = {
+				name = uach_enforced_noble_ruler
+				duration = 3650
+			}
+		}
+
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+
+	# Elect ruler from Clergy
+	option = {
+		name = "UaCH.CB.1.c"
+		
+		event_target:claimant_lost_war = {
+			define_ruler = {
+				dynasty = ROOT
+				min_age = 16
+			}
+	
+			add_country_modifier = {
+				name = uach_enforced_church_ruler
+				duration = 3650
+			}
+		}
+
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+
+	# Keep the ruler in charge
+	option = {
+		name = "UaCH.CB.1.d"
+		
+		event_target:claimant_lost_war = {
+			define_ruler = {
+				dynasty = ROOT
+				min_age = 16
+			}
+	
+			add_country_modifier = {
+				name = uach_preserve_ruler
+				duration = 3650
+			}
+		}
+
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+}

@@ -33,3 +33,6 @@ uach_shah_rukhs_mausoleum_desecrated = {
 uach_shah_rukhs_mausoleum_completed = {
 	manpower_recovery_speed = 2
 }
+
+
+
