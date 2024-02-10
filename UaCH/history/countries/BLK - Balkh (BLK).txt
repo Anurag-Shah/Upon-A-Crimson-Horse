@@ -1,6 +1,6 @@
 # Balkh governorship
 technology_group = muslim
-primary_culture = afghani
+primary_culture = afghan
 religion = sunni
 government = monarchy
 add_government_reform = uach_prince
