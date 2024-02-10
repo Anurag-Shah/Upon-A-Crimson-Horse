@@ -6,19 +6,421 @@ custom_icon = {
 custom_icon = {
 	name = timurids_princes_banner
     potential = { has_faction = timurid_faction }
-}
-
-custom_text_box = {
-    name = timurids_princes_banner_text
-    potential = { has_faction = timurid_faction }
+	tooltip = timurids_princes_banner_tooltip
 }
 
 custom_icon = {
 	name = timurids_governors_banner
     potential = { has_faction = timurid_faction }
+	tooltip = timurids_governors_banner_tooltip
 }
 
-custom_text_box = {
-    name = timurids_governors_banner_text
+custom_icon = {
+	name = timurids_map_slot
     potential = { has_faction = timurid_faction }
+	tooltip = timurids_map_slot_tooltip
+}
+
+# All shields below.
+
+custom_shield = {
+	name = timurids_prince1_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince1
+	}
+    global_event_target = timurids_prince1
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince2_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince2
+	}
+    global_event_target = timurids_prince2
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince3_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince3
+	}
+    global_event_target = timurids_prince3
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince4_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince4
+	}
+    global_event_target = timurids_prince4
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince5_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince5
+	}
+    global_event_target = timurids_prince5
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince6_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince6
+	}
+    global_event_target = timurids_prince6
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince7_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince7
+	}
+    global_event_target = timurids_prince7
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince8_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince8
+	}
+    global_event_target = timurids_prince8
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince9_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince9
+	}
+    global_event_target = timurids_prince9
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince10_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince10
+	}
+    global_event_target = timurids_prince10
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince11_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince11
+	}
+    global_event_target = timurids_prince11
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince12_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince12
+	}
+    global_event_target = timurids_prince12
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince13_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince13
+	}
+    global_event_target = timurids_prince13
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince14_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince14
+	}
+    global_event_target = timurids_prince14
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince15_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince15
+	}
+    global_event_target = timurids_prince15
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince16_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince16
+	}
+    global_event_target = timurids_prince16
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince17_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince17
+	}
+    global_event_target = timurids_prince17
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince18_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince18
+	}
+    global_event_target = timurids_prince18
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince19_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince19
+	}
+    global_event_target = timurids_prince19
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_prince20_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_prince20
+	}
+    global_event_target = timurids_prince20
+    open_country = yes
+}
+
+# Governors
+
+custom_shield = {
+	name = timurids_governor1_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor1
+	}
+    global_event_target = timurids_governor1
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor2_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor2
+	}
+    global_event_target = timurids_governor2
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor3_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor3
+	}
+    global_event_target = timurids_governor3
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor4_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor4
+	}
+    global_event_target = timurids_governor4
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor5_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor5
+	}
+    global_event_target = timurids_governor5
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor6_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor6
+	}
+    global_event_target = timurids_governor6
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor7_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor7
+	}
+    global_event_target = timurids_governor7
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor8_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor8
+	}
+    global_event_target = timurids_governor8
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor9_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor9
+	}
+    global_event_target = timurids_governor9
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor10_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor10
+	}
+    global_event_target = timurids_governor10
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor11_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor11
+	}
+    global_event_target = timurids_governor11
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor12_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor12
+	}
+    global_event_target = timurids_governor12
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor13_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor13
+	}
+    global_event_target = timurids_governor13
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor14_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor14
+	}
+    global_event_target = timurids_governor14
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor15_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor15
+	}
+    global_event_target = timurids_governor15
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor16_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor16
+	}
+    global_event_target = timurids_governor16
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor17_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor17
+	}
+    global_event_target = timurids_governor17
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor18_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor18
+	}
+    global_event_target = timurids_governor18
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor19_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor19
+	}
+    global_event_target = timurids_governor19
+    open_country = yes
+}
+
+custom_shield = {
+	name = timurids_governor20_shield
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = timurids_governor20
+	}
+    global_event_target = timurids_governor20
+    open_country = yes
 }

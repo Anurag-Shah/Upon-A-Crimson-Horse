@@ -1,0 +1,1021 @@
+init_start_princes = { 
+    TRS = { save_global_event_target_as = timurids_prince1 }
+    KHO = { save_global_event_target_as = timurids_prince2 }
+    QOM = { save_global_event_target_as = timurids_prince3 }
+    AFG = { save_global_event_target_as = timurids_prince4 }
+    FRS = { save_global_event_target_as = timurids_prince5 }
+    BLK = { save_global_event_target_as = timurids_prince6 }
+    KHU = { save_global_event_target_as = timurids_prince7 }
+}
+
+init_start_governors = {
+    ISF = { save_global_event_target_as = timurids_governor1 }  
+    LRI = { save_global_event_target_as = timurids_governor2 }  
+    YZD = { save_global_event_target_as = timurids_governor3 }  
+    KRM = { save_global_event_target_as = timurids_governor4 }  
+    KHI = { save_global_event_target_as = timurids_governor5 }  
+    SIS = { save_global_event_target_as = timurids_governor6 }  
+    LRE = { save_global_event_target_as = timurids_governor7 }  
+}
+
+shuffle_set_prince = {
+    if = {
+        limit = { has_saved_global_event_target = timurids_$target_prince$ }
+        event_target:timurids_$target_prince$ = {
+            save_global_event_target_as = timurids_$empty_slot$
+            clear_global_event_target = timurids_$target_prince$
+        }
+    } 
+}
+
+shuffle_princes = {
+    # I am so sorry.
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince1 } }
+        clear_global_event_target = timurids_prince1
+        shuffle_set_prince = { target_prince = prince2 empty_slot = prince1 }
+        shuffle_set_prince = { target_prince = prince3 empty_slot = prince2 }
+        shuffle_set_prince = { target_prince = prince4 empty_slot = prince3 }
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince2 } }
+        clear_global_event_target = timurids_prince2
+        shuffle_set_prince = { target_prince = prince3 empty_slot = prince2 }
+        shuffle_set_prince = { target_prince = prince4 empty_slot = prince3 }
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince3 } }
+        clear_global_event_target = timurids_prince3
+        shuffle_set_prince = { target_prince = prince4 empty_slot = prince3 }
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince4 } }
+        clear_global_event_target = timurids_prince4
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince5 } }
+        clear_global_event_target = timurids_prince5
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince6 } }
+        clear_global_event_target = timurids_prince6
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince7 } }
+        clear_global_event_target = timurids_prince7
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince8 } }
+        clear_global_event_target = timurids_prince8
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince9 } }
+        clear_global_event_target = timurids_prince9
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince10 } }
+        clear_global_event_target = timurids_prince10
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince11 } }
+        clear_global_event_target = timurids_prince11
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince12 } }
+        clear_global_event_target = timurids_prince12
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince13 } }
+        clear_global_event_target = timurids_prince13
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince14 } }
+        clear_global_event_target = timurids_prince14
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince15 } }
+        clear_global_event_target = timurids_prince15
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince16 } }
+        clear_global_event_target = timurids_prince16
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince17 } }
+        clear_global_event_target = timurids_prince17
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince18 } }
+        clear_global_event_target = timurids_prince18
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince19 } }
+        clear_global_event_target = timurids_prince19
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince20 } }
+        clear_global_event_target = timurids_prince20
+    }
+}
+
+shuffle_princes = {
+    # I am so sorry.
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince1 } }
+        clear_global_event_target = timurids_prince1
+        shuffle_set_prince = { target_prince = prince2 empty_slot = prince1 }
+        shuffle_set_prince = { target_prince = prince3 empty_slot = prince2 }
+        shuffle_set_prince = { target_prince = prince4 empty_slot = prince3 }
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince2 } }
+        clear_global_event_target = timurids_prince2
+        shuffle_set_prince = { target_prince = prince3 empty_slot = prince2 }
+        shuffle_set_prince = { target_prince = prince4 empty_slot = prince3 }
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince3 } }
+        clear_global_event_target = timurids_prince3
+        shuffle_set_prince = { target_prince = prince4 empty_slot = prince3 }
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince4 } }
+        clear_global_event_target = timurids_prince4
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince5 } }
+        clear_global_event_target = timurids_prince5
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince6 } }
+        clear_global_event_target = timurids_prince6
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince7 } }
+        clear_global_event_target = timurids_prince7
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince8 } }
+        clear_global_event_target = timurids_prince8
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince9 } }
+        clear_global_event_target = timurids_prince9
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince10 } }
+        clear_global_event_target = timurids_prince10
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince11 } }
+        clear_global_event_target = timurids_prince11
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince12 } }
+        clear_global_event_target = timurids_prince12
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince13 } }
+        clear_global_event_target = timurids_prince13
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince14 } }
+        clear_global_event_target = timurids_prince14
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince15 } }
+        clear_global_event_target = timurids_prince15
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince16 } }
+        clear_global_event_target = timurids_prince16
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince17 } }
+        clear_global_event_target = timurids_prince17
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince18 } }
+        clear_global_event_target = timurids_prince18
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince19 } }
+        clear_global_event_target = timurids_prince19
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince20 } }
+        clear_global_event_target = timurids_prince20
+    }
+}
+
+shuffle_governors = {
+    # I am so sorry, Part 2.
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor1 } }
+        clear_global_event_target = timurids_governor1
+        shuffle_set_prince = { target_prince = governor2 empty_slot = governor1 }
+        shuffle_set_prince = { target_prince = governor3 empty_slot = governor2 }
+        shuffle_set_prince = { target_prince = governor4 empty_slot = governor3 }
+        shuffle_set_prince = { target_prince = governor5 empty_slot = governor4 }
+        shuffle_set_prince = { target_prince = governor6 empty_slot = governor5 }
+        shuffle_set_prince = { target_prince = governor7 empty_slot = governor6 }
+        shuffle_set_prince = { target_prince = governor8 empty_slot = governor7 }
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor2 } }
+        clear_global_event_target = timurids_governor2
+        shuffle_set_prince = { target_prince = governor3 empty_slot = governor2 }
+        shuffle_set_prince = { target_prince = governor4 empty_slot = governor3 }
+        shuffle_set_prince = { target_prince = governor5 empty_slot = governor4 }
+        shuffle_set_prince = { target_prince = governor6 empty_slot = governor5 }
+        shuffle_set_prince = { target_prince = governor7 empty_slot = governor6 }
+        shuffle_set_prince = { target_prince = governor8 empty_slot = governor7 }
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor3 } }
+        clear_global_event_target = timurids_governor3
+        shuffle_set_prince = { target_prince = governor4 empty_slot = governor3 }
+        shuffle_set_prince = { target_prince = governor5 empty_slot = governor4 }
+        shuffle_set_prince = { target_prince = governor6 empty_slot = governor5 }
+        shuffle_set_prince = { target_prince = governor7 empty_slot = governor6 }
+        shuffle_set_prince = { target_prince = governor8 empty_slot = governor7 }
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor4 } }
+        clear_global_event_target = timurids_governor4
+        shuffle_set_prince = { target_prince = governor5 empty_slot = governor4 }
+        shuffle_set_prince = { target_prince = governor6 empty_slot = governor5 }
+        shuffle_set_prince = { target_prince = governor7 empty_slot = governor6 }
+        shuffle_set_prince = { target_prince = governor8 empty_slot = governor7 }
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor5 } }
+        clear_global_event_target = timurids_governor5
+        shuffle_set_prince = { target_prince = governor6 empty_slot = governor5 }
+        shuffle_set_prince = { target_prince = governor7 empty_slot = governor6 }
+        shuffle_set_prince = { target_prince = governor8 empty_slot = governor7 }
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor6 } }
+        clear_global_event_target = timurids_governor6
+        shuffle_set_prince = { target_prince = governor7 empty_slot = governor6 }
+        shuffle_set_prince = { target_prince = governor8 empty_slot = governor7 }
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor7 } }
+        clear_global_event_target = timurids_governor7
+        shuffle_set_prince = { target_prince = governor8 empty_slot = governor7 }
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor8 } }
+        clear_global_event_target = timurids_governor8
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor9 } }
+        clear_global_event_target = timurids_governor9
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor10 } }
+        clear_global_event_target = timurids_governor10
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor11 } }
+        clear_global_event_target = timurids_governor11
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor12 } }
+        clear_global_event_target = timurids_governor12
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor13 } }
+        clear_global_event_target = timurids_governor13
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor14 } }
+        clear_global_event_target = timurids_governor14
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor15 } }
+        clear_global_event_target = timurids_governor15
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor16 } }
+        clear_global_event_target = timurids_governor16
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor17 } }
+        clear_global_event_target = timurids_governor17
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor18 } }
+        clear_global_event_target = timurids_governor18
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor19 } }
+        clear_global_event_target = timurids_governor19
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor20 } }
+        clear_global_event_target = timurids_governor20
+    }
+}
+
+# ROOT = Tag made into a prince
+make_tag_prince = {
+    add_government_reform = uach_prince
+    if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince1 } }
+        save_global_event_target_as = timurids_prince1
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince2 } }
+        save_global_event_target_as = timurids_prince2      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince3 } }
+        save_global_event_target_as = timurids_prince3      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince4 } }
+        save_global_event_target_as = timurids_prince4      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince5 } }
+        save_global_event_target_as = timurids_prince5     
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince6 } }
+        save_global_event_target_as = timurids_prince6     
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince7 } }
+        save_global_event_target_as = timurids_prince7      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince8 } }
+        save_global_event_target_as = timurids_prince8     
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince9 } }
+        save_global_event_target_as = timurids_prince9      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince10 } }
+        save_global_event_target_as = timurids_prince10      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince11 } }
+        save_global_event_target_as = timurids_prince11      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince12 } }
+        save_global_event_target_as = timurids_prince12      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince13 } }
+        save_global_event_target_as = timurids_prince13      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince14 } }
+        save_global_event_target_as = timurids_prince14      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince15 } }
+        save_global_event_target_as = timurids_prince15      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince16 } }
+        save_global_event_target_as = timurids_prince16      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince17 } }
+        save_global_event_target_as = timurids_prince17      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince18 } }
+        save_global_event_target_as = timurids_prince18      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince19 } }
+        save_global_event_target_as = timurids_prince19      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince20 } }
+        save_global_event_target_as = timurids_prince20      
+    }
+}
+
+# ROOT = Tag made into a governor
+make_tag_governor = {
+    add_government_reform = uach_governor
+    if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor1 } }
+        save_global_event_target_as = timurids_governor1
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor2 } }
+        save_global_event_target_as = timurids_governor2      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor3 } }
+        save_global_event_target_as = timurids_governor3      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor4 } }
+        save_global_event_target_as = timurids_governor4      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor5 } }
+        save_global_event_target_as = timurids_governor5     
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor6 } }
+        save_global_event_target_as = timurids_governor6     
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor7 } }
+        save_global_event_target_as = timurids_governor7      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor8 } }
+        save_global_event_target_as = timurids_governor8     
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor9 } }
+        save_global_event_target_as = timurids_governor9      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor10 } }
+        save_global_event_target_as = timurids_governor10      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor11 } }
+        save_global_event_target_as = timurids_governor11      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor12 } }
+        save_global_event_target_as = timurids_governor12      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor13 } }
+        save_global_event_target_as = timurids_governor13      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor14 } }
+        save_global_event_target_as = timurids_governor14      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor15 } }
+        save_global_event_target_as = timurids_governor15      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor16 } }
+        save_global_event_target_as = timurids_governor16      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor17 } }
+        save_global_event_target_as = timurids_governor17      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor18 } }
+        save_global_event_target_as = timurids_governor18      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor19 } }
+        save_global_event_target_as = timurids_governor19      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor20 } }
+        save_global_event_target_as = timurids_governor20      
+    }
+}
