@@ -1,6 +1,6 @@
 # Khutallan governorship
-technology_group = uzbekh
-primary_culture = afghan
+technology_group = muslim
+primary_culture = uzbekh
 religion = sunni
 government = monarchy
 add_government_reform = uach_prince

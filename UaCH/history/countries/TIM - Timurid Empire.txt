@@ -106,6 +106,7 @@ change_estate_land_share = {
 		dynasty = "Timurid"
 		birth_date = 1402.1.1
 		death_date = 1446.1.1
+		claim = 90
 		adm = 3
 		dip = 5
 		mil = 5
