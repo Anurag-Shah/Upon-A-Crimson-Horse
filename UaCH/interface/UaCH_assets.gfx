@@ -26,4 +26,12 @@ spriteTypes = {
 	  	name = "GFX_timurids_window_bg"
 	 	texturefile = "gfx/interface/ui/timurids_window_bg.dds"
 	}
+	spriteType = {
+	  	name = "GFX_icon_prince"
+	 	texturefile = "gfx/interface/ui/icon_prince.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_slot"
+	 	texturefile = "gfx/interface/ui/timurids_map_slot.dds"
+	}
 }

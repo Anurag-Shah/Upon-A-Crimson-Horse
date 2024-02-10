@@ -2,6 +2,7 @@ on_startup = {
     if = {
         limit = {
             NOT = { has_global_flag = uach_init_ui }
+            NOT = { is_year = 1448 }
         }
         every_country = {
             limit = {
@@ -19,6 +20,13 @@ on_startup = {
             }
             add_faction = timurid_faction
         }
+        init_start_princes = yes
+        init_start_governors = yes
         set_global_flag = uach_init_ui
     }
+}
+
+on_annexed = {
+    shuffle_princes = { scope = FROM }
+    shuffle_governors = { scope = FROM }
 }
