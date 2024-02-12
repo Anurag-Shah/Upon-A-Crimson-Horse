@@ -209,6 +209,7 @@ country_event = {
 		name = "UaCH.6.a"
 		ISF = {
 			grant_independence = yes
+			set_country_flag = isfh_rebels
 		}
 		vassalize = ISF
 		set_country_flag = uach_QOM_assisted_ISF
