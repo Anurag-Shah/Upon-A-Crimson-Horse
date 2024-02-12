@@ -67,3 +67,39 @@ w_enforce_loyalty_governor = {
 
 	war_name = "ENFORCE_LOYALTY_WAR"
 }
+
+w_rebellion_of_sultan_muhammad = {
+	type = take_capital
+
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 1
+		peace_cost_factor = 1
+
+		peace_options = { 
+			po_take_our_place
+		}
+		
+		allowed_provinces = {
+			always = no
+		}
+		allowed_provinces_are_eligible = yes
+	}
+	defender = {
+		badboy_factor = 1
+		prestige_factor = 1
+		peace_cost_factor = 1
+
+		peace_options = { 
+			po_shah_rukhs_rule		
+		}
+
+		allowed_provinces = {
+			always = no
+		}
+		allowed_provinces_are_eligible = yes
+	}
+
+	war_name = REBELLION_OF_SULTAN_MUHAMMAD
+}
+
