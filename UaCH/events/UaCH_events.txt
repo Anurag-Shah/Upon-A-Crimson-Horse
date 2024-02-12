@@ -839,13 +839,10 @@ country_event = {
 	# I'm dying of shame.
 	option = {
 		name = "UaCH.17.b"
-		
-		if = {
-			limit = {
-				has_ruler = "Muhammad Juki"
-			}
-			kill_ruler = yes
+		trigger = {
+			has_ruler = "Muhammad Juki"
 		}
+		kill_ruler = yes
 		
 
 		ai_chance = {
@@ -863,12 +860,19 @@ country_event = {
 		
 		every_subject_country = {
 			TRS = {
-				vassalize = PREV
+				create_subject = {
+					subject_type = governor
+					subject = PREV
+				}
 			}
 		}
-		
+		change_tag = HER
 		TRS = {
-			vassalize = TIM
+			create_subject = {
+				subject_type = governor
+				subject = ROOT
+			}
+			change_tag = TIM
 		}
 
 		ai_chance = {
@@ -927,6 +931,9 @@ country_event = {
 		QOM = {
 			has_country_flag = uach_QOM_assisted_ISF
 		}
+		TIM = {
+			NOT = { was_tag = QOM }
+		}
 	}
 
 	mean_time_to_happen = {
@@ -936,7 +943,7 @@ country_event = {
 	immediate = {
 		# TODO not finished calls of events
 	}
-	
+	 
 	# I will not be denied!
 	option = { 
 		name = "UaCH.18.a" 
