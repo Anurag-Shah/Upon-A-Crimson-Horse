@@ -198,7 +198,7 @@ country_event = {
 	picture = CITY_DEVELOPMENT_eventPicture
 
 	trigger = {
-		tag = TIM
+		tag = QOM
 	}
 	mean_time_to_happen = {
 		months = 12
@@ -207,29 +207,14 @@ country_event = {
 	# A golden opportunity!
 	option = {
 		name = "UaCH.6.a"
-				
-		ISF = { 
-			add_country_modifier = {
-				name = mnt_isf_liberty_desire
-				duration = 3650
-			}
-			if = {
-				limit = {
-					exists = QOM
-				}
-				create_alliance = QOM
-			}
+		ISF = {
+			grant_independence = yes
 		}
-
+		vassalize = ISF
 		set_country_flag = uach_QOM_assisted_ISF
-		set_country_flag = isfh_rebels
 
 		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 100
-				always = yes
-			}
+			factor = 1
 		}
 	}
 
@@ -243,16 +228,11 @@ country_event = {
 				name = mnt_isf_liberty_desire_60
 				duration = 3650
 			}
+			set_country_flag = isfh_rebels
 		}
-
-		set_country_flag = isfh_rebels
 		
 		ai_chance = {
 			factor = 0
-			modifier = {
-				factor = 0
-				always = no
-			}
 		}
 	}
 
@@ -264,10 +244,6 @@ country_event = {
 		
 		ai_chance = {
 			factor = 0
-			modifier = {
-				factor = 0
-				always = no
-			}
 		}
 	}
 }
@@ -386,7 +362,7 @@ country_event = {
 	picture = CITY_DEVELOPMENT_eventPicture
 
 	trigger = {
-		OR = {
+		AND = {
 			tag = ISF
 			has_country_flag = isfh_rebels
 		}
@@ -394,30 +370,46 @@ country_event = {
 	mean_time_to_happen = {
 		months = 30
 	}
-
-	immediate = {
-		every_country = {
-			limit = {
-				is_governor_or_prince = yes
-				NOT = { tag = TIM }
-			}
-			country_event = {
-				id = UaCH.9
-				days = 1
-			}
-		}
+	major = yes
+	major_trigger = {
+		is_governor_or_prince = yes
 	}
 
 	# Send our demands to the governors!
 	option = {
 		name = "UaCH.8.a"
-		
-		ISF = {
+
+		if = {
+			limit = {
+				is_subject_of = QOM
+			}
+			QOM = {
+				declare_war_with_cb = {
+					casus_belli = cb_rebellion_of_sultan_muhammad
+					who = TIM
+				}
+			}
+		}
+		else = {
 			declare_war_with_cb = {
-				casus_belli = cb_war_for_tim_throne # TODO
-				who = Tim
-			}			
-		}		
+				casus_belli = cb_rebellion_of_sultan_muhammad
+				who = TIM
+			}
+		}	
+
+		custom_tooltip = uach_send_demands
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_governor_or_prince = yes
+					NOT = { tag = TIM }
+				}
+				country_event = {
+					id = UaCH.9
+					days = 1
+				}
+			}
+		}
 
 		ai_chance = {
 			factor = 50
@@ -462,12 +454,21 @@ country_event = {
 	# Submit.
 	option = {
 		name = "UaCH.9.a"
-		
-		create_alliance = ISF
-		ISF = {
-			add_favors = {
-				who = THIS
-				amount = 25
+		add_stability = -1
+		grant_independence = yes
+		if = {
+			limit = {
+				ISF = {
+					is_subject_of = QOM
+				}
+			}
+			QOM = {
+				vassalize = ROOT
+			}
+		}
+		else = {
+			ISF = {
+				vassalize = ROOT
 			}
 		}
 
@@ -517,130 +518,7 @@ country_event = {
 	}
 }
 
-# ISF wins
-country_event = {
-	id = UaCH.10 
-	title = UaCH.10.t 
-	desc = UaCH.10.d
-	picture = CITY_DEVELOPMENT_eventPicture
-
-	trigger = {
-		is_governor_or_prince = yes
-					NOT = { tag = ISF }
-	}
-
-	is_triggered_only = yes
-
-	# Submit!
-	option = {
-		name = "UaCH.10.a"
-		
-		add_stability = -3
-		
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 0
-				# TODO
-			}
-		}
-	}
-}
-
-# ISF wins - receiving side
-country_event = {
-	id = UaCH.11 
-	title = UaCH.11.t 
-	desc = UaCH.11.d
-	picture = CITY_DEVELOPMENT_eventPicture
-
-	trigger = {
-		OR = {
-			tag = ISF
-			AND = {
-				is_governor_or_prince = yes
-				OR = {
-					alliance_with = ISF
-					is_subject_of = QOM
-				}
-			}			
-		}
-	}
-
-	is_triggered_only = yes
-
-	# Submit!
-	option = {
-		name = "UaCH.11.a"
-		
-		add_stability = -3
-		
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 0
-				# TODO
-			}
-		}
-	}
-}
-
-# TIM wins
-country_event = {
-	id = UaCH.12 
-	title = UaCH.12.t 
-	desc = UaCH.12.d
-	picture = CITY_DEVELOPMENT_eventPicture
-
-	trigger = {
-		tag = TIM
-	}
-
-	is_triggered_only = yes
-
-	# Scorn them all.
-	option = {
-		name = "UaCH.12.a"
-		
-		ISF = {
-			every_ally = {
-				add_stability = -2
-				add_legitimacy = -50
-			}
-			add_stability = -2
-			add_legitimacy = -50
-		}
-
-		if = {
-			limit = {
-				exists = QOM
-				ROOT = {
-					# TODO this correct?
-					OR = {
-						is_in_war = {
-							attacker_leader = QOM
-						}
-						is_in_war = {
-							defender_leader = QOM
-						}
-					}
-				}
-			}
-			QOM = {
-				add_stability = -2
-				add_legitimacy = -50
-			}
-		}
-		
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 0
-				# TODO
-			}
-		}
-	}
-}
+# Removed these events, the CB will handle it.
 
 # Death of Shah Rukh
 country_event = {
