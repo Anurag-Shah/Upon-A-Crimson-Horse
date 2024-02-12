@@ -14,13 +14,6 @@ custom_icon = {
     potential = { has_faction = timurid_faction }
 	tooltip = timurids_governors_banner_tooltip
 }
-
-custom_icon = {
-	name = timurids_map_slot
-    potential = { has_faction = timurid_faction }
-	tooltip = timurids_map_slot_tooltip
-}
-
 # All shields below.
 
 custom_shield = {
