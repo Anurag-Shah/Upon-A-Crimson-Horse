@@ -29,48 +29,7 @@ country_event = {
 	}
 }
 
-# Secret Plot
-country_event = {
-	id = UaCH.2 
-	title = UaCH.2.t 
-	desc = UaCH.2.d
-	picture = CITY_DEVELOPMENT_eventPicture
-
-	trigger = {
-		tag = TIM
-	}
-	mean_time_to_happen = {
-		months = 1
-	}
-	
-	fire_only_once = yes
-
-	# Reomve Firuzshah
-	option = {
-		name = "UaCH.2.a"
-		
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				# TODO
-			}
-		}
-	}
-
-	# A stern talk should do the trick
-	option = {
-		name = "UaCH.2.b"
-		
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				# TODO
-			}
-		}
-	}
-}
+# UaCH.2 referred to an event that was already done by November 1444.
 
 # Fate of Firuzshah
 country_event = {
@@ -137,7 +96,7 @@ country_event = {
 		}
 	}
 
-	# I’m sorry, my love, but I’ve seen your intentions.
+	# Iï¿½m sorry, my love, but Iï¿½ve seen your intentions.
 	option = {
 		name = "UaCH.4.b"
 		
@@ -403,7 +362,7 @@ country_event = {
 		}
 	}
 
-	# There is still time for this…
+	# There is still time for thisï¿½
 	option = {
 		name = "UaCH.7.d"
 		
@@ -1082,16 +1041,13 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		OR = {
-			tag = TIM
-			tag = LRI
-			all_province = {
-				is_core = QOM
-				owned_by_subject_of = ROOT
-			}
-			QOM = {
-				has_country_flag = uach_QOM_assisted_ISF
-			}
+		tag = LRI
+		all_province = {
+			is_core = QOM
+			country_or_non_sovereign_subject_holds = TIM
+		}
+		QOM = {
+			has_country_flag = uach_QOM_assisted_ISF
 		}
 	}
 
@@ -1113,8 +1069,7 @@ country_event = {
 		every_province = {
 			limit = {
 				is_core = QOM
-				owned_by_subject_of = TIM
-				owned_by = TIM
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 			cede_province = QOM
 		}
@@ -1125,15 +1080,6 @@ country_event = {
 			}
 			QOM = {
 				vassalize = LRI
-			}
-		}
-
-		if = {
-			limit = {
-				exists = LRI
-			}
-			ARD = {
-				vassalize = QOM
 			}
 		}
 
@@ -1595,4 +1541,144 @@ country_event = {
 	}
 }
 
+# The Great Migration
+country_event = {
+	id = UaCH.60
+	title = UaCH.60.t 
+	desc = UaCH.60.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	mean_time_to_happen = {
+		years = 10
+	}
 
+	trigger = {
+		tag = SHY
+		KZH = {
+			is_subject_of = ROOT
+		}
+	}
+	
+	# Let them run... we will wait.
+	option = { 
+		name = "UaCH.60.a" 
+		add_historical_rival = KZH
+		KZH = {
+			add_historical_rival = ROOT
+		}
+		if = {
+			limit = {
+				459 = { NOT = { owned_by = ROOT } }
+			}
+			459 = {
+				owner = {
+					country_event = {
+						id = UaCH.61 
+					}
+				}
+			}
+		}
+		else = {
+			random_neighbor_country = {
+				country_event = {
+					id = UaCH.61 
+				}				
+			}
+		}
+	}
+}
+
+# The Great Migration - Moghulistan
+
+country_event = {
+	id = UaCH.61
+	title = UaCH.61.t 
+	desc = UaCH.61.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	major_trigger = {
+		OR = {
+			tag = SHY
+			tag = KZH
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					459 = { NOT = { owned_by = ROOT } }
+				}
+				random_owned_province = {
+					limit = {
+						any_neighbor_province = { owned_by = FROM }
+					}
+					area = {
+						save_event_target_as = area_of_interest
+					}
+				}
+			}
+		}
+	}
+	
+	# We will back their endeavors.
+	option = { 
+		name = "UaCH.61.a" 
+		ai_chance = {
+			factor = 1
+		}
+		add_years_of_income = -1
+		add_yearly_manpower = -1
+		if = {
+			limit = {
+				459 = {
+					owned_by = ROOT
+				}
+			}
+			custom_tooltip = shy_cede_jetysuu_area
+			hidden_effect = {
+				jetysuu_area = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					cede_province = KZH
+					add_core = KZH
+				}
+			}
+		}
+		else = {
+			custom_tooltip = shy_cede_x_area
+			hidden_effect = {
+				event_target:area_of_interest = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					cede_province = KZH
+					add_core = KZH	
+				}
+			}
+		}
+		support_independence_of = KZH
+
+		custom_tooltip = shy_war_of_independence_ensured
+		hidden_effect = {
+			FROM = {
+				set_country_flag = shy_war_of_independence_ensured
+			}
+		}
+	}
+
+	# We have greater concerns than these tribal feuds.
+	option = { 
+		name = "UaCH.61.b" 
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -10
+		KZH = {
+			add_liberty_desire = -25
+		}
+	}
+}

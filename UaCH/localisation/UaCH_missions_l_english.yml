@@ -1,0 +1,33 @@
+﻿l_english:
+  governor_rally_the_emirs_title:0 "Rally the Emirs"
+  governor_rally_the_emirs_desc:0 "Disaster looms as Shah Rukh grows increasingly ill. Whilst the Princes make elaborate schemes to fight for the throne of Timur, we must prepare to fight for our own future. Despite us serving the Timurids, we represent the last vestiages of true native Iranian rule that have hung on ever since the Seljuks first crossed the Oxus, and we will soon fight to expel the Turco-Mongol invaders once and for all. As such, let us secure the loyalty of the emirs."
+  claims_neighboring_areas_tim:0 "§Y[Root.GetName]§! gains permanent claims on all neighboring areas owned by the @TIM §YTimurids§!, their subjects, any §YPrinces§!, or any §YGovernors§!."
+  uach_support_of_the_emirs:0 "Support of the Emirs"
+  desc_uach_support_of_the_emirs:0 ""
+
+  governor_brethren_in_arms_title:0 "Brethren in Arms"
+  governor_brethren_in_arms_desc:0 ""
+
+  governor_restore_the_capital_title:0 "Restore the Capital"
+  governor_restore_the_capital_desc:0 ""
+
+  governor_sons_of_timur_title:0 "Sons of Timur"
+  governor_sons_of_timur_desc:0 ""
+
+  governor_sweep_the_gulf_title:0 "Sweep the Gulf"
+  governor_sweep_the_gulf_desc:0 ""
+
+  governor_den_of_wolves_title:0 "Den of Wolves"
+  governor_den_of_wolves_desc:0 ""
+
+  governor_march_on_qom_title:0 "March on Qom"
+  governor_march_on_qom_desc:0 ""
+
+  governor_to_the_oxus_title:0 "To the Oxus"
+  governor_to_the_oxus_desc:0 ""
+
+  governor_end_timurs_legacy_title:0 "End Timur's Legacy"
+  governor_end_timurs_legacy_desc:0 ""
+
+  governor_saffarid_legacy_title:0 "Saffarid Legacy"
+  governor_saffarid_legacy_desc:0 ""
