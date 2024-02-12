@@ -36,6 +36,7 @@ po_take_our_place = {
 				tag = ISF	
 			}
 			make_tag_prince = yes
+			shuffle_governors = { scope = ISF }
 		}
 		else = {
 			TIM = {
@@ -47,6 +48,7 @@ po_take_our_place = {
 						is_prince = yes
 					}
 					make_tag_governor = yes
+					shuffle_princes = { scope = THIS }
 				}
 				QOM = {
 					create_subject = {
