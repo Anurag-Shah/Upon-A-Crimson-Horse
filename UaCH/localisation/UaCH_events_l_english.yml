@@ -1,5 +1,4 @@
 ﻿l_english:
-
   # Disaster loc
   timurid_succession_crisis:0 "Timurid Succession Crisis"
   desc_timurid_succession_crisis:0 "With succession currently unsoldified and with no strong ruler to keep the realm together, all the princes scheme for supremacy and fight for the Timurid throne."
@@ -10,3 +9,16 @@
   # UI loc
   timurid_faction: "Timurid Envoys"
   # No need to define the rest of the faction
+
+  # Misc events
+  UaCH.60.t: "The Great Migration"
+  UaCH.60.d: "It appears the discontent of the Kazakh tribes has boiled over, with the two co-chieftains, Janibek Khan and Kerei Khan, having begun a migration into the lands of Mogulistan, seeking support from abroad. They still claim their lands under our rule as theirs despite the migration, which is clearly a vagrant act of disobidience on top of the migration out of our lands into the lands of one of our enemies.\n\nWhilst this has soured our relations with them, the bigger concern is how the Khans of Moghulistan will respond. Should they back this act of rebellion, it is likely that the Kazakhs will grow to become a threat to our hold on power in the region, and may even give the Taighuibs of Sibir, who have been quelled for the mean time, ideas."
+  UaCH.60.a:0 "Let them run... we will wait."
+
+  UaCH.61.t:0 "The Great Migration"
+  UaCH.61.d:0 "It appears that the Kazakh khans have grown tired of being naught but a small corner of a growing tribal power on the Steppe, and have left for greener pastures elsewhere, namely, our own lands. They request that we give them our support in a future war of reconquest against the Shaybanids, who are likely to attempt to press claim to the lands they have largely left behind. By granting them our support, we will gain a powerful ally, but will also end up hurting ourselves to assist 2 khans who may end up being nothing more than vipers that will suck us dry and leave us for dead."
+  UaCH.61.a:0 "We will back their endeavors."
+  shy_cede_jetysuu_area:0 "We will cede the §YJetysuu§! Area to @KZH §YKazakh§!."
+  shy_cede_x_area:0 "We will cede the §Y[area_of_interest.GetName]§! Area to @KZH §YKazakh§!."
+  shy_war_of_independence_ensured:0 "Upon the death of the ruler of the @SHY §YShaybanids§!, @KZH §YKazakh§! will rebel with a unique Independence Casus Belli."
+  UaCH.61.b:0 "We have greater concerns than these tribal feuds."
