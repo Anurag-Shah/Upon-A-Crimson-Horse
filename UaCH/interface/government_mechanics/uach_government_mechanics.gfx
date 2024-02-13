@@ -1,0 +1,30 @@
+spriteTypes = {
+	### prince / govnr reforms ###
+	spriteType = {
+		name = "UACH_GFX_conscript_button"
+		texturefile = "gfx//interface//wartime_interactions/conscript_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "UACH_GFX_foreign_support_button"
+		texturefile = "gfx//interface//wartime_interactions/foreign_support_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "UACH_GFX_tax_button"
+		texturefile = "gfx//interface//wartime_interactions/tax_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "UACH_GFX_strengthen_claim_button"
+		texturefile = "gfx//interface//wartime_interactions/strengthen_claim_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+}

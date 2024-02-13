@@ -1,0 +1,601 @@
+guiTypes = {
+
+	windowType = {
+		name = "default_faction_view"
+		backGround=""
+		position = { x=-292 y=-310 }	
+		size = { x=584 y=620 }
+		moveable = 1
+		dontRender = ""
+		horizontalBorder= ""
+		verticalBorder= ""
+		Orientation = "CENTER"
+		fullscreen = no
+
+		iconType =
+		{
+			name ="faction_window_bg"
+			spriteType = "GFX_faction_window_bg"
+			position = { x= 0 y = 0 }
+		}
+
+
+		instantTextBoxType = {
+			name = "faction_label"
+			position = { x = 0 y =20 }
+			format = centre
+			textureFile = ""
+			font = "vic_29s"
+			borderSize = {x = 4 y = 4}
+			text = "FACTIONS_TITLE"	
+			maxWidth = 584
+			maxHeight = 32			
+		}
+	
+		listboxType = 
+		{
+			name ="factions_listbox"
+			backGround = ""
+			position = { x=15 y=30 }	
+			size = { x=540 y=520 }
+			Orientation = "UPPER_LEFT"
+			horizontal = 0
+			spacing = 2.5
+			scrollbartype = "standardlistbox_slider"
+			borderSize = {x = 0 y = 0}
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "timurids_window_bg"
+			scripted = yes
+			spriteType = "GFX_timurids_window_bg"
+			position = { x = -108 y = 0 }
+		}
+		
+		iconType = {
+			name = "timurids_princes_banner"
+			scripted = yes
+			spriteType = "GFX_icon_prince"
+			position = { x = -54 y = 50 }
+		}
+		
+		iconType = {
+			name = "timurids_governors_banner"
+			scripted = yes
+			spriteType = "GFX_icon_emirate"
+			position = { x = 602 y = 50 }
+		}
+		
+		iconType = {
+			name = "timurids_map_slot"
+			scripted = yes
+			spriteType = "GFX_timurids_map_slot"
+			position = { x = 64 y = 64 }
+		}
+
+		# List of shields
+
+		guiButtonType = {
+			name ="timurids_prince1_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -76 y = 110 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince2_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -36 y = 110 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince3_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -76 y = 150 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince4_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -36 y = 150 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince5_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -76 y = 190 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince6_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -36 y = 190 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince7_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -76 y = 230 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince8_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -36 y = 230 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince9_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -76 y = 270 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince10_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -36 y = 270 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince11_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -76 y = 310 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince12_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -36 y = 310 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince13_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -76 y = 350 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince14_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -36 y = 350 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince15_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -76 y = 390 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince16_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -36 y = 390 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince17_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -76 y = 430 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince18_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -36 y = 430 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince19_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -76 y = 470 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince20_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -36 y = 470 }
+		}
+
+		# Governors
+
+		guiButtonType = {
+			name ="timurids_governor1_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 584 y = 110 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor2_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 624 y = 110 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor3_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 584 y = 150 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor4_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 624 y = 150 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor5_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 584 y = 190 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor6_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 624 y = 190 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor7_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 584 y = 230 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor8_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 624 y = 230 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor9_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 584 y = 270 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor10_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 624 y = 270 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor11_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 584 y = 310 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor12_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 624 y = 310 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor13_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 584 y = 350 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor14_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 624 y = 350 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor15_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 584 y = 390 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor16_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 624 y = 390 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor17_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 584 y = 430 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor18_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 624 y = 430 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor19_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 584 y = 470 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor20_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 624 y = 470 }
+		}
+	
+		########
+		
+		guiButtonType = {
+				name = "close_button"
+				position = { x=-62 y =260}
+				quadTextureSprite ="button_type_1"	
+				tooltip = ""
+				tooltipText =""
+				delayedTooltipText = ""
+				buttonText = "HRE_CLOSE"
+				buttonFont = "vic_18"
+
+				Orientation = "CENTER"
+				clicksound = close_window
+				shortcut = "ESCAPE"
+				clicksound = close_window
+			}	
+	}
+
+	windowType = {
+		name = "merchant_republic_faction_view"
+		backGround=""
+		position = { x=-292 y=-310 }	
+		size = { x=584 y=620 }
+		moveable = 1
+		dontRender = ""
+		horizontalBorder= ""
+		verticalBorder= ""
+		Orientation = "CENTER"
+		fullscreen = no
+
+		upsound = merchant_republic
+		downsound = ""
+
+		iconType =
+		{
+			name ="faction_window_bg"
+			spriteType = "GFX_faction_window_bg"
+			position = { x= 0 y = 0 }
+		}
+
+
+		instantTextBoxType = {
+			name = "faction_label"
+			position = { x = 0 y =20 }
+			format = centre
+			textureFile = ""
+			font = "vic_29s"
+			borderSize = {x = 4 y = 4}
+			text = "FACTIONS_TITLE"	
+			maxWidth = 584
+			maxHeight = 32			
+		}
+	
+		listboxType = 
+		{
+			name ="factions_listbox"
+			backGround = ""
+			position = { x=15 y=30 }	
+			size = { x=540 y=520 }
+			Orientation = "UPPER_LEFT"
+			horizontal = 0
+			spacing = 2.5
+			scrollbartype = "standardlistbox_slider"
+			borderSize = {x = 0 y = 0}
+			alwaystransparent = yes
+		}
+	
+		########
+		
+		guiButtonType = {
+				name = "close_button"
+				position = { x=-62 y =260}
+				quadTextureSprite ="button_type_1"	
+				tooltip = ""
+				tooltipText =""
+				delayedTooltipText = ""
+				buttonText = "HRE_CLOSE"
+				buttonFont = "vic_18"
+
+				Orientation = "CENTER"
+				clicksound = close_window
+				shortcut = "ESCAPE"
+				clicksound = close_window
+			}	
+	}
+	
+	windowType = {
+		name = "revolutionary_republic_faction_view"
+		backGround=""
+		position = { x=-292 y=-310 }	
+		size = { x=584 y=620 }
+		moveable = 1
+		dontRender = ""
+		horizontalBorder= ""
+		verticalBorder= ""
+		Orientation = "CENTER"
+		fullscreen = no
+
+		upsound = revolutionary_republic
+		downsound = ""
+
+		iconType =
+		{
+			name ="faction_window_bg"
+			spriteType = "GFX_faction_window_bg"
+			position = { x= 0 y = 0 }
+		}
+
+
+		instantTextBoxType = {
+			name = "faction_label"
+			position = { x = 0 y =20 }
+			format = centre
+			textureFile = ""
+			font = "vic_29s"
+			borderSize = {x = 4 y = 4}
+			text = "FACTIONS_TITLE"	
+			maxWidth = 584
+			maxHeight = 32			
+		}
+	
+		listboxType = 
+		{
+			name ="factions_listbox"
+			backGround = ""
+			position = { x=15 y=30 }	
+			size = { x=540 y=520 }
+			Orientation = "UPPER_LEFT"
+			horizontal = 0
+			spacing = 2.5
+			scrollbartype = "standardlistbox_slider"
+			borderSize = {x = 0 y = 0}
+			alwaystransparent = yes
+		}
+	
+		########
+		
+		guiButtonType = {
+				name = "close_button"
+				position = { x=-62 y =260}
+				quadTextureSprite ="button_type_1"	
+				tooltip = ""
+				tooltipText =""
+				delayedTooltipText = ""
+				buttonText = "HRE_CLOSE"
+				buttonFont = "vic_18"
+
+				Orientation = "CENTER"
+				clicksound = close_window
+				shortcut = "ESCAPE"
+				clicksound = close_window
+			}	
+	}
+	
+	windowType = {
+		name = "faction_entry"
+		backGround=""
+		position = { x=0 y=0 }	
+		size = { x=200 y=168 }
+		moveable = 0
+		dontRender = ""
+		horizontalBorder= ""
+		verticalBorder= ""
+		fullScreen = no	
+	
+		iconType = 
+			{
+				name ="faction_icon"
+				spriteType = "GFX_faction_enuchs"
+				position = { x= -90 y = -20 }
+				Orientation = "CENTER"
+			}
+			
+			iconType = 
+			{
+				name ="faction_bg"
+				spriteType = "GFX_faction_bg_temples"
+				position = { x= 40 y = -52 }
+				Orientation = "CENTER"
+			}		
+			
+			iconType = 
+			{
+				name ="faction_circle"
+				spriteType = "GFX_faction_circle_bg"
+				position = { x= 353 y = -10 }
+				Orientation = "CENTER"
+			}
+			
+		instantTextBoxType = {
+			name = "faction_value"
+			position = { x= 460 y = 95 }
+			font = "vic_22"
+			borderSize = {x = 1 y = 1}
+			text = "11"	
+			maxWidth = 50
+			maxHeight = 30
+			format = centre
+		}
+		iconType = 
+			{
+				name ="faction_arrow"
+				spriteType = "GFX_faction_arrow"
+				position = { x= 420 y = 20 }
+				Orientation = "CENTER"
+			}
+		instantTextBoxType = {
+			name = "faction_label"
+			position = { x= 170 y = 33 }
+			font = "vic_22"
+			borderSize = {x = 1 y = 1}
+			text = "The Test Faction"	
+			maxWidth = 225
+			maxHeight = 30
+			format = centre
+		}
+		instantTextBoxType = {
+			name = "faction_info"
+			position = { x= 150 y = 66 }
+			font = "vic_18"
+			borderSize = {x = 1 y = 1}
+			text = "The Test Faction likes testing and also testing, this is a sentence that is going to go on for a while in order to test The Test Faction."	
+			maxWidth = 275
+			maxHeight = 125
+			scrollbartype = "standardlistbox_slider"
+			format = left
+		}
+		
+		guiButtonType =
+		{
+			name ="faction_boost"
+			quadTextureSprite= "GFX_standard_button_105"
+			position = { x= 335 y = 60 }
+			Orientation = "UPPER_LEFT"
+			buttonText = "BOOST"
+			buttonFont = "vic_18"
+			Orientation = "CENTER"	
+		}	
+	}
+}

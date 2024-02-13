@@ -1,0 +1,49 @@
+timurid_succession_crisis = {
+	potential = {
+		normal_or_historical_nations = yes
+		tag = TIM
+		NOT = { has_country_flag = timurids_reformed_government }
+	}
+	
+	can_start = {
+		custom_trigger_tooltip = {
+			tooltip = uach_shah_rukh_or_death
+			NOT = { has_ruler_flag = timurids_peace_ruler }
+		}
+	}
+	
+	can_stop = {
+		custom_trigger_tooltip = {
+			tooltip = uach_nuh_uh
+			always = no
+		}		
+	}
+	
+	progress = {
+		modifier = {
+			factor = 5
+			always = yes
+		}
+	}
+	
+	can_end = {
+		custom_trigger_tooltip = {
+			tooltip = uach_via_timur_legacy_buttons
+			always = no
+		}
+	}
+	
+	modifier = {
+		global_unrest = 5
+	}
+	
+	on_start = UaCH.1
+	on_end = UaCH.1 # Entirely unused.
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = {
+		}
+	}
+}

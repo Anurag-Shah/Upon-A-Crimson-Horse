@@ -1,0 +1,44 @@
+on_startup = {
+    if = {
+        limit = {
+            NOT = { has_global_flag = uach_init_ui }
+            NOT = { is_year = 1448 }
+        }
+        every_country = {
+            limit = {
+                OR = {
+                    is_prince = yes
+                    is_governor = yes
+                    is_interloper = yes
+                    any_neighbor_country = {
+                        OR = {
+                            is_prince = yes
+                            is_governor = yes                      
+                        }
+                    }
+                }
+            }
+            add_faction = timurid_faction
+        }
+        init_start_princes = yes
+        init_start_governors = yes
+        set_global_flag = uach_init_ui
+    }
+}
+
+on_annexed = {
+    shuffle_princes = { scope = FROM }
+    shuffle_governors = { scope = FROM }
+}
+
+on_province_owner_change = {
+    events = {
+        UaCH.28  # Recapture of Herat
+    }
+}
+
+on_siege_lost_province = {
+    events = {
+        # TODO siege of Samarkand by Abdal-Latif --> Uluq Beg should be executed
+    }
+}

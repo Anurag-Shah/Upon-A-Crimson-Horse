@@ -1,0 +1,37 @@
+spriteTypes = {
+	# Disaster icon
+	spriteType = {
+		name = "GFX_disaster_timurid_succession_crisis"
+		texturefile = "gfx//interface//disasters//timurid_succession_crisis.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+	
+	# Art for unique subject
+	spriteType = {
+		name = "GFX_diplomacy_leademirate"
+		texturefile = "gfx//interface//diplomacy_leademirate.dds"
+	}
+	spriteType = {
+		name = "GFX_diplomacy_amemirate"
+		texturefile = "gfx//interface//diplomacy_amemirate.dds"
+	}
+    spriteType = {
+	  	name = "GFX_icon_emirate"
+	 	texturefile = "gfx/interface/icon_emirate.dds"
+	}
+	
+	# UI
+	spriteType = {
+	  	name = "GFX_timurids_window_bg"
+	 	texturefile = "gfx/interface/ui/timurids_window_bg.dds"
+	}
+	spriteType = {
+	  	name = "GFX_icon_prince"
+	 	texturefile = "gfx/interface/ui/icon_prince.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_slot"
+	 	texturefile = "gfx/interface/ui/timurids_map_slot.dds"
+	}
+}
