@@ -132,29 +132,294 @@ on_abdu_sa_id_rebellion = {
 	}
 }
 
+# the beauty of EU4 modding is truely amazing
 she_may_flee = {
-	#TODO
-	random_list = {
-		20 = {
-			country_event = {
-				id = UaCH.37
+	if = {
+		limit = {
+			check_variable = {
+				which = uach_flee_chance
+				value = 0
 			}
 		}
-		# TODO decrease the chance of her fleeing to anouther country each time.
-		80 = {
-			random_country = {
-				limit = {
-					has_country_flag = uach_second_succession_crisis_war_flag
-				}
-				capital_scope = {
-					set_province_flag = uach_gawhar_shad_province
+		random_list = {
+			20 = {
+				country_event = {
+					id = UaCH.37
 				}
 			}
-			ROOT = {
-				every_province = {
-					clr_province_flag = uach_gawhar_shad_province
+			# TODO decrease the chance of her fleeing to anouther country each time.
+			80 = {
+				random_country = {
+					limit = {
+						has_country_flag = uach_second_succession_crisis_war_flag
+					}
+					capital_scope = {
+						set_province_flag = uach_gawhar_shad_province
+					}
+				}
+				ROOT = {
+					every_province = {
+						clr_province_flag = uach_gawhar_shad_province
+					}
+				}
+				change_variable = {
+					which = uach_flee_chance
+					value = 1
 				}
 			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = uach_flee_chance
+				value = 1
+			}
+		}
+		random_list = {
+			30 = {
+				country_event = {
+					id = UaCH.37
+				}
+			}
+			70 = {
+				random_country = {
+					limit = {
+						has_country_flag = uach_second_succession_crisis_war_flag
+					}
+					capital_scope = {
+						set_province_flag = uach_gawhar_shad_province
+					}
+				}
+				ROOT = {
+					every_province = {
+						clr_province_flag = uach_gawhar_shad_province
+					}
+				}
+				change_variable = {
+					which = uach_flee_chance
+					value = 1
+				}
+			}
+		}		
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = uach_flee_chance
+				value = 2
+			}
+		}
+		random_list = {
+			40 = {
+				country_event = {
+					id = UaCH.37
+				}
+			}
+			60 = {
+				random_country = {
+					limit = {
+						has_country_flag = uach_second_succession_crisis_war_flag
+					}
+					capital_scope = {
+						set_province_flag = uach_gawhar_shad_province
+					}
+				}
+				ROOT = {
+					every_province = {
+						clr_province_flag = uach_gawhar_shad_province
+					}
+				}
+				change_variable = {
+					which = uach_flee_chance
+					value = 1
+				}
+			}
+		}		
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = uach_flee_chance
+				value = 3
+			}
+		}
+		random_list = {
+			50 = {
+				country_event = {
+					id = UaCH.37
+				}
+			}
+			50 = {
+				random_country = {
+					limit = {
+						has_country_flag = uach_second_succession_crisis_war_flag
+					}
+					capital_scope = {
+						set_province_flag = uach_gawhar_shad_province
+					}
+				}
+				ROOT = {
+					every_province = {
+						clr_province_flag = uach_gawhar_shad_province
+					}
+				}
+				change_variable = {
+					which = uach_flee_chance
+					value = 1
+				}
+			}
+		}		
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = uach_flee_chance
+				value = 4
+			}
+		}
+		random_list = {
+			60 = {
+				country_event = {
+					id = UaCH.37
+				}
+			}
+			40 = {
+				random_country = {
+					limit = {
+						has_country_flag = uach_second_succession_crisis_war_flag
+					}
+					capital_scope = {
+						set_province_flag = uach_gawhar_shad_province
+					}
+				}
+				ROOT = {
+					every_province = {
+						clr_province_flag = uach_gawhar_shad_province
+					}
+				}
+				change_variable = {
+					which = uach_flee_chance
+					value = 1
+				}
+			}
+		}		
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = uach_flee_chance
+				value = 5
+			}
+		}
+		random_list = {
+			70 = {
+				country_event = {
+					id = UaCH.37
+				}
+			}
+			30 = {
+				random_country = {
+					limit = {
+						has_country_flag = uach_second_succession_crisis_war_flag
+					}
+					capital_scope = {
+						set_province_flag = uach_gawhar_shad_province
+					}
+				}
+				ROOT = {
+					every_province = {
+						clr_province_flag = uach_gawhar_shad_province
+					}
+				}
+				change_variable = {
+					which = uach_flee_chance
+					value = 1
+				}
+			}
+		}		
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = uach_flee_chance
+				value = 6
+			}
+		}
+		random_list = {
+			80 = {
+				country_event = {
+					id = UaCH.37
+				}
+			}
+			20 = {
+				random_country = {
+					limit = {
+						has_country_flag = uach_second_succession_crisis_war_flag
+					}
+					capital_scope = {
+						set_province_flag = uach_gawhar_shad_province
+					}
+				}
+				ROOT = {
+					every_province = {
+						clr_province_flag = uach_gawhar_shad_province
+					}
+				}
+				change_variable = {
+					which = uach_flee_chance
+					value = 1
+				}
+			}
+		}		
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = uach_flee_chance
+				value = 7
+			}
+		}
+		random_list = {
+			90 = {
+				country_event = {
+					id = UaCH.37
+				}
+			}
+			10 = {
+				random_country = {
+					limit = {
+						has_country_flag = uach_second_succession_crisis_war_flag
+					}
+					capital_scope = {
+						set_province_flag = uach_gawhar_shad_province
+					}
+				}
+				ROOT = {
+					every_province = {
+						clr_province_flag = uach_gawhar_shad_province
+					}
+				}
+				change_variable = {
+					which = uach_flee_chance
+					value = 1
+				}
+			}
+		}		
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				which = uach_flee_chance
+				value = 8
+			}
+		}
+		country_event = {
+			id = UaCH.37
+		}
+		change_variable = {
+			which = uach_flee_chance
+			value = 1
 		}
 	}
 }

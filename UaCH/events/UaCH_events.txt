@@ -2623,59 +2623,428 @@ country_event = {
 	picture = CITY_DEVELOPMENT_eventPicture
 
 	trigger = {
-		has_country_flag = uach_second_succession_crisis_war_flag
-		has_disaster = timurid_succession_crisis
+		OR = {
+			tag = ISF
+			any_neighbor_country = {
+				tag = QAR
+			}
+		}
+		NOT = { war_score = -75 } 
 	}
 
 	mean_time_to_happen = {
 		days = 1
 	}
 
-	# They will be hunted down.
+	# Now may be time to call in some favors... 
 	option = {
 		name = "UaCH.41.a"
 		
-		random_owned_province = {
-			spawn_rebels = {
-				size = 3
-				type = noble_rebels
-			}
-		}
-		add_adm_power = 25
+		add_stability = -1
+
+		#TODO missinge event for QQ to inverevene
 
 		ai_chance = {
 			factor = 1
+			modifier = {
+				factor = 1000
+				always = yes
+			}
 		}
 	}
 
-	# They will be hunted down.
+	# Relying on Turkic raiders? What, are we fools?
 	option = {
 		name = "UaCH.41.b"
 		
-		add_years_of_income = -0.5
-		add_yearly_manpower = 0.5
-		add_prestige = 10
+		add_Prestige = 10
 
-		ai_chance = {
-			factor = 1
-		}
-	}
-
-	# They will be hunted down.
-	option = {
-		name = "UaCH.41.c"
-		
-		add_yearly_manpower = 1
-		random_owned_province = {
-			add_local_autonomy = 20
-		}
-		add_years_of_income = 1
+		custom_tooltip = "There won't be another chance for [QAR.GetName] to intervene."
 
 		ai_chance = {
 			factor = 1
 		}
 	}
 }
+
+# Matter of Personal Glory
+country_event = {
+	id = UaCH.42 
+	title = UaCH.42.t 
+	desc = UaCH.42.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		is_in_war = {
+			casus_belli = cb_challange_claimant
+		}
+		ai = yes
+		has_leader_with = {
+			is_monarch_leader = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	# Now, [Root.Monarch.GetTitle], is this not a little hasty?
+	option = {
+		name = "UaCH.42.a"
+		
+		convert_ruler_to_general = yes
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+}
+
+# Tragedy on the Battlefield
+country_event = {
+	id = UaCH.43 
+	title = UaCH.43.t 
+	desc = UaCH.43.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	# Don't you traitors get any ideas! 
+	option = {
+		name = "UaCH.43.a"
+		
+		trigger = {
+			has_heir = no
+		}
+
+		kill_ruler = yes
+
+		every_subject_country = {
+			set_country_flag = uach_second_succession_crisis_war_flag
+		}
+		# mark all owned provinces so released countries can be added to the crisis
+		every_owned_province = {
+			set_province_flag = uach_marked_to_join_crisis
+		}
+
+		release_all_possible_countries = yes
+		release_all_subjects = yes
+
+		# make all countries that were released join the crisis
+		every_country = {
+			limit = {
+				any_owned_province = {
+					has_province_flag = uach_marked_to_join_crisis
+				}
+			}
+			set_country_flag = uach_second_succession_crisis_war_flag
+			every_owned_province = {
+				clr_province_flag = uach_marked_to_join_crisis
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	# A bastard is still a heir!
+	option = {
+		name = "UaCH.43.b"
+		
+		trigger = {
+			has_heir = yes
+			NOT = { heir_claim = 30 } # TODO this should be the threshold for weak claim?
+		}
+
+		kill_ruler = yes
+		# TODO release 50% of country's provinces as new countries
+		
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	# He's clearly fit to rule!
+	option = {
+		name = "UaCH.43.c"
+		
+		trigger = {
+			has_heir = yes
+			heir_claim = 30
+			NOT = { heir_claim = 70 } 
+		}
+
+		kill_ruler = yes
+		# TODO release 10% of country's provinces as new countries
+		
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	# At least we have a new [Root.Monarch.GetTitle] to take charge...
+	option = {
+		name = "UaCH.43.d"
+		
+		trigger = {
+			has_heir = yes
+			heir_claim = 70
+		}
+
+		kill_ruler = yes
+		add_stability = 1		
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+}
+
+# Pulse event of disaster
+# General Turned Traitor
+country_event = {
+	id = UaCH.44 
+	title = UaCH.44.t 
+	desc = UaCH.44.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		is_in_war = {
+			casus_belli = cb_challange_claimant		
+		}
+		num_of_generals = 1
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	# So, that is how it is going to be...
+	option = {
+		name = "UaCH.44.a"
+		
+		kill_leader = {
+			type = general
+		}
+		# TODO release a single country but   H O W?
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+# Pulse event of disaster
+# A Scheming Regent
+country_event = {
+	id = UaCH.45 
+	title = UaCH.45.t 
+	desc = UaCH.45.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		has_regency = yes
+		is_in_war = {
+			casus_belli = cb_challange_claimant		
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	# Try and prevent any seizure of power.
+	option = {
+		name = "UaCH.45.a"
+		
+		add_years_of_income = -1
+		add_yearly_manpower = -1
+		uach_add_random_mana = { AMOUNT = -25 }
+
+		random_list = {
+			40 = {
+				country_event = {
+					id = UaCH.46
+				}
+			}
+			60 = {
+				country_event = {
+					id = UaCH.47
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	# We do not have those resources.
+	option = {
+		name = "UaCH.45.b"
+		
+		random_list = {
+			75 = {
+				country_event = {
+					id = UaCH.46
+					days = 30
+				}
+			}
+			25 = {
+				country_event = {
+					id = UaCH.47
+					days = 180
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+# Regent Imprisons the Rightful Rule
+country_event = {
+	id = UaCH.46 
+	title = UaCH.46.t 
+	desc = UaCH.46.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	# Attempt to bring any dissenters to the regent's side.
+	option = {
+		name = "UaCH.46.a"
+		
+		add_years_of_income = -1
+		
+		change_estate_land_share = {
+			estate = all
+			share = 5
+		}
+		random_list = {
+			70 = {}
+			30 = {
+				country_event = {
+					id = UaCH.47
+					days = 180
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	# Side with the imprisoned heir.
+	option = {
+		name = "UaCH.46.b"
+		
+		add_prestige = 10
+		random_list = {
+			25 = {}
+			75 = {
+				country_event = {
+					id = UaCH.47
+					days = 180
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+# Opposition to the Regent
+country_event = {
+	id = UaCH.47 
+	title = UaCH.47.t 
+	desc = UaCH.47.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	# One man's ambition is the doom of us all...
+	option = {
+		name = "UaCH.47.a"
+		
+		capital_scope = {
+			spawn_rebels = {
+				size = 3
+				type = pretender_rebels
+			}
+		}
+		random_owned_province = {
+			limit = {
+				NOT = { is_capital = yes } 
+			}
+		}
+		random_owned_province = {
+			limit = {
+				NOT = { is_capital = yes } 
+			}
+		}
+		# TODO increases chance of event UaCH.44 in disaster pulse
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+# Gawhar Shad's Demands
+country_event = {
+	id = UaCH.48 
+	title = UaCH.48.t 
+	desc = UaCH.48.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_owned_province = {
+			has_province_flag = uach_gawhar_shad_province
+		}
+		has_estate_privilege = estate_nobles_eternal_nobility # TODO does this privelege exist?
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	# TODO
+	option = {
+		name = "UaCH.48.a"
+		
+		
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
 
 # Betrayal - Abdul Latifs stays loyal
 country_event = {
@@ -2869,6 +3238,86 @@ country_event = {
 	}	
 }
 
+# The Schemeing Dowager
+country_event = {
+	id = UaCH.52 
+	title = UaCH.52.t 
+	desc = UaCH.52.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		any_owned_province = {
+			has_province_flag = uach_gawhar_shad_province
+		}
+		NOT = { has_estate_privilege = estate_nobles_eternal_nobility }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	# 
+	option = { 
+		name = "UaCH.52.a" 
+
+		# TODO
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+# A deal with the devil
+country_event = {
+	id = UaCH.53 
+	title = UaCH.53.t 
+	desc = UaCH.53.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	trigger = {
+		OR = {
+			tag = TRS
+			war_score = -50
+			SHY = { # TODO there is no uzbek in 1444 so I took the tag that is where it would be AND it also has a simmilar color. so it must be correct
+				is_at_war = no
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 150
+	}
+	
+	# There is no price high I am unwilling to pay. 
+	option = { 
+		name = "UaCH.53.a" 
+
+		add_treasury = -3000
+		SHY = {
+			every_owned_province = {
+				limit = {
+					is_core = TRS
+				}
+				cede_province = TRS
+			}
+			create_alliance = TRS
+			add_favors = {
+				who = TRS
+				amount = 100
+			}
+		}
+		custom_tooltip = "[Root.GetName] is now expecting yearly tribute from [TRS.GetName]"
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
 # Decision - Intercept the body
 country_event = {
 	id = UaCH.54 
@@ -3012,4 +3461,49 @@ country_event = {
 	}
 }
 
+# Collapse of the State
+country_event = {
+	id = UaCH.58 
+	title = UaCH.58.t 
+	desc = UaCH.58.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	mean_time_to_happen = {
+		months = 20
+	}
+	
+	# We can hold this together
+	option = { 
+		name = "UaCH.58.a" 
 
+		every_owned_province = {
+			add_local_autonomy = 50
+		}
+		add_years_of_income = -2
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	# Bah, let the fools leave
+	option = { 
+		name = "UaCH.58.b" 
+
+		every_owned_province = {
+			limit = {
+				NOT = { controlled_by = ROOT } 
+				NOT = { is_capital = yes }
+			}
+			# Cede all besieged provinces to the besieger might have to be adapted to ignore rebels but that would be...
+			controller = { }
+			cede_province = PREV
+		}
+
+		# TODO some SOL magic for releasing opms and making them join leave the timurid empire
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+}

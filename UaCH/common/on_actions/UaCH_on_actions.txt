@@ -42,3 +42,10 @@ on_siege_lost_province = {
         # TODO siege of Samarkand by Abdal-Latif --> Uluq Beg should be executed
     }
 }
+
+on_battle_lost_country = {
+    random_events = {
+        10 = UaCH.43 # Tradgedy on the battlefield
+        90 = 0
+    }
+}
