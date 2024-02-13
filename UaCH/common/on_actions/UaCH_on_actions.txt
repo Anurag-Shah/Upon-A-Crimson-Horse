@@ -30,3 +30,15 @@ on_annexed = {
     shuffle_princes = { scope = FROM }
     shuffle_governors = { scope = FROM }
 }
+
+on_province_owner_change = {
+    events = {
+        UaCH.28  # Recapture of Herat
+    }
+}
+
+on_siege_lost_province = {
+    events = {
+        # TODO siege of Samarkand by Abdal-Latif --> Uluq Beg should be executed
+    }
+}
