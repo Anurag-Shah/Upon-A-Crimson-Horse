@@ -1,0 +1,19 @@
+# Balkh governorship
+technology_group = muslim
+primary_culture = afghan
+religion = sunni
+government = monarchy
+add_government_reform = uach_prince
+capital = 450 # Balkh
+religious_school = hanafi_school
+
+1444.1.1 = {
+	monarch = {
+		name = "Muhammad Juki"
+		dynasty = "Timurid"
+		birth_date = 1402.1.1
+		adm = 3
+		dip = 5
+		mil = 5
+	}
+}

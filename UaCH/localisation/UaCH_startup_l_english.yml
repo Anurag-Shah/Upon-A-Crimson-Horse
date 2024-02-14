@@ -10,18 +10,8 @@
  string_start_title_AFG:0"The situation of Afghanistan in 1444"
  string_start_AFG:0 "In Kabul's streets, a vibrant mosaic thrives,\n where cultures blend and every story survives.\nThrough war and peace, its people endure,\ntheir resilience a testament, steadfast and pure\n - §YMimi Khalvati§!\n\n §RHistory§! \n\nThe Pasthun people of Afghanistan have experienced a relatively peaceful period of time during §GTimur's§! reign as part of his empire, however that all changed with his death. The sucession period has seen the capital city of Kabul change hands from time to time, and ethnic clashes between the different tribes became common. While §GShah Rukh§! has managed to calm these calamitous times considerably, news of his illness may just reignite the flames... \n\n §RRuler§! \n\nAfghanistan is governed by §GKaratshar bin Soyurghatmish§! , a late descendant of Khan Soyurghatmish, and brother to the wife of §GUlugh beg§!. His claims on his land are flimsy at best, but maybe there is a burning desire to be named Khan once again...."
  
- string_screen_title_ARD:0 "Ardalan - Home of the Kurds"
- string_start_title_ARD:0"The situation of Ardalan in 1444"
- string_start_ARD:0 "'A lion is a lion, regardless of whether it’s female or male' \n- §YKurdish Proverb§!\n\n §RHistory§! \n\n  \n\n §RRuler§! \n\n "
- 
- string_screen_title_SIS:0"Sistan - The Realm of the Mihrabanids"
- string_start_title_SIS:0"The situation of Sistan in 1444"
- string_start_SIS:0 "Sistan, a land of splendor and might,\nWhere valorous deeds take flight,\nIn its sands, stories unfold,\nLegends of bravery, cherished and told.\n - §YFerdowsi§!\n\n §RHistory§! \n\nIn 1236, §GShams al-Din 'Ali ibn Mas'ud§! founded the Mihrabanid dynasty, branching off from the main Saffanids, creating the Malikate of Sistan under the Ilkhanate. Hundred years later the downfall of the latter allowed the Mihrabanids to gain independence for the first time in history, albeit it lasted for a mere 50 years with the coming of §GTimur§! in 1383. Timur forced §GQutb al-Din ibn 'Izz al-Din§! to bend his knee, in exchange for continued rulership under his vassalage. Even with Timurs death, Sistan remained relatively peaceful during the transition to §GShah Rukh§!, though now that he has fallen ill, this may not be the case again....\n\n §RRuler§! \n\n Sistan is governed by §GNizam al-Din Yahya Mihrabanid§! since his father's death in 1438. He is a man mostly out of Sistan, having been brought up in the court in Herat, however his connections to §GAbu Said§! might just prove invaluable."
- 
- 
- 
  # NEW STARTING TAGS
- 
+
  string_screen_title_BLK:0"Balkh - The Mother of Cities"
  string_start_title_BLK:0"The situation of Balkh in 1444"
  string_start_BLK:0 "Like in sport now, as you run with the ball,\nLike yet from behind the wall\na prostrating beauty praying unto God, lest\nthe changing hands of time, may keep the honor intact.\n-§YSadiqullah Khan§!  \n\n §RHistory§! \n\nOn the northern part of Afghanistan, where the Hindukus mountains meet the Oxus, lies the the middling market town of Balkh. While inhabited for 2500 years, the city has been just rebuilt in 1359, after §GGenghis Khan§! has razed the city and its citadel. Noneteless, Balkh continues to be an important caravansary among the Silk Road.\n\n §RRuler§! \n\n In 1444, Balkh is ruled by the prestigious son of §GShah Rukh§!, his named successor §GMuhammad Juki§!. While he has his fathers blessing, Shah Rukhs consort, §GGawhar Shad§!, who wields considerable power in the divan is against his involvement in any governing capacity, preferring his cousins. Muhammad Juki is a talented military leader, but there are rumors ongoing about him chronically ill... "
@@ -54,6 +44,6 @@
  string_start_title_SLU:0"The situation of Salur in 1444"
  string_start_SLU:0 "'Wherever you go, you fight with a sword and a club'\n - §YSalyr translated§!\n\n §RHistory§! \n\n In the 14th century, the Oghuz Turkoman tribe of Salur has been prepared for settling down. Ranging from Crimea to Fars, the tribal alliance of Muslim Turks were beginning to slowly change into a proper feudal nation with the advent of gunpowder age. The Salur tribe has chosen to settle the river Uzboy, a distributary of the Amu river. However they have yet to completely adopted the sedentary lifestyle, keeping their nomadic heritage with themselves.\n\n §RRuler§! \n\n In 1444, Salur is ruled by §GKhan Ali§!, of the Salgurid dynasty. Tho afar from power in Persia, he might be the extra piece the Timurid Princes need... "
 
-# string_screen_title_SI0S:0"Balkh - A city rebuilt"
-# string_start_title_SI0S:0"The situation of Balkh in 1444"
-# string_start_SI0S:0 " \n\n §RHistory§! \n\n\n\n §RRuler§! \n\n "
+ string_screen_title_SI0S:0"Balkh - A city rebuilt"
+ string_start_title_SI0S:0"The situation of Balkh in 1444"
+ string_start_SI0S:0 " \n\n §RHistory§! \n\n\n\n §RRuler§! \n\n "
