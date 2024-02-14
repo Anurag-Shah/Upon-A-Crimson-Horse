@@ -17,6 +17,7 @@ uach_opm_rebellions = { # revolt_chance # loyal_chance
 				NOT = {
 					is_capital = yes
 				}
+				controlled_by = PREV
 				owned_by = PREV
 			}
 		}
