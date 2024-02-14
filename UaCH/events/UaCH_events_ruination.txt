@@ -1,0 +1,51 @@
+
+#Ruination v1.0
+
+country_event = {
+	id = UaCH.escalation.1 
+	title = UaCH.escalation.1.t 
+	desc = UaCH.escalation.1.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		tag = TIM
+		disaster started
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	hidden = yes
+	
+	option = {
+		name = "UaCH.1.escalation.a"
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_government_reform = uach_governor
+				
+				}
+				add_country_modifier = uach_escalation_governor_1
+			}
+			every_country = {
+				limit = {
+					has_government_reform = uach_prince
+				
+				}
+				add_country_modifier = uach_escalation_prince_1
+			}
+			every_country = {
+				limit = {
+					has_government_reform = uach_prince
+					is_timurid_emperor = yes 
+					#TODO
+				
+				}
+				add_country_modifier = uach_escalation_emperor_1
+			}
+			
+			
+		
+			}
+	}
+}
