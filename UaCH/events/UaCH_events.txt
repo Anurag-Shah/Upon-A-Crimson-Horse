@@ -2780,6 +2780,7 @@ country_event = {
 	desc = UaCH.60.d
 	picture = DEATH_OF_HEIR_eventPicture
 	
+	fire_only_once = yes
 	mean_time_to_happen = {
 		years = 10
 	}
@@ -2911,6 +2912,66 @@ country_event = {
 		add_prestige = -10
 		KZH = {
 			add_liberty_desire = -25
+		}
+	}
+}
+
+# Care of the Empress-Dowager
+
+country_event = {
+	id = UaCH.62
+	title = UaCH.62.t 
+	desc = UaCH.62.d
+	picture = KING_SICK_IN_BED_eventPicture
+	
+	fire_only_once = yes
+	trigger = {
+		tag = TIM
+		has_ruler = "Shah Rukh"
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	# A truly beautiful marriage of love.
+	option = { 
+		name = "UaCH.62.a" 
+		add_prestige_or_monarch_power = {
+			amount = 10
+		}
+	}
+}
+
+# Patronage of Shah Rukh and Gawhar Shad
+
+country_event = {
+	id = UaCH.63
+	title = UaCH.63.t 
+	desc = UaCH.63.d
+	picture = BIG_ARABIAN_CITY_eventPicture
+	
+	fire_only_once = yes
+	trigger = {
+		tag = TIM
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	# Truly a testament to how much two can achieve!
+	option = { 
+		name = "UaCH.63.a"
+		add_ruler_modifier = { 
+			name = uach_patronage_of_the_couple
+			duration = -1  
+		}
+		custom_tooltip = uach_herat_prosperity 
+		hidden_effect = {
+			herat_area = {
+				add_prosperity = 100
+			}
 		}
 	}
 }

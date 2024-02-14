@@ -48,3 +48,8 @@ they_are_right_though = {
 	local_defensiveness = -0.25
 	local_unrest = 5
 }
+
+uach_patronage_of_the_couple = {
+	development_cost = -0.10
+	build_cost = -0.10
+}
