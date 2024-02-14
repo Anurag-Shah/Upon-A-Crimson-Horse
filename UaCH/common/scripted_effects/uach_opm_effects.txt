@@ -1,0 +1,1116 @@
+# If you've opened this file, you want to use this effect
+# Don't use the others unless you have a specific reason
+
+uach_opm_rebellions = { # revolt_chance # loyal_chance
+	# This effect should be run in a country scope
+
+	# revolt_chance: chance in the random list that the province revolts
+	# loyal_chance: chance in the random list that the province stays loyal
+
+	# for example, uach_opm_rebellions = { revolt_chance = 100 loyal_chance = 0 } will cause every possible province to revolt
+	# while uach_opm_rebellions = { revolt_chance = 50 loyal_chance = 50 } will cause on average 50% possible provinces to revolt
+
+	uach_opm_pg = {
+		# All valid provinces owned by the current tag (PREV) and not the capital
+		limit = {
+			AND = {
+				NOT = {
+					is_capital = yes
+				}
+				owned_by = PREV
+			}
+		}
+		random_list = {
+			$revolt_chance$ = {
+				uach_spawn_opm_bt = yes
+			}
+			$loyal_chance$ = {
+				# nothing
+				# lol!
+			}
+		}
+	}
+}
+
+# You almost certainly want to use the other effect before this, uach_spawn_opm_bt
+# By almost certainly i mean use that if you arent sol
+# sincerely,
+# sol
+
+uach_spawn_opm = { #TAG #PROV
+	if = {
+		limit = {
+			# If tag already exists, dont spawn it
+			NOT = { exists = $TAG$ }
+		}
+		# Country doesnt already exist
+		# Spawn the country
+		$PROV$ = {
+			add_core = $TAG$
+			cede_province = $TAG$
+		}
+		
+		# Set country culture and religion to province's
+		$PROV$ = {
+			$TAG$ = {
+				change_primary_culture = new_variable:Prev:culture
+				change_religion = new_variable:Prev:religion
+			}
+		}
+
+		# Grant vision
+		random_neighbor_country = {
+			every_known_country	= {
+				every_owned_province = {
+					discover_country = $TAG$
+				}
+			}
+		}
+
+		# 75% chance governor, 25% chance prince
+		random_list = {
+			75 = {
+				# governor
+				$TAG$ = {
+					add_government_reform = uach_governor
+				}
+			}
+			25 = {
+				# prince
+				$TAG$ = {
+					add_government_reform = uach_prince
+					kill_ruler = yes
+					set_dynasty = "Timurid"
+					convert_ruler_to_general = yes
+					add_stability = 1
+				}
+			}
+		}
+	}
+}
+
+# Why are you reading this?
+# Just use the effect
+# Don't ask questions
+uach_spawn_opm_bt = {
+	# ok this bit can probably be done just one in on startup but who fucking cares
+	415 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 0
+		}
+	}
+ 
+	4294 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 1
+		}
+	}
+ 
+	2211 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 2
+		}
+	}
+ 
+	2209 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 3
+		}
+	}
+ 
+	2210 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 4
+		}
+	}
+ 
+	413 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 5
+		}
+	}
+ 
+	4289 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 6
+		}
+	}
+ 
+	414 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 7
+		}
+	}
+ 
+	4300 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 8
+		}
+	}
+ 
+	2212 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 9
+		}
+	}
+ 
+	4338 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 10
+		}
+	}
+ 
+	2215 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 11
+		}
+	}
+ 
+	428 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 12
+		}
+	}
+ 
+	4337 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 13
+		}
+	}
+ 
+	2213 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 14
+		}
+	}
+ 
+	2216 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 15
+		}
+	}
+ 
+	4335 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 16
+		}
+	}
+ 
+	4171 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 17
+		}
+	}
+ 
+	2222 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 18
+		}
+	}
+ 
+	4342 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 19
+		}
+	}
+ 
+	2217 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 20
+		}
+	}
+ 
+	430 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 21
+		}
+	}
+ 
+	4331 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 22
+		}
+	}
+ 
+	2218 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 23
+		}
+	}
+ 
+	4329 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 24
+		}
+	}
+ 
+	4330 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 25
+		}
+	}
+ 
+	2234 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 26
+		}
+	}
+ 
+	4345 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 27
+		}
+	}
+ 
+	2220 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 28
+		}
+	}
+ 
+	435 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 29
+		}
+	}
+ 
+	2230 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 30
+		}
+	}
+ 
+	2229 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 31
+		}
+	}
+ 
+	447 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 32
+		}
+	}
+ 
+	448 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 33
+		}
+	}
+ 
+	451 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 34
+		}
+	}
+ 
+	2226 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 35
+		}
+	}
+ 
+	578 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 36
+		}
+	}
+ 
+	427 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 37
+		}
+	}
+ 
+	2235 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 38
+		}
+	}
+ 
+	2214 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 39
+		}
+	}
+ 
+	4334 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 40
+		}
+	}
+ 
+	4336 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 41
+		}
+	}
+ 
+	436 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 42
+		}
+	}
+ 
+	4326 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 43
+		}
+	}
+ 
+	2221 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 44
+		}
+	}
+ 
+	4325 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 45
+		}
+	}
+ 
+	2350 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 46
+		}
+	}
+ 
+	445 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 47
+		}
+	}
+ 
+	4324 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 48
+		}
+	}
+ 
+	2224 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 49
+		}
+	}
+ 
+	449 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 50
+		}
+	}
+ 
+	2225 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 51
+		}
+	}
+ 
+	2228 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 52
+		}
+	}
+ 
+	4343 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 53
+		}
+	}
+ 
+	4344 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 54
+		}
+	}
+ 
+	1968 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 55
+		}
+	}
+ 
+	444 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 56
+		}
+	}
+ 
+	453 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 57
+		}
+	}
+ 
+	454 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 58
+		}
+	}
+ 
+	458 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 59
+		}
+	}
+ 
+	1967 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 60
+		}
+	}
+ 
+	457 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 61
+		}
+	}
+ 
+	2356 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 62
+		}
+	}
+ 
+	2363 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 63
+		}
+	}
+ 
+	455 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 64
+		}
+	}
+ 
+	2362 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 65
+		}
+	}
+ 
+	2370 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 66
+		}
+	}
+ 
+	440 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 67
+		}
+	}
+ 
+	1973 = {
+		set_variable = {
+			which = uach_opm_val
+			value = 68
+		}
+	}
+	if = {
+		limit = {
+			check_variable = { which = uach_opm_val value = 34 }
+		}
+		if = {
+			limit = {
+				check_variable = { which = uach_opm_val value = 51 }
+			}
+			if = {
+				limit = {
+					check_variable = { which = uach_opm_val value = 59 }
+				}
+				if = {
+					limit = {
+						check_variable = { which = uach_opm_val value = 63 }
+					}
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 65 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 66 }
+							}
+							if = {
+								limit = {
+									check_variable = { which = uach_opm_val value = 67 }
+								}
+								uach_spawn_opm = { TAG = T67 PROV = 440 }
+							}
+							else = {
+								uach_spawn_opm = { TAG = T66 PROV = 2370 }
+							}
+						}
+						else = {
+							uach_spawn_opm = { TAG = T65 PROV = 2362 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 64 }
+							}
+							uach_spawn_opm = { TAG = T64 PROV = 455 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T63 PROV = 2363 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 61 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 62 }
+							}
+							uach_spawn_opm = { TAG = T62 PROV = 2356 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T61 PROV = 457 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 60 }
+							}
+							uach_spawn_opm = { TAG = T60 PROV = 1967 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T59 PROV = 458 }
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = { which = uach_opm_val value = 55 }
+					}
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 57 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 58 }
+							}
+							uach_spawn_opm = { TAG = T58 PROV = 454 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T57 PROV = 453 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 56 }
+							}
+							uach_spawn_opm = { TAG = T56 PROV = 444 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T55 PROV = 1968 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 53 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 54 }
+							}
+							uach_spawn_opm = { TAG = T54 PROV = 4344 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T53 PROV = 4343 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 52 }
+							}
+							uach_spawn_opm = { TAG = T52 PROV = 2228 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T51 PROV = 2225 }
+						}
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = { which = uach_opm_val value = 42 }
+				}
+				if = {
+					limit = {
+						check_variable = { which = uach_opm_val value = 46 }
+					}
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 48 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 49 }
+							}
+							if = {
+								limit = {
+									check_variable = { which = uach_opm_val value = 50 }
+								}
+								uach_spawn_opm = { TAG = T50 PROV = 449 }
+							}
+							else = {
+								uach_spawn_opm = { TAG = T49 PROV = 2224 }
+							}
+						}
+						else = {
+							uach_spawn_opm = { TAG = T48 PROV = 4324 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 47 }
+							}
+							uach_spawn_opm = { TAG = T47 PROV = 445 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T46 PROV = 2350 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 44 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 45 }
+							}
+							uach_spawn_opm = { TAG = T45 PROV = 4325 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T44 PROV = 2221 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 43 }
+							}
+							uach_spawn_opm = { TAG = T43 PROV = 4326 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T42 PROV = 436 }
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = { which = uach_opm_val value = 38 }
+					}
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 40 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 41 }
+							}
+							uach_spawn_opm = { TAG = T41 PROV = 4336 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T40 PROV = 4334 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 39 }
+							}
+							uach_spawn_opm = { TAG = T39 PROV = 2214 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T38 PROV = 2235 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 36 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 37 }
+							}
+							uach_spawn_opm = { TAG = T37 PROV = 427 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T36 PROV = 578 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 35 }
+							}
+							uach_spawn_opm = { TAG = T35 PROV = 2226 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T34 PROV = 451 }
+						}
+					}
+				}
+			}
+		}
+	}
+	else = {
+		if = {
+			limit = {
+				check_variable = { which = uach_opm_val value = 17 }
+			}
+			if = {
+				limit = {
+					check_variable = { which = uach_opm_val value = 25 }
+				}
+				if = {
+					limit = {
+						check_variable = { which = uach_opm_val value = 29 }
+					}
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 31 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 32 }
+							}
+							if = {
+								limit = {
+									check_variable = { which = uach_opm_val value = 33 }
+								}
+								uach_spawn_opm = { TAG = T33 PROV = 448 }
+							}
+							else = {
+								uach_spawn_opm = { TAG = T32 PROV = 447 }
+							}
+						}
+						else = {
+							uach_spawn_opm = { TAG = T31 PROV = 2229 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 30 }
+							}
+							uach_spawn_opm = { TAG = T30 PROV = 2230 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T29 PROV = 435 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 27 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 28 }
+							}
+							uach_spawn_opm = { TAG = T28 PROV = 2220 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T27 PROV = 4345 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 26 }
+							}
+							uach_spawn_opm = { TAG = T26 PROV = 2234 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T25 PROV = 4330 }
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = { which = uach_opm_val value = 21 }
+					}
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 23 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 24 }
+							}
+							uach_spawn_opm = { TAG = T24 PROV = 4329 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T23 PROV = 2218 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 22 }
+							}
+							uach_spawn_opm = { TAG = T22 PROV = 4331 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T21 PROV = 430 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 19 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 20 }
+							}
+							uach_spawn_opm = { TAG = T20 PROV = 2217 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T19 PROV = 4342 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 18 }
+							}
+							uach_spawn_opm = { TAG = T18 PROV = 2222 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T17 PROV = 4171 }
+						}
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = { which = uach_opm_val value = 8 }
+				}
+				if = {
+					limit = {
+						check_variable = { which = uach_opm_val value = 12 }
+					}
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 14 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 15 }
+							}
+							if = {
+								limit = {
+									check_variable = { which = uach_opm_val value = 16 }
+								}
+								uach_spawn_opm = { TAG = T16 PROV = 4335 }
+							}
+							else = {
+								uach_spawn_opm = { TAG = T15 PROV = 2216 }
+							}
+						}
+						else = {
+							uach_spawn_opm = { TAG = T14 PROV = 2213 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 13 }
+							}
+							uach_spawn_opm = { TAG = T13 PROV = 4337 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T12 PROV = 428 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 10 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 11 }
+							}
+							uach_spawn_opm = { TAG = T11 PROV = 2215 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T10 PROV = 4338 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 9 }
+							}
+							uach_spawn_opm = { TAG = T09 PROV = 2212 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T08 PROV = 4300 }
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						check_variable = { which = uach_opm_val value = 4 }
+					}
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 6 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 7 }
+							}
+							uach_spawn_opm = { TAG = T07 PROV = 414 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T06 PROV = 4289 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 5 }
+							}
+							uach_spawn_opm = { TAG = T05 PROV = 413 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T04 PROV = 2210 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							check_variable = { which = uach_opm_val value = 2 }
+						}
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 3 }
+							}
+							uach_spawn_opm = { TAG = T03 PROV = 2209 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T02 PROV = 2211 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								check_variable = { which = uach_opm_val value = 1 }
+							}
+							uach_spawn_opm = { TAG = T01 PROV = 4294 }
+						}
+						else = {
+							uach_spawn_opm = { TAG = T00 PROV = 415 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
