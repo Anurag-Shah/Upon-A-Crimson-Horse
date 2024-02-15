@@ -60,7 +60,7 @@ uach_spawn_opm = { #TAG #PROV
 		}
 
 		# Grant vision
-		random_neighbor_country = {
+		every_neighbor_country = {
 			every_known_country	= {
 				every_owned_province = {
 					discover_country = $TAG$
@@ -74,6 +74,63 @@ uach_spawn_opm = { #TAG #PROV
 				# governor
 				$TAG$ = {
 					add_government_reform = uach_governor
+					make_tag_governor = yes
+					#country_event = { id = UaCH.64 days = 2 }
+
+					random_list = {
+						80 = {
+							# Loyal to a neighbor if one exists
+							if = {
+								limit = {
+									any_neighbor_country = {
+										AND = {
+											NOT = { core_claim = $TAG$ }
+											NOT = {
+												$TAG$ = { 
+													core_claim = PREV
+												}
+											}
+											NOT = { tag = ROOT }
+											num_of_provinces_in_states = 2
+											OR = {
+												is_prince = yes
+												is_governor = yes
+											}
+										}
+									}
+								}
+								random_neighbor_country = {
+									limit = {
+										AND = {
+											NOT = { core_claim = $TAG$ }
+											NOT = {
+												$TAG$ = { 
+													core_claim = PREV
+												}
+											}
+											NOT = { tag = ROOT }
+											num_of_provinces_in_states = 2
+											OR = {
+												is_prince = yes
+												is_governor = yes
+											}
+										}
+									}
+					
+									create_subject = {
+										subject_type = governor
+										who = $TAG$
+									}
+								}
+							} else = {
+								uach_add_governor_to_war = yes
+							}
+						}
+						20 = {
+							# Independence
+							uach_add_governor_to_war = yes
+						}
+					}
 				}
 			}
 			25 = {
@@ -84,6 +141,8 @@ uach_spawn_opm = { #TAG #PROV
 					set_dynasty = "Timurid"
 					convert_ruler_to_general = yes
 					add_stability = 1
+					make_tag_prince = yes
+					uach_add_prince_to_war = yes
 				}
 			}
 		}

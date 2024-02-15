@@ -1464,22 +1464,34 @@ country_event = {
 		
 		set_country_flag = uach_second_succession_crisis_war_flag
 		add_stability = -3
-		if = {
+		change_tag = HER
+		HER = {
+			every_subject_country = {
+				set_country_flag = uach_second_succession_crisis_war_flag
+				release_all_subjects = yes
+			}
+			release_all_subjects = yes
+		}
+		# All princes declare war on each other
+		set_country_flag = uach_ignore_me_flag
+		every_country = {
 			limit = {
-				has_ruler = "Ulugh Beg"
-				tag = TRS
+				is_prince = yes	
 			}
-			change_tag = HER
-		}
-		every_subject_country = {
-			set_country_flag = uach_second_succession_crisis_war_flag
-			ROOT = {
-				release = PREV
+			every_country = {
+				limit = {
+					is_prince = yes
+				}
+				declare_war_with_cb = {
+					who = PREV
+					casus_belli = cb_challange_claimant
+				}
 			}
 		}
-		# everybody declares war on everybody :)
-		second_succession_crisis_war_effect = yes
 
+		clr_country_flag = uach_ignore_me_flag
+
+		# governors enter the war
 		every_country = {
 			limit = {
 				is_governor = yes
@@ -1513,10 +1525,17 @@ country_event = {
 		days = 1
 	}
 
+	immediate = {
+		hidden_effect = {
+			set_country_flag = uach_still_considering
+		}
+	}
+
 	# We maintain our allegiance to he who rules in Herat.
 	option = {
 		name = "UaCH.26.a"
 		
+		clr_country_flag = uach_still_considering
 		HER = {
 			create_subject = {
 				subject_type = governor
@@ -1525,7 +1544,51 @@ country_event = {
 		}
 
 		ai_chance = {
-			factor = 1
+			factor = 25
+
+			modifier = {
+				factor = 1.5
+				NOT = {
+					border_distance = {
+						who = HER
+						distance = 1
+					}
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				border_distance = {
+					who = HER
+					distance = 150
+				}
+			}
+
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_opinion = {
+						who = HER
+						value = 0
+					}
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = HER
+					value = 75
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = HER
+					value = 100
+				}
+			}
 		}
 	}
 
@@ -1533,6 +1596,7 @@ country_event = {
 	option = {
 		name = "UaCH.26.b"
 		
+		clr_country_flag = uach_still_considering
 		TRS = {
 			create_subject = {
 				subject_type = governor
@@ -1541,10 +1605,54 @@ country_event = {
 		}
 
 		ai_chance = {
-			factor = 1
+			factor = 25
 			modifier = {
 				factor = 1000
 				tag = KHI
+			}
+
+			modifier = {
+				factor = 1.5
+				NOT = {
+					border_distance = {
+						who = KHI
+						distance = 1
+					}
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				border_distance = {
+					who = KHI
+					distance = 150
+				}
+			}
+
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_opinion = {
+						who = KHI
+						value = 0
+					}
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = KHI
+					value = 75
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = KHI
+					value = 100
+				}
 			}
 		}
 	}
@@ -1553,6 +1661,7 @@ country_event = {
 	option = {
 		name = "UaCH.26.c"
 		
+		clr_country_flag = uach_still_considering
 		KHO = {
 			create_subject = {
 				subject_type = governor
@@ -1561,39 +1670,398 @@ country_event = {
 		}
 
 		ai_chance = {
-			factor = 1
+			factor = 20
+
+			modifier = {
+				factor = 1.5
+				NOT = {
+					border_distance = {
+						who = KHO
+						distance = 1
+					}
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				border_distance = {
+					who = KHO
+					distance = 150
+				}
+			}
+
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_opinion = {
+						who = KHO
+						value = 0
+					}
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = KHO
+					value = 75
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = KHO
+					value = 100
+				}
+			}
 		}
 	}
 
+	# Option for Ajam
 	option = {
-		name = "UaCH.26.d"
-		
-		# TODO a choice for all other princes!
+		name = "UaCH.26.f"
+
+		clr_country_flag = uach_still_considering
+		QOM = {
+			create_subject = {
+				subject_type = governor
+				who = ROOT
+			}
+		}
 
 		ai_chance = {
-			factor = 1
+			factor = 25
+
+			modifier = {
+				factor = 1000
+				tag = LRI
+			}
+
+			modifier = {
+				factor = 1.5
+				NOT = {
+					border_distance = {
+						who = QOM
+						distance = 1
+					}
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				border_distance = {
+					who = QOM
+					distance = 150
+				}
+			}
+
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_opinion = {
+						who = QOM
+						value = 0
+					}
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = QOM
+					value = 75
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = QOM
+					value = 100
+				}
+			}
+		}
+	}
+
+	# Option for Fars
+	option = {
+		name = "UaCH.26.g"
+
+		clr_country_flag = uach_still_considering
+		FRS = {
+			create_subject = {
+				subject_type = governor
+				who = ROOT
+			}
+		}
+
+		ai_chance = {
+			factor = 25
+
+			modifier = {
+				factor = 1000
+				tag = LRE
+			}
+
+			modifier = {
+				factor = 1.5
+				NOT = {
+					border_distance = {
+						who = FRS
+						distance = 1
+					}
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				border_distance = {
+					who = FRS
+					distance = 150
+				}
+			}
+
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_opinion = {
+						who = FRS
+						value = 0
+					}
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = FRS
+					value = 75
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = FRS
+					value = 100
+				}
+			}
+		}
+	}
+
+	# Option for Afghanistan
+	option = {
+		name = "UaCH.26.h"
+
+		clr_country_flag = uach_still_considering
+		AFG = {
+			create_subject = {
+				subject_type = governor
+				who = ROOT
+			}
+		}
+
+		ai_chance = {
+			factor = 25
+
+			modifier = {
+				factor = 1.5
+				NOT = {
+					border_distance = {
+						who = AFG
+						distance = 1
+					}
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				border_distance = {
+					who = AFG
+					distance = 150
+				}
+			}
+
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_opinion = {
+						who = AFG
+						value = 0
+					}
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = AFG
+					value = 75
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = AFG
+					value = 100
+				}
+			}
+		}
+	}
+
+	# Option for Khutallan
+	option = {
+		name = "UaCH.26.i"
+
+		clr_country_flag = uach_still_considering
+		KHU = {
+			create_subject = {
+				subject_type = governor
+				who = ROOT
+			}
+		}
+
+		ai_chance = {
+			factor = 25
+
+			modifier = {
+				factor = 1.5
+				NOT = {
+					border_distance = {
+						who = KHU
+						distance = 1
+					}
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				border_distance = {
+					who = KHU
+					distance = 150
+				}
+			}
+
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_opinion = {
+						who = KHU
+						value = 0
+					}
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = KHU
+					value = 75
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = KHU
+					value = 100
+				}
+			}
+		}
+	}
+
+	# Option for Balkh
+	option = {
+		name = "UaCH.26.j"
+
+		clr_country_flag = uach_still_considering
+		BLK = {
+			create_subject = {
+				subject_type = governor
+				who = ROOT
+			}
+		}
+
+		ai_chance = {
+			factor = 25
+
+			modifier = {
+				factor = 1.5
+				NOT = {
+					border_distance = {
+						who = BLK
+						distance = 1
+					}
+				}
+			}
+
+			modifier = {
+				factor = 0.5
+				border_distance = {
+					who = BLK
+					distance = 150
+				}
+			}
+
+			modifier = {
+				factor = 0.2
+				NOT = {
+					has_opinion = {
+						who = BLK
+						value = 0
+					}
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = BLK
+					value = 75
+				}
+			}
+
+			modifier = {
+				factor = 1.3
+				has_opinion = {
+					who = BLK
+					value = 100
+				}
+			}
 		}
 	}
 
 	# This is our chance to expel the sons of Timur!
 	option = {
 		name = "UaCH.26.e"
-		
-		every_country = {
-			limit = {
-				is_governor_or_prince = yes
-				is_subject = no
-			}
-			ROOT = {
-				declare_war_with_cb = {
-					casus_belli = cb_challange_claimant
-					who = PREV
-				}
-			}
+
+		custom_tooltip = UACH_26_E_TOOLTIP
+		hidden_effect = {
+			# Every single prince declares war
+			# then every single prince without uach_still_considering flag declares war
+			uach_add_governor_to_war = yes
+			clr_country_flag = uach_still_considering
 		}
 
 		ai_chance = {
-			factor = 1
+			factor = 40
+
+			modifier = {
+				factor = 2.5
+				any_neighbor_country = {
+					AND = {
+						is_prince = yes
+						ROOT = {
+							military_strength = {
+								who = PREV
+								value = 2.0
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -2973,5 +3441,114 @@ country_event = {
 				add_prosperity = 100
 			}
 		}
+	}
+}
+
+# OPM country choose independence or choose to side with someone
+# They will side with a random country that:
+#	A. doesnt have a core on their province
+#	B. borders them
+#	C. isn't an OPM
+#	D. Is a prince / governor
+# Only ever fires for AI
+# So DW about localizing this
+country_event = {
+	id = UaCH.64
+	title = UaCH.64.t 
+	desc = UaCH.64.d
+	picture = BIG_ARABIAN_CITY_eventPicture
+	is_triggered_only = yes
+
+	# Swear Fealty to a neighbor
+	option = {
+		name = "UaCH.64.a"
+		trigger = {
+			any_neighbor_country = {
+				AND = {
+					NOT = { core_claim = ROOT }
+					num_of_provinces_in_states = 2
+					OR = {
+						is_prince = yes
+						is_governor = yes
+					}
+				}
+			}
+		}
+
+		clr_country_flag = uach_still_considering
+
+		# This has to be the dumbest workaround of all time
+		# paradox......
+		if = {
+			limit = {
+				AND = {
+					NOT = { core_claim = ROOT }
+					num_of_provinces_in_states = 2
+					OR = {
+						is_prince = yes
+						is_governor = yes
+					}
+				}
+			}
+			random_neighbor_country = {
+				limit = {
+					AND = {
+						NOT = { core_claim = ROOT }
+						num_of_provinces_in_states = 2
+						OR = {
+							is_prince = yes
+							is_governor = yes
+						}
+					}
+				}
+
+				create_subject = {
+					subject_type = governor
+					who = PREV
+				}
+			}
+		} else = {
+			uach_add_governor_to_war = yes
+		}
+
+		ai_chance = { factor = 80 }
+	}
+
+	# Join the war
+	option = {
+		name = "UaCH.64.b"
+		uach_add_governor_to_war = yes
+	}
+}
+
+# kill yourself event
+# This is for testing purposes only
+country_event = {
+	id = UaCH.65
+	title = UaCH.65.t 
+	desc = UaCH.65.d
+	picture = BIG_ARABIAN_CITY_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "UaCH.65.a"
+		clr_country_flag = uach_still_considering
+		uach_opm_rebellions = { loyal_chance = 0 revolt_chance = 100 }
+	}
+}
+
+# dumb 1-day delay event
+# always hidden
+country_event = {
+	id = UaCH.66
+	title = UaCH.66.t 
+	desc = UaCH.66.d
+	picture = BIG_ARABIAN_CITY_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+
+	option = {
+		name = "UaCH.66.a"
+		uach_add_prince_to_war = yes
 	}
 }
