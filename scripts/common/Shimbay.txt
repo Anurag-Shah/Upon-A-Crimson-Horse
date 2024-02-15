@@ -1,8 +1,8 @@
-#UACH opm governor: T67 - Shimbay
+#UACH opm governor: U67 - Shimbay
 
 graphical_culture = muslimgfx
 
-color = { 159 112 237 }
+color = { 170 29 129 }
 
 historical_idea_groups = {
 	defensive_ideas

@@ -1,8 +1,8 @@
-#UACH opm governor: T44 - Mashhad
+#UACH opm governor: U44 - Mashhad
 
 graphical_culture = muslimgfx
 
-color = { 131 84 158 }
+color = { 221 85 4 }
 
 historical_idea_groups = {
 	defensive_ideas

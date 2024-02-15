@@ -1,8 +1,8 @@
-#UACH opm governor: T00 - Kirkuk
+#UACH opm governor: U00 - Kirkuk
 
 graphical_culture = muslimgfx
 
-color = { 18 153 201 }
+color = { 131 1 129 }
 
 historical_idea_groups = {
 	defensive_ideas

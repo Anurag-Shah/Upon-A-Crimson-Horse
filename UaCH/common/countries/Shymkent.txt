@@ -1,8 +1,8 @@
-#UACH opm governor: T62 - Shymkent
+#UACH opm governor: U62 - Shymkent
 
 graphical_culture = muslimgfx
 
-color = { 3 73 24 }
+color = { 184 242 174 }
 
 historical_idea_groups = {
 	defensive_ideas

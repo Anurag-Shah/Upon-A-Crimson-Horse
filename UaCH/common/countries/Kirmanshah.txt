@@ -1,8 +1,8 @@
-#UACH opm governor: T04 - Kirmanshah
+#UACH opm governor: U04 - Kirmanshah
 
 graphical_culture = muslimgfx
 
-color = { 198 211 151 }
+color = { 99 156 222 }
 
 historical_idea_groups = {
 	defensive_ideas

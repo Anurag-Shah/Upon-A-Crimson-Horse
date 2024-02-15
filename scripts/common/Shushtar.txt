@@ -1,8 +1,8 @@
-#UACH opm governor: T06 - Shushtar
+#UACH opm governor: U06 - Shushtar
 
 graphical_culture = muslimgfx
 
-color = { 242 252 183 }
+color = { 77 230 207 }
 
 historical_idea_groups = {
 	defensive_ideas

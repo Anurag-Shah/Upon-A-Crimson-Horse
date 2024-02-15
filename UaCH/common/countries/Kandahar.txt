@@ -1,8 +1,8 @@
-#UACH opm governor: T32 - Kandahar
+#UACH opm governor: U32 - Kandahar
 
 graphical_culture = muslimgfx
 
-color = { 59 203 111 }
+color = { 15 124 0 }
 
 historical_idea_groups = {
 	defensive_ideas

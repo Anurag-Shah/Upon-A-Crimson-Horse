@@ -1,8 +1,8 @@
-#UACH opm governor: T26 - Rafsanjan
+#UACH opm governor: U26 - Rafsanjan
 
 graphical_culture = muslimgfx
 
-color = { 224 162 62 }
+color = { 155 9 225 }
 
 historical_idea_groups = {
 	defensive_ideas

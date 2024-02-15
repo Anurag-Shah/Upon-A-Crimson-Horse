@@ -1,8 +1,8 @@
-#UACH opm governor: T34 - Kabul
+#UACH opm governor: U34 - Kabul
 
 graphical_culture = muslimgfx
 
-color = { 95 220 58 }
+color = { 117 128 73 }
 
 historical_idea_groups = {
 	defensive_ideas

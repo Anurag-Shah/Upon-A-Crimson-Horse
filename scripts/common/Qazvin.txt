@@ -1,8 +1,8 @@
-#UACH opm governor: T11 - Qazvin
+#UACH opm governor: U11 - Qazvin
 
 graphical_culture = muslimgfx
 
-color = { 111 75 152 }
+color = { 35 58 27 }
 
 historical_idea_groups = {
 	defensive_ideas

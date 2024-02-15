@@ -1,8 +1,8 @@
-#UACH opm governor: T54 - Kish-Shakhrisabz
+#UACH opm governor: U54 - Kish-Shakhrisabz
 
 graphical_culture = muslimgfx
 
-color = { 241 158 137 }
+color = { 61 201 122 }
 
 historical_idea_groups = {
 	defensive_ideas

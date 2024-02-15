@@ -1,8 +1,8 @@
-#UACH opm governor: T07 - Hamadan
+#UACH opm governor: U07 - Hamadan
 
 graphical_culture = muslimgfx
 
-color = { 194 7 165 }
+color = { 46 36 116 }
 
 historical_idea_groups = {
 	defensive_ideas

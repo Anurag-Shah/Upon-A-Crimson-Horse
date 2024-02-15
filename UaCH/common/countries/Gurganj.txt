@@ -1,8 +1,8 @@
-#UACH opm governor: T65 - Gurganj
+#UACH opm governor: U65 - Gurganj
 
 graphical_culture = muslimgfx
 
-color = { 17 251 131 }
+color = { 0 139 20 }
 
 historical_idea_groups = {
 	defensive_ideas

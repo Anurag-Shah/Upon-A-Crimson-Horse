@@ -1,8 +1,8 @@
-#UACH opm governor: T48 - Ghuriyan
+#UACH opm governor: U48 - Ghuriyan
 
 graphical_culture = muslimgfx
 
-color = { 22 17 117 }
+color = { 217 78 175 }
 
 historical_idea_groups = {
 	defensive_ideas

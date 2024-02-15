@@ -1,8 +1,8 @@
-#UACH opm governor: T24 - Fasa
+#UACH opm governor: U24 - Fasa
 
 graphical_culture = muslimgfx
 
-color = { 113 254 229 }
+color = { 14 230 232 }
 
 historical_idea_groups = {
 	defensive_ideas

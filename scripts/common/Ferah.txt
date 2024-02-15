@@ -1,8 +1,8 @@
-#UACH opm governor: T49 - Ferah
+#UACH opm governor: U49 - Ferah
 
 graphical_culture = muslimgfx
 
-color = { 106 37 25 }
+color = { 39 126 76 }
 
 historical_idea_groups = {
 	defensive_ideas

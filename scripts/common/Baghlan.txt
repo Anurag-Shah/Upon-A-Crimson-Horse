@@ -1,8 +1,8 @@
-#UACH opm governor: T50 - Baghlan
+#UACH opm governor: U50 - Baghlan
 
 graphical_culture = muslimgfx
 
-color = { 73 240 202 }
+color = { 146 60 176 }
 
 historical_idea_groups = {
 	defensive_ideas

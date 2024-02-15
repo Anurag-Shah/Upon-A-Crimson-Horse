@@ -1,8 +1,8 @@
-#UACH opm governor: T61 - Tashkent
+#UACH opm governor: U61 - Tashkent
 
 graphical_culture = muslimgfx
 
-color = { 142 122 43 }
+color = { 38 208 136 }
 
 historical_idea_groups = {
 	defensive_ideas

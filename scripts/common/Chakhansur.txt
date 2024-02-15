@@ -1,8 +1,8 @@
-#UACH opm governor: T30 - Chakhansur
+#UACH opm governor: U30 - Chakhansur
 
 graphical_culture = muslimgfx
 
-color = { 176 232 238 }
+color = { 91 91 193 }
 
 historical_idea_groups = {
 	defensive_ideas

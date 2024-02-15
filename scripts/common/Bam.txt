@@ -1,8 +1,8 @@
-#UACH opm governor: T28 - Bam
+#UACH opm governor: U28 - Bam
 
 graphical_culture = muslimgfx
 
-color = { 46 47 198 }
+color = { 111 83 252 }
 
 historical_idea_groups = {
 	defensive_ideas

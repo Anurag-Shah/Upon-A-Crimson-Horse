@@ -1,8 +1,8 @@
-#UACH opm governor: T05 - Khorrambad
+#UACH opm governor: U05 - Khorrambad
 
 graphical_culture = muslimgfx
 
-color = { 33 199 10 }
+color = { 88 91 175 }
 
 historical_idea_groups = {
 	defensive_ideas

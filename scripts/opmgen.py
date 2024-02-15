@@ -142,7 +142,7 @@ lis = [["415", "Kirkuk"], ["4294", "Sulaimaniyah"], ["2211", "Sanandaj"], ["2209
 loc = ""
 
 for i, item in enumerate(lis):
-    tag = f"T{str(i).rjust(2, '0')}"
+    tag = f"U{str(i).rjust(2, '0')}"
     name = item[1]
     id = item[0]
 

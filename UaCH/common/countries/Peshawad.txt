@@ -1,8 +1,8 @@
-#UACH opm governor: T36 - Peshawad
+#UACH opm governor: U36 - Peshawad
 
 graphical_culture = muslimgfx
 
-color = { 8 156 95 }
+color = { 37 86 198 }
 
 historical_idea_groups = {
 	defensive_ideas

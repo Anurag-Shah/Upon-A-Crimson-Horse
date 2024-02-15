@@ -1,8 +1,8 @@
-#UACH opm governor: T20 - Yasuj
+#UACH opm governor: U20 - Yasuj
 
 graphical_culture = muslimgfx
 
-color = { 108 109 38 }
+color = { 21 241 74 }
 
 historical_idea_groups = {
 	defensive_ideas
