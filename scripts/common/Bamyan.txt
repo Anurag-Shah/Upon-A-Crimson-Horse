@@ -1,8 +1,8 @@
-#UACH opm governor: T51 - Bamyan
+#UACH opm governor: U51 - Bamyan
 
 graphical_culture = muslimgfx
 
-color = { 215 114 46 }
+color = { 60 103 189 }
 
 historical_idea_groups = {
 	defensive_ideas

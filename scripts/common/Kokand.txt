@@ -1,8 +1,8 @@
-#UACH opm governor: T59 - Kokand
+#UACH opm governor: U59 - Kokand
 
 graphical_culture = muslimgfx
 
-color = { 144 194 229 }
+color = { 137 112 114 }
 
 historical_idea_groups = {
 	defensive_ideas

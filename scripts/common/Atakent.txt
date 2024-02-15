@@ -1,8 +1,8 @@
-#UACH opm governor: T63 - Atakent
+#UACH opm governor: U63 - Atakent
 
 graphical_culture = muslimgfx
 
-color = { 117 164 254 }
+color = { 127 104 127 }
 
 historical_idea_groups = {
 	defensive_ideas

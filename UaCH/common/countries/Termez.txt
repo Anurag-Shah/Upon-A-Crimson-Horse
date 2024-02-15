@@ -1,8 +1,8 @@
-#UACH opm governor: T53 - Termez
+#UACH opm governor: U53 - Termez
 
 graphical_culture = muslimgfx
 
-color = { 185 13 2 }
+color = { 90 38 1 }
 
 historical_idea_groups = {
 	defensive_ideas

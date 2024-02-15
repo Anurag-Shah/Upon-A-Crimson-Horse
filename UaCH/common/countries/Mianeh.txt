@@ -1,8 +1,8 @@
-#UACH opm governor: T08 - Mianeh
+#UACH opm governor: U08 - Mianeh
 
 graphical_culture = muslimgfx
 
-color = { 71 154 8 }
+color = { 195 189 64 }
 
 historical_idea_groups = {
 	defensive_ideas

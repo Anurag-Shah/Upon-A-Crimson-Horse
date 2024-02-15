@@ -1,8 +1,8 @@
-#UACH opm governor: T57 - Qarshi
+#UACH opm governor: U57 - Qarshi
 
 graphical_culture = muslimgfx
 
-color = { 99 252 183 }
+color = { 119 138 148 }
 
 historical_idea_groups = {
 	defensive_ideas

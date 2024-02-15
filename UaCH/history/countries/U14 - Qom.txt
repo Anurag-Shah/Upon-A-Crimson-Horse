@@ -1,0 +1,8 @@
+#UACH opm governor: U14 - Qom
+government = monarchy
+add_government_reform = uach_governor
+government_rank = 1
+primary_culture = persian
+religion = shiite
+technology_group = muslim
+capital = 2213

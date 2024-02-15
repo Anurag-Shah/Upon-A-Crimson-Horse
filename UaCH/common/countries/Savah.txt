@@ -1,8 +1,8 @@
-#UACH opm governor: T13 - Savah
+#UACH opm governor: U13 - Savah
 
 graphical_culture = muslimgfx
 
-color = { 64 90 149 }
+color = { 114 17 226 }
 
 historical_idea_groups = {
 	defensive_ideas

@@ -1,8 +1,8 @@
-#UACH opm governor: T09 - Zanjan
+#UACH opm governor: U09 - Zanjan
 
 graphical_culture = muslimgfx
 
-color = { 129 71 11 }
+color = { 185 130 101 }
 
 historical_idea_groups = {
 	defensive_ideas

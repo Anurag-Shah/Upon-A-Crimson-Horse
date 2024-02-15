@@ -1,8 +1,8 @@
-#UACH opm governor: T19 - Malamir
+#UACH opm governor: U19 - Malamir
 
 graphical_culture = muslimgfx
 
-color = { 9 189 1 }
+color = { 118 107 147 }
 
 historical_idea_groups = {
 	defensive_ideas

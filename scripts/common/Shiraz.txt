@@ -1,8 +1,8 @@
-#UACH opm governor: T23 - Shiraz
+#UACH opm governor: U23 - Shiraz
 
 graphical_culture = muslimgfx
 
-color = { 195 100 94 }
+color = { 111 191 139 }
 
 historical_idea_groups = {
 	defensive_ideas

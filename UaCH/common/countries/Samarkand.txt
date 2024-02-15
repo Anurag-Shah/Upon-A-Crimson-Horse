@@ -1,8 +1,8 @@
-#UACH opm governor: T58 - Samarkand
+#UACH opm governor: U58 - Samarkand
 
 graphical_culture = muslimgfx
 
-color = { 57 135 131 }
+color = { 165 229 80 }
 
 historical_idea_groups = {
 	defensive_ideas

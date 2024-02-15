@@ -1,8 +1,8 @@
-#UACH opm governor: T52 - Maymana
+#UACH opm governor: U52 - Maymana
 
 graphical_culture = muslimgfx
 
-color = { 229 93 68 }
+color = { 23 167 247 }
 
 historical_idea_groups = {
 	defensive_ideas

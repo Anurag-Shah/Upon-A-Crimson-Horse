@@ -1,8 +1,8 @@
-#UACH opm governor: T21 - Dashtistan
+#UACH opm governor: U21 - Dashtistan
 
 graphical_culture = muslimgfx
 
-color = { 206 9 127 }
+color = { 68 27 65 }
 
 historical_idea_groups = {
 	defensive_ideas

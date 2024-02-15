@@ -1,8 +1,8 @@
-#UACH opm governor: T55 - Kulob
+#UACH opm governor: U55 - Kulob
 
 graphical_culture = muslimgfx
 
-color = { 117 131 135 }
+color = { 165 230 186 }
 
 historical_idea_groups = {
 	defensive_ideas

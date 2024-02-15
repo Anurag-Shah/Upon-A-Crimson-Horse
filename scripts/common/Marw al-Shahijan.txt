@@ -1,8 +1,8 @@
-#UACH opm governor: T47 - Marw al-Shahijan
+#UACH opm governor: U47 - Marw al-Shahijan
 
 graphical_culture = muslimgfx
 
-color = { 56 82 126 }
+color = { 13 125 96 }
 
 historical_idea_groups = {
 	defensive_ideas

@@ -1,4 +1,4 @@
-#UACH opm governor: T14 - Qom
+#UACH opm governor: U14 - Qom
 
 graphical_culture = muslimgfx
 

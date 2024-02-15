@@ -1,8 +1,8 @@
-#UACH opm governor: T68 - Urgench
+#UACH opm governor: U68 - Urgench
 
 graphical_culture = muslimgfx
 
-color = { 70 6 181 }
+color = { 222 195 130 }
 
 historical_idea_groups = {
 	defensive_ideas

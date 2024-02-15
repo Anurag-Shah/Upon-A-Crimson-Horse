@@ -1,8 +1,8 @@
-#UACH opm governor: T40 - Tabas
+#UACH opm governor: U40 - Tabas
 
 graphical_culture = muslimgfx
 
-color = { 14 23 126 }
+color = { 240 135 236 }
 
 historical_idea_groups = {
 	defensive_ideas

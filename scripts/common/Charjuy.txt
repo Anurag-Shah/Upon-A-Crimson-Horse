@@ -1,8 +1,8 @@
-#UACH opm governor: T56 - Charjuy
+#UACH opm governor: U56 - Charjuy
 
 graphical_culture = muslimgfx
 
-color = { 130 177 198 }
+color = { 64 96 207 }
 
 historical_idea_groups = {
 	defensive_ideas

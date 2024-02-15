@@ -1,8 +1,8 @@
-#UACH opm governor: T45 - Sarakhs
+#UACH opm governor: U45 - Sarakhs
 
 graphical_culture = muslimgfx
 
-color = { 253 22 57 }
+color = { 157 163 186 }
 
 historical_idea_groups = {
 	defensive_ideas

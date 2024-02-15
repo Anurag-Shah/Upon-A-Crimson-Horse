@@ -1,8 +1,8 @@
-#UACH opm governor: T43 - Nishapur
+#UACH opm governor: U43 - Nishapur
 
 graphical_culture = muslimgfx
 
-color = { 72 203 11 }
+color = { 230 170 63 }
 
 historical_idea_groups = {
 	defensive_ideas

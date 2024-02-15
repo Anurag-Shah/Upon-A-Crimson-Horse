@@ -1,8 +1,8 @@
-#UACH opm governor: T66 - Kungirot
+#UACH opm governor: U66 - Kungirot
 
 graphical_culture = muslimgfx
 
-color = { 78 177 46 }
+color = { 53 50 243 }
 
 historical_idea_groups = {
 	defensive_ideas

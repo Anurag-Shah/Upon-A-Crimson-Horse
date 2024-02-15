@@ -1,8 +1,8 @@
-#UACH opm governor: T35 - Jalalabad
+#UACH opm governor: U35 - Jalalabad
 
 graphical_culture = muslimgfx
 
-color = { 180 17 165 }
+color = { 208 144 38 }
 
 historical_idea_groups = {
 	defensive_ideas

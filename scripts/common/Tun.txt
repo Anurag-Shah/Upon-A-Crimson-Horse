@@ -1,8 +1,8 @@
-#UACH opm governor: T41 - Tun
+#UACH opm governor: U41 - Tun
 
 graphical_culture = muslimgfx
 
-color = { 236 198 195 }
+color = { 0 37 4 }
 
 historical_idea_groups = {
 	defensive_ideas
