@@ -15,10 +15,11 @@ is_interloper = {
 
 # This trigger is to check if a country is taking place in the crisis
 is_part_of_second_crisis = {
-	always = yes
-	# is_interloper = yes
-	# is_prince = yes
-	# is_governor = yes
+	OR = {
+		is_interloper = yes
+		is_prince = yes
+		is_governor = yes
+	}
 }
 
 # This trigger is to check if a country supported x in the second crisis

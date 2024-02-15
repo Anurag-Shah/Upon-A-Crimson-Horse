@@ -60,7 +60,7 @@ uach_spawn_opm = { #TAG #PROV
 		}
 
 		# Grant vision
-		random_neighbor_country = {
+		every_neighbor_country = {
 			every_known_country	= {
 				every_owned_province = {
 					discover_country = $TAG$
@@ -74,6 +74,9 @@ uach_spawn_opm = { #TAG #PROV
 				# governor
 				$TAG$ = {
 					add_government_reform = uach_governor
+					make_tag_governor = yes
+					add_country_flag = uach_still_considering
+					country_event = { id = UaCH.64 days = 2 }
 				}
 			}
 			25 = {
@@ -84,6 +87,8 @@ uach_spawn_opm = { #TAG #PROV
 					set_dynasty = "Timurid"
 					convert_ruler_to_general = yes
 					add_stability = 1
+					make_tag_prince = yes
+					country_event = { id = UaCH.66 days = 1 }
 				}
 			}
 		}

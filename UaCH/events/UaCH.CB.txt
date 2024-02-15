@@ -16,22 +16,30 @@ country_event = {
 		# This flag is set in the po to mark a country to be targeted by the event.
 		random_country = {
 			limit = {
-				is_marked_for_new_ruler_after_defeat = yes
+				has = UaCH_enforced_new_ruler_on_claimant
 			}
 			save_event_target_as = claimant_lost_war
 			clr_country_flag = UaCH_enforced_new_ruler_on_claimant
-			transfer_subjects_as_governors = { FROM = THIS TO = ROOT }
+
+			# Make vassal and transfer vassals
 			ROOT = {
-				vassalize = THIS
-				THIS = {
-					add_country_modifier = {
-						name = uach_reduced_liberty_desire_50
-						duration = 7300
+				every_subject_country = {
+					PREV = {
+						create_subject = {
+							subject_type = governor
+						}
 					}
 				}
-				# Demote to governor
-				remove_government_reform = uach_prince
-				add_government_reform = uach_governor
+				create_subject = {
+					subject_type = governor
+					who = $TO$
+				}
+			}
+			
+			# Make temporarily loyal
+			add_country_modifier = {
+				name = uach_reduced_liberty_desire_50
+				duration = 7300
 			}
 		}
 	}
@@ -50,6 +58,9 @@ country_event = {
 				name = uach_enforced_burgher_ruler
 				duration = 3650
 			}
+			# Demote to governor
+			make_tag_governor = yes
+			shuffle_princes = { scope = THIS }
 		}
 
 		ai_chance = {
@@ -75,6 +86,9 @@ country_event = {
 				name = uach_enforced_noble_ruler
 				duration = 3650
 			}
+			# Demote to governor
+			make_tag_governor = yes
+			shuffle_princes = { scope = THIS }
 		}
 
 
@@ -101,6 +115,9 @@ country_event = {
 				name = uach_enforced_church_ruler
 				duration = 3650
 			}
+			# Demote to governor
+			make_tag_governor = yes
+			shuffle_princes = { scope = THIS }
 		}
 
 
@@ -127,6 +144,8 @@ country_event = {
 				name = uach_preserve_ruler
 				duration = 3650
 			}
+
+			# Tag stays a prince in this one
 		}
 
 
