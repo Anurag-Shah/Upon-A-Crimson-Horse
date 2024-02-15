@@ -16,23 +16,35 @@ country_event = {
 		# This flag is set in the po to mark a country to be targeted by the event.
 		random_country = {
 			limit = {
-				has = UaCH_enforced_new_ruler_on_claimant
+				has_country_flag = UaCH_enforced_new_ruler_on_claimant
 			}
 			save_event_target_as = claimant_lost_war
 			clr_country_flag = UaCH_enforced_new_ruler_on_claimant
 
-			# Make vassal and transfer vassals
-			ROOT = {
-				every_subject_country = {
-					PREV = {
-						create_subject = {
-							subject_type = governor
-						}
+			# Delete all their wars
+			every_country = {
+				limit = {
+					OR = {
+						offensive_war_with = PREV
+						defensive_war_with = PREV
 					}
 				}
+				white_peace = PREV
+			}
+
+			# Make vassal and transfer vassals
+			every_subject_country = {
+				ROOT = {
+					create_subject = {
+						subject_type = governor
+						who = PREV
+					}
+				}
+			}
+			ROOT = {
 				create_subject = {
 					subject_type = governor
-					who = $TO$
+					who = PREV
 				}
 			}
 			
