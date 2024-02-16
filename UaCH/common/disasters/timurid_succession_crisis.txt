@@ -1,7 +1,10 @@
 timurid_succession_crisis = {
 	potential = {
 		normal_or_historical_nations = yes
-		tag = TIM
+		OR = {
+			tag = TIM
+			was_tag = TIM
+		}
 		NOT = { has_country_flag = timurids_reformed_government }
 	}
 	
@@ -37,7 +40,7 @@ timurid_succession_crisis = {
 		global_unrest = 5
 	}
 	
-	on_start = UaCH.1
+	on_start = UaCH.25
 	on_end = UaCH.1 # Entirely unused.
 	
 	on_monthly = {

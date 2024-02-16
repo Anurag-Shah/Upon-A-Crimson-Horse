@@ -34,4 +34,56 @@ spriteTypes = {
 	  	name = "GFX_timurids_map_slot"
 	 	texturefile = "gfx/interface/ui/timurids_map_slot.dds"
 	}
+	spriteType = {
+	  	name = "GFX_timurids_map_ajam"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_ajam.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_khorasan"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_khorasan.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_fars"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_fars.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_herat"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_herat.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_merv"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_merv.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_samarkand"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_samarkand.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_ferghana"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_ferghana.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_afghanistan"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_afghanistan.dds"
+	}
+	spriteType = {
+	  	name = "GFX_abandon_our_claims"
+	 	texturefile = "gfx/interface/ui/abandon_our_claims.dds"
+	}
+	spriteType = {
+	  	name = "GFX_intervene_in_the_crisis"
+	 	texturefile = "gfx/interface/ui/intervene_in_the_crisis.dds"
+	}
+	spriteType = {
+	  	name = "GFX_enthrone_timurid_claimant"
+	 	texturefile = "gfx/interface/ui/enthrone_timurid_claimant.dds"
+	}
+	spriteType = {
+	  	name = "GFX_end_timurs_legacy"
+	 	texturefile = "gfx/interface/ui/end_timurs_legacy.dds"
+	}
+	spriteType = {
+	  	name = "GFX_reclaim_timurs_legacy"
+	 	texturefile = "gfx/interface/ui/reclaim_timurs_legacy.dds"
+	}
 }
