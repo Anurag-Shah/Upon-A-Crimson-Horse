@@ -130,6 +130,8 @@
   UaCH.25.t:0"The Succession Crisis"
   UaCH.25.d:0"With the peace now shattered, a succession crisis is once again upon us."
   UaCH.25.a:0"To the strongest!"
+  UACH_CIVIL_WAR_NO_DOW_INSIDE: "§RAny party actively involved in the §YTimurid Succession Crisis§! as a §YPrince§! or §YGovernor§! cannot declare war.§!"
+  UACH_CIVIL_WAR_NO_DOW_OUTSIDE: "§RWe cannot declare war on any §YPrince§! or §YGovernor§! involved in the §YTimurid Succession Crisis§! directly. We must become an §YInterloper§! first.§!"
 
  
   UaCH.26.t:0"Our position in the Crisis"

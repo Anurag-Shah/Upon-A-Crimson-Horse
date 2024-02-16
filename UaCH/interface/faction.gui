@@ -50,21 +50,21 @@ guiTypes = {
 			name = "timurids_window_bg"
 			scripted = yes
 			spriteType = "GFX_timurids_window_bg"
-			position = { x = -150 y = -60 }
+			position = { x = -160 y = -80 }
 		}
 		
 		iconType = {
 			name = "timurids_princes_banner"
 			scripted = yes
 			spriteType = "GFX_icon_prince"
-			position = { x = -36 y = 100 }
+			position = { x = -43 y = 85 }
 		}
 		
 		iconType = {
 			name = "timurids_governors_banner"
 			scripted = yes
 			spriteType = "GFX_icon_emirate"
-			position = { x = 606 y = 100 }
+			position = { x = 621 y = 85 }
 		}
 		
 		# List of shields
@@ -73,140 +73,140 @@ guiTypes = {
 			name ="timurids_prince1_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -56 y = 140 }
+			position = { x= -65 y = 130 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince2_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -16 y = 140 }
+			position = { x= -20 y = 130 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince3_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -56 y = 180 }
+			position = { x= -65 y = 170 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince4_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -16 y = 180 }
+			position = { x= -20 y = 170 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince5_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -56 y = 220 }
+			position = { x= -65 y = 210 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince6_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -16 y = 220 }
+			position = { x= -20 y = 210 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince7_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -56 y = 260 }
+			position = { x= -65 y = 250 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince8_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -16 y = 260 }
+			position = { x= -20 y = 250 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince9_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -56 y = 300 }
+			position = { x= -65 y = 290 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince10_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -16 y = 300 }
+			position = { x= -20 y = 290 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince11_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -56 y = 340 }
+			position = { x= -65 y = 330 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince12_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -16 y = 340 }
+			position = { x= -20 y = 330 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince13_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -56 y = 380 }
+			position = { x= -65 y = 370 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince14_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -16 y = 380 }
+			position = { x= -20 y = 370 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince15_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -56 y = 420 }
+			position = { x= -65 y = 410 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince16_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -16 y = 420 }
+			position = { x= -20 y = 410 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince17_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -56 y = 460 }
+			position = { x= -65 y = 450 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince18_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -16 y = 460 }
+			position = { x= -20 y = 450 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince19_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -56 y = 500 }
+			position = { x= -65 y = 490 }
 		}
 
 		guiButtonType = {
 			name ="timurids_prince20_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= -16 y = 500 }
+			position = { x= -20 y = 490 }
 		}
 
 		# Governors
@@ -215,140 +215,235 @@ guiTypes = {
 			name ="timurids_governor1_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 584 y = 140 }
+			position = { x= 600 y = 130 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor2_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 624 y = 140 }
+			position = { x= 640 y = 130 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor3_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 584 y = 180 }
+			position = { x= 600 y = 170 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor4_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 624 y = 180 }
+			position = { x= 640 y = 170 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor5_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 584 y = 220 }
+			position = { x= 600 y = 210 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor6_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 624 y = 220 }
+			position = { x= 640 y = 210 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor7_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 584 y = 260 }
+			position = { x= 600 y = 250 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor8_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 624 y = 260 }
+			position = { x= 640 y = 250 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor9_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 584 y = 300 }
+			position = { x= 600 y = 290 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor10_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 624 y = 300 }
+			position = { x= 640 y = 290 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor11_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 584 y = 340 }
+			position = { x= 600 y = 330 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor12_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 624 y = 340 }
+			position = { x= 640 y = 330 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor13_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 584 y = 380 }
+			position = { x= 600 y = 370 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor14_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 624 y = 380 }
+			position = { x= 640 y = 370 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor15_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 584 y = 420 }
+			position = { x= 600 y = 410 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor16_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 624 y = 420 }
+			position = { x= 640 y = 410 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor17_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 584 y = 460 }
+			position = { x= 600 y = 450 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor18_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 624 y = 460 }
+			position = { x= 640 y = 450 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor19_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 584 y = 500 }
+			position = { x= 600 y = 490 }
 		}
 
 		guiButtonType = {
 			name ="timurids_governor20_shield"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 624 y = 500 }
+			position = { x= 640 y = 490 }
+		}
+		
+		# Map pieces
+		
+		iconType = {
+			name ="timurids_map_ajam"
+			scripted = yes
+			spriteType = "GFX_timurids_map_ajam"
+			position = { x= 55 y = 298 }
+		}
+		
+		iconType = {
+			name ="timurids_map_khorasan"
+			scripted = yes
+			spriteType = "GFX_timurids_map_khorasan"
+			position = { x= 123 y = 296 }
+		}
+		
+		iconType = {
+			name ="timurids_map_fars"
+			scripted = yes
+			spriteType = "GFX_timurids_map_fars"
+			position = { x= 131 y = 445 }
+		}
+		
+		iconType = {
+			name ="timurids_map_herat"
+			scripted = yes
+			spriteType = "GFX_timurids_map_herat"
+			position = { x= 176 y = 347 }
+		}
+		
+		iconType = {
+			name ="timurids_map_merv"
+			scripted = yes
+			spriteType = "GFX_timurids_map_merv"
+			position = { x= 276 y = 270 }
+		}
+		
+		iconType = {
+			name ="timurids_map_samarkand"
+			scripted = yes
+			spriteType = "GFX_timurids_map_samarkand"
+			position = { x= 247 y = 152 }
+		}
+		
+		iconType = {
+			name ="timurids_map_ferghana"
+			scripted = yes
+			spriteType = "GFX_timurids_map_ferghana"
+			position = { x= 410 y = 195 }
+		}
+		
+		iconType = {
+			name ="timurids_map_afghanistan"
+			scripted = yes
+			spriteType = "GFX_timurids_map_afghanistan"
+			position = { x= 362 y = 330 }
+		}
+		
+		# Buttons
+		
+		guiButtonType = {
+			name = "end_timurs_legacy"
+			position = { x = 70 y = 52 }
+			quadTextureSprite ="GFX_end_timurs_legacy"
+			scripted = yes
+		}
+		
+		guiButtonType = {
+			name = "enthrone_timurid_claimant"
+			position = { x = 150 y = 52 }
+			quadTextureSprite ="GFX_enthrone_timurid_claimant"
+			scripted = yes
+		}
+		
+		guiButtonType = {
+			name = "abandon_our_claims"
+			position = { x = 420 y = 52 }
+			quadTextureSprite ="GFX_abandon_our_claims"
+			scripted = yes
+		}
+		
+		guiButtonType = {
+			name = "intervene_in_the_crisis"
+			position = { x = 500 y = 52 }
+			quadTextureSprite ="GFX_intervene_in_the_crisis"
+			scripted = yes
+		}
+		
+		guiButtonType = {
+			name = "reclaim_timurs_legacy"
+			position = { x = 265 y = 12 }
+			quadTextureSprite ="GFX_reclaim_timurs_legacy"
+			scripted = yes
 		}
 	
 		########

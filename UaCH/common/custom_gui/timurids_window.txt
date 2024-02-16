@@ -417,3 +417,150 @@ custom_shield = {
     global_event_target = timurids_governor20
     open_country = yes
 }
+
+# Map pieces
+
+custom_icon = {
+	name = timurids_map_ajam
+    potential = { has_faction = timurid_faction }
+	tooltip = timurids_map_ajam_tooltip
+}
+custom_icon = {
+	name = timurids_map_khorasan
+    potential = { has_faction = timurid_faction }
+	tooltip = timurids_map_khorasan_tooltip
+}
+custom_icon = {
+	name = timurids_map_fars
+    potential = { has_faction = timurid_faction }
+	tooltip = timurids_map_fars_tooltip
+}
+custom_icon = {
+	name = timurids_map_herat
+    potential = { has_faction = timurid_faction }
+	tooltip = timurids_map_herat_tooltip
+}
+custom_icon = {
+	name = timurids_map_merv
+    potential = { has_faction = timurid_faction }
+	tooltip = timurids_map_merv_tooltip
+}
+custom_icon = {
+	name = timurids_map_samarkand
+    potential = { has_faction = timurid_faction }
+	tooltip = timurids_map_samarkand_tooltip
+}
+custom_icon = {
+	name = timurids_map_ferghana
+    potential = { has_faction = timurid_faction }
+	tooltip = timurids_map_ferghana_tooltip
+}
+custom_icon = {
+	name = timurids_map_afghanistan
+    potential = { has_faction = timurid_faction }
+	tooltip = timurids_map_afghanistan_tooltip
+}
+
+# Buttons
+
+custom_button = {
+    name = abandon_our_claims
+	potential = { has_faction = timurid_faction }
+    trigger = { 
+		custom_trigger_tooltip = {
+			tooltip = WAIT_FOR_SC_TO_START_BITCH_TT
+			has_global_flag = uach_succession_crisis_started
+		}
+		custom_trigger_tooltip = {
+			tooltip = SOMEONE_FLED_ALREADY_DUMBASS
+			NOT = {
+				has_global_flag = tim_mughal_flight
+			}
+		}
+	}
+    effect = { 
+		custom_tooltip = "To be added."
+		hidden_effect = {
+			set_global_flag = tim_mughal_flight
+		}
+	}
+    tooltip = abandon_our_claims_tt
+}
+
+custom_button = {
+    name = intervene_in_the_crisis
+	potential = { has_faction = timurid_faction }
+    trigger = { 
+		custom_trigger_tooltip = {
+			tooltip = WAIT_FOR_SC_TO_START_BITCH_TT
+			has_global_flag = uach_succession_crisis_started
+		}
+		custom_trigger_tooltip = {
+			tooltip = WE_MUST_NEIGHBOR_SOMEONE_IDOT
+			calc_true_if = {
+				all_neighbor_country = {
+					OR = {
+						is_governor = yes
+						is_prince = yes
+					}
+					NOT = {
+						is_interloper = yes
+					}
+				}
+				amount = 1
+			}
+		}
+	}
+    effect = { 
+		custom_tooltip = "To be added."
+	}
+    tooltip = intervene_in_the_crisis_tt
+}
+
+custom_button = {
+    name = enthrone_timurid_claimant
+	potential = { has_faction = timurid_faction }
+    trigger = { 
+		custom_trigger_tooltip = {
+			tooltip = WAIT_FOR_SC_TO_START_BITCH_TT
+			has_global_flag = uach_succession_crisis_started
+		}
+	}
+    effect = { 
+		custom_tooltip = "To be added."
+	}
+    tooltip = enthrone_timurid_claimant_tt
+}
+
+custom_button = {
+    name = end_timurs_legacy
+	potential = { has_faction = timurid_faction }
+    trigger = { 
+		custom_trigger_tooltip = {
+			tooltip = WAIT_FOR_SC_TO_START_BITCH_TT
+			has_global_flag = uach_succession_crisis_started
+		}
+	}
+    effect = { 
+		custom_tooltip = "To be added."
+	}
+    tooltip = end_timurs_legacy_tt
+}
+
+custom_button = {
+    name = reclaim_timurs_legacy
+	potential = { 
+		has_faction = timurid_faction 
+		custom_trigger_tooltip = {
+			tooltip = WAIT_FOR_SC_TO_START_BITCH_TT
+			has_global_flag = uach_succession_crisis_started
+		}
+	}
+    trigger = { 
+		always = no
+	}
+    effect = { 
+		custom_tooltip = "To be added."
+	}
+    tooltip = reclaim_timurs_legacy_tt
+}
