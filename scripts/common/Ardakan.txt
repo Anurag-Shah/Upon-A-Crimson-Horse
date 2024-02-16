@@ -1,8 +1,8 @@
-#UACH opm governor: T18 - Ardakan
+#UACH opm governor: U18 - Ardakan
 
 graphical_culture = muslimgfx
 
-color = { 86 62 203 }
+color = { 223 234 240 }
 
 historical_idea_groups = {
 	defensive_ideas

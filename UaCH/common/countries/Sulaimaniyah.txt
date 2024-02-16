@@ -1,8 +1,8 @@
-#UACH opm governor: T01 - Sulaimaniyah
+#UACH opm governor: U01 - Sulaimaniyah
 
 graphical_culture = muslimgfx
 
-color = { 53 9 154 }
+color = { 185 93 94 }
 
 historical_idea_groups = {
 	defensive_ideas

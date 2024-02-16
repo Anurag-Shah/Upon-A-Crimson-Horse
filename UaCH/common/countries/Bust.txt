@@ -1,8 +1,8 @@
-#UACH opm governor: T31 - Bust
+#UACH opm governor: U31 - Bust
 
 graphical_culture = muslimgfx
 
-color = { 236 216 159 }
+color = { 250 103 244 }
 
 historical_idea_groups = {
 	defensive_ideas

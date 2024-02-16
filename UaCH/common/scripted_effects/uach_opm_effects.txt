@@ -60,7 +60,7 @@ uach_spawn_opm = { #TAG #PROV
 		}
 
 		# Grant vision
-		random_neighbor_country = {
+		every_neighbor_country = {
 			every_known_country	= {
 				every_owned_province = {
 					discover_country = $TAG$
@@ -74,6 +74,63 @@ uach_spawn_opm = { #TAG #PROV
 				# governor
 				$TAG$ = {
 					add_government_reform = uach_governor
+					make_tag_governor = yes
+					#country_event = { id = UaCH.64 days = 2 }
+
+					random_list = {
+						80 = {
+							# Loyal to a neighbor if one exists
+							if = {
+								limit = {
+									any_neighbor_country = {
+										AND = {
+											NOT = { core_claim = $TAG$ }
+											NOT = {
+												$TAG$ = { 
+													core_claim = PREV
+												}
+											}
+											NOT = { tag = ROOT }
+											num_of_provinces_in_states = 2
+											OR = {
+												is_prince = yes
+												is_governor = yes
+											}
+										}
+									}
+								}
+								random_neighbor_country = {
+									limit = {
+										AND = {
+											NOT = { core_claim = $TAG$ }
+											NOT = {
+												$TAG$ = { 
+													core_claim = PREV
+												}
+											}
+											NOT = { tag = ROOT }
+											num_of_provinces_in_states = 2
+											OR = {
+												is_prince = yes
+												is_governor = yes
+											}
+										}
+									}
+					
+									create_subject = {
+										subject_type = governor
+										who = $TAG$
+									}
+								}
+							} else = {
+								uach_add_governor_to_war = yes
+							}
+						}
+						20 = {
+							# Independence
+							uach_add_governor_to_war = yes
+						}
+					}
 				}
 			}
 			25 = {
@@ -84,6 +141,8 @@ uach_spawn_opm = { #TAG #PROV
 					set_dynasty = "Timurid"
 					convert_ruler_to_general = yes
 					add_stability = 1
+					make_tag_prince = yes
+					uach_add_prince_to_war = yes
 				}
 			}
 		}
@@ -605,14 +664,14 @@ uach_spawn_opm_bt = {
 								limit = {
 									check_variable = { which = uach_opm_val value = 67 }
 								}
-								uach_spawn_opm = { TAG = T67 PROV = 440 }
+								uach_spawn_opm = { TAG = U67 PROV = 440 }
 							}
 							else = {
-								uach_spawn_opm = { TAG = T66 PROV = 2370 }
+								uach_spawn_opm = { TAG = U66 PROV = 2370 }
 							}
 						}
 						else = {
-							uach_spawn_opm = { TAG = T65 PROV = 2362 }
+							uach_spawn_opm = { TAG = U65 PROV = 2362 }
 						}
 					}
 					else = {
@@ -620,10 +679,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 64 }
 							}
-							uach_spawn_opm = { TAG = T64 PROV = 455 }
+							uach_spawn_opm = { TAG = U64 PROV = 455 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T63 PROV = 2363 }
+							uach_spawn_opm = { TAG = U63 PROV = 2363 }
 						}
 					}
 				}
@@ -636,10 +695,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 62 }
 							}
-							uach_spawn_opm = { TAG = T62 PROV = 2356 }
+							uach_spawn_opm = { TAG = U62 PROV = 2356 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T61 PROV = 457 }
+							uach_spawn_opm = { TAG = U61 PROV = 457 }
 						}
 					}
 					else = {
@@ -647,10 +706,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 60 }
 							}
-							uach_spawn_opm = { TAG = T60 PROV = 1967 }
+							uach_spawn_opm = { TAG = U60 PROV = 1967 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T59 PROV = 458 }
+							uach_spawn_opm = { TAG = U59 PROV = 458 }
 						}
 					}
 				}
@@ -668,10 +727,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 58 }
 							}
-							uach_spawn_opm = { TAG = T58 PROV = 454 }
+							uach_spawn_opm = { TAG = U58 PROV = 454 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T57 PROV = 453 }
+							uach_spawn_opm = { TAG = U57 PROV = 453 }
 						}
 					}
 					else = {
@@ -679,10 +738,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 56 }
 							}
-							uach_spawn_opm = { TAG = T56 PROV = 444 }
+							uach_spawn_opm = { TAG = U56 PROV = 444 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T55 PROV = 1968 }
+							uach_spawn_opm = { TAG = U55 PROV = 1968 }
 						}
 					}
 				}
@@ -695,10 +754,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 54 }
 							}
-							uach_spawn_opm = { TAG = T54 PROV = 4344 }
+							uach_spawn_opm = { TAG = U54 PROV = 4344 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T53 PROV = 4343 }
+							uach_spawn_opm = { TAG = U53 PROV = 4343 }
 						}
 					}
 					else = {
@@ -706,10 +765,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 52 }
 							}
-							uach_spawn_opm = { TAG = T52 PROV = 2228 }
+							uach_spawn_opm = { TAG = U52 PROV = 2228 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T51 PROV = 2225 }
+							uach_spawn_opm = { TAG = U51 PROV = 2225 }
 						}
 					}
 				}
@@ -736,14 +795,14 @@ uach_spawn_opm_bt = {
 								limit = {
 									check_variable = { which = uach_opm_val value = 50 }
 								}
-								uach_spawn_opm = { TAG = T50 PROV = 449 }
+								uach_spawn_opm = { TAG = U50 PROV = 449 }
 							}
 							else = {
-								uach_spawn_opm = { TAG = T49 PROV = 2224 }
+								uach_spawn_opm = { TAG = U49 PROV = 2224 }
 							}
 						}
 						else = {
-							uach_spawn_opm = { TAG = T48 PROV = 4324 }
+							uach_spawn_opm = { TAG = U48 PROV = 4324 }
 						}
 					}
 					else = {
@@ -751,10 +810,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 47 }
 							}
-							uach_spawn_opm = { TAG = T47 PROV = 445 }
+							uach_spawn_opm = { TAG = U47 PROV = 445 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T46 PROV = 2350 }
+							uach_spawn_opm = { TAG = U46 PROV = 2350 }
 						}
 					}
 				}
@@ -767,10 +826,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 45 }
 							}
-							uach_spawn_opm = { TAG = T45 PROV = 4325 }
+							uach_spawn_opm = { TAG = U45 PROV = 4325 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T44 PROV = 2221 }
+							uach_spawn_opm = { TAG = U44 PROV = 2221 }
 						}
 					}
 					else = {
@@ -778,10 +837,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 43 }
 							}
-							uach_spawn_opm = { TAG = T43 PROV = 4326 }
+							uach_spawn_opm = { TAG = U43 PROV = 4326 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T42 PROV = 436 }
+							uach_spawn_opm = { TAG = U42 PROV = 436 }
 						}
 					}
 				}
@@ -799,10 +858,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 41 }
 							}
-							uach_spawn_opm = { TAG = T41 PROV = 4336 }
+							uach_spawn_opm = { TAG = U41 PROV = 4336 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T40 PROV = 4334 }
+							uach_spawn_opm = { TAG = U40 PROV = 4334 }
 						}
 					}
 					else = {
@@ -810,10 +869,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 39 }
 							}
-							uach_spawn_opm = { TAG = T39 PROV = 2214 }
+							uach_spawn_opm = { TAG = U39 PROV = 2214 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T38 PROV = 2235 }
+							uach_spawn_opm = { TAG = U38 PROV = 2235 }
 						}
 					}
 				}
@@ -826,10 +885,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 37 }
 							}
-							uach_spawn_opm = { TAG = T37 PROV = 427 }
+							uach_spawn_opm = { TAG = U37 PROV = 427 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T36 PROV = 578 }
+							uach_spawn_opm = { TAG = U36 PROV = 578 }
 						}
 					}
 					else = {
@@ -837,10 +896,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 35 }
 							}
-							uach_spawn_opm = { TAG = T35 PROV = 2226 }
+							uach_spawn_opm = { TAG = U35 PROV = 2226 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T34 PROV = 451 }
+							uach_spawn_opm = { TAG = U34 PROV = 451 }
 						}
 					}
 				}
@@ -872,14 +931,14 @@ uach_spawn_opm_bt = {
 								limit = {
 									check_variable = { which = uach_opm_val value = 33 }
 								}
-								uach_spawn_opm = { TAG = T33 PROV = 448 }
+								uach_spawn_opm = { TAG = U33 PROV = 448 }
 							}
 							else = {
-								uach_spawn_opm = { TAG = T32 PROV = 447 }
+								uach_spawn_opm = { TAG = U32 PROV = 447 }
 							}
 						}
 						else = {
-							uach_spawn_opm = { TAG = T31 PROV = 2229 }
+							uach_spawn_opm = { TAG = U31 PROV = 2229 }
 						}
 					}
 					else = {
@@ -887,10 +946,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 30 }
 							}
-							uach_spawn_opm = { TAG = T30 PROV = 2230 }
+							uach_spawn_opm = { TAG = U30 PROV = 2230 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T29 PROV = 435 }
+							uach_spawn_opm = { TAG = U29 PROV = 435 }
 						}
 					}
 				}
@@ -903,10 +962,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 28 }
 							}
-							uach_spawn_opm = { TAG = T28 PROV = 2220 }
+							uach_spawn_opm = { TAG = U28 PROV = 2220 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T27 PROV = 4345 }
+							uach_spawn_opm = { TAG = U27 PROV = 4345 }
 						}
 					}
 					else = {
@@ -914,10 +973,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 26 }
 							}
-							uach_spawn_opm = { TAG = T26 PROV = 2234 }
+							uach_spawn_opm = { TAG = U26 PROV = 2234 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T25 PROV = 4330 }
+							uach_spawn_opm = { TAG = U25 PROV = 4330 }
 						}
 					}
 				}
@@ -935,10 +994,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 24 }
 							}
-							uach_spawn_opm = { TAG = T24 PROV = 4329 }
+							uach_spawn_opm = { TAG = U24 PROV = 4329 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T23 PROV = 2218 }
+							uach_spawn_opm = { TAG = U23 PROV = 2218 }
 						}
 					}
 					else = {
@@ -946,10 +1005,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 22 }
 							}
-							uach_spawn_opm = { TAG = T22 PROV = 4331 }
+							uach_spawn_opm = { TAG = U22 PROV = 4331 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T21 PROV = 430 }
+							uach_spawn_opm = { TAG = U21 PROV = 430 }
 						}
 					}
 				}
@@ -962,10 +1021,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 20 }
 							}
-							uach_spawn_opm = { TAG = T20 PROV = 2217 }
+							uach_spawn_opm = { TAG = U20 PROV = 2217 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T19 PROV = 4342 }
+							uach_spawn_opm = { TAG = U19 PROV = 4342 }
 						}
 					}
 					else = {
@@ -973,10 +1032,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 18 }
 							}
-							uach_spawn_opm = { TAG = T18 PROV = 2222 }
+							uach_spawn_opm = { TAG = U18 PROV = 2222 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T17 PROV = 4171 }
+							uach_spawn_opm = { TAG = U17 PROV = 4171 }
 						}
 					}
 				}
@@ -1003,14 +1062,14 @@ uach_spawn_opm_bt = {
 								limit = {
 									check_variable = { which = uach_opm_val value = 16 }
 								}
-								uach_spawn_opm = { TAG = T16 PROV = 4335 }
+								uach_spawn_opm = { TAG = U16 PROV = 4335 }
 							}
 							else = {
-								uach_spawn_opm = { TAG = T15 PROV = 2216 }
+								uach_spawn_opm = { TAG = U15 PROV = 2216 }
 							}
 						}
 						else = {
-							uach_spawn_opm = { TAG = T14 PROV = 2213 }
+							uach_spawn_opm = { TAG = U14 PROV = 2213 }
 						}
 					}
 					else = {
@@ -1018,10 +1077,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 13 }
 							}
-							uach_spawn_opm = { TAG = T13 PROV = 4337 }
+							uach_spawn_opm = { TAG = U13 PROV = 4337 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T12 PROV = 428 }
+							uach_spawn_opm = { TAG = U12 PROV = 428 }
 						}
 					}
 				}
@@ -1034,10 +1093,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 11 }
 							}
-							uach_spawn_opm = { TAG = T11 PROV = 2215 }
+							uach_spawn_opm = { TAG = U11 PROV = 2215 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T10 PROV = 4338 }
+							uach_spawn_opm = { TAG = U10 PROV = 4338 }
 						}
 					}
 					else = {
@@ -1045,10 +1104,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 9 }
 							}
-							uach_spawn_opm = { TAG = T09 PROV = 2212 }
+							uach_spawn_opm = { TAG = U09 PROV = 2212 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T08 PROV = 4300 }
+							uach_spawn_opm = { TAG = U08 PROV = 4300 }
 						}
 					}
 				}
@@ -1066,10 +1125,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 7 }
 							}
-							uach_spawn_opm = { TAG = T07 PROV = 414 }
+							uach_spawn_opm = { TAG = U07 PROV = 414 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T06 PROV = 4289 }
+							uach_spawn_opm = { TAG = U06 PROV = 4289 }
 						}
 					}
 					else = {
@@ -1077,10 +1136,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 5 }
 							}
-							uach_spawn_opm = { TAG = T05 PROV = 413 }
+							uach_spawn_opm = { TAG = U05 PROV = 413 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T04 PROV = 2210 }
+							uach_spawn_opm = { TAG = U04 PROV = 2210 }
 						}
 					}
 				}
@@ -1093,10 +1152,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 3 }
 							}
-							uach_spawn_opm = { TAG = T03 PROV = 2209 }
+							uach_spawn_opm = { TAG = U03 PROV = 2209 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T02 PROV = 2211 }
+							uach_spawn_opm = { TAG = U02 PROV = 2211 }
 						}
 					}
 					else = {
@@ -1104,10 +1163,10 @@ uach_spawn_opm_bt = {
 							limit = {
 								check_variable = { which = uach_opm_val value = 1 }
 							}
-							uach_spawn_opm = { TAG = T01 PROV = 4294 }
+							uach_spawn_opm = { TAG = U01 PROV = 4294 }
 						}
 						else = {
-							uach_spawn_opm = { TAG = T00 PROV = 415 }
+							uach_spawn_opm = { TAG = U00 PROV = 415 }
 						}
 					}
 				}

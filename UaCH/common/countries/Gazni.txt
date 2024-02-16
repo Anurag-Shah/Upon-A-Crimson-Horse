@@ -1,8 +1,8 @@
-#UACH opm governor: T33 - Gazni
+#UACH opm governor: U33 - Gazni
 
 graphical_culture = muslimgfx
 
-color = { 194 134 233 }
+color = { 234 205 69 }
 
 historical_idea_groups = {
 	defensive_ideas

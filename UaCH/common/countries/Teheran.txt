@@ -1,8 +1,8 @@
-#UACH opm governor: T12 - Teheran
+#UACH opm governor: U12 - Teheran
 
 graphical_culture = muslimgfx
 
-color = { 247 248 206 }
+color = { 158 174 96 }
 
 historical_idea_groups = {
 	defensive_ideas

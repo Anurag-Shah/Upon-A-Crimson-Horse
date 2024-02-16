@@ -1,8 +1,8 @@
-#UACH opm governor: T16 - Kashan
+#UACH opm governor: U16 - Kashan
 
 graphical_culture = muslimgfx
 
-color = { 98 58 41 }
+color = { 203 17 255 }
 
 historical_idea_groups = {
 	defensive_ideas

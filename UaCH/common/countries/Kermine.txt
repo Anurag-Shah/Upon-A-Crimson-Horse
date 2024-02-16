@@ -1,8 +1,8 @@
-#UACH opm governor: T64 - Kermine
+#UACH opm governor: U64 - Kermine
 
 graphical_culture = muslimgfx
 
-color = { 226 207 124 }
+color = { 69 15 154 }
 
 historical_idea_groups = {
 	defensive_ideas

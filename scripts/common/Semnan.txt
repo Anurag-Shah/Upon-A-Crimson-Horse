@@ -1,8 +1,8 @@
-#UACH opm governor: T15 - Semnan
+#UACH opm governor: U15 - Semnan
 
 graphical_culture = muslimgfx
 
-color = { 28 202 23 }
+color = { 194 14 102 }
 
 historical_idea_groups = {
 	defensive_ideas

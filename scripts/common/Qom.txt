@@ -1,8 +1,8 @@
-#UACH opm governor: T14 - Qom
+#UACH opm governor: U14 - Qom
 
 graphical_culture = muslimgfx
 
-color = { 122 20 47 }
+color = { 51 170 144 }
 
 historical_idea_groups = {
 	defensive_ideas

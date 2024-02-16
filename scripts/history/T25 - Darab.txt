@@ -1,8 +1,0 @@
-#UACH opm governor: T25 - Darab
-government = monarchy
-add_government_reform = uach_governor
-government_rank = 1
-primary_culture = persian
-religion = shiite
-technology_group = muslim
-capital = 4330

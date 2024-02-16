@@ -1,8 +1,8 @@
-#UACH opm governor: T46 - Konjikala
+#UACH opm governor: U46 - Konjikala
 
 graphical_culture = muslimgfx
 
-color = { 53 162 155 }
+color = { 154 209 51 }
 
 historical_idea_groups = {
 	defensive_ideas

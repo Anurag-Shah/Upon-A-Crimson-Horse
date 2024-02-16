@@ -1,8 +1,8 @@
-#UACH opm governor: T29 - Zaranj
+#UACH opm governor: U29 - Zaranj
 
 graphical_culture = muslimgfx
 
-color = { 26 211 152 }
+color = { 241 228 252 }
 
 historical_idea_groups = {
 	defensive_ideas

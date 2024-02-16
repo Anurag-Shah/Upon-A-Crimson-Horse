@@ -1,8 +1,8 @@
-#UACH opm governor: T60 - Khujand
+#UACH opm governor: U60 - Khujand
 
 graphical_culture = muslimgfx
 
-color = { 19 79 118 }
+color = { 14 87 84 }
 
 historical_idea_groups = {
 	defensive_ideas

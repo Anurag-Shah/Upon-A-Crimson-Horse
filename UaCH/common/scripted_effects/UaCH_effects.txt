@@ -1019,3 +1019,75 @@ make_tag_governor = {
         save_global_event_target_as = timurids_governor20      
     }
 }
+
+# Adds governor to the war
+uach_add_governor_to_war = {
+    # Every single independent prince declares war on this mf
+    every_country = {
+        limit = {
+            AND = {
+                is_prince = yes
+                NOT = { is_subject = yes }
+            }
+        }
+
+        declare_war_with_cb = {
+            casus_belli = cb_enforce_loyalty_governor
+            who = PREV
+        }
+    }
+
+    # Then every single independent governor without the uach_still_considering flag declares war on this mf
+    every_country = {
+        limit = {
+            AND = {
+                is_governor = yes
+                NOT = { is_subject = yes }
+                NOT = { has_country_flag = uach_still_considering }
+            }
+        }
+
+        declare_war_with_cb = {
+            casus_belli = cb_enforce_loyalty_governor
+            who = PREV
+        }
+    }
+
+    # Yes i know this could be one limit but its easier to read this way
+}
+
+# Adds prince to the war
+uach_add_prince_to_war = {
+    # Every single independent prince declares war on this mf
+    every_country = {
+        limit = {
+            AND = {
+                is_prince = yes
+                NOT = { is_subject = yes }
+            }
+        }
+
+        declare_war_with_cb = {
+            casus_belli = cb_challange_claimant
+            who = PREV
+        }
+    }
+
+    # Then every single independent governor without the uach_still_considering flag declares war on this mf
+    every_country = {
+        limit = {
+            AND = {
+                is_governor = yes
+                NOT = { is_subject = yes }
+                NOT = { has_country_flag = uach_still_considering }
+            }
+        }
+
+        PREV = {
+            declare_war_with_cb = {
+                casus_belli = cb_enforce_loyalty_governor
+                who = PREV
+            }
+        }
+    }
+}

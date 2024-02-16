@@ -1,8 +1,8 @@
-#UACH opm governor: T27 - Saidabad
+#UACH opm governor: U27 - Saidabad
 
 graphical_culture = muslimgfx
 
-color = { 234 124 67 }
+color = { 165 228 83 }
 
 historical_idea_groups = {
 	defensive_ideas

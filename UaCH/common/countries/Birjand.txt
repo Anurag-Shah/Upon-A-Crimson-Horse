@@ -1,8 +1,8 @@
-#UACH opm governor: T42 - Birjand
+#UACH opm governor: U42 - Birjand
 
 graphical_culture = muslimgfx
 
-color = { 221 194 250 }
+color = { 178 86 196 }
 
 historical_idea_groups = {
 	defensive_ideas

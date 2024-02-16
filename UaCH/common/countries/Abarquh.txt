@@ -1,8 +1,8 @@
-#UACH opm governor: T17 - Abarquh
+#UACH opm governor: U17 - Abarquh
 
 graphical_culture = muslimgfx
 
-color = { 120 47 38 }
+color = { 104 159 86 }
 
 historical_idea_groups = {
 	defensive_ideas

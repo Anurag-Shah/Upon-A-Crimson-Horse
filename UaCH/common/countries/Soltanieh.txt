@@ -1,8 +1,8 @@
-#UACH opm governor: T10 - Soltanieh
+#UACH opm governor: U10 - Soltanieh
 
 graphical_culture = muslimgfx
 
-color = { 225 128 118 }
+color = { 104 3 237 }
 
 historical_idea_groups = {
 	defensive_ideas

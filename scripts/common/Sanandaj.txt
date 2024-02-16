@@ -1,8 +1,8 @@
-#UACH opm governor: T02 - Sanandaj
+#UACH opm governor: U02 - Sanandaj
 
 graphical_culture = muslimgfx
 
-color = { 85 79 211 }
+color = { 77 119 47 }
 
 historical_idea_groups = {
 	defensive_ideas
