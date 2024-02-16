@@ -3552,3 +3552,41 @@ country_event = {
 		uach_add_prince_to_war = yes
 	}
 }
+
+# Disaster start
+country_event = {
+	id = UaCH.67 
+	title = UaCH.67.t 
+	desc = UaCH.67.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = "UaCH.67.a"
+		country_event = { id = UaCH.escalation.1 } 
+		
+	}
+}
+
+# Disaster start
+country_event = {
+	id = UaCH.68
+	title = UaCH.68.t 
+	desc = UaCH.68.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	trigger = {
+	}
+
+	fire_only_once = yes
+
+	option = {
+		name = "UaCH.68.a"
+		country_event = { id = UaCH.escalation.3} 
+		
+	}
+}

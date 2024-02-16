@@ -9,7 +9,7 @@ country_event = {
 	picture = CITY_DEVELOPMENT_eventPicture
 	is_triggered_only = yes
 	
-	trigger = { #disaster start event calls}
+	trigger = {}
 
 	hidden = yes
 	
@@ -67,7 +67,7 @@ country_event = {
 				had_global_flag =  {
 					flag = uach_escalation_timer
 					days = 1095}
-					
+			}		
 	hidden = yes
 	
 	option = {
@@ -223,13 +223,12 @@ country_event = {
 				limit = {
 					has_country_modifier = uach_escalation_emperor_5	
 				}
+				clear_global_flag = uach_escalation_timer
 				remove_country_modifier = uach_escalation_emperor_5
 				add_country_modifier ={ 
 					name = uach_escalation_emperor_6
 					duration = -1 }
 			}
-
-			
 			
 		
 			}
@@ -245,7 +244,7 @@ country_event = {
 	picture = CITY_DEVELOPMENT_eventPicture
 	is_triggered_only = yes
 	
-	trigger = { #disaster end event calls}
+	trigger = { }
 
 	hidden = yes
 	
