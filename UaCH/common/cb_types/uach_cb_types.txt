@@ -47,3 +47,22 @@ cb_rebellion_of_sultan_muhammad = {
 
 	war_goal = w_rebellion_of_sultan_muhammad
 }
+
+cb_uach_interloper_conquest = {
+	valid_for_subject = no
+	ai_peace_desire = -100
+
+	# TODO add and remove the cb when ever applicable
+	is_triggered_only = yes
+	months = -1
+
+	prerequisites_self = {
+		is_part_of_second_crisis = yes
+	}
+
+	prerequisites = {
+		is_part_of_second_crisis = yes
+	}
+
+	war_goal = w_uach_interloper_conquest
+}

@@ -1,0 +1,36 @@
+w_uach_interloper_conquest = {
+	type = superiority
+
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 0.75
+		peace_cost_factor = 1
+
+		peace_options = {
+			po_gold
+		}
+
+		deny_annex = yes
+		
+		allowed_provinces = {
+			always = no
+		}
+		allowed_provinces_are_eligible = yes
+	}
+	defender = {
+		badboy_factor = 1
+		prestige_factor = 1.25
+		peace_cost_factor = 1
+
+		peace_options = { 
+			po_demand_provinces
+		}
+
+		allowed_provinces = {
+			always = yes
+		}
+		allowed_provinces_are_eligible = yes
+	}
+
+	war_name = "TEST_TEST_TEST"
+}

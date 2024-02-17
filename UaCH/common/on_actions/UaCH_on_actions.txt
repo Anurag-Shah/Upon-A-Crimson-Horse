@@ -42,3 +42,21 @@ on_siege_lost_province = {
         # TODO siege of Samarkand by Abdal-Latif --> Uluq Beg should be executed
     }
 }
+
+on_war_lost = {
+    # Loser is ROOT
+    # Winner is FROM
+
+    # If one of the participants was an interloper, immediately start war up again
+    # If prince / prince or prince / gov, 6 months then restart war
+    # If gov / gov, 1 year then restart war
+
+    # Fires an event for the Winner
+    # In this event, root and from will be switched
+    # But we dont really care
+    FROM = {
+        country_event = {
+            id = UaCH.70
+        }
+    }
+}

@@ -26,3 +26,52 @@ is_part_of_second_crisis = {
 has_supported_x_in_second_crisis = {
 	has_country_flag = uach_supported_$WHO$_in_second_crisis	
 }
+
+# valid interloper for thematic region $region_int$
+# Just use the triggers below this, they are more readable
+uach_valid_interloper = { # region_int
+	# must be in a tag scope
+
+	# is not already an interloper
+	NOT = { is_interloper = yes }
+
+	OR = {
+		# owns a province in the thematic region
+		any_owned_province = {
+			province_group = uach_tr_$region_int$
+		}
+		# owns a province border that thematic region
+		any_owned_province = {
+			province_group = uach_borders_$region_int$
+		}
+	}
+
+	# At least one province in the thematic region is owned by a prince / governor
+	any_province = {
+		AND = {
+			province_group = uach_tr_$region_int$
+			owner = {
+				OR = {
+					is_prince = yes
+					is_governor = yes
+				}
+			}
+		}
+	}
+
+	# Cannot be a prince / governor
+	AND = {
+		NOT = { is_prince = yes }
+		NOT = { is_governor = yes }
+	}
+}
+
+# Various valid interloper triggers
+uach_valid_interloper_ajam = { uach_valid_interloper = { region_int = 0 } }
+uach_valid_interloper_fars = { uach_valid_interloper = { region_int = 1 } }
+uach_valid_interloper_khorasan = { uach_valid_interloper = { region_int = 2 } }
+uach_valid_interloper_herat = { uach_valid_interloper = { region_int = 3 } }
+uach_valid_interloper_afghanistan = { uach_valid_interloper = { region_int = 4 } }
+uach_valid_interloper_marw = { uach_valid_interloper = { region_int = 5 } }
+uach_valid_interloper_fergana = { uach_valid_interloper = { region_int = 6 } }
+uach_valid_interloper_samarkand = { uach_valid_interloper = { region_int = 7 } }

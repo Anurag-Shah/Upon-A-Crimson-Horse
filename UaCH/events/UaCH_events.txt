@@ -1462,13 +1462,15 @@ country_event = {
 				NOT = {
 					was_tag = TRS
 				}
+			}
 		    change_tag = HER
-    }
-    every_subject_country = {
-      set_country_flag = uach_second_succession_crisis_war_flag
-      release_all_subjects = yes
-    }
-    release_all_subjects = yes
+		}
+		every_subject_country = {
+			set_country_flag = uach_second_succession_crisis_war_flag
+			release_all_subjects = yes
+		}
+
+    	release_all_subjects = yes
 		# All princes declare war on each other
 		set_country_flag = uach_ignore_me_flag
 		every_country = {
@@ -3563,6 +3565,7 @@ country_event = {
 	}
 
 	fire_only_once = yes
+	is_triggered_only = yes
 
 	option = {
 		name = "UaCH.67.a"
@@ -3582,10 +3585,56 @@ country_event = {
 	}
 
 	fire_only_once = yes
+	is_triggered_only = yes
 
 	option = {
 		name = "UaCH.68.a"
-		country_event = { id = UaCH.escalation.3} 
+		country_event = { id = UaCH.escalation.3}  
 		
+	}
+}
+
+# Interloper test
+country_event = {
+	id = UaCH.69
+	title = UaCH.69.t 
+	desc = UaCH.69.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	trigger = {
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "UaCH.69.a"
+		SHY = {
+			uach_create_interloper = { region_int = 7 }
+		}
+	}
+}
+
+# this is a test
+country_event = {
+	id = UaCH.70
+	title = UaCH.70.t 
+	desc = UaCH.07.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	trigger = {
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "UaCH.07.a"
+		FROM = {
+			add_stability = 1
+		}
+		ROOT = {
+			add_stability = 1
+		}
 	}
 }
