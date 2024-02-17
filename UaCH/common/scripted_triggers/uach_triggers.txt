@@ -1,16 +1,25 @@
 # This trigger is to check if a country is a Timurid Governor
 is_governor = {
-	has_reform = uach_governor
+	custom_trigger_tooltip = {
+		tooltip = IS_GOVERNOR_TR_TT
+		has_reform = uach_governor
+	}
 }
 
 # This trigger is to check if a country is a Timurid Prince
 is_prince = {
-	has_reform = uach_prince
+	custom_trigger_tooltip = {
+		tooltip = IS_PRINCE_TR_TT
+		has_reform = uach_prince
+	}
 }
 
 # This trigger is to check if a country is an interloper
 is_interloper = {
-	has_country_flag = uach_interloper
+	custom_trigger_tooltip = {
+		tooltip = IS_INTERLOPER_TR_TT
+		has_country_flag = uach_interloper
+	}
 }
 
 # This trigger is to check if a country is taking place in the crisis
@@ -75,3 +84,204 @@ uach_valid_interloper_afghanistan = { uach_valid_interloper = { region_int = 4 }
 uach_valid_interloper_marw = { uach_valid_interloper = { region_int = 5 } }
 uach_valid_interloper_fergana = { uach_valid_interloper = { region_int = 6 } }
 uach_valid_interloper_samarkand = { uach_valid_interloper = { region_int = 7 } }
+
+# The endgame triggers
+
+# End Timur's Legacy
+# Every prince is a subject or has their capital directly occupied by you
+uach_end_timurs_legacy_possible = {
+	AND = {
+		OR = {
+			is_governor = yes
+			is_interloper = yes
+		}
+		custom_trigger_tooltip = {
+			tooltip = UACH_ETL_GOV_TR_TT
+			all_country = {
+				AND = {
+					is_prince = yes
+					OR = {
+						# controls capital
+						capital_scope = {
+							controlled_by = ROOT
+						}
+						# has as subject
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+	}
+}
+
+# Reclaim Timur's Legacy
+# Every prince / governor is our subject
+# Every Interloper is defeated
+uach_reclaim_timurs_legacy_possible = {
+	AND = {
+		all_country = {
+			AND = {
+				OR = {
+					is_prince = yes
+					is_governor = yes
+				}
+				is_subject_of = ROOT
+			}
+		}
+		NOT = {
+			any_country = {
+				is_interloper = yes
+			}
+		}
+	}
+}
+
+# Interloper's Conquest Over
+uach_interloper_conquest_over_trigger = {
+	AND = {
+		is_interloper = yes
+		custom_trigger_tooltip = {
+			tooltip = UACH_INTERLOPER_CONQUEST_TR_TT
+			# Switch over thematic region
+			OR = {
+				AND = {
+					check_variable = {
+						which = uach_interloper_region
+						value = 7
+					}
+					uach_interloper_conquest_over_trigger_helper = { region_int = 7 }
+				}
+				AND = {
+					check_variable = {
+						which = uach_interloper_region
+						value = 6
+					}
+					NOT = {
+						check_variable = {
+							which = uach_interloper_region
+							value = 7
+						}
+					}
+					uach_interloper_conquest_over_trigger_helper = { region_int = 6 }
+				}
+				AND = {
+					check_variable = {
+						which = uach_interloper_region
+						value = 5
+					}
+					NOT = {
+						check_variable = {
+							which = uach_interloper_region
+							value = 6
+						}
+					}
+					uach_interloper_conquest_over_trigger_helper = { region_int = 5 }
+				}
+				AND = {
+					check_variable = {
+						which = uach_interloper_region
+						value = 4
+					}
+					NOT = {
+						check_variable = {
+							which = uach_interloper_region
+							value = 5
+						}
+					}
+					uach_interloper_conquest_over_trigger_helper = { region_int = 4 }
+				}
+				AND = {
+					check_variable = {
+						which = uach_interloper_region
+						value = 3
+					}
+					NOT = {
+						check_variable = {
+							which = uach_interloper_region
+							value = 4
+						}
+					}
+					uach_interloper_conquest_over_trigger_helper = { region_int = 3 }
+				}
+				AND = {
+					check_variable = {
+						which = uach_interloper_region
+						value = 2
+					}
+					NOT = {
+						check_variable = {
+							which = uach_interloper_region
+							value = 3
+						}
+					}
+					uach_interloper_conquest_over_trigger_helper = { region_int = 2 }
+				}
+				AND = {
+					check_variable = {
+						which = uach_interloper_region
+						value = 1
+					}
+					NOT = {
+						check_variable = {
+							which = uach_interloper_region
+							value = 2
+						}
+					}
+					uach_interloper_conquest_over_trigger_helper = { region_int = 1 }
+				}
+				AND = {
+					NOT = {
+						check_variable = {
+							which = uach_interloper_region
+							value = 1
+						}
+					}
+					uach_interloper_conquest_over_trigger_helper = { region_int = 0 }
+				}
+			}
+		}
+	}
+}
+
+# Helper for above
+# Don't use this
+uach_interloper_conquest_over_trigger_helper = { #region_int
+	# Controlls every province in the thematic region that is owned by a prince / governor
+
+	uach_tr_$region_int$ = {
+		type = all
+		OR = {
+			# either owner is not in the second succession crisis
+			owner = {
+				NOT = { is_part_of_second_crisis = yes }
+			}
+			# or its controlled by PREV
+			controlled_by = PREV
+		}
+	}
+}
+
+# Flee to india trigger
+# -80 warscore, capital is occupied
+# Should be run in a country tag
+uach_flee_to_india_possible = {
+	AND = {
+		warscore = -80
+		capital_scope = {
+			NOT = {
+				controlled_by = PREV
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = UACH_ESCAPE_TO_INDIA_TR_TT
+			uach_escape_to_india_pg = {
+				owner = {
+					AND = {
+						NOT = { is_prince = yes }
+						NOT = { is_governor = yes }
+					}
+				}
+			}
+		}
+	}
+}

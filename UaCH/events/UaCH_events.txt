@@ -1440,7 +1440,7 @@ country_event = {
 	id = UaCH.25 
 	title = UaCH.25.t 
 	desc = UaCH.25.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = CIVIL_WAR_eventPicture
 
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1452,56 +1452,73 @@ country_event = {
 	# To the strongest!
 	option = {
 		name = "UaCH.25.a"
-		
-		set_country_flag = uach_second_succession_crisis_war_flag
+
 		add_stability = -3
-
-		if = {
-			limit = {
-				tag = TIM
-				NOT = {
-					was_tag = TRS
-				}
-			}
-		    change_tag = HER
-		}
-		every_subject_country = {
+		
+		custom_tooltip = UACH_25_A_CUSTOM_TOOLTIP
+		hidden_effect = {
 			set_country_flag = uach_second_succession_crisis_war_flag
-			release_all_subjects = yes
-		}
 
-    	release_all_subjects = yes
-		# All princes declare war on each other
-		set_country_flag = uach_ignore_me_flag
-		every_country = {
-			limit = {
-				is_prince = yes	
+			set_global_flag = uach_succession_crisis_started
+
+			# Remove all timurid cores
+			every_province = {
+				limit = {
+					AND = {
+						is_core	= TIM
+						NOT = { owner = { tag = TIM } }
+					}
+				}
+				remove_core = TIM
 			}
+
+			if = {
+				limit = {
+					tag = TIM
+					NOT = {
+						was_tag = TRS
+					}
+				}
+				change_tag = HER
+			}
+
+			# Release all subjects and subjects subjects
+			every_subject_country = {
+				set_country_flag = uach_second_succession_crisis_war_flag
+				release_all_subjects = yes
+			}
+
+			release_all_subjects = yes
+			# All princes declare war on each other
+			set_country_flag = uach_ignore_me_flag
 			every_country = {
 				limit = {
-					is_prince = yes
+					is_prince = yes	
 				}
-				declare_war_with_cb = {
-					who = PREV
-					casus_belli = cb_challange_claimant
+				every_country = {
+					limit = {
+						is_prince = yes
+					}
+					declare_war_with_cb = {
+						who = PREV
+						casus_belli = cb_challange_claimant
+					}
+				}
+			}
+
+			clr_country_flag = uach_ignore_me_flag
+
+			# governors enter the war
+			every_country = {
+				limit = {
+					is_governor = yes
+				}
+				country_event = {
+					id = UaCH.26
+					days = 1
 				}
 			}
 		}
-
-		clr_country_flag = uach_ignore_me_flag
-
-		# governors enter the war
-		every_country = {
-			limit = {
-				is_governor = yes
-			}
-			country_event = {
-				id = UaCH.26
-				days = 1
-			}
-		}
-		
-		set_global_flag = uach_succession_crisis_started
 
 		ai_chance = {
 			factor = 1
@@ -1514,7 +1531,7 @@ country_event = {
 	id = UaCH.26 
 	title = UaCH.26.t 
 	desc = UaCH.26.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = DIPLOMACY_eventPicture
 
 	is_triggered_only = yes
 
@@ -3467,7 +3484,7 @@ country_event = {
 			any_neighbor_country = {
 				AND = {
 					NOT = { core_claim = ROOT }
-					num_of_provinces_in_states = 2
+					num_of_cities = 2
 					OR = {
 						is_prince = yes
 						is_governor = yes
@@ -3484,7 +3501,7 @@ country_event = {
 			limit = {
 				AND = {
 					NOT = { core_claim = ROOT }
-					num_of_provinces_in_states = 2
+					num_of_cities = 2
 					OR = {
 						is_prince = yes
 						is_governor = yes
@@ -3495,7 +3512,7 @@ country_event = {
 				limit = {
 					AND = {
 						NOT = { core_claim = ROOT }
-						num_of_provinces_in_states = 2
+						num_of_cities = 2
 						OR = {
 							is_prince = yes
 							is_governor = yes
@@ -3615,26 +3632,306 @@ country_event = {
 	}
 }
 
-# this is a test
+# restart war event
 country_event = {
 	id = UaCH.70
 	title = UaCH.70.t 
-	desc = UaCH.07.d
+	desc = UaCH.70.d
 	picture = CITY_DEVELOPMENT_eventPicture
 	
 	trigger = {
 	}
 
-	fire_only_once = yes
+	hidden = yes
+
 	is_triggered_only = yes
 
 	option = {
-		name = "UaCH.07.a"
-		FROM = {
-			add_stability = 1
+		name = "UaCH.70.a"
+
+		# Check if the war needs to be restarted
+		# The 2 countries are FROM and ROOT
+		if = {
+			limit = {
+				AND = {
+					NOT = {
+						ROOT = { is_subject = yes }
+					}
+					NOT = {
+						FROM = { is_subject = yes}
+					}
+				}
+			}
+
+			# Both are still independent countries so the war should recommence
+
+			# Inform both countries about hostilities recommencing
+			FROM = {
+				country_event = {
+					id = UaCH.71
+				}
+			}
+
+			# If ROOT is a prince, ROOT declares war on FROM
+			if = {
+				limit = {
+					ROOT = { is_prince = yes }
+				}
+
+				# If FROM is a prince, claimant superiority
+				if = {
+					limit = {
+						FROM = { is_prince = yes }
+					}
+					ROOT = {
+						declare_war_with_cb	= {
+							casus_belli = cb_challange_claimant
+							who = FROM
+						}
+					}
+				}
+
+				# else FROM is a governor, enforce loyalty
+				else = {
+					ROOT = {
+						declare_war_with_cb	= {
+							casus_belli = cb_enforce_loyalty_governor
+							who = FROM
+						}
+					}
+				}
+			}
+
+			# Else FROM declares war on ROOT. ROOT is always a governor so its enforce loyalty
+			else = {
+				FROM = {
+					declare_war_with_cb	= {
+						casus_belli = cb_enforce_loyalty_governor
+						who = ROOT
+					}
+				}
+			}
 		}
-		ROOT = {
-			add_stability = 1
+	}
+}
+
+# Hostilities have recommenced event p1
+# Fires the event then fires p2 for its FROM
+
+country_event = {
+	id = UaCH.71
+	title = UaCH.71.t 
+	desc = UaCH.71.d
+	picture = CIVIL_WAR_eventPicture
+	
+	trigger = {
+	}
+
+	immediate = {
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = UaCH.72
+				}
+			}
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = "UaCH.71.a"
+	}
+}
+
+# Hostilities have recommenced event p2
+
+country_event = {
+	id = UaCH.72
+	title = UaCH.72.t 
+	desc = UaCH.72.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "UaCH.72.a"
+	}
+}
+
+# Ceasefire announcement event p1
+
+country_event = {
+	id = UaCH.73
+	title = UaCH.73.t 
+	desc = UaCH.73.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = UaCH.76
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "UaCH.73.a"
+	}
+}
+
+# Interloper restart war annoucement event
+
+country_event = {
+	id = UaCH.74
+	title = UaCH.74.t 
+	desc = UaCH.74.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "UaCH.74.a"
+	}
+}
+
+# Normal country restart war with interloper announcement event
+
+country_event = {
+	id = UaCH.75
+	title = UaCH.75.t 
+	desc = UaCH.75.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "UaCH.75.a"
+	}
+}
+
+# Ceasefire announcement event p2
+
+country_event = {
+	id = UaCH.76
+	title = UaCH.76.t 
+	desc = UaCH.76.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "UaCH.76.a"
+	}
+}
+
+# War is over, bye bye interloper (their war is deleted)
+country_event = {
+	id = UaCH.77
+	title = UaCH.77.t 
+	desc = UaCH.77.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "UaCH.77.a"
+	}
+}
+
+# Demand Subjugation
+country_event = {
+	id = UaCH.78
+	title = UaCH.78.t 
+	desc = UaCH.78.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	# Accept subjugation
+	option = {
+		name = "UaCH.78.a"
+
+		# integrate OPM, vassalize other
+		if = {
+			limit = {
+				NOT = { num_of_cities = 2 }
+			}
+			FROM = {
+				inherit = ROOT
+			}
+		} else = {
+			FROM = {
+				create_vassal = ROOT
+			}
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+
+	# Refuse subjugation
+	option = {
+		name = "UaCH.78.a"
+
+		trigger = {
+			num_of_cities = 2
+		}
+
+		FROM = {
+			add_casus_belli = {
+				target = ROOT
+				type = cb_vassalize_mission
+				months = 360
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				FROM = {
+					military_strength = {
+						who = ROOT
+						value = 3.0
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				FROM = {
+					military_strength = {
+						who = ROOT
+						value = 2.0
+					}
+				}
+			}
+			modifier = {
+				factor = 1.3
+				military_strength = {
+					who = FROM
+					value = 1.2
+				}
+			}
+			modifier = {
+				factor = 1.7
+				military_strength = {
+					who = FROM
+					value = 1.6
+				}
+			}
+			modifier = {
+				factor = 1000
+				military_strength = {
+					who = FROM
+					value = 2
+				}
+			}
 		}
 	}
 }

@@ -1,0 +1,13 @@
+﻿l_english:
+ # tooltips
+ IS_GOVERNOR_TR_TT: "Is a Timurid Governor"
+ IS_PRINCE_TR_TT: "Is a Timurid Prince"
+ IS_INTERLOPER_TR_TT: "Is an Interloper in the Timurid Civil War"
+ UACH_ETL_GOV_TR_TT: "Every Timurid Prince is our subject or has their capital directly controlled by us"
+ UACH_INTERLOPER_CONQUEST_TR_TT: "Controls every province in the Thematic Region we declared for, that is owned by either a Prince or a Governor"
+ UACH_RTL_EFFECT_TT: "We will restore the Timurid State! Our Emirates with only a single province will be integrated, but our other Emirates will remain subjects. The war with every interloper will end in a white peace."
+ UACH_ETL_EFFECT_TOOLTIP: "We will destroy all memory of the Timurid State. If we are an interloper, we will gain every province we declared Interloper's Conquest for. We will demand that all remaining Timurid countries become our vassal: if they refuse, we will gain a subjugation Casus Belli on them."
+
+ # modifiers
+ uach_slain_the_crimson_horse: "Slain the Crimson Horse"
+ UACH_ESCAPE_TO_INDIA_TR_TT: "A province must be available for us to escape to"

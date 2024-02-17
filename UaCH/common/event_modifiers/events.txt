@@ -53,3 +53,8 @@ uach_patronage_of_the_couple = {
 	development_cost = -0.10
 	build_cost = -0.10
 }
+
+uach_slain_the_crimson_horse = {
+	prestige_decay = -0.01
+	diplomatic_reputation = 1
+}

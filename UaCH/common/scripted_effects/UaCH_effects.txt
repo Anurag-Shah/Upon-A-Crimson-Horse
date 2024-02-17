@@ -1188,3 +1188,280 @@ uach_create_interloper = { # region_int
         }
     }
 }
+
+# Delete interloper from war
+# This effect should be run in a tag scope
+uach_remove_interloper_from_war = {
+    clr_country_flag = uach_interloper
+
+    # Delete all second crisis wars
+    # Add a 5 year truce with all participants
+    every_country = {
+        limit = {
+            AND = {
+                OR = {
+                    defensive_war_with = PREV
+                    offensive_war_with = PREV
+                }
+                is_part_of_second_crisis = yes
+            }
+        }
+
+        white_peace = PREV
+        add_truce_with = PREV
+    }
+}
+
+# Reclaim Timurs Legacy
+# This assumes youve already checked for the trigger
+uach_reclaim_timurs_legacy_effect = {
+    custom_tooltip = UACH_RTL_EFFECT_TT
+    hidden_effect = {
+        # Delete interloper wars
+        every_country = {
+            limit = {
+                AND = {
+                    is_interloper = yes
+                    OR = {
+                        defensive_war_with = PREV
+                        offensive_war_with = PREV
+                    }
+                }
+            }
+
+            white_peace = PREV
+            add_truce_with = PREV
+            clr_country_flag = uach_interloper
+
+            country_event = {
+                id = UaCH.77
+            }
+        }
+
+        # Change Tag to TIM
+        change_tag = TIM
+
+        # Integrate all OPM subjects
+        every_subject_country = {
+            limit = {
+                NOT = { num_of_cities = 2 }
+            }
+            PREV = {
+                inherit = PREV
+            }
+        }
+
+        # Grant cores over every single thematic region
+        uach_borders_0 = { add_core = TIM }
+        uach_borders_1 = { add_core = TIM }
+        uach_borders_2 = { add_core = TIM }
+        uach_borders_3 = { add_core = TIM }
+        uach_borders_4 = { add_core = TIM }
+        uach_borders_5 = { add_core = TIM }
+        uach_borders_6 = { add_core = TIM }
+        uach_borders_7 = { add_core = TIM }
+
+        # Some cleanup
+        every_country = {
+            clr_country_flag = uach_second_succession_crisis_war_flag
+        }
+
+		clr_global_flag = uach_succession_crisis_started
+        set_global_flag = uach_reformation_time # This will enable govt reformation mechanics
+    }
+}
+
+# End Timurs Legacy
+uach_end_timurs_legacy_effect = {
+    custom_tooltip = UACH_ETL_EFFECT_TOOLTIP
+    add_country_modifier = {
+        name = uach_slain_the_crimson_horse
+        duration = -1
+    }
+    hidden_effect = {
+        # Remove all timurid cores from the map
+        # Do herat too
+        every_province = {
+            limit = {
+                is_core = TIM
+            }
+            remove_core = TIM
+        }
+
+        every_province = {
+            limit = {
+                is_core = HER
+                NOT = { owner = { tag = HER } }
+            }
+            remove_core = HER
+        }
+
+        # If you are an interloper, cede all provinces in thematic region
+        if = {
+            limit = {
+                is_interloper = yes
+            }
+            clr_country_flag = uach_interloper
+            uach_cede_thematic_region = yes
+        }
+
+        # interloper cleanup p1
+        every_country = {
+            limit = {
+                is_interloper = yes
+            }
+
+            country_event = {
+                id = UaCH.77
+            }
+        }
+
+        # Delete all sucession crisis wars
+        every_country = {
+            limit = {
+                is_part_of_second_crisis = yes
+            }
+
+            every_country = {
+                limit = {
+                    AND = {
+                        OR = {
+                            is_part_of_second_crisis = yes
+                        }
+                        OR = {
+                            defensive_war_with = PREV
+                            offensive_war_with = PREV
+                        }
+                    }
+                }
+    
+                white_peace = PREV
+            }
+        }
+
+        # interloper cleanup p2
+        every_country = {
+            limit = {
+                is_interloper = yes
+            }
+            clr_country_flag = uach_interloper
+        }
+
+        # All princes and governors become simple iqtas, this includes us ig
+        every_country = {
+            limit = {
+                OR = {
+                    is_prince = yes
+                    is_governor = yes
+                }
+            }
+            add_government_reform = iqta
+            set_country_flag = uach_was_in_succession_crisis_for_etl_effect	
+        }
+
+        # Demand subjugation
+        every_country = {
+            limit = {
+                AND = {
+                    has_country_flag = uach_was_in_succession_crisis_for_etl_effect
+                    NOT = { is_subject = yes }
+                }
+            }
+            country_event = {
+                id = UaCH.78
+            }
+        }
+
+        # cleanup
+        every_country = {
+            limit = { has_country_flag = uach_was_in_succession_crisis_for_etl_effect }
+            clr_country_flag = uach_was_in_succession_crisis_for_etl_effect
+        }
+    }
+}
+
+# cede thematic region to interloper
+uach_cede_thematic_region = {
+    # must be run in country scope
+    if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 7
+            }
+        }
+        uach_ctrh = { i = 7 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 6
+            }
+        }
+        uach_ctrh = { i = 6 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 5
+            }
+        }
+        uach_ctrh = { i = 5 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 4
+            }
+        }
+        uach_ctrh = { i = 4 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 3
+            }
+        }
+        uach_ctrh = { i = 3 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 2
+            }
+        }
+        uach_ctrh = { i = 2 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 1
+            }
+        }
+        uach_ctrh = { i = 1 }
+    } else = {
+        uach_ctrh = { i = 0 }
+    }
+}
+
+# helper effect
+# dont use
+uach_ctrh = { # i
+    every_province = {
+        limit = {
+            AND = { 
+                province_group = uach_tr_$i$
+                owner = {
+                    is_part_of_second_crisis = yes
+                }
+            }
+        }
+        cede_province = PREV
+    }
+}
+
+# Flee to india
+uach_flee_to_india_effect = {
+    # Cede a province in india
+    every_owned_province = 
+}
