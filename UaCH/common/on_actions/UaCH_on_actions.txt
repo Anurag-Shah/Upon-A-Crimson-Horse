@@ -43,103 +43,11 @@ on_siege_lost_province = {
     }
 }
 
-on_war_lost = {
-    # Loser is ROOT
-    # Winner is FROM
-
-    # If Winner was an interloper, immediately start war up again
-    # If prince / prince or prince / gov, 6 months then restart war
-    # If gov / gov, 1 year then restart war
-
-    # First check if both participants are in the civil war
-    if = {
-        limit = {
-            AND = {
-                FROM = {
-                    is_part_of_second_crisis = yes
-                }
-                ROOT = {
-                    is_part_of_second_crisis = yes
-                }
-            }
+on_war_won = {
+    FROM = {
+        country_event = {
+            id = UaCH.80
+            days = 1
         }
-
-        # If ROOT is an interloper, then they have just lost
-        if = {
-            limit = {
-                ROOT = {
-                    is_interloper = yes
-                }
-            }
-            uach_remove_interloper_from_war = yes
-        }
-
-        # If FROM is an interloper, restart the war (we know ROOT isnt an interloper)
-        else_if = {
-            limit = {
-                FROM = {
-                    is_interloper = yes
-                }
-            }
-
-            FROM = {
-                declare_war_with_cb	= {
-                    casus_belli = cb_uach_interloper_conquest
-                    who = ROOT
-                }
-                country_event = { id = UaCH.74 }
-            }
-            ROOT = { country_event = { id = UaCH.75 }}
-        }
-
-        # Neither country is an interloper
-        # If both countries are governors, ~1 year ceasefire
-        else_if = {
-            limit = {
-                FROM = {
-                    is_governor = yes
-                }
-                ROOT = {
-                    is_governor = yes
-                }
-            }
-
-            FROM = {
-                # Restart war in average 1 year, between 300-430 days
-                country_event = {
-                    id = UaCH.70
-                    days = 300
-                    random = 130
-                }
-            }
-
-            # Inform both sides about the ceasefire
-            FROM = {
-                country_event = {
-                    id = UaCH.73
-                }
-            }
-        }
-
-        # At least 1 country is a prince
-        # Declare war in ~6 months
-
-        else = {
-            FROM = {
-                # Restart war in average 6 months, between 150-215 days
-                country_event = {
-                    id = UaCH.70
-                    days = 150
-                    random = 65
-                }
-            }
-
-            # Inform both sides about the ceasefire
-            FROM = {
-                country_event = {
-                    id = UaCH.73
-                }
-            }
-        }
-    }    
+    }
 }

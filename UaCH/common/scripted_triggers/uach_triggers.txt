@@ -98,16 +98,19 @@ uach_end_timurs_legacy_possible = {
 		custom_trigger_tooltip = {
 			tooltip = UACH_ETL_GOV_TR_TT
 			all_country = {
-				AND = {
-					is_prince = yes
-					OR = {
-						# controls capital
-						capital_scope = {
-							controlled_by = ROOT
+				OR = {
+					AND = {
+						is_prince = yes
+						OR = {
+							# controls capital
+							capital_scope = {
+								controlled_by = ROOT
+							}
+							# has as subject
+							is_subject = yes
 						}
-						# has as subject
-						is_subject_of = ROOT
 					}
+					NOT = { is_prince = yes }
 				}
 			}
 		}
@@ -119,13 +122,22 @@ uach_end_timurs_legacy_possible = {
 # Every Interloper is defeated
 uach_reclaim_timurs_legacy_possible = {
 	AND = {
-		all_country = {
-			AND = {
+		custom_trigger_tooltip = {
+			tooltip = UACH_RTL_TR_TT_PROG
+			all_country = {
 				OR = {
-					is_prince = yes
-					is_governor = yes
+					AND = {
+						NOT = { is_prince = yes }
+						NOT = { is_governor = yes }
+					}
+					AND = {
+						OR = {
+							is_prince = yes
+							is_governor = yes
+						}
+						is_subject_of = ROOT
+					}
 				}
-				is_subject_of = ROOT
 			}
 		}
 		NOT = {

@@ -1217,31 +1217,11 @@ uach_remove_interloper_from_war = {
 uach_reclaim_timurs_legacy_effect = {
     custom_tooltip = UACH_RTL_EFFECT_TT
     hidden_effect = {
-        # Delete interloper wars
-        every_country = {
-            limit = {
-                AND = {
-                    is_interloper = yes
-                    OR = {
-                        defensive_war_with = PREV
-                        offensive_war_with = PREV
-                    }
-                }
-            }
-
-            white_peace = PREV
-            add_truce_with = PREV
-            clr_country_flag = uach_interloper
-
-            country_event = {
-                id = UaCH.77
-            }
-        }
-
         # Change Tag to TIM
         change_tag = TIM
 
         # Integrate all OPM subjects
+        # NOT CAUSE OF CTD
         every_subject_country = {
             limit = {
                 NOT = { num_of_cities = 2 }
@@ -1252,17 +1232,18 @@ uach_reclaim_timurs_legacy_effect = {
         }
 
         # Grant cores over every single thematic region
-        uach_borders_0 = { add_core = TIM }
-        uach_borders_1 = { add_core = TIM }
-        uach_borders_2 = { add_core = TIM }
-        uach_borders_3 = { add_core = TIM }
-        uach_borders_4 = { add_core = TIM }
-        uach_borders_5 = { add_core = TIM }
-        uach_borders_6 = { add_core = TIM }
-        uach_borders_7 = { add_core = TIM }
+        uach_tr_0 = { add_core = TIM }
+        uach_tr_1 = { add_core = TIM }
+        uach_tr_2 = { add_core = TIM }
+        uach_tr_3 = { add_core = TIM }
+        uach_tr_4 = { add_core = TIM }
+        uach_tr_5 = { add_core = TIM }
+        uach_tr_6 = { add_core = TIM }
+        uach_tr_7 = { add_core = TIM }
 
         # Some cleanup
         every_country = {
+            limit = { has_country_flag = uach_second_succession_crisis_war_flag }
             clr_country_flag = uach_second_succession_crisis_war_flag
         }
 
@@ -1347,19 +1328,53 @@ uach_end_timurs_legacy_effect = {
             clr_country_flag = uach_interloper
         }
 
-        # All princes and governors become simple iqtas, this includes us ig
+        # Turn emirates into vassals
+        every_subject_country = {
+            set_country_flag = uach_free_em_then_vassalize
+        }
+
+        release_all_subjects = yes
+
         every_country = {
             limit = {
-                OR = {
-                    is_prince = yes
-                    is_governor = yes
+                has_country_flag = uach_free_em_then_vassalize
+            }
+            PREV = {
+                create_subject = {
+					subject_type = vassal
+					subject = PREV
+				}
+            }
+        }
+
+        # All princes and governors become simple iqtas, except us
+        every_country = {
+            limit = {
+                AND = {
+                    OR = {
+                        is_prince = yes
+                        is_governor = yes
+                    }
+                    NOT = { tag = ROOT }
                 }
             }
-            add_government_reform = iqta
+            if = {
+                limit = {
+                    is_prince = yes
+                }
+                remove_government_reform = uach_prince
+            }
+            if = {
+                limit = {
+                    is_governor = yes
+                }
+                remove_government_reform = uach_governor
+            }
             set_country_flag = uach_was_in_succession_crisis_for_etl_effect	
         }
 
         # Demand subjugation
+        save_global_event_target_as = uach_timurid_legacy_ender
         every_country = {
             limit = {
                 AND = {
@@ -1376,6 +1391,18 @@ uach_end_timurs_legacy_effect = {
         every_country = {
             limit = { has_country_flag = uach_was_in_succession_crisis_for_etl_effect }
             clr_country_flag = uach_was_in_succession_crisis_for_etl_effect
+        }
+
+        # event to remove prince gov reform from yourself
+        if = {
+            limit = {
+                is_governor = yes
+            }
+            country_event = {
+                id = UaCH.81
+                days = 1
+            }
+            set_country_flag = uach_ignore_me_in_ceasefire
         }
     }
 }
@@ -1462,6 +1489,151 @@ uach_ctrh = { # i
 
 # Flee to india
 uach_flee_to_india_effect = {
+    # no longer prince / gov just iqta
+    #add_government_reform = iqta
+    
     # Cede a province in india
-    every_owned_province = 
+    random_province = {
+        limit = {
+            province_group = uach_escape_to_india_pg
+        }
+        cede_province = PREV
+        add_core = PREV
+        set_province_flag = uach_ignore_me_next_flag
+    }
+
+    # Every owned province, occupied, ceded to occupier
+    every_owned_province = {
+        limit = {
+            AND = {
+                NOT = { has_province_flag = uach_ignore_me_next_flag }
+                NOT = { controlled_by = PREV }
+                NOT = { controlled_by = REB }
+            }
+        }
+        controller = {
+            PREV = {
+                cede_province = PREV
+            }
+        }
+    }
+
+    # Every subject goes free, and joins the war
+    every_subject_country = {
+        set_country_flag = uach_fti_add_to_cw_flag
+    }
+
+    release_all_subjects = yes
+
+    every_country = {
+        limit = {
+            has_country_flag = uach_fti_add_to_cw_flag
+        }
+        if = {
+            limit = { is_prince = yes }
+            uach_add_prince_to_war = yes
+        }
+        else_if = {
+            limit = { is_governor = yes }
+            uach_add_governor_to_war = yes
+        }
+        clr_country_flag = uach_fti_add_to_cw_flag
+    }
+
+    # every owned province, unoccupied, spits out opm
+    every_owned_province = {
+        limit = {
+            NOT = { has_province_flag = uach_ignore_me_next_flag }
+        }
+        uach_spawn_opm_bt = yes
+    }
+
+    # Any remaining owned provinces get ceded to a random neighbor
+    every_owned_province = {
+        limit = {
+            NOT = { has_province_flag = uach_ignore_me_next_flag }
+        }
+        random_neighbor_province = {
+            limit = {
+                owner = {
+                    NOT = {
+                        tag = ROOT
+                    }
+                }
+            }
+            owner = {
+                save_event_target_as = uach_temp_et_flee
+            }
+        }
+        cede_province = event_target:uach_temp_et_flee
+    }
+
+    # Remove from Civil War (delete all wars)
+    every_country = {
+        limit = {
+            OR = {
+                defensive_war_with = PREV
+                offensive_war_with = PREV
+            }
+        }
+        white_peace = PREV
+        add_truce_with = PREV
+    }
+
+    # delete all units
+    kill_units = { who = THIS }
+
+    # spawn new units in the india province
+    # 20 inf, 4 cav
+    every_province = {
+        limit = { has_province_flag = uach_ignore_me_next_flag }
+        PREV = {
+            #infantry = PREV
+            for = {
+                amount = 20
+                effect = "
+                infantry = PREV
+                "
+            }
+            for = {
+                amount = 4
+                effect = "
+                cavalry = PREV
+                "
+            }
+        }
+    }
+
+    
+    # Popup some event talking about conquering india
+    country_event = {
+        id = UaCH.79
+    }
+
+    # cleanup
+    every_province = {
+        limit = { has_province_flag = uach_ignore_me_next_flag }
+        remove_province_flag = uach_ignore_me_next_flag
+    }
+
+    # event to remove prince gov reform from yourself
+    if = {
+        limit = {
+            is_governor = yes
+        }
+        country_event = {
+            id = UaCH.81
+            days = 1
+        }
+        set_country_flag = uach_ignore_me_in_ceasefire
+    } else_if = {
+        limit = {
+            is_prince = yes
+        }
+        country_event = {
+            id = UaCH.82
+            days = 1
+        }
+        set_country_flag = uach_ignore_me_in_ceasefire
+    }
 }
