@@ -38,7 +38,8 @@ country_event = {
 	title = UaCH.3.t 
 	desc = UaCH.3.d
 	picture = CITY_DEVELOPMENT_eventPicture
-
+	
+	fire_only_once = yes
 	trigger = {
 		tag = TIM
 		has_country_flag = uach_ailing_emperor
@@ -68,6 +69,7 @@ country_event = {
 	desc = UaCH.4.d
 	picture = CITY_DEVELOPMENT_eventPicture
 
+	fire_only_once = yes
 	trigger = {
 		tag = TIM
 	}
@@ -86,9 +88,14 @@ country_event = {
 
 		custom_tooltip = mnt_speeds_up_disaster
 		custom_tooltip = mnt_gawhar_shad_will_puppet_ruler
-
+		
+		
 		# TODO increase chance of Muhammad Juki's death
+		set_country_flag = uach_yuki_dies_fo_sho
 
+		set_country_flag = uach_yuki_dies_disaster_faster
+		
+		
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -131,6 +138,7 @@ country_event = {
 	desc = UaCH.5.d
 	picture = CITY_DEVELOPMENT_eventPicture
 
+	fire_only_once = yes
 	trigger = {
 		tag = TIM
 		has_heir = "Muhammad Juki"
@@ -146,6 +154,7 @@ country_event = {
 		random_list = {
 			90 = {
 				kill_heir = {  }
+				BLK = { kill_ruler = yes }
 			}
 			10 = { 
 				random_list = {
@@ -176,6 +185,8 @@ country_event = {
 		name = "UaCH.5.b"
 		
 		kill_heir = {  }
+		BLK = { kill_ruler = yes }
+	#muhammad juki rules in balkh
 
 		random_owned_province = {
 			limit = {
@@ -201,6 +212,7 @@ country_event = {
 	desc = UaCH.6.d
 	picture = CITY_DEVELOPMENT_eventPicture
 
+	fire_only_once = yes
 	trigger = {
 		tag = QOM
 	}
@@ -213,12 +225,12 @@ country_event = {
 	option = {
 		name = "UaCH.6.a"
 		ISF = {
-			grant_independence = yes
 			set_country_flag = isfh_rebels
 		}
 		vassalize = ISF
-		set_country_flag = uach_QOM_assisted_ISF
-
+		ISF = { set_country_flag = uach_QOM_assisted_ISF }
+		
+		
 		ai_chance = {
 			factor = 1
 		}
@@ -261,6 +273,7 @@ country_event = {
 	desc = UaCH.7.d
 	picture = CITY_DEVELOPMENT_eventPicture
 
+	fire_only_once = yes
 	trigger = {
 		tag = TIM
 	}
@@ -319,6 +332,14 @@ country_event = {
 		}
 	}
 
+	# There is still time for this�
+	option = {
+		name = "UaCH.7.e"
+		
+		add_prestige = -10
+
+	}
+	
 	# My favorite, Muhammad Juki
 	option = {
 		name = "UaCH.7.c"
@@ -334,22 +355,8 @@ country_event = {
 		}
 
 		custom_tooltip = mnt_gawhar_shad_more_likely_to_rebel_slower_disaster
-
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				# TODO
-			}
-		}
-	}
-
-	# There is still time for this�
-	option = {
-		name = "UaCH.7.d"
+		set_country_flag = uach_yuki_lives_slower_disaster
 		
-		# Anything in here?
-
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -358,7 +365,10 @@ country_event = {
 			}
 		}
 	}
+	
+	
 }
+
 
 # Rebellion in Isfahan
 country_event = {
@@ -366,7 +376,8 @@ country_event = {
 	title = UaCH.8.t 
 	desc = UaCH.8.d
 	picture = CITY_DEVELOPMENT_eventPicture
-
+	
+	fire_only_once = yes
 	trigger = {
 		AND = {
 			tag = ISF
@@ -461,6 +472,8 @@ country_event = {
 	}
 }
 
+
+
 # Muhammads demands - recieving side
 country_event = {
 	id = UaCH.9 
@@ -497,7 +510,7 @@ country_event = {
 		}
 
 		ai_chance = {
-			factor = 1
+			factor = 1.5
 			modifier = {
 				factor = 0
 				OR = {
@@ -518,8 +531,11 @@ country_event = {
 		set_country_flag = uach_root_ISF_peace_out
 		custom_tooltip = "If [ISF.GetName] declares war for its independence, we [Root.GetName] will not interfere on either side."
 		
+		white_peace = QOM
+		white_peace = ISF
+		
 		ai_chance = {
-			factor = 1
+			factor = 0.5
 			modifier = {
 				factor = 1000
 				tag = TRS
@@ -534,9 +550,11 @@ country_event = {
 		# flag to join agains ISF
 		set_country_flag = uach_root_will_fight_ISF
 		custom_tooltip = "If [ISF.GetName] declares war for its independence, we [Root.GetName] will join the war on the side of [TIM.GetName]."
-
+		
+		create_alliance = TIM
+		
 		ai_chance = {
-			factor = 1
+			factor = 0.5
 			modifier = {
 				factor = 1000
 				tag = AFG

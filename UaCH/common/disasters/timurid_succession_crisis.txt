@@ -27,6 +27,17 @@ timurid_succession_crisis = {
 			factor = 5
 			always = yes
 		}
+		
+		modifier = {
+			factor = -1
+			set_country_flag = uach_yuki_lives_slower_disaster
+		}
+		
+		modifier = {
+			factor = 1
+			has_country_flag = uach_yuki_dies_disaster_faster
+		}
+		
 	}
 	
 	can_end = {

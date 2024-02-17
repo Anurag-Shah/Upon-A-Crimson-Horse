@@ -12,7 +12,7 @@
 
   # Misc events
   UaCH.1.t:0 "The Ailing Emperor"
-  UaCH.1.d:0 "Early in 1444, §GShah Rukh Mirza§!, ruler of the Timurid empire, youngest son of §GTimur§!, has fallen ill. While the nature of his illness is not disclosed outside his court, news are spreading that he will not survive the year. This news had sent the royal family and the high nobles into a frenzied preparation for chaos, as Shah Rukh's designated successor has died a few years prior. Many elders still remember the days after Timurs death followed by a decade of campaigning before relative peace could return to the land.\n\nIn the north, Shah Rukhs last surviving child, the scholarly §GUlugh beg§! and his ambitious son §GAbdal Latif§!, long time viceroy of §YTransoxiana§! are already putting plans in motion.\n The de facto independent prince of §YAjam§!, §GSultan Muhammad§! is eyeing the neighbouring §YIsfahan§!, where the old and decrepit §GMahmudshah§! is still clinging to power.\nShah Rukh's favorite grandson §GMuhammad Juki§!, the governor of §YBalkh§! is more than willing to step up, but there are rumors about him being ill too.\nAnother grandson, amir of §YHerat§!, §GAla al-Dawla Mirza§! is also eyeing the throne and gathering his armies, with the full support of his grandmother,Shah Rukhs chief consort §GGawhar Shad§! ." 
+  UaCH.1.d:0 "Early in 1444, §GShah Rukh Mirza§!, ruler of the Timurid empire, youngest son of §GTimur§!, has fallen ill. While the nature of his illness is not disclosed outside his court, news are spreading that he will not survive the year. This news had sent the royal family and the high nobles into a frenzied preparation for chaos, as Shah Rukh's designated successor has died a few years prior. Many elders still remember the days after Timurs death followed by a decade of campaigning before relative peace could return to the land.\n\nIn the north, Shah Rukhs last surviving child, the scholarly §GUlugh beg§! and his ambitious son §GAbdal Latif§!, long time viceroy of §YTransoxiana§! are already putting plans in motion.\n\n The de facto independent prince of §YAjam§!, §GSultan Muhammad§! is eyeing the neighbouring §YIsfahan§!, where the old and decrepit §GMahmudshah§! is still clinging to power.\n\nShah Rukh's favorite grandson §GMuhammad Juki§!, the governor of §YBalkh§! is more than willing to step up, but there are rumors about him being ill too.\n\nAnother grandson, amir of §YHerat§!, §GAla al-Dawla Mirza§! is also eyeing the throne and gathering his armies, with the full support of his grandmother,Shah Rukhs chief consort §GGawhar Shad§! ." 
   UaCH.1.a:0 "To the strongest!"
   UaCH.2.t:0"Secret Plot"
   UaCH.2.t:0"Secret Plot"
@@ -28,36 +28,48 @@
   UaCH.4.d:0"During last winter, our lady §GGawhar Shad§! has been plotting behind §GShah Rukh§!. While she claims this all was done for the greater good, many in the court, especially §GMuhammad Juki§! has been clamoring against her involvement of politics."
   UaCH.4.a:0"One small scuffle is nothing"
   UaCH.4.b:0"I’m sorry, my love, but I’ve seen your intentions."
+  mnt_speeds_up_disaster:0"§RThe collapes will happen faster once Shah Rukh dies.§!"
+  mnt_gawhar_shad_will_puppet_ruler:0"Upon Shah Rukh's death, his successor will be influenced by Gawhar Shad."
+  mnt_gawhar_and_military_will_rebel_on_monarch_death:0"§RGawhar Shad will rebel against the successor with the help of the nobility§!"
+  mnt_one_small_suffering:0"Small scuffle"
  
   UaCH.5.t:0"Illness of Muhammad Juki"
   UaCH.5.d:0"Today, the gravest of news have reached the court. The Prince of §YBalkh§!, §GMuhammad Juki§! has became sick with some unknown malady. There are a few testifying the ongoing circumstances of this mystery illness, citing it is chronic, but there are no reliable witnesses to be found."
   UaCH.5.a:0"Chronic illness? Why do I hear about this only now?"
   UaCH.5.b:0"Chronic illness you say?"
- #Replace Muhammad Juki with his son Abu Bakr he dies
+  #Replace Muhammad Juki with his son Abu Bakr he dies
  
   UaCH.6.t:0"Conspiring in Isfahan"
   UaCH.6.d:0"§GSultan Muhammad§! , the de facto independent prince of §YAjam§! has received letters from the nobles of §YIsfahan§!, requesting that he seize power from §GMahmudshah§!, who was seventy years old and severely ill."
   UaCH.6.a:0"A golden opportunity!"
   UaCH.6.b:0"Open our coffers for them."
   UaCH.6.c:0"We only need to wait for their downfall."
- 
+  mnt_isf_liberty_desire_60:0"Nobles against ruler"  
+    
   UaCH.7.t:0"Choosing a successor"
   UaCH.7.d:0"My liege. There has been enough time to mourn, our nobles are getting worried about not having a designated sucessor. Please choose. Very please. " #TODO
-  UaCH.7.a:0"The favorite of the Nobility, §GAla-al Dawla Mirza§!"
+  UaCH.7.a:0"The favorite of §GGawhar Shad§! and the Nobility, §GAla-al Dawla Mirza§!"
   UaCH.7.b:0"My most prosperous son, §GUlugh Beg§!."
   UaCH.7.c:0"My favorite, §GMuhammad Juki§!"
-  UaCH.7.d:0"There is still time for this…"
- 
+  UaCH.7.e:0"There is still time for this…"
+  mnt_warning_of_moving_to_transoxiana_on_death:0"\nUpon §GShah Rukh's§! death we will change to §YTransoxiana§!"
+  mnt_warning_of_bypassing_consort_event:0"\n§GGawhar Shad§! is less likely to rebel upon his ascension." 
+  mnt_gawhar_shad_more_likely_to_rebel_slower_disaster:0"\nUpon §GShah Rukh's§! death it will take more time for the Calamity to become disastrous, but §GGawhar Shad§! is much more likely to rebel "
+  
+   
   UaCH.8.t:0"Rebellion in Isfahan"
   UaCH.8.d:0"§GSultan Muhammad§! arrived in Isfahan on the request of its nobles, declaring an amnesty on taxes and staged a magnificent feast. "
-  UaCH.8.a:0"Send our demands to the governors!"
-  UaCH.8.b:0"Expel him, lest you bring Shah Rukhs wrath on our head!"
+  UaCH.8.a:0"Sultan Muhammad sends his regards..."
+  UaCH.8.b:0"Expel him, lest you bring Shah Rukh's wrath on our head!"
+  cb_rebellion_of_sultan_muhammad:0"Rebellion"
+  uach_send_demands:0"§GSultan Muhammad§! will send demands to the other princes and governors to submit."
+  REBELLION_OF_SULTAN_MUHAMMAD:0"§GSultan Muhammad's§! rebellion"
  
   UaCH.9.t:0"Muhammads demands"
   UaCH.9.d:0"We have received a letter from §GSultan Muhammad§!, crown prince of §YAjam§!. He states that he is the true successor of §GShah Rukh§!, and is taking over the Empire as of today. Not only is his letter filled to the brim with arrogance and self righteousness, but he dares to demand fealty from us!"
   UaCH.9.a:0"Submit"
   UaCH.9.b:0"We won't have anything with that upstart."
-  UaCH.9.a:0"HOW DARES HE."
+  UaCH.9.c:0"HOW DARES HE."
 
   UaCH.10.t:0"Sultan Muhammad is victorious"
   UaCH.10.d:0"§GSultan Muhammad§! has gathered the full might of the western empire behind him, and emerged victoriously in this debacle. The bloody conflict seems to have ended with him taking over Isfahan, while the other princes and governors are forced to retreat and lick their wounds. For how long, nobody is sure."
