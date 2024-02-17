@@ -12,7 +12,7 @@
 
   # Misc events
   UaCH.1.t:0 "The Ailing Emperor"
-  UaCH.1.d:0 "Early in 1444, §GShah Rukh Mirza§!, ruler of the Timurid empire, youngest son of §GTimur§!, has fallen ill. While the nature of his illness is not disclosed outside his court, news are spreading that he will not survive the year. This news had sent the royal family and the high nobles into a frenzied preparation for chaos, as Shah Rukh's designated successor has died a few years prior. Many elders still remember the days after Timurs death followed by a decade of campaigning before relative peace could return to the land.\n\nIn the north, Shah Rukhs last surviving child, the scholarly §GUlugh beg§! and his ambitious son §GAbdal Latif§!, long time viceroy of §YTransoxiana§! are already putting plans in motion.\n\n The de facto independent prince of §YAjam§!, §GSultan Muhammad§! is eyeing the neighbouring §YIsfahan§!, where the old and decrepit §GMahmudshah§! is still clinging to power.\n\nShah Rukh's favorite grandson §GMuhammad Juki§!, the governor of §YBalkh§! is more than willing to step up, but there are rumors about him being ill too.\n\nAnother grandson, amir of §YHerat§!, §GAla al-Dawla Mirza§! is also eyeing the throne and gathering his armies, with the full support of his grandmother,Shah Rukhs chief consort §GGawhar Shad§! ." 
+  UaCH.1.d:0 "Early in 1444, §GShah Rukh Mirza§!, ruler of the Timurid empire, youngest son of §GTimur§!, has fallen ill. While the nature of his illness is not disclosed outside his court, news are spreading that he will not survive the year. This news had sent the royal family and the high nobles into a frenzied preparation for chaos, as Shah Rukh's designated successor has died a few years prior. Many elders still remember the days after Timurs death followed by a decade of campaigning before relative peace could return to the land.\n\nIn the north, Shah Rukhs last surviving child, the scholarly §GUlugh beg§! and his ambitious son §GAbdal Latif§!, long time viceroy of §YTransoxiana§! are already putting plans in motion.\n\n The de facto independent prince of §YAjam§!, §GSultan Muhammad§! is eyeing the neighbouring §YIsfahan§!, where the old and decrepit §GMahmudshah§! is still clinging to power.\n\nShah Rukh's favorite grandson §GMuhammad Juki§!, the governor of §YBalkh§! is more than willing to step up, but there are rumors about him being ill too.\n\nAnother grandson, amir of §YHerat§!, §GAla al-Dawla Mirza§! is also watching the throne with interest and gathering his armies, with the full support of his grandmother,Shah Rukhs chief consort §GGawhar Shad§! ." 
   UaCH.1.a:0 "To the strongest!"
   UaCH.2.t:0"Secret Plot"
   UaCH.2.t:0"Secret Plot"
@@ -83,6 +83,7 @@
   UaCH.12.d:0"§GSultan Muhammad§! has gathered the full might of the western empire behind him, but was repelled swiftly in this debacle. The bloody conflict seems to have ended with him being ran out of Isfahan, the local nobles executed, while the other princes and governors are holding feasts in victory. For how long, nobody is sure."
   UaCH.12.a:0"Scorn them all."
 
+  cb_challange_claimant:0"War for Timur's Throne"
   UaCH.15.t:0"The body of Shah Rukh"
   UaCH.15.d:0"Once the preparations have been done,§GShah Rukh’s§! body starts the journey east with §GGawhar Shad§! and §GAbdal-Latif§!, leaving the army behind in disarray."
   UaCH.15.a:0"Send a small honor guard"
@@ -140,11 +141,12 @@
   UaCH.24.b:0"We bow to no one!"
  
   UaCH.25.t:0"The Succession Crisis"
-  UaCH.25.d:0"With the peace now shattered, a succession crisis is once again upon us."
+  UaCH.25.d:0"Since the death of the most esteemed Emperor §GShah Rukh§!, the tension between his family members has been ever growing. His long illness emboldened the Princes, and now they're putting plans long years in the making into motion, while local governors and minor officials are also sensing an opportunity to carve a small cut of the pie for themselves. Brothers turn against cusins, fathers go to war against their own ambitious children, and those with sharp eyes can even see the hands of the spymasters slowly caressing the threads in the background. \n\nThe flame has been ignited, and may grow into a firestorm burning the Empire of  Timur down."
   UaCH.25.a:0"To the strongest!"
   UACH_CIVIL_WAR_NO_DOW_INSIDE: "§RAny party actively involved in the §YTimurid Succession Crisis§! as a §YPrince§! or §YGovernor§! cannot declare war.§!"
   UACH_CIVIL_WAR_NO_DOW_OUTSIDE: "§RWe cannot declare war on any §YPrince§! or §YGovernor§! involved in the §YTimurid Succession Crisis§! directly. We must become an §YInterloper§! first.§!"
-
+  uach_yuki_lives_slower_disaster:0"§GMuhammad Juki§! has been designated as a heir and survived his mysterious illness."
+  uach_yuki_dies_disaster_faster:0"The designated heir, §GMuhammad Juki§! has died."
  
   UaCH.26.t:0"Our position in the Crisis"
   UaCH.26.d:0"As §GAla-al Dawla Mirza§! has prepared to march west to confront §GAbul-Qasim Babur§!, the amirs of both princes urged them to ally, due to §GUlugh Beg’s§! intents to conquer his rivals completely. This leads to Ala al-Dawla Mirza effectively having hegemony over most of the Timurid remains, though this wouldn’t last."
@@ -209,12 +211,15 @@
   UaCH.38.a:0"Find supplies by any means neccessary."
   UaCH.38.b:0"We'll just have to go hungry, men. "
   #UaCH.38.c:0"What about the legs? They dont need those... " -15% cav combat ability for 5 years
+  uach_supplies_running_low:0"Food shortage"
  
   UaCH.39.t:0"Policies of local Emir"
   UaCH.39.d:0"Most of the time, the high nobility doesn't care about the happenings of the populace, unless it grows into a direct rebellion against them. However, it has come to our attention that a local Emir has tripled the previous years taxes, holding abundant feasts and festivities. While his contributions to our coffers are also significant, we cannot lose the support of the suburbs either."
   UaCH.39.a:0"Replace the emir."
   UaCH.39.b:0"Give the emir a stern talking to."
   UaCH.39.c:0"They're right, though!"
+  they_are_right_though:0"Hamhanded justice"
+
  
   UaCH.40.t:0"Defections"
   UaCH.40.d:0"My liege, I bring the most grave news! We have received a letter from the general of our armies, it seems some nobles have decided to mutiny despite swearing loyalty to our cause!"
@@ -224,8 +229,10 @@
  
   UaCH.41.t:0"Flight of the Western Emirs"
   UaCH.41.d:0"The bloodshed has been going on forever, without end in sight. Quite a few emirs have already died,either on the field of battle or due to mysterious illness, creating a power vacuum in the western parts of the Empire. However, there seems to be a power, albeit foreign, that could turn the tide in our favor, if we are willing to pay its price. Let us turn to the nomadic §YQara Qoyunlu§! for support."
-  UaCH.41.a:0"Now may be time to call in some favors..."
+  UaCH.41.c:0"Now may be time to call in some favors..."
   UaCH.41.b:0"Relying on Turkic raiders? What, are we fools?"
+  UaCH.41.a:0"Let the cowards run, we will deal with them later"
+  
  
   UaCH.42.t:0"Call of the Glory"
   UaCH.42.d:0"Our ruler, §G[Root.Monarch.GetName]§!, despite our dire warnings have decided to take matters into his own hand. It seems he believes that going out to the field of battle by himself should change the outcome of every battle drastically. While the men's morale is certainly bolstered by his boldness, the risks are equally great, and the consequences equally catastrophic, should he fall."
@@ -409,4 +416,5 @@
   uach_escalation_reward_lvl4:0"Calamity averted"
   uach_escalation_reward_lvl5:0"Let the world burn"
   uach_escalation_reward_lvl6:0"Ashes of war"
-  
+ 
+  UACH_GOV_REFORM_COOLDOWN:0"The special government ability is on cooldown right now, and it" 

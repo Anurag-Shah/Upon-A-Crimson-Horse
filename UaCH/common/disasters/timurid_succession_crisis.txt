@@ -30,7 +30,7 @@ timurid_succession_crisis = {
 		
 		modifier = {
 			factor = -1
-			set_country_flag = uach_yuki_lives_slower_disaster
+			has_country_flag = uach_yuki_lives_slower_disaster
 		}
 		
 		modifier = {
@@ -56,8 +56,17 @@ timurid_succession_crisis = {
 	
 	on_monthly = {
 		events = {
+			
 		}
 		random_events = {
+			1000 = 0
+			100	= UaCH.27	#Yar ali besieges herat
+			100 = UaCH.39	#policies of the local emir
+			100	= UaCH.40   #defections among our people
+			100 = UaCH.41	#Flight of the western emirs
+			100 = UaCH.38	#Low supplies
+			100	= UaCH.27   #The rogue prince
+			100 = Uach.29	#raids
 		}
 	}
 }

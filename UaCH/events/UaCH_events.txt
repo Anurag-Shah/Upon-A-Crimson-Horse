@@ -72,6 +72,7 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		tag = TIM
+		has_ruler = "Shah Rukh"
 	}
 	mean_time_to_happen = {
 		months = 12
@@ -154,7 +155,7 @@ country_event = {
 		random_list = {
 			90 = {
 				kill_heir = {  }
-				BLK = { kill_ruler = yes }
+				BLK = { IF = {has_ruler = "Muhammad Juki"} kill_ruler = yes }
 			}
 			10 = { 
 				random_list = {
@@ -185,7 +186,7 @@ country_event = {
 		name = "UaCH.5.b"
 		
 		kill_heir = {  }
-		BLK = { kill_ruler = yes }
+		BLK = { IF = {has_ruler = "Muhammad Juki"} kill_ruler = yes }
 	#muhammad juki rules in balkh
 
 		random_owned_province = {
@@ -320,7 +321,7 @@ country_event = {
 			dip = 0
 			mil = 0	
 		}
-
+		hidden = {set_country_flag = UB_moves_to_TRS}
 		custom_tooltip = mnt_warning_of_moving_to_transoxiana_on_death
 
 		ai_chance = {
@@ -510,15 +511,13 @@ country_event = {
 		}
 
 		ai_chance = {
-			factor = 1.5
+			factor = 5
 			modifier = {
 				factor = 0
 				OR = {
 					tag = AFG
 					tag = TRS
 				}
-
-				# TODO how to do the relative strength towards TIM?
 			}
 		}
 	}
@@ -554,7 +553,7 @@ country_event = {
 		create_alliance = TIM
 		
 		ai_chance = {
-			factor = 0.5
+			factor = 2
 			modifier = {
 				factor = 1000
 				tag = AFG
@@ -2092,15 +2091,17 @@ country_event = {
 	title = UaCH.27.t 
 	desc = UaCH.27.d
 	picture = CITY_DEVELOPMENT_eventPicture
-
+	is_triggered_only = yes
 
 	trigger = {
 		owns = 446
-		# TODO this correct?
-		has_disaster = timurid_succession_crisis
+		OR = {
+						is_prince = yes
+						is_governor = yes
+					}
 	}
-
-	mean_time_to_happen = {
+	
+		mean_time_to_happen = {
 		days = 1
 	}
 
@@ -2196,15 +2197,16 @@ country_event = {
 	title = UaCH.29.t 
 	desc = UaCH.29.d
 	picture = CITY_DEVELOPMENT_eventPicture
-
+	is_triggered_only = yes
 	trigger = {
 		any_neighbor_country = {
 			has_reform = steppe_horde
 		}
-		# TODO this correct?
-		has_disaster = timurid_succession_crisis
+		OR = {
+						is_prince = yes
+						is_governor = yes
+					}
 	}
-
 	mean_time_to_happen = {
 		days = 1
 	}
@@ -2214,8 +2216,8 @@ country_event = {
 		name = "UaCH.29.a"
 		
 		add_years_of_income = -0.5
-
-		uach_remove_half_year_mana = yes
+	
+		#uach_remove_half_year_mana = yes
 
 		random_owned_province = {
 			add_devastation = 10
@@ -2678,16 +2680,17 @@ country_event = {
 	title = UaCH.38.t 
 	desc = UaCH.38.d
 	picture = CITY_DEVELOPMENT_eventPicture
-
+	is_triggered_only = yes
 	trigger = {
-		has_country_flag = uach_second_succession_crisis_war_flag
-		is_governor_or_prince = yes
+		OR = {
+						is_prince = yes
+						is_governor = yes
+					}
 	}
-
-	mean_time_to_happen = {
+		mean_time_to_happen = {
 		days = 1
 	}
-
+	
 	# Find supplies by any means neccessary.
 	option = {
 		name = "UaCH.38.a"
@@ -2726,17 +2729,17 @@ province_event = {
 	title = UaCH.39.t 
 	desc = UaCH.39.d
 	picture = CITY_DEVELOPMENT_eventPicture
-
+	is_triggered_only = yes
 	trigger = {
-		owner = {
-			has_country_flag = uach_second_succession_crisis_war_flag
-			is_governor_or_prince = yes
-		}
+		OR = {
+						is_prince = yes
+						is_governor = yes
+					}
 	}
-
-	mean_time_to_happen = {
+		mean_time_to_happen = {
 		days = 1
 	}
+
 
 	# Replace the emir.
 	option = {
@@ -2807,13 +2810,15 @@ country_event = {
 	title = UaCH.40.t 
 	desc = UaCH.40.d
 	picture = CITY_DEVELOPMENT_eventPicture
-
+	is_triggered_only = yes
 	trigger = {
-		has_country_flag = uach_second_succession_crisis_war_flag
-		has_disaster = timurid_succession_crisis
+		OR = {
+						is_prince = yes
+						is_governor = yes
+					}
 	}
-
-	mean_time_to_happen = {
+	
+		mean_time_to_happen = {
 		days = 1
 	}
 
@@ -2869,16 +2874,18 @@ country_event = {
 	title = UaCH.41.t 
 	desc = UaCH.41.d
 	picture = CITY_DEVELOPMENT_eventPicture
-
+	is_triggered_only = yes
 	trigger = {
-		has_country_flag = uach_second_succession_crisis_war_flag
-		has_disaster = timurid_succession_crisis
+		OR = {
+						is_prince = yes
+						is_governor = yes
+					}
 	}
-
-	mean_time_to_happen = {
+	
+		mean_time_to_happen = {
 		days = 1
 	}
-
+	
 	# They will be hunted down.
 	option = {
 		name = "UaCH.41.a"
