@@ -155,7 +155,9 @@ country_event = {
 		random_list = {
 			90 = {
 				kill_heir = {  }
+				set_country_flag = uach_yuki_dies_disaster_faster
 				BLK = { IF = {has_ruler = "Muhammad Juki"} kill_ruler = yes }
+				
 			}
 			10 = { 
 				random_list = {
@@ -186,6 +188,7 @@ country_event = {
 		name = "UaCH.5.b"
 		
 		kill_heir = {  }
+		set_country_flag = uach_yuki_dies_disaster_faster
 		BLK = { IF = {has_ruler = "Muhammad Juki"} kill_ruler = yes }
 	#muhammad juki rules in balkh
 
@@ -1519,7 +1522,9 @@ country_event = {
 		}
 		
 		set_global_flag = uach_succession_crisis_started
-
+		
+		country_event = { id = UaCH.71
+							days = 1}
 		ai_chance = {
 			factor = 1
 		}
@@ -2091,24 +2096,24 @@ country_event = {
 	title = UaCH.27.t 
 	desc = UaCH.27.d
 	picture = CITY_DEVELOPMENT_eventPicture
-	is_triggered_only = yes
 
 	trigger = {
-		owns = 446
-		OR = {
-						is_prince = yes
-						is_governor = yes
-					}
+		AND = {owns = 446
+			 had_country_flag = { flag = uach_disaster_event_timer
+									days = 60}
+			}
 	}
 	
 		mean_time_to_happen = {
-		days = 1
+		days = 90
 	}
+
+	immediate = {clr_country_flag = uach_disaster_event_timer
+				set_country_flag = uach_disaster_event_timer}
 
 	# Who does he think he is?
 	option = {
 		name = "UaCH.27.a"
-		
 		446 = {
 			spawn_rebels = {
 				size = 3
@@ -2146,7 +2151,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 1
+		days = 30
 	}
 
 	# Set my men upon the city.
@@ -2197,20 +2202,19 @@ country_event = {
 	title = UaCH.29.t 
 	desc = UaCH.29.d
 	picture = CITY_DEVELOPMENT_eventPicture
-	is_triggered_only = yes
+	
 	trigger = {
 		any_neighbor_country = {
 			has_reform = steppe_horde
 		}
-		OR = {
-						is_prince = yes
-						is_governor = yes
-					}
+		had_country_flag = { flag = uach_disaster_event_timer
+									days = 60}
 	}
 	mean_time_to_happen = {
-		days = 1
+		days = 30
 	}
-
+	immediate = {clr_country_flag = uach_disaster_event_timer
+				set_country_flag = uach_disaster_event_timer}
 	# Enemies everywhere!
 	option = {
 		name = "UaCH.29.a"
@@ -2235,7 +2239,7 @@ country_event = {
 	title = UaCH.30.t 
 	desc = UaCH.30.d
 	picture = CITY_DEVELOPMENT_eventPicture
-
+	fire_only_once = yes
 	trigger = {
 		OR = {
 			AND = {
@@ -2251,7 +2255,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 30
+		months = 180
 	}
 
 	# Appoint him as our governor in Balkh
@@ -2680,17 +2684,16 @@ country_event = {
 	title = UaCH.38.t 
 	desc = UaCH.38.d
 	picture = CITY_DEVELOPMENT_eventPicture
-	is_triggered_only = yes
 	trigger = {
-		OR = {
-						is_prince = yes
-						is_governor = yes
-					}
+		had_country_flag = { flag = uach_disaster_event_timer
+									days = 60}
 	}
 		mean_time_to_happen = {
-		days = 1
+		days = 30
 	}
 	
+	immediate = {clr_country_flag = uach_disaster_event_timer
+				set_country_flag = uach_disaster_event_timer}
 	# Find supplies by any means neccessary.
 	option = {
 		name = "UaCH.38.a"
@@ -2729,17 +2732,17 @@ province_event = {
 	title = UaCH.39.t 
 	desc = UaCH.39.d
 	picture = CITY_DEVELOPMENT_eventPicture
-	is_triggered_only = yes
+
 	trigger = {
-		OR = {
-						is_prince = yes
-						is_governor = yes
-					}
+		had_country_flag = { flag = uach_disaster_event_timer
+									days = 60}
 	}
 		mean_time_to_happen = {
-		days = 1
+		days = 30
 	}
-
+	
+	immediate = {clr_country_flag = uach_disaster_event_timer
+				set_country_flag = uach_disaster_event_timer}
 
 	# Replace the emir.
 	option = {
@@ -2810,18 +2813,19 @@ country_event = {
 	title = UaCH.40.t 
 	desc = UaCH.40.d
 	picture = CITY_DEVELOPMENT_eventPicture
-	is_triggered_only = yes
+
 	trigger = {
-		OR = {
-						is_prince = yes
-						is_governor = yes
-					}
+			had_country_flag = { flag = uach_disaster_event_timer
+									days = 60}
 	}
 	
 		mean_time_to_happen = {
-		days = 1
+		days = 30
 	}
 
+	immediate = {clr_country_flag = uach_disaster_event_timer
+				set_country_flag = uach_disaster_event_timer}
+				
 	# Traitors
 	option = {
 		name = "UaCH.40.a"
@@ -2868,24 +2872,25 @@ country_event = {
 	}
 }
 
-# Flight of the Western Emirs
+# Pulse Flight of the Western Emirs
 country_event = {
 	id = UaCH.41 
 	title = UaCH.41.t 
 	desc = UaCH.41.d
 	picture = CITY_DEVELOPMENT_eventPicture
-	is_triggered_only = yes
+
 	trigger = {
-		OR = {
-						is_prince = yes
-						is_governor = yes
-					}
+		had_country_flag = { flag = uach_disaster_event_timer
+									days = 60}
 	}
 	
 		mean_time_to_happen = {
-		days = 1
+		days = 30
 	}
 	
+	immediate = {clr_country_flag = uach_disaster_event_timer
+				set_country_flag = uach_disaster_event_timer}
+				
 	# They will be hunted down.
 	option = {
 		name = "UaCH.41.a"
@@ -3661,5 +3666,34 @@ country_event = {
 		ROOT = {
 			add_stability = 1
 		}
+	}
+}
+
+#disaster start - add timer to princes and govs
+
+country_event = {
+	id = UaCH.71
+	title = UaCH.71.t 
+	desc = UaCH.71.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	trigger = {
+	}
+	
+	hidden = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "UaCH.71.a"
+		every_country = {
+				limit = {
+					is_governor_or_prince = yes	
+					}
+				set_country_flag = uach_disaster_event_timer	
+					
+				}
+			
+			}
 	}
 }
