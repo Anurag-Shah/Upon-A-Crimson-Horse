@@ -1073,7 +1073,7 @@ uach_add_prince_to_war = {
         }
     }
 
-    # Then every single independent governor without the uach_still_considering flag declares war on this mf
+    # Then declare war on every independent governor without the uach_still_considering flag
     every_country = {
         limit = {
             AND = {
@@ -1086,6 +1086,103 @@ uach_add_prince_to_war = {
         PREV = {
             declare_war_with_cb = {
                 casus_belli = cb_enforce_loyalty_governor
+                who = PREV
+            }
+        }
+    }
+}
+
+# Creates an interloper
+# This effect should be run in a country scope, and expects a numeric input for the thematic region parameter $region_int$
+# Thematic regions:
+#   0: ajam
+#   1: fars
+#   2: khorasan
+#   3: herat
+#   4: afghanistan
+#   5: marw
+#   6: fergana
+#   7: samarkand
+uach_create_interloper = { # region_int
+    # Interlopers are perfectly allowed to be in other wars, and other people can always declare on them
+    # The only condition to be an interloper is to border one of the interloper regions or already own a province in it
+    # use the trigger: uach_valid_interloper_0 - 7 for the 7 regions
+
+    # Add interloper to the war:
+    # declare war on any prince / governor holding a province in the region
+    # This should (ideally) bring them to war with any overlords of subjects
+    # Then in the peace deal on_action we need to reevaluate whether or not they need to go to war with anyone else
+    # :)
+
+    # The assumption here is the interloper is already checked to be valid for the region_int
+    # If you call this effect without checking validity, then woe, plague be upon ye
+    set_country_flag = uach_interloper
+    set_variable = {
+        which = uach_interloper_region
+        value = $region_int$
+    }
+
+    # Add interloper to the war
+    every_country = {
+        # every prince / gov with a province in the thematic region province group
+        limit = {
+            AND = {
+                OR = {
+                    is_prince = yes
+                    is_governor = yes
+                }
+                any_owned_province = {
+                    province_group = uach_tr_$region_int$
+                }
+            }
+        }
+
+        PREV = {
+            declare_war_with_cb	= {
+                casus_belli = cb_uach_interloper_conquest
+                who = PREV
+            }
+        }
+    }
+
+    # Declare war on any other interloper with same region
+    every_country = {
+        limit = {
+            AND = {
+                has_country_flag = uach_interloper
+                check_variable = {
+                    which = uach_interloper_region
+                    value = $region_int$
+                }
+                NOT = { tag = PREV }
+            }
+        }
+        # This country is definitely an interloper
+        # However, we need to check the region_int properly
+        
+        # This is ugly: create a new variable at that value, add 1 to it, and then check if the old one is greater than it
+        # If it is, then its not actually in the right region
+        set_variable = {
+            which = uach_temp_var_ic
+            value = $region_int$
+        }
+        change_variable = {
+            which = uach_temp_var_ic
+            value = 1
+        }
+
+        if = {
+            limit = {
+                NOT = {
+                    check_variable = {
+                        which = uach_interloper_region
+                        value = uach_temp_var_ic
+                    }
+                }
+            }
+            # Now this is where we actually do the war
+            declare_war_with_cb	= {
+                casus_belli = cb_uach_interloper_conquest
                 who = PREV
             }
         }
