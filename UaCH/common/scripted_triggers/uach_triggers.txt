@@ -93,7 +93,13 @@ uach_end_timurs_legacy_possible = {
 	AND = {
 		OR = {
 			is_governor = yes
-			is_interloper = yes
+			custom_trigger_tooltip = {
+				tooltip = UACH_ETL_GOV_TR_INTBM_TT
+				AND = {
+					is_interloper = yes
+					has_country_flag = uach_big_money_flag
+				}
+			}
 		}
 		custom_trigger_tooltip = {
 			tooltip = UACH_ETL_GOV_TR_TT
@@ -260,14 +266,21 @@ uach_interloper_conquest_over_trigger = {
 uach_interloper_conquest_over_trigger_helper = { #region_int
 	# Controlls every province in the thematic region that is owned by a prince / governor
 
-	uach_tr_$region_int$ = {
-		type = all
+	# uach_tr_$region_int$ = {
+	# 	type = all
+	# 	OR = {
+	# 		# either owner is not in the second succession crisis
+	# 		owner = {
+	# 			NOT = { is_part_of_second_crisis = yes }
+	# 		}
+	# 		# or its controlled by PREV
+	# 		controlled_by = PREV
+	# 	}
+	# }
+
+	any_province = {
 		OR = {
-			# either owner is not in the second succession crisis
-			owner = {
-				NOT = { is_part_of_second_crisis = yes }
-			}
-			# or its controlled by PREV
+			NOT = { province_group = uach_tr_$region_int$ }
 			controlled_by = PREV
 		}
 	}

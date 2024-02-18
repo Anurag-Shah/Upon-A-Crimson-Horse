@@ -492,7 +492,7 @@ custom_button = {
 custom_button = {
     name = intervene_in_the_crisis
 	potential = { has_faction = timurid_faction }
-    trigger = { 
+    trigger = {
 		custom_trigger_tooltip = {
 			tooltip = WAIT_FOR_SC_TO_START_BITCH_TT
 			has_global_flag = uach_succession_crisis_started
@@ -501,24 +501,34 @@ custom_button = {
 			NOT = { is_prince = yes }
 			NOT = { is_governor = yes }
 		}
+		NOT = {
+			has_country_modifier = successful_interloper_intervention
+		}
 		custom_trigger_tooltip = {
 			tooltip = WE_MUST_NEIGHBOR_SOMEONE_IDOT
-			calc_true_if = {
-				all_neighbor_country = {
-					OR = {
-						is_governor = yes
-						is_prince = yes
+			AND = {
+				calc_true_if = {
+					all_neighbor_country = {
+						OR = {
+							is_governor = yes
+							is_prince = yes
+						}
 					}
-					NOT = {
-						is_interloper = yes
-					}
+					amount = 1
 				}
-				amount = 1
+				NOT = { is_interloper = yes }
+				NOT = { has_country_flag = uach_interloper_considering_options_flag }
 			}
 		}
 	}
     effect = { 
-		custom_tooltip = "To be added."
+		custom_tooltip = UACH_INTERLOPER_BUTTON_TT
+		hidden_effect = {
+			set_country_flag = uach_interloper_considering_options_flag
+			country_event = {
+				id = UaCH.85
+			}
+		}
 	}
     tooltip = intervene_in_the_crisis_tt
 }
@@ -566,7 +576,7 @@ custom_button = {
 		}
 		uach_reclaim_timurs_legacy_possible = yes
 	}
-    effect = { 
+    effect = {
 		uach_reclaim_timurs_legacy_effect = yes
 	}
     tooltip = reclaim_timurs_legacy_tt

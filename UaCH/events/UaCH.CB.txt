@@ -24,9 +24,14 @@ country_event = {
 			# Delete all their wars
 			every_country = {
 				limit = {
-					OR = {
-						offensive_war_with = PREV
-						defensive_war_with = PREV
+					AND = {
+						OR = {
+							offensive_war_with = PREV
+							defensive_war_with = PREV
+						}
+						NOT = {
+							is_interloper = yes
+						}
 					}
 				}
 				white_peace = PREV
