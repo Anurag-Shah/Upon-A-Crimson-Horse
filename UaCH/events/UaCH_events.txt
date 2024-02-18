@@ -420,6 +420,7 @@ country_event = {
 							}
 						} 
 					}
+					NOT = { tag = ISF }
 				}
 				country_event = {
 					id = UaCH.9
@@ -503,7 +504,7 @@ country_event = {
 		}
 
 		ai_chance = {
-			factor = 15
+			factor = 1.5
 			modifier = {
 				factor = 0
 				OR = {
@@ -518,12 +519,12 @@ country_event = {
 	option = {
 		name = "UaCH.9.b"
 		
-		# flag to manage event to peace out when war starts is managed by different event 
-		set_country_flag = uach_root_ISF_peace_out
 		custom_tooltip = "If [ISF.GetName] declares war for its independence, we [Root.GetName] will not interfere on either side."
 		
-		white_peace = QOM
-		white_peace = ISF
+		hidden_effect = {
+			white_peace = QOM
+			white_peace = ISF
+		}
 		
 		ai_chance = {
 			factor = 0.5
@@ -537,13 +538,9 @@ country_event = {
 	# Never! 
 	option = {
 		name = "UaCH.9.c"
-		
-		# flag to join agains ISF
-		set_country_flag = uach_root_will_fight_ISF
-		custom_tooltip = "If [ISF.GetName] declares war for its independence, we [Root.GetName] will join the war on the side of [TIM.GetName]."
-		
-		create_alliance = TIM
-		
+		add_prestige = 10
+		# Since we are a subject of TIM, makes no sense for us to need to do extra.
+
 		ai_chance = {
 			factor = 2
 			modifier = {
@@ -599,6 +596,13 @@ country_event = {
 					subject_type = governor
 					subject = HER
 				}
+			}
+
+			if = {
+				limit = {
+					has_country_flag = uach_yuki_lives_slower_disaster
+				}
+				inherit = BLK
 			}
 
 			every_country = {
@@ -1052,6 +1056,11 @@ country_event = {
 			}
 			cede_province = QOM
 		}
+		hidden_effect = {
+			QOM = {
+				make_tag_prince = yes
+			}
+		}
 		
 		if = {
 			limit = {
@@ -1164,7 +1173,7 @@ country_event = {
 		}
 
 		ai_chance = {
-			factor = 1
+			factor = 2
 			modifier = {
 				factor = 0
 				# TODO
@@ -1339,11 +1348,18 @@ country_event = {
 	# We are a Prince of Timur!
 	option = {
 		name = "UaCH.22.a"
+
+		hidden_effect = {
+			every_owned_province = {
+				add_permanent_claim = TRS
+			}
+		}
 		
 		TRS = {
 			declare_war_with_cb = {
-				casus_belli = cb_challange_claimant
+				casus_belli = cb_claim
 				who = ROOT
+				war_goal_province = 450
 			}
 		}
 
@@ -2210,10 +2226,18 @@ country_event = {
 
 	trigger = {
 		AND = {
+			OR = {
+				has_disaster = timurid_succession_crisis
+				is_in_war = { casus_belli = cb_challange_claimant }
+				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+			}
 			owns = 446
 			had_country_flag = { 
 				flag = uach_disaster_event_timer
 				days = 60
+			}
+			NOT = {
+				has_country_flag = yar_ali_is_here # To prevent multiple rebel stacks
 			}
 		}
 	}
@@ -2259,9 +2283,10 @@ country_event = {
 	
 
 	trigger = {
-		AND = {  446 = { controlled_by = REB }
-				has_country_flag = yar_ali_is_here
-			}
+		AND = {  
+			446 = { controlled_by = REB }
+			has_country_flag = yar_ali_is_here
+		}
 	}
 	
 	mean_time_to_happen { days = 1 }
@@ -2357,14 +2382,23 @@ country_event = {
 		any_neighbor_country = {
 			has_reform = steppe_horde
 		}
-		had_country_flag = { flag = uach_disaster_event_timer
-									days = 60}
+		had_country_flag = { 
+			flag = uach_disaster_event_timer
+			days = 60
+		}
+		OR = {
+			has_disaster = timurid_succession_crisis
+			is_in_war = { casus_belli = cb_challange_claimant }
+			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+		}
 	}
 	mean_time_to_happen = {
 		days = 30
 	}
-	immediate = {clr_country_flag = uach_disaster_event_timer
-				set_country_flag = uach_disaster_event_timer}
+	immediate = {
+		clr_country_flag = uach_disaster_event_timer
+		set_country_flag = uach_disaster_event_timer
+	}
 	# Enemies everywhere!
 	option = {
 		name = "UaCH.29.a"
@@ -2395,13 +2429,17 @@ country_event = {
 			AND = {
 				tag = TIM
 				was_tag = TRS
-				all_province = {
-					is_core = BLK
-					owned_by = ROOT
-				}
 			}
 			tag = TRS		
 		}
+		all_province = {
+			is_core = BLK
+			owned_by = ROOT
+		}
+	}
+
+	immediate = {
+		set_country_flag = abdal_latif_rebels
 	}
 
 	mean_time_to_happen = {
@@ -2463,11 +2501,15 @@ country_event = {
 			}
 			tag = TRS	
 		}
+		has_country_flag = abdal_latif_rebels
 	}
 
-	# TODO should be called by itself in the spreadsheet????
 	mean_time_to_happen = {
-		months = 6
+		months = 12
+		modifier = {
+			factor = 0.5
+			has_country_flag = uach_abdal_latif_rebels_quicker
+		}
 	}
 
 	# It's time I put you in your place, son. 
@@ -2835,15 +2877,26 @@ country_event = {
 	desc = UaCH.38.d
 	picture = CITY_DEVELOPMENT_eventPicture
 	trigger = {
-		had_country_flag = { flag = uach_disaster_event_timer
-									days = 60}
+		had_country_flag = { 
+			flag = uach_disaster_event_timer
+			days = 60
+		}
+		OR = {
+			has_disaster = timurid_succession_crisis
+			is_in_war = { casus_belli = cb_challange_claimant }
+			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+		}
 	}
-		mean_time_to_happen = {
+
+	mean_time_to_happen = {
 		days = 30
 	}
 	
-	immediate = {clr_country_flag = uach_disaster_event_timer
-				set_country_flag = uach_disaster_event_timer}
+	immediate = {
+		clr_country_flag = uach_disaster_event_timer
+		set_country_flag = uach_disaster_event_timer
+	}
+
 	# Find supplies by any means neccessary.
 	option = {
 		name = "UaCH.38.a"
@@ -2884,15 +2937,25 @@ province_event = {
 	picture = CITY_DEVELOPMENT_eventPicture
 
 	trigger = {
-		had_country_flag = { flag = uach_disaster_event_timer
-									days = 60}
+		had_country_flag = { 
+			flag = uach_disaster_event_timer
+			days = 60
+		}
+		OR = {
+			has_disaster = timurid_succession_crisis
+			is_in_war = { casus_belli = cb_challange_claimant }
+			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+		}
 	}
-		mean_time_to_happen = {
+
+	mean_time_to_happen = {
 		days = 30
 	}
 	
-	immediate = {clr_country_flag = uach_disaster_event_timer
-				set_country_flag = uach_disaster_event_timer}
+	immediate = {
+		clr_country_flag = uach_disaster_event_timer
+		set_country_flag = uach_disaster_event_timer
+	}
 
 	# Replace the emir.
 	option = {
@@ -2965,16 +3028,25 @@ country_event = {
 	picture = CITY_DEVELOPMENT_eventPicture
 
 	trigger = {
-			had_country_flag = { flag = uach_disaster_event_timer
-									days = 60}
+		had_country_flag = { 
+			flag = uach_disaster_event_timer
+			days = 60
+		}
+		OR = {
+			has_disaster = timurid_succession_crisis
+			is_in_war = { casus_belli = cb_challange_claimant }
+			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+		}
 	}
 	
-		mean_time_to_happen = {
+	mean_time_to_happen = {
 		days = 30
 	}
 
-	immediate = {clr_country_flag = uach_disaster_event_timer
-				set_country_flag = uach_disaster_event_timer}
+	immediate = {
+		clr_country_flag = uach_disaster_event_timer
+		set_country_flag = uach_disaster_event_timer
+	}
 				
 	# Traitors
 	option = {
@@ -3110,6 +3182,110 @@ country_event = {
 		}
 	}
 }
+
+# Matter of Personal Glory
+
+country_event = {
+	id = UaCH.42 
+	title = UaCH.42.t 
+	desc = UaCH.42.d
+	picture = GENERALS_DISCUSSING_eventPicture
+
+	trigger = {
+		OR = {
+			is_in_war = { casus_belli = cb_challange_claimant }
+			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+		}
+		NOT = { is_monarch_leader = yes }
+		ai = yes
+		has_regency = no
+	}
+				
+	# Now, [Root.Monarch.GetTitle], is this not a little hasty?
+	option = {
+		name = "UaCH.42.a"
+		convert_ruler_to_general = yes
+	}
+}
+
+# Tragedy on the Battlefield
+
+country_event = {
+	id = UaCH.43 
+	title = UaCH.43.t 
+	desc = UaCH.43.d
+	picture = GENERALS_DISCUSSING_eventPicture
+
+	is_triggered_only = yes
+				
+	# Don't you traitors get any ideas!
+	option = {
+		name = "UaCH.43.a"
+		trigger = {
+			has_heir = no
+		}
+		kill_ruler = yes
+		custom_tooltip = uach_all_subjects_join_succession_crisis
+		custom_tooltip = uach_all_opms
+		hidden_effect = {
+			every_subject_country = {
+				grant_independence = yes
+				if = {
+					limit = {
+						is_prince = yes
+					}
+					uach_add_prince_to_war = yes
+				}
+				else = {
+					uach_add_governor_to_war = yes
+				}
+			}
+
+			uach_opm_rebellions = { loyal_chance = 0 revolt_chance = 100 }
+		}
+	}
+
+	# A bastard is still a heir!
+	option = {
+		name = "UaCH.43.b"
+		trigger = {
+			has_heir = yes
+			NOT = { heir_claim = 34 }
+		}
+		kill_ruler = yes
+		custom_tooltip = uach_half_opms
+		hidden_effect = {
+			uach_opm_rebellions = { loyal_chance = 50 revolt_chance = 50 }
+		}
+	}
+
+	# He's clearly fit to rule!
+	option = {
+		name = "UaCH.43.c"
+		trigger = {
+			has_heir = yes
+			NOT = { heir_claim = 67 }
+			heir_claim = 34
+		}
+		kill_ruler = yes
+		custom_tooltip = uach_tenth_opms
+		hidden_effect = {
+			uach_opm_rebellions = { loyal_chance = 90 revolt_chance = 10 }
+		}
+	}
+
+	# At least we have a new [Root.Monarch.GetTitle] to take charge...
+	option = {
+		name = "UaCH.43.safe"
+		trigger = {
+			has_heir = yes
+			heir_claim = 67
+		}
+		kill_ruler = yes
+		add_stability = 1
+	}
+}
+
 
 # Betrayal - Abdul Latifs stays loyal
 country_event = {
@@ -4799,4 +4975,35 @@ country_event = {
 		name = "UaCH.91.a"
 		goto = event_target:uach_temp_province
 	}
+}
+
+# Meant to simulate how most disasters have a chance of nothing happening monthly.
+country_event = {
+	id = UaCH.401
+	title = none 
+	desc = none
+	picture = none
+
+	trigger = {	
+		had_country_flag = { 
+			flag = uach_disaster_event_timer
+			days = 60
+		}
+		OR = {
+			has_disaster = timurid_succession_crisis
+			is_in_war = { casus_belli = cb_challange_claimant }
+			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+
+	immediate = {
+		clr_country_flag = uach_disaster_event_timer
+		set_country_flag = uach_disaster_event_timer
+	}
+				
+	option = { }
 }
