@@ -1376,7 +1376,15 @@ uach_reclaim_timurs_legacy_effect = {
         uach_tr_5 = { add_core = TIM }
         uach_tr_6 = { add_core = TIM }
         uach_tr_7 = { add_core = TIM }
-
+        
+        # Remove disaster from everyone
+        every_country = {
+            limit = {
+                has_disaster = timurid_succession_crisis
+            }
+            end_disaster = timurid_succession_crisis
+        }
+        
         # Some cleanup
         every_country = {
             limit = { has_country_flag = uach_second_succession_crisis_war_flag }
@@ -1433,25 +1441,24 @@ uach_end_timurs_legacy_effect = {
             }
         }
 
+        # Remove disaster from everyone
+        every_country = {
+            limit = {
+                has_disaster = timurid_succession_crisis
+            }
+            end_disaster = timurid_succession_crisis
+        }
+
         # Delete all sucession crisis wars
         every_country = {
             limit = {
                 is_part_of_second_crisis = yes
             }
-
             every_country = {
                 limit = {
-                    AND = {
-                        OR = {
-                            is_part_of_second_crisis = yes
-                        }
-                        OR = {
-                            defensive_war_with = PREV
-                            offensive_war_with = PREV
-                        }
-                    }
+                    is_part_of_second_crisis = yes
+                    war_with = PREV
                 }
-    
                 white_peace = PREV
             }
         }

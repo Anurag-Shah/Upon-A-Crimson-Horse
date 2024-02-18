@@ -69,9 +69,12 @@ uach_valid_interloper = { # region_int
 	}
 
 	# Cannot be a prince / governor
-	AND = {
-		NOT = { is_prince = yes }
-		NOT = { is_governor = yes }
+	custom_trigger_tooltip = {
+		tooltip = UACH_NOT_PRINCE_OR_GOVERNOR
+		AND = {
+			NOT = { is_prince = yes }
+			NOT = { is_governor = yes }
+		}
 	}
 }
 
@@ -146,9 +149,13 @@ uach_reclaim_timurs_legacy_possible = {
 				}
 			}
 		}
-		NOT = {
-			any_country = {
-				is_interloper = yes
+		is_prince = yes
+		custom_trigger_tooltip = {
+			tooltip = UACH_NO_INTERLOPERS
+			NOT = {
+				any_country = {
+					is_interloper = yes
+				}
 			}
 		}
 	}
