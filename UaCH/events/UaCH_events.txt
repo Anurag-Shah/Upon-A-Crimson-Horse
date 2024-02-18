@@ -1650,6 +1650,9 @@ country_event = {
 				subject_type = governor
 				who = ROOT
 			}
+			country_event = {
+				id = UaCH.91
+			}
 		}
 
 		ai_chance = {
@@ -1710,6 +1713,9 @@ country_event = {
 			create_subject = {
 				subject_type = governor
 				who = ROOT
+			}
+			country_event = {
+				id = UaCH.91
 			}
 		}
 
@@ -1776,6 +1782,9 @@ country_event = {
 				subject_type = governor
 				who = ROOT
 			}
+			country_event = {
+				id = UaCH.91
+			}
 		}
 
 		ai_chance = {
@@ -1836,6 +1845,9 @@ country_event = {
 			create_subject = {
 				subject_type = governor
 				who = ROOT
+			}
+			country_event = {
+				id = UaCH.91
 			}
 		}
 
@@ -1903,6 +1915,9 @@ country_event = {
 				subject_type = governor
 				who = ROOT
 			}
+			country_event = {
+				id = UaCH.91
+			}
 		}
 
 		ai_chance = {
@@ -1969,6 +1984,9 @@ country_event = {
 				subject_type = governor
 				who = ROOT
 			}
+			country_event = {
+				id = UaCH.91
+			}
 		}
 
 		ai_chance = {
@@ -2030,6 +2048,9 @@ country_event = {
 				subject_type = governor
 				who = ROOT
 			}
+			country_event = {
+				id = UaCH.91
+			}
 		}
 
 		ai_chance = {
@@ -2090,6 +2111,9 @@ country_event = {
 			create_subject = {
 				subject_type = governor
 				who = ROOT
+			}
+			country_event = {
+				id = UaCH.91
 			}
 		}
 
@@ -3064,8 +3088,7 @@ country_event = {
 				white_peace = ROOT # So that QAR/AKK doesn't inherit wars
 			}
 			event_target:interloper_qoyunlu = {
-				# ADD EFFECT FOR PERSON TO INTERVENE HERE
-				# TARGET REGION IS IRAQ-E-AJAM
+				uach_create_interloper = { region_int = 0 }
 				vassalize = ROOT
 			}
 		}
@@ -4700,8 +4723,7 @@ country_event = {
 		change_tag = BUK
 		custom_tooltip = uach_buk_intervention
 		hidden_effect = {
-			# ADD EFFECT TO INTERVENE HERE
-			# TARGETTED REGION: SAMARKAND
+			uach_create_interloper = { region_int = 7 }
 		}
 
 		ai_chance = {
@@ -4753,5 +4775,28 @@ country_event = {
 		ai_chance = {
 			factor = 1
 		}
+	}
+}
+
+# FROM Swears Fealty to ROOT event
+country_event = {
+	id = UaCH.91
+	title = UaCH.91.t 
+	desc = UaCH.91.d
+	picture = DIPLOMACY_eventPicture
+
+	immediate = {
+		FROM = {
+			capital_scope = {
+				save_event_target_as = uach_temp_province
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "UaCH.91.a"
+		goto = event_target:uach_temp_province
 	}
 }

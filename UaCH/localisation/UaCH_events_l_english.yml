@@ -482,5 +482,7 @@
  UaCH.89.t:0 "Yar Ali takes Herat"
  UaCH.89.d:0 "Terrible news, sire! §GYar Ali§! has taken our capital, with the help of the traitors. Despite the desperate defence mounted by our artisans and craftsmen, his troops have broken the city and pillaged the palace!"
  UaCH.89.a:0 "A black day."
- UaCH.89.b:0 "Mount a counterattack!" 
- 
+ UaCH.89.b:0 "Mount a counterattack!"
+ UaCH.91.t: "Fealty from [From.GetName]"
+ UaCH.91.d: "The Lords of [From.GetName] have sworn to support our cause, and have chosen to become a loyal subject of ours."
+ UaCH.91.a: "Their aid is appreciated!"
