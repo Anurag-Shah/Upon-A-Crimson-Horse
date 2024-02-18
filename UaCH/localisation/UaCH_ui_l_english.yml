@@ -34,6 +34,7 @@
     SOMEONE_FLED_ALREADY_DUMBASS: "This interaction has not yet been used by any other country."
     
     intervene_in_the_crisis_tt: "§YIntervene in the Crisis§!\nWith the heirs of Timur facing near-collapse, this is the perfect chance for us to establish our sphere of influence in Persia. Let us intervene."
+    UACH_NOT_PRINCE_OR_GOVERNOR:0 "We are not a §YPrince§! or §YGovernor§!."
     WE_MUST_NEIGHBOR_SOMEONE_IDOT: "We neighbor either a §YPrince§! or §YGovernor§!, and we are not an §YInterloper§!."
     
     enthrone_timurid_claimant_tt: "§YEnthrone Timurid Claimant§!\nWith many a Timurid prince landless, it is time that we take advantage and use them as leverage to make ourselves legitimate heirs of Timur."
@@ -41,3 +42,4 @@
     end_timurs_legacy_tt: "§YEnd Timur's Legacy§!\nThe stains of Timur's bloodlust and wrath have haunted Iran for too long. It is time we destroy his legacy once and for all."
     
     reclaim_timurs_legacy_tt: "§YReclaim Timur's Legacy§!\nWe have finally put to the sword all those who dare claim our rightful throne. It is time we end this chaos once and for all, and bring peace to the Timurid realm."
+    UACH_NO_INTERLOPERS:0 "There are currently no §YInterlopers§! active."
