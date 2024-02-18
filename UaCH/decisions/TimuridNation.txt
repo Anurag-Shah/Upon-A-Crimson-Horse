@@ -3,6 +3,8 @@ country_decisions = {
 		major = yes
 		potential = {
 			is_governor = yes
+			ai = yes
+			NOT = { is_subject = yes }
 		}
 		provinces_to_highlight = {}
 		allow = {
@@ -13,22 +15,7 @@ country_decisions = {
 			stability = 1
 		}
 		effect = {
-			add_stability = -2
-			add_legitimacy = -50
-			custom_tooltip = tooltip_about_timurid_empire
-			define_ruler = {
-				dynasty = "Timurid"
-			}
-			add_legitimacy = 20
-			if = {
-				limit = {
-					has_heir = yes
-				}
-				remove_heir = {}
-			}
-			define_heir = {
-				dynasty = "Timurid"
-			}
+			uach_elevate_to_prince_effect = yes
 		}
 		ai_will_do = {
 			factor = 1

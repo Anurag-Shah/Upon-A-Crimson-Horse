@@ -44,6 +44,9 @@ uach_valid_interloper = { # region_int
 	# is not already an interloper
 	NOT = { is_interloper = yes }
 
+	# Is independent
+	NOT = { is_subject = yes }
+
 	OR = {
 		# owns a province in the thematic region
 		any_owned_province = {
@@ -104,6 +107,7 @@ uach_end_timurs_legacy_possible = {
 				}
 			}
 		}
+		NOT = { is_subject = yes }
 		custom_trigger_tooltip = {
 			tooltip = UACH_ETL_GOV_TR_TT
 			all_country = {
@@ -150,6 +154,7 @@ uach_reclaim_timurs_legacy_possible = {
 			}
 		}
 		is_prince = yes
+		NOT = { is_subject = yes }
 		custom_trigger_tooltip = {
 			tooltip = UACH_NO_INTERLOPERS
 			NOT = {
@@ -310,6 +315,7 @@ uach_flee_to_india_possible = {
 				controlled_by = PREV
 			}
 		}
+		NOT = { is_subject = yes }
 		custom_trigger_tooltip = {
 			tooltip = UACH_ESCAPE_TO_INDIA_TR_TT
 			uach_escape_to_india_pg = {

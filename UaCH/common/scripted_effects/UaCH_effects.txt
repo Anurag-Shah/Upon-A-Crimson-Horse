@@ -933,6 +933,7 @@ make_tag_prince = {
         limit = { NOT = { has_saved_global_event_target = timurids_prince20 } }
         save_global_event_target_as = timurids_prince20      
     }
+    uach_add_timurid_faction_if_not_has = yes
 }
 
 # ROOT = Tag made into a governor
@@ -1017,6 +1018,19 @@ make_tag_governor = {
     else_if = {
         limit = { NOT = { has_saved_global_event_target = timurids_governor20 } }
         save_global_event_target_as = timurids_governor20      
+    }
+    uach_add_timurid_faction_if_not_has = yes
+}
+
+uach_add_timurid_faction_if_not_has = {
+    # run in a country scope
+    if = {
+        limit = {
+            NOT = {
+                has_faction = timurid_faction
+            }
+        }
+        add_faction = timurid_faction
     }
 }
 
@@ -1805,5 +1819,26 @@ uach_flee_to_india_effect = {
             days = 1
         }
         set_country_flag = uach_ignore_me_in_ceasefire
+    }
+}
+
+uach_elevate_to_prince_effect = {
+    add_stability = -2
+    add_legitimacy = -50
+    custom_tooltip = UACH_REPLACE_TIMURID_NATION_TT
+    hidden_effect = {
+        define_ruler = {
+            dynasty = "Timurid"
+        }
+        if = {
+            limit = {
+                has_heir = yes
+            }
+            remove_heir = {}
+        }
+        define_heir = {
+            dynasty = "Timurid"
+        }
+        make_tag_prince = yes
     }
 }
