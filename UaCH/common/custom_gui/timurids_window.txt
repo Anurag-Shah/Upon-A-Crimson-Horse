@@ -548,12 +548,12 @@ custom_button = {
 		stability = 1
 		NOT = { is_subject = yes }
 		OR = {
-			owns_core_province = 446	# Herat
-			owns_core_province = 451	# Kabul
-			owns_core_province = 454	# Samarkand
-			owns_core_province = 2213	# Qom
-			owns_core_province = 2214	# Astarabad
-			owns_core_province = 2218	# Shiraz
+			country_or_non_sovereign_subject_holds = 446	# Herat
+			country_or_non_sovereign_subject_holds = 451	# Kabul
+			country_or_non_sovereign_subject_holds = 454	# Samarkand
+			country_or_non_sovereign_subject_holds = 2213	# Qom
+			country_or_non_sovereign_subject_holds = 2214	# Astarabad
+			country_or_non_sovereign_subject_holds = 2218	# Shiraz
 		}
 	}
     effect = { 
