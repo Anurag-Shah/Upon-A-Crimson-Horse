@@ -75,6 +75,8 @@ uach_spawn_opm = { #TAG #PROV
 				$TAG$ = {
 					add_government_reform = uach_governor
 					make_tag_governor = yes
+        			shuffle_governors = { scope = $TAG$ }
+					shuffle_princes = { scope = $TAG$ }
 					#country_event = { id = UaCH.64 days = 2 }
 
 					random_list = {
@@ -142,6 +144,8 @@ uach_spawn_opm = { #TAG #PROV
 					convert_ruler_to_general = yes
 					add_stability = 1
 					make_tag_prince = yes
+        			shuffle_governors = { scope = $TAG$ }
+					shuffle_princes = { scope = $TAG$ }
 					uach_add_prince_to_war = yes
 				}
 			}

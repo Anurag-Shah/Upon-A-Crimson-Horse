@@ -1840,5 +1840,6 @@ uach_elevate_to_prince_effect = {
             dynasty = "Timurid"
         }
         make_tag_prince = yes
+        shuffle_governors = { scope = ROOT }
     }
 }
