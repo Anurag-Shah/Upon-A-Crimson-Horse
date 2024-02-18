@@ -1107,7 +1107,6 @@ country_event = {
 	option = {
 		name = "UaCH.18.b"
 		
-		# TODO this correct?
 		TIM = {
 			create_subject = {
 				subject_type = governor
@@ -1167,7 +1166,7 @@ country_event = {
 		
 		QOM = {
 			add_casus_belli = {
-				type = cb_challange_claimant # TODO should be correct cb for governor subject type
+				type = cb_enforce_loyalty_governor
 				target = ROOT
 			}
 		}
@@ -1363,7 +1362,11 @@ country_event = {
 			}
 		}
 
-		# TODO how to make tim intervene in this war? Extra event?
+		TIM = {
+			country_event = {
+				id = UaCH.23 
+			}
+		}
 
 		ai_chance = {
 			factor = 1000
@@ -1427,7 +1430,6 @@ country_event = {
 
 		ai_chance = {
 			factor = 20
-			# TODO how to make AI choose this 25% of the time?
 		}
 	}
 
@@ -1450,7 +1452,6 @@ country_event = {
 
 		ai_chance = {
 			factor = 60
-			# TODO how to make AI choose this 75% of the time? - give 3 times higher chance?
 		}
 	}
 }
@@ -2289,10 +2290,7 @@ country_event = {
 		}
 	}
 	
-	mean_time_to_happen { days = 1 }
-	
-	immediate = {set_country_flag = yar_ali_is_done
-				 clr_country_flag = yar_ali_is_here}
+	mean_time_to_happen = { days = 1 }
 	
 	option = {
 		name = "UaCH.89.a"
@@ -2303,11 +2301,12 @@ country_event = {
 	option = {
 		name = "UaCH.89.b"
 		add_legitimacy = -20
-		446 = {add_devastation = 25}
+		446 = {
+			add_devastation = 25
+		}
 		add_treasury = -100
 		add_manpower = 1	
-		}	
-	
+	}	
 }
 
 #DONE
@@ -2322,11 +2321,17 @@ country_event = {
 
 	trigger = {
 		owns = 446
+		control = 446
 		has_country_flag = yar_ali_is_done
+		NOT = {
+			any_owned_province = {
+				has_rebel_faction = pretender_rebels
+			}
+		}
 	}
 
-	mean_time_to_happen = {
-		days = 30
+	hidden_effect = {
+		clr_country_flag = yar_ali_is_done
 	}
 
 	# Set my men upon the city.
@@ -2633,7 +2638,7 @@ country_event = {
 		name = "UaCH.33.b"
 		
 		add_stability = 1
-		custom_tooltip = "Abu Sa'id Mirza will be a exiled."
+		custom_tooltip = "Abu Sa'id Mirza will be exiled."
 		kill_advisor = grand_captain # TODO how to remove exactly and only Abu Sa'id Mirza
 
 		ai_chance = {
@@ -2712,8 +2717,11 @@ country_event = {
 			}
 			tag = TRS	
 		}
-		# TODO this correct?
-		has_disaster = timurid_succession_crisis
+		OR = {
+			has_disaster = timurid_succession_crisis
+			is_in_war = { casus_belli = cb_challange_claimant }
+			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+		}
 	}
 
 	mean_time_to_happen = {
@@ -2729,6 +2737,9 @@ country_event = {
 			spawn_rebels = {
 				size = 3
 				type = pretender_rebels
+			}
+			hidden_effect = {
+				remove_province_modifier = abdu_said_mirza_married
 			}
 		}
 		random_owned_province = {
