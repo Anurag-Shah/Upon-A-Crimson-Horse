@@ -2149,18 +2149,23 @@ country_event = {
 	picture = CITY_DEVELOPMENT_eventPicture
 
 	trigger = {
-		AND = {owns = 446
-			 had_country_flag = { flag = uach_disaster_event_timer
-									days = 60}
+		AND = {
+			owns = 446
+			had_country_flag = { 
+				flag = uach_disaster_event_timer
+				days = 60
 			}
+		}
 	}
 	
-		mean_time_to_happen = {
+	mean_time_to_happen = {
 		days = 90
 	}
 
-	immediate = {clr_country_flag = uach_disaster_event_timer
-				set_country_flag = uach_disaster_event_timer}
+	immediate = {
+		clr_country_flag = uach_disaster_event_timer
+		set_country_flag = uach_disaster_event_timer
+	}
 
 	# Who does he think he is?
 	option = {
@@ -2801,7 +2806,7 @@ province_event = {
 		
 		add_unrest = -5
 		owner = {
-			add_stability = 1
+			add_stability = -1
 			add_prestige = 10
 		}
 		
@@ -2923,67 +2928,92 @@ country_event = {
 	}
 }
 
-# Pulse Flight of the Western Emirs
+# Flight of the Western Emirs
+# QQ intervention event
 country_event = {
 	id = UaCH.41 
 	title = UaCH.41.t 
 	desc = UaCH.41.d
 	picture = CITY_DEVELOPMENT_eventPicture
 
+	fire_only_once = yes
+
 	trigger = {
-		had_country_flag = { flag = uach_disaster_event_timer
-									days = 60}
-	}
-	
-		mean_time_to_happen = {
-		days = 30
-	}
-	
-	immediate = {clr_country_flag = uach_disaster_event_timer
-				set_country_flag = uach_disaster_event_timer}
-				
-	# They will be hunted down.
-	option = {
-		name = "UaCH.41.a"
-		
-		random_owned_province = {
-			spawn_rebels = {
-				size = 3
-				type = noble_rebels
+		OR = {
+			tag = ISF
+			any_neighbor_country = {
+				OR = {
+					tag = QAR
+					AND = {
+						tag = AKK
+						owns = 416
+					}
+				}
 			}
 		}
-		add_adm_power = 25
+		# Players will intervene via action manually
+		QAR = { ai = yes }
+		AKK = { ai = yes }
+
+		NOT = { war_score = -75 }
+		OR = {
+			is_in_war = { casus_belli = cb_challange_claimant }
+			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					AKK = { owns = 416 }
+				}
+				AKK = {
+					save_event_target_as = interloper_qoyunlu
+				}
+			}
+			else = {
+				QAR = {
+					save_event_target_as = interloper_qoyunlu
+				}
+			}
+		}
+	}
+				
+	# Now may be time to call in some favors...
+	option = {
+		name = "UaCH.41.a"
+		add_stability = -1
+		custom_tooltip = UACH_drag_in_qar
+		hidden_effect = {
+			every_war_enemy_country = {
+				white_peace = ROOT # So that QAR/AKK doesn't inherit wars
+			}
+			event_target:interloper_qoyunlu = {
+				# ADD EFFECT FOR PERSON TO INTERVENE HERE
+				# TARGET REGION IS IRAQ-E-AJAM
+				vassalize = ROOT
+			}
+		}
 
 		ai_chance = {
 			factor = 1
 		}
 	}
 
-	# They will be hunted down.
+	# Relying on Turkic raiders? What, are we fools?
 	option = {
 		name = "UaCH.41.b"
-		
-		add_years_of_income = -0.5
-		add_yearly_manpower = 0.5
 		add_prestige = 10
+		custom_tooltip = " "
+		custom_tooltip = UACH_no_ai_qar_intervention
 
 		ai_chance = {
-			factor = 1
-		}
-	}
-
-	# They will be hunted down.
-	option = {
-		name = "UaCH.41.c"
-		
-		add_yearly_manpower = 1
-		random_owned_province = {
-			add_local_autonomy = 20
-		}
-		add_years_of_income = 1
-
-		ai_chance = {
-			factor = 1
+			factor = 0
 		}
 	}
 }
@@ -3180,6 +3210,8 @@ country_event = {
 	}	
 }
 
+# A Deal with the Devil scrapped
+
 # Decision - Intercept the body
 country_event = {
 	id = UaCH.54 
@@ -3323,11 +3355,12 @@ country_event = {
 	}
 }
 
-# The Great Migration
+# The Great Migration - Kazakh choice event
+
 country_event = {
-	id = UaCH.60
-	title = UaCH.60.t 
-	desc = UaCH.60.d
+	id = UaCH.59
+	title = UaCH.59.t 
+	desc = UaCH.59.d
 	picture = DEATH_OF_HEIR_eventPicture
 	
 	fire_only_once = yes
@@ -3336,11 +3369,47 @@ country_event = {
 	}
 
 	trigger = {
-		tag = SHY
-		KZH = {
-			is_subject_of = ROOT
+		tag = KZH
+		is_subject_of = SHY
+	}
+	
+	# It is time for us to take what is ours.
+	option = { 
+		name = "UaCH.59.a" 
+		SHY = {
+			country_event = {
+				id = UaCH.60
+			}
+		}
+		custom_tooltip = " "
+		custom_tooltip = UACH_explain_great_migration
+		ai_chance = {
+			factor = 1
 		}
 	}
+
+	# The time is not right for such bold moves.
+	option = { 
+		name = "UaCH.59.b" 
+		add_prestige = -10
+		random_owned_province = {
+			pretender_rebels = 2
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# The Great Migration
+country_event = {
+	id = UaCH.60
+	title = UaCH.60.t 
+	desc = UaCH.60.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
 	
 	# Let them run... we will wait.
 	option = { 
@@ -4409,6 +4478,170 @@ country_event = {
 		}
 		ai_chance = {
 			factor = 0
+		}
+	}
+}
+
+# The Kazakh War of Independence
+country_event = {
+	id = UaCH.87
+	title = UaCH.87.t 
+	desc = UaCH.87.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	# Let us slay the foul beast.
+	option = { 
+		name = "UaCH.87.a" 
+		declare_war_with_cb = {
+			casus_belli = cb_independence_war
+			who = SHY
+		}
+		custom_tooltip = " "
+		custom_tooltip = uach_kzh_war_of_independence
+		hidden_effect = {
+			set_country_flag = kzh_war_of_independence
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_treasury = 250
+				capital_scope = {
+					add_unit_construction = {
+						type = infantry
+						amount = 3
+						speed = 0
+						cost = 0
+					}
+					add_unit_construction = {
+						type = cavalry
+						amount = 3
+						speed = 0
+						cost = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+# The Shaybanids, Torn Asunder
+
+country_event = {
+	id = UaCH.88
+	title = UaCH.88.t 
+	desc = UaCH.88.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	# Muhammad has the right idea. Iran is ripe for the taking.
+	option = { 
+		name = "UaCH.88.a" 
+		define_ruler = {
+			name = "Muhammad"
+			dynasty = "Shaybanid"
+			dip = 3
+			adm = 3
+			mil = 6
+		}
+		SIB = {
+			grant_independence = yes
+			define_ruler = {
+				name = "Ibak"
+				dynasty = "Shaybanid"
+				adm = 2
+				dip = 2
+				mil = 2
+				culture = uzbekh
+			}
+		}
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					OR = {
+						culture = khazak
+						culture = uzbekh
+					}
+				}
+				ROOT = {
+					set_capital = PREV
+				}
+			}
+		}
+		custom_tooltip = uach_sib_siberian_land
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture = siberian
+						is_in_capital_area = no
+					}
+				}
+				cede_province = SIB
+			}
+		}
+		custom_tooltip = " "
+		change_tag = BUK
+		custom_tooltip = uach_buk_intervention
+		hidden_effect = {
+			# ADD EFFECT TO INTERVENE HERE
+			# TARGETTED REGION: SAMARKAND
+		}
+
+		ai_chance = {
+			factor = 4
+		}
+	}
+
+	# Ibak is right. We must retain our traditions.
+	option = { 
+		name = "UaCH.88.b" 
+		define_ruler = {
+			name = "Ibak"
+			dynasty = "Shaybanid"
+			adm = 2
+			dip = 2
+			mil = 2
+			culture = uzbekh
+		}
+		hidden_effect = { inherit = SIB }
+		change_tag = SIB
+
+		custom_tooltip = uach_buk_southern_land
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture = khazak
+						culture = uzbekh
+						region = persia_region
+						region = khorasan_region
+						is_in_capital_area = no
+					}
+				}
+				add_core = BUK
+				remove_core = ROOT
+			}
+			release = BUK
+		}
+		BUK = {
+			define_ruler = {
+				name = "Muhammad"
+				dynasty = "Shaybanid"
+				dip = 3
+				adm = 3
+				mil = 6
+			}
+		}
+
+		ai_chance = {
+			factor = 1
 		}
 	}
 }
