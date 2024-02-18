@@ -1558,6 +1558,11 @@ country_event = {
 					}
 				}
 				change_tag = HER
+				hidden_effect = {
+					HER = {
+						save_event_target_as = timurids_prince1
+					}
+				}
 			}
 			else_if = {
 				limit = {
