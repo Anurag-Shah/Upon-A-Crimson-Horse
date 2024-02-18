@@ -10,9 +10,6 @@ country_event = {
 	trigger = {
 		tag = TIM
 	}
-	mean_time_to_happen = {
-		days = 1
-	}
 
 	fire_only_once = yes
 
@@ -82,28 +79,15 @@ country_event = {
 	option = {
 		name = "UaCH.4.a"
 		
-		add_country_modifier = {
+		add_ruler_modifier = {
 			name = mnt_one_small_suffering
 			duration = 3650
 		}
 
 		custom_tooltip = mnt_speeds_up_disaster
 		custom_tooltip = mnt_gawhar_shad_will_puppet_ruler
-		
-		
-		# TODO increase chance of Muhammad Juki's death
-		set_country_flag = uach_yuki_dies_fo_sho
 
-		set_country_flag = uach_yuki_dies_disaster_faster
-		
-		
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				# TODO
-			}
-		}
+		set_country_flag = uach_yuki_dies_fo_sho
 	}
 
 	# I�m sorry, my love, but I�ve seen your intentions.
@@ -121,14 +105,6 @@ country_event = {
 		}
 
 		custom_tooltip = mnt_gawhar_and_military_will_rebel_on_monarch_death
-
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				# TODO
-			}
-		}
 	}
 }
 
@@ -153,13 +129,22 @@ country_event = {
 		name = "UaCH.5.a"
 		
 		random_list = {
-			90 = {
+			75 = {
+				modifier = {
+					factor = 3 # Makes it a 90% chance this way
+					has_country_flag = uach_yuki_dies_fo_sho
+				}
 				kill_heir = {  }
 				set_country_flag = uach_yuki_dies_disaster_faster
-				BLK = { IF = {has_ruler = "Muhammad Juki"} kill_ruler = yes }
-				
+				BLK = { 
+					IF = { 
+						limit = { has_ruler = "Muhammad Juki" } 
+						kill_ruler = yes #muhammad juki rules in balkh
+						inherit = KHU # His son rules in Khutallan 
+					} 
+				}
 			}
-			10 = { 
+			25 = { 
 				random_list = {
 					33 = {
 						change_heir_adm = 1
@@ -189,8 +174,13 @@ country_event = {
 		
 		kill_heir = {  }
 		set_country_flag = uach_yuki_dies_disaster_faster
-		BLK = { IF = {has_ruler = "Muhammad Juki"} kill_ruler = yes }
-	#muhammad juki rules in balkh
+		BLK = { 
+			IF = { 
+				limit = { has_ruler = "Muhammad Juki" } 
+				kill_ruler = yes #muhammad juki rules in balkh
+				inherit = KHU # His son rules in Khutallan 
+			} 
+		}
 
 		random_owned_province = {
 			limit = {
@@ -369,8 +359,6 @@ country_event = {
 			}
 		}
 	}
-	
-	
 }
 
 
@@ -581,35 +569,36 @@ country_event = {
 		tag = TIM
 		NOT = { has_global_flag = death_of_shah_rukh }
 	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
 	
 	immediate = { 
-		set_global_flag = death_of_shah_rukh 
-		country_event = {
-			id = UaCH.18
-			days = 120
-		}
-
-		every_country = {
-			limit = {
-				is_governor_or_prince = yes
-				NOT = { tag = TIM }
-			}
-			country_event = {
-				id = UaCH.14
-				days = 1
-			}
-		}
-	}
-	
-	# My time has come!
-	option = { 
-		name = "flavor_tim.1.a" 
-		custom_tooltip = flavor_tim.1.a.tt
 		hidden_effect = {
+			set_global_flag = death_of_shah_rukh 
+
+			if = {
+				limit = {
+					has_country_flag = UB_moves_to_TRS
+				}
+				switch_tag = TRS
+				TIM = {
+					every_subject_country = {
+						limit = {
+							is_subject_of_type = governor
+						}
+						TRS = {
+							create_subject = {
+								subject_type = governor
+								subject = PREV
+							}
+						}
+					}
+					change_tag = HER
+				}
+				change_tag = TIM
+				create_subject = {
+					subject_type = governor
+					subject = HER
+				}
+			}
 
 			every_country = {
 				limit = {
@@ -621,7 +610,14 @@ country_event = {
 					days = 1
 				}
 			}
-
+		}
+	}
+	
+	# My time has come!
+	option = { 
+		name = "flavor_tim.1.a" 
+		custom_tooltip = flavor_tim.1.a.tt
+		hidden_effect = {
 			TIM = {
 				country_event = {
 					id = UaCH.15
@@ -1005,30 +1001,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 1
-	}
-
-	immediate = {
-		every_country = {
-			limit = {
-				is_governor_or_prince = yes
-				has_country_flag = uach_isf_side_pre_war
-			}
-			country_event = {
-				id = UaCH.19
-				days = 5
-			}		
-		}
-		if = {
-			limit = {
-				tag = TIM
-			}
-			country_event = {
-				id = UaCH.20
-				days = 5
-			}
-		}
-		
+		days = 30
 	}
 	 
 	# I will not be denied!
@@ -1052,6 +1025,28 @@ country_event = {
 			}
 			QOM = {
 				vassalize = LRI
+			}
+		}
+		
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_governor_or_prince = yes
+					has_country_flag = uach_isf_side_pre_war
+				}
+				country_event = {
+					id = UaCH.19
+					days = 5
+				}		
+			}
+			if = {
+				limit = {
+					tag = TIM
+				}
+				country_event = {
+					id = UaCH.20
+					days = 5
+				}
 			}
 		}
 
@@ -1500,6 +1495,13 @@ country_event = {
 					}
 				}
 				change_tag = HER
+			}
+			else_if = {
+				limit = {
+					tag = TIM
+					was_tag = TRS
+				}
+				tag = TRS
 			}
 
 			# Release all subjects and subjects subjects
