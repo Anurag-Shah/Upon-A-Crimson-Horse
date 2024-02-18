@@ -285,10 +285,16 @@ uach_interloper_conquest_over_trigger_helper = { #region_int
 	# 	}
 	# }
 
-	any_province = {
+	all_province = {
 		OR = {
+			# Either not in PG
 			NOT = { province_group = uach_tr_$region_int$ }
+			# Or controlled by PREV
 			controlled_by = PREV
+			# Or not in second succession crisis
+			owner = {
+				NOT = { is_part_of_second_crisis = yes }
+			}
 		}
 	}
 }
