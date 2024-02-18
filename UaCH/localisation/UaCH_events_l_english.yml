@@ -490,3 +490,22 @@
  UaCH.91.t: "Fealty from [From.GetName]"
  UaCH.91.d: "The Lords of [From.GetName] have sworn to support our cause, and have chosen to become a loyal subject of ours."
  UaCH.91.a: "Their aid is appreciated!"
+ 
+ UaCH.92.t:0"The river runs dry"
+ UaCH.92.d:0"My liege, we have received news. The river in our province has dried up, causing a major uproar. Without acces to fresh water, our communities will suffer immensely, and may even decide to abandon our city. We should immediately send out people to dig up new wells."
+ UaCH.92.a:0"Most certainly."
+ UaCH.92.b:0"Let us pray for rain."
+ mitigated_drought:0"Mitigated drought"
+ minor_drought:0"Minor drought"
+ moderate_drought:0"Moderate drought"
+ 
+ UaCH.94.t:0"The drought is ongoing"
+ UaCH.94.d:0"My liege, we have received news. Despite our efforts to dig new wells, it seems we have yet to be successful. The people are getting worried by the day, rationing is already on."
+ UaCH.94.a:0"Dig harder."
+ UaCH.94.b:0"This is the doing of those..."
+ 
+ UaCH.95.t:0"Catastrophe"
+ UaCH.95.d:0"My liege, we have received the most grave news! The people in our drought stricken land have decided to move. Unless something is done immediately, we might even lose the city!"
+ UaCH.95.a:0"D-I-G! WHAT DOES THAT SPELL?"
+ UaCH.95.b:0"Curse upon you, my foes!"
+ uach_city_lose:0"This province will be §RABANDONED§!. Without recolonization, people may not return here!"

@@ -5023,3 +5023,314 @@ country_event = {
 				
 	option = { }
 }
+
+# Pulse event - Drought
+country_event = {
+
+	id = UaCH.92
+	title = UaCH.92.t  
+	desc = UaCH.92.d	  
+	picture = PLAGUE_eventPicture
+
+	
+	trigger = {
+		had_country_flag = { 
+				flag = uach_disaster_event_timer
+				days = 60
+			}
+		
+		any_owned_province = { AND = { OR = {
+									has_terrain = savannah
+									has_terrain = steppe
+									has_terrain = drylands
+									has_terrain = desert
+									has_terrain = coastal_desert
+									}
+						is_capital = no }
+				}
+		OR = {
+			capital_scope = {superregion = persia_superregion}
+			capital_scope = {superregion = near_east_superregion}
+			capital_scope = {region = central_asia_region}
+			}		
+	}
+
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	
+
+	immediate = {
+		clr_country_flag = uach_disaster_event_timer
+		set_country_flag = uach_disaster_event_timer
+		
+		random_owned_province = {
+						limit = {
+								AND = {
+								OR = {
+									has_terrain = savannah
+									has_terrain = steppe
+									has_terrain = drylands
+									has_terrain = desert
+									has_terrain = coastal_desert
+									}
+								is_capital = no }
+								}
+								save_event_target_as = uach_drought_prov
+								}
+		
+		}
+		
+	option = {
+		name = "UaCH.92.a" # How horrible! We have to do something!
+			add_years_of_income = -0.15 
+			random_list = {
+				75 = { 
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "mitigated_drought"
+								duration = 3650
+								}
+							}
+					}
+					
+				25 = {		
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "minor_drought"
+								duration = 3650
+								}
+							}
+					}
+				}
+				
+		ai_chance = {
+			factor = 90
+		}
+	}
+	
+	
+	option = {
+		name = "UaCH.92.b" # Let us pray to god for rain....
+		
+
+			
+			random_list = {
+				75 = {
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "minor_drought"
+								duration = 3650
+								}
+							}
+					}
+					
+				25 = {	
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "moderate_drought"
+								duration = 3650
+								}
+							}
+					}
+					
+				}
+					
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+#disaster end - stop timer to princes and govs
+
+country_event = {
+	id = UaCH.93
+	title = UaCH.93.t 
+	desc = UaCH.93.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	trigger = {
+	}
+	
+	hidden = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "UaCH.93.a"
+		every_country = {
+			limit = {
+				is_governor_or_prince = yes	
+			}
+			clr_country_flag = uach_disaster_event_timer
+				
+		}
+	}
+}
+
+country_event = {
+
+	id = UaCH.94
+	title = UaCH.94.t  
+	desc = UaCH.94.d	  
+	picture = PLAGUE_eventPicture
+	
+	trigger = {
+			AND = { had_country_flag = { 
+				flag = uach_disaster_event_timer
+				days = 60
+				}
+				
+				any_owned_province = {  has_province_modifier = minor_drought }
+			}
+		}
+			
+	immediate = {clr_country_flag = uach_disaster_event_timer
+				 set_country_flag = uach_disaster_event_timer
+				 random_owned_province = { 
+					limit = { 
+						has_province_modifier = minor_drought }
+					save_event_target_as = uach_drought_prov		 
+				 }
+				}
+				
+			
+			
+	option = {
+		name = UaCH.94.a
+			add_years_of_income = -0.25
+			random_list = {
+				75 = {
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "mitigated_drought"
+								duration = 3650
+								}
+							}
+					}
+					
+				25 = {	
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "moderate_drought"
+								duration = 3650
+								}
+							}
+					}
+					
+				}
+			
+			
+			}
+			
+	option = {
+		name = UaCH.94.b
+			random_list = {
+				75 = {
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "moderate_drought"
+								duration = 3650
+								}
+							}
+					}
+					
+				25 = {	
+						event_target:uach_drought_prov = {
+							add_devastation = 40
+							}
+					}
+					
+				}			
+			}
+}
+
+
+country_event = {
+
+	id = UaCH.95
+	title = UaCH.95.t  
+	desc = UaCH.95.d	  
+	picture = PLAGUE_eventPicture
+	
+	trigger = {
+			AND = { had_country_flag = { 
+				flag = uach_disaster_event_timer
+				days = 60
+				}
+				
+				any_owned_province = { has_province_modifier = moderate_drought }
+				}
+			}
+			
+	immediate = {clr_country_flag = uach_disaster_event_timer
+				 set_country_flag = uach_disaster_event_timer
+				 random_owned_province = { 
+					limit = { 
+						has_province_modifier = moderate_drought }
+				 save_event_target_as = uach_drought_prov	
+					}
+				}
+			
+			
+	option = {
+		name = UaCH.95.a
+			add_years_of_income = -0.50
+			add_adm_power =-100
+			add_mil_power =-100
+			add_dip_power =-100
+			random_list = {
+				90 = {
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "mitigated_drought"
+								duration = 3650
+								}
+							}
+					}
+					
+				10 = {	
+							}
+					}
+					
+				}
+			
+			
+		option = {
+		name = UaCH.95.b
+			random_list = {
+				75 = {
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								add_devastation = 100
+								name = "moderate_drought"
+								duration = 9125
+								}
+							}
+					}
+					
+				25 = {	
+						custom_tooltip = uach_city_lose
+						event_target:uach_drought_prov = {
+							hidden_effect = {
+									cede_province = uncolonized
+									set_province_flag = colonizable
+									clr_province_flag = colonize
+									clr_province_flag = land_grab
+									clr_province_flag = native_policy
+									clr_province_flag = native_uprising
+									clr_province_flag = native_repression
+									clr_province_flag = native_assimilation
+									clr_province_flag = native_restriction
+									remove_province_modifier = moderate_drought
+								}
+							}
+					}
+					
+				}	
+				
+	}
+}
