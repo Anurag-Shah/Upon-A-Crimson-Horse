@@ -43,16 +43,73 @@ on_province_owner_change = {
 }
 
 on_siege_lost_province = {
+    if = {
+        limit = {
+            FROM = {
+                tag = KZH
+                has_country_flag = kzh_war_of_independence
+            }
+            culture = khazak
+            NOT = { is_core = KZH }
+        }
+        add_core = KZH
+    }
     events = {
         # TODO siege of Samarkand by Abdal-Latif --> Uluq Beg should be executed
     }
 }
 
 on_war_won = {
+    if = {
+        limit = {
+            ROOT = {
+                tag = KZH
+                has_country_flag = kzh_war_of_independence
+            }
+            FROM = {
+                tag = SHY
+            }
+        }
+        every_province = {
+            limit = {
+                is_core = KZH
+                country_or_non_sovereign_subject_holds = SHY
+                NOT = {
+                    area = kyzylkum_area
+                }
+            }
+            cede_province = KZH
+        }
+        ROOT = {
+            clr_country_flag = kzh_war_of_independence
+        }
+        FROM = {
+            country_event = {
+                id = UaCH.88
+            }
+        }
+    }
     FROM = {
         country_event = {
             id = UaCH.80
             days = 1
         }
     }
+}
+
+on_war_lost = {
+    if = {
+        limit = {
+            ROOT = {
+                tag = KZH
+                has_country_flag = kzh_war_of_independence
+            }
+            FROM = {
+                tag = SHY
+            }
+        }
+        ROOT = {
+            clr_country_flag = kzh_war_of_independence
+        }
+    }   
 }

@@ -216,10 +216,12 @@
  UaCH.40.b: "Surely, we can just bribe them..."
  UaCH.40.c: "Make concessions."
  UaCH.41.t: "Flight of the Western Emirs"
- UaCH.41.d: "The bloodshed has been going on forever, without end in sight. Quite a few emirs have already died,either on the field of battle or due to mysterious illness, creating a power vacuum in the western parts of the Empire. However, there seems to be a power, albeit foreign, that could turn the tide in our favor, if we are willing to pay its price. Let us turn to the nomadic §YQara Qoyunlu§! for support."
- UaCH.41.c: "Now may be time to call in some favors..."
+
+ UaCH.41.d: "The bloodshed has been going on forever, without end in sight. Quite a few emirs have already died,either on the field of battle or due to mysterious illness, creating a power vacuum in the western parts of the Empire. However, there seems to be a power, albeit foreign, that could turn the tide in our favor, if we are willing to pay its price. Let us turn to the nomadic §Y[interloper_qoyunlu.GetName]§! for support."
+ UaCH.41.a: "Now may be time to call in some favors..."
+ UACH_drag_in_qar:0 "@[interloper_qoyunlu.GetTag] §Y[interloper_qoyunlu.GetName]§! will become an Interloper, and we will become their §YVassal§!."
  UaCH.41.b: "Relying on Turkic raiders? What, are we fools?"
- UaCH.41.a: "Let the cowards run, we will deal with them later"
+ UACH_no_ai_qar_intervention:0 "There will not be another chance for @[interloper_qoyunlu.GetTag] §Y[interloper_qoyunlu.GetName]§! to intervene."
  
  UaCH.42.t: "Call of the Glory"
  UaCH.42.d: "Our ruler, §G[Root.Monarch.GetName]§!, despite our dire warnings have decided to take matters into his own hand. It seems he believes that going out to the field of battle by himself should change the outcome of every battle drastically. While the men's morale is certainly bolstered by his boldness, the risks are equally great, and the consequences equally catastrophic, should he fall."
@@ -273,13 +275,9 @@
  
  UaCH.52.t: "The Schemeing Dowager"
  UaCH.52.d: "The empress dowager §GGawhar Shad§! has taken up residence in our city. While many see this as strenghtening our claim to the throne, those who know of her know that this may be just another scheme in her book. She has made multiple demands to our ruler, and while they seem reasonable, the outcome of agreeing to such actions is yet to be seen."
- UaCH.52.a: "Accede to the demands"
- UaCH.52.b: "She's way past her expiration date..."
- 
- UaCH.53.t: "A deal with the devil"
- UaCH.53.d: "Our situation has become untenable. Due the Princes miscalculations, our position is compromised, and our enemies have taken every advantage they could. In our darkest hour, a small group of nomadic horsemen arrive...."
- UaCH.53.a: "There is no price high I am unwilling to pay."
- UaCH.53.b: "We can still turn this around..."
+ UaCH.52.a: "So, this is how she treats us!"
+
+ # Scrapped event
  
  UaCH.54.t: "Intercept the body"
  UaCH.54.d: "§GShah Rukh's§! corpse cannot fall into anyones hand, but ours! Assemble the army!"
@@ -302,10 +300,11 @@
  UaCH.58.a: "We can hold this together."
  UaCH.58.b: "Bah, let the fools leave."
  
- UaCH.59.t: ""
- UaCH.59.d: ""
- UaCH.59.a: ""
- UaCH.59.b: ""
+ UaCH.59.t: "The Great Migration"
+ UaCH.59.d: "We have had enough of being nought but the outskirts of a wider empire, mistreated and exploited. As long as this status quo lasts, our people will be nothing but slaves to these old men in the region. We've already recieved words of support from the rivals of the Khans in Chimgi-Tura, and, as such, it is now time to determine how we shall handle these mistreatments and injustices.\n\nShall we take these men, who seek the downfall of the Shaybanids, up on their word and plot to seize the reins of rulership for ourselves, or shall we just pray that the situation changes?"
+ UaCH.59.a: "It is time for us to take what is ours."
+ UACH_explain_great_migration:0 "We will recieve the support of a notable rival of the @SHY §YShaybanids§!, with them ceding lands to us, and we will declare a unique Independence war upon the death of @SHY §YShaybanids§!' current ruler."
+ UaCH.59.b: "The time is not right for such bold moves."
  
  UaCH.60.t: "The Great Migration"
  UaCH.60.d: "It appears the discontent of the Kazakh tribes has boiled over, with the two co-chieftains, Janibek Khan and Kerei Khan, having begun a migration into the lands of Mogulistan, seeking support from abroad. They still claim their lands under our rule as theirs despite the migration, which is clearly a vagrant act of disobidience on top of the migration out of our lands into the lands of one of our enemies.\n\nWhilst this has soured our relations with them, the bigger concern is how the Khans of Moghulistan will respond. Should they back this act of rebellion, it is likely that the Kazakhs will grow to become a threat to our hold on power in the region, and may even give the Taighuibs of Sibir, who have been quelled for the mean time, ideas."
@@ -316,7 +315,7 @@
  UaCH.61.a: "We will back their endeavors."
  shy_cede_jetysuu_area: "We will cede the §YJetysuu§! Area to @KZH §YKazakh§!."
  shy_cede_x_area: "We will cede the §Y[area_of_interest.GetName]§! Area to @KZH §YKazakh§!."
- shy_war_of_independence_ensured: "Upon the death of the ruler of the @SHY §YShaybanids§!, @KZH §YKazakh§! will rebel with a unique Independence Casus Belli."
+ shy_war_of_independence_ensured: "Upon the death of the ruler of the @SHY §YShaybanids§!, @KZH §YKazakh§! will rebel with a unique Independence war."
  UaCH.61.b: "We have greater concerns than these tribal feuds."
 
  UaCH.62.t: "Care of the Empress-Dowager"
@@ -461,3 +460,16 @@
  UaCH.86.d: "Our intervention is successful, and we have captured everything we aim to conquer. We could exit the conflict now, secure in our gains, and return to peace. Or, we could risk it all, and push further..."
  UaCH.86.a: "Victory! Let the men return home."
  UaCH.86.b: "Forge onwards to eternal glory!"
+
+ UaCH.87.t:0 "The Kazakh War of Independence"
+ UaCH.87.d:0 "With the death of Abu'l-Khayr Khan during an attempt to counteract our raids, the perfect chance for us to take our place in the spotlight has emerged, as many rivals have emerged to the relatively young Khan that is presently in charge of the Khanate. Whilst they are distracted fighting amongst themselves, we shall prove our strength by piercing the foul beast and slicing it in half. All from the Syr Dayra to the Irtysh shall bow to us, the rightful rulers of Turan!"
+ UaCH.87.a:0 "Let us slay the foul beast."
+ uach_kzh_war_of_independence:0 "Any provinces that we occupy of §YKazakh§! culture will become our cores.\nUpon us gaining our independence, any cores we have acquired will be ceded to us, and the @SHY §YShaybanids§! will fall apart, going their seperate ways as @SIB §YSibir§! and @BUK §YBukhara§!."
+
+ UaCH.88.t:0 "The Shaybanids, Torn Asunder"
+ UaCH.88.d:0 "Despite our best efforts to quell the rebellion of the Kazakhs and our internal unrest, it has proven to be for nought, as the heirs of Abu'l-Khayr Khan flee to escape the wrath of rivals at home and abroad, and our territory itself is cut in half. In this chaos, two of these princes have come up with their own individual schemes as to how to recover from this calamity.\n\nMuhammad, grandson of our founder, proposes that we follow our brothers in Chagatai and adopt a more sedentary lifestyle, abandoning the steppe and intervening in the chaos that is Iran in the present moment, carving out our own Persinate state. Whilst this certainly shakes our society to it's very core, it may be preferable to holding on in the steppes.\n\nIbak, however, ruling already from Sibir, wishes to build a new Siberian steppe state, holding onto traditions tightly. Whilst he may be able to hold back the Kazakhs now, the Russians are already posing a threat, and it may be just a matter of time before either the Kazakhs or Russians have their way with him.\n\nWhat shall the sons of Shiban do?"
+  UaCH.88.a:0 "Muhammad has the right idea. Iran is ripe for the taking."
+  uach_sib_siberian_land:0 "@SIB §YSibir§! will be given any §YSiberian§! lands we hold, alongside any land disconnected from our capital."
+  uach_buk_intervention:0 "If the §YTimurid Succession Crisis§! is ongoing, we will become an §YInterloper§!."
+  UaCH.88.b:0 "Ibak is right. We must retain our traditions."
+  uach_buk_southern_land:0 "@BUK §YBukhara§! will recieve our southermost lands, alongside any land disconnected from our capital."
