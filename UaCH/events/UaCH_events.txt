@@ -38,7 +38,8 @@ country_event = {
 	title = UaCH.3.t 
 	desc = UaCH.3.d
 	picture = CITY_DEVELOPMENT_eventPicture
-
+	
+	fire_only_once = yes
 	trigger = {
 		tag = TIM
 		has_country_flag = uach_ailing_emperor
@@ -68,8 +69,10 @@ country_event = {
 	desc = UaCH.4.d
 	picture = CITY_DEVELOPMENT_eventPicture
 
+	fire_only_once = yes
 	trigger = {
 		tag = TIM
+		has_ruler = "Shah Rukh"
 	}
 	mean_time_to_happen = {
 		months = 12
@@ -86,9 +89,14 @@ country_event = {
 
 		custom_tooltip = mnt_speeds_up_disaster
 		custom_tooltip = mnt_gawhar_shad_will_puppet_ruler
-
+		
+		
 		# TODO increase chance of Muhammad Juki's death
+		set_country_flag = uach_yuki_dies_fo_sho
 
+		set_country_flag = uach_yuki_dies_disaster_faster
+		
+		
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -131,6 +139,7 @@ country_event = {
 	desc = UaCH.5.d
 	picture = CITY_DEVELOPMENT_eventPicture
 
+	fire_only_once = yes
 	trigger = {
 		tag = TIM
 		has_heir = "Muhammad Juki"
@@ -146,6 +155,9 @@ country_event = {
 		random_list = {
 			90 = {
 				kill_heir = {  }
+				set_country_flag = uach_yuki_dies_disaster_faster
+				BLK = { IF = {has_ruler = "Muhammad Juki"} kill_ruler = yes }
+				
 			}
 			10 = { 
 				random_list = {
@@ -176,6 +188,9 @@ country_event = {
 		name = "UaCH.5.b"
 		
 		kill_heir = {  }
+		set_country_flag = uach_yuki_dies_disaster_faster
+		BLK = { IF = {has_ruler = "Muhammad Juki"} kill_ruler = yes }
+	#muhammad juki rules in balkh
 
 		random_owned_province = {
 			limit = {
@@ -201,6 +216,7 @@ country_event = {
 	desc = UaCH.6.d
 	picture = CITY_DEVELOPMENT_eventPicture
 
+	fire_only_once = yes
 	trigger = {
 		tag = QOM
 	}
@@ -213,12 +229,12 @@ country_event = {
 	option = {
 		name = "UaCH.6.a"
 		ISF = {
-			grant_independence = yes
 			set_country_flag = isfh_rebels
 		}
 		vassalize = ISF
-		set_country_flag = uach_QOM_assisted_ISF
-
+		ISF = { set_country_flag = uach_QOM_assisted_ISF }
+		
+		
 		ai_chance = {
 			factor = 1
 		}
@@ -261,6 +277,7 @@ country_event = {
 	desc = UaCH.7.d
 	picture = CITY_DEVELOPMENT_eventPicture
 
+	fire_only_once = yes
 	trigger = {
 		tag = TIM
 	}
@@ -307,7 +324,7 @@ country_event = {
 			dip = 0
 			mil = 0	
 		}
-
+		hidden = {set_country_flag = UB_moves_to_TRS}
 		custom_tooltip = mnt_warning_of_moving_to_transoxiana_on_death
 
 		ai_chance = {
@@ -319,6 +336,14 @@ country_event = {
 		}
 	}
 
+	# There is still time for this�
+	option = {
+		name = "UaCH.7.e"
+		
+		add_prestige = -10
+
+	}
+	
 	# My favorite, Muhammad Juki
 	option = {
 		name = "UaCH.7.c"
@@ -334,22 +359,8 @@ country_event = {
 		}
 
 		custom_tooltip = mnt_gawhar_shad_more_likely_to_rebel_slower_disaster
-
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				# TODO
-			}
-		}
-	}
-
-	# There is still time for this�
-	option = {
-		name = "UaCH.7.d"
+		set_country_flag = uach_yuki_lives_slower_disaster
 		
-		# Anything in here?
-
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -358,7 +369,10 @@ country_event = {
 			}
 		}
 	}
+	
+	
 }
+
 
 # Rebellion in Isfahan
 country_event = {
@@ -366,7 +380,8 @@ country_event = {
 	title = UaCH.8.t 
 	desc = UaCH.8.d
 	picture = CITY_DEVELOPMENT_eventPicture
-
+	
+	fire_only_once = yes
 	trigger = {
 		AND = {
 			tag = ISF
@@ -461,6 +476,8 @@ country_event = {
 	}
 }
 
+
+
 # Muhammads demands - recieving side
 country_event = {
 	id = UaCH.9 
@@ -497,15 +514,13 @@ country_event = {
 		}
 
 		ai_chance = {
-			factor = 1
+			factor = 5
 			modifier = {
 				factor = 0
 				OR = {
 					tag = AFG
 					tag = TRS
 				}
-
-				# TODO how to do the relative strength towards TIM?
 			}
 		}
 	}
@@ -518,8 +533,11 @@ country_event = {
 		set_country_flag = uach_root_ISF_peace_out
 		custom_tooltip = "If [ISF.GetName] declares war for its independence, we [Root.GetName] will not interfere on either side."
 		
+		white_peace = QOM
+		white_peace = ISF
+		
 		ai_chance = {
-			factor = 1
+			factor = 0.5
 			modifier = {
 				factor = 1000
 				tag = TRS
@@ -534,9 +552,11 @@ country_event = {
 		# flag to join agains ISF
 		set_country_flag = uach_root_will_fight_ISF
 		custom_tooltip = "If [ISF.GetName] declares war for its independence, we [Root.GetName] will join the war on the side of [TIM.GetName]."
-
+		
+		create_alliance = TIM
+		
 		ai_chance = {
-			factor = 1
+			factor = 2
 			modifier = {
 				factor = 1000
 				tag = AFG
@@ -1518,8 +1538,11 @@ country_event = {
 					days = 1
 				}
 			}
+		
+			set_global_flag = uach_succession_crisis_started
+			
+			country_event = { id = UaCH.84 days = 1 }
 		}
-
 		ai_chance = {
 			factor = 1
 		}
@@ -2092,21 +2115,23 @@ country_event = {
 	desc = UaCH.27.d
 	picture = CITY_DEVELOPMENT_eventPicture
 
-
 	trigger = {
-		owns = 446
-		# TODO this correct?
-		has_disaster = timurid_succession_crisis
+		AND = {owns = 446
+			 had_country_flag = { flag = uach_disaster_event_timer
+									days = 60}
+			}
+	}
+	
+		mean_time_to_happen = {
+		days = 90
 	}
 
-	mean_time_to_happen = {
-		days = 1
-	}
+	immediate = {clr_country_flag = uach_disaster_event_timer
+				set_country_flag = uach_disaster_event_timer}
 
 	# Who does he think he is?
 	option = {
 		name = "UaCH.27.a"
-		
 		446 = {
 			spawn_rebels = {
 				size = 3
@@ -2144,7 +2169,7 @@ province_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 1
+		days = 30
 	}
 
 	# Set my men upon the city.
@@ -2195,26 +2220,26 @@ country_event = {
 	title = UaCH.29.t 
 	desc = UaCH.29.d
 	picture = CITY_DEVELOPMENT_eventPicture
-
+	
 	trigger = {
 		any_neighbor_country = {
 			has_reform = steppe_horde
 		}
-		# TODO this correct?
-		has_disaster = timurid_succession_crisis
+		had_country_flag = { flag = uach_disaster_event_timer
+									days = 60}
 	}
-
 	mean_time_to_happen = {
-		days = 1
+		days = 30
 	}
-
+	immediate = {clr_country_flag = uach_disaster_event_timer
+				set_country_flag = uach_disaster_event_timer}
 	# Enemies everywhere!
 	option = {
 		name = "UaCH.29.a"
 		
 		add_years_of_income = -0.5
-
-		uach_remove_half_year_mana = yes
+	
+		#uach_remove_half_year_mana = yes
 
 		random_owned_province = {
 			add_devastation = 10
@@ -2232,7 +2257,7 @@ country_event = {
 	title = UaCH.30.t 
 	desc = UaCH.30.d
 	picture = CITY_DEVELOPMENT_eventPicture
-
+	fire_only_once = yes
 	trigger = {
 		OR = {
 			AND = {
@@ -2248,7 +2273,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 30
+		months = 180
 	}
 
 	# Appoint him as our governor in Balkh
@@ -2677,16 +2702,16 @@ country_event = {
 	title = UaCH.38.t 
 	desc = UaCH.38.d
 	picture = CITY_DEVELOPMENT_eventPicture
-
 	trigger = {
-		has_country_flag = uach_second_succession_crisis_war_flag
-		is_governor_or_prince = yes
+		had_country_flag = { flag = uach_disaster_event_timer
+									days = 60}
 	}
-
-	mean_time_to_happen = {
-		days = 1
+		mean_time_to_happen = {
+		days = 30
 	}
-
+	
+	immediate = {clr_country_flag = uach_disaster_event_timer
+				set_country_flag = uach_disaster_event_timer}
 	# Find supplies by any means neccessary.
 	option = {
 		name = "UaCH.38.a"
@@ -2727,15 +2752,15 @@ province_event = {
 	picture = CITY_DEVELOPMENT_eventPicture
 
 	trigger = {
-		owner = {
-			has_country_flag = uach_second_succession_crisis_war_flag
-			is_governor_or_prince = yes
-		}
+		had_country_flag = { flag = uach_disaster_event_timer
+									days = 60}
 	}
-
-	mean_time_to_happen = {
-		days = 1
+		mean_time_to_happen = {
+		days = 30
 	}
+	
+	immediate = {clr_country_flag = uach_disaster_event_timer
+				set_country_flag = uach_disaster_event_timer}
 
 	# Replace the emir.
 	option = {
@@ -2808,14 +2833,17 @@ country_event = {
 	picture = CITY_DEVELOPMENT_eventPicture
 
 	trigger = {
-		has_country_flag = uach_second_succession_crisis_war_flag
-		has_disaster = timurid_succession_crisis
+			had_country_flag = { flag = uach_disaster_event_timer
+									days = 60}
+	}
+	
+		mean_time_to_happen = {
+		days = 30
 	}
 
-	mean_time_to_happen = {
-		days = 1
-	}
-
+	immediate = {clr_country_flag = uach_disaster_event_timer
+				set_country_flag = uach_disaster_event_timer}
+				
 	# Traitors
 	option = {
 		name = "UaCH.40.a"
@@ -2862,7 +2890,7 @@ country_event = {
 	}
 }
 
-# Flight of the Western Emirs
+# Pulse Flight of the Western Emirs
 country_event = {
 	id = UaCH.41 
 	title = UaCH.41.t 
@@ -2870,14 +2898,17 @@ country_event = {
 	picture = CITY_DEVELOPMENT_eventPicture
 
 	trigger = {
-		has_country_flag = uach_second_succession_crisis_war_flag
-		has_disaster = timurid_succession_crisis
+		had_country_flag = { flag = uach_disaster_event_timer
+									days = 60}
 	}
-
-	mean_time_to_happen = {
-		days = 1
+	
+		mean_time_to_happen = {
+		days = 30
 	}
-
+	
+	immediate = {clr_country_flag = uach_disaster_event_timer
+				set_country_flag = uach_disaster_event_timer}
+				
 	# They will be hunted down.
 	option = {
 		name = "UaCH.41.a"
@@ -3717,10 +3748,9 @@ country_event = {
 
 # Hostilities have recommenced event p1
 # Fires the event then fires p2 for its FROM
-
 country_event = {
 	id = UaCH.71
-	title = UaCH.71.t 
+	title = UaCH.71.t
 	desc = UaCH.71.d
 	picture = CIVIL_WAR_eventPicture
 	
@@ -3976,10 +4006,6 @@ country_event = {
 	id = UaCH.80
 	title = UaCH.80.t 
 	desc = UaCH.80.d
-	picture = CITY_DEVELOPMENT_eventPicture
-	
-	trigger = {
-	}
 
 	hidden = yes
 
@@ -4150,5 +4176,32 @@ country_event = {
 		custom_tooltip = UACH_81_A_TOOLTIP
 		remove_government_reform = uach_governor
 		add_government_reform = iqta
+	}
+}
+
+#disaster start - add timer to princes and govs
+
+country_event = {
+	id = UaCH.84
+	title = UaCH.84.t 
+	desc = UaCH.84.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	trigger = {
+	}
+	
+	hidden = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "UaCH.84.a"
+		every_country = {
+			limit = {
+				is_governor_or_prince = yes	
+			}
+			set_country_flag = uach_disaster_event_timer	
+				
+		}
 	}
 }
