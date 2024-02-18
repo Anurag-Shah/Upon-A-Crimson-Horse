@@ -477,11 +477,13 @@ custom_button = {
 				has_global_flag = tim_mughal_flight
 			}
 		}
+		uach_flee_to_india_possible = yes
 	}
     effect = { 
-		custom_tooltip = "To be added."
+		custom_tooltip = "We will abandon our claims, and flee to India."
 		hidden_effect = {
 			set_global_flag = tim_mughal_flight
+			uach_flee_to_india_effect = yes
 		}
 	}
     tooltip = abandon_our_claims_tt
@@ -494,6 +496,10 @@ custom_button = {
 		custom_trigger_tooltip = {
 			tooltip = WAIT_FOR_SC_TO_START_BITCH_TT
 			has_global_flag = uach_succession_crisis_started
+		}
+		AND = {
+			NOT = { is_prince = yes }
+			NOT = { is_governor = yes }
 		}
 		custom_trigger_tooltip = {
 			tooltip = WE_MUST_NEIGHBOR_SOMEONE_IDOT
@@ -540,9 +546,10 @@ custom_button = {
 			tooltip = WAIT_FOR_SC_TO_START_BITCH_TT
 			has_global_flag = uach_succession_crisis_started
 		}
+		uach_end_timurs_legacy_possible = yes
 	}
     effect = { 
-		custom_tooltip = "To be added."
+		uach_end_timurs_legacy_effect = yes
 	}
     tooltip = end_timurs_legacy_tt
 }
@@ -551,16 +558,16 @@ custom_button = {
     name = reclaim_timurs_legacy
 	potential = { 
 		has_faction = timurid_faction 
+	}
+    trigger = {
 		custom_trigger_tooltip = {
 			tooltip = WAIT_FOR_SC_TO_START_BITCH_TT
 			has_global_flag = uach_succession_crisis_started
 		}
-	}
-    trigger = { 
-		always = no
+		uach_reclaim_timurs_legacy_possible = yes
 	}
     effect = { 
-		custom_tooltip = "To be added."
+		uach_reclaim_timurs_legacy_effect = yes
 	}
     tooltip = reclaim_timurs_legacy_tt
 }
