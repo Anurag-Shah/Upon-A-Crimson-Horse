@@ -5,7 +5,7 @@ po_make_governor = {
 	power_projection = enforced_loyalty_on_governor
 	power_cost_base = 1.0
 	prestige_base = 1.0
-	ae_base = 0.35
+	ae_base = 0
 
 	warscore_cost = {
 		# Which of the giver's provinces' war score costs are included and by how much. All entries default to 0. Any combination of entries can be used. Try negative values at your own risk.
