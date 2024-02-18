@@ -17,6 +17,7 @@ on_startup = {
                         }
                     }
                 }
+                NOT = { tag = ORM }
             }
             add_faction = timurid_faction
         }
@@ -112,4 +113,24 @@ on_war_lost = {
             clr_country_flag = kzh_war_of_independence
         }
     }   
+}
+
+on_battle_lost_unit = {
+    if = {
+        limit = {
+            unit_owner = {
+                OR = {
+                    is_in_war = { casus_belli = cb_challange_claimant }
+                    is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+                }
+            }
+            is_ruler_commanding_unit = yes
+        }
+        unit_owner = {
+            random_list = {
+                25 = { country_event = { id = UaCH.43 } }
+                75 = { }
+            }
+        }
+    }
 }
