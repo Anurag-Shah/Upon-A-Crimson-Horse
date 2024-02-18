@@ -1053,7 +1053,93 @@ uach_add_governor_to_war = {
         }
     }
 
-    # Yes i know this could be one limit but its easier to read this way
+    go_to_war_with_resp_interlopers = yes
+}
+
+# New tag to the war, send it to war with interlopers
+go_to_war_with_resp_interlopers = {
+    every_owned_province = {
+        # we check for every owned province
+        # Which PG it is in
+        # And set region_int accordingly in the helper effect
+        if = {
+            limit = {
+                province_group = uach_tr_0
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 0 region_int_inc = 1 } }
+        } else_if = {
+            limit = {
+                province_group = uach_tr_1
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 1 region_int_inc = 2 } }
+        } else_if = {
+            limit = {
+                province_group = uach_tr_2
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 2 region_int_inc = 3 } }
+        } else_if = {
+            limit = {
+                province_group = uach_tr_3
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 3 region_int_inc = 4 } }
+        } else_if = {
+            limit = {
+                province_group = uach_tr_4
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 4 region_int_inc = 5 } }
+        } else_if = {
+            limit = {
+                province_group = uach_tr_5
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 5 region_int_inc = 6 } }
+        } else_if = {
+            limit = {
+                province_group = uach_tr_6
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 6 region_int_inc = 7 } }
+        } else_if = {
+            limit = {
+                province_group = uach_tr_7
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 7 region_int_inc = 8 } }
+        }
+    }
+}
+
+attack_interlopers_at_region_int = { # region_int region_int_inc
+    # Should be run in a country scope
+    every_country = {
+        limit = {
+            AND = {
+                is_interloper = yes
+                OR = {
+                    has_country_flag = uach_big_money_flag
+                    AND = {
+                        check_variable = {
+                            which = uach_interloper_region
+                            value = $region_int$
+                        }
+                        NOT = {
+                            check_variable = {
+                                which = uach_interloper_region
+                                value = $region_int_inc$
+                            }
+                        }
+                    }
+                }
+                NOT = {
+                    OR = {
+                        defensive_war_with = PREV
+                        offensive_war_with = PREV
+                    }
+                }
+            }
+        }
+        declare_war_with_cb = {
+            casus_belli = cb_uach_interloper_conquest
+            who = PREV
+        }
+    }
 }
 
 # Adds prince to the war
@@ -1088,6 +1174,35 @@ uach_add_prince_to_war = {
                 casus_belli = cb_enforce_loyalty_governor
                 who = PREV
             }
+        }
+    }
+
+    go_to_war_with_resp_interlopers = yes
+}
+
+# Adds interloper to the full scope of the war, if they are going for the big money
+uach_add_interloper_to_war_fully = {
+    every_country = {
+        limit = {
+            AND = {
+                OR = {
+                    is_prince = yes
+                    is_interloper = yes
+                    is_governor = yes
+                }
+                NOT = { is_subject = yes }
+                NOT = {
+                    OR = {
+                        defensive_war_with = PREV
+                        offensive_war_with = PREV
+                    }
+                }
+            }
+        }
+
+        declare_war_with_cb = {
+            casus_belli = cb_uach_interloper_conquest
+            who = PREV
         }
     }
 }
@@ -1185,6 +1300,27 @@ uach_create_interloper = { # region_int
                 casus_belli = cb_uach_interloper_conquest
                 who = PREV
             }
+        }
+    }
+
+    # Declare war on any interloper with the big money flag 
+    every_country = {
+        limit = {
+            AND = {
+                has_country_flag = uach_interloper
+                has_country_flag = uach_big_money_flag
+                NOT = { tag = PREV }
+                NOT = {
+                    OR = {
+                        defensive_war_with = PREV
+                        offensive_war_with = PREV
+                    }
+                }
+            }
+        }
+        declare_war_with_cb	= {
+            casus_belli = cb_uach_interloper_conquest
+            who = PREV
         }
     }
 }
@@ -1326,6 +1462,34 @@ uach_end_timurs_legacy_effect = {
                 is_interloper = yes
             }
             clr_country_flag = uach_interloper
+        }
+
+        # Cleanup big money flag
+        every_country = {
+            limit = {
+                has_country_flag = uach_big_money_flag
+            }
+            clr_country_flag = uach_big_money_flag
+        }
+
+        # Free everyone's emirates (governor subject type in code)
+        every_country = {
+            limit = {
+                AND = {
+                    NOT = {
+                        tag = PREV
+                    }
+                    has_subject_of_type = governor
+                }
+            }
+            # Go to their emirate subjects
+            every_subject_country = {
+                limit = {
+                    is_subject_of_type = governor
+                }
+                # and free em
+                grant_independence = yes
+            }
         }
 
         # Turn emirates into vassals

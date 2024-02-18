@@ -1481,6 +1481,17 @@ country_event = {
 
 			set_global_flag = uach_succession_crisis_started
 
+			# Delete all wars
+			every_country = {
+				limit = {
+					OR = {
+						defensive_war_with = PREV
+						offensive_war_with = PREV
+					}
+				}
+				white_peace = PREV
+			}
+
 			# Remove all timurid cores
 			every_province = {
 				limit = {
@@ -1504,11 +1515,31 @@ country_event = {
 
 			# Release all subjects and subjects subjects
 			every_subject_country = {
-				set_country_flag = uach_second_succession_crisis_war_flag
 				release_all_subjects = yes
 			}
 
 			release_all_subjects = yes
+
+			# Release all of QOM and IFS subjects
+			QOM = {
+				release_all_subjects = yes
+			}
+
+			IFS = {
+				release_all_subjects = yes
+			}
+
+			# Enable wartime mechanics for everyone
+			every_country = {
+				limit = {
+					OR = {
+						is_prince = yes
+						is_governor = yes
+					}
+				}
+				set_country_flag = uach_second_succession_crisis_war_flag
+			}
+
 			# All princes declare war on each other
 			set_country_flag = uach_ignore_me_flag
 			every_country = {
@@ -3652,7 +3683,6 @@ country_event = {
 	trigger = {
 	}
 
-	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = {
@@ -4202,6 +4232,181 @@ country_event = {
 			}
 			set_country_flag = uach_disaster_event_timer	
 				
+		}
+	}
+}
+
+# Disaster start
+country_event = {
+	id = UaCH.85
+	title = UaCH.85.t 
+	desc = UaCH.85.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+
+	trigger = {
+	}
+
+	is_triggered_only = yes
+
+	# Go Back
+	option = {
+		name = "UaCH.85.a"
+		highlight = yes
+		hidden_effect = { clr_country_flag = uach_interloper_considering_options_flag }
+	}
+
+	# Actual real options
+
+	# Ajam
+	option = {
+		name = "UaCH.85.b1"
+		trigger = {
+			uach_valid_interloper_ajam = yes
+		}
+		hidden_effect = {
+			uach_create_interloper = { region_int = 0 }
+			clr_country_flag = uach_interloper_considering_options_flag
+		}
+	}
+
+	# Fars
+	option = {
+		name = "UaCH.85.b2"
+		trigger = {
+			uach_valid_interloper_fars = yes
+		}
+		hidden_effect = {
+			uach_create_interloper = { region_int = 1 }
+			clr_country_flag = uach_interloper_considering_options_flag
+		}
+	}
+
+	# Khorasan
+	option = {
+		name = "UaCH.85.b3"
+		trigger = {
+			uach_valid_interloper_khorasan = yes
+		}
+		hidden_effect = {
+			uach_create_interloper = { region_int = 2 }
+			clr_country_flag = uach_interloper_considering_options_flag
+		}
+	}
+
+	# Herat
+	option = {
+		name = "UaCH.85.b4"
+		trigger = {
+			uach_valid_interloper_herat = yes
+		}
+		hidden_effect = {
+			uach_create_interloper = { region_int = 3 }
+			clr_country_flag = uach_interloper_considering_options_flag
+		}
+	}
+
+	# Afghanistan
+	option = {
+		name = "UaCH.85.b5"
+		trigger = {
+			uach_valid_interloper_afghanistan = yes
+		}
+		hidden_effect = {
+			uach_create_interloper = { region_int = 4 }
+			clr_country_flag = uach_interloper_considering_options_flag
+		}
+	}
+
+	# Marw
+	option = {
+		name = "UaCH.85.b6"
+		trigger = {
+			uach_valid_interloper_marw = yes
+		}
+		hidden_effect = {
+			uach_create_interloper = { region_int = 5 }
+			clr_country_flag = uach_interloper_considering_options_flag
+		}
+	}
+
+	# Fergana
+	option = {
+		name = "UaCH.85.b7"
+		trigger = {
+			uach_valid_interloper_fergana = yes
+		}
+		hidden_effect = {
+			uach_create_interloper = { region_int = 6 }
+			clr_country_flag = uach_interloper_considering_options_flag
+		}
+	}
+
+	# Samarkand
+	option = {
+		name = "UaCH.85.b8"
+		trigger = {
+			uach_valid_interloper_samarkand = yes
+		}
+		hidden_effect = {
+			uach_create_interloper = { region_int = 7 }
+			clr_country_flag = uach_interloper_considering_options_flag
+		}
+	}
+
+	# Go Back
+	option = {
+		name = "UaCH.85.c"
+		highlight = yes
+		hidden_effect = { clr_country_flag = uach_interloper_considering_options_flag }
+	}
+}
+
+# Interloper's Conquest Complete
+country_event = {
+	id = UaCH.86
+	title = UaCH.86.t 
+	desc = UaCH.86.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	# Keep your gains and leave. AI Will always do this
+	option = {
+		name = "UaCH.86.a"
+		add_country_modifier = {
+			name = successful_interloper_intervention
+			duration = 1095
+		}
+		custom_tooltip = UACH_86_A_TT
+		hidden_effect = {
+			uach_cede_thematic_region = yes
+			uach_remove_interloper_from_war = yes
+			# every_known_country = {
+			# 	add_aggressive_expansion = {
+			# 		who = PREV
+			# 		value = 20
+			# 		apply_calc = yes
+			# 	}
+			# }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	# Go for the big money. AI will never do this
+	option = {
+		name = "UaCH.86.b"
+		set_country_flag = uach_big_money_flag
+		hidden_effect = {
+			uach_add_interloper_to_war_fully = yes
+		}
+		ai_chance = {
+			factor = 0
 		}
 	}
 }

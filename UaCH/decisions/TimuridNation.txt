@@ -1,0 +1,45 @@
+country_decisions = {
+	enthrone_timurid_prince = {
+		major = yes
+		potential = {
+			is_governor = yes
+		}
+		provinces_to_highlight = {}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = ETP_D_TR_A_TT
+				has_country_flag = uach_second_succession_crisis_war_flag
+			}
+			stability = 1
+		}
+		effect = {
+			add_stability = -2
+			add_legitimacy = -50
+			custom_tooltip = tooltip_about_timurid_empire
+			define_ruler = {
+				dynasty = "Timurid"
+			}
+			add_legitimacy = 20
+			if = {
+				limit = {
+					has_heir = yes
+				}
+				remove_heir = {}
+			}
+			define_heir = {
+				dynasty = "Timurid"
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { legitimacy = 95 }
+			}
+			modifier = {
+				factor = 0.2
+				NOT = { stability = 2 }
+			}
+		}
+	}
+}
