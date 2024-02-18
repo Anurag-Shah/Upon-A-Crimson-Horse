@@ -82,10 +82,13 @@
  UaCH.15.a: "Send a small honor guard"
  UaCH.15.b: "A true heir should be able to handle this."
  UaCH.15.c: "Assemble the Royal guard!"
+ 
  UaCH.16.t: "Betrayal"
  UaCH.16.d: "'My son.' - begins the letter - 'With heavy heart I hear about my father's demise. For a little time, I have foreseen this outcome, and prepared our forces. There is shame in what I am about to order you, however the good of the Empire and our family must come first, even at the cost of your honor. I believe you are prepared do what is necessary."
  UaCH.16.a: "Steal that body!"
  UaCH.16.b: "Honor that body! "
+ mnt_trs_betrayl_honored_body:0"Honorable people"
+ uach_trs_declares_in_6:0"We will declare war upon the ruler in Herat in 6 months"
  
  UaCH.17.t: "Betrayal at the winter camp"
  UaCH.17.d: "Betrayal! In the middle of the night, a small company of §GAbdal-Latif's§! men turns on §GGawhar Shad§! and holds her and §GShah Rukh’s§! corpse hostage. Possibly in an effort to back his own claim to the throne, or that of his father, §GUlugh Beg§!. For now, the funeral procession has stalled, as boths sides are awaiting reinforcements."
@@ -93,7 +96,8 @@
  UaCH.17.b: "I'm dying of shame."
  #Replace Muhammad Juki with his son Abu Bakr he dies
  UaCH.17.c: "Accept the new reality."
- UaCH.17.d: "An ambitious young man, too bad about his father..."
+ UaCH.17.e: "An ambitious young man, too bad about his father..."
+ uach_new_reality:0"We will transfer all our subjects to §YTransoxiana§!.\nCountry changes to §YHerat§!\n§YTransoxiana§! becomes §YTimurids§!"
  
  UaCH.18.t: "A Chance to Return"
  UaCH.18.d: "Grave news! §GSultan Muhammad§!, upon hearing of §GShah Rukh’s§! death, marches east, retaking §YAjam§! and becoming the Timurid Emperor of §YFars§!. He rewarded the surviving nobles of §YIsfahan§!, and many nobles of other regions defected to him. Whilst §YIsfahan§! enjoys a tax relief, other regions suffered immensely, with §YYazd§! being heavily taxed, with its emirs being frequently replaced."
@@ -101,6 +105,7 @@
  ## player should swap to Sultan Muhammad (QOM)
  UaCH.18.b: "Hey, Gurkani, get this idiot for us."
  ## Should still release QOM
+ uach_we_will_never_have_a_chance_to_return:0"We will never again get a chance like this."
  
  UaCH.19.t: "Return of Sultan Muhammad"
  UaCH.19.d: "The strangest news! §GSultan Muhammad§!, upon hearing of §GShah Rukh’s§! death, marches east, retaking §YAjam§! and becoming the Timurid Emperor of §YFars§!. He rewarded the surviving nobles of §YIsfahan§!, and many nobles of other regions defected to him. Whilst §YIsfahan§! enjoys a tax relief, other regions suffered immensely, with §YYazd§! being heavily taxed, with its emirs being frequently replaced. Now he has sent letters to us for aid once again, promising handsome rewards."
@@ -271,7 +276,7 @@
  UaCH.51.a: "Offer him riches beyond measure. "
  UaCH.51.b: "Offer him lands and titles. "
  UaCH.51.c: "Make him heir to the Empire"
- UaCH.51.d: "He will gain no such thing!"
+ UaCH.51.e: "He will gain no such thing!"
  
  UaCH.52.t: "The Schemeing Dowager"
  UaCH.52.d: "The empress dowager §GGawhar Shad§! has taken up residence in our city. While many see this as strenghtening our claim to the throne, those who know of her know that this may be just another scheme in her book. She has made multiple demands to our ruler, and while they seem reasonable, the outcome of agreeing to such actions is yet to be seen."
@@ -468,8 +473,14 @@
 
  UaCH.88.t:0 "The Shaybanids, Torn Asunder"
  UaCH.88.d:0 "Despite our best efforts to quell the rebellion of the Kazakhs and our internal unrest, it has proven to be for nought, as the heirs of Abu'l-Khayr Khan flee to escape the wrath of rivals at home and abroad, and our territory itself is cut in half. In this chaos, two of these princes have come up with their own individual schemes as to how to recover from this calamity.\n\nMuhammad, grandson of our founder, proposes that we follow our brothers in Chagatai and adopt a more sedentary lifestyle, abandoning the steppe and intervening in the chaos that is Iran in the present moment, carving out our own Persinate state. Whilst this certainly shakes our society to it's very core, it may be preferable to holding on in the steppes.\n\nIbak, however, ruling already from Sibir, wishes to build a new Siberian steppe state, holding onto traditions tightly. Whilst he may be able to hold back the Kazakhs now, the Russians are already posing a threat, and it may be just a matter of time before either the Kazakhs or Russians have their way with him.\n\nWhat shall the sons of Shiban do?"
-  UaCH.88.a:0 "Muhammad has the right idea. Iran is ripe for the taking."
-  uach_sib_siberian_land:0 "@SIB §YSibir§! will be given any §YSiberian§! lands we hold, alongside any land disconnected from our capital."
-  uach_buk_intervention:0 "If the §YTimurid Succession Crisis§! is ongoing, we will become an §YInterloper§!."
-  UaCH.88.b:0 "Ibak is right. We must retain our traditions."
-  uach_buk_southern_land:0 "@BUK §YBukhara§! will recieve our southermost lands, alongside any land disconnected from our capital."
+ UaCH.88.a:0 "Muhammad has the right idea. Iran is ripe for the taking."
+ uach_sib_siberian_land:0 "@SIB §YSibir§! will be given any §YSiberian§! lands we hold, alongside any land disconnected from our capital."
+ uach_buk_intervention:0 "If the §YTimurid Succession Crisis§! is ongoing, we will become an §YInterloper§!."
+ UaCH.88.b:0 "Ibak is right. We must retain our traditions."
+ uach_buk_southern_land:0 "@BUK §YBukhara§! will recieve our southermost lands, alongside any land disconnected from our capital."
+ 
+ UaCH.89.t:0 "Yar Ali takes Herat"
+ UaCH.89.d:0 "Terrible news, sire! §GYar Ali§! has taken our capital, with the help of the traitors. Despite the desperate defence mounted by our artisans and craftsmen, his troops have broken the city and pillaged the palace!"
+ UaCH.89.a:0 "A black day."
+ UaCH.89.b:0 "Mount a counterattack!" 
+ 

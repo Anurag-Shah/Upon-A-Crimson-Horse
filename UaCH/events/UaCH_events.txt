@@ -485,6 +485,7 @@ country_event = {
 		name = "UaCH.9.a"
 		add_stability = -1
 		grant_independence = yes
+		set_country_flag = uach_isf_side_pre_war
 		if = {
 			limit = {
 				ISF = {
@@ -502,7 +503,7 @@ country_event = {
 		}
 
 		ai_chance = {
-			factor = 5
+			factor = 15
 			modifier = {
 				factor = 0
 				OR = {
@@ -707,24 +708,26 @@ country_event = {
 	}
 	
 	immediate = {
-		TRS = {
-			country_event = {
-				id = UaCH.16
-				days = 30
+		hidden = {
+			TRS = {
+				country_event = {
+					id = UaCH.16
+					days = 30
+				}
+				country_event = {
+					id = UaCH.55
+					days = 111
+				}
 			}
-			country_event = {
-				id = UaCH.55
-				days = 111
-			}
-		}
-		TIM = {
-			country_event = {
-				id = UaCH.17
-				days = 60
-			}
-			country_event = {
-				id = UaCH.55
-				days = 111
+			TIM = {
+				country_event = {
+					id = UaCH.17
+					days = 60
+				}
+				country_event = {
+					id = UaCH.55
+					days = 111
+				}
 			}
 		}
 	}
@@ -734,9 +737,11 @@ country_event = {
 		name = "UaCH.15.a" 
 
 		add_legitimacy = 15
+		hidden = {
 		TRS = {
-			add_manpower = 20000
+			add_manpower = 20
 			add_treasury = 500
+		}
 		}
 		
 		ai_chance = {
@@ -752,19 +757,16 @@ country_event = {
 	option = {
 		name = "UaCH.15.b"
 		
+		trigger = {has_ruler ="Muhammad Juki"}
+		
 		add_legitimacy = 25
 		add_prestige = 20
 		
 		hidden_effect = {
-			if = {
-				limit = {
-					has_ruler = "Muhammad Juki"
-				}
 				TRS = {
-					add_manpower = 10000
+					add_manpower = 10
 					add_treasury = 250
 				}
-			}
 		}
 		
 		ai_chance = {
@@ -778,7 +780,7 @@ country_event = {
 
 	# Assemble the Royal guard!
 	option = {
-		name = "flavor_tim.3.c"
+		name = "UaCH.15.c"
 		
 		add_years_of_income = -2
 		
@@ -824,7 +826,12 @@ country_event = {
 			}
 		}
 
-		# TODO TRS delcares war on tim in 6 months
+		custom_tooltip = uach_trs_declares_in_6
+		hidden = {
+		country_event = {
+			id = UaCH.90
+			days = 180}
+		}
 		
 		ai_chance = {
 			factor = 1
@@ -858,6 +865,26 @@ country_event = {
 	}
 }
 
+#trs declares war on tim, no need for loc
+country_event = {
+	id = UaCH.90
+	title = UaCH.90.t
+	desc = UaCH.90.t
+	
+	is_triggered_only = yes
+	hidden = yes
+	option = {
+		TRS = {
+						declare_war_with_cb	= {
+							casus_belli = cb_challange_claimant
+							who = TIM
+						}
+				}
+	}
+}
+
+
+
 # Betrayl
 country_event = {
 	id = UaCH.17 
@@ -882,7 +909,11 @@ country_event = {
 
 		TRS = {
 			add_liberty_desire = 100
-			# TODO TRS delcares war on tim in 6 months
+			hidden = {
+				country_event = {
+					id = UaCH.90
+					days = 180 }
+			}
 		}
 		
 		ai_chance = {
@@ -913,7 +944,8 @@ country_event = {
 	# Accept the new reality
 	option = {
 		name = "UaCH.17.c"
-		
+		custom_tooltip = uach_new_reality
+		hidden = {
 		every_subject_country = {
 			TRS = {
 				create_subject = {
@@ -933,22 +965,24 @@ country_event = {
 
 		ai_chance = {
 			factor = 0
+			}
 		}
 	}
-
 	# An ambitious young man, too bad about his father...
 	option = {
-		name = "UaCH.17.d"
+		name = "UaCH.17.e"
 		
-		# TODO when does TRS declare war for tim throne
-
+		
 		TRS = {
 			add_liberty_desire = 100
+			country_event = {
+				id = UaCH.90
+				days = 180 }
 		}
 		country_event = {
 			id = UaCH.31
 		}
-
+		hidden = {
 		random_list = {
 			50 = {
 				country_event = {
@@ -966,10 +1000,10 @@ country_event = {
 				country_event = {
 					id = UaCH.51
 					days = 30
+					}
 				}
 			}
 		}
-
 		ai_chance = {
 			factor = 0
 		}
@@ -1049,7 +1083,8 @@ country_event = {
 				}
 			}
 		}
-
+		switch_tag = QOM
+		
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -1083,7 +1118,7 @@ country_event = {
 	}
 }
 
-# Return of Muhammad Juki (former allies)
+# Return of Muhammad SULTAN (former allies)
 country_event = {
 	id = UaCH.19 
 	title = UaCH.19.t 
@@ -1138,7 +1173,7 @@ country_event = {
 	}
 }
 
-# Return of Muhammad Juki (TIM)
+# Return of Muhammad SULTAN (TIM)
 country_event = {
 	id = UaCH.20 
 	title = UaCH.20.t 
@@ -1375,7 +1410,7 @@ country_event = {
 		}
 
 		ai_chance = {
-			factor = 25
+			factor = 20
 			# TODO how to make AI choose this 25% of the time?
 		}
 	}
@@ -1398,8 +1433,8 @@ country_event = {
 		}
 
 		ai_chance = {
-			factor = 1
-			# TODO how to make AI choose this 75% of the time?
+			factor = 60
+			# TODO how to make AI choose this 75% of the time? - give 3 times higher chance?
 		}
 	}
 }
@@ -2140,6 +2175,7 @@ country_event = {
 	}
 }
 
+#DONE
 # Yar 'Ali Besieges Herat!
 # Pulse event of disaster
 country_event = {
@@ -2180,7 +2216,7 @@ country_event = {
 		# TODO what exactly should happen to QQ
 
 		hidden_effect = {
-			# QQ stuff
+			set_country_flag = yar_ali_is_here
 		}
 
 		ai_chance = {
@@ -2189,8 +2225,45 @@ country_event = {
 	}
 }
 
+#DONE
+#Yar ali takes herat
+country_event = {
+	id = UaCH.89 
+	title = UaCH.89.t 
+	desc = UaCH.89.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+
+	trigger = {
+		AND = {  446 = { controlled_by = REB }
+				has_country_flag = yar_ali_is_here
+			}
+	}
+	
+	mean_time_to_happen { days = 1 }
+	
+	immediate = {set_country_flag = yar_ali_is_done
+				 clr_country_flag = yar_ali_is_here}
+	
+	option = {
+		name = "UaCH.89.a"
+		add_legitimacy = -20
+		446 = {add_devastation = 25}
+		}
+		
+	option = {
+		name = "UaCH.89.b"
+		add_legitimacy = -20
+		446 = {add_devastation = 25}
+		add_treasury = -100
+		add_manpower = 1	
+		}	
+	
+}
+
+#DONE
 # Yar 'Ali, Put to Flight
-province_event = {
+country_event = {
 	id = UaCH.28 
 	title = UaCH.28.t 
 	desc = UaCH.28.d
@@ -2199,11 +2272,8 @@ province_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		province_id = 446
-		owner = {			
-			# TODO this correct?
-			has_disaster = timurid_succession_crisis
-		}
+		owns = 446
+		has_country_flag = yar_ali_is_done
 	}
 
 	mean_time_to_happen = {
@@ -3114,10 +3184,18 @@ country_event = {
 
 		add_treasury = -500
 		random_list = {
-			80 = {}
-			20 = {
+			80 = { TRS = {
+				country_event = {
+					id = UaCH.49
+					days = 1
+					}
+				}
+			}
+			20 ={ TRS = {
 				country_event = {
 					id = UaCH.50
+					days = 1
+					}
 				}
 			}
 		}
@@ -3135,20 +3213,38 @@ country_event = {
 	option = { 
 		name = "UaCH.51.b" 
 		
-		# TODO offered him titles effect after dealt with Ulugh Beg
+		# titles 
 		if = {
 			limit = {
 				not = { has_heir = "Ulugh Beg" }
 			}
-			vassalize = KHO			
+			KHO = {
+						kill_heir = {  }
+					define_heir = {
+						name = "Abdul Latif"
+						dynasty = "Timurid"
+						adm = 0
+						dip = 0
+						mil = 0
+						age = 25
+					}
+				}	
 		}
 		
 
 		random_list = {
-			55 = {}
-			45 = {
+			55 = { TRS = {
+				country_event = {
+					id = UaCH.49
+					days = 1
+					}
+				}
+			}
+			45 =  { TRS = {
 				country_event = {
 					id = UaCH.50
+					days = 1
+					}
 				}
 			}
 		}
@@ -3175,7 +3271,14 @@ country_event = {
 			mil = 0
 			age = 25
 		}
-						
+		
+		TRS = {
+				country_event = {
+					id = UaCH.50
+					days = 1
+				}
+
+		
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -3187,15 +3290,20 @@ country_event = {
 
 	# He will gain no such thing! 
 	option = { 
-		name = "UaCH.51.d" 
+		name = "UaCH.51.e" 
 
 		add_prestige = 25
 		add_mil_power = 50
 		random_list = {
-			90 = {}
+			90 = {
+				country_event = {
+					id = UaCH.49
+					days = 1
+				}
 			10 = {
 				country_event = {
 					id = UaCH.50
+					days = 1
 				}
 			}
 		}
