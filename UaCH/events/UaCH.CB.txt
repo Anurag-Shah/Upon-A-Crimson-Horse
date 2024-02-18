@@ -72,7 +72,7 @@ country_event = {
 			}
 			# Demote to governor
 			make_tag_governor = yes
-			shuffle_princes = { scope = THIS }
+			shuffle_princes = { scope = event_target:claimant_lost_war }
 		}
 
 		ai_chance = {
@@ -100,7 +100,7 @@ country_event = {
 			}
 			# Demote to governor
 			make_tag_governor = yes
-			shuffle_princes = { scope = THIS }
+			shuffle_princes = { scope = event_target:claimant_lost_war }
 		}
 
 
@@ -129,7 +129,7 @@ country_event = {
 			}
 			# Demote to governor
 			make_tag_governor = yes
-			shuffle_princes = { scope = THIS }
+			shuffle_princes = { scope = event_target:claimant_lost_war }
 		}
 
 
@@ -147,11 +147,6 @@ country_event = {
 		name = "UaCH.CB.1.d"
 		
 		event_target:claimant_lost_war = {
-			define_ruler = {
-				dynasty = ROOT
-				min_age = 16
-			}
-	
 			add_country_modifier = {
 				name = uach_preserve_ruler
 				duration = 3650

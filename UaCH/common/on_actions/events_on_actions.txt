@@ -1,8 +1,12 @@
 on_monarch_death = {
-	if = {
-		limit = {
-			has_country_modifier = mnt_one_small_suffering
-		}
-		remove_country_modifier = mnt_one_small_suffering
+	# Unneeded, just made the modifier a ruler modifier
+	#if = {
+	#	limit = {
+	#		has_country_modifier = mnt_one_small_suffering
+	#	}
+	#	remove_country_modifier = mnt_one_small_suffering
+	#}
+	events = {
+		UaCH.13
 	}
 }

@@ -22,6 +22,11 @@ on_startup = {
         }
         init_start_princes = yes
         init_start_governors = yes
+        TIM = {
+            country_event = {
+                id = UaCH.1 
+            }
+        }
         set_global_flag = uach_init_ui
     }
 }
