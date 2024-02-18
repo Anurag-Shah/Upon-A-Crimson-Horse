@@ -1426,7 +1426,6 @@ uach_end_timurs_legacy_effect = {
             limit = {
                 is_interloper = yes
             }
-            clr_country_flag = uach_interloper
             uach_cede_thematic_region = yes
         }
 

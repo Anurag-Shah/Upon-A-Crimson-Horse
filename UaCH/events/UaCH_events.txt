@@ -3273,10 +3273,11 @@ country_event = {
 		}
 		
 		TRS = {
-				country_event = {
-					id = UaCH.50
-					days = 1
-				}
+			country_event = {
+				id = UaCH.50
+				days = 1
+			}
+		}
 
 		
 		ai_chance = {
@@ -3300,6 +3301,7 @@ country_event = {
 					id = UaCH.49
 					days = 1
 				}
+			}
 			10 = {
 				country_event = {
 					id = UaCH.50
