@@ -5389,9 +5389,14 @@ country_event = {
 	
 	trigger = {
 		had_country_flag = { 
-				flag = uach_disaster_event_timer
-				days = 60
-			}
+			flag = uach_disaster_event_timer
+			days = 60
+		}
+		OR = {
+			has_disaster = timurid_succession_crisis
+			is_in_war = { casus_belli = cb_challange_claimant }
+			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+		}
 		
 		any_owned_province = { AND = { OR = {
 									has_terrain = savannah
@@ -5534,9 +5539,14 @@ country_event = {
 	
 	trigger = {
 			AND = { had_country_flag = { 
-				flag = uach_disaster_event_timer
-				days = 60
-				}
+							flag = uach_disaster_event_timer
+							days = 60
+						}
+						OR = {
+							has_disaster = timurid_succession_crisis
+							is_in_war = { casus_belli = cb_challange_claimant }
+							is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+						}
 				
 				any_owned_province = {  has_province_modifier = minor_drought }
 			}
@@ -5612,9 +5622,14 @@ country_event = {
 	
 	trigger = {
 			AND = { had_country_flag = { 
-				flag = uach_disaster_event_timer
-				days = 60
-				}
+						flag = uach_disaster_event_timer
+						days = 60
+					}
+					OR = {
+						has_disaster = timurid_succession_crisis
+						is_in_war = { casus_belli = cb_challange_claimant }
+						is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+					}
 				
 				any_owned_province = { has_province_modifier = moderate_drought }
 				}
@@ -5881,5 +5896,228 @@ country_event = {
             power_type = uach_persianization
             value = -5
         }
+	}
+}
+
+
+# Pulse event - Poisoned wells
+#a variant of event UaCH.92
+country_event = {
+
+	id = UaCH.101
+	title = UaCH.101.t  
+	desc = UaCH.101.d	  
+	picture = PLAGUE_eventPicture
+
+	
+	trigger = {
+		had_country_flag = { 
+			flag = uach_disaster_event_timer
+			days = 60
+		}
+		OR = {
+			has_disaster = timurid_succession_crisis
+			is_in_war = { casus_belli = cb_challange_claimant }
+			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+		}
+		
+		any_owned_province = { AND = { OR = {
+									has_terrain = savannah
+									has_terrain = steppe
+									has_terrain = drylands
+									has_terrain = desert
+									has_terrain = coastal_desert
+									}
+						is_capital = no }
+				}
+		OR = {
+			capital_scope = {superregion = persia_superregion}
+			capital_scope = {superregion = near_east_superregion}
+			capital_scope = {region = central_asia_region}
+			}		
+	}
+
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	
+
+	immediate = {
+		clr_country_flag = uach_disaster_event_timer
+		set_country_flag = uach_disaster_event_timer
+
+		random_owned_province = {
+						limit = {
+								AND = {
+								OR = {
+									has_terrain = savannah
+									has_terrain = steppe
+									has_terrain = drylands
+									has_terrain = desert
+									has_terrain = coastal_desert
+									}
+								is_capital = no }
+								}
+								save_event_target_as = uach_drought_prov
+								}
+		
+		}
+		
+	option = {
+		name = "UaCH.101.a" # How horrible! We have to do something!
+			add_years_of_income = -0.15 
+			random_list = {
+				75 = { 
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "mitigated_drought"
+								duration = 3650
+								}
+							}
+					}
+					
+				25 = {		
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "minor_drought"
+								duration = 3650
+								}
+							}
+					}
+				}
+				
+		ai_chance = {
+			factor = 90
+		}
+	}
+	
+	
+	option = {
+		name = "UaCH.101.b" # Let us pray to god for rain....
+		
+
+			
+			random_list = {
+				75 = {
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "minor_drought"
+								duration = 3650
+								}
+							}
+					}
+					
+				25 = {	
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "moderate_drought"
+								duration = 3650
+								}
+							}
+					}
+					
+				}
+					
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+#disaster event template
+country_event = {
+
+	id = UaCH.102
+	title = UaCH.102.t  
+	desc = UaCH.102.d	  
+	picture = PLAGUE_eventPicture
+
+	
+	trigger = {
+		AND = {
+			OR = {
+				has_disaster = timurid_succession_crisis
+				is_in_war = { casus_belli = cb_challange_claimant }
+				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+			}
+			had_country_flag = { 
+				flag = uach_disaster_event_timer
+				days = 60
+				}
+			}
+		}
+	immediate = {
+		clr_country_flag = uach_disaster_event_timer
+		set_country_flag = uach_disaster_event_timer
+		}
+		
+	option = {
+		name = UaCh.102.a
+		}
+		
+	option = {
+		name = UaCh.102.b
+	}
+}
+
+
+#pulse Religious uproar
+country_event = {
+
+	id = UaCH.103
+	title = UaCH.103.t  
+	desc = UaCH.103.d	  
+	picture = PLAGUE_eventPicture
+
+	
+	trigger = {
+		AND = {
+			OR = {
+				has_disaster = timurid_succession_crisis
+				is_in_war = { casus_belli = cb_challange_claimant }
+				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+			}
+			had_country_flag = { 
+				flag = uach_disaster_event_timer
+				days = 60
+				}
+			}
+		}
+	immediate = {
+		clr_country_flag = uach_disaster_event_timer
+		set_country_flag = uach_disaster_event_timer
+		random_province = {
+			limit = {
+				NOT = { is_capital = yes } 
+				religion = sunni
+			}
+			save_event_target_as = uach_to_be_changed_prov	
+			}
+		}
+		
+		
+	option = {
+		name = UaCh.103.a
+			event_target:uach_to_be_changed_prov = {
+				spawn_rebels = {
+				size = 3
+				type = religious_rebels
+				}
+			}
+		}
+		
+	option = {
+		name = UaCh.103.b
+		event_target:uach_to_be_changed_prov = {
+			religion = shiite
+			}
+	}
+	
+	option = {
+		name = UaCh.103.c
+		uach_add_random_development = { AMOUNT = -1 VALUE = 1 }
+		add_devastation = 25
 	}
 }
