@@ -100,3 +100,17 @@ uach_raid_turks_back_lol = {
 uach_bolster_defenses = {
 	defensiveness = 0.1
 }
+
+uach_no_talking_back_to_clergy = {
+	clergy_influence = 0.15
+	unrest = -2
+}
+
+uach_daring_today = {
+	clergy_influence = -0.1
+	diplomatic_reputation = 2
+}
+
+uach_state_above_clan = {
+	unrest = -2
+}
