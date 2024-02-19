@@ -5,7 +5,7 @@ country_event = {
 	id = UaCH.1 
 	title = UaCH.1.t 
 	desc = UaCH.1.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = KING_SICK_IN_BED_eventPicture
 
 	trigger = {
 		tag = TIM
@@ -34,7 +34,7 @@ country_event = {
 	id = UaCH.3 
 	title = UaCH.3.t 
 	desc = UaCH.3.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = BAD_WITH_MONARCH_eventPicture
 	
 	fire_only_once = yes
 	trigger = {
@@ -64,7 +64,7 @@ country_event = {
 	id = UaCH.4 
 	title = UaCH.4.t 
 	desc = UaCH.4.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = COURT_eventPicture
 
 	fire_only_once = yes
 	trigger = {
@@ -90,7 +90,7 @@ country_event = {
 		set_country_flag = uach_yuki_dies_fo_sho
 	}
 
-	# I�m sorry, my love, but I�ve seen your intentions.
+	# I'm sorry, my love, but I've seen your intentions.
 	option = {
 		name = "UaCH.4.b"
 		
@@ -113,7 +113,7 @@ country_event = {
 	id = UaCH.5 
 	title = UaCH.5.t 
 	desc = UaCH.5.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = KING_SICK_IN_BED_eventPicture
 
 	fire_only_once = yes
 	trigger = {
@@ -204,7 +204,7 @@ country_event = {
 	id = UaCH.6 
 	title = UaCH.6.t 
 	desc = UaCH.6.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = SPY_eventPicture
 
 	fire_only_once = yes
 	trigger = {
@@ -265,7 +265,7 @@ country_event = {
 	id = UaCH.7 
 	title = UaCH.7.t 
 	desc = UaCH.7.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = GOOD_WITH_MONARCH_eventPicture
 
 	fire_only_once = yes
 	trigger = {
@@ -320,7 +320,7 @@ country_event = {
 		}
 	}
 
-	# There is still time for this�
+	# There is still time for this
 	option = {
 		name = "UaCH.7.e"
 		
@@ -359,7 +359,7 @@ country_event = {
 	id = UaCH.8 
 	title = UaCH.8.t 
 	desc = UaCH.8.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = BORDER_TENSION_eventPicture
 	
 	fire_only_once = yes
 	trigger = {
@@ -464,7 +464,7 @@ country_event = {
 	id = UaCH.9 
 	title = UaCH.9.t 
 	desc = UaCH.9.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = NOBLE_ESTATE_DEMANDS_eventPicture_eventPicture
 
 	trigger = {
 		is_governor_or_prince = yes
@@ -1228,7 +1228,7 @@ country_event = {
 	id = UaCH.21 
 	title = UaCH.21.t 
 	desc = UaCH.21.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = BORDER_TENSION_eventPicture
 
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1314,7 +1314,7 @@ country_event = {
 	id = UaCH.22 
 	title = UaCH.22.t 
 	desc = UaCH.22.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = NOBLE_ESTATE_DEMANDS_eventPicture
 
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1379,7 +1379,7 @@ country_event = {
 	id = UaCH.23 
 	title = UaCH.23.t 
 	desc = UaCH.23.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = BATTLE_eventPicture
 
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1444,7 +1444,7 @@ country_event = {
 	id = UaCH.24 
 	title = UaCH.24.t 
 	desc = UaCH.24.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = NOBLE_ESTATE_DEMANDS_eventPicture
 
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -2217,7 +2217,7 @@ country_event = {
 	id = UaCH.27 
 	title = UaCH.27.t 
 	desc = UaCH.27.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = SIEGE_eventPicture
 
 	trigger = {
 		AND = {
@@ -2272,7 +2272,7 @@ country_event = {
 	id = UaCH.89 
 	title = UaCH.89.t 
 	desc = UaCH.89.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = CONQUEST_eventPicture
 	
 
 	trigger = {
@@ -2307,7 +2307,7 @@ country_event = {
 	id = UaCH.28 
 	title = UaCH.28.t 
 	desc = UaCH.28.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = BATTLE_eventPicture
 
 	is_triggered_only = yes
 
@@ -2375,7 +2375,7 @@ country_event = {
 	id = UaCH.29 
 	title = UaCH.29.t 
 	desc = UaCH.29.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = BORDER_TENSION_eventPicture
 	
 	trigger = {
 		any_neighbor_country = {
@@ -2421,7 +2421,7 @@ country_event = {
 	id = UaCH.30 
 	title = UaCH.30.t 
 	desc = UaCH.30.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = CITY_VIEW_eventPicture
 	fire_only_once = yes
 	trigger = {
 		OR = {
@@ -2490,7 +2490,7 @@ country_event = {
 	id = UaCH.31 
 	title = UaCH.31.t 
 	desc = UaCH.31.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = SPY_eventPicture
 
 	trigger = {
 		OR = {
@@ -2538,7 +2538,7 @@ country_event = {
 	id = UaCH.32 
 	title = UaCH.32.t 
 	desc = UaCH.32.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = GOOD_WITH_MONARCH_eventPicture
 
 	trigger = {
 		OR = {
@@ -2591,7 +2591,7 @@ country_event = {
 	id = UaCH.33 
 	title = UaCH.33.t 
 	desc = UaCH.33.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = NOBLE_ESTATE_eventPicture
 
 	trigger = {
 		OR = {
@@ -2646,7 +2646,7 @@ country_event = {
 	id = UaCH.34 
 	title = UaCH.34.t 
 	desc = UaCH.34.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = FEAST_eventPicture
 
 	trigger = {
 		OR = {
@@ -2701,7 +2701,7 @@ country_event = {
 	id = UaCH.35 
 	title = UaCH.35.t 
 	desc = UaCH.35.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = REVOLUTION_eventPicture
 
 	trigger = {
 		OR = {
@@ -2758,7 +2758,7 @@ country_event = {
 	id = UaCH.36 
 	title = UaCH.36.t 
 	desc = UaCH.36.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = SIEGE_eventPicture
 
 	trigger = {
 		any_province = {
@@ -2791,7 +2791,7 @@ country_event = {
 	id = UaCH.37 
 	title = UaCH.37.t 
 	desc = UaCH.37.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = COUNTRY_COLLAPSE_eventPicture
 
 	trigger = {
 		any_province = {
@@ -2880,7 +2880,7 @@ country_event = {
 	id = UaCH.38 
 	title = UaCH.38.t 
 	desc = UaCH.38.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = SIEGE_eventPicture
 	trigger = {
 		had_country_flag = { 
 			flag = uach_disaster_event_timer
@@ -3030,7 +3030,7 @@ country_event = {
 	id = UaCH.40 
 	title = UaCH.40.t 
 	desc = UaCH.40.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = SPY_eventPicture
 
 	trigger = {
 		had_country_flag = { 
@@ -3105,7 +3105,7 @@ country_event = {
 	id = UaCH.41 
 	title = UaCH.41.t 
 	desc = UaCH.41.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = BORDER_TENSION_eventPicture
 
 	fire_only_once = yes
 
@@ -4345,7 +4345,7 @@ country_event = {
 	id = UaCH.67 
 	title = UaCH.67.t 
 	desc = UaCH.67.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = COUNTRY_COLLAPSE_eventPicture
 
 	trigger = {
 	}
@@ -4365,7 +4365,7 @@ country_event = {
 	id = UaCH.68
 	title = UaCH.68.t 
 	desc = UaCH.68.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = COUNTRY_COLLAPSE_eventPicture
 	
 	trigger = {
 	}
@@ -4385,7 +4385,7 @@ country_event = {
 	id = UaCH.69
 	title = UaCH.69.t 
 	desc = UaCH.69.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = COUNTRY_COLLAPSE_eventPicture
 	
 	trigger = {
 	}
@@ -4405,7 +4405,7 @@ country_event = {
 	id = UaCH.70
 	title = UaCH.70.t 
 	desc = UaCH.70.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = COUNTRY_COLLAPSE_eventPicture
 	
 	trigger = {
 	}
@@ -4922,7 +4922,7 @@ country_event = {
 	id = UaCH.84
 	title = UaCH.84.t 
 	desc = UaCH.84.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = COUNTRY_COLLAPSE_eventPicture
 	
 	trigger = {
 	}
@@ -5510,7 +5510,7 @@ country_event = {
 	id = UaCH.93
 	title = UaCH.93.t 
 	desc = UaCH.93.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = COUNTRY_COLLAPSE_eventPicture
 	
 	trigger = {
 	}
