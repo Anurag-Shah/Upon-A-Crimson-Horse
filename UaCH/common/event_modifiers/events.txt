@@ -114,3 +114,12 @@ uach_daring_today = {
 uach_state_above_clan = {
 	unrest = -2
 }
+
+uach_restoration_of_stability = {
+	stability_cost_modifier = -0.1
+}
+
+uach_onwards_to_glory = {
+	land_maintenance_modifier = -0.10
+	land_morale = 0.05
+}

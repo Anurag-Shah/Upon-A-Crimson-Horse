@@ -1,7 +1,22 @@
 ﻿l_english:
  # cb
  TEST_TEST_TEST: "$FIRST$ Intervention in $SECOND$"
- ENFORCE_LOYALTY_WAR: "$FIRST$-$SECOND$ War to Enforce Loyalty"
- SUPERIORITY_CLAIMANT_WAR: "$FIRST$-$SECOND$ War for Claimant Superiority"
  cb_interloper_conquest: "loc"
  cb_interloper_conquest_desc: "loc"
+ # ENFORCE_LOYALTY_WAR
+ ENFORCE_LOYALTY_WAR: "$FIRST$-$SECOND$ War to Enforce Loyalty"
+ cb_enforce_loyalty_governor: "Enforce Loyalty War"
+ cb_enforce_loyalty_governor_desc: "Enforce the loyalty of a governor to the Timurid Empire"
+ w_enforce_loyalty_governor: "Enforce Loyalty"
+ w_enforce_loyalty_governor_desc: "Enforce the loyalty of a governor to the Timurid Empire"
+ CB_ALLOWED_po_make_governor: "Enforce Loyalty"
+ CB_ALLOWED_po_make_governor_desc: "The loyalty of a governor has been enforced"
+
+# CHALLENGE_CLAIMANT_WAR
+ SUPERIORITY_CLAIMANT_WAR: "$FIRST$-$SECOND$ War for Claimant Superiority"
+ cb_challange_claimant: "Claimant Superiority War"
+ cb_challange_claimant_desc: "Challenge the claimant to the throne of the Timurid Empire"
+ w_superiority_claimant: "Show Superiority"
+ w_superiority_claimant_desc: "Show your superiority over the claimant to the throne of the Timurid Empire"
+ CB_ALLOWED_po_defeated_claimant: "Subdue Claimant"
+ CB_ALLOWED_po_defeated_claimant_desc: "The claimant to the throne of the Timurid Empire has been defeated"

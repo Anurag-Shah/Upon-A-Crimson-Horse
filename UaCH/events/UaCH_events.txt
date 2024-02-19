@@ -280,11 +280,12 @@ country_event = {
 		name = "UaCH.7.a"
 		
 		define_heir = {
-			name = "Ala-al Dawla Mirza"
+			name = "Ala al-Dawla Mirza"
 			dynasty = "Timurid"
-			adm = 0
-			dip = 0
-			mil = 0
+			adm = 3
+			dip = 3
+			mil = 2	
+			claim = 90
 		}
 
 		add_estate_influence_modifier = {
@@ -295,11 +296,7 @@ country_event = {
 		custom_tooltip = mnt_warning_of_bypassing_consort_event
 		
 		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				# TODO
-			}
+			factor = 100
 		}
 	}
 
@@ -310,19 +307,16 @@ country_event = {
 		define_heir = {
 			name = "Ulugh Beg"
 			dynasty = "Timurid"	
-			adm = 0
-			dip = 0
-			mil = 0	
+			adm = 3
+			dip = 5
+			mil = 4	
+			claim = 90
 		}
 		hidden = {set_country_flag = UB_moves_to_TRS}
 		custom_tooltip = mnt_warning_of_moving_to_transoxiana_on_death
 
 		ai_chance = {
 			factor = 50
-			modifier = {
-				factor = 0
-				# TODO
-			}
 		}
 	}
 
@@ -331,7 +325,9 @@ country_event = {
 		name = "UaCH.7.e"
 		
 		add_prestige = -10
-
+		ai_chance = {
+			factor = 1
+		}
 	}
 	
 	# My favorite, Muhammad Juki
@@ -352,11 +348,7 @@ country_event = {
 		set_country_flag = uach_yuki_lives_slower_disaster
 		
 		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				# TODO
-			}
+			factor = 1000
 		}
 	}
 }
@@ -495,16 +487,24 @@ country_event = {
 			}
 			QOM = {
 				vassalize = ROOT
+				ROOT = {
+					join_all_offensive_wars_of = PREV
+					join_all_defensive_wars_of = PREV
+				}
 			}
 		}
 		else = {
 			ISF = {
 				vassalize = ROOT
+				ROOT = {
+					join_all_offensive_wars_of = PREV
+					join_all_defensive_wars_of = PREV
+				}
 			}
 		}
 
 		ai_chance = {
-			factor = 1.5
+			factor = 1
 			modifier = {
 				factor = 0
 				OR = {
@@ -1135,14 +1135,6 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	trigger = {
-		
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-	
 	# Our rightful suzerain has returned!
 	option = { 
 		name = "UaCH.19.a" 
@@ -1190,14 +1182,6 @@ country_event = {
 	
 	is_triggered_only = yes
 	fire_only_once = yes
-	
-	trigger = {
-		tag = TIM
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
 	
 	# Our rightful suzerain has returned!
 	option = { 
@@ -1560,7 +1544,7 @@ country_event = {
 				change_tag = HER
 				hidden_effect = {
 					HER = {
-						save_event_target_as = timurids_prince1
+						save_global_event_target_as = timurids_prince1
 					}
 				}
 			}
@@ -2272,8 +2256,6 @@ country_event = {
 				type = pretender_rebels
 			}
 		}
-
-		# TODO what exactly should happen to QQ
 
 		hidden_effect = {
 			set_country_flag = yar_ali_is_here
@@ -3308,6 +3290,328 @@ country_event = {
 	}
 }
 
+# The Influence of Gawhar Shad
+country_event = {
+	id = UaCH.44 
+	title = UaCH.44.t 
+	desc = UaCH.44.d
+	picture = GENERALS_DISCUSSING_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		tag = TIM
+		has_country_flag = uach_yuki_dies_fo_sho
+		NOT = {
+			was_tag = TRS
+		}
+		NOT = {
+			has_ruler = "Shah Rukh"
+		}
+	}
+	mean_time_to_happen = {
+		months = 1
+	}
+				
+	# So it will be, mother of the realm...
+	option = {
+		name = "UaCH.44.a"
+		set_estate_privilege = estate_nobles_the_eternal_regency
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	# How about no?
+	option = {
+		name = "UaCH.44.b"
+		trigger = {
+			NOT = {
+				has_ruler = "Ala al-Dawla Mirza"
+			}
+		}
+		custom_tooltip = gawhar_shad_rebels
+		add_stability = -1 
+		random_owned_province = {
+			noble_rebels = 2
+		}
+		hidden_effect = {
+			clr_country_flag = uach_yuki_dies_fo_sho
+		}
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+# Gawhar Shad's Demands
+country_event = {
+	id = UaCH.45 
+	title = UaCH.45.t 
+	desc = UaCH.45.d
+	picture = GENERALS_DISCUSSING_eventPicture
+
+	trigger = {
+		had_country_flag = { 
+			flag = uach_disaster_event_timer
+			days = 60
+		}
+		any_owned_province = {
+			has_province_flag = uach_gawhar_shad_province
+		}
+		has_estate_privilege = estate_nobles_the_eternal_regency
+		NOT = {
+			OR = {
+				has_country_flag = uach_gawhar_shad_1
+				has_country_flag = uach_gawhar_shad_2
+				has_country_flag = uach_gawhar_shad_3
+			}
+		}
+		has_disaster = timurid_succession_crisis
+	}
+	mean_time_to_happen = {
+		days = 45
+	}
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = uach_disaster_event_timer
+			set_country_flag = uach_disaster_event_timer
+			random_list = {
+				1 = {
+					trigger = {
+						NOT = { stability = 1 }
+					}
+					set_country_flag = uach_gawhar_shad_1
+				}
+				1 = {
+					set_country_flag = uach_gawhar_shad_2
+				}
+				1 = {
+					set_country_flag = uach_gawhar_shad_3
+				}
+			}
+		}
+	}
+				
+	# Let us restore stability.
+	option = {
+		name = "UaCH.45.a"
+		trigger = {
+			has_country_flag = uach_gawhar_shad_1
+		}
+		custom_tooltip = uach_restore_stability_or_rebellion
+		hidden_effect = {
+			set_country_flag = uach_stab_agenda
+			country_event = {
+				id = UaCH.46
+				days = 365
+			}
+		}
+	}
+
+	# Let us show our might.
+	option = {
+		name = "UaCH.45.b"
+		trigger = {
+			has_country_flag = uach_gawhar_shad_2
+		}
+		custom_tooltip = uach_win_a_war_or_rebellion
+		hidden_effect = {
+			set_country_flag = uach_war_agenda
+			country_event = {
+				id = UaCH.46
+				days = 365
+			}
+		}
+	}
+
+	# Let us attempt to restore some amount of prosperity.
+	option = {
+		name = "UaCH.45.c"
+		trigger = {
+			has_country_flag = uach_gawhar_shad_3
+		}
+		custom_tooltip = uach_dev_a_prov_or_rebellion
+		hidden_effect = {
+			set_country_flag = uach_dev_agenda
+			country_event = {
+				id = UaCH.46
+				days = 365
+			}
+		}
+	}
+}
+
+# Aftermath of the Empress-Dowager's Demands
+
+country_event = {
+	id = UaCH.46 
+	title = UaCH.46.t 
+	desc = {
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = uach_stab_agenda
+					stability = 1
+				}
+				AND = {
+					has_country_flag = uach_war_agenda
+					has_country_flag = uach_war_agenda_completed
+				}
+				AND = {
+					has_country_flag = uach_dev_agenda
+					has_country_flag = uach_dev_agenda_completed					
+				}
+			}
+		}
+		desc = UaCH.46.d1
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				OR = {
+					AND = {
+						has_country_flag = uach_stab_agenda
+						stability = 1
+					}
+					AND = {
+						has_country_flag = uach_war_agenda
+						has_country_flag = uach_war_agenda_completed
+					}
+					AND = {
+						has_country_flag = uach_dev_agenda
+						has_country_flag = uach_dev_agenda_completed					
+					}
+				}
+			}
+		}
+		desc = UaCH.46.d2
+	}
+	picture = GENERALS_DISCUSSING_eventPicture
+
+	is_triggered_only = yes
+
+	after = {
+		hidden_effect = {
+			clr_country_flag = uach_stab_agenda
+			clr_country_flag = uach_war_agenda
+			clr_country_flag = uach_war_agenda_completed
+			clr_country_flag = uach_dev_agenda
+			clr_country_flag = uach_dev_agenda_completed
+		}
+	}
+				
+	# At least she is satisified...
+	option = {
+		name = "UaCH.46.a"
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = uach_stab_agenda
+					stability = 1
+				}
+				AND = {
+					has_country_flag = uach_war_agenda
+					has_country_flag = uach_war_agenda_completed
+				}
+				AND = {
+					has_country_flag = uach_dev_agenda
+					has_country_flag = uach_dev_agenda_completed					
+				}
+			}
+		}
+		if = {
+			limit = { has_country_flag = uach_stab_agenda }
+			add_adm_power = 50
+			add_country_modifier = {
+				name = uach_restoration_of_stability
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = uach_war_agenda }
+			add_country_modifier = {
+				name = uach_onwards_to_glory
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = uach_dev_agenda }
+			add_years_of_income = 0.5
+		}
+	}
+
+	# Oh dear...
+	option = {
+		name = "UaCH.46.b"
+		trigger = {
+			NOT = {
+				OR = {
+					AND = {
+						has_country_flag = uach_stab_agenda
+						stability = 1
+					}
+					AND = {
+						has_country_flag = uach_war_agenda
+						has_country_flag = uach_war_agenda_completed
+					}
+					AND = {
+						has_country_flag = uach_dev_agenda
+						has_country_flag = uach_dev_agenda_completed					
+					}
+				}
+			}
+		}
+		add_stability = -1 
+		random_owned_province = {
+			noble_rebels = 3
+		}
+	}
+}
+
+# The Scheming Empress=Dowager
+country_event = {
+	id = UaCH.47 
+	title = UaCH.47.t 
+	desc = UaCH.47.d
+	picture = GENERALS_DISCUSSING_eventPicture
+
+	trigger = {
+		had_country_flag = { 
+			flag = uach_disaster_event_timer
+			days = 60
+		}
+		any_owned_province = {
+			has_province_flag = uach_gawhar_shad_province
+		}
+		NOT = { has_estate_privilege = estate_nobles_the_eternal_regency }
+		NOT = {
+			any_owned_province = {
+				has_rebel_faction = noble_rebels
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 45
+	}
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = uach_disaster_event_timer
+			set_country_flag = uach_disaster_event_timer
+		}
+	}
+				
+	# Traitors!
+	option = {
+		name = "UaCH.47.a"
+		random_owned_province = {
+			noble_rebels = 3
+		}
+	}
+}
 
 # Betrayal - Abdul Latifs stays loyal
 country_event = {
@@ -4898,6 +5202,17 @@ country_event = {
 					OR = {
 						culture = khazak
 						culture = uzbekh
+						region = persia_region
+						region = khorasan_region
+					}
+					NOT = {
+						OR = {
+							area = agmola_area
+							area = ishim_area
+							area = yrtesh_area
+							area = kazakhstan_area
+							area = balchasj_area
+						}
 					}
 				}
 				ROOT = {
@@ -4922,6 +5237,21 @@ country_event = {
 		custom_tooltip = uach_buk_intervention
 		hidden_effect = {
 			uach_create_interloper = { region_int = 7 }
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = {
+					name = uach_gaining_a_foothold
+					duration = 3650
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.5
+						cavalry = 0.5
+					}
+				}
+			}
 		}
 
 		ai_chance = {
@@ -5059,9 +5389,14 @@ country_event = {
 	
 	trigger = {
 		had_country_flag = { 
-				flag = uach_disaster_event_timer
-				days = 60
-			}
+			flag = uach_disaster_event_timer
+			days = 60
+		}
+		OR = {
+			has_disaster = timurid_succession_crisis
+			is_in_war = { casus_belli = cb_challange_claimant }
+			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+		}
 		
 		any_owned_province = { AND = { OR = {
 									has_terrain = savannah
@@ -5204,9 +5539,14 @@ country_event = {
 	
 	trigger = {
 			AND = { had_country_flag = { 
-				flag = uach_disaster_event_timer
-				days = 60
-				}
+							flag = uach_disaster_event_timer
+							days = 60
+						}
+						OR = {
+							has_disaster = timurid_succession_crisis
+							is_in_war = { casus_belli = cb_challange_claimant }
+							is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+						}
 				
 				any_owned_province = {  has_province_modifier = minor_drought }
 			}
@@ -5282,9 +5622,14 @@ country_event = {
 	
 	trigger = {
 			AND = { had_country_flag = { 
-				flag = uach_disaster_event_timer
-				days = 60
-				}
+						flag = uach_disaster_event_timer
+						days = 60
+					}
+					OR = {
+						has_disaster = timurid_succession_crisis
+						is_in_war = { casus_belli = cb_challange_claimant }
+						is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+					}
 				
 				any_owned_province = { has_province_modifier = moderate_drought }
 				}
@@ -5551,5 +5896,228 @@ country_event = {
             power_type = uach_persianization
             value = -5
         }
+	}
+}
+
+
+# Pulse event - Poisoned wells
+#a variant of event UaCH.92
+country_event = {
+
+	id = UaCH.101
+	title = UaCH.101.t  
+	desc = UaCH.101.d	  
+	picture = PLAGUE_eventPicture
+
+	
+	trigger = {
+		had_country_flag = { 
+			flag = uach_disaster_event_timer
+			days = 60
+		}
+		OR = {
+			has_disaster = timurid_succession_crisis
+			is_in_war = { casus_belli = cb_challange_claimant }
+			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+		}
+		
+		any_owned_province = { AND = { OR = {
+									has_terrain = savannah
+									has_terrain = steppe
+									has_terrain = drylands
+									has_terrain = desert
+									has_terrain = coastal_desert
+									}
+						is_capital = no }
+				}
+		OR = {
+			capital_scope = {superregion = persia_superregion}
+			capital_scope = {superregion = near_east_superregion}
+			capital_scope = {region = central_asia_region}
+			}		
+	}
+
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	
+
+	immediate = {
+		clr_country_flag = uach_disaster_event_timer
+		set_country_flag = uach_disaster_event_timer
+
+		random_owned_province = {
+						limit = {
+								AND = {
+								OR = {
+									has_terrain = savannah
+									has_terrain = steppe
+									has_terrain = drylands
+									has_terrain = desert
+									has_terrain = coastal_desert
+									}
+								is_capital = no }
+								}
+								save_event_target_as = uach_drought_prov
+								}
+		
+		}
+		
+	option = {
+		name = "UaCH.101.a" # How horrible! We have to do something!
+			add_years_of_income = -0.15 
+			random_list = {
+				75 = { 
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "mitigated_drought"
+								duration = 3650
+								}
+							}
+					}
+					
+				25 = {		
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "minor_drought"
+								duration = 3650
+								}
+							}
+					}
+				}
+				
+		ai_chance = {
+			factor = 90
+		}
+	}
+	
+	
+	option = {
+		name = "UaCH.101.b" # Let us pray to god for rain....
+		
+
+			
+			random_list = {
+				75 = {
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "minor_drought"
+								duration = 3650
+								}
+							}
+					}
+					
+				25 = {	
+						event_target:uach_drought_prov = {
+							add_province_modifier = {
+								name = "moderate_drought"
+								duration = 3650
+								}
+							}
+					}
+					
+				}
+					
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+#disaster event template
+country_event = {
+
+	id = UaCH.102
+	title = UaCH.102.t  
+	desc = UaCH.102.d	  
+	picture = PLAGUE_eventPicture
+
+	
+	trigger = {
+		AND = {
+			OR = {
+				has_disaster = timurid_succession_crisis
+				is_in_war = { casus_belli = cb_challange_claimant }
+				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+			}
+			had_country_flag = { 
+				flag = uach_disaster_event_timer
+				days = 60
+				}
+			}
+		}
+	immediate = {
+		clr_country_flag = uach_disaster_event_timer
+		set_country_flag = uach_disaster_event_timer
+		}
+		
+	option = {
+		name = UaCh.102.a
+		}
+		
+	option = {
+		name = UaCh.102.b
+	}
+}
+
+
+#pulse Religious uproar
+country_event = {
+
+	id = UaCH.103
+	title = UaCH.103.t  
+	desc = UaCH.103.d	  
+	picture = PLAGUE_eventPicture
+
+	
+	trigger = {
+		AND = {
+			OR = {
+				has_disaster = timurid_succession_crisis
+				is_in_war = { casus_belli = cb_challange_claimant }
+				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+			}
+			had_country_flag = { 
+				flag = uach_disaster_event_timer
+				days = 60
+				}
+			}
+		}
+	immediate = {
+		clr_country_flag = uach_disaster_event_timer
+		set_country_flag = uach_disaster_event_timer
+		random_province = {
+			limit = {
+				NOT = { is_capital = yes } 
+				religion = sunni
+			}
+			save_event_target_as = uach_to_be_changed_prov	
+			}
+		}
+		
+		
+	option = {
+		name = UaCh.103.a
+			event_target:uach_to_be_changed_prov = {
+				spawn_rebels = {
+				size = 3
+				type = religious_rebels
+				}
+			}
+		}
+		
+	option = {
+		name = UaCh.103.b
+		event_target:uach_to_be_changed_prov = {
+			religion = shiite
+			}
+	}
+	
+	option = {
+		name = UaCh.103.c
+		uach_add_random_development = { AMOUNT = -1 VALUE = 1 }
+		add_devastation = 25
 	}
 }
