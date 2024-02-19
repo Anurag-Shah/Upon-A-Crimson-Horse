@@ -2234,6 +2234,11 @@ country_event = {
 			NOT = {
 				has_country_flag = yar_ali_is_here # To prevent multiple rebel stacks
 			}
+			NOT = {
+				any_owned_province = {
+					has_rebel_faction = pretender_rebels
+				}
+			}
 		}
 	}
 	
@@ -2492,6 +2497,8 @@ country_event = {
 	desc = UaCH.31.d
 	picture = SPY_eventPicture
 
+	fire_only_once = yes
+
 	trigger = {
 		OR = {
 			AND = {
@@ -2702,6 +2709,8 @@ country_event = {
 	title = UaCH.35.t 
 	desc = UaCH.35.d
 	picture = REVOLUTION_eventPicture
+
+	fire_only_once = yes
 
 	trigger = {
 		OR = {
@@ -2951,6 +2960,7 @@ province_event = {
 			is_in_war = { casus_belli = cb_challange_claimant }
 			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
 		}
+		NOT = { any_owned_province = { has_rebel_faction = noble_rebels } }
 	}
 
 	mean_time_to_happen = {
@@ -2990,7 +3000,7 @@ province_event = {
 			50 = {}
 			50 = {
 				spawn_rebels = {
-					size = 3
+					size = 2
 					type = noble_rebels
 				}
 			}
