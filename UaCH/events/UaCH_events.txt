@@ -312,7 +312,7 @@ country_event = {
 			mil = 4	
 			claim = 90
 		}
-		hidden = {set_country_flag = UB_moves_to_TRS}
+		hidden_effect = {set_country_flag = UB_moves_to_TRS}
 		custom_tooltip = mnt_warning_of_moving_to_transoxiana_on_death
 
 		ai_chance = {
@@ -712,7 +712,7 @@ country_event = {
 	}
 	
 	immediate = {
-		hidden = {
+		hidden_effect = {
 			TRS = {
 				country_event = {
 					id = UaCH.16
@@ -741,7 +741,7 @@ country_event = {
 		name = "UaCH.15.a" 
 
 		add_legitimacy = 15
-		hidden = {
+		hidden_effect = {
 		TRS = {
 			add_manpower = 20
 			add_treasury = 500
@@ -831,7 +831,7 @@ country_event = {
 		}
 
 		custom_tooltip = uach_trs_declares_in_6
-		hidden = {
+		hidden_effect = {
 		country_event = {
 			id = UaCH.90
 			days = 180}
@@ -913,7 +913,7 @@ country_event = {
 
 		TRS = {
 			add_liberty_desire = 100
-			hidden = {
+			hidden_effect = {
 				country_event = {
 					id = UaCH.90
 					days = 180 }
@@ -949,7 +949,7 @@ country_event = {
 	option = {
 		name = "UaCH.17.c"
 		custom_tooltip = uach_new_reality
-		hidden = {
+		hidden_effect = {
 		every_subject_country = {
 			TRS = {
 				create_subject = {
@@ -976,7 +976,6 @@ country_event = {
 	option = {
 		name = "UaCH.17.e"
 		
-		
 		TRS = {
 			add_liberty_desire = 100
 			country_event = {
@@ -986,25 +985,25 @@ country_event = {
 		country_event = {
 			id = UaCH.31
 		}
-		hidden = {
-		random_list = {
-			50 = {
-				country_event = {
-					id = UaCH.49
-					days = 60
-				}
-			}
-			25 = {
-				country_event = {
-					id = UaCH.50
-					days = 60
-				}
-			}
-			25 = {
-				country_event = {
-					id = UaCH.51
-					days = 30
+		hidden_effect = {
+			random_list = {
+				50 = {
+					country_event = {
+						id = UaCH.49
+						days = 60
 					}
+				}
+				25 = {
+					country_event = {
+						id = UaCH.50
+						days = 60
+					}
+				}
+				25 = {
+					country_event = {
+						id = UaCH.51
+						days = 30
+						}
 				}
 			}
 		}
@@ -2323,8 +2322,10 @@ country_event = {
 		}
 	}
 
-	hidden_effect = {
-		clr_country_flag = yar_ali_is_done
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = yar_ali_is_done
+		}
 	}
 
 	# Set my men upon the city.

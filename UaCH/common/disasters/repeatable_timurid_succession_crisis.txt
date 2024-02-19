@@ -34,10 +34,8 @@ repeatable_timurid_succession_crisis = {
 
 		modifier = {
 			factor = -0.1
-			all_subject_country = {
-				NOT = {
-					average_autonomy = 20
-				}
+			NOT = {
+				average_autonomy = 20
 			}
 		}
 

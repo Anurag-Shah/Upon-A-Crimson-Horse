@@ -8,15 +8,15 @@ country_event = {
 	desc = "EVTDESC878"
 	picture = ADVISOR_eventPicture
 
-	is_triggered_only = yes
-	
+	fire_only_once = yes	
 	trigger = {
 		has_advisor = yes
 		has_regency = no
+		has_country_flag = uach_interwar_lull
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 100
 	}
 	
 	immediate = {
@@ -96,10 +96,14 @@ country_event = {
 		army_professionalism = 0.5
 		NOT = { has_country_modifier = integration_of_local_militias }
 		NOT = { army_professionalism = 1 }
+		has_country_flag = uach_interwar_lull
+	}
+
+	mean_time_to_happen = {
+		months = 80
 	}
 	
-	is_triggered_only = yes
-	
+	fire_only_once = yes	
 
 	option = {
 		name = army_professionalism_events.13.a #
@@ -124,10 +128,10 @@ country_event = {
 		}
 		add_yearly_manpower = -1
 		add_government_power = {
-            mechanic_type = uach_reform_state_mechanic
-            power_type = uach_persianization
-            value = 5
-        }
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 5
+		}
 	}
 }
 
@@ -138,10 +142,14 @@ country_event = {
 	desc = "corruption_event.7.d"
 	picture = CORRUPTION_eventPicture
 	
-	is_triggered_only = yes
-	
+	fire_only_once = yes	
 	trigger = {
 		has_advisor = yes
+		has_country_flag = uach_interwar_lull
+	}
+
+	mean_time_to_happen = {
+		months = 70
 	}
 
 	immediate = {
@@ -256,12 +264,12 @@ country_event = {
 
 	trigger = {
 		is_month = 8
+		has_country_flag = uach_interwar_lull
 	}
 
-	is_triggered_only = yes
-
+fire_only_once = yes
 	mean_time_to_happen = {
-		days = 1
+		months = 45
 	}
 
 	option = {
@@ -292,10 +300,10 @@ country_event = {
 		}
 
 		add_government_power = {
-            mechanic_type = uach_reform_state_mechanic
-            power_type = uach_persianization
-            value = 10
-        }
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 10
+		}
 	}
 }
 
@@ -306,9 +314,9 @@ country_event = {
 	desc = muslim_piety.13.d
 	picture = REFORM_eventPicture
 	
-	is_triggered_only = yes
-
+fire_only_once = yes
 	trigger = {
+		has_country_flag = uach_interwar_lull
 		uses_piety = yes
 		piety = 0.75
 		any_owned_province = {
@@ -320,7 +328,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		months = 40
 	}
 	
 	immediate = {
@@ -455,14 +463,14 @@ country_event = {
 	desc = "EVTDESC729"
 	picture = CITY_DEVELOPMENT_eventPicture
 
-	is_triggered_only = yes
-	
+	fire_only_once = yes	
 	trigger = {
 		is_at_war = no
+		has_country_flag = uach_interwar_lull
 	}
 
 	mean_time_to_happen = {
-		days = 1
+		months = 25
 	}
 
 	option = {
@@ -507,10 +515,10 @@ country_event = {
 			factor = 100
 		}
 		add_government_power = {
-            mechanic_type = uach_reform_state_mechanic
-            power_type = uach_persianization
-            value = 5
-        }
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 5
+		}
 		capital_scope = { add_base_tax = 2 }
 		add_years_of_income = -0.35
 	}
@@ -523,16 +531,16 @@ country_event = {
 	desc = "EVTDESC715"
 	picture = COURT_eventPicture
 	
-	is_triggered_only = yes
-	
+	fire_only_once = yes	
 	trigger = {
 		government = monarchy
 		has_regency = no
 		is_lesser_in_union = no
+		has_country_flag = uach_interwar_lull
 	}
 
 	mean_time_to_happen = {
-		days = 1
+		months = 20
 	}
 
 	option = {
@@ -558,14 +566,15 @@ country_event = {
 	id = uach_reform.1000 
 	title = uach_reform.1000.t 
 	desc = uach_reform.1000.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = MILITARY_CAMP_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis
+		has_country_flag = uach_interwar_lull
 	}
 	
+	fire_only_once = yes	
 	mean_time_to_happen = {
-		months = 6
+		months = 15
 	}
 	option = {
 		name = "Let them do their thing!"
@@ -625,18 +634,24 @@ country_event = {
 	id = uach_reform.1001 
 	title = uach_reform.1001.t 
 	desc = uach_reform.1001.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = MILITARY_CAMP_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis
+		has_country_flag = uach_interwar_lull
 	}
+	fire_only_once = yes	
 	mean_time_to_happen = {
-		months = 6
+		months = 10
 	}
 	option = {
 		name = "Execute them!"
 		
-		uach_add_or_subtract_persianization = { value = -5 }
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -5
+		}
+
 		kill_leader = {
 			type = general
 		}
@@ -654,7 +669,11 @@ country_event = {
 	option = {
 		name = "Give them a stern talking to."
 		
-		uach_add_or_subtract_persianization = { value = 10 }
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 10
+		}
 
 		random_list = {
 			50 = {
@@ -687,19 +706,24 @@ country_event = {
 	id = uach_reform.1002 
 	title = uach_reform.1002.t 
 	desc = uach_reform.1002.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = CULTURE_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis
+		has_country_flag = uach_interwar_lull
 	}
+	fire_only_once = yes	
 	mean_time_to_happen = {
-		months = 6
+		months = 90
 	}
 	option = {
 		name = "Fund their studies"
 		
 		add_treasury = -200
-		uach_add_or_subtract_persianization = { value = 10 }
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 10
+		}
 		add_country_modifier = {
 			name = uach_scholars_in_capital
 			duration = 3650
@@ -738,18 +762,23 @@ country_event = {
 	id = uach_reform.1003 
 	title = uach_reform.1003.t 
 	desc = uach_reform.1003.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = CULTURE_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis
+		has_country_flag = uach_interwar_lull
 	}
+	fire_only_once = yes	
 	mean_time_to_happen = {
-		months = 6
+		months = 60
 	}
 	option = {
 		name = "I love it, lets hire more musicians!"
 		
-		uach_add_or_subtract_persianization = { value = 10 }
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 10
+		}
 		add_treasury = -300
 		
 		every_owned_province = {
@@ -776,7 +805,11 @@ country_event = {
 		
 		add_legitimacy = 10
 
-		uach_add_or_subtract_persianization = { value = -10 }
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -10
+		}
 
 		add_country_modifier = {
 			name = uach_throat_singing
@@ -796,15 +829,16 @@ country_event = {
 
 country_event = {
 	id = uach_reform.1004 
-	title = "On our neighbors!"
+	title = "Claims on our neighbors!"
 	desc = uach_reform.1004.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = BORDER_TENSION_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis
+		has_country_flag = uach_interwar_lull
 	}
+	fire_only_once = yes	
 	mean_time_to_happen = {
-		months = 6
+		months = 30
 	}
 	option = {
 		name = "YES."
@@ -820,7 +854,11 @@ country_event = {
 			}
 		}
 
-		uach_add_or_subtract_persianization = { value = -5 }
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -5
+		}
 		add_prestige = 5
 
 		ai_chance = {
@@ -840,7 +878,11 @@ country_event = {
 			estate = estate_nobles
 			loyalty = -5
 		}
-		uach_add_or_subtract_persianization = { value = 5 }
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 5
+		}
 
 		ai_chance = {
 			factor = 50
@@ -856,21 +898,26 @@ country_event = {
 	id = uach_reform.1005 
 	title = "Solidiers want to go home"
 	desc = uach_reform.1005.d
-	picture = FEAST_eventPicture
+	picture = MILITARY_CAMP_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis		
+		has_country_flag = uach_interwar_lull		
 	}
 
 
+	fire_only_once = yes	
 	mean_time_to_happen = {
-		months = 6
+		months = 90
 	}
 
 	option = {
 		name = "Let them go home"
 		add_manpower = -4000
-		uach_add_or_subtract_persianization = { value = 10 }
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 10
+		}
 
 		add_country_modifier = {
 			name = uach_solidiers_went_home
@@ -885,7 +932,11 @@ country_event = {
 			duration = 1825
 		}
 
-		uach_add_or_subtract_persianization = { value = -5 }
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -5
+		}
 	}
 }
 
@@ -893,19 +944,24 @@ country_event = {
 	id = uach_reform.1006 
 	title = "Clergy vs. Nobility"
 	desc = uach_reform.1006.d
-	picture = FEAST_eventPicture
+	picture = DEBATE_REPUBLICAN_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis	
+		has_country_flag = uach_interwar_lull	
 	}
 
+	fire_only_once = yes	
 	mean_time_to_happen = {
-		months = 6
+		months = 60
 	}
 
 	option = {
 		name = "Support the clergy"
-		uach_add_or_subtract_persianization = { value = 5 }
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 5
+		}
 
 		add_estate_loyalty = {
 			estate = estate_church
@@ -920,7 +976,11 @@ country_event = {
 	
 	option = {
 		name = "Support the nobility"
-		uach_add_or_subtract_persianization = { value = -5 }
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -5
+		}
 
 		add_estate_loyalty = {
 			estate = estate_church
@@ -938,20 +998,29 @@ country_event = {
 	id = uach_reform.1007 
 	title = "Raids from the Turkmen"
 	desc = uach_reform.1007.d
-	picture = FEAST_eventPicture
+	picture = BORDER_TENSION_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis	
+		has_country_flag = uach_interwar_lull	
 	}
 
+	fire_only_once = yes	
 	mean_time_to_happen = {
-		months = 6
+		months = 20
+	}
+
+	immediate = {
+		set_country_flag = uach_turkmen_raids_happened 
 	}
 
 	option = {
 		name = "Raid them back!"
 		
-		uach_add_or_subtract_persianization = { value = -5 }
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -5
+		}
 
 		add_country_modifier = {
 			name = uach_raid_turks_back_lol
@@ -967,7 +1036,11 @@ country_event = {
 		}
 		add_treasury = -50
 		add_prestige = -1
-		uach_add_or_subtract_persianization = { value = 10 }
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 10
+		}
 	}
 }
 
@@ -975,33 +1048,56 @@ country_event = {
 	id = uach_reform.1008 
 	title = "A Campaign against the Turkmen"
 	desc = uach_reform.1008.d
-	picture = FEAST_eventPicture
+	picture = BORDER_TENSION_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis	
+		has_country_flag = uach_turkmen_raids_happened
+		has_country_flag = uach_interwar_lull	
 		any_neighbor_country = {
 			OR = {
 				tag = QAR
-				tag = AQU
+				tag = AKK
 			}
 		}
 	}
 
+	fire_only_once = yes	
 	mean_time_to_happen = {
-		months = 6
+		months = 5
 	}
 
 	option = {
-		name = "Go for it. Kill their children."
-		uach_add_or_subtract_persianization = { value = -10 }
-		add_disaster_progress = {
-			value = 5
-			disaster = repeatable_timurid_succession_crisis
+		name = "Let us retaliate against their raids."
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -10
+		}
+
+		if = {
+			limit = {
+				any_neighbor_country = {
+					tag = QAR
+				}
+			}
+			PREV = {
+				declare_war_with_cb = {
+					who = QAR
+					casus_belli = cb_horde_vs_civ
+				}
+			}
+		} else = {
+			PREV = {
+				declare_war_with_cb = {
+					who = AKK
+					casus_belli = cb_horde_vs_civ
+				}
+			}
 		}
 	}
 	
 	option = {
-		name = "nah, they are not worth it."
+		name = "Nah, they are not worth it."
 
 		add_disaster_progress = {
 			value = 5
@@ -1011,24 +1107,30 @@ country_event = {
 }
 
 
-#A Campaign against the Turkmen (trigger must border QQ/AQ)
 country_event = {
 	id = uach_reform.1009 
 	title = "Language of our Court"
 	desc = uach_reform.1009.d
-	picture = FEAST_eventPicture
+	picture = COURT_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis	
+		has_country_flag = uach_interwar_lull	
 	}
 
+	fire_only_once = yes	
+	
+	
 	mean_time_to_happen = {
-		months = 6
+		months = 60
 	}
 
 	option = {
 		name = "Let us use Chagatai"
-		uach_add_or_subtract_persianization = { value = 10 }
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -10
+		}
 		add_disaster_progress = {
 			value = 5
 			disaster = repeatable_timurid_succession_crisis
@@ -1053,16 +1155,19 @@ country_event = {
 
 country_event = {
 	id = uach_reform.1010 
-	title = "Lavish spending"
+	title = "Construct the Lavish Al Saray Palace"
 	desc = uach_reform.1010.d
-	picture = FEAST_eventPicture
+	picture = GREAT_BUILDING_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis	
+		has_country_flag = uach_interwar_lull	
 	}
 
+	fire_only_once = yes	
+	
+
 	mean_time_to_happen = {
-		months = 6
+		months = 30
 	}
 
 	option = {
@@ -1072,7 +1177,7 @@ country_event = {
 			value = 5
 			disaster = repeatable_timurid_succession_crisis
 		}
-		uach_add_or_subtract_persianization = { value = 10 }
+		uach_outward_persianization = { value = 5 }
 		
 		}
 	option = {	
@@ -1082,7 +1187,7 @@ country_event = {
 			value = -5
 			disaster = repeatable_timurid_succession_crisis
 		}
-		uach_add_or_subtract_persianization = { value = -5 }
+		uach_add_or_subtract_persianization = { value = 10 }
 		
 		}
 }
@@ -1092,14 +1197,15 @@ country_event = {
 	id = uach_reform.1011
 	title = "Court of [ROOT.GetName]"
 	desc = uach_reform.1011.d
-	picture = FEAST_eventPicture
+	picture = COURT_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis	
+		has_country_flag = uach_interwar_lull	
 	}
 
+	fire_only_once = yes	
 	mean_time_to_happen = {
-		months = 6
+		months = 80
 	}
 
 	option = {
@@ -1109,7 +1215,7 @@ country_event = {
 			value = 5
 			disaster = repeatable_timurid_succession_crisis
 		}
-		uach_add_or_subtract_persianization = { value = -10 }
+		uach_outward_persianization = { value = 10 }
 		
 		}
 		
@@ -1130,14 +1236,15 @@ country_event = {
 	id = uach_reform.1012
 	title = "Investments in Agriculture"
 	desc = uach_reform.1012.d
-	picture = FEAST_eventPicture
+	picture = FARMING_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis	
+		has_country_flag = uach_interwar_lull	
 	}
 
+	fire_only_once = yes	
 	mean_time_to_happen = {
-		months = 6
+		months = 60
 	}
 
 	option = {
@@ -1173,16 +1280,17 @@ country_event = {
 #Executions and cruelty under [RULER NAME] (based on abu sa’id)
 country_event = {
 	id = uach_reform.1013
-	title = "Cruel ruler"
+	title = "Our Cruel Ruler"
 	desc = uach_reform.1013.d
-	picture = FEAST_eventPicture
+	picture = BAD_WITH_MONARCH_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis	
+		has_country_flag = uach_interwar_lull
 	}
 
+	fire_only_once = yes	
 	mean_time_to_happen = {
-		months = 6
+		months = 15
 	}
 
 	option = {
@@ -1194,8 +1302,7 @@ country_event = {
 			value = 5
 			disaster = repeatable_timurid_succession_crisis
 		}
-		
-		}
+	}
 		
 	option = {	
 		name = "Maybe its time to end this practice."
@@ -1205,28 +1312,29 @@ country_event = {
 			value = -5
 			disaster = repeatable_timurid_succession_crisis
 		}
-		
-		}
+	}
 }		
 
 #Siege of Sharquiiya
-#TODO - who the hell is Sharpeia?
 country_event = {
 	id = uach_reform.1015
-	title = "Local rebels"
+	title = "Rebellion in Shahrukhiyya"
 	desc = uach_reform.1015.d
-	picture = FEAST_eventPicture
+	picture = BATTLE_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis	
+		has_country_flag = uach_interwar_lull	
 	}
 
+
+	
+	
 	mean_time_to_happen = {
-		months = 6
+		months = 90
 	}
 
 	option = {
-		name = "Kill them all"
+		name = "Attack the city"
 		
 		random_owned_province = {
 			spawn_rebels = {
@@ -1243,7 +1351,7 @@ country_event = {
 		}
 		
 	option = {	
-		name = "Negotiate"
+		name = "Negotiate their surrender"
 		add_prestige = -25
 		add_stability = -1
 		add_disaster_progress = {
@@ -1259,14 +1367,15 @@ country_event = {
 	id = uach_reform.1014
 	title = "Clergy opposes reforms"
 	desc = uach_reform.1014.d
-	picture = FEAST_eventPicture
+	picture = CHURCH_ESTATE_UPSET_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis	
+		has_country_flag = uach_interwar_lull	
 	}
 
+	fire_only_once = yes	
 	mean_time_to_happen = {
-		months = 6
+		months = 60
 	}
 
 	option = {
@@ -1275,9 +1384,17 @@ country_event = {
 			name = "uach_no_talking_back_to_clergy"
 			duration = 3650
 		}
-		uach_add_or_subtract_persianization = { value = -10 }
-		
+		uach_add_or_subtract_persianization = { value = 5 }
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 10
 		}
+		add_country_modifier = {
+			name = give_in_to_clergy
+			duration = 730
+		}
+		
+	}
 		
 	option = {	
 		name = "Babbling fools!"
@@ -1287,32 +1404,36 @@ country_event = {
 			duration = 3650
 		}
 
-		uach_add_or_subtract_persianization = { value = 10 }
-		
+		uach_outward_persianization = { value = 5 }
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -10
 		}
+		add_legitimacy = -15
+	}
 }	
 
 #Loyalty to the clan
 country_event = {
-	id = uach_reform.1014
+	id = uach_reform.1016
 	title = "Loyalty to the clan"
-	desc = uach_reform.1014.d
-	picture = FEAST_eventPicture
+	desc = uach_reform.1016.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
 
 	trigger = {
-		has_disaster = repeatable_timurid_succession_crisis	
+		has_country_flag = uach_interwar_lull	
 	}
 
+	fire_only_once = yes	
 	mean_time_to_happen = {
-		months = 6
+		months = 30
 	}
 
 	option = {
 		name = "Clan above state"
-		add_treasury = 250
+		add_years_of_income = 0.5
 		uach_add_or_subtract_persianization = { value = -10 }
-		
-		}
+	}
 		
 	option = {	
 		name = "State above clan"
@@ -1320,9 +1441,8 @@ country_event = {
 			name = "uach_state_above_clan"
 			duration = 3650
 		}
-		uach_add_or_subtract_persianization = { value = 10 }
-		
-		}
+		uach_outward_persianization = { value = 5 }
+	}
 }		
 		
 

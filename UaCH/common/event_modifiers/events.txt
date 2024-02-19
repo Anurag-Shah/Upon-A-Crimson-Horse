@@ -112,7 +112,7 @@ uach_daring_today = {
 }
 
 uach_state_above_clan = {
-	unrest = -2
+	global_unrest = 5
 }
 
 uach_restoration_of_stability = {
@@ -122,4 +122,8 @@ uach_restoration_of_stability = {
 uach_onwards_to_glory = {
 	land_maintenance_modifier = -0.10
 	land_morale = 0.05
+}
+
+give_in_to_clergy = {
+	global_unrest = -2
 }
