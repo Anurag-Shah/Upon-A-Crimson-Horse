@@ -4,7 +4,7 @@ country_event = {
 	id = UaCH.CB.1 
 	title = UaCH.CB.1.t 
 	desc = UaCH.CB.1.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = CONQUEST_eventPicture
 
 	is_triggered_only = yes
 	

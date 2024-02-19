@@ -6,7 +6,7 @@ country_event = {
 	id = UaCH.escalation.1 
 	title = UaCH.escalation.1.t 
 	desc = UaCH.escalation.1.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = COUNTRY_COLLAPSE_eventPicture
 	is_triggered_only = yes
 	
 	trigger = {}
@@ -60,7 +60,7 @@ country_event = {
 	id = UaCH.escalation.1 
 	title = UaCH.escalation.2.t 
 	desc = UaCH.escalation.2.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = COUNTRY_COLLAPSE_eventPicture
 	is_triggered_only = yes
 	
 	trigger = { 
@@ -241,7 +241,7 @@ country_event = {
 	id = UaCH.escalation.3
 	title = UaCH.escalation.3.t 
 	desc = UaCH.escalation.3.d
-	picture = CITY_DEVELOPMENT_eventPicture
+	picture = COUNTRY_COLLAPSE_eventPicture
 	is_triggered_only = yes
 	
 	trigger = { }
