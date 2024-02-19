@@ -1,0 +1,30 @@
+estate_nobles_the_eternal_regency = {
+	icon = privilege_puppet_ruler
+	max_absolutism = -10
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	loyalty = 0.1
+	influence = 0.1
+	is_valid = {
+		has_estate_privilege = estate_nobles_the_eternal_regency
+	}
+	can_select = {
+		has_estate_privilege = estate_nobles_the_eternal_regency
+	}
+	penalties = {
+        all_power_cost = 0.1
+        legitimacy = -2
+	}
+	benefits = {
+		country_admin_power = 1
+        country_diplomatic_power = 1
+        country_military_power = 1
+	}
+    on_granted = {
+        custom_tooltip = gawhar_shad_agendas_if_own
+    }
+	ai_will_do = {
+		factor = 0
+	}
+
+    cooldown_years = 10
+}

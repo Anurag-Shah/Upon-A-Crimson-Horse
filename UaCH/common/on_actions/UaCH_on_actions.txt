@@ -107,6 +107,10 @@ on_war_won = {
             id = UaCH.100
         }
     }
+    if = {
+        limit = { ROOT = { has_country_flag = uach_war_agenda } }
+        set_country_flag = uach_war_agenda_completed
+    }
 }
 
 on_war_lost = {

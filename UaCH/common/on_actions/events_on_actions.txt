@@ -40,3 +40,30 @@ on_monarch_death = {
 		}
 	}
 }
+
+on_adm_development = {
+	owner = {
+		if = {
+			limit = { has_country_flag = uach_dev_agenda }
+			set_country_flag = uach_dev_agenda_completed
+		}
+	}
+}
+
+on_dip_development = {
+	owner = {
+		if = {
+			limit = { has_country_flag = uach_dev_agenda }
+			set_country_flag = uach_dev_agenda_completed
+		}
+	}
+}
+
+on_mil_development = {
+	owner = {
+		if = {
+			limit = { has_country_flag = uach_dev_agenda }
+			set_country_flag = uach_dev_agenda_completed
+		}
+	}
+}

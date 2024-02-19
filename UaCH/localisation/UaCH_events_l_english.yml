@@ -243,29 +243,37 @@
  uach_tenth_opms:0 "Up to a tenth of our territory will gain independence and join the §YTimurid Succession Crisis§!."
  UaCH.43.safe: "At least we have a new [Root.Monarch.GetTitle] to take charge..."
  
- UaCH.44.t: "General turned traitor"
- UaCH.44.d: "In the midst of the succession crisis, many lowborn are forced to serve in either the armies or turn mercenary. While war is an inherently deathly occupation, some find opportunities to rise in the ranks, either by valor or by betrayal. One of our appointed viziers got definitely strange ideas into his head, proclaiming himself Emir, with the support of a fair part of our army. He began to fortify the nearby villages and send out tax collectors to set up his nice little kingdom."
- UaCH.44.a: "So, that is how it is going to be..."
+ UaCH.44.t: "The Influence of Gawhar Shad"
+ UaCH.44.d: "Despite the end of Gawhar Shad's regency for Shah Rukh, her influence is still strong, with her favoured grandson still recieving the most backing from the military and nobility, and many emirs in the regions she resides in siding with her. As such, she has felt it to be her right to offer us a hand in governing our realm. This is in all likelihood a power move, but if we decline, those who support her will certainly turn against us..."
+ UaCH.44.a:0 "So it will be, mother of the realm..."
+ estate_nobles_the_eternal_regency:0 "The Eternal Regency"
+ estate_nobles_the_eternal_regency_desc:0 "Gawhar Shad has become the ruler of our realm in all but name, with the military enforcing her status as the puppeteer of our ruler."
+ gawhar_shad_agendas_if_own:0 "If we own the province in which §YGawhar Shad§! resides, we will recieve special agendas from her relating to the §YTimurid Succession Crisis§!."
+ UaCH.44.b:0 "How about no?"
+ gawhar_shad_rebels:0 "§YGawhar Shad§! will incite the nobility and military to rebel in the future, causing the following immediate effects:"
  
- UaCH.45.t: "A Scheming Regent"
- UaCH.45.d: "Behind a facade of grace lies a mind sharp as a scimitar, plotting, scheming, and orchestrating the grand dance of power with the finesse of a master conductor. Our regent has made his move to grab power from our rightful emir."
- UaCH.45.a: "This will not do."
- UaCH.45.b: "Uncle?"
- 
- UaCH.46.t: "Regent imprisons the heir"
- UaCH.46.d: "Our regent has made his move, imprisoning the rightful heir to secure their own ascent to the throne. The palace guard has sided with the regent, but there may be some resistance in the court to his boldness."
- UaCH.46.a: "Attempt to bring any dissenters to the regent's side."
- UaCH.46.b: "Side with the imprisoned heir"
- 
- UaCH.47.t: "Opposition to the Regent"
- UaCH.47.d: "Our regent has imprisoned the rightful heir to the throne, however he has underestimated the loyalty of this people. Even now, the local emirs are preparing to storm the palace to free the prince, with support gathering from all over the country."
- UaCH.47.a: "One man's ambition is the doom of us all..."
- 
- UaCH.48.t: "Gawhar Shad's Demands"
- UaCH.48.d: "The empress dowager §GGawhar Shad§! has taken up residence in our city. While many see this as strenghtening our claim to the throne, those who know of her know that this may be just another scheme in her book. She has made multiple demands to our ruler, and while they seem reasonable, the outcome of agreeing to such actions is yet to be seen."
- UaCH.48.a: "Accede to the demands"
- UaCH.48.b: "She's way past her expiration date..."
+ UaCH.45.t: "Gawhar Shad's Demands"
+ UaCH.45.d: "The empress dowager §GGawhar Shad§! has taken up residence in our city. While many see this as strenghtening our claim to the throne, those who know of her know that this may be just another scheme in her book. She has made multiple demands to our ruler, and while they seem reasonable, the outcome of agreeing to such actions is yet to be seen."
+ UaCH.45.a: "Let us restore stability."
+ uach_restore_stability_or_rebellion:0 "We must increase our stability to §G+1§! in a year, or there will be a rebellion."
+ UaCH.45.b: "Let us show our might."
+ uach_win_a_war_or_rebellion:0 "We must win a war in a year, or there will be a rebellion."
+ UaCH.45.c:0 "Let us attempt to restore some amount of prosperity."
+ uach_dev_a_prov_or_rebellion:0 "We must develop a province in a year, or there will be a rebellion."
 
+ UaCH.46.t: "Aftermath of the Empress-Dowager's Demands"
+ UaCH.46.d1: "The empress dowager §GGawhar Shad§! has taken up residence in our city. While many see this as strenghtening our claim to the throne, those who know of her know that this may be just another scheme in her book. She has made multiple demands to our ruler, and we have fulfilled them. Let us see the outcome."
+ UaCH.46.d2: "The empress dowager §GGawhar Shad§! has taken up residence in our city. While many see this as strenghtening our claim to the throne, those who know of her know that this may be just another scheme in her book. She has made multiple demands to our ruler, and we have managed to fail her demands, upsetting her and her supporters."
+ UaCH.46.a: "At least she is satisified..."
+ uach_restoration_of_stability: "Restoration of Stability"
+ desc_uach_restoration_of_stability: ""
+ uach_onwards_to_glory: "Onwards to Glory"
+ desc_uach_onwards_to_glory: ""
+ UaCH.46.b: "Oh dear..."
+
+ UaCH.47.t: "The Schemeing Dowager"
+ UaCH.47.d: "The empress dowager §GGawhar Shad§! has taken up residence in our city. While many see this as strenghtening our claim to the throne, those who know of her know that this may be just another scheme in her book. She has made multiple demands to our ruler, and, seeing that she has no influence on [Root.Monarch.GetName], has decided to use her influence to incite rebellion."
+ UaCH.47.a: "So, this is how she treats us!"
  
  UaCH.49.t: "Abdal-Latif complies"
  UaCH.49.d: "Abdal-Latif has received his fathers letter, and acted accordingly. The body is now en route to our capital and will arive in the next 3 months."
@@ -281,10 +289,6 @@
  UaCH.51.b: "Offer him lands and titles. "
  UaCH.51.c: "Make him heir to the Empire"
  UaCH.51.e: "He will gain no such thing!"
- 
- UaCH.52.t: "The Schemeing Dowager"
- UaCH.52.d: "The empress dowager §GGawhar Shad§! has taken up residence in our city. While many see this as strenghtening our claim to the throne, those who know of her know that this may be just another scheme in her book. She has made multiple demands to our ruler, and while they seem reasonable, the outcome of agreeing to such actions is yet to be seen."
- UaCH.52.a: "So, this is how she treats us!"
 
  # Scrapped event
  
