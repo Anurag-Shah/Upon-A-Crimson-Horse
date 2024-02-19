@@ -1371,6 +1371,9 @@ uach_reclaim_timurs_legacy_effect = {
         # Add interwar lull flag (enables govt mechanics)
         set_country_flag = uach_interwar_lull
 
+        # Save old tag as event target
+        save_global_event_target_as = uach_old_timurid_tag
+
         # Change Tag to TIM
         change_tag = TIM
 
@@ -1416,6 +1419,11 @@ uach_reclaim_timurs_legacy_effect = {
         set_country_flag = uach_interwar_lull
         regenerate_government_mechanics = yes
         uach_add_timurid_faction_if_not_has = yes
+
+        # Informational event
+        country_event = {
+            id = UaCH.99
+        }
     }
 }
 
@@ -1427,6 +1435,9 @@ uach_end_timurs_legacy_effect = {
         duration = -1
     }
     hidden_effect = {
+        # clr global flag
+		clr_global_flag = uach_succession_crisis_started
+
         # Remove all timurid cores from the map
         # Do herat too
         every_province = {
@@ -1853,6 +1864,7 @@ uach_elevate_to_prince_effect = {
     }
 }
 
+# decreases persianization towards 0
 uach_add_or_subtract_persianization = { # value
     if = {
         limit = {
@@ -1889,6 +1901,48 @@ uach_add_or_subtract_persianization = { # value
             mechanic_type = uach_reform_state_mechanic
             power_type = uach_persianization
             value = 0
+        }
+    }
+}
+
+# increases persianization away from 0
+uach_outward_persianization = { # value
+    if = {
+        limit = {
+            # Above positive value
+            has_government_power = {
+                mechanic_type = uach_reform_state_mechanic
+                power_type = uach_persianization
+                value = $value$
+            }
+        }
+        add_government_power = {
+            mechanic_type = uach_reform_state_mechanic
+            power_type = uach_persianization
+            value = $value$
+        }
+    } else_if = {
+        limit = {
+            # below negative value
+            NOT = {
+                has_government_power = {
+                    mechanic_type = uach_reform_state_mechanic
+                    power_type = uach_persianization
+                    value = -$value$
+                }
+            }
+        }
+        add_government_power = {
+            mechanic_type = uach_reform_state_mechanic
+            power_type = uach_persianization
+            value = -$value$
+        }
+    } else = {
+        # Increase it if exactly at 0
+        add_government_power = {
+            mechanic_type = uach_reform_state_mechanic
+            power_type = uach_persianization
+            value = $value$
         }
     }
 }

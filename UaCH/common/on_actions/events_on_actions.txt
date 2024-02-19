@@ -27,4 +27,16 @@ on_monarch_death = {
 	events = {
 		UaCH.13
 	}
+
+	if = {
+		limit = {
+			has_disaster_progress = {
+				disaster = repeatable_timurid_succession_crisis
+				value = 0.1
+			}
+		}
+		country_event = {
+			id = UaCH.97
+		}
+	}
 }

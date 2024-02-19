@@ -6,6 +6,13 @@ spriteTypes = {
 		noOfFrames = 3
 		loadType = "INGAME"
 	}
+
+	spriteType = {
+		name = "GFX_disaster_repeatable_timurid_succession_crisis"
+		texturefile = "gfx//interface//disasters//timurid_succession_crisis.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
 	
 	# Art for unique subject
 	spriteType = {
@@ -85,5 +92,15 @@ spriteTypes = {
 	spriteType = {
 	  	name = "GFX_reclaim_timurs_legacy"
 	 	texturefile = "gfx/interface/ui/reclaim_timurs_legacy.dds"
+	}
+
+	# Gov Reform icons
+	spriteType = {
+	  	name = "government_reform_uach_governor"
+	 	texturefile = "gfx//interface//governor_gov_reform_icon.dds"
+	}
+	spriteType = {
+	  	name = "government_reform_uach_prince"
+	 	texturefile = "gfx//interface//prince_gov_reform_icon.dds"
 	}
 }

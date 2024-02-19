@@ -1,0 +1,102 @@
+repeatable_timurid_succession_crisis = {
+	potential = {
+		normal_or_historical_nations = yes
+		tag = TIM
+		NOT = { has_country_flag = timurids_reformed_government }
+		has_country_flag = uach_interwar_lull
+	}
+	
+	can_start = {
+		always = yes
+	}
+	
+	can_stop = {
+		custom_trigger_tooltip = {
+			tooltip = uach_reform_state_do_it_idiot
+			always = no
+		}
+	}
+	
+	progress = {
+		modifier = {
+			factor = 1
+			always = yes
+		}
+		
+		modifier = {
+			factor = -0.1
+			all_subject_country = {
+				NOT = {
+					liberty_desire = 30
+				}
+			}
+		}
+
+		modifier = {
+			factor = -0.1
+			all_subject_country = {
+				NOT = {
+					average_autonomy = 20
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.1
+			any_subject_country = {
+				liberty_desire = 50
+			}
+		}
+
+		modifier = {
+			factor = 0.1
+			any_subject_country = {
+				liberty_desire = 75
+			}
+		}
+
+		modifier = {
+			factor = 0.1
+			calc_true_if = {
+				all_subject_country = {
+					liberty_desire = 50
+				}
+				amount = 3
+			}
+		}
+
+		modifier = {
+			factor = 0.2
+			NOT = { has_heir = yes }
+		}
+		
+	}
+	
+	can_end = {
+		custom_trigger_tooltip = {
+			tooltip = uach_reform_state_do_it_idiot
+			has_country_flag = timurids_reformed_government
+		}
+	}
+	
+	modifier = {
+		global_unrest = 5
+	}
+	
+	on_start = UaCH.96
+	on_end = UaCH.1 # Entirely unused.
+	
+	on_monthly = {
+		events = {
+			
+		}
+		random_events = {
+			800 = 0
+			100 = UaCH.39	#policies of the local emir
+			100	= UaCH.40   #defections among our people
+			100 = UaCH.38	#Low supplies
+			100	= UaCH.27   #The rogue prince
+			100 = Uach.29	#raids
+		}
+	}
+}
