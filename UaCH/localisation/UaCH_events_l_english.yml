@@ -528,3 +528,20 @@
  UaCH.100.t: "Victory in War"
  UaCH.100.d: "Each victory on the battlefield brings us closer to Timur's Vision for the future. War is our natural state, and peace is a curse; we would do well to remember this fact."
  UaCH.100.a: "Who will we fight next?"
+ 
+ UaCH.101.t"Poisoned wells"
+ UaCH.101.d"Dire news, sire! The enemy has infilitrated our province, and has managed to poison the main well of the city, as well as our other water supplies! Without a source of fresh water, this will lead to a catastrophe!"
+ UaCH.101.a"Send out the men to dig new wells."
+ UaCH.101.b"Let the local emir handle it."
+ 
+ UaCH.103.t"Religious clash"
+ UaCH.103.d"There has been a clash between the Sunni and Shia followers in of our provinces. While the news are conflicting, it seems the tension between the two has not lessened even a bit."
+ UaCH.103.a"Send in the guard"
+ UaCH.103.b"Make concessions"
+ UaCH.103.c"Only one faith is true!"
+ 
+ UaCH.104.t""
+ UaCH.104.t""
+ UaCH.104.t""
+ UaCH.104.t""
+ 
