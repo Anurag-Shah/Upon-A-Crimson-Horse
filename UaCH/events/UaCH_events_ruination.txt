@@ -27,7 +27,7 @@ country_event = {
 			every_country = {
 				limit = {
 					AND  = {
-						has_government_reform = uach_prince
+						is_prince = yes
 						is_timurid_emperor = no
 					}
 				}
@@ -38,7 +38,7 @@ country_event = {
 			every_country = {
 				limit = {
 					AND  = {
-						has_government_reform = uach_prince
+						is_prince = yes
 						is_timurid_emperor = yes
 					}
 				
@@ -266,7 +266,7 @@ country_event = {
 			every_country = {
 				limit = {
 					AND  = {
-						has_government_reform = uach_prince
+						is_prince = yes
 						is_timurid_emperor = no
 					}
 				}
@@ -280,7 +280,7 @@ country_event = {
 			every_country = {
 				limit = {
 					AND  = {
-						has_government_reform = uach_prince
+						is_prince = yes
 						is_timurid_emperor = yes
 					}
 				

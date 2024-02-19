@@ -5,9 +5,7 @@ uach_mechanics_prince = {
 	alert_icon_index = 18
 
 	available = {
-		# All interactions require the civil war to have started
-		#has_global_flag = uach_succession_crisis_started
-		always = yes
+		NOT = { has_country_flag = uach_interwar_lull }
 	}
 	
 	interactions = {
@@ -441,6 +439,289 @@ uach_mechanics_governor = {
 					factor = 4
 					manpower_percentage = 0.01
 				}
+			}
+		}
+	}
+}
+
+uach_reform_state_mechanic = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 18
+	available = {
+		has_country_flag = uach_interwar_lull
+		tag = TIM
+	}
+
+	powers = {
+		uach_persianization = {
+			min = -100
+			max = 100
+			default = 0
+			show_before_interactions = yes
+
+			scaled_modifier = {
+				start_value = 0
+				end_value = 100
+				extend_beyond_value = no
+				trigger = {}
+				modifier = {
+					reduced_liberty_desire = -30
+					global_tax_modifier = 0.2
+					global_unrest = -3
+				}
+			}
+
+			reverse_scaled_modifier = {
+				start_value = -100
+				end_value = 0
+				extend_beyond_value = no
+				trigger = {}
+				modifier = {
+					reduced_liberty_desire = -40
+					morale = 10
+				}
+			}
+
+			range_modifier = {
+				start_value = -100
+				end_value = -66
+				extend_beyond_value = no
+				trigger = {}
+				modifier = {
+					raze_province = yes
+					raze_power_gain = 0.1
+				}
+			}
+		}
+	}
+
+	interactions = {
+		uach_fully_mongolize = {
+			icon = UACH_GFX_strengthen_claim_button
+
+			trigger = {
+				NOT = {
+					has_government_power = {
+						mechanic_type = uach_reform_state_mechanic
+						power_type = uach_persianization
+						value = -99.9
+					}
+				}
+			}
+			effect = {
+				custom_tooltip = UACH_P2FM_R_TT
+				hidden_effect = {
+					every_subject_country = {
+						NOT = { liberty_desire = 50 }
+						PREV = {
+							inherit = PREV
+						}
+					}
+					# Vassalize all disloyal subjects
+					every_subject_country = {
+						limit = {
+							OR = {
+								is_prince = yes
+								is_governor = yes
+							}
+						}
+						grant_independence = yes
+						PREV = {
+							vassalize = PREV
+						}
+					}
+				}
+				remove_government_reform = uach_prince
+				change_government = tribal
+				add_government_reform = uach_heirs_of_timur_reform
+				regenerate_government_mechanics = yes
+				add_country_modifier = {
+					name = "centralization_modifier"
+					duration = 7300
+				}
+				hidden_effect = {
+					country_event = { id = ideagroups.1 }
+					clr_country_flag = uach_interwar_lull
+				}
+			}
+			ai_chance = { # AI will do this if it can
+				factor = 100
+			}
+		}
+
+		# Request foreign support
+		uach_scrap_a_reform = {
+			icon = UACH_GFX_foreign_support_button
+			cooldown_years = 2
+			cooldown_token = iqta_mechanic
+			cooldown_desc = UACH_SCRAP_REFORM_COOLDOWN_TT
+			trigger = {
+				OR = {
+					has_government_power = {
+						mechanic_type = uach_reform_state_mechanic
+						power_type = uach_persianization
+						value = 10
+					}
+					NOT = {
+						has_government_power = {
+							mechanic_type = uach_reform_state_mechanic
+							power_type = uach_persianization
+							value = -10
+						}
+					}
+				}
+			}
+			effect = {
+				uach_add_or_subtract_persianization = { value = 10 }
+				every_subject_country = {
+					add_liberty_desire = -10
+				}
+			}
+			ai_chance = {
+				# The AI will never do this if they have no loans / a bank of manpower (10% max)
+				# Then if they have both loans and manpower, the factor will increase
+				# They are unlikely to do it without a defecit
+				factor = 10
+				modifier = {
+					factor = 0
+					NOT = {
+						any_subject_country = {
+							liberty_desire = 50
+						}
+					}
+				}
+				modifier = {
+					factor = 1.2
+					any_subject_country = {
+						liberty_desire = 75
+					}
+				}
+				modifier = {
+					factor = 1.3
+					any_subject_country = {
+						liberty_desire = 100
+					}
+				}
+				modifier = {
+					factor = 2
+					calc_true_if = {
+						all_subject_country = {
+							liberty_desire = 50
+						}
+						amount = 3
+					}
+				}
+				modifier = {
+					factor = 20
+					calc_true_if = {
+						all_subject_country = {
+							liberty_desire = 50
+						}
+						amount = 5
+					}
+				}
+			}
+		}
+
+		uach_fully_persianize = {
+			icon = UACH_GFX_tax_button
+
+			trigger = {
+				has_government_power = {
+					mechanic_type = uach_reform_state_mechanic
+					power_type = uach_persianization
+					value = 100
+				}
+			}
+			effect = {
+				# Base game
+				change_tag = PER
+				on_change_tag_effect = yes
+				swap_non_generic_missions = yes
+				remove_non_electors_emperors_from_empire_effect = yes
+				if = {
+					limit = {
+						NOT = { government = monarchy }
+						is_revolutionary = no
+					}
+					change_government = monarchy
+				}
+				set_government_rank = 3
+				add_country_modifier = {
+					name = uach_persianized
+					duration = 3650
+				}
+				add_prestige = 25
+				persia_region = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = PER
+				}
+				add_country_modifier = {
+					name = "centralization_modifier"
+					duration = 7300
+				}
+				custom_tooltip = UACH_PERSIANIZED_EFFECT_RESULT_TT
+				hidden_effect = {
+					clr_country_flag = uach_interwar_lull
+					# Integrate all loyal subjects
+					every_subject_country = {
+						NOT = { liberty_desire = 50 }
+						PREV = {
+							inherit = PREV
+						}
+					}
+					# Vassalize all disloyal subjects
+					every_subject_country = {
+						limit = {
+							OR = {
+								is_prince = yes
+								is_governor = yes
+							}
+						}
+						grant_independence = yes
+						PREV = {
+							vassalize = PREV
+						}
+					}
+					if = {
+						limit = { is_revolutionary = no NOT = { religion_group = zoroastrian_group } }
+						add_government_reform = persian_government_reform
+					}
+					if = {
+						limit = { is_revolutionary = no religion_group = zoroastrian_group }
+						add_government_reform = zoroastrian_persian_government_reform
+					}
+					if = {
+						limit = {
+							has_reform = states_general_reform
+						}
+						remove_government_reform = states_general_reform
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							NOT = { has_dlc = "King of Kings" }
+							NOT = { primary_culture = mazandarani }
+						}
+						NOT = { primary_culture = persian }
+					}
+					change_primary_culture = persian
+				}
+				set_country_flag = formed_persia_flag
+				country_event = { id = ideagroups.1 }
+				if = {
+					limit = { has_dlc = "King of Kings" }
+					unlock_estate = {
+						estate = estate_qizilbash
+					}
+				}
+			}
+			ai_chance = { # AI will do this if it can
+				factor = 100
 			}
 		}
 	}

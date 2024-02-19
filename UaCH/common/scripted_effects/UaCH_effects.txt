@@ -1367,6 +1367,9 @@ uach_remove_interloper_from_war = {
 uach_reclaim_timurs_legacy_effect = {
     custom_tooltip = UACH_RTL_EFFECT_TT
     hidden_effect = {
+        # Add interwar lull flag (enables govt mechanics)
+        set_country_flag = uach_interwar_lull
+
         # Change Tag to TIM
         change_tag = TIM
 
@@ -1406,7 +1409,12 @@ uach_reclaim_timurs_legacy_effect = {
         }
 
 		clr_global_flag = uach_succession_crisis_started
-        set_global_flag = uach_reformation_time # This will enable govt reformation mechanics
+
+        # Actually enable the govt reform mechanics
+        add_government_reform = uach_interwar_timurid_state # stupid workaround for stupid paradox being annoying
+        set_country_flag = uach_interwar_lull
+        regenerate_government_mechanics = yes
+        uach_add_timurid_faction_if_not_has = yes
     }
 }
 
@@ -1841,5 +1849,45 @@ uach_elevate_to_prince_effect = {
         }
         make_tag_prince = yes
         shuffle_governors = { scope = ROOT }
+    }
+}
+
+uach_add_or_subtract_persianization = { # value
+    if = {
+        limit = {
+            # Above positive value
+            has_government_power = {
+                mechanic_type = uach_reform_state_mechanic
+                power_type = uach_persianization
+                value = $value$
+            }
+        }
+        add_government_power = {
+            mechanic_type = uach_reform_state_mechanic
+            power_type = uach_persianization
+            value = -$value$
+        }
+    } else_if = {
+        limit = {
+            # below negative value
+            NOT = {
+                has_government_power = {
+                    mechanic_type = uach_reform_state_mechanic
+                    power_type = uach_persianization
+                    value = -$value$
+                }
+            }
+        }
+        add_government_power = {
+            mechanic_type = uach_reform_state_mechanic
+            power_type = uach_persianization
+            value = $value$
+        }
+    } else = {
+        set_government_power = {
+            mechanic_type = uach_reform_state_mechanic
+            power_type = uach_persianization
+            value = 0
+        }
     }
 }

@@ -10,7 +10,10 @@ is_governor = {
 is_prince = {
 	custom_trigger_tooltip = {
 		tooltip = IS_PRINCE_TR_TT
-		has_reform = uach_prince
+		#OR = {
+			has_reform = uach_prince
+		#	has_reform = uach_prince_2
+		#}
 	}
 }
 
