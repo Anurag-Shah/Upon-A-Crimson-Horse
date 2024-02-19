@@ -67,3 +67,8 @@ uach_gaining_a_foothold = {
 successful_interloper_intervention = {
 	prestige = 1
 }
+
+uach_persianized = {
+	liberty_desire = -25
+	diplomatic_upkeep = 2
+}

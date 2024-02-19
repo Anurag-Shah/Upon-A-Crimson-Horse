@@ -4993,6 +4993,24 @@ country_event = {
 	}
 }
 
+# Test event for reloadgovmechanics
+country_event = {
+	id = UaCH.1001
+	title = UaCH.1001.t 
+	desc = UaCH.1001.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "UaCH.1001.a"
+		TIM = {
+			set_country_flag = uach_interwar_lull
+			regenerate_government_mechanics = yes 
+		}
+	}
+}
+
 # Meant to simulate how most disasters have a chance of nothing happening monthly.
 country_event = {
 	id = UaCH.401
