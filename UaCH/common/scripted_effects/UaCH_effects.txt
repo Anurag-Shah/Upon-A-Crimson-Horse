@@ -1222,6 +1222,46 @@ uach_add_interloper_to_war_fully = {
     }
 }
 
+shuffle_interlopers = {
+    shuffle_rint_interloper = { i = 0 }
+    shuffle_rint_interloper = { i = 1 }
+    shuffle_rint_interloper = { i = 2 }
+    shuffle_rint_interloper = { i = 3 }
+    shuffle_rint_interloper = { i = 4 }
+    shuffle_rint_interloper = { i = 5 }
+    shuffle_rint_interloper = { i = 6 }
+    shuffle_rint_interloper = { i = 7 }
+}
+
+shuffle_rint_interloper = { #i
+    if = {
+        limit = { NOT = { has_saved_global_event_target = uach_int_$i$_0 } }
+        if = {
+            limit = { has_saved_global_event_target = uach_int_$i$_1 }
+            event_target:uach_int_$i$_1 = {
+                save_global_event_target_as = uach_int_$i$_0
+            }
+            clear_global_event_target = uach_int_$i$_1
+        }
+        if = {
+            limit = { has_saved_global_event_target = uach_int_$i$_2 }
+            event_target:uach_int_$i$_2 = {
+                save_global_event_target_as = uach_int_$i$_1
+            }
+            clear_global_event_target = uach_int_$i$_2
+        }
+    } else_if = {
+        limit = { NOT = { has_saved_global_event_target = uach_int_$i$_1 } }
+        if = {
+            limit = { has_saved_global_event_target = uach_int_$i$_2 }
+            event_target:uach_int_$i$_2 = {
+                save_global_event_target_as = uach_int_$i$_1
+            }
+            clear_global_event_target = uach_int_$i$_2
+        }
+    }
+}
+
 # Creates an interloper
 # This effect should be run in a country scope, and expects a numeric input for the thematic region parameter $region_int$
 # Thematic regions:
@@ -1250,6 +1290,18 @@ uach_create_interloper = { # region_int
     set_variable = {
         which = uach_interloper_region
         value = $region_int$
+    }
+
+    # Save event target for UI
+    if = {
+        limit = { NOT = { has_saved_global_event_target = uach_int_$region_int$_0 } }
+        save_global_event_target_as = uach_int_$region_int$_0
+    } else_if = {
+        limit = { NOT = { has_saved_global_event_target = uach_int_$region_int$_1 } }
+        save_global_event_target_as = uach_int_$region_int$_1
+    } else_if = {
+        limit = { NOT = { has_saved_global_event_target = uach_int_$region_int$_2 } }
+        save_global_event_target_as = uach_int_$region_int$_2
     }
 
     # Add interloper to the war
@@ -1344,6 +1396,8 @@ uach_create_interloper = { # region_int
 # This effect should be run in a tag scope
 uach_remove_interloper_from_war = {
     clr_country_flag = uach_interloper
+    remove_int_et_based_on_var = yes
+    shuffle_interlopers = yes
 
     # Delete all second crisis wars
     # Add a 5 year truce with all participants
@@ -1360,6 +1414,93 @@ uach_remove_interloper_from_war = {
 
         white_peace = PREV
         add_truce_with = PREV
+    }
+}
+
+remove_int_et_based_on_var = {
+    if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 7
+            }
+        }
+        remove_int_et_at_region_id = { i = 7 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 6
+            }
+        }
+        remove_int_et_at_region_id = { i = 6 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 5
+            }
+        }
+        remove_int_et_at_region_id = { i = 5 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 4
+            }
+        }
+        remove_int_et_at_region_id = { i = 4 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 3
+            }
+        }
+        remove_int_et_at_region_id = { i = 3 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 2
+            }
+        }
+        remove_int_et_at_region_id = { i = 2 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 1
+            }
+        }
+        remove_int_et_at_region_id = { i = 1 }
+    } else = {
+        remove_int_et_at_region_id = { i = 0 }
+    }
+}
+
+remove_int_et_at_region_id = { #i
+    if = {
+        limit  = {
+            event_target:uach_int_$i$_0 = {
+                tag = PREV
+            }
+        }
+        clear_global_event_target = uach_int_$i$_0
+    } else_if = {
+        limit  = {
+            event_target:uach_int_$i$_1 = {
+                tag = PREV
+            }
+        }
+        clear_global_event_target = uach_int_$i$_1
+    } else_if = {
+        limit  = {
+            event_target:uach_int_$i$_2 = {
+                tag = PREV
+            }
+        }
+        clear_global_event_target = uach_int_$i$_2
     }
 }
 
@@ -1502,6 +1643,8 @@ uach_end_timurs_legacy_effect = {
                 is_interloper = yes
             }
             clr_country_flag = uach_interloper
+            remove_int_et_based_on_var = yes
+            shuffle_interlopers = yes
         }
 
         # Cleanup big money flag

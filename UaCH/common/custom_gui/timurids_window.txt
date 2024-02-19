@@ -418,6 +418,228 @@ custom_shield = {
     open_country = yes
 }
 
+# Interloper Shields
+custom_shield = {
+	name = interloper_r0_shield_0
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_0_0
+	}
+    global_event_target = uach_int_0_0
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r1_shield_0
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_1_0
+	}
+    global_event_target = uach_int_1_0
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r2_shield_0
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_2_0
+	}
+    global_event_target = uach_int_2_0
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r3_shield_0
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_3_0
+	}
+    global_event_target = uach_int_3_0
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r4_shield_0
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_4_0
+	}
+    global_event_target = uach_int_4_0
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r5_shield_0
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_5_0
+	}
+    global_event_target = uach_int_5_0
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r6_shield_0
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_6_0
+	}
+    global_event_target = uach_int_6_0
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r7_shield_0
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_7_0
+	}
+    global_event_target = uach_int_7_0
+    open_country = yes
+}
+
+# Interloper Shields
+custom_shield = {
+	name = interloper_r0_shield_1
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_0_1
+	}
+    global_event_target = uach_int_0_1
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r1_shield_1
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_1_1
+	}
+    global_event_target = uach_int_1_1
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r2_shield_1
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_2_1
+	}
+    global_event_target = uach_int_2_1
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r3_shield_1
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_3_1
+	}
+    global_event_target = uach_int_3_1
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r4_shield_1
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_4_1
+	}
+    global_event_target = uach_int_4_1
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r5_shield_1
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_5_1
+	}
+    global_event_target = uach_int_5_1
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r6_shield_1
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_6_1
+	}
+    global_event_target = uach_int_6_1
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r7_shield_1
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_7_1
+	}
+    global_event_target = uach_int_7_1
+    open_country = yes
+}
+
+# Interloper Shields
+custom_shield = {
+	name = interloper_r0_shield_2
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_0_2
+	}
+    global_event_target = uach_int_0_2
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r1_shield_2
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_1_2
+	}
+    global_event_target = uach_int_1_2
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r2_shield_2
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_2_2
+	}
+    global_event_target = uach_int_2_2
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r3_shield_2
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_3_2
+	}
+    global_event_target = uach_int_3_2
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r4_shield_2
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_4_2
+	}
+    global_event_target = uach_int_4_2
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r5_shield_2
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_5_2
+	}
+    global_event_target = uach_int_5_2
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r6_shield_2
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_6_2
+	}
+    global_event_target = uach_int_6_2
+    open_country = yes
+}
+custom_shield = {
+	name = interloper_r7_shield_2
+    potential = {
+		has_faction = timurid_faction
+		has_saved_global_event_target = uach_int_7_2
+	}
+    global_event_target = uach_int_7_2
+    open_country = yes
+}
+
 # Map pieces
 
 custom_icon = {

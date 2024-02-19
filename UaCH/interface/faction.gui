@@ -350,7 +350,7 @@ guiTypes = {
 			spriteType = "GFX_shield_small"
 			position = { x= 640 y = 490 }
 		}
-		
+
 		# Map pieces
 		
 		iconType = {
@@ -408,6 +408,173 @@ guiTypes = {
 			spriteType = "GFX_timurids_map_afghanistan"
 			position = { x= 362 y = 330 }
 		}
+
+		# Interloper Shields
+		# r0-r7 - region number
+		# the end _0 - _2 - the actual interloper shield slot for that region
+		# All shields are currently adjusted to the Top Left of their region
+		
+		
+		# AJAM
+		guiButtonType = {
+			name ="interloper_r0_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 55 y = 358 }
+		}
+		guiButtonType = {
+			name ="interloper_r0_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 85 y = 358 }
+		}
+		guiButtonType = {
+			name ="interloper_r0_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 115 y = 358 }
+		}
+
+		# FARS
+		guiButtonType = {
+			name ="interloper_r1_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 171 y = 485 }
+		}
+		guiButtonType = {
+			name ="interloper_r1_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 201 y = 485 }
+		}
+		guiButtonType = {
+			name ="interloper_r1_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 231 y = 485 }
+		}
+
+		# KHORASAN
+		guiButtonType = {
+			name ="interloper_r2_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 156 y = 347 }
+		}
+		guiButtonType = {
+			name ="interloper_r2_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 186 y = 347 }
+		}
+		guiButtonType = {
+			name ="interloper_r2_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 216 y = 347 }
+		}
+
+		# HERAT
+		guiButtonType = {
+			name ="interloper_r3_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 236 y = 407 }
+		}
+		guiButtonType = {
+			name ="interloper_r3_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 266 y = 407 }
+		}
+		guiButtonType = {
+			name ="interloper_r3_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 296 y = 407 }
+		}
+
+		# AFGHANISTAN
+		guiButtonType = {
+			name ="interloper_r4_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 392 y = 380 }
+		}
+		guiButtonType = {
+			name ="interloper_r4_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 422 y = 380 }
+		}
+		guiButtonType = {
+			name ="interloper_r4_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 452 y = 380 }
+		}
+
+		# MARW
+		guiButtonType = {
+			name ="interloper_r5_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 306 y = 290 }
+		}
+		guiButtonType = {
+			name ="interloper_r5_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 336 y = 290 }
+		}
+		guiButtonType = {
+			name ="interloper_r5_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 366 y = 290 }
+		}
+
+		# FERGANA VALLEY
+		guiButtonType = {
+			name ="interloper_r6_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 450 y = 255 }
+		}
+		guiButtonType = {
+			name ="interloper_r6_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 490 y = 255 }
+		}
+		guiButtonType = {
+			name ="interloper_r6_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 510 y = 255 }
+		}
+
+		# SAMARKAND
+		guiButtonType = {
+			name ="interloper_r7_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 297 y = 182 }
+		}
+		guiButtonType = {
+			name ="interloper_r7_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 327 y = 182 }
+		}
+		guiButtonType = {
+			name ="interloper_r7_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 357 y = 182 }
+		}
+
 		
 		# Buttons
 		
