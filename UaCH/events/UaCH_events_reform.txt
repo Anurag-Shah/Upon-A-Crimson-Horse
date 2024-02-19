@@ -1010,6 +1010,8 @@ country_event = {
 	}
 }
 
+
+#A Campaign against the Turkmen (trigger must border QQ/AQ)
 country_event = {
 	id = uach_reform.1009 
 	title = "Language of our Court"
@@ -1048,3 +1050,280 @@ country_event = {
 		add_dip_power = -50
 	}
 }
+
+country_event = {
+	id = uach_reform.1010 
+	title = "Lavish spending"
+	desc = uach_reform.1010.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis	
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "Go ahead"
+		add_treasury = -50
+		add_disaster_progress = {
+			value = 5
+			disaster = repeatable_timurid_succession_crisis
+		}
+		uach_add_or_subtract_persianization = { value = 10 }
+		
+		}
+	option = {	
+		name = "Spend it on the court"
+		add_treasury = -50
+		add_disaster_progress = {
+			value = -5
+			disaster = repeatable_timurid_succession_crisis
+		}
+		uach_add_or_subtract_persianization = { value = -5 }
+		
+		}
+}
+
+#Court of [RULER NAME]: something about his centralization (based on abu sa’id)
+country_event = {
+	id = uach_reform.1011
+	title = "Court of [ROOT.GetName]"
+	desc = uach_reform.1011.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis	
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "Force centralization"
+		add_treasury = -50
+		add_disaster_progress = {
+			value = 5
+			disaster = repeatable_timurid_succession_crisis
+		}
+		uach_add_or_subtract_persianization = { value = -10 }
+		
+		}
+		
+	option = {	
+		name = "Let us smell the flowers"
+		add_disaster_progress = {
+			value = -10
+			disaster = repeatable_timurid_succession_crisis
+		}
+		uach_add_or_subtract_persianization = { value = 5 }
+		
+		}
+}
+	
+
+#Investment in agriculture
+country_event = {
+	id = uach_reform.1012
+	title = "Investments in Agriculture"
+	desc = uach_reform.1012.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis	
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "Pay up"
+		random_owned_province = {
+			uach_add_random_development = { VALUE = 2 AMOUNT = 1 }
+		}
+		add_treasury = -50
+		add_disaster_progress = {
+			value = 5
+			disaster = repeatable_timurid_succession_crisis
+		}
+		uach_add_or_subtract_persianization = { value = -10 }
+		
+		}
+		
+	option = {	
+		name = "The peasants will do their job."
+		add_prestige = -10
+		random_owned_province = {
+			uach_add_random_development = { VALUE = 1 AMOUNT = 1 }
+		}
+		add_disaster_progress = {
+			value = -10
+			disaster = repeatable_timurid_succession_crisis
+		}
+		uach_add_or_subtract_persianization = { value = 5 }
+		
+		}
+}	
+
+
+#Executions and cruelty under [RULER NAME] (based on abu sa’id)
+country_event = {
+	id = uach_reform.1013
+	title = "Cruel ruler"
+	desc = uach_reform.1013.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis	
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "This is the price we pay for power"
+		
+		kill_advisor = random
+		add_stability = 1
+		add_disaster_progress = {
+			value = 5
+			disaster = repeatable_timurid_succession_crisis
+		}
+		
+		}
+		
+	option = {	
+		name = "Maybe its time to end this practice."
+		add_legitimacy = -10
+		add_stability = -1
+		add_disaster_progress = {
+			value = -5
+			disaster = repeatable_timurid_succession_crisis
+		}
+		
+		}
+}		
+
+#Siege of Sharquiiya
+#TODO - who the hell is Sharpeia?
+country_event = {
+	id = uach_reform.1015
+	title = "Local rebels"
+	desc = uach_reform.1015.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis	
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "Kill them all"
+		
+		random_owned_province = {
+			spawn_rebels = {
+					size = 2
+					type = noble_rebels
+				}
+		}
+		
+		add_disaster_progress = {
+			value = 10
+			disaster = repeatable_timurid_succession_crisis
+		}
+		
+		}
+		
+	option = {	
+		name = "Negotiate"
+		add_prestige = -25
+		add_stability = -1
+		add_disaster_progress = {
+			value = -5
+			disaster = repeatable_timurid_succession_crisis
+		}
+		
+		}
+}		
+
+#Clergy opposes ruler
+country_event = {
+	id = uach_reform.1014
+	title = "Clergy opposes reforms"
+	desc = uach_reform.1014.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis	
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "The wise men have spoken"
+		add_country_modifier = {
+			name = "uach_no_talking_back_to_clergy"
+			duration = 3650
+		}
+		uach_add_or_subtract_persianization = { value = -10 }
+		
+		}
+		
+	option = {	
+		name = "Babbling fools!"
+		add_legitimacy = -15
+		add_country_modifier = {
+			name = "uach_daring_today"
+			duration = 3650
+		}
+
+		uach_add_or_subtract_persianization = { value = 10 }
+		
+		}
+}	
+
+#Loyalty to the clan
+country_event = {
+	id = uach_reform.1014
+	title = "Loyalty to the clan"
+	desc = uach_reform.1014.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis	
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "Clan above state"
+		add_treasury = 250
+		uach_add_or_subtract_persianization = { value = -10 }
+		
+		}
+		
+	option = {	
+		name = "State above clan"
+		add_country_modifier = {
+			name = "uach_state_above_clan"
+			duration = 3650
+		}
+		uach_add_or_subtract_persianization = { value = 10 }
+		
+		}
+}		
+		
+
+	
