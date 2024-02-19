@@ -511,6 +511,7 @@ uach_reform_state_mechanic = {
 			effect = {
 				custom_tooltip = UACH_P2FM_R_TT
 				hidden_effect = {
+					set_country_flag = timurids_reformed_government
 					every_subject_country = {
 						NOT = { liberty_desire = 50 }
 						PREV = {
@@ -665,6 +666,7 @@ uach_reform_state_mechanic = {
 				}
 				custom_tooltip = UACH_PERSIANIZED_EFFECT_RESULT_TT
 				hidden_effect = {
+					set_country_flag = timurids_reformed_government
 					clr_country_flag = uach_interwar_lull
 					# Integrate all loyal subjects
 					every_subject_country = {

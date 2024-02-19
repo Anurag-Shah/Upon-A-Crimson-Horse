@@ -1,5 +1,5 @@
 uach_governor = {
-	icon = "shogunate"
+	icon = "uach_governor"
 	allow_normal_conversion = no
 	potential = {
 		is_governor = yes
@@ -25,7 +25,7 @@ uach_governor = {
 }
 
 uach_prince = {
-	icon = "shogunate"
+	icon = "uach_prince"
 	allow_normal_conversion = no
 	locked_government_type = yes
 	lock_level_when_selected = yes
@@ -64,7 +64,7 @@ uach_prince = {
 
 
 uach_interwar_timurid_state = {
-	icon = "shogunate"
+	icon = "uach_prince"
 	allow_normal_conversion = no
 	locked_government_type = yes
 	lock_level_when_selected = yes

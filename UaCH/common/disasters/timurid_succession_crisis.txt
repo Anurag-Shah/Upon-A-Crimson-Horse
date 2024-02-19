@@ -6,6 +6,7 @@ timurid_succession_crisis = {
 			was_tag = TIM
 		}
 		NOT = { has_country_flag = timurids_reformed_government }
+		NOT = { has_country_flag = uach_interwar_lull }
 	}
 	
 	can_start = {

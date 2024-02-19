@@ -1,0 +1,27 @@
+uach_reform_at_peace = {
+    potential = {
+        AND = {
+            tag = TIM
+            has_country_flag = uach_interwar_lull
+        }
+    }
+    trigger = {
+        NOT = { is_at_war = yes }
+    }
+
+    monthly_uach_persianization = 0.2
+}
+
+uach_reform_at_war = {
+    potential = {
+        AND = {
+            tag = TIM
+            has_country_flag = uach_interwar_lull
+        }
+    }
+    trigger = {
+        is_at_war = yes
+    }
+
+    monthly_uach_persianization = -0.2
+}

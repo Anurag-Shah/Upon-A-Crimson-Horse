@@ -26,6 +26,7 @@
  itrcdec_TT_7: "Controls all provinces in §GSamarkand§! that are a part of the Timurid Succession Crisis."
  itrcdec_e_TT: "We will choose the fate of our conquest."
  UACH_REPLACE_TIMURID_NATION_TT: "We will place a Timurid Prince on the throne, and elevate our status accordingly!"
+ uach_reform_state_do_it_idiot: "Can be stopped by successfully reforming the state through the Persianization / Mongolization government mechanics."
 
  # modifiers
  uach_slain_the_crimson_horse: "Slain the Crimson Horse"
@@ -49,3 +50,11 @@
  interloper_tr_conquest_5_desc: "We have embroiled ourselves in the Timurid Succession Crisis, in order to capture land for ourselves. It is imperative that we focus on this conquest, to ensure no Timurid Prince can oppose our ambitions."
  interloper_tr_conquest_6_desc: "We have embroiled ourselves in the Timurid Succession Crisis, in order to capture land for ourselves. It is imperative that we focus on this conquest, to ensure no Timurid Prince can oppose our ambitions."
  interloper_tr_conquest_7_desc: "We have embroiled ourselves in the Timurid Succession Crisis, in order to capture land for ourselves. It is imperative that we focus on this conquest, to ensure no Timurid Prince can oppose our ambitions."
+
+ # disasters
+ repeatable_timurid_succession_crisis: "Third Timurid Succession Crisis"
+ desc_repeatable_timurid_succession_crisis: "The Timurid State may have stabilized temporarily, but this is certainly not going to last. It is imperative that we reform our state and effectively centralize it under the authority of our ruling dynasty, otherwise another succession crisis is sure to follow."
+
+ #TMs
+ uach_reform_at_peace: "Timurids at Peace"
+ uach_reform_at_war: "Timurids at War"
