@@ -1,0 +1,552 @@
+namespace = uach_reform
+
+
+# Disagreeing Advisor
+country_event = {
+	id = uach_reform.1
+	title = "EVTNAME878"
+	desc = "EVTDESC878"
+	picture = ADVISOR_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_advisor = yes
+		has_regency = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				1 = {
+					trigger = {
+						employed_advisor = {
+							category = ADM
+						}
+					}
+					set_country_flag = advisor_events_adm
+				}
+				1 = {
+					trigger = {
+						employed_advisor = {
+							category = DIP
+						}
+					}
+					set_country_flag = advisor_events_dip
+				}
+				1 = {
+					trigger = {
+						employed_advisor = {
+							category = MIL
+						}
+					}
+					set_country_flag = advisor_events_mil
+				}
+			}
+		}
+	}
+	after = {
+		hidden_effect = {
+			trigger_switch = {
+				on_trigger = has_country_flag
+				advisor_events_adm = { clr_country_flag = advisor_events_adm }
+				advisor_events_dip = { clr_country_flag = advisor_events_dip }
+				advisor_events_mil = { clr_country_flag = advisor_events_mil }
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTA878"
+		uach_outward_persianization = { value = 5 }
+		add_prestige = -10
+		trigger_switch = {
+			on_trigger = has_country_flag
+			advisor_events_adm = { add_adm_power = 25 }
+			advisor_events_dip = { add_dip_power = 25 }
+			advisor_events_mil = { add_mil_power = 25 }
+		}
+	}
+	option = {
+		name = "EVTOPTB878"
+		uach_add_or_subtract_persianization = { value = 5 }
+		reduce_meritocracy_effect = yes
+		trigger_switch = {
+			on_trigger = has_country_flag
+			advisor_events_adm = { kill_advisor_by_category_effect = { ADM = yes } }
+			advisor_events_dip = { kill_advisor_by_category_effect = { DIP = yes } }
+			advisor_events_mil = { kill_advisor_by_category_effect = { MIL = yes } }
+		}
+	}
+}
+
+
+country_event = {
+	id = uach_reform.2
+	title = army_professionalism_events.13.t
+	desc = army_professionalism_events.13.d
+	picture = DISCIPLINED_SOLDIERS_eventPicture
+
+	trigger = {
+		has_dlc = "Cradle of Civilization"
+		army_professionalism = 0.5
+		NOT = { has_country_modifier = integration_of_local_militias }
+		NOT = { army_professionalism = 1 }
+	}
+	
+	is_triggered_only = yes
+	
+
+	option = {
+		name = army_professionalism_events.13.a #
+		ai_chance = {
+			factor = 75
+		}
+		add_army_professionalism = -0.05
+		add_disaster_progress = {
+			disaster = repeatable_timurid_succession_crisis
+			value = -3
+		}
+	}
+	option = {
+		name = army_professionalism_events.13.b #
+		ai_chance = {
+			factor = 25
+		}
+		add_army_professionalism = 0.025
+		add_country_modifier = {
+			name = "integration_of_local_militias"
+			duration = 3650
+		}
+		add_yearly_manpower = -1
+		add_government_power = {
+            mechanic_type = uach_reform_state_mechanic
+            power_type = uach_persianization
+            value = 5
+        }
+	}
+}
+
+# Corrupt Advisor
+country_event = {
+	id = uach_reform.3
+	title = "corruption_event.7.t"
+	desc = "corruption_event.7.d"
+	picture = CORRUPTION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_advisor = yes
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				1 = {
+					trigger = {
+						employed_advisor = {
+							category = ADM
+						}
+					}
+					set_country_flag = advisor_events_adm
+				}
+				1 = {
+					trigger = {
+						employed_advisor = {
+							category = DIP
+						}
+					}
+					set_country_flag = advisor_events_dip
+				}
+				1 = {
+					trigger = {
+						employed_advisor = {
+							category = MIL
+						}
+					}
+					set_country_flag = advisor_events_mil
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "corruption_event.7.a"
+		reduce_meritocracy_effect = yes
+		trigger_switch = {
+			on_trigger = has_country_flag
+			advisor_events_adm = { kill_advisor_by_category_effect = { ADM = yes } }
+			advisor_events_dip = { kill_advisor_by_category_effect = { DIP = yes } }
+			advisor_events_mil = { kill_advisor_by_category_effect = { MIL = yes } }
+		}
+		add_prestige = -10
+		uach_outward_persianization = { value = 5 }
+		add_disaster_progress = {
+			disaster = repeatable_timurid_succession_crisis
+			value = 2
+		}
+	}
+
+	option = {
+		name = "corruption_event.7.b"
+		reduce_meritocracy_effect = yes
+		trigger_switch = {
+			on_trigger = has_country_flag
+			advisor_events_adm = {
+				remove_advisor_by_category = ADM
+				add_adm_power = -50
+			}
+			advisor_events_dip = {
+				remove_advisor_by_category = DIP
+				add_dip_power = -50
+			}
+			advisor_events_mil = {
+				remove_advisor_by_category = MIL
+				add_mil_power = -50
+			}
+		}
+		uach_add_or_subtract_persianization = { value = 5 }
+	}
+
+	option = {
+		name = "corruption_event.7.c"
+		reduce_meritocracy_effect = yes
+		trigger_switch = {
+			on_trigger = has_country_flag
+			advisor_events_adm = {
+				add_adm_power = -100
+			}
+			advisor_events_dip = {
+				add_dip_power = -100
+			}
+			advisor_events_mil = {
+				add_mil_power = -100
+			}
+		}
+
+		add_disaster_progress = {
+			disaster = repeatable_timurid_succession_crisis
+			value = -5
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			trigger_switch = {
+				on_trigger = has_country_flag
+				advisor_events_adm = { clr_country_flag = advisor_events_adm }
+				advisor_events_dip = { clr_country_flag = advisor_events_dip }
+				advisor_events_mil = { clr_country_flag = advisor_events_mil }
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = uach_reform.4
+	title = "EVTNAME6014"
+	desc = "EVTDESC6014"
+	picture = FEAST_eventPicture
+
+	trigger = {
+		is_month = 8
+	}
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA6014"		# Put into the treasury
+		ai_chance = {
+			factor = 55
+			modifier = {
+				factor = 0.5
+				NOT = { num_of_cities = 10 }
+			}
+			modifier = {
+				factor = 1.5
+				num_of_cities = 20
+			}
+		}
+		add_years_of_income = 0.50
+
+		add_disaster_progress = {
+			disaster = repeatable_timurid_succession_crisis
+			value = -5
+		}
+	}
+	option = {
+		name = "EVTOPTB6014"		# Invest the money
+		add_adm_power = 50
+		ai_chance = {
+			factor = 45
+		}
+
+		add_government_power = {
+            mechanic_type = uach_reform_state_mechanic
+            power_type = uach_persianization
+            value = 10
+        }
+	}
+}
+
+# Social Dissent and Popular Sufism
+country_event = {
+	id = uach_reform.5
+	title = muslim_piety.13.t
+	desc = muslim_piety.13.d
+	picture = REFORM_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		uses_piety = yes
+		piety = 0.75
+		any_owned_province = {
+			is_state = yes
+			is_capital = no
+			religion_group = muslim
+			NOT = { has_province_modifier = social_unrest_mysticism }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					is_capital = no
+					religion_group = muslim
+					NOT = { has_province_modifier = social_unrest_mysticism }
+				}
+				save_event_target_as = popular_sufism_province
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					is_capital = no
+					religion_group = muslim
+					development = 10
+					NOT = { has_province_modifier = social_unrest_mysticism }
+				}
+				save_event_target_as = popular_sufism_province
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					is_capital = no
+					religion_group = muslim
+					development = 15
+					NOT = { has_province_modifier = social_unrest_mysticism }
+				}
+				save_event_target_as = popular_sufism_province
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					is_capital = no
+					religion_group = muslim
+					development = 20
+					NOT = { has_province_modifier = social_unrest_mysticism }
+				}
+				save_event_target_as = popular_sufism_province
+			}
+		}
+	}
+	
+	option = {
+		name = muslim_piety.13.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				has_global_flag = neo_sufism
+			}
+			modifier = {
+				factor = 1.5
+				culture_group = turko_semitic
+				NOT = { primary_culture = turkish }
+			}
+			modifier = {
+				factor = 1.5
+				num_of_cities = 35
+			}
+			modifier = {
+				factor = 1.5
+				num_of_cities = 50
+			}
+			modifier = {
+				factor = 2
+				religious_school = {
+					group = muslim
+					school = hanbali_school
+				}
+			}
+			modifier = {
+				factor = 1.25
+				is_year = 1650
+			}
+		}
+		add_piety = 0.1
+		event_target:popular_sufism_province = {
+			area = {
+				limit = {
+					owned_by = ROOT
+					is_capital = no
+				}
+				add_province_modifier = {
+					name = "social_unrest_mysticism"
+					duration = 3650
+				}
+			}
+		}
+		uach_add_or_subtract_persianization = { value = 5 }
+	}
+	option = {
+		name = muslim_piety.13.b
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0.75
+				is_year = 1650
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { is_year = 1650 }
+				capital_scope = {
+					OR = {
+						superregion = india_superregion
+						superregion = persia_superregion
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { is_year = 1650 }
+				primary_culture = turkish
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { dominant_religion = ROOT }
+			}
+		}
+		add_piety = -0.35
+		uach_outward_persianization = { value = 5 }
+	}
+}
+
+# Improve the Capital
+country_event = {
+	id = uach_reform.6
+	title = "EVTNAME729"
+	desc = "EVTDESC729"
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA729"
+		ai_chance = {
+			factor = 50
+		}
+		capital_scope = { add_base_tax = 1 }
+		add_yearly_manpower = -0.5
+	}
+	option = {
+		name = "EVTOPTB729"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				NOT = { years_of_income = 0.2 }
+			}
+		}
+		capital_scope = { add_base_tax = 1 }
+		add_years_of_income = -0.25
+	}
+	option = {
+		name = "personality_options.729.a"
+		highlight = yes
+		trigger = { ruler_has_personality_ancestor = { key = architectural_visionary } }
+		ai_chance = {
+			factor = 100
+		}
+		add_disaster_progress = {
+			disaster = repeatable_timurid_succession_crisis
+			value = 5
+		}
+		capital_scope = { add_base_tax = 1 }
+		add_years_of_income = -0.15
+	}
+	option = {
+		name = "personality_options.729.b"
+		highlight = yes
+		trigger = { ruler_has_personality = obsessive_perfectionist_personality }
+		ai_chance = {
+			factor = 100
+		}
+		add_government_power = {
+            mechanic_type = uach_reform_state_mechanic
+            power_type = uach_persianization
+            value = 5
+        }
+		capital_scope = { add_base_tax = 2 }
+		add_years_of_income = -0.35
+	}
+}
+
+# $MONARCH$ embarrasses the court
+country_event = {
+	id =  uach_reform.7
+	title = "EVTNAME715"
+	desc = "EVTDESC715"
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = monarchy
+		has_regency = no
+		is_lesser_in_union = no
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA715"
+		add_stability = -1
+		add_disaster_progress = {
+			disaster = repeatable_timurid_succession_crisis
+			value = 5
+		}
+	}
+	option = {
+		name = "personality_options.715.a"
+		highlight = yes
+		add_prestige = -10
+		uach_add_or_subtract_persianization = { value = 10 }
+	}
+}
