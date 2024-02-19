@@ -1,11 +1,12 @@
 init_start_princes = { 
-    TRS = { save_global_event_target_as = timurids_prince1 }
-    KHO = { save_global_event_target_as = timurids_prince2 }
-    QOM = { save_global_event_target_as = timurids_prince3 }
-    AFG = { save_global_event_target_as = timurids_prince4 }
-    FRS = { save_global_event_target_as = timurids_prince5 }
-    BLK = { save_global_event_target_as = timurids_prince6 }
-    KHU = { save_global_event_target_as = timurids_prince7 }
+    TIM = { save_global_event_target_as = timurids_prince1 }
+    TRS = { save_global_event_target_as = timurids_prince2 }
+    KHO = { save_global_event_target_as = timurids_prince3 }
+    QOM = { save_global_event_target_as = timurids_prince4 }
+    AFG = { save_global_event_target_as = timurids_prince5 }
+    FRS = { save_global_event_target_as = timurids_prince6 }
+    BLK = { save_global_event_target_as = timurids_prince7 }
+    KHU = { save_global_event_target_as = timurids_prince8 }
 }
 
 init_start_governors = {

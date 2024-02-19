@@ -497,9 +497,12 @@ custom_button = {
 			tooltip = WAIT_FOR_SC_TO_START_BITCH_TT
 			has_global_flag = uach_succession_crisis_started
 		}
-		AND = {
-			NOT = { is_prince = yes }
-			NOT = { is_governor = yes }
+		custom_trigger_tooltip = {
+			tooltip = UACH_NOT_PRINCE_OR_GOVERNOR
+			AND = {
+				NOT = { is_prince = yes }
+				NOT = { is_governor = yes }
+			}
 		}
 		NOT = {
 			has_country_modifier = successful_interloper_intervention
@@ -544,6 +547,14 @@ custom_button = {
 		is_governor = yes
 		stability = 1
 		NOT = { is_subject = yes }
+		OR = {
+			country_or_non_sovereign_subject_holds = 446	# Herat
+			country_or_non_sovereign_subject_holds = 451	# Kabul
+			country_or_non_sovereign_subject_holds = 454	# Samarkand
+			country_or_non_sovereign_subject_holds = 2213	# Qom
+			country_or_non_sovereign_subject_holds = 2214	# Astarabad
+			country_or_non_sovereign_subject_holds = 2218	# Shiraz
+		}
 	}
     effect = { 
 		uach_elevate_to_prince_effect = yes

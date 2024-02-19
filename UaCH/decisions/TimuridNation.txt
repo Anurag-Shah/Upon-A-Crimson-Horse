@@ -13,6 +13,14 @@ country_decisions = {
 				has_country_flag = uach_second_succession_crisis_war_flag
 			}
 			stability = 1
+			OR = {
+				country_or_non_sovereign_subject_holds = 446	# Herat
+				country_or_non_sovereign_subject_holds = 451	# Kabul
+				country_or_non_sovereign_subject_holds = 454	# Samarkand
+				country_or_non_sovereign_subject_holds = 2213	# Qom
+				country_or_non_sovereign_subject_holds = 2214	# Astarabad
+				country_or_non_sovereign_subject_holds = 2218	# Shiraz
+			}
 		}
 		effect = {
 			uach_elevate_to_prince_effect = yes
