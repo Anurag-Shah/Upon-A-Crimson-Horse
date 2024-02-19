@@ -6,7 +6,7 @@ country_event = {
 	id = UaCH.escalation.1 
 	title = UaCH.escalation.1.t 
 	desc = UaCH.escalation.1.d
-	picture = COUNTRY_COLLAPSE_eventPicture
+	picture = CITY_DEVELOPMENT_eventPicture
 	is_triggered_only = yes
 	
 	trigger = {}
@@ -22,31 +22,25 @@ country_event = {
 				}
 				add_country_modifier ={ 
 					name = uach_escalation_governor_1
-					duration = -1 }
+					duration = 3650 }
 			}
 			every_country = {
 				limit = {
 					AND  = {
-						is_prince = yes
-						is_timurid_emperor = no
-					}
+						has_government_reform = uach_prince
+						}
 				}
 				add_country_modifier ={  
 					name = uach_escalation_prince_1
-					duration = -1 }
+					duration = 3650 }
 			}
-			every_country = {
-				limit = {
-					AND  = {
-						is_prince = yes
-						is_timurid_emperor = yes
-					}
+
 				
+			REB = {	set_variable = {
+					which = uach_escalation_level
+					value = 0
+					}
 				}
-				add_country_modifier = { 
-					name = uach_escalation_emperor_1
-					duration = -1}
-			}
 			
 			set_global_flag = uach_escalation_timer
 		
@@ -60,7 +54,7 @@ country_event = {
 	id = UaCH.escalation.1 
 	title = UaCH.escalation.2.t 
 	desc = UaCH.escalation.2.d
-	picture = COUNTRY_COLLAPSE_eventPicture
+	picture = CITY_DEVELOPMENT_eventPicture
 	is_triggered_only = yes
 	
 	trigger = { 
@@ -74,252 +68,162 @@ country_event = {
 		name = "UaCH.2.escalation.a"
 		hidden_effect = {
 		
-		# GOVERNORS
-		
-			every_country = {
-				limit = {
-					has_country_modifier = uach_escalation_governor_1	
-				}
-				remove_country_modifier = uach_escalation_governor_1 
-				add_country_modifier ={ 
-					name = uach_escalation_governor_2
-					duration = -1 }
-			}
+		#LVL2
 			
-			every_country = {
-				limit = {
-					has_country_modifier = uach_escalation_governor_2	
-				}
-				remove_country_modifier = uach_escalation_governor_2
-				add_country_modifier ={ 
-					name = uach_escalation_governor_3
-					duration = -1 }
-			}
-			
-			every_country = {
-				limit = {
-					has_country_modifier = uach_escalation_governor_3	
-				}
-				remove_country_modifier = uach_escalation_governor_3
-				add_country_modifier ={ 
-					name = uach_escalation_governor_4
-					duration = -1 }
-			}
-			
-			every_country = {
-				limit = {
-					has_country_modifier = uach_escalation_governor_4	
-				}
-				remove_country_modifier = uach_escalation_governor_4
-				add_country_modifier ={ 
-					name = uach_escalation_governor_5
-					duration = -1 }
-			}
-			
-			every_country = {
-				limit = {
-					has_country_modifier = uach_escalation_governor_5	
-				}
-				remove_country_modifier = uach_escalation_governor_5
-				add_country_modifier ={ 
-					name = uach_escalation_governor_6
-					duration = -1 }
-			}
-			
-		## PRINCES
-		
-			every_country = {
-				limit = {
-					has_country_modifier = uach_escalation_prince_1	
-				}
-				remove_country_modifier = uach_escalation_prince_1 
-				add_country_modifier ={ 
-					name = uach_escalation_prince_2
-					duration = -1 }
-			}
-			
-			every_country = {
-				limit = {
-					has_country_modifier = uach_escalation_prince_2	
-				}
-				remove_country_modifier = uach_escalation_prince_2
-				add_country_modifier ={ 
-					name = uach_escalation_prince_3
-					duration = -1 }
-			}
-			
-			every_country = {
-				limit = {
-					has_country_modifier = uach_escalation_prince_3	
-				}
-				remove_country_modifier = uach_escalation_prince_3
-				add_country_modifier ={ 
-					name = uach_escalation_prince_4
-					duration = -1 }
-			}
-			
-			every_country = {
-				limit = {
-					has_country_modifier = uach_escalation_prince_4	
-				}
-				remove_country_modifier = uach_escalation_prince_4
-				add_country_modifier ={ 
-					name = uach_escalation_prince_5
-					duration = -1 }
-			}
-			
-			every_country = {
-				limit = {
-					has_country_modifier = uach_escalation_prince_5	
-				}
-				remove_country_modifier = uach_escalation_prince_5
-				add_country_modifier ={ 
-					name = uach_escalation_prince_6
-					duration = -1 }
-			}
-			
-		## EMPEROR	
-			every_country = {
-				limit = {
-					has_country_modifier = uach_escalation_emperor_1	
-				}
-				remove_country_modifier = uach_escalation_emperor_1 
-				add_country_modifier ={ 
-					name = uach_escalation_emperor_2
-					duration = -1 }
-			}
-			
-			every_country = {
-				limit = {
-					has_country_modifier = uach_escalation_emperor_2	
-				}
-				remove_country_modifier = uach_escalation_emperor_2
-				add_country_modifier ={ 
-					name = uach_escalation_emperor_3
-					duration = -1 }
-			}
-			
-			every_country = {
-				limit = {
-					has_country_modifier = uach_escalation_emperor_3	
-				}
-				remove_country_modifier = uach_escalation_emperor_3
-				add_country_modifier ={ 
-					name = uach_escalation_emperor_4
-					duration = -1 }
-			}
-			
-			every_country = {
-				limit = {
-					has_country_modifier = uach_escalation_emperor_4	
-				}
-				remove_country_modifier = uach_escalation_emperor_4
-				add_country_modifier ={ 
-					name = uach_escalation_emperor_5
-					duration = -1 }
-			}
-			
-			every_country = {
-				limit = {
-					has_country_modifier = uach_escalation_emperor_5	
-				}
-				clear_global_flag = uach_escalation_timer
-				remove_country_modifier = uach_escalation_emperor_5
-				add_country_modifier ={ 
-					name = uach_escalation_emperor_6
-					duration = -1 }
-			}
-			
-		
-			}
-	}
-}
+			REB = { check_variable = {
+						which = uach_escalation_level
+						IF = { value = 1 }
+							{
+								every_country = {
+									limit = {
+										has_country_modifier = uach_escalation_governor_1	
+									}
+									remove_country_modifier = uach_escalation_governor_1 
+									add_country_modifier ={ 
+										name = uach_escalation_governor_2
+										duration = 3650 }
+									}
+								}
+								every_country = {
+									limit = {
+										has_country_modifier = uach_escalation_prince_1	
+									}
+									remove_country_modifier = uach_escalation_prince_1 
+									add_country_modifier ={ 
+										name = uach_escalation_prince_2
+										duration = 3650 }
+									}	
+									
+								}
+								every_country = {
+									limit = {
+										AND = {has_government_reform = uach_governor
+												NOT = {has_country_modifier = uach_escalation_governor_1}		
+											}
+										}
+										add_country_modifier ={ 
+											name = uach_escalation_governor_2
+											duration = 3650 }
+									}
+								}
+								every_country = {
+									limit = {
+										AND = {has_government_reform = uach_prince
+												NOT = {has_country_modifier = uach_escalation_prince_1}		
+											}
+										}
+										add_country_modifier ={ 
+											name = uach_escalation_prince_2
+											duration = 3650 }
+											
+								
+										}
+										
+								change_variable = {
+										which = uach_escalation_level
+										value = 1
+										
+									}	
+							}
+					
+					IF = { value = 2 }
+							{
+								every_country = {
+									limit = {
+										has_country_modifier = uach_escalation_governor_2
+									}
+									remove_country_modifier = uach_escalation_governor_2
+									add_country_modifier ={ 
+										name = uach_escalation_governor_3
+										duration = 3650 }
+									}
+								every_country = {
+									limit = {
+										has_country_modifier = uach_escalation_prince_2
+									}
+									remove_country_modifier = uach_escalation_prince_2
+									add_country_modifier ={ 
+										name = uach_escalation_prince_3
+										duration = 3650 }
+									}	
+								every_country = {
+									limit = {
+										AND = {has_government_reform = uach_governor
+												NOT = {has_country_modifier = uach_escalation_governor_1}		
+											}
+										}
+										add_country_modifier ={ 
+											name = uach_escalation_governor_3
+											duration = 3650 }
+									}
+								every_country = {
+									limit = {
+										AND = {has_government_reform = uach_prince
+												NOT = {has_country_modifier = uach_escalation_prince_1}		
+											}
+										}
+										add_country_modifier ={ 
+											name = uach_escalation_prince_3
+											duration = 3650 }
+										}	
+								change_variable = {
+										which = uach_escalation_level
+										value = 1
+									
+									}		
+							}
 
-
-#event end
-country_event = {
-	id = UaCH.escalation.3
-	title = UaCH.escalation.3.t 
-	desc = UaCH.escalation.3.d
-	picture = COUNTRY_COLLAPSE_eventPicture
-	is_triggered_only = yes
-	
-	trigger = { }
-
-	hidden = yes
-	
-	option = {
-		name = "UaCH.3.escalation.a"
-		hidden_effect = {
-			every_country = {
-				limit = {
-					has_government_reform = uach_governor		
-				}
-				remove_country_modifier = uach_escalation_governor_1
-				remove_country_modifier = uach_escalation_governor_2
-				remove_country_modifier = uach_escalation_governor_3
-				remove_country_modifier = uach_escalation_governor_4
-				remove_country_modifier = uach_escalation_governor_5
-				remove_country_modifier = uach_escalation_governor_6
-
-			}
-			every_country = {
-				limit = {
-					AND  = {
-						is_prince = yes
-						is_timurid_emperor = no
-					}
-				}
-				remove_country_modifier = uach_escalation_prince_1
-				remove_country_modifier = uach_escalation_prince_2
-				remove_country_modifier = uach_escalation_prince_3
-				remove_country_modifier = uach_escalation_prince_4
-				remove_country_modifier = uach_escalation_prince_5
-				remove_country_modifier = uach_escalation_prince_6
-			}
-			every_country = {
-				limit = {
-					AND  = {
-						is_prince = yes
-						is_timurid_emperor = yes
-					}
-				
-				}
-				IF =  { has_country_modifier = uach_escalation_emperor_1 {
-						  	remove_country_modifier = uach_escalation_emperor_1
-							add_country_modifier = uach_escalation_rew_lvl1
-							duration = -1}
-						}	
-				IF =  { has_country_modifier = uach_escalation_emperor_2 {
-						  	remove_country_modifier = uach_escalation_emperor_2
-							add_country_modifier = uach_escalation_rew_lvl2
-							duration = -1}
-						}	
-				IF =  { has_country_modifier = uach_escalation_emperor_3 {
-						  	remove_country_modifier = uach_escalation_emperor_3
-							add_country_modifier = uach_escalation_rew_lvl3
-							duration = -1}
-						}	
-				IF =  { has_country_modifier = uach_escalation_emperor_4 {
-						  	remove_country_modifier = uach_escalation_emperor_4
-							add_country_modifier = uach_escalation_rew_lvl4
-							duration = -1}
-						}	
-				IF =  { has_country_modifier = uach_escalation_emperor_5 {
-						  	remove_country_modifier = uach_escalation_emperor_5
-							add_country_modifier = uach_escalation_rew_lvl5
-							duration = -1}
-						}	
+						IF = { value = 3 }
+							{
+								every_country = {
+									limit = {
+										has_country_modifier = uach_escalation_governor_3
+									}
+									remove_country_modifier = uach_escalation_governor_3
+									add_country_modifier ={ 
+										name = uach_escalation_governor_4
+										duration = 3650 }
+									}
+								every_country = {
+									limit = {
+										has_country_modifier = uach_escalation_prince_3
+									}
+									remove_country_modifier = uach_escalation_prince_3
+									add_country_modifier ={ 
+										name = uach_escalation_prince_4
+										duration = 3650 }
+									}	
+								every_country = {
+									limit = {
+										AND = {has_government_reform = uach_governor
+												NOT = {has_country_modifier = uach_escalation_governor_3}		
+											}
+										}
+										add_country_modifier ={ 
+											name = uach_escalation_governor_4
+											duration = 3650 }
+									}
+								every_country = {
+									limit = {
+										AND = {has_government_reform = uach_prince
+												NOT = {has_country_modifier = uach_escalation_prince_3}		
+											}
+										}
+										add_country_modifier ={ 
+											name = uach_escalation_prince_4
+											duration = 3650 }
+										}	
+								change_variable = {
+										which = uach_escalation_level
+										value = 1
+									
+									}		
+							}
+							
 						
-				IF =  { has_country_modifier = uach_escalation_emperor_6 {
-						  	remove_country_modifier = uach_escalation_emperor_6
-							add_country_modifier = uach_escalation_rew_lvl6
-							duration = -1}
-						}					
 
-			}
-			
-			clear_global_flag = uach_escalation_timer
-		}
-	}
-}
+					
+							
+						}}
+	
+	
