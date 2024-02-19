@@ -550,3 +550,501 @@ country_event = {
 		uach_add_or_subtract_persianization = { value = 10 }
 	}
 }
+
+
+
+# Minnators implemented events
+country_event = {
+	id = uach_reform.1000 
+	title = uach_reform.1000.t 
+	desc = uach_reform.1000.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	option = {
+		name = "Let them do their thing!"
+		
+		add_disaster_progress = {
+			value = 5
+			disaster = repeatable_timurid_succession_crisis
+		}
+
+		every_owned_province = {
+			limit = {
+				religion = shiite 
+			}
+			add_province_modifier = {
+				name = uach_let_them_do_their_thing
+				duration = 3650
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+
+	option = {
+		name = "Have them imprisoned"
+		
+		random_owned_province = {
+			spawn_rebels = {
+				size = 2
+				type = shiite_rebels
+			}
+		}
+		
+		random_owned_province = {
+			spawn_rebels = {
+				size = 2
+				type = shiite_rebels
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = uach_reform.1001 
+	title = uach_reform.1001.t 
+	desc = uach_reform.1001.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	option = {
+		name = "Execute them!"
+		
+		uach_add_or_subtract_persianization = { value = -5 }
+		kill_leader = {
+			type = general
+		}
+		add_legitimacy = -5
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+
+	option = {
+		name = "Give them a stern talking to."
+		
+		uach_add_or_subtract_persianization = { value = 10 }
+
+		random_list = {
+			50 = {
+				capital_scope = {
+					spawn_rebels = {
+						size = 2
+						type = pretender_rebels
+					}
+				}
+				kill_leader = {
+					type = general
+				}
+			}
+			50 = {
+				add_legitimacy = 5
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = uach_reform.1002 
+	title = uach_reform.1002.t 
+	desc = uach_reform.1002.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	option = {
+		name = "Fund their studies"
+		
+		add_treasury = -200
+		uach_add_or_subtract_persianization = { value = 10 }
+		add_country_modifier = {
+			name = uach_scholars_in_capital
+			duration = 3650
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+
+	
+	option = {
+		name = "This is too expensive!"
+		
+		add_prestige = -5
+		add_disaster_progress = {
+			value = 2
+			disaster = repeatable_timurid_succession_crisis
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = uach_reform.1003 
+	title = uach_reform.1003.t 
+	desc = uach_reform.1003.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	option = {
+		name = "I love it, lets hire more musicians!"
+		
+		uach_add_or_subtract_persianization = { value = 10 }
+		add_treasury = -300
+		
+		every_owned_province = {
+			limit = {
+				religion = sunni 
+			}
+			add_province_modifier = {
+				name = uach_let_them_do_their_thing
+				duration = 3650
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+
+	option = {
+		name = "I prefer the good old throat singing!"
+		
+		add_legitimacy = 10
+
+		uach_add_or_subtract_persianization = { value = -10 }
+
+		add_country_modifier = {
+			name = uach_throat_singing
+			duration = 7200
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = -2
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = uach_reform.1004 
+	title = "On our neighbors!"
+	desc = uach_reform.1004.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis
+	}
+	mean_time_to_happen = {
+		months = 6
+	}
+	option = {
+		name = "YES."
+		
+		random_owned_province = {
+			limit = {
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT } 
+				}
+			}
+			random_neighbor_province = {
+				add_claim = ROOT
+			}
+		}
+
+		uach_add_or_subtract_persianization = { value = -5 }
+		add_prestige = 5
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+
+	option = {
+		name = "NO."
+		
+		add_prestige = 5
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -5
+		}
+		uach_add_or_subtract_persianization = { value = 5 }
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = uach_reform.1005 
+	title = "Solidiers want to go home"
+	desc = uach_reform.1005.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis		
+	}
+
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "Let them go home"
+		add_manpower = -4000
+		uach_add_or_subtract_persianization = { value = 10 }
+
+		add_country_modifier = {
+			name = uach_solidiers_went_home
+			duration = 1825
+		}
+	}
+	option = {
+		name = "Demand them to stay."
+
+		add_country_modifier = {
+			name = uach_soldiers_had_to_stay
+			duration = 1825
+		}
+
+		uach_add_or_subtract_persianization = { value = -5 }
+	}
+}
+
+country_event = {
+	id = uach_reform.1006 
+	title = "Clergy vs. Nobility"
+	desc = uach_reform.1006.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis	
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "Support the clergy"
+		uach_add_or_subtract_persianization = { value = 5 }
+
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -10
+		}
+
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 10
+		}
+	}
+	
+	option = {
+		name = "Support the nobility"
+		uach_add_or_subtract_persianization = { value = -5 }
+
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -10
+		}
+	}
+}
+
+country_event = {
+	id = uach_reform.1007 
+	title = "Raids from the Turkmen"
+	desc = uach_reform.1007.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis	
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "Raid them back!"
+		
+		uach_add_or_subtract_persianization = { value = -5 }
+
+		add_country_modifier = {
+			name = uach_raid_turks_back_lol
+			duration = 1825
+		}
+	}
+	
+	option = {
+		name = "Bolster our defenses"
+		add_country_modifier = {
+			name = uach_bolster_defenses
+			duration = 1825
+		}
+		add_treasury = -50
+		add_prestige = -1
+		uach_add_or_subtract_persianization = { value = 10 }
+	}
+}
+
+country_event = {
+	id = uach_reform.1008 
+	title = "A Campaign against the Turkmen"
+	desc = uach_reform.1008.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis	
+		any_neighbor_country = {
+			OR = {
+				tag = QAR
+				tag = AQU
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "Go for it. Kill their children."
+		uach_add_or_subtract_persianization = { value = -10 }
+		add_disaster_progress = {
+			value = 5
+			disaster = repeatable_timurid_succession_crisis
+		}
+	}
+	
+	option = {
+		name = "nah, they are not worth it."
+
+		add_disaster_progress = {
+			value = 5
+			disaster = repeatable_timurid_succession_crisis
+		}
+	}
+}
+
+country_event = {
+	id = uach_reform.1009 
+	title = "Language of our Court"
+	desc = uach_reform.1009.d
+	picture = FEAST_eventPicture
+
+	trigger = {
+		has_disaster = repeatable_timurid_succession_crisis	
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = "Let us use Chagatai"
+		uach_add_or_subtract_persianization = { value = 10 }
+		add_disaster_progress = {
+			value = 5
+			disaster = repeatable_timurid_succession_crisis
+		}
+		kill_advisor_by_category_effect = {
+			ADM = yes		
+		}
+	}
+	
+	option = {
+		name = "Persian is more popular let's switch to that."
+
+		add_disaster_progress = {
+			value = 5
+			disaster = repeatable_timurid_succession_crisis
+		}
+
+		add_adm_power = -50
+		add_dip_power = -50
+	}
+}

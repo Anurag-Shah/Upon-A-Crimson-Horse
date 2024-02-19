@@ -1817,7 +1817,7 @@ uach_flee_to_india_effect = {
     # cleanup
     every_province = {
         limit = { has_province_flag = uach_ignore_me_next_flag }
-        remove_province_flag = uach_ignore_me_next_flag
+        clr_province_flag = uach_ignore_me_next_flag
     }
 
     # event to remove prince gov reform from yourself
