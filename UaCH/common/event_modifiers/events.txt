@@ -73,6 +73,48 @@ uach_persianized = {
 	diplomatic_upkeep = 2
 }
 
+uach_let_them_do_their_thing = {
+	local_unrest = -5
+}
+
+uach_scholars_in_capital = {
+	advisor_cost = -0.1
+}
+
+uach_throat_singing = {
+	advisor_cost = 0.15
+}
+
+uach_solidiers_went_home = {
+	manpower_recovery_speed = -0.1
+}
+
+uach_soldiers_had_to_stay = {
+	land_morale = -0.1
+}
+
+uach_raid_turks_back_lol = {
+	siege_ability = 0.1
+}
+
+uach_bolster_defenses = {
+	defensiveness = 0.1
+}
+
+uach_no_talking_back_to_clergy = {
+	clergy_influence = 0.15
+	unrest = -2
+}
+
+uach_daring_today = {
+	clergy_influence = -0.1
+	diplomatic_reputation = 2
+}
+
+uach_state_above_clan = {
+	unrest = -2
+}
+
 uach_restoration_of_stability = {
 	stability_cost_modifier = -0.1
 }
