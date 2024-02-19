@@ -6,6 +6,10 @@ transfer_subjects_as_governors = {
 				who = $TO$
 			}
 		}
+		create_subject = {
+			subject_type = governor
+			who = $TO$
+		}
 	}
 }
 
@@ -27,24 +31,6 @@ uach_isf_side = {
 			set_country_flag = uach_isf_side_pre_war
 		}
 		set_country_flag = uach_isf_side_pre_war
-	}
-}
-
-# Everybody is at war with everybody :)
-second_succession_crisis_war_effect = {
-	every_country = {
-		limit = {
-			has_country_flag = uach_second_succession_crisis_war_flag
-		}
-		every_country = {
-			limit = {
-				has_country_flag = uach_second_succession_crisis_war_flag
-			}
-			declare_war_with_cb = {
-				casus_belli = cb_challange_claimant
-				who = PREV
-			}
-		}
 	}
 }
 

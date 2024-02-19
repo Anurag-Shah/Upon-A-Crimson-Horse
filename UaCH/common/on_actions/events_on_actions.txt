@@ -1,8 +1,42 @@
 on_monarch_death = {
+	# Unneeded, just made the modifier a ruler modifier
+	#if = {
+	#	limit = {
+	#		has_country_modifier = mnt_one_small_suffering
+	#	}
+	#	remove_country_modifier = mnt_one_small_suffering
+	#}
 	if = {
 		limit = {
-			has_country_modifier = mnt_one_small_suffering
+			tag = SHY
+			NOT = {
+				has_country_flag = kzh_death_happened
+			}
+			historical_rival_with = KZH
+			KZH = {
+				is_subject_of = ROOT
+			}
 		}
-		remove_country_modifier = mnt_one_small_suffering
+		KZH = {
+			country_event = {
+				id = UaCH.87
+			}
+		}
+		set_country_flag = kzh_death_happened
+	}
+	events = {
+		UaCH.13
+	}
+
+	if = {
+		limit = {
+			has_disaster_progress = {
+				disaster = repeatable_timurid_succession_crisis
+				value = 0.1
+			}
+		}
+		country_event = {
+			id = UaCH.97
+		}
 	}
 }

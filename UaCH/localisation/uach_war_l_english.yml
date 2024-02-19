@@ -1,0 +1,7 @@
+﻿l_english:
+ # cb
+ TEST_TEST_TEST: "$FIRST$ Intervention in $SECOND$"
+ ENFORCE_LOYALTY_WAR: "$FIRST$-$SECOND$ War to Enforce Loyalty"
+ SUPERIORITY_CLAIMANT_WAR: "$FIRST$-$SECOND$ War for Claimant Superiority"
+ cb_interloper_conquest: "loc"
+ cb_interloper_conquest_desc: "loc"

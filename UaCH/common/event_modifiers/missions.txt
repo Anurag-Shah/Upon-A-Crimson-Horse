@@ -1,0 +1,6 @@
+# Governors
+
+uach_support_of_the_emirs = {
+    land_morale = 0.05
+    manpower_recovery_speed = 0.10
+}

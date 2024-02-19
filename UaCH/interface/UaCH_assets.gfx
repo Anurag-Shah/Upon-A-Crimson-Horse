@@ -6,6 +6,13 @@ spriteTypes = {
 		noOfFrames = 3
 		loadType = "INGAME"
 	}
+
+	spriteType = {
+		name = "GFX_disaster_repeatable_timurid_succession_crisis"
+		texturefile = "gfx//interface//disasters//timurid_succession_crisis.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
 	
 	# Art for unique subject
 	spriteType = {
@@ -33,5 +40,67 @@ spriteTypes = {
 	spriteType = {
 	  	name = "GFX_timurids_map_slot"
 	 	texturefile = "gfx/interface/ui/timurids_map_slot.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_ajam"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_ajam.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_khorasan"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_khorasan.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_fars"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_fars.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_herat"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_herat.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_merv"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_merv.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_samarkand"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_samarkand.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_ferghana"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_ferghana.dds"
+	}
+	spriteType = {
+	  	name = "GFX_timurids_map_afghanistan"
+	 	texturefile = "gfx/interface/ui/map/timurids_map_afghanistan.dds"
+	}
+	spriteType = {
+	  	name = "GFX_abandon_our_claims"
+	 	texturefile = "gfx/interface/ui/abandon_our_claims.dds"
+	}
+	spriteType = {
+	  	name = "GFX_intervene_in_the_crisis"
+	 	texturefile = "gfx/interface/ui/intervene_in_the_crisis.dds"
+	}
+	spriteType = {
+	  	name = "GFX_enthrone_timurid_claimant"
+	 	texturefile = "gfx/interface/ui/enthrone_timurid_claimant.dds"
+	}
+	spriteType = {
+	  	name = "GFX_end_timurs_legacy"
+	 	texturefile = "gfx/interface/ui/end_timurs_legacy.dds"
+	}
+	spriteType = {
+	  	name = "GFX_reclaim_timurs_legacy"
+	 	texturefile = "gfx/interface/ui/reclaim_timurs_legacy.dds"
+	}
+
+	# Gov Reform icons
+	spriteType = {
+	  	name = "government_reform_uach_governor"
+	 	texturefile = "gfx//interface//governor_gov_reform_icon.dds"
+	}
+	spriteType = {
+	  	name = "government_reform_uach_prince"
+	 	texturefile = "gfx//interface//prince_gov_reform_icon.dds"
 	}
 }

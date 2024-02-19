@@ -1,11 +1,12 @@
 uach_governor = {
-	icon = "muslim"
+	icon = "uach_governor"
 	allow_normal_conversion = no
 	potential = {
-		always = yes
-		# Should never become invalid
+		is_governor = yes
 	}
 	valid_for_nation_designer = no
+	locked_government_type = yes
+	lock_level_when_selected = yes
 
 	queen = no
 	modifiers = {
@@ -20,16 +21,22 @@ uach_governor = {
 		factor = 1
 	}
 
-	government_abilities = { uach_mechanics }
+	government_abilities = { uach_mechanics_governor }
 }
 
 uach_prince = {
-	icon = "muslim"
+	icon = "uach_prince"
 	allow_normal_conversion = no
+	locked_government_type = yes
+	lock_level_when_selected = yes
 	potential = {
-		always = yes
-		# Should never become invalid
+		is_prince = yes
 	}
+
+	trigger = {
+		always = yes
+	}
+
 	valid_for_nation_designer = no
 
 	queen = no
@@ -39,14 +46,87 @@ uach_prince = {
 		global_unrest = -1
 		estate_nobles_loyalty_modifier = 0.1
 		reduced_liberty_desire = 10
-		liberty_desire = 25
 	}
 
 	conditional = {
+		allow = {
+			has_country_flag = uach_interwar_lull
+		}
+		government_abilities = { uach_reform_state_mechanic }
 	}
+
+	government_abilities = { uach_mechanics_prince }
+
 	ai = {
 		factor = 1
 	}
+}
 
-	government_abilities = { uach_mechanics }
+
+uach_interwar_timurid_state = {
+	icon = "uach_prince"
+	allow_normal_conversion = no
+	locked_government_type = yes
+	lock_level_when_selected = yes
+	potential = {
+		is_prince = yes
+	}
+
+	trigger = {
+		always = yes
+	}
+
+	valid_for_nation_designer = no
+
+	queen = no
+	modifiers = {
+		mercenary_cost = -0.15
+		legitimacy = 1
+		global_unrest = -1
+		estate_nobles_loyalty_modifier = 0.1
+		reduced_liberty_desire = 10
+	}
+	
+	government_abilities = { uach_reform_state_mechanic }
+
+	factions = { timurid_faction }
+
+	ai = {
+		factor = 1
+	}
+}
+
+uach_heirs_of_timur_reform = {
+	icon = "horde_riding"
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	potential = {
+		OR = {
+			has_reform = uach_heirs_of_timur_reform
+			have_had_reform = uach_heirs_of_timur_reform
+			tag = TIM
+		}
+	}
+	legacy_equivalent = great_mongol_state_legacy
+	fixed_rank = 3
+	valid_for_nation_designer = no
+	nomad = yes
+	raze_province = yes
+	modifiers = {
+		horde_unity = 1
+		global_manpower_modifier = 0.2
+		land_forcelimit_modifier = 0.2
+		loot_amount = 0.50
+		reinforce_cost_modifier = -0.5
+		cav_to_inf_ratio = 0.5
+		movement_speed = 0.2
+		raze_power_gain = 0.1
+	}
+	custom_attributes = {
+		enables_horde_idea_group = yes
+		enables_aristocratic_idea_group = yes
+	}
+	ai = {
+		factor = 1000
+	}
 }

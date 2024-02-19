@@ -34,3 +34,35 @@ cb_enforce_loyalty_governor = {
 
 	war_goal = w_enforce_loyalty_governor
 }
+
+# CB does the following:
+# Attacker: If Isfahan is alone, they become a Prince and keep any vassals. If Ajam is leading, they become Timurids, get the same heir flag as if Muhammad Juki was heir, and all vassals they gained will be demoted to Governors and will stay loyal. All opponents lose -1 stab.
+# Defender: Entirely annex the war leader. If there are any subjects of the war leader, they become your Emirate. Gain 1 stability. 
+cb_rebellion_of_sultan_muhammad = {
+	valid_for_subject = yes
+	ai_peace_desire = -80
+
+	is_triggered_only = yes
+	months = -1
+
+	war_goal = w_rebellion_of_sultan_muhammad
+}
+
+cb_uach_interloper_conquest = {
+	valid_for_subject = no
+	ai_peace_desire = -100
+
+	# TODO add and remove the cb when ever applicable
+	is_triggered_only = yes
+	months = -1
+
+	prerequisites_self = {
+		is_part_of_second_crisis = yes
+	}
+
+	prerequisites = {
+		is_part_of_second_crisis = yes
+	}
+
+	war_goal = w_uach_interloper_conquest
+}

@@ -4,7 +4,7 @@ add_accepted_culture = khorasani
 add_accepted_culture = persian
 religion = sunni
 government = monarchy
-add_government_reform = iqta
+add_government_reform = uach_prince
 government_rank = 3
 capital = 454 # Samarkand
 historical_rival = DLH
@@ -97,17 +97,19 @@ change_estate_land_share = {
 	add_ruler_modifier = {
 		name = shahrukhs_empire
 	}
+	set_ruler_flag = timurids_peace_ruler
 }
 
-1444.6.1 = { #Serious illness of Shahrukh. Goharshad makes Firuzshah (governor of Balkh) swear bayqat to Ala al-Dawla
+1444.6.1 = { #Serious illness of Shahrukh. Goharshad makes Firuzshah (governor of Balkh) swear bayqat to Ala al-Dawla (Fuck off, PDX, he wasn't the favored heir)
 	heir = {
-		name = "Ala al-Dawla Abd Allah"
+		name = "Muhammad Juki"
 		dynasty = "Timurid"
-		birth_date = 1417.1.1
-		death_date = 1457.7.19
+		birth_date = 1402.1.1
+		death_date = 1446.1.1
+		claim = 90
 		adm = 3
-		dip = 3
-		mil = 2
+		dip = 5
+		mil = 5
 	}
 }
 
@@ -137,8 +139,8 @@ change_estate_land_share = {
 	clear_scripted_personalities = yes
 	add_ruler_personality = scholar_personality
 	heir = {
-		name = "'Abd Allâh Mîrzâ"
-		monarch_name = "'Abd Allâh Mîrzâ"
+		name = "'Abd Allï¿½h Mï¿½rzï¿½"
+		monarch_name = "'Abd Allï¿½h Mï¿½rzï¿½"
 		dynasty = "Timurid"
 		birth_date = 1410.1.1
 		death_date = 1451.6.23
@@ -163,7 +165,7 @@ change_estate_land_share = {
 
 1450.5.9 = {
 	monarch = {
-		name = "'Abd Allâh Mîrzâ"
+		name = "'Abd Allï¿½h Mï¿½rzï¿½"
 		dynasty = "Timurid"
 		adm = 0	
 		dip = 3
@@ -173,13 +175,13 @@ change_estate_land_share = {
 
 1451.6.1 = {
 	monarch = {
-		name = "Abû Sa'id"
+		name = "Abï¿½ Sa'id"
 		dynasty = "Timurid"
 		adm = 3
 		dip = 5
 		mil = 6
 		leader = {	
-			name = "Abû Sa'id"
+			name = "Abï¿½ Sa'id"
 			type = general
 
 			fire = 4
@@ -227,7 +229,7 @@ change_estate_land_share = {
 
 1495.9.1 = {
 	monarch = {
-		name = "Bây Sunqur"
+		name = "Bï¿½y Sunqur"
 		dynasty = "Timurid"
 		adm = 0	
 		dip = 0	
@@ -247,12 +249,12 @@ change_estate_land_share = {
 
 1500.4.1 = {
 	monarch = {
-		name = "Bâbur"
+		name = "Bï¿½bur"
 		dynasty = "Timurid"
 		adm = 5	
 		dip = 5	
 		mil = 6
-		leader = {	name = "Bâbur"	type = general	fire = 5	shock = 5	manuever = 3	siege = 1 }
+		leader = {	name = "Bï¿½bur"	type = general	fire = 5	shock = 5	manuever = 3	siege = 1 }
 	}
 }
 
@@ -268,7 +270,7 @@ add_government_reform = autocracy_reform
 1508.3.6 = {
 	heir = {
 		name = "Muhammad"
-		monarch_name = "Humâyûn"
+		monarch_name = "Humï¿½yï¿½n"
 		dynasty = "Timurid"
 		birth_date = 1508.3.6
 		death_date = 1556.1.1

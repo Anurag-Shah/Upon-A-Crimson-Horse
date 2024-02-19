@@ -43,12 +43,12 @@ BLK_ideas = {
 
 ISF_ideas = {
 	start = {
-		diplomatic_upkeep = 1
-		prestige_decay = -0.03
+		advisor_cost=-0.1
+		defensiveness = 0.10
 	}
 	
 	bonus = {
-		innovativeness_gain = 0.33
+		trade_efficiency = 0.10
 	}	
 
 	trigger = {
@@ -57,28 +57,30 @@ ISF_ideas = {
 	free = yes
 	
 	isf_idea_1 = {
-		movement_speed = 0.15
-		leader_land_manuever = 1
+		build_cost = -0.15
+		build_time = -0.25
 	}
 	isf_idea_2 = {
-		diplomatic_reputation = 1
+		trade_range_modifier = 0.25
+		trade_steering = 0.25
 	}
 	isf_idea_3 = {
-		manpower_recovery_speed = 0.25
-		global_manpower_modifier = 0.1
+		cavalry_cost = -0.5
+		cavalry_shock = 1
 	}
 	isf_idea_4 = {
-		free_adm_policy = 1
+		development_cost = -0.1
 	}
 	isf_idea_5 = {
-		build_cost = -0.10
+		tolerance_heathen = 1
 	}
 	isf_idea_6	 = {
-		defensiveness = 0.1
-		fort_maintenance_modifier = -0.1
+		envoy_travel_time = -0.20
+		movement_speed = 0.15
 	}
 	isf_idea_7 = {
-		merchants = 1
+		mil_tech_cost_modifier = -0.1
+		fort_maintenance_modifier = -0.2
 	}
 }
 
@@ -86,8 +88,8 @@ ISF_ideas = {
 
 YZD_ideas = {
 	start = {
-		tolerance_heathen = 1
-		religious_unity = 0.2
+		advisor_cost=-0.1
+		defensiveness = 0.10
 	}
 	
 	bonus = {
@@ -100,26 +102,30 @@ YZD_ideas = {
 	free = yes
 	
 	yzd_idea_1 = {
-		advisor_cost = -0.2
+		build_cost = -0.15
+		build_time = -0.25
 	}
 	yzd_idea_2 = {
-		caravan_power = 0.2
+		trade_range_modifier = 0.25
+		trade_steering = 0.25
 	}
 	yzd_idea_3 = {
-		defensiveness = 0.20
-		garrison_size = 0.20
+		cavalry_cost = -0.5
+		cavalry_shock = 1
 	}
 	yzd_idea_4 = {
-		global_supply_limit_modifier = 0.1
+		development_cost = -0.1
 	}
 	yzd_idea_5 = {
-		adm_tech_cost_modifier = -0.1
+		tolerance_heathen = 1
 	}
 	yzd_idea_6	 = {
-		diplomatic_reputation=1
+		envoy_travel_time = -0.20
+		movement_speed = 0.15
 	}
 	yzd_idea_7 = {
-		build_cost = -0.1
+		mil_tech_cost_modifier = -0.1
+		fort_maintenance_modifier = -0.2
 	}
 }
 
@@ -127,12 +133,12 @@ YZD_ideas = {
 
 KRM_ideas = {
 	start = {
-		prestige = 1
-		legitimacy = 1
+		advisor_cost=-0.1
+		defensiveness = 0.10
 	}
 	
 	bonus = {
-		reform_progress_growth = 0.1
+		trade_efficiency = 0.10
 	}	
 
 	trigger = {
@@ -141,192 +147,3084 @@ KRM_ideas = {
 	free = yes
 	
 	krm_idea_1 = {
-		global_garrison_growth = 0.1
-		fort_maintenance_modifier = -0.1
+		build_cost = -0.15
+		build_time = -0.25
 	}
 	krm_idea_2 = {
-		max_attrition = 1
+		trade_range_modifier = 0.25
+		trade_steering = 0.25
 	}
 	krm_idea_3 = {
-		cavalry_cost = -0.1
-		shock_damage = 0.1
+		cavalry_cost = -0.5
+		cavalry_shock = 1
 	}
 	krm_idea_4 = {
 		development_cost = -0.1
 	}
 	krm_idea_5 = {
-		idea_cost = -0.1
+		tolerance_heathen = 1
 	}
 	krm_idea_6	 = {
-		rival_border_fort_maintenance = -0.1
-		garrison_size = 0.25
-	}
-	krm_idea_7 = {
-		monthly_splendor = 1
-		merchants = 1
-	}
-}
-
-LRE_ideas = {
-	start = {
-		ae_impact = -0.05
-		diplomatic_upkeep = 1
-	}
-	
-	bonus = {
-		institution_spread_from_true_faith = 0.2
-	}	
-
-	trigger = {
-		tag = LRE
-	}
-	free = yes
-	
-	lre_idea_1 = {
-		land_morale = 0.1
-	}
-	lre_idea_2 = {
-		technology_cost = -0.05
-	}
-	lre_idea_3 = {
-		same_culture_advisor_cost = -0.2
-	}
-	lre_idea_4 = {
-		garrison_size = 0.25
-		defensiveness = 0.1
-	}
-	lre_idea_5 = {
-		placed_merchant_power = 0.4
-	}
-	lre_idea_6	 = {
-		legitimacy = 1
-	}
-	lre_idea_7 = {
-		build_cost = -0.15
-	}
-}
-
-SLU_ideas = {
-	start = {
-		cav_to_inf_ratio = 0.5
-		cavalry_shock = 1
-	}
-	
-	bonus = {
-		land_attrition = -0.25
-	}	
-
-	trigger = {
-		tag = SLU
-	}
-	free = yes
-	
-	slu_idea_1 = {
-		cavalry_cost = -0.3
-		cavalry_power = 0.2	
-	}
-	slu_idea_2 = {
-		global_garrison_growth = 0.1
-		fort_maintenance_modifier = -0.1
-	}
-	slu_idea_3 = {
-		province_warscore_cost = -0.1
-		core_creation = -0.1
-	}
-	slu_idea_4 = {
-		global_institution_spread = 0.05
-	}
-	slu_idea_5 = {
-		trade_range_modifier = 0.25
-		trade_steering = 0.25
-	}
-	slu_idea_6	 = {
-		enemy_core_creation = 0.3
-	}
-	slu_idea_7 = {
-		monthly_splendor = 1
-		ignore_coring_distance = yes
-	}
-}
-
-KHU_ideas = {
-	start = {
-		diplomatic_upkeep = 1
-		land_forcelimit_modifier = 0.33
-	}
-	
-	bonus = {
-		state_maintenance_modifier = -0.25
-	}	
-
-	trigger = {
-		tag = KHU
-	}
-	free = yes
-	
-	khu_idea_1 = {
-		nobles_loyalty_modifier = 0.1
-	}
-	khu_idea_2 = {
-		cavalry_cost = -0.1
-		cavalry_shock = 1
-	}
-	khu_idea_3 = {
-		manpower_recovery_speed = 0.15
-	}
-	khu_idea_4 = {
-		monthly_piety = 0.005
-	}
-	khu_idea_5 = {
-		discipline = 0.05
-	}
-	khu_idea_6	 = {
-		army_tradition_decay = -0.01
-	}
-	khu_idea_7 = {
-		production_efficiency = 0.1
-		state_maintenance_modifier = -0.25
-	}
-}
-
-BDK_ideas = {
-	start = {
-		leader_land_shock = 1
-		drill_gain_modifier = 0.1
-	}
-	
-	bonus = {
-		diplomatic_upkeep = 1
-	}	
-
-	trigger = {
-		tag = BDK
-	}
-	free = yes
-	
-	bdk_idea_1 = {
-		global_garrison_growth = 0.1
-		fort_maintenance_modifier = -0.1
-	}
-	bdk_idea_2 = {
-		legitimacy = 1
-	}
-	bdk_idea_3 = {
+		envoy_travel_time = -0.20
 		movement_speed = 0.15
 	}
-	bdk_idea_4 = {
-		cavalry_power = 0.1
-		rebel_support_efficiency = 0.5
-	}
-	bdk_idea_5 = {
-		manpower_recovery_speed = 0.10
-	}
-	bdk_idea_6	 = {
-		mercenary_cost = -0.1
-		
-	}
-	bdk_idea_7 = {
-		num_accepted_cultures = 2
-		same_culture_advisor_cost = -0.25
+	krm_idea_7 = {
+		mil_tech_cost_modifier = -0.1
+		fort_maintenance_modifier = -0.2
 	}
 }
+
+
+U00_ideas = {		
+	start = {	
+		improve_relation_modifier = 0.25
+		merc_maintenance_modifier = -0.25
+	}	
+	bonus = {	
+		infantry_fire = 1
+	}	
+		
+	trigger = {	
+		tag = U00
+	}	
+	free = yes	
+	
+	U00_idea_1 =  {	
+		inflation_action_cost = -0.10
+	}	
+		
+	U00_idea_2= {	
+		diplomatic_reputation = 5
+	}	
+		
+	U00_idea_3 = {	
+		leader_land_shock = 1
+	}	
+		
+	U00_idea_4 = {	
+		reduced_stab_impacts = yes
+	}	
+		
+	U00_idea_5 = {	
+		church_influence =-0.1
+	}	
+		
+	U00_idea_6 = {	
+		leader_land_shock = 1
+	}	
+		
+	U00_idea_7 = {	
+		extra_manpower_at_religious_war = yes
+	}	
+}		
+
+U01_ideas = {		
+	start = {	
+		diplomats = 1
+		reduced_liberty_desire_on_same_continent = 10
+	}	
+	bonus = {	
+		general_cost = -0.5
+	}	
+		
+	trigger = {	
+		tag = U01
+	}	
+	free = yes
+	
+	U01_idea_1 =  {	
+		global_manpower_modifier = 0.1
+	}	
+		
+	U01_idea_2= {	
+		reduced_stab_impacts = yes
+	}	
+		
+	U01_idea_3 = {	
+		amount_of_banners = 0.1
+	}	
+		
+	U01_idea_4 = {	
+		monthly_karma = 0.1
+	}	
+		
+	U01_idea_5 = {	
+		idea_cost = -0.1
+	}	
+		
+	U01_idea_6 = {	
+		inflation_reduction = 0.1
+	}	
+		
+	U01_idea_7 = {	
+		possible_mercenaries = 1.0
+	}	
+}		
+
+U02_ideas = {		
+	start = {	
+		harmonization_speed = 0.1
+		artillery_cost = -0.1
+	}	
+	bonus = {	
+		leader_land_shock = 1
+	}	
+		
+	trigger = {	
+		tag = U02
+	}	
+	free = yes
+		
+	U02_idea_1 =  {	
+		min_autonomy_in_territories = 0.1
+	}	
+		
+	U02_idea_2= {	
+		monthly_splendor = 1
+	}	
+		
+	U02_idea_3 = {	
+		native_assimilation = 0.25
+	}	
+		
+	U02_idea_4 = {	
+		vassal_income = 0.1 
+	}	
+		
+	U02_idea_5 = {	
+		war_exhaustion_cost = -0.2
+	}	
+		
+	U02_idea_6 = {	
+		yearly_army_professionalism = 0.1
+	}	
+		
+	U02_idea_7 = {	
+		rival_border_fort_maintenance = 0.1
+	}	
+}		
+
+U03_ideas = {		
+	start = {	
+		leader_cost = -0.1
+		reduced_stab_impacts = yes
+	}	
+	bonus = {	
+		attack_bonus_in_capital_terrain = yes  
+	}	
+		
+	trigger = {	
+		tag = U03
+	}	
+	free = yes
+			
+	U03_idea_1 =  {	
+		min_autonomy = 50
+	}	
+		
+	U03_idea_2= {	
+		recover_army_morale_speed = 0.05
+	}	
+		
+	U03_idea_3 = {	
+		province_warscore_cost = -0.2
+	}	
+		
+	U03_idea_4 = {	
+		ae_impact = -0.05
+	}	
+		
+	U03_idea_5 = {	
+		prestige_decay = -0.01
+	}	
+		
+	U03_idea_6 = {	
+		horde_unity = 0.5
+	}	
+		
+	U03_idea_7 = {	
+		infantry_shock = 1
+	}	
+}		
+
+U04_ideas = {		
+	start = {	
+		can_chain_claim = yes   
+		force_march_free = yes  
+	}	
+	bonus = {	
+		province_warscore_cost = -0.2
+	}	
+		
+	trigger = {	
+		tag = U04
+	}	
+	free = yes
+			
+	U04_idea_1 =  {	
+		attack_bonus_in_capital_terrain = yes  
+	}	
+		
+	U04_idea_2= {	
+		min_autonomy = 50
+	}	
+		
+	U04_idea_3 = {	
+		core_decay_on_your_own = 0.1
+	}	
+		
+	U04_idea_4 = {	
+		cavalry_shock = 1
+	}	
+		
+	U04_idea_5 = {	
+		discipline = 0.05
+	}	
+		
+	U04_idea_6 = {	
+		may_explore = yes
+	}	
+		
+	U04_idea_7 = {	
+		possible_dip_policy = 1
+	}	
+}		
+
+U05_ideas = {		
+	start = {	
+		cavalry_shock = 1
+		prestige_per_development_from_conversion = 0.1
+	}	
+	bonus = {	
+		cb_on_primitives = yes
+	}	
+		
+	trigger = {	
+		tag = U05
+	}	
+	free = yes
+			
+	U05_idea_1 =  {	
+		max_absolutism = 10
+	}	
+		
+	U05_idea_2= {	
+		global_manpower_modifier = 0.1
+	}	
+		
+	U05_idea_3 = {	
+		drill_gain_modifier = 0.1
+	}	
+		
+	U05_idea_4 = {	
+		ae_impact = -0.05
+	}	
+		
+	U05_idea_5 = {	
+		recover_army_morale_speed = 0.05
+	}	
+		
+	U05_idea_6 = {	
+		num_accepted_cultures = 2
+	}	
+		
+	U05_idea_7 = {	
+		artillery_shock = 1
+	}	
+}		
+
+U06_ideas = {		
+	start = {	
+		ignore_coring_distance = yes 
+		unjustified_demands = -0.5
+	}	
+	bonus = {	
+		extra_manpower_at_religious_war = yes
+	}	
+		
+	trigger = {	
+		tag = U06
+	}	
+	free = yes
+			
+	U06_idea_1 =  {	
+		max_absolutism = 10
+	}	
+		
+	U06_idea_2= {	
+		discovered_relations_impact = -0.25
+	}	
+		
+	U06_idea_3 = {	
+		candidate_random_bonus = 1
+	}	
+		
+	U06_idea_4 = {	
+		tolerance_heretic = 1
+	}	
+		
+	U06_idea_5 = {	
+		infantry_cost = -0.1
+	}	
+		
+	U06_idea_6 = {	
+		spy_offence = 0.1
+	}	
+		
+	U06_idea_7 = {	
+		diplomatic_reputation = 5
+	}	
+}		
+
+U07_ideas = {		
+	start = {	
+		global_foreign_trade_power = 0.1
+		claim_duration = 0.1
+	}	
+	bonus = {	
+		monarch_military_power = 1
+	}	
+		
+	trigger = {	
+		tag = U07
+	}	
+	free = yes
+			
+	U07_idea_1 =  {	
+		drill_decay_modifier = -0.1
+	}	
+		
+	U07_idea_2= {	
+		reform_progress_growth = 0.1
+	}	
+		
+	U07_idea_3 = {	
+		discovered_relations_impact = -0.25
+	}	
+		
+	U07_idea_4 = {	
+		general_cost = -0.5
+	}	
+		
+	U07_idea_5 = {	
+		technology_cost = -0.05
+	}	
+		
+	U07_idea_6 = {	
+		free_leader_pool = 1
+	}	
+		
+	U07_idea_7 = {	
+		global_tax_income = 5
+	}	
+}		
+
+U08_ideas = {		
+	start = {	
+		build_time = -0.25
+		placed_merchant_power = 0.1
+	}	
+	bonus = {	
+		global_unrest = -3
+	}	
+		
+	trigger = {	
+		tag = U08
+	}	
+	free = yes
+			
+	U08_idea_1 =  {	
+		no_religion_penalty = yes
+	}	
+		
+	U08_idea_2= {	
+		adm_tech_cost_modifier = -0.1
+	}	
+		
+	U08_idea_3 = {	
+		tolerance_heretic = 1
+	}	
+		
+	U08_idea_4 = {	
+		cb_on_primitives = yes
+	}	
+		
+	U08_idea_5 = {	
+		cavalry_fire = 1
+	}	
+		
+	U08_idea_6 = {	
+		fire_damage_received = -0.5
+	}	
+		
+	U08_idea_7 = {	
+		administrative_efficiency = 0.1
+	}	
+}		
+
+U09_ideas = {		
+	start = {	
+		adm_advisor_cost = -0.1
+		leader_land_shock = 1
+	}	
+	bonus = {	
+		trade_company_investment_cost = -0.2
+	}	
+		
+	trigger = {	
+		tag = U09
+	}	
+	free = yes
+			
+	U09_idea_1 =  {	
+		global_tax_modifier = 0.05
+	}	
+		
+	U09_idea_2= {	
+		amount_of_banners = 0.1
+	}	
+		
+	U09_idea_3 = {	
+		max_states = 5
+	}	
+		
+	U09_idea_4 = {	
+		monthly_support_heir_gain = 0.1
+	}	
+		
+	U09_idea_5 = {	
+		force_march_free = yes  
+	}	
+		
+	U09_idea_6 = {	
+		improve_relation_modifier = 0.25
+	}	
+		
+	U09_idea_7 = {	
+		reinforce_cost_modifier = -0.50
+	}	
+}		
+
+U10_ideas = {		
+	start = {	
+		election_cycle = -1
+		envoy_travel_time = -0.20
+	}	
+	bonus = {	
+		placed_merchant_power = 0.1
+	}	
+		
+	trigger = {	
+		tag = U10
+	}	
+	free = yes
+			
+	U10_idea_1 =  {	
+		same_culture_advisor_cost = -0.25
+	}	
+		
+	U10_idea_2= {	
+		range = 0.2
+	}	
+		
+	U10_idea_3 = {	
+		discovered_relations_impact = -0.25
+	}	
+		
+	U10_idea_4 = {	
+		global_regiment_cost = -0.10
+	}	
+		
+	U10_idea_5 = {	
+		culture_conversion_cost = -0.25
+	}	
+		
+	U10_idea_6 = {	
+		tolerance_heretic = 1
+	}	
+		
+	U10_idea_7 = {	
+		liberty_desire = 10
+	}	
+}		
+
+U11_ideas = {		
+	start = {	
+		merchants = 1
+		warscore_cost_vs_other_religion = 10
+	}	
+	bonus = {	
+		global_autonomy = 0.05
+	}	
+		
+	trigger = {	
+		tag = U11
+	}	
+	free = yes
+			
+	U11_idea_1 =  {	
+		army_tradition_decay = -0.01
+	}	
+		
+	U11_idea_2= {	
+		adm_tech_cost_modifier = -0.1
+	}	
+		
+	U11_idea_3 = {	
+		free_mil_policy = 1
+	}	
+		
+	U11_idea_4 = {	
+		discovered_relations_impact = -0.25
+	}	
+		
+	U11_idea_5 = {	
+		global_autonomy = 0.05
+	}	
+		
+	U11_idea_6 = {	
+		global_manpower = 1.0
+	}	
+		
+	U11_idea_7 = {	
+		max_absolutism = 10
+	}	
+}		
+
+U12_ideas = {		
+	start = {	
+		fire_damage_received = -0.5
+		inflation_action_cost = -0.10
+	}	
+	bonus = {	
+		artillery_shock = 1
+	}	
+		
+	trigger = {	
+		tag = U12
+	}	
+	free = yes
+			
+	U12_idea_1 =  {	
+		trade_efficiency = 0.05
+	}	
+		
+	U12_idea_2= {	
+		drill_decay_modifier = -0.1
+	}	
+		
+	U12_idea_3 = {	
+		heir_chance = 0.5
+	}	
+		
+	U12_idea_4 = {	
+		min_autonomy = 50
+	}	
+		
+	U12_idea_5 = {	
+		improve_relation_modifier = 0.25
+	}	
+		
+	U12_idea_6 = {	
+		center_of_trade_upgrade_cost = -0.2
+	}	
+		
+	U12_idea_7 = {	
+		cavalry_fire = 1
+	}	
+}		
+
+U13_ideas = {		
+	start = {	
+		reduced_liberty_desire = 10
+		war_taxes_cost_modifier = -0.1
+	}	
+	bonus = {	
+		global_own_trade_power = 0.1
+	}	
+		
+	trigger = {	
+		tag = U13
+	}	
+	free = yes
+			
+	U13_idea_1 =  {	
+		global_spy_defence = 0.2
+	}	
+		
+	U13_idea_2= {	
+		may_explore = yes
+	}	
+		
+	U13_idea_3 = {	
+		expel_minorities_cost = -0.3
+	}	
+		
+	U13_idea_4 = {	
+		cb_on_government_enemies = yes
+	}	
+		
+	U13_idea_5 = {	
+		harmonization_speed = 0.1
+	}	
+		
+	U13_idea_6 = {	
+		dip_advisor_cost = -0.1
+	}	
+		
+	U13_idea_7 = {	
+		may_recruit_female_generals = yes
+	}	
+}		
+
+U14_ideas = {		
+	start = {	
+		interest = -1
+		artillery_shock = 1
+	}	
+	bonus = {	
+		army_tradition = 1
+	}	
+		
+	trigger = {	
+		tag = U14
+	}	
+	free = yes
+			
+	U14_idea_1 =  {	
+		global_own_trade_power = 0.1
+	}	
+		
+	U14_idea_2= {	
+		monthly_militarized_society = -0.05
+	}	
+		
+	U14_idea_3 = {	
+		mil_advisor_cost = -0.1
+	}	
+		
+	U14_idea_4 = {	
+		dip_tech_cost_modifier = -0.1
+	}	
+		
+	U14_idea_5 = {	
+		tolerance_own = 1
+	}	
+		
+	U14_idea_6 = {	
+		global_trade_power = 0.1
+	}	
+		
+	U14_idea_7 = {	
+		establish_order_cost = 0.1
+	}	
+}		
+
+U15_ideas = {		
+	start = {	
+		prestige = 1
+		global_colonial_growth = 25
+	}	
+	bonus = {	
+		imperial_mandate = 1        
+	}	
+		
+	trigger = {	
+		tag = U15
+	}	
+	free = yes
+			
+	U15_idea_1 =  {	
+		native_advancement_cost = -0.50
+	}	
+		
+	U15_idea_2= {	
+		possible_condottieri = 0.5 
+	}	
+		
+	U15_idea_3 = {	
+		same_culture_advisor_cost = -0.25
+	}	
+		
+	U15_idea_4 = {	
+		can_bypass_forts = yes  
+	}	
+		
+	U15_idea_5 = {	
+		church_influence =-0.1
+	}	
+		
+	U15_idea_6 = {	
+		core_decay_on_your_own = 0.1
+	}	
+		
+	U15_idea_7 = {	
+		sea_repair = yes
+	}	
+}		
+
+U16_ideas = {		
+	start = {	
+		spy_offence = 0.1
+		can_chain_claim = yes   
+	}	
+	bonus = {	
+		horde_unity = 0.5
+	}	
+		
+	trigger = {	
+		tag = U16
+	}	
+	free = yes
+			
+	U16_idea_1 =  {	
+		meritocracy = 1
+	}	
+		
+	U16_idea_2= {	
+		placed_merchant_power = 0.1
+	}	
+		
+	U16_idea_3 = {	
+		native_advancement_cost = -0.50
+	}	
+		
+	U16_idea_4 = {	
+		female_advisor_chance = 0.1 
+	}	
+		
+	U16_idea_5 = {	
+		reinforce_speed = 0.25
+	}	
+		
+	U16_idea_6 = {	
+		caravan_power = 0.2
+	}	
+		
+	U16_idea_7 = {	
+		missionary_maintenance_cost = -0.1
+	}	
+}		
+
+U17_ideas = {		
+	start = {	
+		burghers_influence = -0.1
+		land_maintenance_modifier = -0.1
+	}	
+	bonus = {	
+		possible_adm_policy = 1
+	}	
+		
+	trigger = {	
+		tag = U17
+	}	
+	free = yes
+			
+	U17_idea_1 =  {	
+		war_exhaustion_cost = -0.2
+	}	
+		
+	U17_idea_2= {	
+		shock_damage = 0.5
+	}	
+		
+	U17_idea_3 = {	
+		diplomatic_upkeep = 1
+	}	
+		
+	U17_idea_4 = {	
+		harmonization_speed = 0.1
+	}	
+		
+	U17_idea_5 = {	
+		prestige_decay = -0.01
+	}	
+		
+	U17_idea_6 = {	
+		free_policy = 1
+	}	
+		
+	U17_idea_7 = {	
+		war_taxes_cost_modifier = -0.1
+	}	
+}		
+
+U18_ideas = {		
+	start = {	
+		tolerance_heretic = 1
+		free_dip_policy = 1
+	}	
+	bonus = {	
+		church_influence =-0.1
+	}	
+		
+	trigger = {	
+		tag = U18
+	}	
+	free = yes
+			
+	U18_idea_1 =  {	
+		artillery_shock = 1
+	}	
+		
+	U18_idea_2= {	
+		liberty_desire_from_subject_development = 10
+	}	
+		
+	U18_idea_3 = {	
+		global_own_trade_power = 0.1
+	}	
+		
+	U18_idea_4 = {	
+		improve_relation_modifier = 0.25
+	}	
+		
+	U18_idea_5 = {	
+		free_dip_policy = 1
+	}	
+		
+	U18_idea_6 = {	
+		envoy_travel_time = -0.20
+	}	
+		
+	U18_idea_7 = {	
+		can_fabricate_for_vassals = yes
+	}	
+}		
+
+U19_ideas = {		
+	start = {	
+		reduced_liberty_desire = 10
+		reduced_liberty_desire = 10
+	}	
+	bonus = {	
+		reinforce_speed = 0.25
+	}	
+		
+	trigger = {	
+		tag = U19
+	}	
+	free = yes
+			
+	U19_idea_1 =  {	
+		adm_advisor_cost = -0.1
+	}	
+		
+	U19_idea_2= {	
+		fire_damage_received = -0.5
+	}	
+		
+	U19_idea_3 = {	
+		monarch_diplomatic_power = 1
+	}	
+		
+	U19_idea_4 = {	
+		global_trade_power = 0.1
+	}	
+		
+	U19_idea_5 = {	
+		global_trade_goods_size_modifier = 0.1
+	}	
+		
+	U19_idea_6 = {	
+		land_attrition = -0.25
+	}	
+		
+	U19_idea_7 = {	
+		inflation_reduction = 0.1
+	}	
+}		
+
+U20_ideas = {		
+	start = {	
+		yearly_tribal_allegiance = -0.05
+		reinforce_speed = 0.25
+	}	
+	bonus = {	
+		technology_cost = -0.05
+	}	
+		
+	trigger = {	
+		tag = U20
+	}	
+	free = yes
+		
+	U20_idea_1 =  {	
+		land_attrition = -0.25
+	}	
+		
+	U20_idea_2= {	
+		possible_mil_policy = 1
+	}	
+		
+	U20_idea_3 = {	
+		culture_conversion_cost = -0.25
+	}	
+		
+	U20_idea_4 = {	
+		global_unrest = -3
+	}	
+		
+	U20_idea_5 = {	
+		land_maintenance_modifier = -0.1
+	}	
+		
+	U20_idea_6 = {	
+		religious_unity = 0.5
+	}	
+		
+	U20_idea_7 = {	
+		reinforce_cost_modifier = -0.50
+	}	
+}		
+
+U21_ideas = {		
+	start = {	
+		can_colony_boost_development = yes 
+		drill_decay_modifier = -0.1
+	}	
+	bonus = {	
+		free_leader_pool = 1
+	}	
+		
+	trigger = {	
+		tag = U21
+	}	
+	free = yes
+			
+	U21_idea_1 =  {	
+		enemy_core_creation = 0.1
+	}	
+		
+	U21_idea_2= {	
+		artillery_shock = 1
+	}	
+		
+	U21_idea_3 = {	
+		cavalry_power = 0.1
+	}	
+		
+	U21_idea_4 = {	
+		native_uprising_chance = -0.25
+	}	
+		
+	U21_idea_5 = {	
+		drill_decay_modifier = -0.1
+	}	
+		
+	U21_idea_6 = {	
+		global_trade_goods_size_modifier = 0.1
+	}	
+		
+	U21_idea_7 = {	
+		cb_on_primitives = yes
+	}	
+}		
+
+U22_ideas = {		
+	start = {	
+		prestige_from_land = 0.5 
+		candidate_random_bonus = 1
+	}	
+	bonus = {	
+		technology_cost = -0.05
+	}	
+		
+	trigger = {	
+		tag = U22
+	}	
+	free = yes
+			
+	U22_idea_1 =  {	
+		build_time = -0.25
+	}	
+		
+	U22_idea_2= {	
+		reduced_liberty_desire = 10
+	}	
+		
+	U22_idea_3 = {	
+		raze_power_gain = 0.2
+	}	
+		
+	U22_idea_4 = {	
+		devotion = 0.5
+	}	
+		
+	U22_idea_5 = {	
+		artillery_cost = -0.1
+	}	
+		
+	U22_idea_6 = {	
+		cavalry_shock = 1
+	}	
+		
+	U22_idea_7 = {	
+		tolerance_own = 1
+	}	
+}		
+
+U23_ideas = {		
+	start = {	
+		range = 0.2
+		reduced_liberty_desire = 10
+	}	
+	bonus = {	
+		max_states = 5
+	}	
+		
+	trigger = {	
+		tag = U23
+	}	
+		free = yes
+		
+	U23_idea_1 =  {	
+		fabricate_claims_cost = 0.1
+	}	
+		
+	U23_idea_2= {	
+		artillery_power = 0.1
+	}	
+		
+	U23_idea_3 = {	
+		rival_border_fort_maintenance = 0.1
+	}	
+		
+	U23_idea_4 = {	
+		leader_land_shock = 1
+	}	
+		
+	U23_idea_5 = {	
+		reserves_organisation = 0.5
+	}	
+		
+	U23_idea_6 = {	
+		max_absolutism = 10
+	}	
+		
+	U23_idea_7 = {	
+		monarch_military_power = 1
+	}	
+}		
+
+U24_ideas = {		
+	start = {	
+		war_exhaustion_cost = -0.2
+		native_uprising_chance = -0.25
+	}	
+	bonus = {	
+		cavalry_fire = 1
+	}	
+		
+	trigger = {	
+		tag = U24
+	}	
+	free = yes
+			
+	U24_idea_1 =  {	
+		treasure_fleet_income = 0.5
+	}	
+		
+	U24_idea_2= {	
+		horde_unity = 0.5
+	}	
+		
+	U24_idea_3 = {	
+		mercenary_discipline = 0.05
+	}	
+		
+	U24_idea_4 = {	
+		diplomats = 1
+	}	
+		
+	U24_idea_5 = {	
+		missionaries = 1
+	}	
+		
+	U24_idea_6 = {	
+		possible_dip_policy = 1
+	}	
+		
+	U24_idea_7 = {	
+		treasure_fleet_income = 0.5
+	}	
+}		
+
+U25_ideas = {		
+	start = {	
+		cavalry_shock = 1
+		force_march_free = yes  
+	}	
+	bonus = {	
+		inflation_action_cost = -0.10
+	}	
+		
+	trigger = {	
+		tag = U25
+	}	
+	free = yes
+			
+	U25_idea_1 =  {	
+		global_tax_income = 5
+	}	
+		
+	U25_idea_2= {	
+		reinforce_speed = 0.25
+	}	
+		
+	U25_idea_3 = {	
+		republican_tradition = 0.1
+	}	
+		
+	U25_idea_4 = {	
+		army_tradition_from_battle = 0.5
+	}	
+		
+	U25_idea_5 = {	
+		artillery_power = 0.1
+	}	
+		
+	U25_idea_6 = {	
+		land_forcelimit_modifier = 0.1
+	}	
+		
+	U25_idea_7 = {	
+		garrison_size = 0.25
+	}	
+}		
+
+U26_ideas = {		
+	start = {	
+		max_states = 5
+		monthly_support_heir_gain = 0.1
+	}	
+	bonus = {	
+		has_banners = 1
+	}	
+		
+	trigger = {	
+		tag = U26
+	}	
+	free = yes
+			
+	U26_idea_1 =  {	
+		mercenary_cost = -0.25
+	}	
+		
+	U26_idea_2= {	
+		global_manpower_modifier = 0.1
+	}	
+		
+	U26_idea_3 = {	
+		garrison_size = 0.25
+	}	
+		
+	U26_idea_4 = {	
+		promote_culture_cost = -0.5
+	}	
+		
+	U26_idea_5 = {	
+		global_tax_income = 5
+	}	
+		
+	U26_idea_6 = {	
+		possible_condottieri = 0.5 
+	}	
+		
+	U26_idea_7 = {	
+		native_assimilation = 0.25
+	}	
+}		
+
+U27_ideas = {		
+	start = {	
+		colonist_placement_chance = 0.05
+		possible_dip_policy = 1
+	}	
+	bonus = {	
+		mil_tech_cost_modifier = -0.1
+	}	
+		
+	trigger = {	
+		tag = U27
+	}	
+	free = yes
+			
+	U27_idea_1 =  {	
+		harmonization_speed = 0.1
+	}	
+		
+	U27_idea_2= {	
+		fabricate_claims_cost = 0.1
+	}	
+		
+	U27_idea_3 = {	
+		war_exhaustion_cost = -0.2
+	}	
+		
+	U27_idea_4 = {	
+		discipline = 0.05
+	}	
+		
+	U27_idea_5 = {	
+		army_tradition = 1
+	}	
+		
+	U27_idea_6 = {	
+		inflation_action_cost = -0.10
+	}	
+		
+	U27_idea_7 = {	
+		artillery_shock = 1
+	}	
+}		
+
+U28_ideas = {		
+	start = {	
+		monthly_support_heir_gain = 0.1
+		advisor_pool = 1
+	}	
+	bonus = {	
+		free_adm_policy = 1
+	}	
+		
+	trigger = {	
+		tag = U28
+	}	
+	free = yes
+			
+	U28_idea_1 =  {	
+		cavalry_flanking = 0.5
+	}	
+		
+	U28_idea_2= {	
+		global_colonial_growth = 25
+	}	
+		
+	U28_idea_3 = {	
+		development_cost = -0.1
+	}	
+		
+	U28_idea_4 = {	
+		diplomatic_annexation_cost = -0.25
+	}	
+		
+	U28_idea_5 = {	
+		cb_on_primitives = yes
+	}	
+		
+	U28_idea_6 = {	
+		global_institution_spread = 0.05
+	}	
+		
+	U28_idea_7 = {	
+		religious_unity = 0.5
+	}	
+}		
+
+U29_ideas = {		
+	start = {	
+		power_projection_from_insults = 0.1
+		election_cycle = -1
+	}	
+	bonus = {	
+		can_bypass_forts = yes  
+	}	
+		
+	trigger = {	
+		tag = U29
+	}	
+	free = yes
+			
+	U29_idea_1 =  {	
+		free_dip_policy = 1
+	}	
+		
+	U29_idea_2= {	
+		election_cycle = -1
+	}	
+		
+	U29_idea_3 = {	
+		advisor_cost = -0.5
+	}	
+		
+	U29_idea_4 = {	
+		global_regiment_recruit_speed = -0.1
+	}	
+		
+	U29_idea_5 = {	
+		shock_damage_received = -0.1
+	}	
+		
+	U29_idea_6 = {	
+		monthly_piety = 0.1
+	}	
+		
+	U29_idea_7 = {	
+		global_tax_modifier = 0.05
+	}	
+}		
+
+U30_ideas = {		
+	start = {	
+		trade_range_modifier = 0.25
+		reinforce_cost_modifier = -0.50
+	}	
+	bonus = {	
+		land_morale = 0.25
+	}	
+		
+	trigger = {	
+		tag = U30
+	}	
+	free = yes
+			
+	U30_idea_1 =  {	
+		liberty_desire_from_subject_development = 10
+	}	
+		
+	U30_idea_2= {	
+		culture_conversion_cost = -0.25
+	}	
+		
+	U30_idea_3 = {	
+		diplomats = 1
+	}	
+		
+	U30_idea_4 = {	
+		global_tax_modifier = 0.05
+	}	
+		
+	U30_idea_5 = {	
+		legitimacy = 1
+	}	
+		
+	U30_idea_6 = {	
+		free_dip_policy = 1
+	}	
+		
+	U30_idea_7 = {	
+		core_creation = -0.5
+	}	
+}		
+
+U31_ideas = {		
+	start = {	
+		expel_minorities_cost = -0.3
+		state_maintenance_modifier = -0.25
+	}	
+	bonus = {	
+		global_manpower = 1.0
+	}	
+		
+	trigger = {	
+		tag = U31
+	}	
+	free = yes
+			
+	U31_idea_1 =  {	
+		rebel_support_efficiency = 0.5
+	}	
+		
+	U31_idea_2= {	
+		reinforce_cost_modifier = -0.50
+	}	
+		
+	U31_idea_3 = {	
+		fire_damage = 0.1
+	}	
+		
+	U31_idea_4 = {	
+		rebel_support_efficiency = 0.5
+	}	
+		
+	U31_idea_5 = {	
+		reserves_organisation = 0.5
+	}	
+		
+	U31_idea_6 = {	
+		monarch_diplomatic_power = 1
+	}	
+		
+	U31_idea_7 = {	
+		discovered_relations_impact = -0.25
+	}	
+}		
+
+U32_ideas = {		
+	start = {	
+		war_exhaustion_cost = -0.2
+		min_autonomy = 50
+	}	
+	bonus = {	
+		trade_efficiency = 0.05
+	}	
+		
+	trigger = {	
+		tag = U32
+	}	
+	free = yes
+			
+	U32_idea_1 =  {	
+		build_cost = -0.1
+	}	
+		
+	U32_idea_2= {	
+		missionaries = 1
+	}	
+		
+	U32_idea_3 = {	
+		fort_maintenance_modifier = -0.1
+	}	
+		
+	U32_idea_4 = {	
+		auto_explore_adjacent_to_colony = yes
+	}	
+		
+	U32_idea_5 = {	
+		global_supply_limit_modifier = 0.1
+	}	
+		
+	U32_idea_6 = {	
+		church_influence =-0.1
+	}	
+		
+	U32_idea_7 = {	
+		may_establish_frontier = yes
+	}	
+}		
+
+U33_ideas = {		
+	start = {	
+		siege_blockade_progress = 0.1
+		army_tradition_decay = -0.01
+	}	
+	bonus = {	
+		auto_explore_adjacent_to_colony = yes
+	}	
+		
+	trigger = {	
+		tag = U33
+	}	
+	free = yes
+			
+	U33_idea_1 =  {	
+		development_cost = -0.1
+	}	
+		
+	U33_idea_2= {	
+		rival_border_fort_maintenance = 0.1
+	}	
+		
+	U33_idea_3 = {	
+		can_chain_claim = yes   
+	}	
+		
+	U33_idea_4 = {	
+		republican_tradition = 0.1
+	}	
+		
+	U33_idea_5 = {	
+		infantry_power = 0.1
+	}	
+		
+	U33_idea_6 = {	
+		idea_claim_colonies = yes
+	}	
+		
+	U33_idea_7 = {	
+		land_forcelimit = 1
+	}	
+}		
+
+U34_ideas = {		
+	start = {	
+		leader_land_fire = 1
+		dip_tech_cost_modifier = -0.1
+	}	
+	bonus = {	
+		global_tax_modifier = 0.05
+	}	
+		
+	trigger = {	
+		tag = U34
+	}	
+	free = yes
+			
+	U34_idea_1 =  {	
+		defensiveness = 0.25
+	}	
+		
+	U34_idea_2= {	
+		mercenary_discipline = 0.05
+	}	
+		
+	U34_idea_3 = {	
+		province_warscore_cost = -0.2
+	}	
+		
+	U34_idea_4 = {	
+		siege_ability = 0.1
+	}	
+		
+	U34_idea_5 = {	
+		prestige_decay = -0.01
+	}	
+		
+	U34_idea_6 = {	
+		embargo_efficiency = 0.25
+	}	
+		
+	U34_idea_7 = {	
+		enemy_core_creation = 0.1
+	}	
+}		
+
+U35_ideas = {		
+	start = {	
+		spy_offence = 0.1
+		global_trade_goods_size_modifier = 0.1
+	}	
+	bonus = {	
+		sea_repair = yes
+	}	
+		
+	trigger = {	
+		tag = U35
+	}	
+		free = yes
+		
+	U35_idea_1 =  {	
+		artillery_bonus_vs_fort = 1
+	}	
+		
+	U35_idea_2= {	
+		province_warscore_cost = -0.2
+	}	
+		
+	U35_idea_3 = {	
+		administrative_efficiency = 0.1
+	}	
+		
+	U35_idea_4 = {	
+		trade_company_investment_cost = -0.2
+	}	
+		
+	U35_idea_5 = {	
+		global_manpower = 1.0
+	}	
+		
+	U35_idea_6 = {	
+		has_banners = 1
+	}	
+		
+	U35_idea_7 = {	
+		leader_siege = 1
+	}	
+}		
+
+U36_ideas = {		
+	start = {	
+		expel_minorities_cost = -0.3
+		harsh_treatment_cost = 0.1
+	}	
+	bonus = {	
+		artillery_power = 0.1
+	}	
+		
+	trigger = {	
+		tag = U36
+	}	
+	free = yes
+			
+	U36_idea_1 =  {	
+		rival_change_cost = 0.5
+	}	
+		
+	U36_idea_2= {	
+		prestige_from_land = 0.5 
+	}	
+		
+	U36_idea_3 = {	
+		global_own_trade_power = 0.1
+	}	
+		
+	U36_idea_4 = {	
+		envoy_travel_time = -0.20
+	}	
+		
+	U36_idea_5 = {	
+		global_missionary_strength = 0.02
+	}	
+		
+	U36_idea_6 = {	
+		artillery_bonus_vs_fort = 1
+	}	
+		
+	U36_idea_7 = {	
+		monarch_military_power = 1
+	}	
+}		
+
+U37_ideas = {		
+	start = {	
+		leader_land_manuever = 1
+		min_autonomy = 50
+	}	
+	bonus = {	
+		global_regiment_cost = -0.10
+	}	
+		
+	trigger = {	
+		tag = U37
+	}	
+	free = yes
+			
+	U37_idea_1 =  {	
+		global_heretic_missionary_strength = 0.03
+	}	
+		
+	U37_idea_2= {	
+		war_exhaustion = -0.1
+	}	
+		
+	U37_idea_3 = {	
+		reform_progress_growth = 0.1
+	}	
+		
+	U37_idea_4 = {	
+		army_tradition_from_battle = 0.5
+	}	
+		
+	U37_idea_5 = {	
+		artillery_cost = -0.1
+	}	
+		
+	U37_idea_6 = {	
+		no_religion_penalty = yes
+	}	
+		
+	U37_idea_7 = {	
+		global_supply_limit_modifier = 0.1
+	}	
+}		
+
+U38_ideas = {		
+	start = {	
+		vassal_forcelimit_bonus = 0.33
+		adm_advisor_cost = -0.1
+	}	
+	bonus = {	
+		republican_tradition = 0.1
+	}	
+		
+	trigger = {	
+		tag = U38
+	}	
+	free = yes
+			
+	U38_idea_1 =  {	
+		enforce_religion_cost = 0.1
+	}	
+		
+	U38_idea_2= {	
+		cavalry_power = 0.1
+	}	
+		
+	U38_idea_3 = {	
+		trade_steering = 0.25
+	}	
+		
+	U38_idea_4 = {	
+		improve_relation_modifier = 0.25
+	}	
+		
+	U38_idea_5 = {	
+		interest = -1
+	}	
+		
+	U38_idea_6 = {	
+		monarch_military_power = 1
+	}	
+		
+	U38_idea_7 = {	
+		global_institution_spread = 0.05
+	}	
+}		
+
+U39_ideas = {		
+	start = {	
+		reduced_liberty_desire = 10
+		diplomatic_upkeep = 1
+	}	
+	bonus = {	
+		global_colonial_growth = 25
+	}	
+		
+	trigger = {	
+		tag = U39
+	}	
+		free = yes
+		
+	U39_idea_1 =  {	
+		advisor_cost = -0.5
+	}	
+		
+	U39_idea_2= {	
+		global_spy_defence = 0.2
+	}	
+		
+	U39_idea_3 = {	
+		center_of_trade_upgrade_cost = -0.2
+	}	
+		
+	U39_idea_4 = {	
+		land_maintenance_modifier = -0.1
+	}	
+		
+	U39_idea_5 = {	
+		adm_advisor_cost = -0.1
+	}	
+		
+	U39_idea_6 = {	
+		interest = -1
+	}	
+		
+	U39_idea_7 = {	
+		cavalry_power = 0.1
+	}	
+}		
+
+U40_ideas = {		
+	start = {	
+		hostile_attrition = 1
+		nobles_influence =- 0.1
+	}	
+	bonus = {	
+		cb_on_government_enemies = yes
+	}	
+		
+	trigger = {	
+		tag = U40
+	}	
+	free = yes
+			
+	U40_idea_1 =  {	
+		global_garrison_growth = 0.1
+	}	
+		
+	U40_idea_2= {	
+		trade_range_modifier = 0.25
+	}	
+		
+	U40_idea_3 = {	
+		war_exhaustion = -0.1
+	}	
+		
+	U40_idea_4 = {	
+		movement_speed = 0.15
+	}	
+		
+	U40_idea_5 = {	
+		siege_ability = 0.1
+	}	
+		
+	U40_idea_6 = {	
+		shock_damage = 0.5
+	}	
+		
+	U40_idea_7 = {	
+		force_march_free = yes  
+	}	
+}		
+
+U41_ideas = {		
+	start = {	
+		movement_speed = 0.15
+		envoy_travel_time = -0.20
+	}	
+	bonus = {	
+		may_explore = yes
+	}	
+		
+	trigger = {	
+		tag = U41
+	}	
+	free = yes
+			
+	U41_idea_1 =  {	
+		war_exhaustion = -0.1
+	}	
+		
+	U41_idea_2= {	
+		development_cost = -0.1
+	}	
+		
+	U41_idea_3 = {	
+		max_states = 5
+	}	
+		
+	U41_idea_4 = {	
+		amount_of_banners = 0.1
+	}	
+		
+	U41_idea_5 = {	
+		placed_merchant_power = 0.1
+	}	
+		
+	U41_idea_6 = {	
+		global_missionary_strength = 0.02
+	}	
+		
+	U41_idea_7 = {	
+		center_of_trade_upgrade_cost = -0.2
+	}	
+}		
+
+U42_ideas = {		
+	start = {	
+		monthly_piety = 0.1
+		no_religion_penalty = yes
+	}	
+	bonus = {	
+		monthly_support_heir_gain = 0.1
+	}	
+		
+	trigger = {	
+		tag = U42
+	}	
+	free = yes
+			
+	U42_idea_1 =  {	
+		global_foreign_trade_power = 0.1
+	}	
+		
+	U42_idea_2= {	
+		free_mil_policy = 1
+	}	
+		
+	U42_idea_3 = {	
+		vassal_income = 0.1 
+	}	
+		
+	U42_idea_4 = {	
+		global_trade_power = 0.1
+	}	
+		
+	U42_idea_5 = {	
+		land_forcelimit_modifier = 0.1
+	}	
+		
+	U42_idea_6 = {	
+		embracement_cost = -0.2
+	}	
+		
+	U42_idea_7 = {	
+		reduced_liberty_desire_on_same_continent = 10
+	}	
+}		
+
+
+U43_ideas = {		
+	start = {	
+		possible_adm_policy = 1
+		garrison_size = 0.25
+	}	
+	bonus = {	
+		claim_duration = 0.1
+	}	
+		
+	trigger = {	
+		tag = U43
+	}	
+	free = yes
+			
+	U43_idea_1 =  {	
+		possible_dip_policy = 1
+	}	
+		
+	U43_idea_2= {	
+		innovativeness_gain = 1
+	}	
+		
+	U43_idea_3 = {	
+		no_religion_penalty = yes
+	}	
+		
+	U43_idea_4 = {	
+		promote_culture_cost = -0.5
+	}	
+		
+	U43_idea_5 = {	
+		tolerance_own = 1
+	}	
+		
+	U43_idea_6 = {	
+		global_manpower = 1.0
+	}	
+		
+	U43_idea_7 = {	
+		monarch_diplomatic_power = 1
+	}	
+}		
+
+U44_ideas = {		
+	start = {	
+		max_absolutism = 10
+		cb_on_overseas = yes
+	}	
+	bonus = {	
+		establish_order_cost = 0.1
+	}	
+		
+	trigger = {	
+		tag = U44
+	}	
+		free = yes
+		
+	U44_idea_1 =  {	
+		infantry_power = 0.1
+	}	
+		
+	U44_idea_2= {	
+		max_absolutism = 10
+	}	
+		
+	U44_idea_3 = {	
+		free_policy = 1
+	}	
+		
+	U44_idea_4 = {	
+		may_recruit_female_generals = yes
+	}	
+		
+	U44_idea_5 = {	
+		global_heretic_missionary_strength = 0.03
+	}	
+		
+	U44_idea_6 = {	
+		movement_speed = 0.15
+	}	
+		
+	U44_idea_7 = {	
+		cavalry_shock = 1
+	}	
+}		
+
+U45_ideas = {		
+	start = {	
+		build_cost = -0.1
+		leader_land_manuever = 1
+	}	
+	bonus = {	
+		all_power_cost = -0.05
+	}	
+		
+	trigger = {	
+		tag = U45
+	}	
+		free = yes
+		
+	U45_idea_1 =  {	
+		global_regiment_recruit_speed = -0.1
+	}	
+		
+	U45_idea_2= {	
+		monthly_support_heir_gain = 0.1
+	}	
+		
+	U45_idea_3 = {	
+		harmonization_speed = 0.1
+	}	
+		
+	U45_idea_4 = {	
+		global_regiment_recruit_speed = -0.1
+	}	
+		
+	U45_idea_5 = {	
+		global_autonomy = 0.05
+	}	
+		
+	U45_idea_6 = {	
+		possible_mercenaries = 1.0
+	}	
+		
+	U45_idea_7 = {	
+		monthly_splendor = 1
+	}	
+}	
+	
+U46_ideas = {		
+	start = {	
+		reduced_stab_impacts = yes
+		may_recruit_female_generals = yes
+	}	
+	bonus = {	
+		cav_to_inf_ratio = 0.1
+	}	
+		
+	trigger = {	
+		tag = U46
+	}	
+	free = yes
+	
+	U46_idea_1 =  {	
+		merc_maintenance_modifier = -0.25
+	}	
+		
+	U46_idea_2= {	
+		diplomatic_upkeep = 1
+	}	
+		
+	U46_idea_3 = {	
+		treasure_fleet_income = 0.5
+	}	
+		
+	U46_idea_4 = {	
+		force_march_free = yes  
+	}	
+		
+	U46_idea_5 = {	
+		reelection_cost = -0.1
+	}	
+		
+	U46_idea_6 = {	
+		diplomats = 1
+	}	
+		
+	U46_idea_7 = {	
+		inflation_reduction = 0.1
+	}	
+}		
+
+U47_ideas = {		
+	start = {	
+		unjustified_demands = -0.5
+		missionary_maintenance_cost = -0.1
+	}	
+	bonus = {	
+		sea_repair = yes
+	}	
+		
+	trigger = {	
+		tag = U47
+	}	
+	free = yes	
+	
+	U47_idea_1 =  {	
+		enemy_core_creation = 0.1
+	}	
+		
+	U47_idea_2= {	
+		yearly_absolutism = 0.1
+	}	
+		
+	U47_idea_3 = {	
+		trade_company_investment_cost = -0.2
+	}	
+		
+	U47_idea_4 = {	
+		global_unrest = -3
+	}	
+		
+	U47_idea_5 = {	
+		loot_amount = 0.1
+	}	
+		
+	U47_idea_6 = {	
+		infantry_shock = 1
+	}	
+		
+	U47_idea_7 = {	
+		caravan_power = 0.2
+	}	
+}		
+
+U48_ideas = {		
+	start = {	
+		autonomy_change_time = 0.1
+		shock_damage = 0.5
+	}	
+	bonus = {	
+		dip_advisor_cost = -0.1
+	}	
+		
+	trigger = {	
+		tag = U48
+	}	
+	free = yes	
+		
+	U48_idea_1 =  {	
+		monthly_karma = 0.1
+	}	
+		
+	U48_idea_2= {	
+		core_decay_on_your_own = 0.1
+	}	
+		
+	U48_idea_3 = {	
+		prestige_from_land = 0.5 
+	}	
+		
+	U48_idea_4 = {	
+		development_cost = -0.1
+	}	
+		
+	U48_idea_5 = {	
+		may_explore = yes
+	}	
+		
+	U48_idea_6 = {	
+		reduced_liberty_desire = 10
+	}	
+		
+	U48_idea_7 = {	
+		global_institution_spread = 0.05
+	}	
+}		
+
+U49_ideas = {		
+	start = {	
+		war_exhaustion = -0.1
+		embracement_cost = -0.2
+	}	
+	bonus = {	
+		extra_manpower_at_religious_war = yes
+	}	
+		
+	trigger = {	
+		tag = U49
+	}	
+	free = yes	
+		
+	U49_idea_1 =  {	
+		extra_manpower_at_religious_war = yes
+	}	
+		
+	U49_idea_2= {	
+		leader_siege = 1
+	}	
+		
+	U49_idea_3 = {	
+		global_missionary_strength = 0.02
+	}	
+		
+	U49_idea_4 = {	
+		global_prov_trade_power_modifier = 0.1
+	}	
+		
+	U49_idea_5 = {	
+		war_exhaustion_cost = -0.2
+	}	
+		
+	U49_idea_6 = {	
+		enforce_religion_cost = 0.1
+	}	
+		
+	U49_idea_7 = {	
+		stability_cost_modifier = -0.1
+	}	
+}		
+
+U50_ideas = {		
+	start = {	
+		possible_dip_policy = 1
+		native_advancement_cost = -0.50
+	}	
+	bonus = {	
+		core_decay_on_your_own = 0.1
+	}	
+		
+	trigger = {	
+		tag = U50
+	}	
+	free = yes	
+		
+	U50_idea_1 =  {	
+		merchants = 1
+	}	
+		
+	U50_idea_2= {	
+		yearly_army_professionalism = 0.1
+	}	
+		
+	U50_idea_3 = {	
+		diplomatic_upkeep = 1
+	}	
+		
+	U50_idea_4 = {	
+		can_chain_claim = yes   
+	}	
+		
+	U50_idea_5 = {	
+		church_influence =-0.1
+	}	
+		
+	U50_idea_6 = {	
+		possible_mercenaries = 1.0
+	}	
+		
+	U50_idea_7 = {	
+		war_exhaustion_cost = -0.2
+	}	
+}		
+
+U51_ideas = {		
+	start = {	
+		land_forcelimit_modifier = 0.1
+		monthly_piety = 0.1
+	}	
+	bonus = {	
+		enemy_core_creation = 0.1
+	}	
+		
+	trigger = {	
+		tag = U51
+	}	
+	free = yes	
+		
+	U51_idea_1 =  {	
+		war_exhaustion = -0.1
+	}	
+		
+	U51_idea_2= {	
+		global_missionary_strength = 0.02
+	}	
+		
+	U51_idea_3 = {	
+		trade_steering = 0.25
+	}	
+		
+	U51_idea_4 = {	
+		burghers_influence = -0.1
+	}	
+		
+	U51_idea_5 = {	
+		global_own_trade_power = 0.1
+	}	
+		
+	U51_idea_6 = {	
+		vassal_income = 0.1 
+	}	
+		
+	U51_idea_7 = {	
+		administrative_efficiency = 0.1
+	}	
+}		
+
+U52_ideas = {		
+	start = {	
+		rival_change_cost = 0.5
+		can_colony_boost_development = yes 
+	}	
+	bonus = {	
+		free_leader_pool = 1
+	}	
+		
+	trigger = {	
+		tag = U52
+	}	
+	free = yes	
+		
+	U52_idea_1 =  {	
+		tolerance_own = 1
+	}	
+		
+	U52_idea_2= {	
+		garrison_size = 0.25
+	}	
+		
+	U52_idea_3 = {	
+		prestige_decay = -0.01
+	}	
+		
+	U52_idea_4 = {	
+		missionaries = 1
+	}	
+		
+	U52_idea_5 = {	
+		inflation_action_cost = -0.10
+	}	
+		
+	U52_idea_6 = {	
+		colonists = 1
+	}	
+		
+	U52_idea_7 = {	
+		culture_conversion_cost = -0.25
+	}	
+}		
+
+U53_ideas = {		
+	start = {	
+		discovered_relations_impact = -0.25
+		shock_damage = 0.5
+	}	
+	bonus = {	
+		monthly_militarized_society = -0.05
+	}	
+		
+	trigger = {	
+		tag = U53
+	}	
+	free = yes	
+		
+	U53_idea_1 =  {	
+		free_policy = 1
+	}	
+		
+	U53_idea_2= {	
+		years_of_nationalism = -10
+	}	
+		
+	U53_idea_3 = {	
+		years_of_nationalism = -10
+	}	
+		
+	U53_idea_4 = {	
+		global_trade_power = 0.1
+	}	
+		
+	U53_idea_5 = {	
+		prestige_from_land = 0.5 
+	}	
+		
+	U53_idea_6 = {	
+		adm_tech_cost_modifier = -0.1
+	}	
+		
+	U53_idea_7 = {	
+		global_unrest = -3
+	}	
+}		
+
+U54_ideas = {		
+	start = {	
+		tolerance_heretic = 1
+		min_autonomy_in_territories = 0.1
+	}	
+	bonus = {	
+		colonist_placement_chance = 0.05
+	}	
+		
+	trigger = {	
+		tag = U54
+	}	
+	free = yes	
+		
+	U54_idea_1 =  {	
+		free_policy = 1
+	}	
+		
+	U54_idea_2= {	
+		embargo_efficiency = 0.25
+	}	
+		
+	U54_idea_3 = {	
+		burghers_influence = -0.1
+	}	
+		
+	U54_idea_4 = {	
+		movement_speed = 0.15
+	}	
+		
+	U54_idea_5 = {	
+		envoy_travel_time = -0.20
+	}	
+		
+	U54_idea_6 = {	
+		war_taxes_cost_modifier = -0.1
+	}	
+		
+	U54_idea_7 = {	
+		yearly_tribal_allegiance = -0.05
+	}	
+}		
+
+U55_ideas = {		
+	start = {	
+		administrative_efficiency = 0.1
+		religious_unity = 0.5
+	}	
+	bonus = {	
+		reserves_organisation = 0.5
+	}	
+		
+	trigger = {	
+		tag = U55
+	}	
+	free = yes	
+		
+	U55_idea_1 =  {	
+		army_tradition_decay = -0.01
+	}	
+		
+	U55_idea_2= {	
+		all_power_cost = -0.05
+	}	
+		
+	U55_idea_3 = {	
+		infantry_cost = -0.1
+	}	
+		
+	U55_idea_4 = {	
+		nobles_influence =- 0.1
+	}	
+		
+	U55_idea_5 = {	
+		burghers_influence = -0.1
+	}	
+		
+	U55_idea_6 = {	
+		diplomatic_upkeep = 1
+	}	
+		
+	U55_idea_7 = {	
+		infantry_cost = -0.1
+	}	
+}		
+
+U56_ideas = {		
+	start = {	
+		nobles_influence =- 0.1
+		ae_impact = -0.05
+	}	
+	bonus = {	
+		global_missionary_strength = 0.02
+	}	
+		
+	trigger = {	
+		tag = U56
+	}	
+	free = yes	
+		
+	U56_idea_1 =  {	
+		native_advancement_cost = -0.50
+	}	
+		
+	U56_idea_2= {	
+		drill_gain_modifier = 0.1
+	}	
+		
+	U56_idea_3 = {	
+		sea_repair = yes
+	}	
+		
+	U56_idea_4 = {	
+		election_cycle = -1
+	}	
+		
+	U56_idea_5 = {	
+		hostile_attrition = 1
+	}	
+		
+	U56_idea_6 = {	
+		leader_land_manuever = 1
+	}	
+		
+	U56_idea_7 = {	
+		prestige_decay = -0.01
+	}	
+}		
+
+U57_ideas = {		
+	start = {	
+		leader_land_shock = 1
+		core_decay_on_your_own = 0.1
+	}	
+	bonus = {	
+		colonists = 1
+	}	
+		
+	trigger = {	
+		tag = U57
+	}	
+	free = yes	
+		
+	U57_idea_1 =  {	
+		can_colony_boost_development = yes 
+	}	
+		
+	U57_idea_2= {	
+		administrative_efficiency = 0.1
+	}	
+		
+	U57_idea_3 = {	
+		global_colonial_growth = 25
+	}	
+		
+	U57_idea_4 = {	
+		may_explore = yes
+	}	
+		
+	U57_idea_5 = {	
+		yearly_army_professionalism = 0.1
+	}	
+		
+	U57_idea_6 = {	
+		reinforce_cost_modifier = -0.50
+	}	
+		
+	U57_idea_7 = {	
+		free_adm_policy = 1
+	}	
+}		
+
+U58_ideas = {		
+	start = {	
+		infantry_shock = 1
+		reduced_liberty_desire = 10
+	}	
+	bonus = {	
+		may_perform_slave_raid = yes
+	}	
+		
+	trigger = {	
+		tag = U58
+	}	
+	free = yes	
+		
+	U58_idea_1 =  {	
+		defensiveness = 0.25
+	}	
+		
+	U58_idea_2= {	
+		possible_adm_policy = 1
+	}	
+		
+	U58_idea_3 = {	
+		rebel_support_efficiency = 0.5
+	}	
+		
+	U58_idea_4 = {	
+		sea_repair = yes
+	}	
+		
+	U58_idea_5 = {	
+		monthly_karma = 0.1
+	}	
+		
+	U58_idea_6 = {	
+		global_unrest = -3
+	}	
+		
+	U58_idea_7 = {	
+		same_culture_advisor_cost = -0.25
+	}	
+}		
+
+U59_ideas = {		
+	start = {	
+		core_decay_on_your_own = 0.1
+		global_unrest = -3
+	}	
+	bonus = {	
+		can_fabricate_for_vassals = yes
+	}	
+		
+	trigger = {	
+		tag = U59
+	}	
+	free = yes	
+		
+	U59_idea_1 =  {	
+		army_tradition = 1
+	}	
+		
+	U59_idea_2= {	
+		reserves_organisation = 0.5
+	}	
+		
+	U59_idea_3 = {	
+		diplomatic_reputation = 5
+	}	
+		
+	U59_idea_4 = {	
+		prestige_decay = -0.01
+	}	
+		
+	U59_idea_5 = {	
+		leader_land_fire = 1
+	}	
+		
+	U59_idea_6 = {	
+		global_manpower_modifier = 0.1
+	}	
+		
+	U59_idea_7 = {	
+		merchants = 1
+	}	
+}		
+
+U60_ideas = {		
+	start = {	
+		possible_dip_policy = 1
+		trade_efficiency = 0.05
+	}	
+	bonus = {	
+		global_supply_limit_modifier = 0.1
+	}	
+		
+	trigger = {	
+		tag = U60
+	}	
+	free = yes	
+		
+	U60_idea_1 =  {	
+		liberty_desire_from_subject_development = 10
+	}	
+		
+	U60_idea_2= {	
+		discipline = 0.05
+	}	
+		
+	U60_idea_3 = {	
+		administrative_efficiency = 0.1
+	}	
+		
+	U60_idea_4 = {	
+		global_regiment_recruit_speed = -0.1
+	}	
+		
+	U60_idea_5 = {	
+		embargo_efficiency = 0.25
+	}	
+		
+	U60_idea_6 = {	
+		fire_damage_received = -0.5
+	}	
+		
+	U60_idea_7 = {	
+		rebel_support_efficiency = 0.5
+	}	
+}		
+
+U61_ideas = {		
+	start = {	
+		may_perform_slave_raid = yes
+		center_of_trade_upgrade_cost = -0.2
+	}	
+	bonus = {	
+		free_maintenance_on_expl_conq = yes 
+	}	
+		
+	trigger = {	
+		tag = U61
+	}	
+	free = yes	
+		
+	U61_idea_1 =  {	
+		may_explore = yes
+	}	
+		
+	U61_idea_2= {	
+		can_bypass_forts = yes  
+	}	
+		
+	U61_idea_3 = {	
+		backrow_artillery_damage = 0.1
+	}	
+		
+	U61_idea_4 = {	
+		siege_ability = 0.1
+	}	
+		
+	U61_idea_5 = {	
+		fire_damage_received = -0.5
+	}	
+		
+	U61_idea_6 = {	
+		interest = -1
+	}	
+		
+	U61_idea_7 = {	
+		artillery_bonus_vs_fort = 1
+	}	
+}		
+
+U62_ideas = {		
+	start = {	
+		mil_advisor_cost = -0.1
+		trade_range_modifier = 0.25
+	}	
+	bonus = {	
+		cavalry_fire = 1
+	}	
+		
+	trigger = {	
+		tag = U62
+	}	
+	free = yes	
+		
+	U62_idea_1 =  {	
+		cavalry_cost = -0.5
+	}	
+		
+	U62_idea_2= {	
+		drill_decay_modifier = -0.1
+	}	
+		
+	U62_idea_3 = {	
+		reinforce_speed = 0.25
+	}	
+		
+	U62_idea_4 = {	
+		monthly_support_heir_gain = 0.1
+	}	
+		
+	U62_idea_5 = {	
+		global_heretic_missionary_strength = 0.03
+	}	
+		
+	U62_idea_6 = {	
+		cb_on_overseas = yes
+	}	
+		
+	U62_idea_7 = {	
+		adm_tech_cost_modifier = -0.1
+	}	
+}		
+
+U63_ideas = {		
+	start = {	
+		may_explore = yes
+		merchants = 1
+	}	
+	bonus = {	
+		legitimacy = 1
+	}	
+		
+	trigger = {	
+		tag = U63
+	}	
+	free = yes	
+		
+	U63_idea_1 =  {	
+		harsh_treatment_cost = 0.1
+	}	
+		
+	U63_idea_2= {	
+		advisor_pool = 1
+	}	
+		
+	U63_idea_3 = {	
+		warscore_cost_vs_other_religion = 10
+	}	
+		
+	U63_idea_4 = {	
+		max_states = 5
+	}	
+		
+	U63_idea_5 = {	
+		global_manpower = 1.0
+	}	
+		
+	U63_idea_6 = {	
+		vassal_income = 0.1 
+	}	
+		
+	U63_idea_7 = {	
+		may_perform_slave_raid = yes
+	}	
+}		
+
+U64_ideas = {		
+	start = {	
+		same_culture_advisor_cost = -0.25
+		global_garrison_growth = 0.1
+	}	
+	bonus = {	
+		idea_cost = -0.1
+	}	
+		
+	trigger = {	
+		tag = U64
+	}	
+	free = yes	
+		
+	U64_idea_1 =  {	
+		land_maintenance_modifier = -0.1
+	}	
+		
+	U64_idea_2= {	
+		global_regiment_cost = -0.10
+	}	
+		
+	U64_idea_3 = {	
+		rival_change_cost = 0.5
+	}	
+		
+	U64_idea_4 = {	
+		land_forcelimit_modifier = 0.1
+	}	
+		
+	U64_idea_5 = {	
+		drill_decay_modifier = -0.1
+	}	
+		
+	U64_idea_6 = {	
+		monarch_admin_power = 1
+	}	
+		
+	U64_idea_7 = {	
+		manpower_recovery_speed = 0.25
+	}	
+}		
+
+U65_ideas = {		
+	start = {	
+		meritocracy = 1
+		advisor_cost = -0.5
+	}	
+	bonus = {	
+		production_efficiency = 0.1
+	}	
+		
+	trigger = {	
+		tag = U65
+	}	
+	free = yes	
+		
+	U65_idea_1 =  {	
+		native_assimilation = 0.25
+	}	
+		
+	U65_idea_2= {	
+		trade_range_modifier = 0.25
+	}	
+		
+	U65_idea_3 = {	
+		inflation_action_cost = -0.10
+	}	
+		
+	U65_idea_4 = {	
+		min_autonomy_in_territories = 0.1
+	}	
+		
+	U65_idea_5 = {	
+		prestige_per_development_from_conversion = 0.1
+	}	
+		
+	U65_idea_6 = {	
+		cb_on_overseas = yes
+	}	
+		
+	U65_idea_7 = {	
+		administrative_efficiency = 0.1
+	}	
+}		
+
+U66_ideas = {		
+	start = {	
+		inflation_reduction = 0.1
+		reelection_cost = -0.1
+	}	
+	bonus = {	
+		expel_minorities_cost = -0.3
+	}	
+		
+	trigger = {	
+		tag = U66
+	}	
+	free = yes	
+		
+	U66_idea_1 =  {	
+		merchants = 1
+	}	
+		
+	U66_idea_2= {	
+		colonist_placement_chance = 0.05
+	}	
+		
+	U66_idea_3 = {	
+		defensiveness = 0.25
+	}	
+		
+	U66_idea_4 = {	
+		mil_advisor_cost = -0.1
+	}	
+		
+	U66_idea_5 = {	
+		global_garrison_growth = 0.1
+	}	
+		
+	U66_idea_6 = {	
+		embracement_cost = -0.2
+	}	
+		
+	U66_idea_7 = {	
+		spy_offence = 0.1
+	}	
+}		
+
+U67_ideas = {		
+	start = {	
+		mil_advisor_cost = -0.1
+		can_colony_boost_development = yes 
+	}	
+	bonus = {	
+		max_states = 5
+	}	
+		
+	trigger = {	
+		tag = U67
+	}	
+	free = yes	
+		
+	U67_idea_1 =  {	
+		free_policy = 1
+	}	
+		
+	U67_idea_2= {	
+		same_culture_advisor_cost = -0.25
+	}	
+		
+	U67_idea_3 = {	
+		may_establish_frontier = yes
+	}	
+		
+	U67_idea_4 = {	
+		global_foreign_trade_power = 0.1
+	}	
+		
+	U67_idea_5 = {	
+		free_policy = 1
+	}	
+		
+	U67_idea_6 = {	
+		global_regiment_recruit_speed = -0.1
+	}	
+		
+	U67_idea_7 = {	
+		idea_cost = -0.1
+	}	
+}		
+
+U68_ideas = {		
+	start = {	
+		tolerance_own = 1
+		monthly_militarized_society = -0.05
+	}	
+	bonus = {	
+		treasure_fleet_income = 0.5
+	}	
+		
+	trigger = {	
+		tag = U68
+	}	
+	free = yes	
+		
+	U68_idea_1 =  {	
+		culture_conversion_cost = -0.25
+	}	
+		
+	U68_idea_2= {	
+		cav_to_inf_ratio = 0.1
+	}	
+		
+	U68_idea_3 = {	
+		extra_manpower_at_religious_war = yes
+	}	
+		
+	U68_idea_4 = {	
+		land_forcelimit_modifier = 0.1
+	}	
+		
+	U68_idea_5 = {	
+		attack_bonus_in_capital_terrain = yes  
+	}	
+		
+	U68_idea_6 = {	
+		improve_relation_modifier = 0.25
+	}	
+		
+	U68_idea_7 = {	
+		manpower_recovery_speed = 0.25
+	}	
+}		
+
+U69_ideas = {		
+	start = {	
+		missionary_maintenance_cost = -0.1
+		monarch_admin_power = 1
+	}	
+	bonus = {	
+		global_autonomy = 0.05
+	}	
+		
+	trigger = {	
+		tag = U69
+	}	
+	free = yes	
+		
+	U69_idea_1 =  {	
+		reserves_organisation = 0.5
+	}	
+		
+	U69_idea_2= {	
+		reform_progress_growth = 0.1
+	}	
+		
+	U69_idea_3 = {	
+		cavalry_flanking = 0.5
+	}	
+		
+	U69_idea_4 = {	
+		mil_tech_cost_modifier = -0.1
+	}	
+		
+	U69_idea_5 = {	
+		devotion = 0.5
+	}	
+		
+	U69_idea_6 = {	
+		native_advancement_cost = -0.50
+	}	
+		
+	U69_idea_7 = {	
+		burghers_influence = -0.1
+	}	
+}		
+
+U70_ideas = {		
+	start = {	
+		stability_cost_modifier = -0.1
+		native_assimilation = 0.25
+	}	
+	bonus = {	
+		imperial_mandate = 1        
+	}	
+		
+	trigger = {	
+		tag = U70
+	}	
+	free = yes	
+		
+	U70_idea_1 =  {	
+		embracement_cost = -0.2
+	}	
+		
+	U70_idea_2= {	
+		diplomatic_reputation = 5
+	}	
+		
+	U70_idea_3 = {	
+		possible_mercenaries = 1.0
+	}	
+		
+	U70_idea_4 = {	
+		meritocracy = 1
+	}	
+		
+	U70_idea_5 = {	
+		possible_mercenaries = 1.0
+	}	
+		
+	U70_idea_6 = {	
+		yearly_absolutism = 0.1
+	}	
+		
+	U70_idea_7 = {	
+		expel_minorities_cost = -0.3
+	}	
+}		

@@ -1,8 +1,12 @@
 timurid_succession_crisis = {
 	potential = {
 		normal_or_historical_nations = yes
-		tag = TIM
+		OR = {
+			tag = TIM
+			was_tag = TIM
+		}
 		NOT = { has_country_flag = timurids_reformed_government }
+		NOT = { has_country_flag = uach_interwar_lull }
 	}
 	
 	can_start = {
@@ -24,6 +28,17 @@ timurid_succession_crisis = {
 			factor = 5
 			always = yes
 		}
+		
+		modifier = {
+			factor = -1
+			has_country_flag = uach_yuki_lives_slower_disaster
+		}
+		
+		modifier = {
+			factor = 1
+			has_country_flag = uach_yuki_dies_disaster_faster
+		}
+		
 	}
 	
 	can_end = {
@@ -37,13 +52,22 @@ timurid_succession_crisis = {
 		global_unrest = 5
 	}
 	
-	on_start = UaCH.1
+	on_start = UaCH.25
 	on_end = UaCH.1 # Entirely unused.
 	
 	on_monthly = {
 		events = {
+			
 		}
 		random_events = {
+			1000 = 0
+			100	= UaCH.27	#Yar ali besieges herat
+			100 = UaCH.39	#policies of the local emir
+			100	= UaCH.40   #defections among our people
+			100 = UaCH.41	#Flight of the western emirs
+			100 = UaCH.38	#Low supplies
+			100	= UaCH.27   #The rogue prince
+			100 = Uach.29	#raids
 		}
 	}
 }

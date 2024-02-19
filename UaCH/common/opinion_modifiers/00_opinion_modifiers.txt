@@ -1,4 +1,0 @@
-supported_us_in_timurid_success_crisis = {
-	opinion = 40
-	yearly_decay = 2
-}

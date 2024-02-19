@@ -1,0 +1,40 @@
+country_decisions = {
+	enthrone_timurid_prince = {
+		major = yes
+		potential = {
+			is_governor = yes
+			ai = yes
+			NOT = { is_subject = yes }
+		}
+		provinces_to_highlight = {}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = ETP_D_TR_A_TT
+				has_country_flag = uach_second_succession_crisis_war_flag
+			}
+			stability = 1
+			OR = {
+				country_or_non_sovereign_subject_holds = 446	# Herat
+				country_or_non_sovereign_subject_holds = 451	# Kabul
+				country_or_non_sovereign_subject_holds = 454	# Samarkand
+				country_or_non_sovereign_subject_holds = 2213	# Qom
+				country_or_non_sovereign_subject_holds = 2214	# Astarabad
+				country_or_non_sovereign_subject_holds = 2218	# Shiraz
+			}
+		}
+		effect = {
+			uach_elevate_to_prince_effect = yes
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { legitimacy = 95 }
+			}
+			modifier = {
+				factor = 0.2
+				NOT = { stability = 2 }
+			}
+		}
+	}
+}

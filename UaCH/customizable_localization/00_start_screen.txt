@@ -107,13 +107,19 @@ defined_text = {
         }
     }
 	
-		text = {
+	text = {
         localisation_key = string_screen_title_KHU
         trigger = {
 			tag = KHU
         }
     }
 	
+	text = {
+        localisation_key = string_screen_title_SHY
+        trigger = {
+			tag = SHY
+        }
+    }
 	
 	text = {
         localisation_key = string_screen_title
@@ -199,6 +205,13 @@ defined_text = {
 		localisation_key = string_start_title_KHU
 		trigger = {
 			tag = KHU
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_SHY
+		trigger = {
+			tag = SHY
 		}
 	}
 	
@@ -786,6 +799,13 @@ defined_text = {
         localisation_key = string_start_KHU
         trigger = {
 			tag = KHU
+        }
+    }	
+	
+	text = {
+        localisation_key = string_start_SHY
+        trigger = {
+			tag = SHY
         }
     }	
 	
@@ -1458,7 +1478,6 @@ defined_text = {
 				tag = KAZ
 				tag = GOL
 				tag = CRI
-				tag = SHY
 				tag = NOG
 			}
 			NOT = { is_year = 1466 }
