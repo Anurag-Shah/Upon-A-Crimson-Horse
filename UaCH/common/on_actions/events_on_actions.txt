@@ -68,40 +68,38 @@ on_mil_development = {
 	}
 }
 
-# 50% chance for event, 50% chance for no event -> 2 events a year
-on_yearly_pulse_2 = {
+# 5 events every 2 years -> 25 events over 10 years which is enough to fully reform if you take most of em
+on_bi_yearly_pulse = {
 	100 = uach_reform.1
-	100 = uach_reform.5
 	100 = uach_reform.1001
 	100 = uach_reform.1005
 	100 = uach_reform.1009
 	100 = uach_reform.1013
-	600 = 0
 }
-on_yearly_pulse_3 = {
+on_bi_yearly_pulse_2 = {
 	100 = uach_reform.2
 	100 = uach_reform.6
-	100 = uach_reform.1002
 	100 = uach_reform.1006
 	100 = uach_reform.1010
 	100 = uach_reform.1014
-	600 = 0
 }
-on_yearly_pulse_4 = {
+on_bi_yearly_pulse_3 = {
 	100 = uach_reform.3
 	100 = uach_reform.7
-	100 = uach_reform.1003
 	100 = uach_reform.1007
 	100 = uach_reform.1011
 	100 = uach_reform.1015
-	600 = 0
 }
-on_yearly_pulse_5 = {
+on_bi_yearly_pulse_4 = {
 	100 = uach_reform.4
 	100 = uach_reform.1000
 	100 = uach_reform.1004
-	100 = uach_reform.1008
 	100 = uach_reform.1012
 	100 = uach_reform.1016
-	600 = 0
+}
+on_bi_yearly_pulse_5 = {
+	100 = uach_reform.5
+	100 = uach_reform.1002
+	100 = uach_reform.1003
+	100 = uach_reform.1008
 }

@@ -7,16 +7,16 @@ country_event = {
 	title = "EVTNAME878"
 	desc = "EVTDESC878"
 	picture = ADVISOR_eventPicture
-
-	fire_only_once = yes	
+	
 	trigger = {
 		has_advisor = yes
 		has_regency = no
 		has_country_flag = uach_interwar_lull
 	}
 	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 100
+		days = 1
 	}
 	
 	immediate = {
@@ -99,11 +99,11 @@ country_event = {
 		has_country_flag = uach_interwar_lull
 	}
 
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 80
+		days = 1
 	}
-	
-	fire_only_once = yes	
+		
 
 	option = {
 		name = army_professionalism_events.13.a #
@@ -141,15 +141,15 @@ country_event = {
 	title = "corruption_event.7.t"
 	desc = "corruption_event.7.d"
 	picture = CORRUPTION_eventPicture
-	
-	fire_only_once = yes	
+		
 	trigger = {
 		has_advisor = yes
 		has_country_flag = uach_interwar_lull
 	}
 
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 70
+		days = 1
 	}
 
 	immediate = {
@@ -268,8 +268,9 @@ country_event = {
 	}
 
 fire_only_once = yes
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 45
+		days = 1
 	}
 
 	option = {
@@ -314,7 +315,6 @@ country_event = {
 	desc = muslim_piety.13.d
 	picture = REFORM_eventPicture
 	
-fire_only_once = yes
 	trigger = {
 		has_country_flag = uach_interwar_lull
 		uses_piety = yes
@@ -327,8 +327,9 @@ fire_only_once = yes
 		}
 	}
 	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 40
+		days = 1
 	}
 	
 	immediate = {
@@ -462,15 +463,15 @@ country_event = {
 	title = "EVTNAME729"
 	desc = "EVTDESC729"
 	picture = CITY_DEVELOPMENT_eventPicture
-
-	fire_only_once = yes	
+	
 	trigger = {
 		is_at_war = no
 		has_country_flag = uach_interwar_lull
 	}
 
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 25
+		days = 1
 	}
 
 	option = {
@@ -530,8 +531,7 @@ country_event = {
 	title = "EVTNAME715"
 	desc = "EVTDESC715"
 	picture = COURT_eventPicture
-	
-	fire_only_once = yes	
+		
 	trigger = {
 		government = monarchy
 		has_regency = no
@@ -539,8 +539,9 @@ country_event = {
 		has_country_flag = uach_interwar_lull
 	}
 
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 20
+		days = 1
 	}
 
 	option = {
@@ -571,10 +572,10 @@ country_event = {
 	trigger = {
 		has_country_flag = uach_interwar_lull
 	}
-	
-	fire_only_once = yes	
+		
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 15
+		days = 1
 	}
 	option = {
 		name = "Let them do their thing!"
@@ -638,10 +639,10 @@ country_event = {
 
 	trigger = {
 		has_country_flag = uach_interwar_lull
-	}
-	fire_only_once = yes	
+	}	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 10
+		days = 1
 	}
 	option = {
 		name = "Execute them!"
@@ -710,10 +711,10 @@ country_event = {
 
 	trigger = {
 		has_country_flag = uach_interwar_lull
-	}
-	fire_only_once = yes	
+	}	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 90
+		days = 1
 	}
 	option = {
 		name = "Fund their studies"
@@ -766,10 +767,10 @@ country_event = {
 
 	trigger = {
 		has_country_flag = uach_interwar_lull
-	}
-	fire_only_once = yes	
+	}	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 60
+		days = 1
 	}
 	option = {
 		name = "I love it, lets hire more musicians!"
@@ -835,10 +836,10 @@ country_event = {
 
 	trigger = {
 		has_country_flag = uach_interwar_lull
-	}
-	fire_only_once = yes	
+	}	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 30
+		days = 1
 	}
 	option = {
 		name = "YES."
@@ -904,10 +905,10 @@ country_event = {
 		has_country_flag = uach_interwar_lull		
 	}
 
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 90
+		days = 1
 	}
 
 	option = {
@@ -949,10 +950,10 @@ country_event = {
 	trigger = {
 		has_country_flag = uach_interwar_lull	
 	}
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 60
+		days = 1
 	}
 
 	option = {
@@ -1003,10 +1004,10 @@ country_event = {
 	trigger = {
 		has_country_flag = uach_interwar_lull	
 	}
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 20
+		days = 1
 	}
 
 	immediate = {
@@ -1060,10 +1061,10 @@ country_event = {
 			}
 		}
 	}
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 5
+		days = 1
 	}
 
 	option = {
@@ -1116,12 +1117,12 @@ country_event = {
 	trigger = {
 		has_country_flag = uach_interwar_lull	
 	}
-
-	fire_only_once = yes	
 	
 	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 60
+		days = 1
 	}
 
 	option = {
@@ -1162,12 +1163,12 @@ country_event = {
 	trigger = {
 		has_country_flag = uach_interwar_lull	
 	}
-
-	fire_only_once = yes	
+	
 	
 
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 30
+		days = 1
 	}
 
 	option = {
@@ -1202,10 +1203,10 @@ country_event = {
 	trigger = {
 		has_country_flag = uach_interwar_lull	
 	}
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 80
+		days = 1
 	}
 
 	option = {
@@ -1241,10 +1242,10 @@ country_event = {
 	trigger = {
 		has_country_flag = uach_interwar_lull	
 	}
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 60
+		days = 1
 	}
 
 	option = {
@@ -1287,10 +1288,10 @@ country_event = {
 	trigger = {
 		has_country_flag = uach_interwar_lull
 	}
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 15
+		days = 1
 	}
 
 	option = {
@@ -1329,8 +1330,9 @@ country_event = {
 
 	
 	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 90
+		days = 1
 	}
 
 	option = {
@@ -1372,10 +1374,10 @@ country_event = {
 	trigger = {
 		has_country_flag = uach_interwar_lull	
 	}
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 60
+		days = 1
 	}
 
 	option = {
@@ -1423,10 +1425,10 @@ country_event = {
 	trigger = {
 		has_country_flag = uach_interwar_lull	
 	}
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 30
+		days = 1
 	}
 
 	option = {
