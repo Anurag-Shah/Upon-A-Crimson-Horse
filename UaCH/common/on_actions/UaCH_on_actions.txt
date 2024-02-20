@@ -325,6 +325,7 @@ on_monarch_death = {
 				disaster = repeatable_timurid_succession_crisis
 				value = 0.1
 			}
+            has_regency = no
 		}
 		country_event = {
 			id = UaCH.97

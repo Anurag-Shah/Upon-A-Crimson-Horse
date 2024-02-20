@@ -110,7 +110,7 @@ repeatable_timurid_succession_crisis = {
 			
 		}
 		random_events = {
-			700 = 0
+      2100 = 0
 			100 = UaCH.39	#policies of the local emir
 			50	= UaCH.40   #defections among our people
 			100 = UaCH.38	#Low supplies
