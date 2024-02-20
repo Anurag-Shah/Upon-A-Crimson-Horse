@@ -420,13 +420,13 @@ guiTypes = {
 			name ="interloper_r0_shield_0"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 55 y = 358 }
+			position = { x= 85 y = 358 }
 		}
 		guiButtonType = {
 			name ="interloper_r0_shield_1"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 85 y = 358 }
+			position = { x= 55 y = 358 }
 		}
 		guiButtonType = {
 			name ="interloper_r0_shield_2"
@@ -440,19 +440,19 @@ guiTypes = {
 			name ="interloper_r1_shield_0"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 171 y = 485 }
+			position = { x= 201 y = 475 }
 		}
 		guiButtonType = {
 			name ="interloper_r1_shield_1"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 201 y = 485 }
+			position = { x= 171 y = 475 }
 		}
 		guiButtonType = {
 			name ="interloper_r1_shield_2"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 231 y = 485 }
+			position = { x= 231 y = 475 }
 		}
 
 		# KHORASAN
@@ -460,13 +460,13 @@ guiTypes = {
 			name ="interloper_r2_shield_0"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 156 y = 347 }
+			position = { x= 186 y = 347 }
 		}
 		guiButtonType = {
 			name ="interloper_r2_shield_1"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 186 y = 347 }
+			position = { x= 156 y = 347 }
 		}
 		guiButtonType = {
 			name ="interloper_r2_shield_2"
@@ -480,13 +480,13 @@ guiTypes = {
 			name ="interloper_r3_shield_0"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 236 y = 407 }
+			position = { x= 266 y = 407 }
 		}
 		guiButtonType = {
 			name ="interloper_r3_shield_1"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 266 y = 407 }
+			position = { x= 236 y = 407 }
 		}
 		guiButtonType = {
 			name ="interloper_r3_shield_2"
@@ -500,13 +500,13 @@ guiTypes = {
 			name ="interloper_r4_shield_0"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 392 y = 380 }
+			position = { x= 422 y = 380 }
 		}
 		guiButtonType = {
 			name ="interloper_r4_shield_1"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 422 y = 380 }
+			position = { x= 392 y = 380 }
 		}
 		guiButtonType = {
 			name ="interloper_r4_shield_2"
@@ -520,19 +520,19 @@ guiTypes = {
 			name ="interloper_r5_shield_0"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 306 y = 290 }
+			position = { x= 336 y = 310 }
 		}
 		guiButtonType = {
 			name ="interloper_r5_shield_1"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 336 y = 290 }
+			position = { x= 306 y = 310 }
 		}
 		guiButtonType = {
 			name ="interloper_r5_shield_2"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 366 y = 290 }
+			position = { x= 366 y = 310 }
 		}
 
 		# FERGANA VALLEY
@@ -540,13 +540,13 @@ guiTypes = {
 			name ="interloper_r6_shield_0"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 450 y = 255 }
+			position = { x= 480 y = 255 }
 		}
 		guiButtonType = {
 			name ="interloper_r6_shield_1"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 490 y = 255 }
+			position = { x= 450 y = 255 }
 		}
 		guiButtonType = {
 			name ="interloper_r6_shield_2"
@@ -560,19 +560,19 @@ guiTypes = {
 			name ="interloper_r7_shield_0"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 297 y = 182 }
+			position = { x= 347 y = 212 }
 		}
 		guiButtonType = {
 			name ="interloper_r7_shield_1"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 327 y = 182 }
+			position = { x= 317 y = 212 }
 		}
 		guiButtonType = {
 			name ="interloper_r7_shield_2"
 			scripted = yes
 			spriteType = "GFX_shield_small"
-			position = { x= 357 y = 182 }
+			position = { x= 377 y = 212 }
 		}
 
 		

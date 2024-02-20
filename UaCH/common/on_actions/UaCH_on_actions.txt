@@ -152,6 +152,143 @@ on_battle_lost_unit = {
     }
 }
 
+on_religion_change = {
+    if = {
+        limit = {
+            OR = {
+                is_part_of_second_crisis = yes
+                any_neighbor_country = {
+                    NOT = { tag = ORM }
+                    is_governor_or_prince = yes
+                }
+            }
+        }
+        uach_add_timurid_faction_if_not_has = yes
+        every_country = {
+            limit = {
+                OR = {
+                    is_part_of_second_crisis = yes
+                    any_neighbor_country = {
+                        NOT = { tag = ORM }
+                        is_governor_or_prince = yes
+                    }
+                }
+            }
+            uach_add_timurid_faction_if_not_has = yes
+        }
+	}
+}
+
+on_country_released = {
+	this = {
+        if = {
+            limit = {
+                OR = {
+					is_part_of_second_crisis = yes
+					any_neighbor_country = {
+						NOT = { tag = ORM }
+						is_governor_or_prince = yes
+					}
+				}
+            }
+            uach_add_timurid_faction_if_not_has = yes
+            every_country = {
+                limit = {
+                    OR = {
+                        is_part_of_second_crisis = yes
+                        any_neighbor_country = {
+                            NOT = { tag = ORM }
+                            is_governor_or_prince = yes
+                        }
+                    }
+                }
+                uach_add_timurid_faction_if_not_has = yes
+            }
+        }
+	}
+}
+
+on_government_change = {
+    if = {
+        limit = {
+            OR = {
+                is_part_of_second_crisis = yes
+                any_neighbor_country = {
+                    NOT = { tag = ORM }
+                    is_governor_or_prince = yes
+                }
+            }
+        }
+        uach_add_timurid_faction_if_not_has = yes
+        every_country = {
+            limit = {
+                OR = {
+                    is_part_of_second_crisis = yes
+                    any_neighbor_country = {
+                        NOT = { tag = ORM }
+                        is_governor_or_prince = yes
+                    }
+                }
+            }
+            uach_add_timurid_faction_if_not_has = yes
+        }
+	}
+}
+
+on_reform_changed = {
+    if = {
+        limit = {
+            OR = {
+                is_part_of_second_crisis = yes
+                any_neighbor_country = {
+                    NOT = { tag = ORM }
+                    is_governor_or_prince = yes
+                }
+            }
+        }
+        uach_add_timurid_faction_if_not_has = yes
+        every_country = {
+            limit = {
+                OR = {
+                    is_part_of_second_crisis = yes
+                    any_neighbor_country = {
+                        NOT = { tag = ORM }
+                        is_governor_or_prince = yes
+                    }
+                }
+            }
+            uach_add_timurid_faction_if_not_has = yes
+        }
+	}
+}
+
+on_reform_enacted = {
+    if = {
+        limit = {
+            OR = {
+                is_part_of_second_crisis = yes
+                any_neighbor_country = {
+                    NOT = { tag = ORM }
+                    is_governor_or_prince = yes
+                }
+            }
+        }
+        uach_add_timurid_faction_if_not_has = yes
+        every_country = {
+            limit = {
+                OR = {
+                    is_part_of_second_crisis = yes
+                    any_neighbor_country = {
+                        NOT = { tag = ORM }
+                        is_governor_or_prince = yes
+                    }
+                }
+            }
+            uach_add_timurid_faction_if_not_has = yes
+        }
+    }
+}
+
 on_monarch_death = {
 	# Unneeded, just made the modifier a ruler modifier
 	#if = {
