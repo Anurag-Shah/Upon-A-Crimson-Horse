@@ -3149,6 +3149,9 @@ country_event = {
 		
 		add_yearly_manpower = 1
 		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
 			add_local_autonomy = 20
 		}
 		add_years_of_income = 1
@@ -6198,7 +6201,7 @@ country_event = {
 	immediate = {
 		clr_country_flag = uach_disaster_event_timer
 		set_country_flag = uach_disaster_event_timer
-		random_province = {
+		random_owned_province = {
 			limit = {
 				NOT = { is_capital = yes } 
 				religion = sunni
