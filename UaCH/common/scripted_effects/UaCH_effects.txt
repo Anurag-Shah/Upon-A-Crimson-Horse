@@ -1752,6 +1752,10 @@ uach_end_timurs_legacy_effect = {
             set_country_flag = uach_ignore_me_in_ceasefire
         }
     }
+    
+    country_event = {
+        id = UaCH.104
+    }
 }
 
 # cede thematic region to interloper

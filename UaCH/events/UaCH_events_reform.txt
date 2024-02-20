@@ -7,16 +7,16 @@ country_event = {
 	title = "EVTNAME878"
 	desc = "EVTDESC878"
 	picture = ADVISOR_eventPicture
-
-	fire_only_once = yes	
+	
 	trigger = {
 		has_advisor = yes
 		has_regency = no
 		has_country_flag = uach_interwar_lull
 	}
 	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 100
+		days = 1
 	}
 	
 	immediate = {
@@ -99,11 +99,11 @@ country_event = {
 		has_country_flag = uach_interwar_lull
 	}
 
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 80
+		days = 1
 	}
-	
-	fire_only_once = yes	
+		
 
 	option = {
 		name = army_professionalism_events.13.a #
@@ -141,15 +141,15 @@ country_event = {
 	title = "corruption_event.7.t"
 	desc = "corruption_event.7.d"
 	picture = CORRUPTION_eventPicture
-	
-	fire_only_once = yes	
+		
 	trigger = {
 		has_advisor = yes
 		has_country_flag = uach_interwar_lull
 	}
 
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 70
+		days = 1
 	}
 
 	immediate = {
@@ -263,13 +263,13 @@ country_event = {
 	picture = FEAST_eventPicture
 
 	trigger = {
-		is_month = 8
 		has_country_flag = uach_interwar_lull
 	}
 
-fire_only_once = yes
+	fire_only_once = yes
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 45
+		days = 1
 	}
 
 	option = {
@@ -314,7 +314,6 @@ country_event = {
 	desc = muslim_piety.13.d
 	picture = REFORM_eventPicture
 	
-fire_only_once = yes
 	trigger = {
 		has_country_flag = uach_interwar_lull
 		uses_piety = yes
@@ -327,8 +326,9 @@ fire_only_once = yes
 		}
 	}
 	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 40
+		days = 1
 	}
 	
 	immediate = {
@@ -462,15 +462,15 @@ country_event = {
 	title = "EVTNAME729"
 	desc = "EVTDESC729"
 	picture = CITY_DEVELOPMENT_eventPicture
-
-	fire_only_once = yes	
+	
 	trigger = {
 		is_at_war = no
 		has_country_flag = uach_interwar_lull
 	}
 
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 25
+		days = 1
 	}
 
 	option = {
@@ -530,8 +530,7 @@ country_event = {
 	title = "EVTNAME715"
 	desc = "EVTDESC715"
 	picture = COURT_eventPicture
-	
-	fire_only_once = yes	
+		
 	trigger = {
 		government = monarchy
 		has_regency = no
@@ -539,8 +538,9 @@ country_event = {
 		has_country_flag = uach_interwar_lull
 	}
 
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 20
+		days = 1
 	}
 
 	option = {
@@ -571,13 +571,13 @@ country_event = {
 	trigger = {
 		has_country_flag = uach_interwar_lull
 	}
-	
-	fire_only_once = yes	
+		
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 15
+		days = 1
 	}
 	option = {
-		name = "Let them do their thing!"
+		name = uach_reform.1000.a
 		
 		add_disaster_progress = {
 			value = 5
@@ -604,7 +604,7 @@ country_event = {
 	}
 
 	option = {
-		name = "Have them imprisoned"
+		name = uach_reform.1000.b
 		
 		random_owned_province = {
 			spawn_rebels = {
@@ -638,13 +638,13 @@ country_event = {
 
 	trigger = {
 		has_country_flag = uach_interwar_lull
-	}
-	fire_only_once = yes	
+	}	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 10
+		days = 1
 	}
 	option = {
-		name = "Execute them!"
+		name = uach_reform.1001.a
 		
 		add_government_power = {
 			mechanic_type = uach_reform_state_mechanic
@@ -667,7 +667,7 @@ country_event = {
 	}
 
 	option = {
-		name = "Give them a stern talking to."
+		name = uach_reform.1001.b
 		
 		add_government_power = {
 			mechanic_type = uach_reform_state_mechanic
@@ -710,13 +710,14 @@ country_event = {
 
 	trigger = {
 		has_country_flag = uach_interwar_lull
-	}
-	fire_only_once = yes	
+		NOT = { has_country_modifier = uach_scholars_in_capital }
+	}	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 90
+		days = 1
 	}
 	option = {
-		name = "Fund their studies"
+		name = uach_reform.1001.a
 		
 		add_treasury = -200
 		add_government_power = {
@@ -740,7 +741,7 @@ country_event = {
 
 	
 	option = {
-		name = "This is too expensive!"
+		name = uach_reform.1001.b
 		
 		add_prestige = -5
 		add_disaster_progress = {
@@ -766,13 +767,14 @@ country_event = {
 
 	trigger = {
 		has_country_flag = uach_interwar_lull
-	}
-	fire_only_once = yes	
+		NOT = { has_country_modifier = uach_throat_singing }
+	}	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 60
+		days = 1
 	}
 	option = {
-		name = "I love it, lets hire more musicians!"
+		name = uach_reform.1003.a
 		
 		add_government_power = {
 			mechanic_type = uach_reform_state_mechanic
@@ -801,7 +803,7 @@ country_event = {
 	}
 
 	option = {
-		name = "I prefer the good old throat singing!"
+		name = uach_reform.1003.b
 		
 		add_legitimacy = 10
 
@@ -829,19 +831,19 @@ country_event = {
 
 country_event = {
 	id = uach_reform.1004 
-	title = "Claims on our neighbors!"
+	title = uach_reform.1004.t
 	desc = uach_reform.1004.d
 	picture = BORDER_TENSION_eventPicture
 
 	trigger = {
 		has_country_flag = uach_interwar_lull
-	}
-	fire_only_once = yes	
+	}	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 30
+		days = 1
 	}
 	option = {
-		name = "YES."
+		name = uach_reform.1004.a
 		
 		random_owned_province = {
 			limit = {
@@ -871,7 +873,7 @@ country_event = {
 	}
 
 	option = {
-		name = "NO."
+		name = uach_reform.1004.b
 		
 		add_prestige = 5
 		add_estate_loyalty = {
@@ -896,23 +898,24 @@ country_event = {
 
 country_event = {
 	id = uach_reform.1005 
-	title = "Solidiers want to go home"
+	title = uach_reform.1005.t
 	desc = uach_reform.1005.d
 	picture = MILITARY_CAMP_eventPicture
 
 	trigger = {
-		has_country_flag = uach_interwar_lull		
+		has_country_flag = uach_interwar_lull
+		is_at_war = yes	
 	}
 
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 90
+		days = 1
 	}
 
 	option = {
-		name = "Let them go home"
-		add_manpower = -4000
+		name = uach_reform.1005.a
+		add_manpower = -4
 		add_government_power = {
 			mechanic_type = uach_reform_state_mechanic
 			power_type = uach_persianization
@@ -925,7 +928,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = "Demand them to stay."
+		name = uach_reform.1005.b
 
 		add_country_modifier = {
 			name = uach_soldiers_had_to_stay
@@ -941,22 +944,36 @@ country_event = {
 }
 
 country_event = {
-	id = uach_reform.1006 
-	title = "Clergy vs. Nobility"
+	id = uach_reform.1006
+	title = uach_reform.1006.t
 	desc = uach_reform.1006.d
 	picture = DEBATE_REPUBLICAN_eventPicture
 
 	trigger = {
-		has_country_flag = uach_interwar_lull	
+		has_country_flag = uach_interwar_lull
+		OR = {
+			NOT = { has_country_flag = uachreform1006flag }
+			had_country_flag = {
+				flag = uachreform1006flag
+				days = 5000
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
 	}
 
-	fire_only_once = yes	
-	mean_time_to_happen = {
-		months = 60
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = uachreform1006flag
+			set_country_flag = uachreform1006flag
+		}
 	}
 
 	option = {
-		name = "Support the clergy"
+		name = uach_reform.1006.a
 		add_government_power = {
 			mechanic_type = uach_reform_state_mechanic
 			power_type = uach_persianization
@@ -975,7 +992,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "Support the nobility"
+		name = uach_reform.1006.b
 		add_government_power = {
 			mechanic_type = uach_reform_state_mechanic
 			power_type = uach_persianization
@@ -996,17 +1013,17 @@ country_event = {
 
 country_event = {
 	id = uach_reform.1007 
-	title = "Raids from the Turkmen"
+	title = uach_reform.1007.t
 	desc = uach_reform.1007.d
 	picture = BORDER_TENSION_eventPicture
 
 	trigger = {
 		has_country_flag = uach_interwar_lull	
 	}
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 20
+		days = 1
 	}
 
 	immediate = {
@@ -1014,7 +1031,7 @@ country_event = {
 	}
 
 	option = {
-		name = "Raid them back!"
+		name = uach_reform.1007.a
 		
 		add_government_power = {
 			mechanic_type = uach_reform_state_mechanic
@@ -1029,7 +1046,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "Bolster our defenses"
+		name = uach_reform.1007.b
 		add_country_modifier = {
 			name = uach_bolster_defenses
 			duration = 1825
@@ -1046,7 +1063,7 @@ country_event = {
 
 country_event = {
 	id = uach_reform.1008 
-	title = "A Campaign against the Turkmen"
+	title = uach_reform.1008.t
 	desc = uach_reform.1008.d
 	picture = BORDER_TENSION_eventPicture
 
@@ -1060,14 +1077,14 @@ country_event = {
 			}
 		}
 	}
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 5
+		days = 1
 	}
 
 	option = {
-		name = "Let us retaliate against their raids."
+		name = uach_reform.1008.a
 		add_government_power = {
 			mechanic_type = uach_reform_state_mechanic
 			power_type = uach_persianization
@@ -1097,7 +1114,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "Nah, they are not worth it."
+		name = uach_reform.1008.b
 
 		add_disaster_progress = {
 			value = 5
@@ -1108,24 +1125,36 @@ country_event = {
 
 
 country_event = {
-	id = uach_reform.1009 
-	title = "Language of our Court"
+	id = uach_reform.1009
+	title = uach_reform.1009.t
 	desc = uach_reform.1009.d
 	picture = COURT_eventPicture
 
 	trigger = {
-		has_country_flag = uach_interwar_lull	
+		has_country_flag = uach_interwar_lull
+		
+		OR = {
+			had_country_flag = {
+				flag = uachreform1009flag
+				days = 5000
+			}
+			NOT = { has_country_flag = uachreform1009flag }
+		}
 	}
-
-	fire_only_once = yes	
 	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = uachreform1009flag
+		}
+	}
 	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 60
+		days = 1
 	}
 
 	option = {
-		name = "Let us use Chagatai"
+		name = uach_reform.1009.a
 		add_government_power = {
 			mechanic_type = uach_reform_state_mechanic
 			power_type = uach_persianization
@@ -1141,8 +1170,7 @@ country_event = {
 	}
 	
 	option = {
-		name = "Persian is more popular let's switch to that."
-
+		name = uach_reform.1009.b
 		add_disaster_progress = {
 			value = 5
 			disaster = repeatable_timurid_succession_crisis
@@ -1155,23 +1183,23 @@ country_event = {
 
 country_event = {
 	id = uach_reform.1010 
-	title = "Construct the Lavish Al Saray Palace"
+	title = uach_reform.1010.t
 	desc = uach_reform.1010.d
 	picture = GREAT_BUILDING_eventPicture
 
 	trigger = {
 		has_country_flag = uach_interwar_lull	
 	}
-
-	fire_only_once = yes	
+	
 	
 
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 30
+		days = 1
 	}
 
 	option = {
-		name = "Go ahead"
+		name = uach_reform.1010.a
 		add_treasury = -50
 		add_disaster_progress = {
 			value = 5
@@ -1181,7 +1209,7 @@ country_event = {
 		
 		}
 	option = {	
-		name = "Spend it on the court"
+		name = uach_reform.1010.b
 		add_treasury = -50
 		add_disaster_progress = {
 			value = -5
@@ -1195,22 +1223,21 @@ country_event = {
 #Court of [RULER NAME]: something about his centralization (based on abu sa’id)
 country_event = {
 	id = uach_reform.1011
-	title = "Court of [ROOT.GetName]"
+	title = uach_reform.1011.t
 	desc = uach_reform.1011.d
 	picture = COURT_eventPicture
 
 	trigger = {
 		has_country_flag = uach_interwar_lull	
 	}
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 80
+		days = 1
 	}
 
 	option = {
-		name = "Force centralization"
-		add_treasury = -50
+		name = uach_reform.1011.a
 		add_disaster_progress = {
 			value = 5
 			disaster = repeatable_timurid_succession_crisis
@@ -1220,7 +1247,7 @@ country_event = {
 		}
 		
 	option = {	
-		name = "Let us smell the flowers"
+		name = uach_reform.1011.b
 		add_disaster_progress = {
 			value = -10
 			disaster = repeatable_timurid_succession_crisis
@@ -1234,21 +1261,21 @@ country_event = {
 #Investment in agriculture
 country_event = {
 	id = uach_reform.1012
-	title = "Investments in Agriculture"
+	title = uach_reform.1012.t
 	desc = uach_reform.1012.d
 	picture = FARMING_eventPicture
 
 	trigger = {
 		has_country_flag = uach_interwar_lull	
 	}
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 60
+		days = 1
 	}
 
 	option = {
-		name = "Pay up"
+		name = uach_reform.1012.a
 		random_owned_province = {
 			uach_add_random_development = { VALUE = 2 AMOUNT = 1 }
 		}
@@ -1257,12 +1284,12 @@ country_event = {
 			value = 5
 			disaster = repeatable_timurid_succession_crisis
 		}
-		uach_add_or_subtract_persianization = { value = -10 }
+		uach_add_or_subtract_persianization = { value = 10 }
 		
 		}
 		
 	option = {	
-		name = "The peasants will do their job."
+		name = uach_reform.1012.b
 		add_prestige = -10
 		random_owned_province = {
 			uach_add_random_development = { VALUE = 1 AMOUNT = 1 }
@@ -1280,21 +1307,21 @@ country_event = {
 #Executions and cruelty under [RULER NAME] (based on abu sa’id)
 country_event = {
 	id = uach_reform.1013
-	title = "Our Cruel Ruler"
+	title = uach_reform.1013.t
 	desc = uach_reform.1013.d
 	picture = BAD_WITH_MONARCH_eventPicture
 
 	trigger = {
 		has_country_flag = uach_interwar_lull
 	}
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 15
+		days = 1
 	}
 
 	option = {
-		name = "This is the price we pay for power"
+		name = uach_reform.1013.a
 		
 		kill_advisor = random
 		add_stability = 1
@@ -1305,7 +1332,7 @@ country_event = {
 	}
 		
 	option = {	
-		name = "Maybe its time to end this practice."
+		name = uach_reform.1013.b
 		add_legitimacy = -10
 		add_stability = -1
 		add_disaster_progress = {
@@ -1318,29 +1345,40 @@ country_event = {
 #Siege of Sharquiiya
 country_event = {
 	id = uach_reform.1015
-	title = "Rebellion in Shahrukhiyya"
+	title = uach_reform.1015.t
 	desc = uach_reform.1015.d
 	picture = BATTLE_eventPicture
 
 	trigger = {
-		has_country_flag = uach_interwar_lull	
+		has_country_flag = uach_interwar_lull
+		OR = {
+			NOT = { has_country_flag = uachreform1015flag }
+			had_country_flag = {
+				flag = uachreform1015flag
+				days = 5000
+			}
+		}
 	}
 
+	immediate = {
+		hidden_effect = {
+			set_country_flag = uachreform1015flag
+		}
+	}
 
-	
-	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 90
+		days = 1
 	}
 
 	option = {
-		name = "Attack the city"
+		name = uach_reform.1015.a
 		
 		random_owned_province = {
 			spawn_rebels = {
-					size = 2
-					type = noble_rebels
-				}
+				size = 2
+				type = noble_rebels
+			}
 		}
 		
 		add_disaster_progress = {
@@ -1351,7 +1389,7 @@ country_event = {
 		}
 		
 	option = {	
-		name = "Negotiate their surrender"
+		name = uach_reform.1015.b
 		add_prestige = -25
 		add_stability = -1
 		add_disaster_progress = {
@@ -1365,23 +1403,23 @@ country_event = {
 #Clergy opposes ruler
 country_event = {
 	id = uach_reform.1014
-	title = "Clergy opposes reforms"
+	title = uach_reform.1014.t
 	desc = uach_reform.1014.d
 	picture = CHURCH_ESTATE_UPSET_eventPicture
 
 	trigger = {
 		has_country_flag = uach_interwar_lull	
 	}
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 60
+		days = 1
 	}
 
 	option = {
-		name = "The wise men have spoken"
+		name = uach_reform.1014.a
 		add_country_modifier = {
-			name = "uach_no_talking_back_to_clergy"
+			name = uach_no_talking_back_to_clergy
 			duration = 3650
 		}
 		uach_add_or_subtract_persianization = { value = 5 }
@@ -1397,10 +1435,10 @@ country_event = {
 	}
 		
 	option = {	
-		name = "Babbling fools!"
+		name = uach_reform.1014.b
 		add_legitimacy = -15
 		add_country_modifier = {
-			name = "uach_daring_today"
+			name = uach_daring_today
 			duration = 3650
 		}
 
@@ -1416,29 +1454,29 @@ country_event = {
 #Loyalty to the clan
 country_event = {
 	id = uach_reform.1016
-	title = "Loyalty to the clan"
+	title = uach_reform.1016.t
 	desc = uach_reform.1016.d
 	picture = HORDE_ON_HORSEBACK_eventPicture
 
 	trigger = {
 		has_country_flag = uach_interwar_lull	
 	}
-
-	fire_only_once = yes	
+	
+	is_triggered_only = yes
 	mean_time_to_happen = {
-		months = 30
+		days = 1
 	}
 
 	option = {
-		name = "Clan above state"
+		name = uach_reform.1016.a
 		add_years_of_income = 0.5
-		uach_add_or_subtract_persianization = { value = -10 }
+		uach_add_or_subtract_persianization = { value = 10 }
 	}
 		
 	option = {	
-		name = "State above clan"
+		name = uach_reform.1016.b
 		add_country_modifier = {
-			name = "uach_state_above_clan"
+			name = uach_state_above_clan
 			duration = 3650
 		}
 		uach_outward_persianization = { value = 5 }

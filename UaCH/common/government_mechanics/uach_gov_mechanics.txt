@@ -97,7 +97,7 @@ uach_mechanics_prince = {
 				add_legitimacy = -10
 				add_prestige = -15
 				random_neighbor_country = {
-					add_opinon = {
+					add_opinion = {
 						who = PREV
 						modifier = supported_us_in_timurid_success_crisis
 					}
@@ -344,7 +344,7 @@ uach_mechanics_governor = {
 				add_legitimacy = -10
 				add_prestige = -15
 				random_neighbor_country = {
-					add_opinon = {
+					add_opinion = {
 						who = PREV
 						modifier = supported_us_in_timurid_success_crisis
 					}
@@ -531,6 +531,9 @@ uach_reform_state_mechanic = {
 							vassalize = PREV
 						}
 					}
+					country_event = {
+						id = UaCH.104
+					}
 				}
 				remove_government_reform = uach_prince
 				change_government = tribal
@@ -701,6 +704,9 @@ uach_reform_state_mechanic = {
 							has_reform = states_general_reform
 						}
 						remove_government_reform = states_general_reform
+					}
+					country_event = {
+						id = UaCH.104
 					}
 				}
 				if = {
