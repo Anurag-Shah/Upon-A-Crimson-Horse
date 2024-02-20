@@ -89,11 +89,14 @@ repeatable_timurid_succession_crisis = {
 			
 		}
 		random_events = {
-			400 = 0
+			700 = 0
 			100 = UaCH.39	#policies of the local emir
-			100	= UaCH.40   #defections among our people
+			50	= UaCH.40   #defections among our people
 			100 = UaCH.38	#Low supplies
 			100 = UaCH.29	#raids
+			100 = UaCH.92	# cetai event
+			100 = UaCH.101  # cetai event
+			100 = UaCH.103  # cetai event
 		}
 	}
 }
