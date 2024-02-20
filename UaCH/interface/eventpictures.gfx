@@ -1,0 +1,8 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "UACH_TEAM_eventPicture"
+		texturefile = "gfx/event_pictures//UACH_TEAM_eventPicture.dds"
+		alwaystransparent = yes
+	}
+}
