@@ -4960,6 +4960,36 @@ country_event = {
 		name = "UaCH.81.a"
 		custom_tooltip = UACH_81_A_TOOLTIP
 		remove_government_reform = uach_governor
+		hidden_effect = {
+			remove_faction = timurid_faction
+			every_country = {
+				limit = {
+					has_faction = timurid_faction
+				}
+				country_event = {
+					id = UaCH.812
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+# Remove governor gov reform (end timurs legacy) (warning)
+country_event = {
+	id = UaCH.812
+	title = UaCH.81.t 
+	desc = UaCH.81.d
+	picture = REFORM_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "UaCH.81.a"
+		custom_tooltip = UACH_81_A_TOOLTIP
+		hidden_effect = {
+			remove_faction = timurid_faction
+		}
 	}
 }
 
@@ -4977,6 +5007,9 @@ country_event = {
 		custom_tooltip = UACH_81_A_TOOLTIP
 		remove_government_reform = uach_governor
 		add_government_reform = iqta
+		hidden_effect = {
+			remove_faction = timurid_faction
+		}
 	}
 }
 
@@ -4994,6 +5027,9 @@ country_event = {
 		custom_tooltip = UACH_81_A_TOOLTIP
 		remove_government_reform = uach_governor
 		add_government_reform = iqta
+		hidden_effect = {
+			remove_faction = timurid_faction
+		}
 	}
 }
 
@@ -5817,7 +5853,7 @@ country_event = {
 
 			set_global_flag = uach_succession_crisis_started
 
-			clr_global_flag = uach_interwar_lull
+			clr_country_flag = uach_interwar_lull
 
 			remove_government_reform = uach_interwar_timurid_state
 			add_government_reform = uach_prince
