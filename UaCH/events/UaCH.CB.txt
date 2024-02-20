@@ -149,7 +149,7 @@ country_event = {
 
 	# Keep the ruler in charge
 	option = {
-		name = "UaCH.CB.1.d"
+		name = UaCH.CB.1.e
 		
 		event_target:claimant_lost_war = {
 			add_country_modifier = {

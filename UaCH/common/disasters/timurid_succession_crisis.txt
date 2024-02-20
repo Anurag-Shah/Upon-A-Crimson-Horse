@@ -1,12 +1,25 @@
 timurid_succession_crisis = {
 	potential = {
-		normal_or_historical_nations = yes
 		OR = {
-			tag = TIM
-			was_tag = TIM
+			AND = {
+				normal_or_historical_nations = yes
+				OR = {
+					tag = TIM
+					was_tag = TIM
+				}
+				NOT = { has_country_flag = timurids_reformed_government }
+				NOT = { has_country_flag = uach_interwar_lull }
+			}
+			AND = {
+				OR = {
+					is_prince = yes
+					is_governor = yes
+				}
+				any_country = {
+					has_disaster = timurid_succession_crisis
+				}
+			}
 		}
-		NOT = { has_country_flag = timurids_reformed_government }
-		NOT = { has_country_flag = uach_interwar_lull }
 	}
 	
 	can_start = {
@@ -38,6 +51,13 @@ timurid_succession_crisis = {
 			factor = 1
 			has_country_flag = uach_yuki_dies_disaster_faster
 		}
+
+		modifier = {
+			factor = 1000
+			any_country = {
+				has_disaster = timurid_succession_crisis
+			}
+		}
 		
 	}
 	
@@ -50,6 +70,7 @@ timurid_succession_crisis = {
 	
 	modifier = {
 		global_unrest = 5
+		manpower_recovery_speed = 0.33
 	}
 	
 	on_start = UaCH.25
@@ -60,13 +81,16 @@ timurid_succession_crisis = {
 			
 		}
 		random_events = {
-			3000 = 0
+      3300 = 0
 			100	= UaCH.27	#Yar ali besieges herat
 			100 = UaCH.39	#policies of the local emir
-			100	= UaCH.40   #defections among our people
+			40	= UaCH.40   #defections among our people
 			100 = UaCH.41	#Flight of the western emirs
 			100 = UaCH.38	#Low supplies
 			100 = UaCH.29	#raids
+			60 = UaCH.92	# cetai event
+			60 = UaCH.101   # cetai event
+			20 = UaCH.103  # cetai event
 		}
 	}
 }

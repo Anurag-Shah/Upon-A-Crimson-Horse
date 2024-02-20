@@ -97,8 +97,8 @@ on_war_won = {
         }
     }
     if = {
-        ROOT = {
-            limit = {
+        limit = {
+            ROOT = {
                 AND = {
                     tag = TIM
                     has_country_flag = uach_interwar_lull

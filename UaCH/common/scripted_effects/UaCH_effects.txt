@@ -1519,7 +1519,6 @@ uach_reclaim_timurs_legacy_effect = {
         change_tag = TIM
 
         # Integrate all OPM subjects
-        # NOT CAUSE OF CTD
         every_subject_country = {
             limit = {
                 NOT = { num_of_cities = 2 }
@@ -1546,6 +1545,14 @@ uach_reclaim_timurs_legacy_effect = {
             }
             end_disaster = timurid_succession_crisis
         }
+
+        # Delete disaster
+        every_country = {
+            limit = {
+                has_disaster = repeatable_timurid_succession_crisis
+            }
+            end_disaster = repeatable_timurid_succession_crisis
+        }
         
         # Some cleanup
         every_country = {
@@ -1556,6 +1563,7 @@ uach_reclaim_timurs_legacy_effect = {
 		clr_global_flag = uach_succession_crisis_started
 
         # Actually enable the govt reform mechanics
+        #remove_government_reform = uach_prince # stupid workaround for stupid paradox being annoying
         add_government_reform = uach_interwar_timurid_state # stupid workaround for stupid paradox being annoying
         set_country_flag = uach_interwar_lull
         regenerate_government_mechanics = yes
@@ -1565,6 +1573,11 @@ uach_reclaim_timurs_legacy_effect = {
         country_event = {
             id = UaCH.99
         }
+
+        # country_event = {
+        #     id = UaCH.109
+        #     days = 1
+        # }
     }
 }
 
@@ -1635,6 +1648,22 @@ uach_end_timurs_legacy_effect = {
                 }
                 white_peace = PREV
             }
+        }
+
+        # Delete disaster
+        every_country = {
+            limit = {
+                has_disaster = timurid_succession_crisis
+            }
+            end_disaster = timurid_succession_crisis
+        }
+
+        # Delete disaster
+        every_country = {
+            limit = {
+                has_disaster = repeatable_timurid_succession_crisis
+            }
+            end_disaster = repeatable_timurid_succession_crisis
         }
 
         # interloper cleanup p2
@@ -1853,6 +1882,20 @@ uach_flee_to_india_effect = {
         set_province_flag = uach_ignore_me_next_flag
     }
 
+    # End disaster
+    if = {
+        limit = {
+            has_disaster = timurid_succession_crisis
+        }
+        end_disaster = timurid_succession_crisis
+    }
+    if = {
+        limit = {
+            has_disaster = repeatable_timurid_succession_crisis
+        }
+        end_disaster = repeatable_timurid_succession_crisis
+    }
+
     # Every owned province, occupied, ceded to occupier
     every_owned_province = {
         limit = {
@@ -1930,6 +1973,9 @@ uach_flee_to_india_effect = {
         white_peace = PREV
         add_truce_with = PREV
     }
+
+    # End disaster
+    end_disaster = timurid_succession_crisis
 
     # delete all units
     kill_units = { who = THIS }

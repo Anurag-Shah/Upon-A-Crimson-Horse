@@ -1,5 +1,5 @@
 mnt_one_small_suffering = {
-	liberty_desire = 10
+	reduced_liberty_desire = -10
 	country_admin_power = 1
 	country_diplomatic_power = 1
 	country_military_power = 1
