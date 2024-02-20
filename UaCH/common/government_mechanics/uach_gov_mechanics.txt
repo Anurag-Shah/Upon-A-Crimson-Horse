@@ -78,9 +78,11 @@ uach_mechanics_prince = {
 					calc_true_if = {
 						all_neighbor_country = {
 							NOT = {
-								is_governor = yes
-								is_prince = yes
-								is_interloper = yes
+								OR = {
+									is_governor = yes
+									is_prince = yes
+									is_interloper = yes
+								}
 							}
 						}
 						amount = 1
@@ -325,9 +327,11 @@ uach_mechanics_governor = {
 					calc_true_if = {
 						all_neighbor_country = {
 							NOT = {
-								is_governor = yes
-								is_prince = yes
-								is_interloper = yes
+								OR = {
+									is_governor = yes
+									is_prince = yes
+									is_interloper = yes
+								}
 							}
 						}
 						amount = 1
