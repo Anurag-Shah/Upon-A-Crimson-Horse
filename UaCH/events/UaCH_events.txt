@@ -2794,6 +2794,7 @@ country_event = {
 				size = 2
 				type = pretender_rebels
 				leader = "Abu Sa'id Mirza"
+				leader_dynasty = "Timurids"
 			}
 		}
 
