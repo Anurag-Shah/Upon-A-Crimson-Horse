@@ -127,3 +127,21 @@ uach_onwards_to_glory = {
 give_in_to_clergy = {
 	global_unrest = -2
 }
+
+mitigated_drought = {
+	local_manpower_modifier = -0.1
+	local_tax_modifier = -0.1
+	local_friendly_movement_speed = -0.1
+}
+minor_drought = {
+	local_manpower_modifier = -0.25
+	local_tax_modifier = -0.25
+	local_friendly_movement_speed = -0.25
+	supply_limit_modifier = -0.1
+}
+moderate_drought = {
+	local_manpower_modifier = -0.5
+	local_tax_modifier = -0.5
+	local_friendly_movement_speed = -0.5
+	supply_limit_modifier = -0.5
+}
