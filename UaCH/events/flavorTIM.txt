@@ -85,6 +85,10 @@ country_event = {
 	trigger = {always = no} 
 
 
+	trigger = {
+		always = no
+	}
+
 	option = {
 		always = no
 	}
