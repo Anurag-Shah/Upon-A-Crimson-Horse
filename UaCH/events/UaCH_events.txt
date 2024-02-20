@@ -608,7 +608,7 @@ country_event = {
 
 			if = {
 				limit = {
-					has_country_flag = uach_yuki_lives_slower_disaster
+					has_ruler = "Muhammad Juki"
 				}
 				inherit = BLK
 			}
@@ -733,10 +733,6 @@ country_event = {
 			}
 			TIM = {
 				country_event = {
-					id = UaCH.17
-					days = 60
-				}
-				country_event = {
 					id = UaCH.55
 					days = 111
 				}
@@ -841,7 +837,7 @@ country_event = {
 		custom_tooltip = uach_trs_declares_in_6
 		hidden_effect = {
 			country_event = {
-				id = UaCH.90
+				id = UaCH.17
 				days = 18
 			}
 		}
@@ -958,10 +954,6 @@ country_event = {
 
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				# TODO
-			}
 		}
 	}
 
@@ -2589,6 +2581,8 @@ country_event = {
 	desc = UaCH.32.d
 	picture = GOOD_WITH_MONARCH_eventPicture
 
+	fire_only_once = yes
+
 	trigger = {
 		OR = {
 			AND = {
@@ -2614,8 +2608,8 @@ country_event = {
 			discount = yes
 		}
 
-		country_event = {
-			id = UaCH.33
+		hidden_effect = {
+			set_country_flag = abu_said_advisor
 		}
 
 		ai_chance = {
@@ -2642,6 +2636,8 @@ country_event = {
 	desc = UaCH.33.d
 	picture = NOBLE_ESTATE_eventPicture
 
+	fire_only_once = yes
+
 	trigger = {
 		OR = {
 			AND = {
@@ -2650,10 +2646,11 @@ country_event = {
 			}
 			tag = TRS	
 		}
+		has_country_flag = abu_said_advisor
 	}
 
 	mean_time_to_happen = {
-		months = 24
+		months = 12
 	}
 
 	# I shall gladly accept your service.
@@ -2701,6 +2698,8 @@ country_event = {
 	desc = UaCH.34.d
 	picture = FEAST_eventPicture
 
+	fire_only_once = yes
+
 	trigger = {
 		OR = {
 			AND = {
@@ -2714,6 +2713,10 @@ country_event = {
 
 	mean_time_to_happen = {
 		months = 6
+	}
+
+	after = {
+		set_country_flag = abu_said_rebel
 	}
 
 	# Grant him my daughter's hand in marriage for his good work.
@@ -2772,6 +2775,7 @@ country_event = {
 			is_in_war = { casus_belli = cb_challange_claimant }
 			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
 		}
+		has_country_flag = abu_said_rebel
 	}
 
 	mean_time_to_happen = {
@@ -4031,6 +4035,8 @@ country_event = {
 	title = UaCH.57.t 
 	desc = UaCH.57.d
 	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
 	
 	mean_time_to_happen = {
 		days = 1
