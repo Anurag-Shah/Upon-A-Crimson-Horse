@@ -10,7 +10,7 @@
  timurid_faction: "Timurid Envoys"
  # No need to define the rest of the faction
  UaCH.1.t: "The Ailing Emperor"
- UaCH.1.d: "Early in 1444, §GShah Rukh Mirza§!, ruler of the Timurid empire, youngest son of §GTimur§!, has fallen ill. While the nature of his illness is not disclosed outside his court, news are spreading that he will not survive the year. This news had sent the royal family and the high nobles into a frenzied preparation for chaos, as Shah Rukh's designated successor has died a few years prior. Many elders still remember the days after Timurs death followed by a decade of campaigning before relative peace could return to the land.\n\nIn the north, Shah Rukhs last surviving child, the scholarly §GUlugh beg§! and his ambitious son §GAbdal Latif§!, long time viceroy of §YTransoxiana§! are already putting plans in motion.\n\nThe de facto independent prince of §YAjam§!, §GSultan Muhammad§! is eyeing the neighbouring §YIsfahan§!, where the old and decrepit §GMahmudshah§! is still clinging to power.\n\nShah Rukh's favorite grandson §GMuhammad Juki§!, the governor of §YBalkh§! is more than willing to step up, but there are rumors about him being ill too.\n\nAnother grandson, amir of §YHerat§!, §GAla al-Dawla Mirza§! is also watching the throne with interest and gathering his armies, with the full support of his grandmother, Shah Rukhs chief consort §GGawhar Shad§!." 
+ UaCH.1.d: "Early in 1444, §GShah Rukh Mirza§!, ruler of the Timurid empire, youngest son of §GTimur§!, has fallen ill. While the nature of his illness is not disclosed outside his court, news are spreading that he will not survive the year. This news had sent the royal family and the high nobles into a frenzied preparation for chaos, as Shah Rukh's designated successor has died a few years prior. Many elders still remember the days after Timurs death followed by a decade of campaigning before relative peace could return to the land.\n\nIn the north, one of Shah Rukhs children, the scholarly §GUlugh beg§! and his ambitious son §GAbdal Latif§!, long time viceroy of §YTransoxiana§! are already putting plans in motion.\n\nThe de facto independent prince of §YAjam§!, §GSultan Muhammad§! is eyeing the neighbouring §YIsfahan§!, where the old and decrepit §GMahmudshah§! is still clinging to power.\n\nShah Rukh's favorite son §GMuhammad Juki§!, the governor of §YBalkh§! is more than willing to step up, but there are rumors about him being ill too.\n\nAnother grandson, amir of §YHerat§!, §GAla al-Dawla Mirza§! is also watching the throne with interest and gathering his armies, with the full support of his grandmother, Shah Rukhs chief consort §GGawhar Shad§!." 
  UaCH.1.a: "To the strongest!"
  UaCH.2.t: "Secret Plot"
  UaCH.2.t: "Secret Plot"
@@ -636,3 +636,9 @@
  uach_reform.1016.a: "Clan above state"
  uach_reform.1016.b: "State above Clan"
  uach_state_above_clan: "State above Clan"
+ UaCH.CB.1.t: "Victorious Conquest"
+ UaCH.CB.1.d: "We have just defeated a rival claimant. Now, it is up to us to decide what to do with their ruler."
+ UaCH.CB.1.a: "Replace him with one of our loyal nobles."
+ UaCH.CB.1.b: "Replace him with a favorite of our Ulama."
+ UaCH.CB.1.c: "Replace him with an important local."
+ UaCH.CB.1.d: "Leave the ruler in charge."
