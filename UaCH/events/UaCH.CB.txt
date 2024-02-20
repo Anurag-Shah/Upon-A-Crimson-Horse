@@ -69,15 +69,18 @@ country_event = {
 			define_ruler = {
 				dynasty = ROOT
 				min_age = 16
-			}
-	
-			add_country_modifier = {
-				name = uach_enforced_burgher_ruler
-				duration = 3650
+				max_random_adm = 3
+				max_random_dip = 4
+				max_random_mil = 3
 			}
 			# Demote to governor
 			make_tag_governor = yes
 			shuffle_princes = { scope = event_target:claimant_lost_war }
+		}
+
+		add_country_modifier = {
+			name = uach_enforced_burgher_ruler
+			duration = 3650
 		}
 
 		ai_chance = {
@@ -97,17 +100,20 @@ country_event = {
 			define_ruler = {
 				dynasty = ROOT
 				min_age = 16
+				max_random_adm = 3
+				max_random_dip = 3
+				max_random_mil = 4
 			}
 	
-			add_country_modifier = {
-				name = uach_enforced_noble_ruler
-				duration = 3650
-			}
 			# Demote to governor
 			make_tag_governor = yes
 			shuffle_princes = { scope = event_target:claimant_lost_war }
 		}
 
+		add_country_modifier = {
+			name = uach_enforced_noble_ruler
+			duration = 3650
+		}
 
 		ai_chance = {
 			factor = 50
@@ -126,17 +132,20 @@ country_event = {
 			define_ruler = {
 				dynasty = ROOT
 				min_age = 16
+				max_random_adm = 4
+				max_random_dip = 3
+				max_random_mil = 3
 			}
-	
-			add_country_modifier = {
-				name = uach_enforced_church_ruler
-				duration = 3650
-			}
+
 			# Demote to governor
 			make_tag_governor = yes
 			shuffle_princes = { scope = event_target:claimant_lost_war }
 		}
 
+		add_country_modifier = {
+			name = uach_enforced_church_ruler
+			duration = 3650
+		}
 
 		ai_chance = {
 			factor = 50
@@ -150,16 +159,10 @@ country_event = {
 	# Keep the ruler in charge
 	option = {
 		name = "UaCH.CB.1.d"
-		
-		event_target:claimant_lost_war = {
-			add_country_modifier = {
-				name = uach_preserve_ruler
-				duration = 3650
-			}
-
-			# Tag stays a prince in this one
+		add_country_modifier = {
+			name = uach_preserve_ruler
+			duration = 3650
 		}
-
 
 		ai_chance = {
 			factor = 50
