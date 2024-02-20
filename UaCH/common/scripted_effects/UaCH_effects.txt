@@ -2023,10 +2023,7 @@ uach_flee_to_india_effect = {
             days = 1
         }
         set_country_flag = uach_ignore_me_in_ceasefire
-    } else_if = {
-        limit = {
-            is_prince = yes
-        }
+    } else = {
         country_event = {
             id = UaCH.82
             days = 1
