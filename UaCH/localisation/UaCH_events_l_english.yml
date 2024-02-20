@@ -149,7 +149,13 @@
  UaCH.26.a: "We maintain our allegiance to he who rules in Herat."
  UaCH.26.b: "The lords of Khorasan shall have our might!"
  UaCH.26.c: "He who rules in Samarkand shall lead us forward."
- UaCH.26.d: "This is our chance to expel the sons of Timur! "
+ UaCH.26.e: "This is our chance to expel the sons of Timur!"
+ UaCH.26.f: "Let us follow Isfahan's example, and ride with Ajam!"
+ UaCH.26.g: "Let us side with the lords of Fars."
+ UaCH.26.h: "The gate that is Kabul shall be our suzerain!"
+ UaCH.26.i: "The prince of the Khutalls shall rule!"
+ UaCH.26.j: "Muhammad Juki's heirs shall lead us to victory!"
+ UACH_26_E_TOOLTIP: "We will go independent, with every country involved in the §YTimurid Succession Crisis§! declaring war on us to enforce our loyalty."
  
  
  UaCH.27.t: "The Rogue Prince"

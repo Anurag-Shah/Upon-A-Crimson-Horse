@@ -770,12 +770,12 @@ custom_button = {
 		stability = 1
 		NOT = { is_subject = yes }
 		OR = {
-			country_or_non_sovereign_subject_holds = 446	# Herat
-			country_or_non_sovereign_subject_holds = 451	# Kabul
-			country_or_non_sovereign_subject_holds = 454	# Samarkand
-			country_or_non_sovereign_subject_holds = 2213	# Qom
-			country_or_non_sovereign_subject_holds = 2214	# Astarabad
-			country_or_non_sovereign_subject_holds = 2218	# Shiraz
+			owns_or_non_sovereign_subject_of = 446	# Herat
+			owns_or_non_sovereign_subject_of = 451	# Kabul
+			owns_or_non_sovereign_subject_of = 454	# Samarkand
+			owns_or_non_sovereign_subject_of = 2213	# Qom
+			owns_or_non_sovereign_subject_of = 2214	# Astarabad
+			owns_or_non_sovereign_subject_of = 2218	# Shiraz
 		}
 	}
     effect = { 
