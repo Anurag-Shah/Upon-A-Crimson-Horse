@@ -97,7 +97,7 @@ uach_mechanics_prince = {
 				add_legitimacy = -10
 				add_prestige = -15
 				random_neighbor_country = {
-					add_opinon = {
+					add_opinion = {
 						who = PREV
 						modifier = supported_us_in_timurid_success_crisis
 					}
@@ -344,7 +344,7 @@ uach_mechanics_governor = {
 				add_legitimacy = -10
 				add_prestige = -15
 				random_neighbor_country = {
-					add_opinon = {
+					add_opinion = {
 						who = PREV
 						modifier = supported_us_in_timurid_success_crisis
 					}

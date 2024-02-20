@@ -950,26 +950,26 @@ country_event = {
 		name = "UaCH.17.c"
 		custom_tooltip = uach_new_reality
 		hidden_effect = {
-		every_subject_country = {
+			every_subject_country = {
+				TRS = {
+					create_subject = {
+						subject_type = governor
+						subject = PREV
+					}
+				}
+			}
+			change_tag = HER
 			TRS = {
 				create_subject = {
 					subject_type = governor
-					subject = PREV
+					subject = ROOT
 				}
+				change_tag = TIM
 			}
-		}
-		change_tag = HER
-		TRS = {
-			create_subject = {
-				subject_type = governor
-				subject = ROOT
-			}
-			change_tag = TIM
 		}
 
 		ai_chance = {
 			factor = 0
-			}
 		}
 	}
 	# An ambitious young man, too bad about his father...
@@ -1339,7 +1339,7 @@ country_event = {
 		
 		TRS = {
 			declare_war_with_cb = {
-				casus_belli = cb_claim
+				casus_belli = cb_conquest
 				who = ROOT
 				war_goal_province = 450
 			}
@@ -1552,7 +1552,7 @@ country_event = {
 					tag = TIM
 					was_tag = TRS
 				}
-				tag = TRS
+				change_tag = TRS
 			}
 
 			# Release all subjects and subjects subjects
@@ -1568,12 +1568,12 @@ country_event = {
 
 			release_all_subjects = yes
 
-			# Release all of QOM and IFS subjects
+			# Release all of QOM and ISF subjects
 			QOM = {
 				release_all_subjects = yes
 			}
 
-			IFS = {
+			ISF = {
 				release_all_subjects = yes
 			}
 
@@ -2221,6 +2221,7 @@ country_event = {
 
 	trigger = {
 		AND = {
+			NOT = { has_country_flag = uach_interwar_lull }
 			OR = {
 				has_disaster = timurid_succession_crisis
 				is_in_war = { casus_belli = cb_challange_claimant }
@@ -2313,7 +2314,7 @@ country_event = {
 
 	trigger = {
 		owns = 446
-		control = 446
+		controls = 446
 		has_country_flag = yar_ali_is_done
 		NOT = {
 			any_owned_province = {
@@ -2378,6 +2379,7 @@ country_event = {
 	picture = BORDER_TENSION_eventPicture
 	
 	trigger = {
+		NOT = { has_country_flag = uach_interwar_lull }
 		any_neighbor_country = {
 			has_reform = steppe_horde
 		}
@@ -2578,7 +2580,7 @@ country_event = {
 	option = {
 		name = "UaCH.32.b"
 		
-		uach_add_random_mana = { AMOUNT = 50 }
+		uach_add_random_mana = { VALUE = 50 }
 
 		ai_chance = {
 			factor = 1
@@ -2666,7 +2668,7 @@ country_event = {
 	option = {
 		name = "UaCH.34.a"
 		
-		uach_add_random_mana = { AMOUNT = 25 }
+		uach_add_random_mana = { VALUE = 25 }
 		
 		454 = {
 			add_province_modifier = {
@@ -2882,6 +2884,7 @@ country_event = {
 	desc = UaCH.38.d
 	picture = SIEGE_eventPicture
 	trigger = {
+		NOT = { has_country_flag = uach_interwar_lull }
 		had_country_flag = { 
 			flag = uach_disaster_event_timer
 			days = 60
@@ -2942,14 +2945,19 @@ province_event = {
 	picture = CITY_DEVELOPMENT_eventPicture
 
 	trigger = {
-		had_country_flag = { 
-			flag = uach_disaster_event_timer
-			days = 60
-		}
-		OR = {
-			has_disaster = timurid_succession_crisis
-			is_in_war = { casus_belli = cb_challange_claimant }
-			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+		owner = {
+			AND = {
+				NOT = { has_country_flag = uach_interwar_lull }
+				had_country_flag = { 
+					flag = uach_disaster_event_timer
+					days = 60
+				}
+				OR = {
+					has_disaster = timurid_succession_crisis
+					is_in_war = { casus_belli = cb_challange_claimant }
+					is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+				}
+			}
 		}
 	}
 
@@ -3033,6 +3041,7 @@ country_event = {
 	picture = SPY_eventPicture
 
 	trigger = {
+		NOT = { has_country_flag = uach_interwar_lull }
 		had_country_flag = { 
 			flag = uach_disaster_event_timer
 			days = 60
@@ -3110,6 +3119,7 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
+		NOT = { has_country_flag = uach_interwar_lull }
 		OR = {
 			tag = ISF
 			any_neighbor_country = {
@@ -3968,12 +3978,15 @@ country_event = {
 	}
 
 	trigger = {
-		capital_scope = {
-			has_province_modifier = uach_shah_rukhs_mausoleum
-			had_province_flag = {
-				flag = uach_shah_rukhs_mausoleum
-				days = 365
+		AND = {
+			capital_scope = {
+				has_province_modifier = uach_shah_rukhs_mausoleum
+				had_province_flag = {
+					flag = uach_shah_rukhs_mausoleum
+					days = 365
+				}
 			}
+			NOT = { has_country_flag = uach_masoleum_event_already_fired_for_you }
 		}
 	}
 	
@@ -3987,6 +4000,10 @@ country_event = {
 				name = uach_shah_rukhs_mausoleum_completed
 				duration = 730
 			}
+		}
+
+		hidden_effect = {
+			set_country_flag = uach_masoleum_event_already_fired_for_you
 		}
 	}
 }
@@ -4140,11 +4157,13 @@ country_event = {
 			custom_tooltip = shy_cede_x_area
 			hidden_effect = {
 				event_target:area_of_interest = {
-					limit = {
-						country_or_non_sovereign_subject_holds = ROOT
-					}
-					cede_province = KZH
-					add_core = KZH	
+					if = {
+						limit = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+						cede_province = KZH
+						add_core = KZH
+					}	
 				}
 			}
 		}
@@ -4743,6 +4762,7 @@ country_event = {
 	id = UaCH.80
 	title = UaCH.80.t 
 	desc = UaCH.80.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
 
 	hidden = yes
 
@@ -6112,8 +6132,8 @@ country_event = {
 	option = {
 		name = UaCh.103.b
 		event_target:uach_to_be_changed_prov = {
-			religion = shiite
-			}
+			change_religion = shiite
+		}
 	}
 	
 	option = {

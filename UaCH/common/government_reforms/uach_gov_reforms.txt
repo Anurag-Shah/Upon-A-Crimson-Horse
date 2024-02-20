@@ -5,7 +5,6 @@ uach_governor = {
 		is_governor = yes
 	}
 	valid_for_nation_designer = no
-	locked_government_type = yes
 	lock_level_when_selected = yes
 
 	queen = no
@@ -27,7 +26,6 @@ uach_governor = {
 uach_prince = {
 	icon = "uach_prince"
 	allow_normal_conversion = no
-	locked_government_type = yes
 	lock_level_when_selected = yes
 	potential = {
 		is_prince = yes
@@ -66,7 +64,6 @@ uach_prince = {
 uach_interwar_timurid_state = {
 	icon = "uach_prince"
 	allow_normal_conversion = no
-	locked_government_type = yes
 	lock_level_when_selected = yes
 	potential = {
 		is_prince = yes

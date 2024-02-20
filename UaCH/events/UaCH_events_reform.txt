@@ -913,7 +913,7 @@ country_event = {
 
 	option = {
 		name = "Let them go home"
-		add_manpower = -4000
+		add_manpower = -4
 		add_government_power = {
 			mechanic_type = uach_reform_state_mechanic
 			power_type = uach_persianization
@@ -1258,7 +1258,7 @@ country_event = {
 			value = 5
 			disaster = repeatable_timurid_succession_crisis
 		}
-		uach_add_or_subtract_persianization = { value = -10 }
+		uach_add_or_subtract_persianization = { value = 10 }
 		
 		}
 		
@@ -1434,7 +1434,7 @@ country_event = {
 	option = {
 		name = "Clan above state"
 		add_years_of_income = 0.5
-		uach_add_or_subtract_persianization = { value = -10 }
+		uach_add_or_subtract_persianization = { value = 10 }
 	}
 		
 	option = {	
