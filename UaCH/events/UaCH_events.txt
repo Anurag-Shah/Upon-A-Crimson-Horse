@@ -5661,6 +5661,7 @@ country_event = {
 								name = "mitigated_drought"
 								duration = 3650
 								}
+							remove_province_modifier = minor_drought
 							}
 					}
 					
@@ -5670,6 +5671,7 @@ country_event = {
 								name = "moderate_drought"
 								duration = 3650
 								}
+							remove_province_modifier = minor_drought
 							}
 					}
 					
@@ -5688,6 +5690,7 @@ country_event = {
 								duration = 3650
 								}
 							}
+							remove_province_modifier = minor_drought
 					}
 					
 				25 = {	
@@ -5743,6 +5746,7 @@ country_event = {
 			random_list = {
 				90 = {
 						event_target:uach_drought_prov = {
+						remove_province_modifier = moderate_drought
 							add_province_modifier = {
 								name = "mitigated_drought"
 								duration = 3650
@@ -5778,6 +5782,8 @@ country_event = {
 								name = "nobody_lives_here_anymore_drought"
 								duration = -1
 								}
+							remove_province_modifier = moderate_drought
+							
 							}
 					}
 					
