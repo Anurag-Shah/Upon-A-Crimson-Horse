@@ -2321,6 +2321,7 @@ country_event = {
 	trigger = {
 		AND = {  
 			446 = { controlled_by = REB }
+			AND = { NOT = { 446 = { owner = { tag = ROOT } } } }
 			has_country_flag = yar_ali_is_here
 		}
 	}

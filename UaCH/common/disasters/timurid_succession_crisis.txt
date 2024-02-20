@@ -90,7 +90,7 @@ timurid_succession_crisis = {
 			100 = UaCH.29	#raids
 			60 = UaCH.92	# cetai event
 			60 = UaCH.101   # cetai event
-			40 = UaCH.103  # cetai event
+			20 = UaCH.103  # cetai event
 		}
 	}
 }

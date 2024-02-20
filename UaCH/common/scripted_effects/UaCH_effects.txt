@@ -1974,6 +1974,9 @@ uach_flee_to_india_effect = {
         add_truce_with = PREV
     }
 
+    # End disaster
+    end_disaster = timurid_succession_crisis
+
     # delete all units
     kill_units = { who = THIS }
 
