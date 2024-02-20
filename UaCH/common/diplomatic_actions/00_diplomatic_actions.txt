@@ -158,9 +158,10 @@ declarewar = {
 		tooltip = UACH_CIVIL_WAR_NO_DOW_INSIDE
 		potential = {
 			OR = {
-				is_in_war = { casus_belli = cb_challange_claimant }
-				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+				is_prince = yes
+				is_governor = yes
 			}
+			has_global_flag = uach_succession_crisis_started
 		}
 		allow = { 
 			always = no
@@ -171,10 +172,11 @@ declarewar = {
 		potential = {
 			FROM = { 
 				OR = {
-					is_in_war = { casus_belli = cb_challange_claimant }
-					is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+					is_prince = yes
+					is_governor = yes
 				}
 			}
+			has_global_flag = uach_succession_crisis_started
 		}
 		allow = { 
 			always = no
