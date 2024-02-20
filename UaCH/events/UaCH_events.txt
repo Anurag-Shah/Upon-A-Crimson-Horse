@@ -754,10 +754,6 @@ country_event = {
 		
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				# TODO
-			}
 		}
 	}
 
@@ -779,10 +775,6 @@ country_event = {
 		
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				# TODO
-			}
 		}
 	}
 
@@ -794,10 +786,6 @@ country_event = {
 		
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				# TODO
-			}
 		}
 	}
 }
@@ -1001,12 +989,14 @@ country_event = {
 		TRS = {
 			add_liberty_desire = 100
 			country_event = {
-				id = UaCH.90
-				days = 180
+				id = UaCH.31
 			}
-		}
-		country_event = {
-			id = UaCH.31
+			hidden_effect = {
+				country_event = {
+					id = UaCH.90
+					days = 180
+				}
+			}
 		}
 		hidden_effect = {
 			random_list = {
@@ -1026,7 +1016,7 @@ country_event = {
 					country_event = {
 						id = UaCH.51
 						days = 30
-						}
+					}
 				}
 			}
 		}
