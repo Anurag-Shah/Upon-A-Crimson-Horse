@@ -5894,8 +5894,25 @@ country_event = {
 	picture = COUNTRY_COLLAPSE_eventPicture
 	is_triggered_only = yes
 
+	# Next
 	option = {
+		highlight = yes
 		name = "UaCH.98.a"
+		hidden_effect = {
+			country_event = {
+				id = UaCH.105
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = {
+		name = "UaCH.98.b"
+		ai_chance = {
+			factor = 100
+		}
 	}
 }
 
@@ -5921,7 +5938,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = "UaCH.99.a"
+		name = "UaCH.100.a"
 		add_government_power = {
             mechanic_type = uach_reform_state_mechanic
             power_type = uach_persianization
@@ -6150,5 +6167,40 @@ country_event = {
 		name = UaCh.103.c
 		uach_add_random_development = { AMOUNT = -1 VALUE = 1 }
 		add_devastation = 25
+	}
+}
+
+country_event = {
+	id = UaCH.104
+	title = UaCH.104.t 
+	desc = UaCH.104.d
+	picture = UACH_TEAM_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "UaCH.104.a"
+	}
+}
+
+country_event = {
+	id = UaCH.105
+	title = UaCH.105.t 
+	desc = UaCH.105.d
+	picture = UACH_TEAM_eventPicture
+	is_triggered_only = yes
+
+	# back
+	option = {
+		name = "UaCH.105.a"
+		hidden_effect = {
+			country_event = {
+				id = UaCH.98
+			}
+		}
+	}
+
+	# lets - a - go!
+	option = {
+		name = "UaCH.105.a"
 	}
 }
