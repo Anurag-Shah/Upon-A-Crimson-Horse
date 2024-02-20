@@ -783,13 +783,16 @@ country_event = {
 		}
 		add_treasury = -300
 		
-		every_owned_province = {
-			limit = {
-				religion = sunni 
-			}
-			add_province_modifier = {
-				name = uach_let_them_do_their_thing
-				duration = 3650
+		custom_tooltip = UACH1003CTT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					religion = sunni 
+				}
+				add_province_modifier = {
+					name = uach_let_them_do_their_thing
+					duration = 3650
+				}
 			}
 		}
 
@@ -1094,19 +1097,19 @@ country_event = {
 		if = {
 			limit = {
 				any_neighbor_country = {
-					tag = QAR
+					tag = AKK
 				}
 			}
 			PREV = {
 				declare_war_with_cb = {
-					who = QAR
+					who = AKK
 					casus_belli = cb_horde_vs_civ
 				}
 			}
 		} else = {
 			PREV = {
 				declare_war_with_cb = {
-					who = AKK
+					who = QAR
 					casus_belli = cb_horde_vs_civ
 				}
 			}
@@ -1172,7 +1175,7 @@ country_event = {
 	option = {
 		name = uach_reform.1009.b
 		add_disaster_progress = {
-			value = 5
+			value = -5
 			disaster = repeatable_timurid_succession_crisis
 		}
 
@@ -1281,10 +1284,9 @@ country_event = {
 		}
 		add_treasury = -50
 		add_disaster_progress = {
-			value = 5
+			value = -5
 			disaster = repeatable_timurid_succession_crisis
 		}
-		uach_add_or_subtract_persianization = { value = 10 }
 		
 		}
 		
@@ -1295,12 +1297,10 @@ country_event = {
 			uach_add_random_development = { VALUE = 1 AMOUNT = 1 }
 		}
 		add_disaster_progress = {
-			value = -10
+			value = 2
 			disaster = repeatable_timurid_succession_crisis
 		}
-		uach_add_or_subtract_persianization = { value = 5 }
-		
-		}
+	}
 }	
 
 
@@ -1447,7 +1447,6 @@ country_event = {
 			estate = estate_nobles
 			loyalty = -10
 		}
-		add_legitimacy = -15
 	}
 }	
 

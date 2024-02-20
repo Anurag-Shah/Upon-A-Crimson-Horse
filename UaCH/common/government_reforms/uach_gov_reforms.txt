@@ -64,7 +64,8 @@ uach_prince = {
 
 
 uach_interwar_timurid_state = {
-	icon = "uach_prince"
+	# icon = "uach_prince"
+	icon = "shogunate"
 	allow_normal_conversion = no
 	lock_level_when_selected = yes
 	potential = {
