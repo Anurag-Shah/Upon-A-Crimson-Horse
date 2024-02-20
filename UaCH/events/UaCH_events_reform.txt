@@ -480,6 +480,10 @@ country_event = {
 		}
 		capital_scope = { add_base_tax = 1 }
 		add_yearly_manpower = -0.5
+		add_disaster_progress = {
+			disaster = repeatable_timurid_succession_crisis
+			value = 5
+		}
 	}
 	option = {
 		name = "EVTOPTB729"
@@ -492,6 +496,11 @@ country_event = {
 		}
 		capital_scope = { add_base_tax = 1 }
 		add_years_of_income = -0.25
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 5
+		}
 	}
 	option = {
 		name = "personality_options.729.a"
