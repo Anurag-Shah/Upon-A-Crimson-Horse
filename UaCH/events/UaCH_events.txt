@@ -5780,7 +5780,7 @@ country_event = {
 							uach_add_random_development = { AMOUNT = 10 VALUE = -1 }
 							add_province_modifier = {
 								name = "nobody_lives_here_anymore_drought"
-								duration = -1
+								duration = 10950
 								}
 							remove_province_modifier = moderate_drought
 							
