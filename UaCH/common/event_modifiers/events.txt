@@ -145,3 +145,15 @@ moderate_drought = {
 	local_friendly_movement_speed = -0.5
 	supply_limit_modifier = -0.5
 }
+
+nobody_lives_here_anymore_drought = {
+	local_manpower_modifier = -1
+	local_tax_modifier = -1
+	supply_limit_modifier = -1
+	supply_limit = -1
+	local_hostile_attrition = 5
+	max_attrition = 5
+	local_production_efficiency = -1
+	tax_income = -1
+	
+}

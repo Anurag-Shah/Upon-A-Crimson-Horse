@@ -5762,8 +5762,8 @@ country_event = {
 			random_list = {
 				75 = {
 						event_target:uach_drought_prov = {
+							add_devastation = 100
 							add_province_modifier = {
-								add_devastation = 100
 								name = "moderate_drought"
 								duration = 9125
 								}
@@ -5773,17 +5773,10 @@ country_event = {
 				25 = {	
 						custom_tooltip = uach_city_lose
 						event_target:uach_drought_prov = {
-							hidden_effect = {
-									cede_province = uncolonized
-									set_province_flag = colonizable
-									clr_province_flag = colonize
-									clr_province_flag = land_grab
-									clr_province_flag = native_policy
-									clr_province_flag = native_uprising
-									clr_province_flag = native_repression
-									clr_province_flag = native_assimilation
-									clr_province_flag = native_restriction
-									remove_province_modifier = moderate_drought
+							uach_add_random_development = { AMOUNT = 10 VALUE = -1 }
+							add_province_modifier = {
+								name = "nobody_lives_here_anymore_drought"
+								duration = -1
 								}
 							}
 					}
