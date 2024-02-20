@@ -1,5 +1,6 @@
 country_decisions = {
 	interloper_tr_conquest_7 = {
+		major = yes
 		potential = {
 			AND = {
 				is_interloper = yes
@@ -37,6 +38,7 @@ country_decisions = {
 	}
 
 	interloper_tr_conquest_6 = {
+		major = yes
 		potential = {
 			AND = {
 				is_interloper = yes
@@ -74,6 +76,7 @@ country_decisions = {
 	}
 
 	interloper_tr_conquest_5 = {
+		major = yes
 		potential = {
 			AND = {
 				is_interloper = yes
@@ -111,6 +114,7 @@ country_decisions = {
 	}
 
 	interloper_tr_conquest_4 = {
+		major = yes
 		potential = {
 			AND = {
 				is_interloper = yes
@@ -148,6 +152,7 @@ country_decisions = {
 	}
 
 	interloper_tr_conquest_3 = {
+		major = yes
 		potential = {
 			AND = {
 				is_interloper = yes
@@ -185,6 +190,7 @@ country_decisions = {
 	}
 
 	interloper_tr_conquest_2 = {
+		major = yes
 		potential = {
 			AND = {
 				is_interloper = yes
@@ -222,6 +228,7 @@ country_decisions = {
 	}
 
 	interloper_tr_conquest_1 = {
+		major = yes
 		potential = {
 			AND = {
 				is_interloper = yes
@@ -259,6 +266,7 @@ country_decisions = {
 	}
 
 	interloper_tr_conquest_0 = {
+		major = yes
 		potential = {
 			AND = {
 				is_interloper = yes
