@@ -60,7 +60,7 @@ timurid_succession_crisis = {
 			
 		}
 		random_events = {
-			1000 = 0
+			3000 = 0
 			100	= UaCH.27	#Yar ali besieges herat
 			100 = UaCH.39	#policies of the local emir
 			100	= UaCH.40   #defections among our people
