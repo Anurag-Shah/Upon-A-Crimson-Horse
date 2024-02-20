@@ -1,12 +1,25 @@
 timurid_succession_crisis = {
 	potential = {
-		normal_or_historical_nations = yes
 		OR = {
-			tag = TIM
-			was_tag = TIM
+			AND = {
+				normal_or_historical_nations = yes
+				OR = {
+					tag = TIM
+					was_tag = TIM
+				}
+				NOT = { has_country_flag = timurids_reformed_government }
+				NOT = { has_country_flag = uach_interwar_lull }
+			}
+			AND = {
+				OR = {
+					is_prince = yes
+					is_governor = yes
+				}
+				any_country = {
+					has_disaster = timurid_succession_crisis
+				}
+			}
 		}
-		NOT = { has_country_flag = timurids_reformed_government }
-		NOT = { has_country_flag = uach_interwar_lull }
 	}
 	
 	can_start = {
@@ -37,6 +50,13 @@ timurid_succession_crisis = {
 		modifier = {
 			factor = 1
 			has_country_flag = uach_yuki_dies_disaster_faster
+		}
+
+		modifier = {
+			factor = 1000
+			any_country = {
+				has_disaster = timurid_succession_crisis
+			}
 		}
 		
 	}

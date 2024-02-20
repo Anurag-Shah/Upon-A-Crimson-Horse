@@ -1,9 +1,22 @@
 repeatable_timurid_succession_crisis = {
 	potential = {
-		normal_or_historical_nations = yes
-		tag = TIM
-		NOT = { has_country_flag = timurids_reformed_government }
-		has_country_flag = uach_interwar_lull
+		OR = {
+			AND = {
+				normal_or_historical_nations = yes
+				tag = TIM
+				NOT = { has_country_flag = timurids_reformed_government }
+				has_country_flag = uach_interwar_lull
+			}
+			AND = {
+				OR = {
+					is_prince = yes
+					is_governor = yes
+				}
+				any_country = {
+					has_disaster = repeatable_timurid_succession_crisis
+				}
+			}
+		}
 	}
 	
 	can_start = {
@@ -66,6 +79,13 @@ repeatable_timurid_succession_crisis = {
 		modifier = {
 			factor = 0.2
 			NOT = { has_heir = yes }
+		}
+
+		modifier = {
+			factor = 1000
+			any_country = {
+				has_disaster = repeatable_timurid_succession_crisis
+			}
 		}
 		
 	}
