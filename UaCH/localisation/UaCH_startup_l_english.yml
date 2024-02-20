@@ -16,7 +16,7 @@
  
  string_screen_title_SHY:0"Shaybanids - The Gray Horde"
  string_start_title_SHY:0"The situation of Uzbeks in 1444"
- string_start_SHY:0"\Without Fortune and prospect, I ignite the fire\nOf impatience – the guards of prudence have vanished\nMy caravan defenseless in the coming fire.\nA lightening flash has struck and changed me utterly.\n - §YAli-Shir Nava'i§!n\n §RHistory§! \n\n The Shaybanid dynasty rules over the various Uzbek tribes of the central asian steppes. While not as organized as the Muslim emirates to the south, and suffering from internal stability issues, the tribes of Uzbek, Sibir and Kazakh bow to the descendants of §GJochi§!. For now at least. \n\n §RRuler§! \n\n In 1444, the Shaybanids are ruled by §GAbu'l-Khayr§! khan.  Abu'l-Khayr's has swiftly consolidated his power since taking the throne in 1428, and been eyeing the south for a while now. Who knows what opportunites arise with the impeding death of §GShah Rukh§!?"
+ string_start_SHY:0"Without Fortune and prospect, I ignite the fire\nOf impatience – the guards of prudence have vanished\nMy caravan defenseless in the coming fire.\nA lightening flash has struck and changed me utterly.\n - §YAli-Shir Nava'i§!n\n §RHistory§! \n\n The Shaybanid dynasty rules over the various Uzbek tribes of the central asian steppes. While not as organized as the Muslim emirates to the south, and suffering from internal stability issues, the tribes of Uzbek, Sibir and Kazakh bow to the descendants of §GJochi§!. For now at least. \n\n §RRuler§! \n\n In 1444, the Shaybanids are ruled by §GAbu'l-Khayr§! khan.  Abu'l-Khayr's has swiftly consolidated his power since taking the throne in 1428, and been eyeing the south for a while now. Who knows what opportunites arise with the impeding death of §GShah Rukh§!?"
  
  string_screen_title_BLK:0"Balkh - The Mother of Cities"
  string_start_title_BLK:0"The situation of Balkh in 1444"
@@ -49,6 +49,10 @@
  string_screen_title_SLU:0"Salur - Armed with a saber"
  string_start_title_SLU:0"The situation of Salur in 1444"
  string_start_SLU:0 "'Wherever you go, you fight with a sword and a club'\n - §YSalyr translated§!\n\n §RHistory§! \n\n In the 14th century, the Oghuz Turkoman tribe of Salur has been prepared for settling down. Ranging from Crimea to Fars, the tribal alliance of Muslim Turks were beginning to slowly change into a proper feudal nation with the advent of gunpowder age. The Salur tribe has chosen to settle the river Uzboy, a distributary of the Amu river. However they have yet to completely adopted the sedentary lifestyle, keeping their nomadic heritage with themselves.\n\n §RRuler§! \n\n In 1444, Salur is ruled by §GKhan Ali§!, of the Salgurid dynasty. Tho afar from power in Persia, he might be the extra piece the Timurid Princes need... "
+
+ string_screen_title_SIS:0"Sistan - Land of the Saka"
+ string_start_title_SIS:0"The situation of Sistan in 1444"
+ string_start_SIS:0 ""Ah Love! could thou and I with Fate conspire\nTo grasp this sorry Scheme of Things entire,\nWould not we shatter it to bits—and then\nRe-mould it nearer to the Heart's Desire!"\n-§Y Omar Khayyam§!  \n\n §RHistory§! \n\n Despite periods of relative stability, Sistan faced internal strife and external threats during the 14th and 15th centuries. Rivalry among local rulers, tribal conflicts, and incursions by neighboring powers contributed to the region's political instability.\n\n §RRuler§! \n\n Sistan is ruled by the Mihrabanid dynasty. The current ruler §GMahmud Nizam al-Din§! gained the throne of Sistan after his father's death in 1438"
 
  string_screen_title_SI0S:0"Balkh - A city rebuilt"
  string_start_title_SI0S:0"The situation of Balkh in 1444"
