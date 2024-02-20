@@ -4954,6 +4954,9 @@ country_event = {
 		name = "UaCH.81.a"
 		custom_tooltip = UACH_81_A_TOOLTIP
 		remove_government_reform = uach_governor
+		hidden_effect = {
+    		end_disaster = timurid_succession_crisis
+		}
 	}
 }
 
@@ -4970,7 +4973,9 @@ country_event = {
 		name = "UaCH.82.a"
 		custom_tooltip = UACH_81_A_TOOLTIP
 		remove_government_reform = uach_governor
-		add_government_reform = iqta
+		hidden_effect = {
+    		end_disaster = timurid_succession_crisis
+		}
 	}
 }
 
