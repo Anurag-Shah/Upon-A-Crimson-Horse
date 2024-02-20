@@ -310,7 +310,7 @@ U03_ideas = {
 		reduced_stab_impacts = yes
 	}	
 	bonus = {	
-		attack_bonus_in_capital_terrain = yes  
+		attack_bonus_in_capital_terrain = 1  
 	}	
 		
 	trigger = {	
@@ -362,7 +362,7 @@ U04_ideas = {
 	free = yes
 			
 	U04_idea_1 =  {	
-		attack_bonus_in_capital_terrain = yes  
+		attack_bonus_in_capital_terrain = 1  
 	}	
 		
 	U04_idea_2= {	
@@ -1299,7 +1299,7 @@ U26_ideas = {
 		monthly_support_heir_gain = 0.1
 	}	
 	bonus = {	
-		has_banners = 1
+		has_banners = yes
 	}	
 		
 	trigger = {	
@@ -1715,7 +1715,7 @@ U35_ideas = {
 	}	
 		
 	U35_idea_6 = {	
-		has_banners = 1
+		has_banners = yes
 	}	
 		
 	U35_idea_7 = {	
@@ -3131,7 +3131,7 @@ U68_ideas = {
 	}	
 		
 	U68_idea_5 = {	
-		attack_bonus_in_capital_terrain = yes  
+		attack_bonus_in_capital_terrain = 1  
 	}	
 		
 	U68_idea_6 = {	

@@ -66,8 +66,7 @@ timurid_succession_crisis = {
 			100	= UaCH.40   #defections among our people
 			100 = UaCH.41	#Flight of the western emirs
 			100 = UaCH.38	#Low supplies
-			100	= UaCH.27   #The rogue prince
-			100 = Uach.29	#raids
+			100 = UaCH.29	#raids
 		}
 	}
 }

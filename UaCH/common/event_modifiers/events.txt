@@ -23,7 +23,7 @@ mnt_trs_betrayl_honored_body = {
 }
 
 uach_shah_rukhs_mausoleum = {
-	# TODO
+	prestige_decay = -0.01
 }
 
 uach_shah_rukhs_mausoleum_desecrated = {
