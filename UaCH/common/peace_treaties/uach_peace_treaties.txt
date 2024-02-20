@@ -4,7 +4,7 @@ po_defeated_claimant = {
 	category = 6
 	power_projection = won_against_claimant
 	power_cost_base = 1.0
-	prestige_base = 0.1
+	prestige_base = 1.0
 	ae_base = 0
 
 	warscore_cost = {

@@ -81,13 +81,16 @@ country_event = {
 	picture = DEATH_OF_HEIR_eventPicture
 	
 	is_triggered_only = yes
+	
+	trigger = {always = no} 
+
 
 	trigger = {
 		always = no
 	}
 
 	option = {
-		# no.
+		always = no
 	}
 }
 

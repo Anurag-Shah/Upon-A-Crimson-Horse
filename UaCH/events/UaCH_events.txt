@@ -2663,10 +2663,6 @@ country_event = {
 		ai_chance = {
 			factor = 1
 		}
-
-		hidden_effect = {
-			set_country_flag = abu_said_mirza
-		}
 	}
 
 	# I'm not sure about this much sway...
@@ -2700,7 +2696,6 @@ country_event = {
 			}
 			tag = TRS	
 		}
-		has_country_flag = abu_said_mirza
 	}
 
 	mean_time_to_happen = {
@@ -3205,6 +3200,10 @@ country_event = {
 	}
 
 	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
 
 	immediate = {
 		hidden_effect = {
@@ -4989,6 +4988,7 @@ country_event = {
 		custom_tooltip = UACH_81_A_TOOLTIP
 		hidden_effect = {
 			remove_faction = timurid_faction
+    	end_disaster = timurid_succession_crisis
 		}
 	}
 }
@@ -5009,6 +5009,7 @@ country_event = {
 		add_government_reform = iqta
 		hidden_effect = {
 			remove_faction = timurid_faction
+    	end_disaster = timurid_succession_crisis
 		}
 	}
 }
@@ -5695,6 +5696,7 @@ country_event = {
 								name = "mitigated_drought"
 								duration = 3650
 								}
+							remove_province_modifier = minor_drought
 							}
 					}
 					
@@ -5704,6 +5706,7 @@ country_event = {
 								name = "moderate_drought"
 								duration = 3650
 								}
+							remove_province_modifier = minor_drought
 							}
 					}
 					
@@ -5722,6 +5725,7 @@ country_event = {
 								duration = 3650
 								}
 							}
+							remove_province_modifier = minor_drought
 					}
 					
 				25 = {	
@@ -5777,6 +5781,7 @@ country_event = {
 			random_list = {
 				90 = {
 						event_target:uach_drought_prov = {
+						remove_province_modifier = moderate_drought
 							add_province_modifier = {
 								name = "mitigated_drought"
 								duration = 3650
@@ -5796,8 +5801,8 @@ country_event = {
 			random_list = {
 				75 = {
 						event_target:uach_drought_prov = {
+							add_devastation = 100
 							add_province_modifier = {
-								add_devastation = 100
 								name = "moderate_drought"
 								duration = 9125
 								}
@@ -5807,18 +5812,13 @@ country_event = {
 				25 = {	
 						custom_tooltip = uach_city_lose
 						event_target:uach_drought_prov = {
-							hidden_effect = {
-									cede_province = uncolonized
-									set_province_flag = colonizable
-									clr_province_flag = colonize
-									clr_province_flag = land_grab
-									clr_province_flag = native_policy
-									clr_province_flag = native_uprising
-									clr_province_flag = native_repression
-									clr_province_flag = native_assimilation
-									clr_province_flag = native_restriction
-									remove_province_modifier = moderate_drought
+							uach_add_random_development = { AMOUNT = 10 VALUE = -1 }
+							add_province_modifier = {
+								name = "nobody_lives_here_anymore_drought"
+								duration = 10950
 								}
+							remove_province_modifier = moderate_drought
+							
 							}
 					}
 					
