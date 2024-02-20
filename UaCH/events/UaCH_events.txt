@@ -2674,10 +2674,6 @@ country_event = {
 		ai_chance = {
 			factor = 1
 		}
-
-		hidden_effect = {
-			set_country_flag = abu_said_mirza
-		}
 	}
 
 	# I'm not sure about this much sway...
@@ -2709,7 +2705,6 @@ country_event = {
 			}
 			tag = TRS	
 		}
-		has_country_flag = abu_said_mirza
 	}
 
 	mean_time_to_happen = {
@@ -3205,6 +3200,10 @@ country_event = {
 	}
 
 	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
 
 	immediate = {
 		hidden_effect = {
