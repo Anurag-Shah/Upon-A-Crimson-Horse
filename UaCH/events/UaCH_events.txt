@@ -1033,7 +1033,6 @@ country_event = {
 	desc = UaCH.18.d
 	picture = DEATH_OF_HEIR_eventPicture
 	
-	is_triggered_only = yes
 	fire_only_once = yes
 	
 	trigger = {
@@ -1041,6 +1040,9 @@ country_event = {
 		all_province = {
 			is_core = QOM
 			country_or_non_sovereign_subject_holds = TIM
+			NOT = {
+				owner = QOM
+			}
 		}
 		QOM = {
 			has_country_flag = uach_QOM_assisted_ISF
