@@ -514,7 +514,7 @@
  UaCH.95.t:0"Catastrophe"
  UaCH.95.d:0"My liege, we have received the most grave news! The people in our drought stricken land have decided to move. Unless something is done immediately, we might even lose the city!"
  UaCH.95.a:0"D-I-G! WHAT DOES THAT SPELL?"
- UaCH.95.b:0"Curse upon you, my foes!"
+ UaCH.95.b:0"This place reeks of death, there is chill in the air..."
  uach_city_lose:0"This province will be §RABANDONED§!. Without recolonization, people may not return here!"
  UaCH.96.t: "The Succession Crisis"
  UaCH.96.d: "Our pitiful attempts to reform the state have failed completely. We have seen the collapse of our regime on the horizon for years, and were powerless to stop it. Now, it is finally here. Today, the Emperor receieved the news: one by one, his vassals had declared their independence, and from some, the intention to capture the Timurid Throne for themselves. \n\nThe flame has been ignited, and may grow into a firestorm burning the Empire of Timur down."
@@ -643,4 +643,3 @@
  UaCH.CB.1.c: "Replace him with an important local."
  UaCH.CB.1.d: "Leave the ruler in charge."
  nobody_lives_here_anymore_drought:0"Abandoned city"
- nobody_lives_here_anymore_drought_tooltip:0"§YThis place reeks of death, there is chill in the air...§!"
