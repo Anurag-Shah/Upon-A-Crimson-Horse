@@ -2783,6 +2783,8 @@ country_event = {
 			spawn_rebels = {
 				size = 3
 				type = pretender_rebels
+				leader = "Abu Sa'id Mirza"
+				leader_dynasty = "Timurids"
 			}
 			hidden_effect = {
 				remove_province_modifier = abdu_said_mirza_married
@@ -2795,8 +2797,6 @@ country_event = {
 			spawn_rebels = {
 				size = 2
 				type = pretender_rebels
-				leader = "Abu Sa'id Mirza"
-				leader_dynasty = "Timurids"
 			}
 		}
 
