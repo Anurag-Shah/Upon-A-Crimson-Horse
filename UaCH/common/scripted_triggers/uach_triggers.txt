@@ -319,6 +319,10 @@ uach_flee_to_india_possible = {
 			}
 		}
 		NOT = { is_subject = yes }
+		OR = {
+			is_prince = yes
+			is_governor = yes
+		}
 		custom_trigger_tooltip = {
 			tooltip = UACH_ESCAPE_TO_INDIA_TR_TT
 			uach_escape_to_india_pg = {
