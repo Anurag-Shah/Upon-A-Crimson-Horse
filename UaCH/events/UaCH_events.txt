@@ -321,7 +321,8 @@ country_event = {
 			dynasty = "Timurid"
 			adm = 3
 			dip = 3
-			mil = 2	
+			mil = 2
+			age = 30	
 			claim = 90
 		}
 
@@ -347,6 +348,7 @@ country_event = {
 			adm = 3
 			dip = 5
 			mil = 4	
+			age = 40
 			claim = 90
 		}
 		hidden_effect = {set_country_flag = UB_moves_to_TRS}
