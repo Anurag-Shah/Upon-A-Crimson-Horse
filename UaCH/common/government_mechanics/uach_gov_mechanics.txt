@@ -700,7 +700,9 @@ uach_reform_state_mechanic = {
 					clr_country_flag = uach_interwar_lull
 					# Integrate all loyal subjects
 					every_subject_country = {
-						NOT = { liberty_desire = 50 }
+						limit = {
+							NOT = { liberty_desire = 50 }
+							}
 						PREV = {
 							inherit = PREV
 						}
