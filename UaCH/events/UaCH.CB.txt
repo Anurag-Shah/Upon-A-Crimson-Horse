@@ -81,11 +81,7 @@ country_event = {
 		}
 
 		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				stability = 2
-			}
+			factor = 1
 		}
 	}
 
@@ -110,11 +106,7 @@ country_event = {
 
 
 		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				stability = 2
-			}
+			factor = 1
 		}
 	}
 
@@ -139,11 +131,7 @@ country_event = {
 
 
 		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				stability = 2
-			}
+			factor = 1
 		}
 	}
 
@@ -162,11 +150,7 @@ country_event = {
 
 
 		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				stability = 2
-			}
+			factor = 2
 		}
 	}
 }
