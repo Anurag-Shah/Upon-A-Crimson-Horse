@@ -42,6 +42,11 @@
  UaCH.6.b: "Open our coffers for them."
  UaCH.6.c: "We only need to wait for their downfall."
  mnt_isf_liberty_desire_60: "Nobles against ruler" 
+
+ UaCH.612.t: "Conspiring in Isfahan"
+ UaCH.612.d: "Descripition goes here"
+ UaCH.612.a: "Oh dear..."
+ uach_tim_warning:0 "We will end up at war with @ISF §YIsfahan§! in about 10 months. If @QOM §GSultan Muhammad§! has chosen to support them, they will lead the war instead of @ISF §YIsfahan§!.\n\nWe must reassert §YShah Rukh's Rule§! or face the consquences."
   
  UaCH.7.t: "Choosing a successor"
  UaCH.7.d: "My liege. There has been enough time to mourn, our nobles are getting worried about not having a designated sucessor. Please choose. Very please. " #TODO
@@ -88,7 +93,7 @@
  UaCH.16.a: "Steal that body!"
  UaCH.16.b: "Honor that body!"
  mnt_trs_betrayl_honored_body:0"Honorable people"
- uach_trs_declares_in_6:0"We will declare war upon the ruler in Herat in 6 months"
+ uach_trs_declares_in_6:0 "We will declare war upon the ruler in Herat in 6 months."
  
  UaCH.17.t: "Betrayal at the winter camp"
  UaCH.17.d: "Betrayal! In the middle of the night, a small company of §GAbdal-Latif's§! men turns on §GGawhar Shad§! and holds her and §GShah Rukh's§! corpse hostage. Possibly in an effort to back his own claim to the throne, or that of his father, §GUlugh Beg§!. For now, the funeral procession has stalled, as boths sides are awaiting reinforcements."

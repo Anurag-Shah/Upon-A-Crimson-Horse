@@ -210,6 +210,10 @@ country_event = {
 	trigger = {
 		tag = QOM
 	}
+	major = yes
+	major_trigger = {
+		is_governor_or_prince = yes
+	}	
 
 	mean_time_to_happen = {
 		months = 15
@@ -223,7 +227,14 @@ country_event = {
 		}
 		vassalize = ISF
 		ISF = { set_country_flag = uach_QOM_assisted_ISF }
-		
+
+		hidden_effect = {
+			TIM = {
+				country_event = {
+					id = UaCH.612
+				}
+			}
+		}
 		
 		ai_chance = {
 			factor = 1
@@ -242,6 +253,14 @@ country_event = {
 			}
 			set_country_flag = isfh_rebels
 		}
+
+		hidden_effect = {
+			TIM = {
+				country_event = {
+					id = UaCH.612
+				}
+			}
+		}
 		
 		ai_chance = {
 			factor = 0
@@ -257,6 +276,24 @@ country_event = {
 		ai_chance = {
 			factor = 0
 		}
+	}
+}
+
+country_event = {
+	id = UaCH.612 
+	title = UaCH.612.t 
+	desc = UaCH.612.d
+	picture = SPY_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		ai = no
+	}
+
+	# Oh dear...
+	option = {
+		name = "UaCH.612.a"
+		custom_tooltip = uach_tim_warning
 	}
 }
 
@@ -793,6 +830,10 @@ country_event = {
 	trigger = {
 		tag = TRS
 	}
+	major = yes
+	major_trigger = {
+		is_governor_or_prince = yes
+	}
 
 	mean_time_to_happen = {
 		days = 1
@@ -816,7 +857,7 @@ country_event = {
 		hidden_effect = {
 			country_event = {
 				id = UaCH.17
-				days = 18
+				days = 180
 			}
 		}
 		
@@ -891,6 +932,10 @@ country_event = {
 	
 	is_triggered_only = yes
 	fire_only_once = yes
+	major = yes
+	major_trigger = {
+		is_governor_or_prince = yes
+	}
 	
 	trigger = {
 		tag = TIM
@@ -909,7 +954,7 @@ country_event = {
 			hidden_effect = {
 				country_event = {
 					id = UaCH.90
-					days = 180
+					days = 1
 				}
 			}
 		}

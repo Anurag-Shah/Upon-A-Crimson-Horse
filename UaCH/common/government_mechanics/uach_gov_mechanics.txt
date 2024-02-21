@@ -466,8 +466,13 @@ uach_reform_state_mechanic = {
 			scaled_modifier = {
 				start_value = 0
 				end_value = 100
-				extend_beyond_value = no
-				trigger = {}
+				trigger = {
+					has_government_power = { 
+						mechanic_type = uach_reform_state_mechanic
+						power_type = uach_persianization
+						value = 0
+					}
+				}
 				modifier = {
 					reduced_liberty_desire = -30
 					global_tax_modifier = 0.2
@@ -478,8 +483,15 @@ uach_reform_state_mechanic = {
 			reverse_scaled_modifier = {
 				start_value = -100
 				end_value = 0
-				extend_beyond_value = no
-				trigger = {}
+				trigger = {
+					NOT = {
+						has_government_power = { 
+							mechanic_type = uach_reform_state_mechanic
+							power_type = uach_persianization
+							value = 0
+						}
+					}
+				}
 				modifier = {
 					reduced_liberty_desire = -40
 					morale = 10
