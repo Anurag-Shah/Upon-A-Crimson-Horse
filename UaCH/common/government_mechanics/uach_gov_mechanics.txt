@@ -550,6 +550,19 @@ uach_reform_state_mechanic = {
 				hidden_effect = {
 					country_event = { id = ideagroups.1 }
 					clr_country_flag = uach_interwar_lull
+					country_event = {
+						id = UaCH.812
+						days = 1
+					}
+					every_country = {
+						limit = {
+							has_faction = timurid_faction
+						}
+						country_event = {
+							id = UaCH.812
+							days = 1
+						}
+					}
 				}
 			}
 			ai_chance = { # AI will do this if it can
@@ -707,6 +720,19 @@ uach_reform_state_mechanic = {
 					}
 					country_event = {
 						id = UaCH.104
+					}
+					country_event = {
+						id = UaCH.812
+						days = 1
+					}
+					every_country = {
+						limit = {
+							has_faction = timurid_faction
+						}
+						country_event = {
+							id = UaCH.812
+							days = 1
+						}
 					}
 				}
 				if = {
