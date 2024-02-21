@@ -206,7 +206,7 @@ U00_ideas = {
 	}	
 		
 	U00_idea_5 = {	
-		church_influence =-0.1
+		army_tradition_decay = -0.01
 	}	
 		
 	U00_idea_6 = {	
@@ -257,7 +257,7 @@ U01_ideas = {
 	}	
 		
 	U01_idea_7 = {	
-		possible_mercenaries = 1.0
+		army_tradition_decay = -0.01
 	}	
 }		
 
@@ -585,7 +585,7 @@ U09_ideas = {
 	}	
 		
 	U09_idea_3 = {	
-		max_states = 5
+		army_tradition_decay = -0.01
 	}	
 		
 	U09_idea_4 = {	
@@ -835,7 +835,7 @@ U15_ideas = {
 	free = yes
 			
 	U15_idea_1 =  {	
-		native_advancement_cost = -0.50
+		army_tradition_decay = -0.01
 	}	
 		
 	U15_idea_2= {	
@@ -908,7 +908,7 @@ U16_ideas = {
 
 U17_ideas = {		
 	start = {	
-		burghers_influence = -0.1
+		army_tradition_decay = -0.01
 		land_maintenance_modifier = -0.1
 	}	
 	bonus = {	
@@ -1037,7 +1037,7 @@ U19_ideas = {
 
 U20_ideas = {		
 	start = {	
-		yearly_tribal_allegiance = -0.05
+		army_tradition_decay = -0.01
 		reinforce_speed = 0.25
 	}	
 	bonus = {	
@@ -1080,7 +1080,7 @@ U20_ideas = {
 
 U21_ideas = {		
 	start = {	
-		can_colony_boost_development = yes 
+		army_tradition_decay = -0.01
 		drill_decay_modifier = -0.1
 	}	
 	bonus = {	
@@ -1898,7 +1898,7 @@ U39_ideas = {
 U40_ideas = {		
 	start = {	
 		hostile_attrition = 1
-		nobles_influence =- 0.1
+		nobles_influence =-0.1
 	}	
 	bonus = {	
 		cb_on_government_enemies = yes
@@ -2568,7 +2568,7 @@ U55_ideas = {
 	}	
 		
 	U55_idea_4 = {	
-		nobles_influence =- 0.1
+		nobles_influence =-0.1
 	}	
 		
 	U55_idea_5 = {	
@@ -2586,8 +2586,8 @@ U55_ideas = {
 
 U56_ideas = {		
 	start = {	
-		nobles_influence =- 0.1
-		ae_impact = -0.05
+		nobles_influence =-0.1
+		ae_impact = -0.05 
 	}	
 	bonus = {	
 		global_missionary_strength = 0.02
