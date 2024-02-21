@@ -22,3 +22,12 @@
  PEACE_po_defeated_claimant: "§YSubdue Claimant§!"
  CB_ALLOWED_po_defeated_claimant: "§YSubdue Claimant§!"
  po_defeated_claimant_desc: "The claimant to the throne of the Timurid Empire has been defeated. They will become our §YEmirate§! once more."
+ 
+# SULTAN MUHAMMAD'S REBELLION
+ REBELLION_OF_SULTAN_MUHAMMAD: "§GSultan Muhammad's§! Rebellion"
+ PEACE_po_shah_rukhs_rule:0 "§YShah Rukh's Rule§!"
+ CB_ALLOWED_po_shah_rukhs_rule:0 "§YShah Rukh's Rule§!"
+ po_shah_rukhs_rule_desc:0 "@QOM §YAjam§! will be forcefully integrated, and §GSultan Muhammad§! will flee to @LRI §YLuristan§!."
+ PEACE_po_take_our_place:0 "§YTake Our Place§!"
+ CB_ALLOWED_po_take_our_place:0 "§YTake Our Place§!"
+ po_take_our_place_desc:0 "We will become the true heir of the @TIM §YTimurids§!, inheriting them and all their woes."
