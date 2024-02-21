@@ -736,10 +736,10 @@ country_event = {
 
 		add_legitimacy = 15
 		hidden_effect = {
-		TRS = {
-			add_manpower = 20
-			add_treasury = 500
-		}
+			TRS = {
+				add_manpower = 20
+				add_treasury = 500
+			}
 		}
 		
 		ai_chance = {
@@ -751,16 +751,16 @@ country_event = {
 	option = {
 		name = "UaCH.15.b"
 		
-		trigger = {has_ruler ="Muhammad Juki"}
+		trigger = { has_ruler ="Muhammad Juki" }
 		
 		add_legitimacy = 25
 		add_prestige = 20
 		
 		hidden_effect = {
-				TRS = {
-					add_manpower = 10
-					add_treasury = 250
-				}
+			TRS = {
+				add_manpower = 10
+				add_treasury = 250
+			}
 		}
 		
 		ai_chance = {
@@ -1031,7 +1031,7 @@ country_event = {
 			is_core = QOM
 			country_or_non_sovereign_subject_holds = TIM
 			NOT = {
-				owner = QOM
+				owned_by = QOM
 			}
 		}
 		QOM = {
@@ -1100,10 +1100,6 @@ country_event = {
 		
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				# TODO
-			}
 		}
 	}
 
@@ -1122,10 +1118,6 @@ country_event = {
 
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				# TODO
-			}
 		}
 	}
 }
@@ -1149,10 +1141,6 @@ country_event = {
 		
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				# TODO
-			}
 		}
 	}
 
@@ -1169,10 +1157,6 @@ country_event = {
 
 		ai_chance = {
 			factor = 2
-			modifier = {
-				factor = 0
-				# TODO
-			}
 		}
 	}
 }
@@ -2997,7 +2981,7 @@ province_event = {
 				}
 			}
 		}
-		NOT = { any_owned_province = { has_rebel_faction = noble_rebels } }
+		NOT = { owner = { any_owned_province = { has_rebel_faction = noble_rebels } } }
 	}
 
 	is_triggered_only = yes
@@ -3007,8 +2991,10 @@ province_event = {
 	}
 	
 	immediate = {
-		clr_country_flag = uach_disaster_event_timer
-		set_country_flag = uach_disaster_event_timer
+		owner = {
+			clr_country_flag = uach_disaster_event_timer
+			set_country_flag = uach_disaster_event_timer
+		}
 	}
 
 	# Replace the emir.
@@ -4424,7 +4410,7 @@ country_event = {
 
 	option = {
 		name = "UaCH.67.a"
-		country_event = { id = UaCH.escalation.1 } 
+		# country_event = { id = UaCH.escalation.1 } 
 		
 	}
 }
@@ -4444,7 +4430,7 @@ country_event = {
 
 	option = {
 		name = "UaCH.68.a"
-		country_event = { id = UaCH.escalation.3}  
+		# country_event = { id = UaCH.escalation.3}  
 		
 	}
 }
@@ -5303,7 +5289,7 @@ country_event = {
 				adm = 2
 				dip = 2
 				mil = 2
-				culture = uzbekh
+				culture = uzbehk
 			}
 		}
 		hidden_effect = {
@@ -5311,13 +5297,13 @@ country_event = {
 				limit = {
 					OR = {
 						culture = khazak
-						culture = uzbekh
+						culture = uzbehk
 						region = persia_region
 						region = khorasan_region
 					}
 					NOT = {
 						OR = {
-							area = agmola_area
+							area = aqmola_area
 							area = ishim_area
 							area = yrtesh_area
 							area = kazakhstan_area
