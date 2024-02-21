@@ -4988,7 +4988,8 @@ country_event = {
 		custom_tooltip = UACH_81_A_TOOLTIP
 		hidden_effect = {
 			remove_faction = timurid_faction
-    	end_disaster = timurid_succession_crisis
+    		end_disaster = timurid_succession_crisis
+			end_disaster = repeatable_timurid_succession_crisis
 		}
 	}
 }
