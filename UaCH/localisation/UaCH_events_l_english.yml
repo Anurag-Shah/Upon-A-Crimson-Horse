@@ -60,13 +60,6 @@
  UaCH.8.b: "Expel him, lest you bring Shah Rukh's wrath on our head!"
  cb_rebellion_of_sultan_muhammad: "Rebellion"
  uach_send_demands: "§GSultan Muhammad§! will send demands to the other princes and governors to submit."
- REBELLION_OF_SULTAN_MUHAMMAD: "§GSultan Muhammad's§! Rebellion"
- PEACE_po_shah_rukhs_rule:0 "Shah Rukh's Rule"
- CB_ALLOWED_po_shah_rukhs_rule:0 "Shah Rukh's Rule"
- po_shah_rukhs_rule_desc:0 "@QOM §YAjam§! will be forcefully integrated, and §GSultan Muhammad§! will flee to @LRI §YLuristan§!."
- PEACE_po_take_our_place:0 "Take Our Place"
- CB_ALLOWED_po_take_our_place:0 "Take Our Place"
- po_take_our_place_desc:0 "We will become the true heir of the @TIM §YTimurids§!, inheriting them and all their woes."
  
  UaCH.9.t: "Muhammads demands"
  UaCH.9.d: "We have received a letter from §GSultan Muhammad§!, crown prince of §YAjam§!. He states that he is the true successor of §GShah Rukh§!, and is taking over the Empire as of today. Not only is his letter filled to the brim with arrogance and self righteousness, but he dares to demand fealty from us!"
