@@ -28,6 +28,7 @@ po_shah_rukhs_rule = {
 	effect = { # Defaults to empty effect (which makes error log entry but is safe)
 		FROM = {
 			every_subject_country = {
+				grant_independence = yes
 				THIS = {
 					create_subject = {
 						subject_type = governor
