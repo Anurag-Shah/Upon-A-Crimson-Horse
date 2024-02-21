@@ -320,16 +320,6 @@ country_event = {
 		}
 	}
 
-	# There is still time for this
-	option = {
-		name = "UaCH.7.e"
-		
-		add_prestige = -10
-		ai_chance = {
-			factor = 1
-		}
-	}
-	
 	# My favorite, Muhammad Juki
 	option = {
 		name = "UaCH.7.c"
