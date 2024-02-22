@@ -44,8 +44,8 @@
  mnt_isf_liberty_desire_60: "Nobles against ruler" 
 
  UaCH.612.t: "Conspiring in Isfahan"
- UaCH.612.d: "Descripition goes here"
- UaCH.612.a: "A mixture of bureaucratic corruption, and the lack of a well accepted successor to the Timurid Realm, has stirred anger in Isfahan. It seems that a conspiracy has formed to oppose us during Shah Rukh's illness, and we have little ability to project our own power and put a stop to this in our current state. If they do declare their independence, our armies must march to put a stop to this, but will Shah Rukh be fit to lead his armies into such a battle?\n\n Our grandson, Sultan Muhammad of Ajam, is carefully watching these developments. Should he use this war as an excuse to press his claim, we must quickly crush his rebellion, so that the other Princes do not get any ideas."
+ UaCH.612.d: "A mixture of bureaucratic corruption, and the lack of a well accepted successor to the Timurid Realm, has stirred anger in Isfahan. It seems that a conspiracy has formed to oppose us during Shah Rukh's illness, and we have little ability to project our own power and put a stop to this in our current state. If they do declare their independence, our armies must march to put a stop to this, but will Shah Rukh be fit to lead his armies into such a battle?\n\n Our grandson, Sultan Muhammad of Ajam, is carefully watching these developments. Should he use this war as an excuse to press his claim, we must quickly crush his rebellion, so that the other Princes do not get any ideas."
+ UaCH.612.a: "Oh dear..."
  uach_tim_warning: "Soon, it is very likely that war will break out against @ISF §YIsfahan§!. If @QOM §GSultan Muhammad§! has chosen to support them, they will lead the war instead of @ISF §YIsfahan§!.\n\nWe must prepare our armies, and reassert §YShah Rukh's Rule§! or face the consquences.\n§YRemember that the collapse of our state will end all our wars, including this one, and replace them with the Timurid Succession Crisis wars.§!"
   
  UaCH.7.t: "Choosing a successor"
