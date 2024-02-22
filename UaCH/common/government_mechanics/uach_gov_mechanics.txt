@@ -494,7 +494,7 @@ uach_reform_state_mechanic = {
 				}
 				modifier = {
 					reduced_liberty_desire = -40
-					land_morale = 10
+					land_morale = 0.1
 				}
 			}
 
