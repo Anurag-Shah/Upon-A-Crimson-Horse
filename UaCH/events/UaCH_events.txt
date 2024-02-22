@@ -2283,6 +2283,8 @@ country_event = {
 		}
 	}
 
+	fire_only_once = yes
+
 	is_triggered_only = yes
 	
 	mean_time_to_happen = {
@@ -3221,6 +3223,8 @@ country_event = {
 			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
 		}
 	}
+
+	fire_only_once = yes
 
 	is_triggered_only = yes
 	
@@ -5463,7 +5467,7 @@ country_event = {
 	picture = DIPLOMACY_eventPicture
 
 	immediate = {
-		hidden = {
+		hidden_effect = {
 			FROM = {
 				capital_scope = {
 					save_event_target_as = uach_temp_province
@@ -5690,6 +5694,13 @@ country_event = {
 	title = UaCH.94.t  
 	desc = UaCH.94.d	  
 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+
+	mean_time_to_happen = {
+		days = 1
+	}
 	
 	trigger = {
 			AND = {
@@ -5777,6 +5788,13 @@ country_event = {
 	title = UaCH.95.t  
 	desc = UaCH.95.d	  
 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+
+	mean_time_to_happen = {
+		days = 1
+	}
 	
 	trigger = {
 			AND = {
@@ -5806,56 +5824,52 @@ country_event = {
 			
 	option = {
 		name = UaCH.95.a
-			add_years_of_income = -0.50
-			add_adm_power =-100
-			add_mil_power =-100
-			add_dip_power =-100
-			random_list = {
-				90 = {
-						event_target:uach_drought_prov = {
-						remove_province_modifier = moderate_drought
-							add_province_modifier = {
-								name = "mitigated_drought"
-								duration = 3650
-								}
-							}
+		add_years_of_income = -0.15
+		add_adm_power =-30
+		add_mil_power =-30
+		add_dip_power =-30
+		random_list = {
+			90 = {
+				event_target:uach_drought_prov = {
+				remove_province_modifier = moderate_drought
+					add_province_modifier = {
+						name = "mitigated_drought"
+						duration = 3650
 					}
-					
-				10 = {	
-							}
-					}
-					
 				}
-			
-			
-		option = {
-		name = UaCH.95.b
-			random_list = {
-				75 = {
-						event_target:uach_drought_prov = {
-							add_devastation = 100
-							add_province_modifier = {
-								name = "moderate_drought"
-								duration = 9125
-								}
-							}
-					}
-					
-				25 = {	
-						custom_tooltip = uach_city_lose
-						event_target:uach_drought_prov = {
-							uach_add_random_development = { AMOUNT = 10 VALUE = -1 }
-							add_province_modifier = {
-								name = "nobody_lives_here_anymore_drought"
-								duration = 10950
-								}
-							remove_province_modifier = moderate_drought
-							
-							}
-					}
-					
-				}	
+			}
+			10 = {}
+		}
 				
+	}
+			
+			
+	option = {
+	name = UaCH.95.b
+		random_list = {
+			75 = {
+				event_target:uach_drought_prov = {
+					add_devastation = 100
+					add_province_modifier = {
+						name = "moderate_drought"
+						duration = 9125
+					}
+				}
+			}
+				
+			25 = {
+				event_target:uach_drought_prov = {
+					uach_add_random_development = { AMOUNT = 10 VALUE = -1 }
+					add_province_modifier = {
+						name = "nobody_lives_here_anymore_drought"
+							duration = 10950
+						}
+					remove_province_modifier = moderate_drought
+						
+				}
+			}
+				
+		}	
 	}
 }
 

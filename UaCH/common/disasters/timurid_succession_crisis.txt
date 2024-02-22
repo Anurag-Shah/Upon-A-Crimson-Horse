@@ -82,16 +82,18 @@ timurid_succession_crisis = {
 			
 		}
 		random_events = {
-			1100 = 0
-			100	= UaCH.27	#Yar ali besieges herat
+			3300 = 0
+			500	= UaCH.27	#Yar ali besieges herat
 			100 = UaCH.39	#policies of the local emir
 			40	= UaCH.40   #defections among our people
-			100 = UaCH.41	#Flight of the western emirs
+			500 = UaCH.41	#Flight of the western emirs
 			100 = UaCH.38	#Low supplies
 			100 = UaCH.29	#raids
 			60 = UaCH.92	# cetai event
+			30 = UaCH.94	# cetai event
+			20 = UaCH.95	# cetai event
 			60 = UaCH.101   # cetai event
-			20 = UaCH.103  # cetai event
+			30 = UaCH.103  # cetai event
 		}
 	}
 }
