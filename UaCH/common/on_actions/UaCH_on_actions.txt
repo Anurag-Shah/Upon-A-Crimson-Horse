@@ -38,6 +38,34 @@ on_annexed = {
 }
 
 on_province_owner_change = {
+    if = {
+        limit = {
+            any_neighbor_province = {
+                owner = {
+                    OR = {
+                        is_prince = yes
+                        is_governor = yes                      
+                    }
+                }
+            }
+            owner = {
+                NOT = {
+                    has_faction = timurid_faction
+                }
+            }
+        }
+        owner = {
+            add_faction = timurid_faction
+            if = {
+                limit = {
+                    is_subject = yes
+                }
+                overlord = {
+                    add_faction = timurid_faction
+                }
+            }
+        }
+    }
     events = {
         UaCH.28  # Recapture of Herat
     }
