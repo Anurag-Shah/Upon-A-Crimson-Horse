@@ -4288,12 +4288,12 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 24
+		months = 2
 	}
 	
 	# A truly beautiful marriage of love.
 	option = { 
-		name = "UaCH.62.a" 
+		name = "UaCH.62.a"
 		add_prestige_or_monarch_power = {
 			amount = 10
 		}
@@ -4311,10 +4311,11 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		tag = TIM
+		has_ruler = "Shah Rukh"
 	}
 
 	mean_time_to_happen = {
-		months = 12
+		months = 6
 	}
 	
 	# Truly a testament to how much two can achieve!
@@ -4884,6 +4885,11 @@ country_event = {
 					}
 					ROOT = {
 						NOT = { has_country_flag = uach_ignore_me_in_ceasefire }
+					}
+					# Prevent ceasefire event while deleting various starting wars 
+					had_global_flag = {
+						flag = uach_succession_crisis_started
+						days = 3
 					}
 				}
 			}
@@ -5457,9 +5463,11 @@ country_event = {
 	picture = DIPLOMACY_eventPicture
 
 	immediate = {
-		FROM = {
-			capital_scope = {
-				save_event_target_as = uach_temp_province
+		hidden = {
+			FROM = {
+				capital_scope = {
+					save_event_target_as = uach_temp_province
+				}
 			}
 		}
 	}

@@ -102,12 +102,12 @@ uach_bolster_defenses = {
 }
 
 uach_no_talking_back_to_clergy = {
-	clergy_influence = 0.15
-	unrest = -2
+	church_influence_modifier = 0.15
+	global_unrest = -2
 }
 
 uach_daring_today = {
-	clergy_influence = -0.1
+	church_influence_modifier = -0.1
 	diplomatic_reputation = 2
 }
 

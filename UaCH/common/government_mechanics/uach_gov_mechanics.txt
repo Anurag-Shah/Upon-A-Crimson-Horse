@@ -683,8 +683,16 @@ uach_reform_state_mechanic = {
 				}
 				set_government_rank = 3
 				add_prestige = 25
-				persia_region = {
+				# persia_region = {
+				# 	limit = {
+				# 		NOT = { owned_by = ROOT }
+				# 		NOT = { is_core = ROOT }
+				# 	}
+				# 	add_permanent_claim = PER
+				# }
+				every_province = {
 					limit = {
+						region = persia_region
 						NOT = { owned_by = ROOT }
 						NOT = { is_core = ROOT }
 					}

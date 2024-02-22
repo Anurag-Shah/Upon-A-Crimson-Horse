@@ -27,7 +27,7 @@
  WAIT_FOR_SC_TO_START_BITCH_TT: "The Timurid Succession Crisis mechanics are only available during the Succession Crisis."
  UACH_GOV_REFORM_COOLDOWN: "A succession crisis policy"
  uach_persianization: "Persianization"
- uach_persianization_desc: "As the Timurid State stabilizes after the disastrous succession crisis, there is a choice of path forward for its new leadership. This measures the progress a state has made towards its Persianization: a positive value indicates that the state is slowly moving closer to a Persian identity, while a negative value indicates that the state is returning to its Mongol roots."
+ uach_persianization_desc: "As the Timurid State stabilizes after the disastrous succession crisis, there is a choice of path forward for its new leadership. This measures the progress a state has made towards its Persianization: a positive value indicates that the state is slowly moving closer to a Persian identity, while a negative value indicates that the state is returning to its Mongol roots.\nPersianization is increased by:\nBeing at peace: §G+0.2§! per month.\nBeing at war: §R-0.2§! a month.\nWinning a war (not counting separate peaces): §R-5§!"
  UACH_PERSIANIZED_EFFECT_RESULT_TT: "We will integrate all loyal subjects and convert our disloyal ones into vassals, and reform our government from that of a lowly Timurid Prince to a magnificent Persia."
  uach_scrap_a_reform: "Scrap a Reform"
  uach_scrap_a_reform_desc: "We can scrap a reform or two to mollify our subjects, but this will hurt our progress towards reforming the state."

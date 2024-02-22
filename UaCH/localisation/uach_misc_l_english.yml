@@ -27,6 +27,7 @@
  itrcdec_e_TT: "We will choose the fate of our conquest."
  UACH_REPLACE_TIMURID_NATION_TT: "We will place a Timurid Prince on the throne, and elevate our status accordingly!"
  uach_reform_state_do_it_idiot: "Can be stopped by successfully reforming the state through the Persianization / Mongolization government mechanics."
+ UACH_D_W_E_TT: "§RThe Collapse of the Timurid State will bring an end to our various wars, internal or external, as every Prince makes their bid for the throne.§!"
 
  # modifiers
  uach_slain_the_crimson_horse: "Slain the Crimson Horse"
@@ -64,3 +65,4 @@
 
  # Start
  UPON_A_CRIMSON_HORSE: "Upon a Crimson Horse"
+ uach_preserve_ruler: "Loyalty of former enemy"

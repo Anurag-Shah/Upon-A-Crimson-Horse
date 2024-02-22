@@ -42,7 +42,7 @@ uach_prince = {
 		mercenary_cost = -0.15
 		legitimacy = 1
 		global_unrest = -1
-		estate_nobles_loyalty_modifier = 0.1
+		nobles_loyalty_modifier = 0.1
 		reduced_liberty_desire = 10
 	}
 
@@ -82,7 +82,7 @@ uach_interwar_timurid_state = {
 		mercenary_cost = -0.15
 		legitimacy = 1
 		global_unrest = -1
-		estate_nobles_loyalty_modifier = 0.1
+		nobles_loyalty_modifier = 0.1
 		reduced_liberty_desire = 10
 	}
 	

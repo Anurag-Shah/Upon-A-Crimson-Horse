@@ -851,7 +851,7 @@ U15_ideas = {
 	}	
 		
 	U15_idea_5 = {	
-		church_influence =-0.1
+		church_influence_modifier = -0.1
 	}	
 		
 	U15_idea_6 = {	
@@ -886,7 +886,7 @@ U16_ideas = {
 	}	
 		
 	U16_idea_3 = {	
-		native_advancement_cost = -0.50
+		all_power_cost = -0.025
 	}	
 		
 	U16_idea_4 = {	
@@ -955,7 +955,7 @@ U18_ideas = {
 		free_dip_policy = 1
 	}	
 	bonus = {	
-		church_influence =-0.1
+		church_influence_modifier = -0.1
 	}	
 		
 	trigger = {	
@@ -1170,7 +1170,7 @@ U23_ideas = {
 		reduced_liberty_desire = 10
 	}	
 	bonus = {	
-		max_states = 5
+		max_absolutism = 5
 	}	
 		
 	trigger = {	
@@ -1295,7 +1295,7 @@ U25_ideas = {
 
 U26_ideas = {		
 	start = {	
-		max_states = 5
+		max_absolutism = 5
 		monthly_support_heir_gain = 0.1
 	}	
 	bonus = {	
@@ -1586,7 +1586,7 @@ U32_ideas = {
 	}	
 		
 	U32_idea_6 = {	
-		church_influence =-0.1
+		church_influence_modifier = -0.1
 	}	
 		
 	U32_idea_7 = {	
@@ -1695,7 +1695,7 @@ U35_ideas = {
 		free = yes
 		
 	U35_idea_1 =  {	
-		artillery_bonus_vs_fort = 1
+		artillery_level_modifier = 1
 	}	
 		
 	U35_idea_2= {	
@@ -1758,7 +1758,7 @@ U36_ideas = {
 	}	
 		
 	U36_idea_6 = {	
-		artillery_bonus_vs_fort = 1
+		artillery_level_modifier = 1
 	}	
 		
 	U36_idea_7 = {	
@@ -1898,7 +1898,7 @@ U39_ideas = {
 U40_ideas = {		
 	start = {	
 		hostile_attrition = 1
-		nobles_influence =-0.1
+		nobles_influence_modifier =-0.1
 	}	
 	bonus = {	
 		cb_on_government_enemies = yes
@@ -1961,7 +1961,7 @@ U41_ideas = {
 	}	
 		
 	U41_idea_3 = {	
-		max_states = 5
+		max_absolutism = 5
 	}	
 		
 	U41_idea_4 = {	
@@ -2146,7 +2146,7 @@ U45_ideas = {
 	}	
 		
 	U45_idea_6 = {	
-		possible_mercenaries = 1.0
+		mercenary_discipline = 0.10
 	}	
 		
 	U45_idea_7 = {	
@@ -2329,7 +2329,7 @@ U49_ideas = {
 U50_ideas = {		
 	start = {	
 		possible_dip_policy = 1
-		native_advancement_cost = -0.50
+		all_power_cost = -0.025
 	}	
 	bonus = {	
 		core_decay_on_your_own = 0.1
@@ -2357,11 +2357,11 @@ U50_ideas = {
 	}	
 		
 	U50_idea_5 = {	
-		church_influence =-0.1
+		church_influence_modifier = -0.1
 	}	
 		
 	U50_idea_6 = {	
-		possible_mercenaries = 1.0
+		mercenary_discipline = 0.10
 	}	
 		
 	U50_idea_7 = {	
@@ -2396,7 +2396,7 @@ U51_ideas = {
 	}	
 		
 	U51_idea_4 = {	
-		burghers_influence = -0.1
+		burghers_influence_modifier = -0.1
 	}	
 		
 	U51_idea_5 = {	
@@ -2415,7 +2415,7 @@ U51_ideas = {
 U52_ideas = {		
 	start = {	
 		rival_change_cost = 0.5
-		can_colony_boost_development = yes 
+		colony_development_boost = 1 
 	}	
 	bonus = {	
 		free_leader_pool = 1
@@ -2521,7 +2521,7 @@ U54_ideas = {
 	}	
 		
 	U54_idea_3 = {	
-		burghers_influence = -0.1
+		burghers_influence_modifier = -0.1
 	}	
 		
 	U54_idea_4 = {	
@@ -2537,7 +2537,7 @@ U54_ideas = {
 	}	
 		
 	U54_idea_7 = {	
-		yearly_tribal_allegiance = -0.05
+		legitimacy = 1
 	}	
 }		
 
@@ -2568,11 +2568,11 @@ U55_ideas = {
 	}	
 		
 	U55_idea_4 = {	
-		nobles_influence =-0.1
+		nobles_influence_modifier =-0.1
 	}	
 		
 	U55_idea_5 = {	
-		burghers_influence = -0.1
+		burghers_influence_modifier = -0.1
 	}	
 		
 	U55_idea_6 = {	
@@ -2586,7 +2586,7 @@ U55_ideas = {
 
 U56_ideas = {		
 	start = {	
-		nobles_influence =-0.1
+		nobles_influence_modifier =-0.1
 		ae_impact = -0.05 
 	}	
 	bonus = {	
@@ -2599,7 +2599,7 @@ U56_ideas = {
 	free = yes	
 		
 	U56_idea_1 =  {	
-		native_advancement_cost = -0.50
+		all_power_cost = -0.025
 	}	
 		
 	U56_idea_2= {	
@@ -2642,7 +2642,7 @@ U57_ideas = {
 	free = yes	
 		
 	U57_idea_1 =  {	
-		can_colony_boost_development = yes 
+		colony_development_boost = 1 
 	}	
 		
 	U57_idea_2= {	
@@ -2838,7 +2838,7 @@ U61_ideas = {
 	}	
 		
 	U61_idea_7 = {	
-		artillery_bonus_vs_fort = 1
+		artillery_level_modifier = 1
 	}	
 }		
 
@@ -2912,7 +2912,7 @@ U63_ideas = {
 	}	
 		
 	U63_idea_4 = {	
-		max_states = 5
+		max_absolutism = 5
 	}	
 		
 	U63_idea_5 = {	
@@ -3060,10 +3060,10 @@ U66_ideas = {
 U67_ideas = {		
 	start = {	
 		mil_advisor_cost = -0.1
-		can_colony_boost_development = yes 
+		colony_development_boost = 1 
 	}	
 	bonus = {	
-		max_states = 5
+		max_absolutism = 5
 	}	
 		
 	trigger = {	
@@ -3178,11 +3178,11 @@ U69_ideas = {
 	}	
 		
 	U69_idea_6 = {	
-		native_advancement_cost = -0.50
+		all_power_cost = -0.025
 	}	
 		
 	U69_idea_7 = {	
-		burghers_influence = -0.1
+		burghers_influence_modifier = -0.1
 	}	
 }		
 
@@ -3209,7 +3209,7 @@ U70_ideas = {
 	}	
 		
 	U70_idea_3 = {	
-		possible_mercenaries = 1.0
+		mercenary_discipline = 0.10
 	}	
 		
 	U70_idea_4 = {	
@@ -3217,7 +3217,7 @@ U70_ideas = {
 	}	
 		
 	U70_idea_5 = {	
-		possible_mercenaries = 1.0
+		mercenary_discipline = 0.10
 	}	
 		
 	U70_idea_6 = {	
