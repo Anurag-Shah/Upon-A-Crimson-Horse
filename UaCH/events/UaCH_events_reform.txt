@@ -726,7 +726,7 @@ country_event = {
 		days = 1
 	}
 	option = {
-		name = uach_reform.1001.a
+		name = uach_reform.1002.a
 		
 		add_treasury = -200
 		add_government_power = {
@@ -750,7 +750,7 @@ country_event = {
 
 	
 	option = {
-		name = uach_reform.1001.b
+		name = uach_reform.1002.b
 		
 		add_prestige = -5
 		add_disaster_progress = {
