@@ -4,5 +4,12 @@ supported_Version="1.36.*"
 picture="thumbnail.png"
 tags={
 	"Gameplay"
+	"Expansion"
+	"Historical"
+	"Loading Screen"
+	"Map"
+	"Missions And Decisions"
+	"National Ideas"
+	"New Nations"
 }
 replace_path = "gfx/loadingscreens"
