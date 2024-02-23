@@ -5,6 +5,7 @@ picture="thumbnail.png"
 tags={
 	"Gameplay"
 	"Expansion"
+	"Events"
 	"Historical"
 	"Loading Screen"
 	"Map"
