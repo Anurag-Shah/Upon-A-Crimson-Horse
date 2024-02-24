@@ -20,14 +20,7 @@ timurid_succession_crisis = {
 				}
 			}
 		}
-		NOT = { 
-			any_country = { 
-				has_disaster_progress = {
-					disaster = repeatable_timurid_succession_crisis
-					value = 0.1
-				}
-			} 
-		}
+		NOT = { has_global_flag = tim_repeatable_now }
 	}
 	
 	can_start = {

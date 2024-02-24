@@ -1512,6 +1512,10 @@ uach_reclaim_timurs_legacy_effect = {
         # Add interwar lull flag (enables govt mechanics)
         set_country_flag = uach_interwar_lull
 
+        # Set global flag to disable original disaster
+
+        set_global_flag = tim_repeatable_now
+
         # Save old tag as event target
         save_global_event_target_as = uach_old_timurid_tag
 
