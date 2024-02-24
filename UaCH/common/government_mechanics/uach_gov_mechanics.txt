@@ -562,6 +562,13 @@ uach_reform_state_mechanic = {
 					duration = 7300
 				}
 				hidden_effect = {
+					if = {
+						limit = {
+							has_custom_ideas = no
+							NOT = { has_idea_group = TIM_ideas }
+						}
+						country_event = { id = ideagroups.1 } #Swap Ideas
+					}
 					country_event = { id = ideagroups.1 }
 					clr_country_flag = uach_interwar_lull
 					country_event = {
