@@ -219,7 +219,7 @@ SLU_ideas = {
 BDK_ideas = {
 	start = {
 		advisor_cost=-0.1
-		
+		land_morale=0.1
 	}
 	
 	bonus = {
