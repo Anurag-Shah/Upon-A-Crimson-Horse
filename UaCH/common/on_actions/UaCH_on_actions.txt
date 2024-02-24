@@ -17,7 +17,6 @@ on_startup = {
                         }
                     }
                 }
-                NOT = { tag = ORM }
             }
             add_faction = timurid_faction
         }
@@ -186,7 +185,6 @@ on_religion_change = {
             OR = {
                 is_part_of_second_crisis = yes
                 any_neighbor_country = {
-                    NOT = { tag = ORM }
                     is_governor_or_prince = yes
                 }
             }
@@ -197,7 +195,6 @@ on_religion_change = {
                 OR = {
                     is_part_of_second_crisis = yes
                     any_neighbor_country = {
-                        NOT = { tag = ORM }
                         is_governor_or_prince = yes
                     }
                 }
@@ -214,7 +211,6 @@ on_country_released = {
                 OR = {
 					is_part_of_second_crisis = yes
 					any_neighbor_country = {
-						NOT = { tag = ORM }
 						is_governor_or_prince = yes
 					}
 				}
@@ -225,7 +221,6 @@ on_country_released = {
                     OR = {
                         is_part_of_second_crisis = yes
                         any_neighbor_country = {
-                            NOT = { tag = ORM }
                             is_governor_or_prince = yes
                         }
                     }
@@ -242,7 +237,6 @@ on_government_change = {
             OR = {
                 is_part_of_second_crisis = yes
                 any_neighbor_country = {
-                    NOT = { tag = ORM }
                     is_governor_or_prince = yes
                 }
             }
@@ -253,7 +247,6 @@ on_government_change = {
                 OR = {
                     is_part_of_second_crisis = yes
                     any_neighbor_country = {
-                        NOT = { tag = ORM }
                         is_governor_or_prince = yes
                     }
                 }
@@ -269,7 +262,6 @@ on_reform_changed = {
             OR = {
                 is_part_of_second_crisis = yes
                 any_neighbor_country = {
-                    NOT = { tag = ORM }
                     is_governor_or_prince = yes
                 }
             }
@@ -280,7 +272,6 @@ on_reform_changed = {
                 OR = {
                     is_part_of_second_crisis = yes
                     any_neighbor_country = {
-                        NOT = { tag = ORM }
                         is_governor_or_prince = yes
                     }
                 }
@@ -296,7 +287,6 @@ on_reform_enacted = {
             OR = {
                 is_part_of_second_crisis = yes
                 any_neighbor_country = {
-                    NOT = { tag = ORM }
                     is_governor_or_prince = yes
                 }
             }
@@ -307,7 +297,6 @@ on_reform_enacted = {
                 OR = {
                     is_part_of_second_crisis = yes
                     any_neighbor_country = {
-                        NOT = { tag = ORM }
                         is_governor_or_prince = yes
                     }
                 }

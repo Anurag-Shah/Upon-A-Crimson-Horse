@@ -523,6 +523,10 @@ uach_reform_state_mechanic = {
 						value = -99.9
 					}
 				}
+				custom_trigger_tooltip = {
+					tooltip = NOT_SC_BITCH
+					NOT = { has_disaster = repeatable_timurid_succession_crisis }
+				}
 			}
 			effect = {
 				custom_tooltip = UACH_P2FM_R_TT
@@ -562,6 +566,13 @@ uach_reform_state_mechanic = {
 					duration = 7300
 				}
 				hidden_effect = {
+					if = {
+						limit = {
+							has_custom_ideas = no
+							NOT = { has_idea_group = TIM_ideas }
+						}
+						country_event = { id = ideagroups.1 } #Swap Ideas
+					}
 					country_event = { id = ideagroups.1 }
 					clr_country_flag = uach_interwar_lull
 					country_event = {
@@ -666,6 +677,10 @@ uach_reform_state_mechanic = {
 					mechanic_type = uach_reform_state_mechanic
 					power_type = uach_persianization
 					value = 100
+				}
+				custom_trigger_tooltip = {
+					tooltip = NOT_SC_BITCH
+					NOT = { has_disaster = repeatable_timurid_succession_crisis }
 				}
 			}
 			effect = {

@@ -680,6 +680,573 @@ guiTypes = {
 			borderSize = {x = 0 y = 0}
 			alwaystransparent = yes
 		}
+
+		iconType = {
+			name = "timurids_window_bg"
+			scripted = yes
+			spriteType = "GFX_timurids_window_bg"
+			position = { x = -160 y = -80 }
+		}
+		
+		iconType = {
+			name = "timurids_princes_banner"
+			scripted = yes
+			spriteType = "GFX_icon_prince"
+			position = { x = -43 y = 85 }
+		}
+		
+		iconType = {
+			name = "timurids_governors_banner"
+			scripted = yes
+			spriteType = "GFX_icon_emirate"
+			position = { x = 621 y = 85 }
+		}
+		
+		# List of shields
+
+		guiButtonType = {
+			name ="timurids_prince1_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 130 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince2_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 130 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince3_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 170 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince4_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 170 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince5_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 210 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince6_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 210 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince7_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 250 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince8_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 250 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince9_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 290 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince10_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 290 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince11_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 330 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince12_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 330 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince13_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 370 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince14_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 370 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince15_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 410 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince16_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 410 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince17_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 450 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince18_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 450 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince19_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 490 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince20_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 490 }
+		}
+
+		# Governors
+
+		guiButtonType = {
+			name ="timurids_governor1_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 130 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor2_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 130 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor3_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 170 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor4_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 170 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor5_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 210 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor6_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 210 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor7_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 250 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor8_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 250 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor9_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 290 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor10_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 290 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor11_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 330 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor12_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 330 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor13_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 370 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor14_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 370 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor15_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 410 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor16_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 410 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor17_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 450 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor18_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 450 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor19_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 490 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor20_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 490 }
+		}
+
+		# Map pieces
+		
+		iconType = {
+			name ="timurids_map_ajam"
+			scripted = yes
+			spriteType = "GFX_timurids_map_ajam"
+			position = { x= 55 y = 298 }
+		}
+		
+		iconType = {
+			name ="timurids_map_khorasan"
+			scripted = yes
+			spriteType = "GFX_timurids_map_khorasan"
+			position = { x= 123 y = 296 }
+		}
+		
+		iconType = {
+			name ="timurids_map_fars"
+			scripted = yes
+			spriteType = "GFX_timurids_map_fars"
+			position = { x= 131 y = 445 }
+		}
+		
+		iconType = {
+			name ="timurids_map_herat"
+			scripted = yes
+			spriteType = "GFX_timurids_map_herat"
+			position = { x= 176 y = 347 }
+		}
+		
+		iconType = {
+			name ="timurids_map_merv"
+			scripted = yes
+			spriteType = "GFX_timurids_map_merv"
+			position = { x= 276 y = 270 }
+		}
+		
+		iconType = {
+			name ="timurids_map_samarkand"
+			scripted = yes
+			spriteType = "GFX_timurids_map_samarkand"
+			position = { x= 247 y = 152 }
+		}
+		
+		iconType = {
+			name ="timurids_map_ferghana"
+			scripted = yes
+			spriteType = "GFX_timurids_map_ferghana"
+			position = { x= 410 y = 195 }
+		}
+		
+		iconType = {
+			name ="timurids_map_afghanistan"
+			scripted = yes
+			spriteType = "GFX_timurids_map_afghanistan"
+			position = { x= 362 y = 330 }
+		}
+
+		# Interloper Shields
+		# r0-r7 - region number
+		# the end _0 - _2 - the actual interloper shield slot for that region
+		# All shields are currently adjusted to the Top Left of their region
+		
+		
+		# AJAM
+		guiButtonType = {
+			name ="interloper_r0_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 85 y = 358 }
+		}
+		guiButtonType = {
+			name ="interloper_r0_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 55 y = 358 }
+		}
+		guiButtonType = {
+			name ="interloper_r0_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 115 y = 358 }
+		}
+
+		# FARS
+		guiButtonType = {
+			name ="interloper_r1_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 201 y = 475 }
+		}
+		guiButtonType = {
+			name ="interloper_r1_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 171 y = 475 }
+		}
+		guiButtonType = {
+			name ="interloper_r1_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 231 y = 475 }
+		}
+
+		# KHORASAN
+		guiButtonType = {
+			name ="interloper_r2_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 186 y = 347 }
+		}
+		guiButtonType = {
+			name ="interloper_r2_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 156 y = 347 }
+		}
+		guiButtonType = {
+			name ="interloper_r2_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 216 y = 347 }
+		}
+
+		# HERAT
+		guiButtonType = {
+			name ="interloper_r3_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 266 y = 407 }
+		}
+		guiButtonType = {
+			name ="interloper_r3_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 236 y = 407 }
+		}
+		guiButtonType = {
+			name ="interloper_r3_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 296 y = 407 }
+		}
+
+		# AFGHANISTAN
+		guiButtonType = {
+			name ="interloper_r4_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 422 y = 380 }
+		}
+		guiButtonType = {
+			name ="interloper_r4_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 392 y = 380 }
+		}
+		guiButtonType = {
+			name ="interloper_r4_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 452 y = 380 }
+		}
+
+		# MARW
+		guiButtonType = {
+			name ="interloper_r5_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 336 y = 310 }
+		}
+		guiButtonType = {
+			name ="interloper_r5_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 306 y = 310 }
+		}
+		guiButtonType = {
+			name ="interloper_r5_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 366 y = 310 }
+		}
+
+		# FERGANA VALLEY
+		guiButtonType = {
+			name ="interloper_r6_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 480 y = 255 }
+		}
+		guiButtonType = {
+			name ="interloper_r6_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 450 y = 255 }
+		}
+		guiButtonType = {
+			name ="interloper_r6_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 510 y = 255 }
+		}
+
+		# SAMARKAND
+		guiButtonType = {
+			name ="interloper_r7_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 347 y = 212 }
+		}
+		guiButtonType = {
+			name ="interloper_r7_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 317 y = 212 }
+		}
+		guiButtonType = {
+			name ="interloper_r7_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 377 y = 212 }
+		}
+
+		
+		# Buttons
+		
+		guiButtonType = {
+			name = "end_timurs_legacy"
+			position = { x = 70 y = 52 }
+			quadTextureSprite ="GFX_end_timurs_legacy"
+			scripted = yes
+		}
+		
+		guiButtonType = {
+			name = "enthrone_timurid_claimant"
+			position = { x = 150 y = 52 }
+			quadTextureSprite ="GFX_enthrone_timurid_claimant"
+			scripted = yes
+		}
+		
+		guiButtonType = {
+			name = "abandon_our_claims"
+			position = { x = 420 y = 52 }
+			quadTextureSprite ="GFX_abandon_our_claims"
+			scripted = yes
+		}
+		
+		guiButtonType = {
+			name = "intervene_in_the_crisis"
+			position = { x = 500 y = 52 }
+			quadTextureSprite ="GFX_intervene_in_the_crisis"
+			scripted = yes
+		}
+		
+		guiButtonType = {
+			name = "reclaim_timurs_legacy"
+			position = { x = 265 y = 12 }
+			quadTextureSprite ="GFX_reclaim_timurs_legacy"
+			scripted = yes
+		}
 	
 		########
 		
@@ -747,6 +1314,573 @@ guiTypes = {
 			scrollbartype = "standardlistbox_slider"
 			borderSize = {x = 0 y = 0}
 			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "timurids_window_bg"
+			scripted = yes
+			spriteType = "GFX_timurids_window_bg"
+			position = { x = -160 y = -80 }
+		}
+		
+		iconType = {
+			name = "timurids_princes_banner"
+			scripted = yes
+			spriteType = "GFX_icon_prince"
+			position = { x = -43 y = 85 }
+		}
+		
+		iconType = {
+			name = "timurids_governors_banner"
+			scripted = yes
+			spriteType = "GFX_icon_emirate"
+			position = { x = 621 y = 85 }
+		}
+		
+		# List of shields
+
+		guiButtonType = {
+			name ="timurids_prince1_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 130 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince2_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 130 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince3_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 170 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince4_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 170 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince5_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 210 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince6_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 210 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince7_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 250 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince8_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 250 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince9_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 290 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince10_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 290 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince11_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 330 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince12_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 330 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince13_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 370 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince14_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 370 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince15_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 410 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince16_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 410 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince17_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 450 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince18_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 450 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince19_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -65 y = 490 }
+		}
+
+		guiButtonType = {
+			name ="timurids_prince20_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= -20 y = 490 }
+		}
+
+		# Governors
+
+		guiButtonType = {
+			name ="timurids_governor1_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 130 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor2_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 130 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor3_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 170 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor4_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 170 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor5_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 210 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor6_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 210 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor7_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 250 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor8_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 250 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor9_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 290 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor10_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 290 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor11_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 330 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor12_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 330 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor13_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 370 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor14_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 370 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor15_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 410 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor16_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 410 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor17_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 450 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor18_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 450 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor19_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 600 y = 490 }
+		}
+
+		guiButtonType = {
+			name ="timurids_governor20_shield"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 640 y = 490 }
+		}
+
+		# Map pieces
+		
+		iconType = {
+			name ="timurids_map_ajam"
+			scripted = yes
+			spriteType = "GFX_timurids_map_ajam"
+			position = { x= 55 y = 298 }
+		}
+		
+		iconType = {
+			name ="timurids_map_khorasan"
+			scripted = yes
+			spriteType = "GFX_timurids_map_khorasan"
+			position = { x= 123 y = 296 }
+		}
+		
+		iconType = {
+			name ="timurids_map_fars"
+			scripted = yes
+			spriteType = "GFX_timurids_map_fars"
+			position = { x= 131 y = 445 }
+		}
+		
+		iconType = {
+			name ="timurids_map_herat"
+			scripted = yes
+			spriteType = "GFX_timurids_map_herat"
+			position = { x= 176 y = 347 }
+		}
+		
+		iconType = {
+			name ="timurids_map_merv"
+			scripted = yes
+			spriteType = "GFX_timurids_map_merv"
+			position = { x= 276 y = 270 }
+		}
+		
+		iconType = {
+			name ="timurids_map_samarkand"
+			scripted = yes
+			spriteType = "GFX_timurids_map_samarkand"
+			position = { x= 247 y = 152 }
+		}
+		
+		iconType = {
+			name ="timurids_map_ferghana"
+			scripted = yes
+			spriteType = "GFX_timurids_map_ferghana"
+			position = { x= 410 y = 195 }
+		}
+		
+		iconType = {
+			name ="timurids_map_afghanistan"
+			scripted = yes
+			spriteType = "GFX_timurids_map_afghanistan"
+			position = { x= 362 y = 330 }
+		}
+
+		# Interloper Shields
+		# r0-r7 - region number
+		# the end _0 - _2 - the actual interloper shield slot for that region
+		# All shields are currently adjusted to the Top Left of their region
+		
+		
+		# AJAM
+		guiButtonType = {
+			name ="interloper_r0_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 85 y = 358 }
+		}
+		guiButtonType = {
+			name ="interloper_r0_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 55 y = 358 }
+		}
+		guiButtonType = {
+			name ="interloper_r0_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 115 y = 358 }
+		}
+
+		# FARS
+		guiButtonType = {
+			name ="interloper_r1_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 201 y = 475 }
+		}
+		guiButtonType = {
+			name ="interloper_r1_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 171 y = 475 }
+		}
+		guiButtonType = {
+			name ="interloper_r1_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 231 y = 475 }
+		}
+
+		# KHORASAN
+		guiButtonType = {
+			name ="interloper_r2_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 186 y = 347 }
+		}
+		guiButtonType = {
+			name ="interloper_r2_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 156 y = 347 }
+		}
+		guiButtonType = {
+			name ="interloper_r2_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 216 y = 347 }
+		}
+
+		# HERAT
+		guiButtonType = {
+			name ="interloper_r3_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 266 y = 407 }
+		}
+		guiButtonType = {
+			name ="interloper_r3_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 236 y = 407 }
+		}
+		guiButtonType = {
+			name ="interloper_r3_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 296 y = 407 }
+		}
+
+		# AFGHANISTAN
+		guiButtonType = {
+			name ="interloper_r4_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 422 y = 380 }
+		}
+		guiButtonType = {
+			name ="interloper_r4_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 392 y = 380 }
+		}
+		guiButtonType = {
+			name ="interloper_r4_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 452 y = 380 }
+		}
+
+		# MARW
+		guiButtonType = {
+			name ="interloper_r5_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 336 y = 310 }
+		}
+		guiButtonType = {
+			name ="interloper_r5_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 306 y = 310 }
+		}
+		guiButtonType = {
+			name ="interloper_r5_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 366 y = 310 }
+		}
+
+		# FERGANA VALLEY
+		guiButtonType = {
+			name ="interloper_r6_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 480 y = 255 }
+		}
+		guiButtonType = {
+			name ="interloper_r6_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 450 y = 255 }
+		}
+		guiButtonType = {
+			name ="interloper_r6_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 510 y = 255 }
+		}
+
+		# SAMARKAND
+		guiButtonType = {
+			name ="interloper_r7_shield_0"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 347 y = 212 }
+		}
+		guiButtonType = {
+			name ="interloper_r7_shield_1"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 317 y = 212 }
+		}
+		guiButtonType = {
+			name ="interloper_r7_shield_2"
+			scripted = yes
+			spriteType = "GFX_shield_small"
+			position = { x= 377 y = 212 }
+		}
+
+		
+		# Buttons
+		
+		guiButtonType = {
+			name = "end_timurs_legacy"
+			position = { x = 70 y = 52 }
+			quadTextureSprite ="GFX_end_timurs_legacy"
+			scripted = yes
+		}
+		
+		guiButtonType = {
+			name = "enthrone_timurid_claimant"
+			position = { x = 150 y = 52 }
+			quadTextureSprite ="GFX_enthrone_timurid_claimant"
+			scripted = yes
+		}
+		
+		guiButtonType = {
+			name = "abandon_our_claims"
+			position = { x = 420 y = 52 }
+			quadTextureSprite ="GFX_abandon_our_claims"
+			scripted = yes
+		}
+		
+		guiButtonType = {
+			name = "intervene_in_the_crisis"
+			position = { x = 500 y = 52 }
+			quadTextureSprite ="GFX_intervene_in_the_crisis"
+			scripted = yes
+		}
+		
+		guiButtonType = {
+			name = "reclaim_timurs_legacy"
+			position = { x = 265 y = 12 }
+			quadTextureSprite ="GFX_reclaim_timurs_legacy"
+			scripted = yes
 		}
 	
 		########
