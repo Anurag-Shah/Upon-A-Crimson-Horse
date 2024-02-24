@@ -20,6 +20,14 @@ timurid_succession_crisis = {
 				}
 			}
 		}
+		NOT = { 
+			any_country = { 
+				has_disaster_progress = {
+					disaster = repeatable_timurid_succession_crisis
+					value = 0.1
+				}
+			} 
+		}
 	}
 	
 	can_start = {
@@ -86,7 +94,7 @@ timurid_succession_crisis = {
 			500	= UaCH.27	#Yar ali besieges herat
 			100 = UaCH.39	#policies of the local emir
 			40	= UaCH.40   #defections among our people
-			500 = UaCH.41	#Flight of the western emirs
+			2500 = UaCH.41	#Flight of the western emirs
 			100 = UaCH.38	#Low supplies
 			100 = UaCH.29	#raids
 			60 = UaCH.92	# cetai event

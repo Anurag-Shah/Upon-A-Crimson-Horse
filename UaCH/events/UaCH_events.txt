@@ -3218,19 +3218,9 @@ country_event = {
 		AKK = { ai = yes }
 
 		NOT = { war_score = -75 }
-		OR = {
-			is_in_war = { casus_belli = cb_challange_claimant }
-			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
-		}
 	}
-
-	fire_only_once = yes
 
 	is_triggered_only = yes
-	
-	mean_time_to_happen = {
-		days = 1
-	}
 
 	immediate = {
 		hidden_effect = {
