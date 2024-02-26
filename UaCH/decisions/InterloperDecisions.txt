@@ -1,0 +1,339 @@
+country_decisions = {
+	interloper_tr_conquest_7 = {
+		major = yes
+		potential = {
+			AND = {
+				is_interloper = yes
+				NOT = { has_country_flag = uach_big_money_flag }
+				check_variable = {
+                    which = uach_interloper_region
+                    value = 7
+                }
+				NOT = {
+					check_variable = {
+						which = uach_interloper_region
+						value = 8
+					}
+				}
+			}
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = itrcdec_TT_7
+				uach_interloper_conquest_over_trigger = yes
+			}
+		}
+		effect = {
+			custom_tooltip = itrcdec_e_TT
+			hidden_effect = {
+				country_event = {
+					id = UaCH.86
+				}
+			}
+		}
+		ai_importance = 10000
+		provinces_to_highlight = {
+			province_group = uach_tr_7
+		}
+	}
+
+	interloper_tr_conquest_6 = {
+		major = yes
+		potential = {
+			AND = {
+				is_interloper = yes
+				NOT = { has_country_flag = uach_big_money_flag }
+				check_variable = {
+                    which = uach_interloper_region
+                    value = 6
+                }
+				NOT = {
+					check_variable = {
+						which = uach_interloper_region
+						value = 7
+					}
+				}
+			}
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = itrcdec_TT_6
+				uach_interloper_conquest_over_trigger = yes
+			}
+		}
+		effect = {
+			custom_tooltip = itrcdec_e_TT
+			hidden_effect = {
+				country_event = {
+					id = UaCH.86
+				}
+			}
+		}
+		ai_importance = 10000
+		provinces_to_highlight = {
+			province_group = uach_tr_6
+		}
+	}
+
+	interloper_tr_conquest_5 = {
+		major = yes
+		potential = {
+			AND = {
+				is_interloper = yes
+				NOT = { has_country_flag = uach_big_money_flag }
+				check_variable = {
+                    which = uach_interloper_region
+                    value = 5
+                }
+				NOT = {
+					check_variable = {
+						which = uach_interloper_region
+						value = 6
+					}
+				}
+			}
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = itrcdec_TT_5
+				uach_interloper_conquest_over_trigger = yes
+			}
+		}
+		effect = {
+			custom_tooltip = itrcdec_e_TT
+			hidden_effect = {
+				country_event = {
+					id = UaCH.86
+				}
+			}
+		}
+		ai_importance = 10000
+		provinces_to_highlight = {
+			province_group = uach_tr_5
+		}
+	}
+
+	interloper_tr_conquest_4 = {
+		major = yes
+		potential = {
+			AND = {
+				is_interloper = yes
+				NOT = { has_country_flag = uach_big_money_flag }
+				check_variable = {
+                    which = uach_interloper_region
+                    value = 4
+                }
+				NOT = {
+					check_variable = {
+						which = uach_interloper_region
+						value = 5
+					}
+				}
+			}
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = itrcdec_TT_4
+				uach_interloper_conquest_over_trigger = yes
+			}
+		}
+		effect = {
+			custom_tooltip = itrcdec_e_TT
+			hidden_effect = {
+				country_event = {
+					id = UaCH.86
+				}
+			}
+		}
+		ai_importance = 10000
+		provinces_to_highlight = {
+			province_group = uach_tr_4
+		}
+	}
+
+	interloper_tr_conquest_3 = {
+		major = yes
+		potential = {
+			AND = {
+				is_interloper = yes
+				NOT = { has_country_flag = uach_big_money_flag }
+				check_variable = {
+                    which = uach_interloper_region
+                    value = 3
+                }
+				NOT = {
+					check_variable = {
+						which = uach_interloper_region
+						value = 4
+					}
+				}
+			}
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = itrcdec_TT_3
+				uach_interloper_conquest_over_trigger = yes
+			}
+		}
+		effect = {
+			custom_tooltip = itrcdec_e_TT
+			hidden_effect = {
+				country_event = {
+					id = UaCH.86
+				}
+			}
+		}
+		ai_importance = 10000
+		provinces_to_highlight = {
+			province_group = uach_tr_3
+		}
+	}
+
+	interloper_tr_conquest_2 = {
+		major = yes
+		potential = {
+			AND = {
+				is_interloper = yes
+				NOT = { has_country_flag = uach_big_money_flag }
+				check_variable = {
+                    which = uach_interloper_region
+                    value = 2
+                }
+				NOT = {
+					check_variable = {
+						which = uach_interloper_region
+						value = 3
+					}
+				}
+			}
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = itrcdec_TT_2
+				uach_interloper_conquest_over_trigger = yes
+			}
+		}
+		effect = {
+			custom_tooltip = itrcdec_e_TT
+			hidden_effect = {
+				country_event = {
+					id = UaCH.86
+				}
+			}
+		}
+		ai_importance = 10000
+		provinces_to_highlight = {
+			province_group = uach_tr_2
+		}
+	}
+
+	interloper_tr_conquest_1 = {
+		major = yes
+		potential = {
+			AND = {
+				is_interloper = yes
+				NOT = { has_country_flag = uach_big_money_flag }
+				check_variable = {
+                    which = uach_interloper_region
+                    value = 1
+                }
+				NOT = {
+					check_variable = {
+						which = uach_interloper_region
+						value = 2
+					}
+				}
+			}
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = itrcdec_TT_1
+				uach_interloper_conquest_over_trigger = yes
+			}
+		}
+		effect = {
+			custom_tooltip = itrcdec_e_TT
+			hidden_effect = {
+				country_event = {
+					id = UaCH.86
+				}
+			}
+		}
+		ai_importance = 10000
+		provinces_to_highlight = {
+			province_group = uach_tr_1
+		}
+	}
+
+	interloper_tr_conquest_0 = {
+		major = yes
+		potential = {
+			AND = {
+				is_interloper = yes
+				NOT = { has_country_flag = uach_big_money_flag }
+				check_variable = {
+                    which = uach_interloper_region
+                    value = 0
+                }
+				NOT = {
+					check_variable = {
+						which = uach_interloper_region
+						value = 1
+					}
+				}
+			}
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = itrcdec_TT_0
+				uach_interloper_conquest_over_trigger = yes
+			}
+		}
+		effect = {
+			custom_tooltip = itrcdec_e_TT
+			hidden_effect = {
+				country_event = {
+					id = UaCH.86
+				}
+			}
+		}
+		ai_importance = 10000
+		provinces_to_highlight = {
+			province_group = uach_tr_0
+		}
+	}
+
+	# These 2 are AI decisions, as they can't use custom GUI. Dont bother localising them
+	uach_ai_reclaim_timurs_legacy = {
+		potential = {
+			ai = yes
+			is_prince = yes
+		}
+		allow = {
+			has_global_flag = uach_succession_crisis_started
+			uach_reclaim_timurs_legacy_possible = yes
+		}
+		effect = {
+			uach_reclaim_timurs_legacy_effect = yes
+		}
+		ai_importance = 10000
+	}
+
+	uach_ai_end_timurs_legacy = {
+		potential = {
+			ai = yes
+			OR = {
+				is_governor = yes
+				is_interloper = yes
+			}
+		}
+		allow = {
+			has_global_flag = uach_succession_crisis_started
+			uach_end_timurs_legacy_possible = yes
+		}
+		effect = {
+			uach_end_timurs_legacy_effect = yes
+		}
+		ai_importance = 10000
+	}
+}

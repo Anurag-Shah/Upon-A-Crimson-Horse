@@ -1,0 +1,24 @@
+defined_text = {
+    name = GetAjamStatus
+
+    text = {
+        localisation_key = contested_by_x_and_x_ajam
+        trigger = {
+			has_saved_event_target = ajam_interloper_1
+			has_saved_event_target = ajam_interloper_2
+        }
+    }
+    text = {
+        localisation_key = contested_by_x_ajam
+        trigger = {
+			has_saved_event_target = ajam_interloper_1
+			NOT = { has_saved_event_target = ajam_interloper_2 }
+        }
+    }
+	text = {
+        localisation_key = not_contested
+        trigger = {
+			NOT = { has_saved_event_target = ajam_interloper_1 }
+        }
+	}
+}

@@ -1,0 +1,1496 @@
+namespace = uach_reform
+
+
+# Disagreeing Advisor
+country_event = {
+	id = uach_reform.1
+	title = "EVTNAME878"
+	desc = "EVTDESC878"
+	picture = ADVISOR_eventPicture
+	
+	trigger = {
+		has_advisor = yes
+		has_regency = no
+		has_country_flag = uach_interwar_lull
+	}
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				1 = {
+					trigger = {
+						employed_advisor = {
+							category = ADM
+						}
+					}
+					set_country_flag = advisor_events_adm
+				}
+				1 = {
+					trigger = {
+						employed_advisor = {
+							category = DIP
+						}
+					}
+					set_country_flag = advisor_events_dip
+				}
+				1 = {
+					trigger = {
+						employed_advisor = {
+							category = MIL
+						}
+					}
+					set_country_flag = advisor_events_mil
+				}
+			}
+		}
+	}
+	after = {
+		hidden_effect = {
+			trigger_switch = {
+				on_trigger = has_country_flag
+				advisor_events_adm = { clr_country_flag = advisor_events_adm }
+				advisor_events_dip = { clr_country_flag = advisor_events_dip }
+				advisor_events_mil = { clr_country_flag = advisor_events_mil }
+			}
+		}
+	}
+
+	option = {
+		name = "EVTOPTA878"
+		uach_outward_persianization = { value = 5 }
+		add_prestige = -10
+		trigger_switch = {
+			on_trigger = has_country_flag
+			advisor_events_adm = { add_adm_power = 25 }
+			advisor_events_dip = { add_dip_power = 25 }
+			advisor_events_mil = { add_mil_power = 25 }
+		}
+	}
+	option = {
+		name = "EVTOPTB878"
+		uach_add_or_subtract_persianization = { value = 5 }
+		reduce_meritocracy_effect = yes
+		trigger_switch = {
+			on_trigger = has_country_flag
+			advisor_events_adm = { kill_advisor_by_category_effect = { ADM = yes } }
+			advisor_events_dip = { kill_advisor_by_category_effect = { DIP = yes } }
+			advisor_events_mil = { kill_advisor_by_category_effect = { MIL = yes } }
+		}
+	}
+}
+
+
+country_event = {
+	id = uach_reform.2
+	title = army_professionalism_events.13.t
+	desc = army_professionalism_events.13.d
+	picture = DISCIPLINED_SOLDIERS_eventPicture
+
+	trigger = {
+		has_dlc = "Cradle of Civilization"
+		army_professionalism = 0.5
+		NOT = { has_country_modifier = integration_of_local_militias }
+		NOT = { army_professionalism = 1 }
+		has_country_flag = uach_interwar_lull
+	}
+
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+		
+
+	option = {
+		name = army_professionalism_events.13.a #
+		ai_chance = {
+			factor = 75
+		}
+		add_army_professionalism = -0.05
+		add_disaster_progress = {
+			disaster = repeatable_timurid_succession_crisis
+			value = -3
+		}
+	}
+	option = {
+		name = army_professionalism_events.13.b #
+		ai_chance = {
+			factor = 25
+		}
+		add_army_professionalism = 0.025
+		add_country_modifier = {
+			name = "integration_of_local_militias"
+			duration = 3650
+		}
+		add_yearly_manpower = -1
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 5
+		}
+	}
+}
+
+# Corrupt Advisor
+country_event = {
+	id = uach_reform.3
+	title = "corruption_event.7.t"
+	desc = "corruption_event.7.d"
+	picture = CORRUPTION_eventPicture
+		
+	trigger = {
+		has_advisor = yes
+		has_country_flag = uach_interwar_lull
+	}
+
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				1 = {
+					trigger = {
+						employed_advisor = {
+							category = ADM
+						}
+					}
+					set_country_flag = advisor_events_adm
+				}
+				1 = {
+					trigger = {
+						employed_advisor = {
+							category = DIP
+						}
+					}
+					set_country_flag = advisor_events_dip
+				}
+				1 = {
+					trigger = {
+						employed_advisor = {
+							category = MIL
+						}
+					}
+					set_country_flag = advisor_events_mil
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "corruption_event.7.a"
+		reduce_meritocracy_effect = yes
+		trigger_switch = {
+			on_trigger = has_country_flag
+			advisor_events_adm = { kill_advisor_by_category_effect = { ADM = yes } }
+			advisor_events_dip = { kill_advisor_by_category_effect = { DIP = yes } }
+			advisor_events_mil = { kill_advisor_by_category_effect = { MIL = yes } }
+		}
+		add_prestige = -10
+		uach_outward_persianization = { value = 5 }
+		add_disaster_progress = {
+			disaster = repeatable_timurid_succession_crisis
+			value = 2
+		}
+	}
+
+	option = {
+		name = "corruption_event.7.b"
+		reduce_meritocracy_effect = yes
+		trigger_switch = {
+			on_trigger = has_country_flag
+			advisor_events_adm = {
+				remove_advisor_by_category = ADM
+				add_adm_power = -50
+			}
+			advisor_events_dip = {
+				remove_advisor_by_category = DIP
+				add_dip_power = -50
+			}
+			advisor_events_mil = {
+				remove_advisor_by_category = MIL
+				add_mil_power = -50
+			}
+		}
+		uach_add_or_subtract_persianization = { value = 5 }
+	}
+
+	option = {
+		name = "corruption_event.7.c"
+		reduce_meritocracy_effect = yes
+		trigger_switch = {
+			on_trigger = has_country_flag
+			advisor_events_adm = {
+				add_adm_power = -100
+			}
+			advisor_events_dip = {
+				add_dip_power = -100
+			}
+			advisor_events_mil = {
+				add_mil_power = -100
+			}
+		}
+
+		add_disaster_progress = {
+			disaster = repeatable_timurid_succession_crisis
+			value = -5
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			trigger_switch = {
+				on_trigger = has_country_flag
+				advisor_events_adm = { clr_country_flag = advisor_events_adm }
+				advisor_events_dip = { clr_country_flag = advisor_events_dip }
+				advisor_events_mil = { clr_country_flag = advisor_events_mil }
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = uach_reform.4
+	title = "EVTNAME6014"
+	desc = "EVTDESC6014"
+	picture = FEAST_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull
+	}
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA6014"		# Put into the treasury
+		ai_chance = {
+			factor = 55
+			modifier = {
+				factor = 0.5
+				NOT = { num_of_cities = 10 }
+			}
+			modifier = {
+				factor = 1.5
+				num_of_cities = 20
+			}
+		}
+		add_years_of_income = 0.50
+
+		add_disaster_progress = {
+			disaster = repeatable_timurid_succession_crisis
+			value = -5
+		}
+	}
+	option = {
+		name = "EVTOPTB6014"		# Invest the money
+		add_adm_power = 50
+		ai_chance = {
+			factor = 45
+		}
+
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 10
+		}
+	}
+}
+
+# Social Dissent and Popular Sufism
+country_event = {
+	id = uach_reform.5
+	title = muslim_piety.13.t
+	desc = muslim_piety.13.d
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		has_country_flag = uach_interwar_lull
+		uses_piety = yes
+		piety = 0.75
+		any_owned_province = {
+			is_state = yes
+			is_capital = no
+			religion_group = muslim
+			NOT = { has_province_modifier = social_unrest_mysticism }
+		}
+	}
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					is_capital = no
+					religion_group = muslim
+					NOT = { has_province_modifier = social_unrest_mysticism }
+				}
+				save_event_target_as = popular_sufism_province
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					is_capital = no
+					religion_group = muslim
+					development = 10
+					NOT = { has_province_modifier = social_unrest_mysticism }
+				}
+				save_event_target_as = popular_sufism_province
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					is_capital = no
+					religion_group = muslim
+					development = 15
+					NOT = { has_province_modifier = social_unrest_mysticism }
+				}
+				save_event_target_as = popular_sufism_province
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					is_capital = no
+					religion_group = muslim
+					development = 20
+					NOT = { has_province_modifier = social_unrest_mysticism }
+				}
+				save_event_target_as = popular_sufism_province
+			}
+		}
+	}
+	
+	option = {
+		name = muslim_piety.13.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				has_global_flag = neo_sufism
+			}
+			modifier = {
+				factor = 1.5
+				culture_group = turko_semitic
+				NOT = { primary_culture = turkish }
+			}
+			modifier = {
+				factor = 1.5
+				num_of_cities = 35
+			}
+			modifier = {
+				factor = 1.5
+				num_of_cities = 50
+			}
+			modifier = {
+				factor = 2
+				religious_school = {
+					group = muslim
+					school = hanbali_school
+				}
+			}
+			modifier = {
+				factor = 1.25
+				is_year = 1650
+			}
+		}
+		add_piety = 0.1
+		event_target:popular_sufism_province = {
+			area = {
+				limit = {
+					owned_by = ROOT
+					is_capital = no
+				}
+				add_province_modifier = {
+					name = "social_unrest_mysticism"
+					duration = 3650
+				}
+			}
+		}
+		uach_add_or_subtract_persianization = { value = 5 }
+	}
+	option = {
+		name = muslim_piety.13.b
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0.75
+				is_year = 1650
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { is_year = 1650 }
+				capital_scope = {
+					OR = {
+						superregion = india_superregion
+						superregion = persia_superregion
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { is_year = 1650 }
+				primary_culture = turkish
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { dominant_religion = ROOT }
+			}
+		}
+		add_piety = -0.35
+		uach_outward_persianization = { value = 5 }
+	}
+}
+
+# Improve the Capital
+country_event = {
+	id = uach_reform.6
+	title = "EVTNAME729"
+	desc = "EVTDESC729"
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	trigger = {
+		is_at_war = no
+		has_country_flag = uach_interwar_lull
+	}
+
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA729"
+		ai_chance = {
+			factor = 50
+		}
+		capital_scope = { add_base_tax = 1 }
+		add_yearly_manpower = -0.5
+		add_disaster_progress = {
+			disaster = repeatable_timurid_succession_crisis
+			value = 5
+		}
+	}
+	option = {
+		name = "EVTOPTB729"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0.5
+				NOT = { years_of_income = 0.2 }
+			}
+		}
+		capital_scope = { add_base_tax = 1 }
+		add_years_of_income = -0.25
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 5
+		}
+	}
+	option = {
+		name = "personality_options.729.a"
+		highlight = yes
+		trigger = { ruler_has_personality_ancestor = { key = architectural_visionary } }
+		ai_chance = {
+			factor = 100
+		}
+		add_disaster_progress = {
+			disaster = repeatable_timurid_succession_crisis
+			value = 5
+		}
+		capital_scope = { add_base_tax = 1 }
+		add_years_of_income = -0.15
+	}
+	option = {
+		name = "personality_options.729.b"
+		highlight = yes
+		trigger = { ruler_has_personality = obsessive_perfectionist_personality }
+		ai_chance = {
+			factor = 100
+		}
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 5
+		}
+		capital_scope = { add_base_tax = 2 }
+		add_years_of_income = -0.35
+	}
+}
+
+# $MONARCH$ embarrasses the court
+country_event = {
+	id =  uach_reform.7
+	title = "EVTNAME715"
+	desc = "EVTDESC715"
+	picture = COURT_eventPicture
+		
+	trigger = {
+		government = monarchy
+		has_regency = no
+		is_lesser_in_union = no
+		has_country_flag = uach_interwar_lull
+	}
+
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "EVTOPTA715"
+		add_stability = -1
+		add_disaster_progress = {
+			disaster = repeatable_timurid_succession_crisis
+			value = 5
+		}
+	}
+	option = {
+		name = "personality_options.715.a"
+		highlight = yes
+		add_prestige = -10
+		uach_add_or_subtract_persianization = { value = 10 }
+	}
+}
+
+
+
+# Minnators implemented events
+country_event = {
+	id = uach_reform.1000 
+	title = uach_reform.1000.t 
+	desc = uach_reform.1000.d
+	picture = MILITARY_CAMP_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull
+	}
+		
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = uach_reform.1000.a
+		
+		add_disaster_progress = {
+			value = 5
+			disaster = repeatable_timurid_succession_crisis
+		}
+
+		every_owned_province = {
+			limit = {
+				religion = shiite 
+			}
+			add_province_modifier = {
+				name = uach_let_them_do_their_thing
+				duration = 3650
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+
+	option = {
+		name = uach_reform.1000.b
+		
+		random_owned_province = {
+			spawn_rebels = {
+				size = 2
+				type = shiite_rebels
+			}
+		}
+		
+		random_owned_province = {
+			spawn_rebels = {
+				size = 2
+				type = shiite_rebels
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = uach_reform.1001 
+	title = uach_reform.1001.t 
+	desc = uach_reform.1001.d
+	picture = MILITARY_CAMP_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull
+	}	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = uach_reform.1001.a
+		
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -5
+		}
+
+		kill_leader = {
+			type = general
+		}
+		add_legitimacy = -5
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+
+	option = {
+		name = uach_reform.1001.b
+		
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 10
+		}
+
+		random_list = {
+			50 = {
+				capital_scope = {
+					spawn_rebels = {
+						size = 2
+						type = pretender_rebels
+					}
+				}
+				kill_leader = {
+					type = general
+				}
+			}
+			50 = {
+				add_legitimacy = 5
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = uach_reform.1002 
+	title = uach_reform.1002.t 
+	desc = uach_reform.1002.d
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull
+		NOT = { has_country_modifier = uach_scholars_in_capital }
+	}	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = uach_reform.1002.a
+		
+		add_treasury = -200
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 10
+		}
+		add_country_modifier = {
+			name = uach_scholars_in_capital
+			duration = 3650
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+
+	
+	option = {
+		name = uach_reform.1002.b
+		
+		add_prestige = -5
+		add_disaster_progress = {
+			value = 2
+			disaster = repeatable_timurid_succession_crisis
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = uach_reform.1003 
+	title = uach_reform.1003.t 
+	desc = uach_reform.1003.d
+	picture = CULTURE_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull
+		NOT = { has_country_modifier = uach_throat_singing }
+	}	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = uach_reform.1003.a
+		
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 10
+		}
+		add_treasury = -300
+		
+		custom_tooltip = UACH1003CTT
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					religion = sunni 
+				}
+				add_province_modifier = {
+					name = uach_let_them_do_their_thing
+					duration = 3650
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+
+	option = {
+		name = uach_reform.1003.b
+		
+		add_legitimacy = 10
+
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -10
+		}
+
+		add_country_modifier = {
+			name = uach_throat_singing
+			duration = 7200
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = -2
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = uach_reform.1004 
+	title = uach_reform.1004.t
+	desc = uach_reform.1004.d
+	picture = BORDER_TENSION_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull
+	}	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = uach_reform.1004.a
+		
+		random_owned_province = {
+			limit = {
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT } 
+				}
+			}
+			random_neighbor_province = {
+				add_claim = ROOT
+			}
+		}
+
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -5
+		}
+		add_prestige = 5
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+	}
+
+	option = {
+		name = uach_reform.1004.b
+		
+		add_prestige = 5
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -5
+		}
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 5
+		}
+
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = -2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = uach_reform.1005 
+	title = uach_reform.1005.t
+	desc = uach_reform.1005.d
+	picture = MILITARY_CAMP_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull
+		is_at_war = yes	
+	}
+
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = uach_reform.1005.a
+		add_manpower = -4
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 10
+		}
+
+		add_country_modifier = {
+			name = uach_solidiers_went_home
+			duration = 1825
+		}
+	}
+	option = {
+		name = uach_reform.1005.b
+
+		add_country_modifier = {
+			name = uach_soldiers_had_to_stay
+			duration = 1825
+		}
+
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -5
+		}
+	}
+}
+
+country_event = {
+	id = uach_reform.1006
+	title = uach_reform.1006.t
+	desc = uach_reform.1006.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull
+		OR = {
+			NOT = { has_country_flag = uachreform1006flag }
+			had_country_flag = {
+				flag = uachreform1006flag
+				days = 5000
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = uachreform1006flag
+			set_country_flag = uachreform1006flag
+		}
+	}
+
+	option = {
+		name = uach_reform.1006.a
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 5
+		}
+
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -10
+		}
+
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 10
+		}
+	}
+	
+	option = {
+		name = uach_reform.1006.b
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -5
+		}
+
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -10
+		}
+	}
+}
+
+country_event = {
+	id = uach_reform.1007 
+	title = uach_reform.1007.t
+	desc = uach_reform.1007.d
+	picture = BORDER_TENSION_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull	
+	}
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_country_flag = uach_turkmen_raids_happened 
+	}
+
+	option = {
+		name = uach_reform.1007.a
+		
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -5
+		}
+
+		add_country_modifier = {
+			name = uach_raid_turks_back_lol
+			duration = 1825
+		}
+	}
+	
+	option = {
+		name = uach_reform.1007.b
+		add_country_modifier = {
+			name = uach_bolster_defenses
+			duration = 1825
+		}
+		add_treasury = -50
+		add_prestige = -1
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = 10
+		}
+	}
+}
+
+country_event = {
+	id = uach_reform.1008 
+	title = uach_reform.1008.t
+	desc = uach_reform.1008.d
+	picture = BORDER_TENSION_eventPicture
+
+	trigger = {
+		has_country_flag = uach_turkmen_raids_happened
+		has_country_flag = uach_interwar_lull	
+		any_neighbor_country = {
+			OR = {
+				tag = QAR
+				tag = AKK
+			}
+		}
+	}
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = uach_reform.1008.a
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -10
+		}
+
+		if = {
+			limit = {
+				any_neighbor_country = {
+					tag = AKK
+				}
+			}
+			PREV = {
+				declare_war_with_cb = {
+					who = AKK
+					casus_belli = cb_horde_vs_civ
+				}
+			}
+		} else = {
+			PREV = {
+				declare_war_with_cb = {
+					who = QAR
+					casus_belli = cb_horde_vs_civ
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = uach_reform.1008.b
+
+		add_disaster_progress = {
+			value = 5
+			disaster = repeatable_timurid_succession_crisis
+		}
+	}
+}
+
+
+country_event = {
+	id = uach_reform.1009
+	title = uach_reform.1009.t
+	desc = uach_reform.1009.d
+	picture = COURT_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull
+		
+		OR = {
+			had_country_flag = {
+				flag = uachreform1009flag
+				days = 5000
+			}
+			NOT = { has_country_flag = uachreform1009flag }
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = uachreform1009flag
+		}
+	}
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = uach_reform.1009.a
+		add_government_power = {
+			mechanic_type = uach_reform_state_mechanic
+			power_type = uach_persianization
+			value = -10
+		}
+		add_disaster_progress = {
+			value = 5
+			disaster = repeatable_timurid_succession_crisis
+		}
+		kill_advisor_by_category_effect = {
+			ADM = yes		
+		}
+	}
+	
+	option = {
+		name = uach_reform.1009.b
+		add_disaster_progress = {
+			value = -5
+			disaster = repeatable_timurid_succession_crisis
+		}
+
+		add_adm_power = -50
+		add_dip_power = -50
+	}
+}
+
+country_event = {
+	id = uach_reform.1010 
+	title = uach_reform.1010.t
+	desc = uach_reform.1010.d
+	picture = GREAT_BUILDING_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull	
+	}
+	
+	
+
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = uach_reform.1010.a
+		add_treasury = -50
+		add_disaster_progress = {
+			value = 5
+			disaster = repeatable_timurid_succession_crisis
+		}
+		uach_outward_persianization = { value = 5 }
+		
+		}
+	option = {	
+		name = uach_reform.1010.b
+		add_treasury = -50
+		add_disaster_progress = {
+			value = -5
+			disaster = repeatable_timurid_succession_crisis
+		}
+		uach_add_or_subtract_persianization = { value = 10 }
+		
+		}
+}
+
+#Court of [RULER NAME]: something about his centralization (based on abu sa’id)
+country_event = {
+	id = uach_reform.1011
+	title = uach_reform.1011.t
+	desc = uach_reform.1011.d
+	picture = COURT_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull	
+	}
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = uach_reform.1011.a
+		add_disaster_progress = {
+			value = 5
+			disaster = repeatable_timurid_succession_crisis
+		}
+		uach_outward_persianization = { value = 10 }
+		
+		}
+		
+	option = {	
+		name = uach_reform.1011.b
+		add_disaster_progress = {
+			value = -10
+			disaster = repeatable_timurid_succession_crisis
+		}
+		uach_add_or_subtract_persianization = { value = 5 }
+		
+		}
+}
+	
+
+#Investment in agriculture
+country_event = {
+	id = uach_reform.1012
+	title = uach_reform.1012.t
+	desc = uach_reform.1012.d
+	picture = FARMING_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull	
+	}
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = uach_reform.1012.a
+		random_owned_province = {
+			uach_add_random_development = { VALUE = 2 AMOUNT = 1 }
+		}
+		add_treasury = -50
+		add_disaster_progress = {
+			value = -5
+			disaster = repeatable_timurid_succession_crisis
+		}
+		
+		}
+		
+	option = {	
+		name = uach_reform.1012.b
+		add_prestige = -10
+		random_owned_province = {
+			uach_add_random_development = { VALUE = 1 AMOUNT = 1 }
+		}
+		add_disaster_progress = {
+			value = 2
+			disaster = repeatable_timurid_succession_crisis
+		}
+	}
+}	
+
+
+#Executions and cruelty under [RULER NAME] (based on abu sa’id)
+country_event = {
+	id = uach_reform.1013
+	title = uach_reform.1013.t
+	desc = uach_reform.1013.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull
+	}
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = uach_reform.1013.a
+		
+		kill_advisor = random
+		add_stability = 1
+		add_disaster_progress = {
+			value = 5
+			disaster = repeatable_timurid_succession_crisis
+		}
+	}
+		
+	option = {	
+		name = uach_reform.1013.b
+		add_legitimacy = -10
+		add_stability = -1
+		add_disaster_progress = {
+			value = -5
+			disaster = repeatable_timurid_succession_crisis
+		}
+	}
+}		
+
+#Siege of Sharquiiya
+country_event = {
+	id = uach_reform.1015
+	title = uach_reform.1015.t
+	desc = uach_reform.1015.d
+	picture = BATTLE_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull
+		OR = {
+			NOT = { has_country_flag = uachreform1015flag }
+			had_country_flag = {
+				flag = uachreform1015flag
+				days = 5000
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = uachreform1015flag
+		}
+	}
+
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = uach_reform.1015.a
+		
+		random_owned_province = {
+			spawn_rebels = {
+				size = 2
+				type = noble_rebels
+			}
+		}
+		
+		add_disaster_progress = {
+			value = 10
+			disaster = repeatable_timurid_succession_crisis
+		}
+		
+		}
+		
+	option = {	
+		name = uach_reform.1015.b
+		add_prestige = -25
+		add_stability = -1
+		add_disaster_progress = {
+			value = -5
+			disaster = repeatable_timurid_succession_crisis
+		}
+		
+		}
+}		
+
+#Clergy opposes ruler
+country_event = {
+	id = uach_reform.1014
+	title = uach_reform.1014.t
+	desc = uach_reform.1014.d
+	picture = CHURCH_ESTATE_UPSET_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull	
+	}
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = uach_reform.1014.a
+		add_country_modifier = {
+			name = uach_no_talking_back_to_clergy
+			duration = 3650
+		}
+		uach_add_or_subtract_persianization = { value = 5 }
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 10
+		}
+		add_country_modifier = {
+			name = give_in_to_clergy
+			duration = 730
+		}
+		
+	}
+		
+	option = {	
+		name = uach_reform.1014.b
+		add_legitimacy = -15
+		add_country_modifier = {
+			name = uach_daring_today
+			duration = 3650
+		}
+
+		uach_outward_persianization = { value = 5 }
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -10
+		}
+	}
+}	
+
+#Loyalty to the clan
+country_event = {
+	id = uach_reform.1016
+	title = uach_reform.1016.t
+	desc = uach_reform.1016.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+
+	trigger = {
+		has_country_flag = uach_interwar_lull	
+	}
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = uach_reform.1016.a
+		add_years_of_income = 0.5
+		uach_add_or_subtract_persianization = { value = 10 }
+	}
+		
+	option = {	
+		name = uach_reform.1016.b
+		add_country_modifier = {
+			name = uach_state_above_clan
+			duration = 3650
+		}
+		uach_outward_persianization = { value = 5 }
+	}
+}		
+		
+
+	

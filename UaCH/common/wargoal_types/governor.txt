@@ -1,0 +1,38 @@
+w_enforce_loyalty_governor = {
+	type = take_capital
+
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 0.75
+		peace_cost_factor = 1
+
+		peace_options = { 
+			po_make_governor
+		}
+
+		deny_annex = yes
+		
+		allowed_provinces = {
+			always = no
+		}
+		allowed_provinces_are_eligible = yes
+	}
+	defender = {
+		badboy_factor = 1
+		prestige_factor = 0.75
+		peace_cost_factor = 1
+
+		peace_options = { 
+			po_make_governor			
+		}
+
+		deny_annex = yes
+
+		allowed_provinces = {
+			always = no
+		}
+		allowed_provinces_are_eligible = yes
+	}
+
+	war_name = "ENFORCE_LOYALTY_WAR"
+}

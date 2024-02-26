@@ -2,6 +2,18 @@ government = monarchy
 add_government_reform = uach_governor
 government_rank = 1
 primary_culture = persian
-religion = shiite
+religion = sunni
 technology_group = muslim
 capital = 433 # Kerman
+
+1443.1.1 = {
+	monarch = {
+		name = "Jalal-al-Din Amir-Chakhmaq"
+		culture = persian
+		dynasty = "Injuid"
+		birth_date = 1430.1.1
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}

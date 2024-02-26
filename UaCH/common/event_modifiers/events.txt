@@ -1,0 +1,159 @@
+mnt_one_small_suffering = {
+	reduced_liberty_desire = -10
+	country_admin_power = 1
+	country_diplomatic_power = 1
+	country_military_power = 1
+}
+
+mnt_livespan_increaes = {
+	monarch_lifespan = 0.5
+}
+
+mnt_isf_liberty_desire = {
+	liberty_desire = 30
+}
+
+mnt_isf_liberty_desire_60 = {
+	liberty_desire = 60
+}
+
+mnt_trs_betrayl_honored_body = {
+	diplomatic_reputation = 3
+	monthly_favor_modifier = 0.33
+}
+
+uach_shah_rukhs_mausoleum = {
+	prestige_decay = -0.01
+}
+
+uach_shah_rukhs_mausoleum_desecrated = {
+	manpower_recovery_speed = 0.3
+}
+
+uach_shah_rukhs_mausoleum_completed = {
+	manpower_recovery_speed = 2
+}
+
+abdu_said_mirza_married = {
+	local_unrest = -2
+	local_development_cost = -0.1
+}
+ 
+uach_supplies_running_low = {
+	manpower_recovery_speed = -0.5
+	land_attrition = 0.25
+}
+
+they_are_right_though = {
+	local_defensiveness = -0.25
+	local_unrest = 5
+}
+
+uach_patronage_of_the_couple = {
+	development_cost = -0.10
+	build_cost = -0.10
+}
+
+uach_slain_the_crimson_horse = {
+	prestige_decay = -0.01
+	diplomatic_reputation = 1
+}
+
+uach_gaining_a_foothold = {
+	land_forcelimit = 20
+	global_tax_income = 48
+}
+
+successful_interloper_intervention = {
+	prestige = 1
+}
+
+uach_persianized = {
+	liberty_desire = -25
+	diplomatic_upkeep = 2
+}
+
+uach_let_them_do_their_thing = {
+	local_unrest = -5
+}
+
+uach_scholars_in_capital = {
+	advisor_cost = -0.1
+}
+
+uach_throat_singing = {
+	advisor_cost = 0.15
+}
+
+uach_solidiers_went_home = {
+	manpower_recovery_speed = -0.1
+}
+
+uach_soldiers_had_to_stay = {
+	land_morale = -0.1
+}
+
+uach_raid_turks_back_lol = {
+	siege_ability = 0.1
+}
+
+uach_bolster_defenses = {
+	defensiveness = 0.1
+}
+
+uach_no_talking_back_to_clergy = {
+	church_influence_modifier = 0.15
+	global_unrest = -2
+}
+
+uach_daring_today = {
+	church_influence_modifier = -0.1
+	diplomatic_reputation = 2
+}
+
+uach_state_above_clan = {
+	global_unrest = 5
+}
+
+uach_restoration_of_stability = {
+	stability_cost_modifier = -0.1
+}
+
+uach_onwards_to_glory = {
+	land_maintenance_modifier = -0.10
+	land_morale = 0.05
+}
+
+give_in_to_clergy = {
+	global_unrest = -2
+}
+
+mitigated_drought = {
+	local_manpower_modifier = -0.1
+	local_tax_modifier = -0.1
+	local_friendly_movement_speed = -0.1
+}
+minor_drought = {
+	local_manpower_modifier = -0.25
+	local_tax_modifier = -0.25
+	local_friendly_movement_speed = -0.25
+	supply_limit_modifier = -0.1
+}
+moderate_drought = {
+	local_manpower_modifier = -0.5
+	local_tax_modifier = -0.5
+	local_friendly_movement_speed = -0.5
+	supply_limit_modifier = -0.5
+}
+
+nobody_lives_here_anymore_drought = {
+	local_manpower_modifier = -1
+	local_tax_modifier = -1
+	supply_limit_modifier = -1
+	supply_limit = -1
+	local_hostile_attrition = 5
+	max_attrition = 5
+	local_production_efficiency = -1
+	tax_income = -1
+	
+}

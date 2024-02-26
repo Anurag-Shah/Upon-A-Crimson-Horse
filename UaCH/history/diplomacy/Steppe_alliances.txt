@@ -61,7 +61,7 @@ union = {
 
 # Kazakh, Vassal of Uzbek
 
-union = {
+march = {
 	first = SHY
 	second = KZH
 	start_date = 1444.1.1

@@ -1,0 +1,170 @@
+namespace = UaCH.CB
+
+country_event = {
+	id = UaCH.CB.1 
+	title = UaCH.CB.1.t 
+	desc = UaCH.CB.1.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		# This flag is set in the po to mark a country to be targeted by the event.
+		random_country = {
+			limit = {
+				has_country_flag = UaCH_enforced_new_ruler_on_claimant
+			}
+			save_event_target_as = claimant_lost_war
+			clr_country_flag = UaCH_enforced_new_ruler_on_claimant
+
+			# Delete all their wars
+			every_country = {
+				limit = {
+					AND = {
+						OR = {
+							offensive_war_with = PREV
+							defensive_war_with = PREV
+						}
+						NOT = {
+							is_interloper = yes
+						}
+					}
+				}
+				white_peace = PREV
+			}
+
+			# Make vassal and transfer vassals
+			every_subject_country = {
+				ROOT = {
+					create_subject = {
+						subject_type = governor
+						who = PREV
+					}
+				}
+			}
+			ROOT = {
+				create_subject = {
+					subject_type = governor
+					who = PREV
+				}
+			}
+			
+			# Make temporarily loyal
+			add_country_modifier = {
+				name = uach_reduced_liberty_desire_50
+				duration = 7300
+			}
+		}
+	}
+
+	# Elect ruler from Burghers
+	option = {
+		name = "UaCH.CB.1.a"
+		add_country_modifier = {
+			name = uach_enforced_burgher_ruler
+			duration = 3650
+		}
+		
+		custom_tooltip = UACH_CB_1_RR_TT_N
+
+		hidden_effect = {
+			event_target:claimant_lost_war = {
+				define_ruler = {
+					dynasty = ROOT
+					min_age = 16
+					max_random_adm = 4
+					max_random_dip = 6
+					max_random_mil = 4
+				}
+				# Demote to governor
+				make_tag_governor = yes
+				shuffle_princes = { scope = event_target:claimant_lost_war }
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	# Elect ruler from Nobles
+	option = {
+		name = "UaCH.CB.1.b"
+		add_country_modifier = {
+			name = uach_enforced_noble_ruler
+			duration = 3650
+		}
+		
+		custom_tooltip = UACH_CB_1_RR_TT_C
+		
+		hidden_effect = {
+			event_target:claimant_lost_war = {
+				define_ruler = {
+					dynasty = ROOT
+					min_age = 16
+					max_random_adm = 4
+					max_random_dip = 4
+					max_random_mil = 6
+				}
+
+				# Demote to governor
+				make_tag_governor = yes
+				shuffle_princes = { scope = event_target:claimant_lost_war }
+			}
+		}
+
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	# Elect ruler from Clergy
+	option = {
+		name = "UaCH.CB.1.c"
+
+		add_country_modifier = {
+			name = uach_enforced_church_ruler
+			duration = 3650
+		}
+		
+		custom_tooltip = UACH_CB_1_RR_TT_B
+		hidden_effect = {
+			event_target:claimant_lost_war = {
+				define_ruler = {
+					dynasty = ROOT
+					min_age = 16
+					max_random_adm = 6
+					max_random_dip = 4
+					max_random_mil = 4
+				}
+				
+				# Demote to governor
+				make_tag_governor = yes
+				shuffle_princes = { scope = event_target:claimant_lost_war }
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	# Keep the ruler in charge
+	option = {
+		name = UaCH.CB.1.e
+		
+		add_country_modifier = {
+			name = uach_preserve_ruler
+			duration = 3650
+		}
+
+		ai_chance = {
+			factor = 2
+		}
+	}
+}

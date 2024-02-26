@@ -1,0 +1,83 @@
+﻿l_english:
+ #OPM
+ uach_opm_31_title:0 "A new Emirate"
+ uach_opm_31_desc:0 "Our local lord [ROOT.GetName] has manage to wrestle the control or our city from the high nobility. However danger looms on the horizon, as we are now in open rebellion against the Empire. We must recruit the most talented generals avaible to lead our forces!"
+
+ uach_opm_32_title:0 "A battle won"
+ uach_opm_32_desc:0 ""
+
+ uach_opm_22_title:0 "Bolster the defenses"
+ uach_opm_22_desc:0 ""
+
+ uach_opm_42_title:0 "Constant vigilance"
+ uach_opm_42_desc:0 ""
+
+ uach_opm_33_title:0 "Reform to X"
+ uach_opm_33_desc:0 "Reform our emirate to a higher level."
+
+ #KHI - from Rebirth
+ miss_khi_55_title:0 "Repopulate the old capital"
+ miss_khi_55_desc:0 "Amidst the whispers of winds that sweep through the desolate ruins, a powerful yearning awakens within you. The old capital of Khiva, once a beacon of civilization, lies abandoned, a testament to the capriciousness of the river Oxus. As the ruler of Khiva, you stand ready to breathe life back into this hallowed ground."
+
+ miss_khi_15_title:0 "Khwarezmid Empire"
+ miss_khi_15_desc:0 "As you set forth on this monumental path, the weight of history rests upon your shoulders. Your every action, decision, and conquest will be etched into the annals of time. The once-great Khwarezmid Empire, renowned for its culture, trade, and influence, shall rise anew under your leadership."
+
+ miss_khi_24_title:0 "Our ancestral lands"
+ miss_khi_24_desc:0 "As the Khivan ruler, the echoes of history resound within your heart. The lands of Khwarezm, once a cradle of civilization, have slipped from your grasp. Yet, the fire of ancestral pride burns within you, urging you to restore the glory of your forebears."
+
+ miss_khi_25_title:0 "Deal with Golden Horde"
+ miss_khi_25_desc:0 "The clash of empires reverberates across the horizon, and your destiny intertwines with that of the Golden Horde. Your armies muster, your people rally, and the struggle for supremacy unfolds in the shadow of history. The annals of time shall record your name and the outcome of this momentous encounter."
+
+ miss_khi_26_title:0 "Onwards to Russia"
+ miss_khi_26_desc:0 "Across vast distances, a new contender emerges on the geopolitical stage. The Muscovite realm, driven by ambition and expansion, now comes into conflict with your domain. As the ruler of Khiva, you find yourself at a crossroads where destinies intertwine."
+
+ miss_khi_27_title:0 "Burning Red"
+ miss_khi_27_desc:0 "As the winds of history carry your realm's ambitions far and wide, a moment of unprecedented decision emerges. The once-mighty city of Moscow, seat of Muscovy's power, stands as both a symbol of authority and an obstacle to your ambitions. The time has come to make a fateful choice."
+
+ miss_khi_31_title:0 "The heretic Shah"
+ miss_khi_31_desc:0 "Prepare to cast off the shackles of your heathen Persian overlords. Gather allies, strengthen your economy, and amass loyal troops to pave the way for a successful rebellion and the restoration of your independence."
+
+ miss_khi_32_title:0 "Ilbar's rebellion"
+ miss_khi_32_desc:0 "Rally behind Ilbar's leadership and rebel against the Persian rule. Secure alliances, marshal your forces, and challenge the oppressors to claim Khiva's sovereignty once more.""
+
+ miss_khi_33_title:0 "The Khan triumphs"
+ miss_khi_33_desc:0 "With the successful rebellion against Persia, embark on the arduous journey of rebuilding your nation. Strengthen governance, revive economy, and fortify borders to ensure Khiva's resurgence as a proud and independent power.""
+
+ miss_khi_34_title:0 "Jewels of the Silk Road"
+ miss_khi_34_desc:0 "As the ruler of Khiva, you stand at a crossroads of opportunity. The fabled cities of Merv and Samarkand, glittering jewels along the Silk Road, beckon with promises of wealth, influence, and cultural prestige. The time has come to make a monumental decision."
+
+ miss_khi_35_title:0 "Deal with the Princes"
+ miss_khi_35_desc:0 "Across the arid lands to the south, a formidable challenge presents itself. The Timurid princes, once united under a powerful banner, now stand divided and weakened. As the ruler of Khiva, you recognize the opportunity to expand your realm and solidify your dominance."
+
+ miss_khi_36_title:0 "The Pashtun mountains"
+ miss_khi_36_desc:0 "With audacity in your heart, you embark on a journey into the formidable Pashtun Mountains. Your scouts navigate treacherous paths, your armies stand ready, and the fate of Khiva is woven into the very fabric of this endeavor. The challenge ahead is as vast as the peaks that rise before you."
+
+ miss_khi_37_title:0 "The tides are true"
+ miss_khi_37_desc:0 "Amidst the shifting sands and boundless horizons of Central Asia, a new chapter unfurls as Khiva sets its sights on uncharted waters. Inspired by the geographical realities, you endeavor to forge a route to the southern sea, where distant shores beckon and untapped opportunities await."
+
+ miss_khi_38_title:0 "As the ocean is deep"
+ miss_khi_38_desc:0 "In the heart of Central Asia, where deserts meet the sea, a new ambition takes root. The shimmering waters of the Persian Gulf call out to you, promising trade, connections, and discovery. As the ruler of Khiva, you heed the call to embark on a journey along the seashore, echoing the historic trade routes of the region."
+
+ miss_khi_39_title:0 "Our gulf"
+ miss_khi_39_desc:0 "Amidst the shifting tides and vibrant cultures of the Persian Gulf, an audacious vision takes root. The waters that have borne the stories of countless civilizations now beckon you, the ruler of Khiva, to extend your dominion across this vital seaway."
+
+ miss_khi_44_title:0 "Eastwards"
+ miss_khi_44_desc:0 "We set our gaze eastwards to the Tarim basin and beyond, where the great empire of Ming lies. One day we shall rule the rich lands of China."
+
+ miss_khi_45_title:0 "Deal with the Chagatai"
+ miss_khi_45_desc:0 "As the sun rises in the east, casting its golden light across the expansive steppes, a monumental challenge emerges. The Chagatai Khanate, a once-mighty realm, now faces the steady erosion of its power. As the ruler of Khiva, you perceive an opportunity to reshape the geopolitical landscape."
+
+ miss_khi_46_title:0 "The Turpan Basin"
+ miss_khi_46_desc:0 "In the heart of Central Asia lies the Turpan Basin, a land of ancient cities, fertile oases, and boundless potential. As the ruler of Khiva, you are drawn to this rich region that has played a significant role in the tapestry of history."
+
+ miss_khi_47_title:0 "Under the Great Wall"
+ miss_khi_47_desc:0 "Amidst the vast expanse of history, a remarkable chapter unfolds as the Khivan ruler's ambition knows no bounds. Inspired by the historical conquests of the region, you set your sights on the northern reaches of China, where empires rise and fall."
+
+ miss_khi_49_title:0 "Subjugating Persia"
+ miss_khi_49_desc:0 "As the tides of fate ebb and flow, a monumental opportunity presents itself. With a firm grip on the shores of the Persian Gulf, you, the ruler of Khiva, now contemplate a grander ambition: the conquest of Persia, a realm of immense historical and cultural significance."
+ 
+ miss_khi_31_rew:0 "The long path home"
+ miss_khi_32_rew:0 "Foreign help"
+ miss_khi_33_rew:0 "Broken chains"
+ khi_chosen_path:0 "West or East?"
+ 

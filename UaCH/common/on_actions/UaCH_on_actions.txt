@@ -2,6 +2,7 @@ on_startup = {
     if = {
         limit = {
             NOT = { has_global_flag = uach_init_ui }
+            NOT = { is_year = 1448 }
         }
         every_country = {
             limit = {
@@ -16,9 +17,418 @@ on_startup = {
                         }
                     }
                 }
+                NOT = { tag = ORM }
             }
             add_faction = timurid_faction
         }
+        init_start_princes = yes
+        init_start_governors = yes
+        TIM = {
+            country_event = {
+                id = UaCH.1 
+            }
+        }
         set_global_flag = uach_init_ui
     }
+}
+
+on_annexed = {
+    shuffle_princes = { scope = FROM }
+    shuffle_governors = { scope = FROM }
+}
+
+on_province_owner_change = {
+    if = {
+        limit = {
+            any_neighbor_province = {
+                owner = {
+                    OR = {
+                        is_prince = yes
+                        is_governor = yes                      
+                    }
+                }
+            }
+            owner = {
+                NOT = {
+                    has_faction = timurid_faction
+                }
+            }
+        }
+        owner = {
+            add_faction = timurid_faction
+            if = {
+                limit = {
+                    is_subject = yes
+                }
+                overlord = {
+                    add_faction = timurid_faction
+                }
+            }
+        }
+    }
+    events = {
+        UaCH.28  # Recapture of Herat
+    }
+}
+
+on_siege_lost_province = {
+    if = {
+        limit = {
+            FROM = {
+                tag = KZH
+                has_country_flag = kzh_war_of_independence
+            }
+            culture = khazak
+            NOT = { is_core = KZH }
+        }
+        add_core = KZH
+    }
+    events = {
+        # TODO siege of Samarkand by Abdal-Latif --> Uluq Beg should be executed
+    }
+}
+
+on_war_won = {
+    if = {
+        limit = {
+            ROOT = {
+                tag = KZH
+                has_country_flag = kzh_war_of_independence
+            }
+            FROM = {
+                tag = SHY
+            }
+        }
+        every_province = {
+            limit = {
+                is_core = KZH
+                country_or_non_sovereign_subject_holds = SHY
+                NOT = {
+                    area = kyzylkum_area
+                }
+            }
+            cede_province = KZH
+        }
+        ROOT = {
+            clr_country_flag = kzh_war_of_independence
+        }
+        FROM = {
+            country_event = {
+                id = UaCH.88
+            }
+        }
+    }
+    FROM = {
+        country_event = {
+            id = UaCH.80
+            days = 1
+        }
+    }
+    if = {
+        limit = {
+            ROOT = {
+                AND = {
+                    tag = TIM
+                    has_country_flag = uach_interwar_lull
+                }
+            }
+        }
+        country_event = {
+            id = UaCH.100
+        }
+    }
+    if = {
+        limit = { ROOT = { has_country_flag = uach_war_agenda } }
+        set_country_flag = uach_war_agenda_completed
+    }
+}
+
+on_war_lost = {
+    if = {
+        limit = {
+            ROOT = {
+                tag = KZH
+                has_country_flag = kzh_war_of_independence
+            }
+            FROM = {
+                tag = SHY
+            }
+        }
+        ROOT = {
+            clr_country_flag = kzh_war_of_independence
+        }
+    }   
+}
+
+on_battle_lost_unit = {
+    if = {
+        limit = {
+            unit_owner = {
+                OR = {
+                    is_in_war = { casus_belli = cb_challange_claimant }
+                    is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+                }
+            }
+            is_ruler_commanding_unit = yes
+        }
+        unit_owner = {
+            random_list = {
+                25 = { country_event = { id = UaCH.43 } }
+                75 = { }
+            }
+        }
+    }
+}
+
+on_religion_change = {
+    if = {
+        limit = {
+            OR = {
+                is_part_of_second_crisis = yes
+                any_neighbor_country = {
+                    NOT = { tag = ORM }
+                    is_governor_or_prince = yes
+                }
+            }
+        }
+        uach_add_timurid_faction_if_not_has = yes
+        every_country = {
+            limit = {
+                OR = {
+                    is_part_of_second_crisis = yes
+                    any_neighbor_country = {
+                        NOT = { tag = ORM }
+                        is_governor_or_prince = yes
+                    }
+                }
+            }
+            uach_add_timurid_faction_if_not_has = yes
+        }
+	}
+}
+
+on_country_released = {
+	this = {
+        if = {
+            limit = {
+                OR = {
+					is_part_of_second_crisis = yes
+					any_neighbor_country = {
+						NOT = { tag = ORM }
+						is_governor_or_prince = yes
+					}
+				}
+            }
+            uach_add_timurid_faction_if_not_has = yes
+            every_country = {
+                limit = {
+                    OR = {
+                        is_part_of_second_crisis = yes
+                        any_neighbor_country = {
+                            NOT = { tag = ORM }
+                            is_governor_or_prince = yes
+                        }
+                    }
+                }
+                uach_add_timurid_faction_if_not_has = yes
+            }
+        }
+	}
+}
+
+on_government_change = {
+    if = {
+        limit = {
+            OR = {
+                is_part_of_second_crisis = yes
+                any_neighbor_country = {
+                    NOT = { tag = ORM }
+                    is_governor_or_prince = yes
+                }
+            }
+        }
+        uach_add_timurid_faction_if_not_has = yes
+        every_country = {
+            limit = {
+                OR = {
+                    is_part_of_second_crisis = yes
+                    any_neighbor_country = {
+                        NOT = { tag = ORM }
+                        is_governor_or_prince = yes
+                    }
+                }
+            }
+            uach_add_timurid_faction_if_not_has = yes
+        }
+	}
+}
+
+on_reform_changed = {
+    if = {
+        limit = {
+            OR = {
+                is_part_of_second_crisis = yes
+                any_neighbor_country = {
+                    NOT = { tag = ORM }
+                    is_governor_or_prince = yes
+                }
+            }
+        }
+        uach_add_timurid_faction_if_not_has = yes
+        every_country = {
+            limit = {
+                OR = {
+                    is_part_of_second_crisis = yes
+                    any_neighbor_country = {
+                        NOT = { tag = ORM }
+                        is_governor_or_prince = yes
+                    }
+                }
+            }
+            uach_add_timurid_faction_if_not_has = yes
+        }
+	}
+}
+
+on_reform_enacted = {
+    if = {
+        limit = {
+            OR = {
+                is_part_of_second_crisis = yes
+                any_neighbor_country = {
+                    NOT = { tag = ORM }
+                    is_governor_or_prince = yes
+                }
+            }
+        }
+        uach_add_timurid_faction_if_not_has = yes
+        every_country = {
+            limit = {
+                OR = {
+                    is_part_of_second_crisis = yes
+                    any_neighbor_country = {
+                        NOT = { tag = ORM }
+                        is_governor_or_prince = yes
+                    }
+                }
+            }
+            uach_add_timurid_faction_if_not_has = yes
+        }
+    }
+}
+
+on_monarch_death = {
+	# Unneeded, just made the modifier a ruler modifier
+	#if = {
+	#	limit = {
+	#		has_country_modifier = mnt_one_small_suffering
+	#	}
+	#	remove_country_modifier = mnt_one_small_suffering
+	#}
+	if = {
+		limit = {
+			tag = SHY
+			NOT = {
+				has_country_flag = kzh_death_happened
+			}
+			historical_rival_with = KZH
+			KZH = {
+				is_subject_of = ROOT
+			}
+		}
+		KZH = {
+			country_event = {
+				id = UaCH.87
+			}
+		}
+		set_country_flag = kzh_death_happened
+	}
+	events = {
+		UaCH.13
+	}
+
+	if = {
+		limit = {
+			has_disaster_progress = {
+				disaster = repeatable_timurid_succession_crisis
+				value = 0.1
+			}
+		}
+		country_event = {
+			id = UaCH.97
+		}
+	}
+}
+
+on_adm_development = {
+	owner = {
+		if = {
+			limit = { has_country_flag = uach_dev_agenda }
+			set_country_flag = uach_dev_agenda_completed
+		}
+	}
+}
+
+on_dip_development = {
+	owner = {
+		if = {
+			limit = { has_country_flag = uach_dev_agenda }
+			set_country_flag = uach_dev_agenda_completed
+		}
+	}
+}
+
+on_mil_development = {
+	owner = {
+		if = {
+			limit = { has_country_flag = uach_dev_agenda }
+			set_country_flag = uach_dev_agenda_completed
+		}
+	}
+}
+
+# 5 events every 2 years -> 25 events over 10 years which is enough to fully reform if you take most of em
+on_bi_yearly_pulse = {
+	random_events = {
+		1000000 = uach_reform.1
+		1000000 = uach_reform.1001
+		1000000 = uach_reform.1005
+		1000000 = uach_reform.1009
+		1000000 = uach_reform.1013
+	}
+}
+on_bi_yearly_pulse_2 = {
+	random_events = {
+		1000000 = uach_reform.2
+		1000000 = uach_reform.6
+		1000000 = uach_reform.1006
+		1000000 = uach_reform.1010
+		1000000 = uach_reform.1014
+	}
+}
+on_bi_yearly_pulse_3 = {
+	random_events = {
+		1000000 = uach_reform.3
+		1000000 = uach_reform.7
+		1000000 = uach_reform.1007
+		1000000 = uach_reform.1011
+		1000000 = uach_reform.1015
+	}
+}
+on_bi_yearly_pulse_4 = {
+	random_events = {
+		1000000 = uach_reform.4
+		1000000 = uach_reform.1000
+		1000000 = uach_reform.1004
+		1000000 = uach_reform.1012
+		1000000 = uach_reform.1016
+	}
+}
+on_bi_yearly_pulse_5 = {
+	random_events = {
+		1000000 = uach_reform.5
+		1000000 = uach_reform.1002
+		1000000 = uach_reform.1003
+		1000000 = uach_reform.1008
+	}
 }

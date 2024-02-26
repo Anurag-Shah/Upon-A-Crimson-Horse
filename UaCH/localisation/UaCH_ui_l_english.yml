@@ -1,0 +1,45 @@
+﻿l_english:
+    timurids_princes_banner_tooltip: "§YPrinces§! are the governorships within the Timurid realm either held by a direct descendant of Timur or by a claimant to the @TIM §YTimurid§! legacy. These states seek to claim the throne in §YHerat§! for themselves through force.\n\n§YPrinces§! have access to stronger government mechanics and the ability to '§YReclaim Timur's Legacy§!'."
+    timurids_governors_banner_tooltip: "§YGovernors§! are the governorships within the Timurid realm held by a native Iranian ruler. Whilst not viewed as a worthy successor of the @TIM §YTimurids§!, they seek to forge their own bloody path through Iran and establish a state of their own.\n\n§YGovernors§!, whilst having weaker government mechanics, are able to '§YEnd Timur's Legacy§!'. If they so wish, they may also attempt to elevate themselves into being a §YPrince§! by using '§YEnthrone Timurid Claimant§!'."
+    timurids_map_slot_tooltip: "§YInterlopers§! are outside powers that intervene to seize control of one of the regions below, and who perhaps will grow to have greater ambitions revolving around picking away at the corpse of the @TIM §YTimurids§!. If an §YInterloper§! is currently attempting to seize a region, their flag will appear above the region.\n\nAs an §YInterloper§!, you will be given the choice of continuing your campaign after occupying your chosen thematic region in order to '§YEnd Timur's Legacy§!', or to just seize the region directly."
+    
+    timurids_map_ajam_tooltip: "§YIraq-e-Ajam§!\n\n[Root.GetAjamStatus]"
+    not_contested: "This region is currently not contested by any §YInterlopers§!."
+    contested_by_x_ajam: "This region is currently contested by @[ajam_interloper_1.GetTag] §Y[ajam_interloper_1.GetName]§!.
+    contested_by_x_and_x_ajam: "This region is currently contested by @[ajam_interloper_1.GetTag] §Y[ajam_interloper_1.GetName]§! and @[ajam_interloper_2.GetTag] §Y[ajam_interloper_2.GetName]§!.
+    
+    timurids_map_khorasan_tooltip: "§YKhorasan§!\n\n[Root.GetAjamStatus]"
+    contested_by_x_khorasan: "This region is currently contested by @[khorasan_interloper_1.GetTag] §Y[khorasan_interloper_1.GetName]§!.
+    contested_by_x_and_x_khorasan: "This region is currently contested by @[khorasan_interloper_1.GetTag] §Y[khorasan_interloper_1.GetName]§! and @[khorasan_interloper_2.GetTag] §Y[khorasan_interloper_2.GetName]§!.
+
+    timurids_map_fars_tooltip: "§YFars§!\n\n[Root.GetAjamStatus]"
+    contested_by_x_fars: "This region is currently contested by @[fars_interloper_1.GetTag] §Y[fars_interloper_1.GetName]§!.
+    contested_by_x_and_x_fars: "This region is currently contested by @[fars_interloper_1.GetTag] §Y[fars_interloper_1.GetName]§! and @[fars_interloper_2.GetTag] §Y[fars_interloper_2.GetName]§!.
+    
+    timurids_map_herat_tooltip: "§YHerat§!\n\n[Root.GetAjamStatus]"
+    contested_by_x_herat: "This region is currently contested by @[herat_interloper_1.GetTag] §Y[herat_interloper_1.GetName]§!.
+    contested_by_x_and_x_herat: "This region is currently contested by @[herat_interloper_1.GetTag] §Y[herat_interloper_1.GetName]§! and @[herat_interloper_2.GetTag] §Y[herat_interloper_2.GetName]§!.
+    
+    timurids_map_merv_tooltip: "§YMarw al-Shahijan§!\n\n[Root.GetAjamStatus]"
+    contested_by_x_merv: "This region is currently contested by @[merv_interloper_1.GetTag] §Y[merv_interloper_1.GetName]§!.
+    contested_by_x_and_x_merv: "This region is currently contested by @[merv_interloper_1.GetTag] §Y[merv_interloper_1.GetName]§! and @[merv_interloper_2.GetTag] §Y[merv_interloper_2.GetName]§!.
+    
+    timurids_map_samarkand_tooltip: "§YSamarkand§!\n\n[Root.GetAjamStatus]"
+    
+    timurids_map_ferghana_tooltip: "§YFerghana Valley§!\n\n[Root.GetAjamStatus]"
+    
+    timurids_map_afghanistan_tooltip: "§YAfghanistan§!\n\n[Root.GetAjamStatus]"
+    
+    abandon_our_claims_tt: "§YAbandon our Claims§!\nAll hope in Iran is lost, and we face our extermination if we choose to continue fighting. The time has come to look elsewhere."
+    SOMEONE_FLED_ALREADY_DUMBASS: "This interaction has not yet been used by any other country."
+    
+    intervene_in_the_crisis_tt: "§YIntervene in the Crisis§!\nWith the heirs of Timur facing near-collapse, this is the perfect chance for us to establish our sphere of influence in Persia. Let us intervene."
+    UACH_NOT_PRINCE_OR_GOVERNOR:0 "We are not a §YPrince§! or §YGovernor§!."
+    WE_MUST_NEIGHBOR_SOMEONE_IDOT: "We neighbor either a §YPrince§! or §YGovernor§!, and we are not an §YInterloper§!."
+    
+    enthrone_timurid_claimant_tt: "§YEnthrone Timurid Claimant§!\nWith many a Timurid prince landless, it is time that we take advantage and use them as leverage to make ourselves legitimate heirs of Timur."
+    
+    end_timurs_legacy_tt: "§YEnd Timur's Legacy§!\nThe stains of Timur's bloodlust and wrath have haunted Iran for too long. It is time we destroy his legacy once and for all."
+    
+    reclaim_timurs_legacy_tt: "§YReclaim Timur's Legacy§!\nWe have finally put to the sword all those who dare claim our rightful throne. It is time we end this chaos once and for all, and bring peace to the Timurid realm."
+    UACH_NO_INTERLOPERS:0 "There are currently no §YInterlopers§! active."

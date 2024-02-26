@@ -1,0 +1,131 @@
+opm_missions_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		is_governor = yes
+		NOT = {
+			tag = LRE
+			tag = AFG
+			tag = ISF
+			tag = KHI
+			tag = SIS
+			tag = KRM
+			tag = KHO
+			tag = ARD
+			tag = KHU
+			tag = FRS
+			tag = LRI
+		}
+	}
+
+	uach_opm_31 = {
+		icon = mission_placeholder
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = { num_of_generals = 2 } 
+
+		effect = {  } 
+	}
+
+	uach_opm_32 = {
+		icon = mission_placeholder
+		position = 2
+		required_missions = { uach_opm_31 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+opm_missions_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { is_governor = yes
+		NOT = {
+			tag = LRE
+			tag = AFG
+			tag = ISF
+			tag = KHI
+			tag = SIS
+			tag = KRM
+			tag = KHO
+			tag = ARD
+			tag = KHU
+			tag = FRS
+			tag = LRI } 
+		}
+		
+	uach_opm_22 = {
+		icon = mission_placeholder
+		position = 2
+		required_missions = { uach_opm_31 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+opm_missions_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { is_governor = yes
+		NOT = {
+			tag = LRE
+			tag = AFG
+			tag = ISF
+			tag = KHI
+			tag = SIS
+			tag = KRM
+			tag = KHO
+			tag = ARD
+			tag = KHU
+			tag = FRS
+			tag = LRI } 
+		}
+
+	uach_opm_42 = {
+		icon = mission_placeholder
+		position = 2
+		required_missions = { uach_opm_31 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {  } 
+
+		effect = {  } 
+	}
+}
+
+opm_missions_slot3_luri = {
+	slot = 1
+	generic = yes
+	ai = yes
+	has_country_shield = yes
+	potential = { primary_culture = luri
+					is_governor = yes
+					NOT = {tag = LRI}
+				}
+
+	uach_opm_33 = {
+		icon = mission_placeholder
+		position = 3
+		required_missions = {
+			uach_opm_32
+			uach_opm_42
+			uach_opm_22
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = { NOT = { exist = LRI }  } 
+
+		effect = { change_tag = LRI } 
+	}
+}

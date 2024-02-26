@@ -2,3 +2,13 @@ supported_us_in_timurid_success_crisis = {
 	opinion = 40
 	yearly_decay = 2
 }
+
+executed_gawhar_shad = {
+	opinion = -100
+	yearly_decay = 4
+}
+
+executed_gawhar_shad_muslim = {
+	opinion = -50
+	yearly_decay = 4
+}

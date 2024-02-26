@@ -1,6 +1,6 @@
 # Insanity in Badakhstan
 technology_group = muslim
-primary_culture = afghan
+primary_culture = afghani
 religion = sunni
 government = monarchy
 add_government_reform = iqta

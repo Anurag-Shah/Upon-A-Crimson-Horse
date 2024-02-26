@@ -1,0 +1,138 @@
+# #TEMPLATES for persianization
+# #GOOD REWARD PERSIANIZATION TO 0, BAD REWARD PERSIAN TO 120
+
+# country_event = {
+# 	id = uach_reform.<1016+>
+# 	title = uach_reform.<1016+>.t
+# 	desc = uach_reform.<1016+>.t
+# 	picture = FEAST_eventPicture
+
+# 	trigger = {
+# 		has_disaster = repeatable_timurid_succession_crisis	
+# 	}
+
+# 	mean_time_to_happen = {
+# 		months = 6
+# 	}
+
+# 	option = {
+# 		name = uach_reform.<1016+>.a
+# 	#	<good effect or modifier>
+# 		uach_add_or_subtract_persianization = { value = -10 }
+		
+# 		}
+		
+# 	option = {	
+# 		name = uach_reform.<1016+>.b
+# 	#	<bad effect or modifier>
+# 		uach_add_or_subtract_persianization = { value = 10 }
+		
+# 		}
+# }		
+
+# #GOOD REWARD DISASTER FASTER, BAD REWARD DISASTER SLOWER
+
+# country_event = {
+# 	id = uach_reform.<1016+>
+# 	title = uach_reform.<1016+>.t
+# 	desc = uach_reform.<1016+>.t
+# 	picture = FEAST_eventPicture
+
+# 	trigger = {
+# 		has_disaster = repeatable_timurid_succession_crisis	
+# 	}
+
+# 	mean_time_to_happen = {
+# 		months = 6
+# 	}
+
+# 	option = {
+# 		name = uach_reform.<1016+>.a
+# 	#	<good effect or modifier>
+# 		add_disaster_progress = {
+# 			value = 5
+# 			disaster = repeatable_timurid_succession_crisis
+# 		}
+		
+# 		}
+		
+# 	option = {	
+# 		name = uach_reform.<1016+>.b
+# 	#	<bad effect or modifier>
+# 		add_disaster_progress = {
+# 			value = -5
+# 			disaster = repeatable_timurid_succession_crisis
+# 		}
+		
+# 		}
+# }		
+
+# #PERSIAN TO 120 DISASTER FASTER, PERSIAN TO 0 DISASTER SLOWER
+
+# country_event = {
+# 	id = uach_reform.<1016+>
+# 	title = uach_reform.<1016+>.t
+# 	desc = uach_reform.<1016+>.t
+# 	picture = FEAST_eventPicture
+
+# 	trigger = {
+# 		has_disaster = repeatable_timurid_succession_crisis	
+# 	}
+
+# 	mean_time_to_happen = {
+# 		months = 6
+# 	}
+
+# 	option = {
+# 		name = uach_reform.<1016+>.a
+# 	#	< effect or modifier>
+# 		uach_add_or_subtract_persianization = { value = -10 }
+# 			add_disaster_progress = {
+# 			value = 5
+# 			disaster = repeatable_timurid_succession_crisis
+# 		}
+		
+# 		}
+		
+# 	option = {	
+# 		name = uach_reform.<1016+>.b
+# 	#	<bad effect or modifier>
+# 		uach_add_or_subtract_persianization = { value = 10 }
+# 		add_disaster_progress = {
+# 			value = -5
+# 			disaster = repeatable_timurid_succession_crisis
+# 		}
+# 		}
+# }	
+
+# #BARMOVER WITH 2 EFFECTS
+
+# country_event = {
+# 	id = uach_reform.<1016+>
+# 	title = uach_reform.<1016+>.t
+# 	desc = uach_reform.<1016+>.t
+# 	picture = FEAST_eventPicture
+
+# 	trigger = {
+# 		has_disaster = repeatable_timurid_succession_crisis	
+# 	}
+
+# 	mean_time_to_happen = {
+# 		months = 6
+# 	}
+
+# 	option = {
+# 		name = uach_reform.<1016+>.a
+# 	#	< good effect or modifier>
+# 	#	< bad effect or modifier>
+# 		uach_add_or_subtract_persianization = { value = -10 }
+		
+# 		}
+		
+# 	option = {	
+# 		name = uach_reform.<1016+>.b
+# 	#	< good effect or modifier>
+# 	#	< bad effect or modifier>
+# 		uach_add_or_subtract_persianization = { value = 10 }
+# 		}
+# }	

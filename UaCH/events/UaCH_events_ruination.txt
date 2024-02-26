@@ -1,0 +1,229 @@
+
+# #Ruination v1.0
+
+# #event start
+# country_event = {
+# 	id = UaCH.escalation.1 
+# 	title = UaCH.escalation.1.t 
+# 	desc = UaCH.escalation.1.d
+# 	picture = CITY_DEVELOPMENT_eventPicture
+# 	is_triggered_only = yes
+	
+# 	trigger = {}
+
+# 	hidden = yes
+	
+# 	option = {
+# 		name = "UaCH.1.escalation.a"
+# 		hidden_effect = {
+# 			every_country = {
+# 				limit = {
+# 					has_government_reform = uach_governor		
+# 				}
+# 				add_country_modifier ={ 
+# 					name = uach_escalation_governor_1
+# 					duration = 3650 }
+# 			}
+# 			every_country = {
+# 				limit = {
+# 					AND  = {
+# 						has_government_reform = uach_prince
+# 						}
+# 				}
+# 				add_country_modifier ={  
+# 					name = uach_escalation_prince_1
+# 					duration = 3650 }
+# 			}
+
+				
+# 			REB = {	set_variable = {
+# 					which = uach_escalation_level
+# 					value = 0
+# 					}
+# 				}
+			
+# 			set_global_flag = uach_escalation_timer
+		
+# 			}
+# 	}
+# }
+
+# #event escalation
+
+# country_event = {
+# 	id = UaCH.escalation.1 
+# 	title = UaCH.escalation.2.t 
+# 	desc = UaCH.escalation.2.d
+# 	picture = CITY_DEVELOPMENT_eventPicture
+# 	is_triggered_only = yes
+	
+# 	trigger = { 
+# 				had_global_flag =  {
+# 					flag = uach_escalation_timer
+# 					days = 1095}
+# 			}		
+# 	hidden = yes
+	
+# 	option = {
+# 		name = "UaCH.2.escalation.a"
+# 		hidden_effect = {
+		
+# 		#LVL2
+			
+# 			REB = { check_variable = {
+# 						which = uach_escalation_level
+# 						IF = { value = 1 }
+# 							{
+# 								every_country = {
+# 									limit = {
+# 										has_country_modifier = uach_escalation_governor_1	
+# 									}
+# 									remove_country_modifier = uach_escalation_governor_1 
+# 									add_country_modifier ={ 
+# 										name = uach_escalation_governor_2
+# 										duration = 3650 }
+# 									}
+# 								}
+# 								every_country = {
+# 									limit = {
+# 										has_country_modifier = uach_escalation_prince_1	
+# 									}
+# 									remove_country_modifier = uach_escalation_prince_1 
+# 									add_country_modifier ={ 
+# 										name = uach_escalation_prince_2
+# 										duration = 3650 }
+# 									}	
+									
+# 								}
+# 								every_country = {
+# 									limit = {
+# 										AND = {has_government_reform = uach_governor
+# 												NOT = {has_country_modifier = uach_escalation_governor_1}		
+# 											}
+# 										}
+# 										add_country_modifier ={ 
+# 											name = uach_escalation_governor_2
+# 											duration = 3650 }
+# 									}
+# 								}
+# 								every_country = {
+# 									limit = {
+# 										AND = {has_government_reform = uach_prince
+# 												NOT = {has_country_modifier = uach_escalation_prince_1}		
+# 											}
+# 										}
+# 										add_country_modifier ={ 
+# 											name = uach_escalation_prince_2
+# 											duration = 3650 }
+											
+								
+# 										}
+										
+# 								change_variable = {
+# 										which = uach_escalation_level
+# 										value = 1
+										
+# 									}	
+# 							}
+					
+# 					IF = { value = 2 }
+# 							{
+# 								every_country = {
+# 									limit = {
+# 										has_country_modifier = uach_escalation_governor_2
+# 									}
+# 									remove_country_modifier = uach_escalation_governor_2
+# 									add_country_modifier ={ 
+# 										name = uach_escalation_governor_3
+# 										duration = 3650 }
+# 									}
+# 								every_country = {
+# 									limit = {
+# 										has_country_modifier = uach_escalation_prince_2
+# 									}
+# 									remove_country_modifier = uach_escalation_prince_2
+# 									add_country_modifier ={ 
+# 										name = uach_escalation_prince_3
+# 										duration = 3650 }
+# 									}	
+# 								every_country = {
+# 									limit = {
+# 										AND = {has_government_reform = uach_governor
+# 												NOT = {has_country_modifier = uach_escalation_governor_1}		
+# 											}
+# 										}
+# 										add_country_modifier ={ 
+# 											name = uach_escalation_governor_3
+# 											duration = 3650 }
+# 									}
+# 								every_country = {
+# 									limit = {
+# 										AND = {has_government_reform = uach_prince
+# 												NOT = {has_country_modifier = uach_escalation_prince_1}		
+# 											}
+# 										}
+# 										add_country_modifier ={ 
+# 											name = uach_escalation_prince_3
+# 											duration = 3650 }
+# 										}	
+# 								change_variable = {
+# 										which = uach_escalation_level
+# 										value = 1
+									
+# 									}		
+# 							}
+
+# 						IF = { value = 3 }
+# 							{
+# 								every_country = {
+# 									limit = {
+# 										has_country_modifier = uach_escalation_governor_3
+# 									}
+# 									remove_country_modifier = uach_escalation_governor_3
+# 									add_country_modifier ={ 
+# 										name = uach_escalation_governor_4
+# 										duration = 3650 }
+# 									}
+# 								every_country = {
+# 									limit = {
+# 										has_country_modifier = uach_escalation_prince_3
+# 									}
+# 									remove_country_modifier = uach_escalation_prince_3
+# 									add_country_modifier ={ 
+# 										name = uach_escalation_prince_4
+# 										duration = 3650 }
+# 									}	
+# 								every_country = {
+# 									limit = {
+# 										AND = {has_government_reform = uach_governor
+# 												NOT = {has_country_modifier = uach_escalation_governor_3}		
+# 											}
+# 										}
+# 										add_country_modifier ={ 
+# 											name = uach_escalation_governor_4
+# 											duration = 3650 }
+# 									}
+# 								every_country = {
+# 									limit = {
+# 										AND = {has_government_reform = uach_prince
+# 												NOT = {has_country_modifier = uach_escalation_prince_3}		
+# 											}
+# 										}
+# 										add_country_modifier ={ 
+# 											name = uach_escalation_prince_4
+# 											duration = 3650 }
+# 										}	
+# 								change_variable = {
+# 										which = uach_escalation_level
+# 										value = 1
+									
+# 									}		
+# 							}
+							
+						
+
+					
+							
+# 						}}
+	
+	

@@ -1,0 +1,146 @@
+transfer_subjects_as_governors = {	
+	$FROM$ = {
+		every_subject_country = {
+			create_subject = {
+				subject_type = governor
+				who = $TO$
+			}
+		}
+		create_subject = {
+			subject_type = governor
+			who = $TO$
+		}
+	}
+}
+
+uach_return_to_civil_war = {
+	#TODO
+}
+
+demote_to_prince = {
+	#TODO
+}
+
+uach_promote_to_prince_effect = {
+	#TODO
+}
+
+uach_isf_side = {
+	ISF = {
+		every_ally = {
+			set_country_flag = uach_isf_side_pre_war
+		}
+		set_country_flag = uach_isf_side_pre_war
+	}
+}
+
+uach_add_random_development = {
+	for = {
+		amount = $AMOUNT$
+		effect = "
+			random_list = {
+				33 = {
+					add_base_tax = $VALUE$
+				}
+				33 = {
+					add_base_production = $VALUE$
+				}
+				33 = {
+					add_base_manpower = $VALUE$
+				}
+			}
+		"
+	}
+}
+
+uach_remove_half_year_mana = {
+	
+	export_to_variable = {
+		value = trigger_value:monthly_adm
+		which = uach_enemies_adm
+	}
+
+	multiply_variable = {
+		which = uach_enemies_adm
+		value = -6
+	}
+
+	export_to_variable = {
+		value = trigger_value:monthly_dip
+		which = uach_enemies_dip
+	}
+	
+	if = {
+		limit = {
+			check_variable = {
+				which = uach_enemies_dip
+				value = 0 
+			}
+		}
+		multiply_variable = {
+			which = uach_enemies_dip
+			value = -6
+		}
+	}	
+
+	export_to_variable = {
+		value = trigger_value:monthly_mil
+		which = uach_enemies_mil
+	}
+
+	multiply_variable = {
+		which = uach_enemies_mil
+		value = -6
+	}
+
+	add_adm_power = uach_enemies_adm	
+	add_dip_power = uach_enemies_dip
+	add_mil_power = uach_enemies_mil
+}
+
+uach_add_random_mana = { 
+	random_list = {
+		33 = {
+			add_adm_power = $VALUE$
+		}
+		33 = {
+			add_dip_power = $VALUE$
+		}
+		33 = {
+			add_mil_power = $VALUE$
+		}
+	}
+}
+
+on_abdu_sa_id_rebellion = {
+	454 = {
+		remove_province_modifier = abdu_said_mirza_married
+	}
+}
+
+she_may_flee = {
+	#TODO
+	random_list = {
+		20 = {
+			country_event = {
+				id = UaCH.37
+			}
+		}
+		# TODO decrease the chance of her fleeing to anouther country each time.
+		80 = {
+			random_country = {
+				limit = {
+					has_country_flag = uach_second_succession_crisis_war_flag
+				}
+				capital_scope = {
+					set_province_flag = uach_gawhar_shad_province
+				}
+			}
+			ROOT = {
+				every_province = {
+					clr_province_flag = uach_gawhar_shad_province
+				}
+			}
+		}
+	}
+}

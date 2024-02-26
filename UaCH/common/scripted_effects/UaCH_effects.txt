@@ -1,0 +1,2138 @@
+init_start_princes = { 
+    TIM = { save_global_event_target_as = timurids_prince1 }
+    TRS = { save_global_event_target_as = timurids_prince2 }
+    KHO = { save_global_event_target_as = timurids_prince3 }
+    QOM = { save_global_event_target_as = timurids_prince4 }
+    AFG = { save_global_event_target_as = timurids_prince5 }
+    FRS = { save_global_event_target_as = timurids_prince6 }
+    BLK = { save_global_event_target_as = timurids_prince7 }
+    KHU = { save_global_event_target_as = timurids_prince8 }
+}
+
+init_start_governors = {
+    ISF = { save_global_event_target_as = timurids_governor1 }  
+    LRI = { save_global_event_target_as = timurids_governor2 }  
+    YZD = { save_global_event_target_as = timurids_governor3 }  
+    KRM = { save_global_event_target_as = timurids_governor4 }  
+    KHI = { save_global_event_target_as = timurids_governor5 }  
+    SIS = { save_global_event_target_as = timurids_governor6 }  
+    LRE = { save_global_event_target_as = timurids_governor7 }  
+}
+
+shuffle_set_prince = {
+    if = {
+        limit = { has_saved_global_event_target = timurids_$target_prince$ }
+        event_target:timurids_$target_prince$ = {
+            save_global_event_target_as = timurids_$empty_slot$
+            clear_global_event_target = timurids_$target_prince$
+        }
+    } 
+}
+
+shuffle_princes = {
+    # I am so sorry.
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince1 } }
+        clear_global_event_target = timurids_prince1
+        shuffle_set_prince = { target_prince = prince2 empty_slot = prince1 }
+        shuffle_set_prince = { target_prince = prince3 empty_slot = prince2 }
+        shuffle_set_prince = { target_prince = prince4 empty_slot = prince3 }
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince2 } }
+        clear_global_event_target = timurids_prince2
+        shuffle_set_prince = { target_prince = prince3 empty_slot = prince2 }
+        shuffle_set_prince = { target_prince = prince4 empty_slot = prince3 }
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince3 } }
+        clear_global_event_target = timurids_prince3
+        shuffle_set_prince = { target_prince = prince4 empty_slot = prince3 }
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince4 } }
+        clear_global_event_target = timurids_prince4
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince5 } }
+        clear_global_event_target = timurids_prince5
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince6 } }
+        clear_global_event_target = timurids_prince6
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince7 } }
+        clear_global_event_target = timurids_prince7
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince8 } }
+        clear_global_event_target = timurids_prince8
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince9 } }
+        clear_global_event_target = timurids_prince9
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince10 } }
+        clear_global_event_target = timurids_prince10
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince11 } }
+        clear_global_event_target = timurids_prince11
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince12 } }
+        clear_global_event_target = timurids_prince12
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince13 } }
+        clear_global_event_target = timurids_prince13
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince14 } }
+        clear_global_event_target = timurids_prince14
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince15 } }
+        clear_global_event_target = timurids_prince15
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince16 } }
+        clear_global_event_target = timurids_prince16
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince17 } }
+        clear_global_event_target = timurids_prince17
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince18 } }
+        clear_global_event_target = timurids_prince18
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince19 } }
+        clear_global_event_target = timurids_prince19
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_prince20 } }
+        clear_global_event_target = timurids_prince20
+    }
+}
+
+shuffle_princes = {
+    # I am so sorry.
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince1 } }
+        clear_global_event_target = timurids_prince1
+        shuffle_set_prince = { target_prince = prince2 empty_slot = prince1 }
+        shuffle_set_prince = { target_prince = prince3 empty_slot = prince2 }
+        shuffle_set_prince = { target_prince = prince4 empty_slot = prince3 }
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince2 } }
+        clear_global_event_target = timurids_prince2
+        shuffle_set_prince = { target_prince = prince3 empty_slot = prince2 }
+        shuffle_set_prince = { target_prince = prince4 empty_slot = prince3 }
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince3 } }
+        clear_global_event_target = timurids_prince3
+        shuffle_set_prince = { target_prince = prince4 empty_slot = prince3 }
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince4 } }
+        clear_global_event_target = timurids_prince4
+        shuffle_set_prince = { target_prince = prince5 empty_slot = prince4 }
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince5 } }
+        clear_global_event_target = timurids_prince5
+        shuffle_set_prince = { target_prince = prince6 empty_slot = prince5 }
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince6 } }
+        clear_global_event_target = timurids_prince6
+        shuffle_set_prince = { target_prince = prince7 empty_slot = prince6 }
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince7 } }
+        clear_global_event_target = timurids_prince7
+        shuffle_set_prince = { target_prince = prince8 empty_slot = prince7 }
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince8 } }
+        clear_global_event_target = timurids_prince8
+        shuffle_set_prince = { target_prince = prince9 empty_slot = prince8 }
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince9 } }
+        clear_global_event_target = timurids_prince9
+        shuffle_set_prince = { target_prince = prince10 empty_slot = prince9 }
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince10 } }
+        clear_global_event_target = timurids_prince10
+        shuffle_set_prince = { target_prince = prince11 empty_slot = prince10 }
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince11 } }
+        clear_global_event_target = timurids_prince11
+        shuffle_set_prince = { target_prince = prince12 empty_slot = prince11 }
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince12 } }
+        clear_global_event_target = timurids_prince12
+        shuffle_set_prince = { target_prince = prince13 empty_slot = prince12 }
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince13 } }
+        clear_global_event_target = timurids_prince13
+        shuffle_set_prince = { target_prince = prince14 empty_slot = prince13 }
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince14 } }
+        clear_global_event_target = timurids_prince14
+        shuffle_set_prince = { target_prince = prince15 empty_slot = prince14 }
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince15 } }
+        clear_global_event_target = timurids_prince15
+        shuffle_set_prince = { target_prince = prince16 empty_slot = prince15 }
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince16 } }
+        clear_global_event_target = timurids_prince16
+        shuffle_set_prince = { target_prince = prince17 empty_slot = prince16 }
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince17 } }
+        clear_global_event_target = timurids_prince17
+        shuffle_set_prince = { target_prince = prince18 empty_slot = prince17 }
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince18 } }
+        clear_global_event_target = timurids_prince18
+        shuffle_set_prince = { target_prince = prince19 empty_slot = prince18 }
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince19 } }
+        clear_global_event_target = timurids_prince19
+        shuffle_set_prince = { target_prince = prince20 empty_slot = prince19 }
+    }
+    if = {
+        limit = { FROM = { tag = event_target:timurids_prince20 } }
+        clear_global_event_target = timurids_prince20
+    }
+}
+
+shuffle_governors = {
+    # I am so sorry, Part 2.
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor1 } }
+        clear_global_event_target = timurids_governor1
+        shuffle_set_prince = { target_prince = governor2 empty_slot = governor1 }
+        shuffle_set_prince = { target_prince = governor3 empty_slot = governor2 }
+        shuffle_set_prince = { target_prince = governor4 empty_slot = governor3 }
+        shuffle_set_prince = { target_prince = governor5 empty_slot = governor4 }
+        shuffle_set_prince = { target_prince = governor6 empty_slot = governor5 }
+        shuffle_set_prince = { target_prince = governor7 empty_slot = governor6 }
+        shuffle_set_prince = { target_prince = governor8 empty_slot = governor7 }
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor2 } }
+        clear_global_event_target = timurids_governor2
+        shuffle_set_prince = { target_prince = governor3 empty_slot = governor2 }
+        shuffle_set_prince = { target_prince = governor4 empty_slot = governor3 }
+        shuffle_set_prince = { target_prince = governor5 empty_slot = governor4 }
+        shuffle_set_prince = { target_prince = governor6 empty_slot = governor5 }
+        shuffle_set_prince = { target_prince = governor7 empty_slot = governor6 }
+        shuffle_set_prince = { target_prince = governor8 empty_slot = governor7 }
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor3 } }
+        clear_global_event_target = timurids_governor3
+        shuffle_set_prince = { target_prince = governor4 empty_slot = governor3 }
+        shuffle_set_prince = { target_prince = governor5 empty_slot = governor4 }
+        shuffle_set_prince = { target_prince = governor6 empty_slot = governor5 }
+        shuffle_set_prince = { target_prince = governor7 empty_slot = governor6 }
+        shuffle_set_prince = { target_prince = governor8 empty_slot = governor7 }
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor4 } }
+        clear_global_event_target = timurids_governor4
+        shuffle_set_prince = { target_prince = governor5 empty_slot = governor4 }
+        shuffle_set_prince = { target_prince = governor6 empty_slot = governor5 }
+        shuffle_set_prince = { target_prince = governor7 empty_slot = governor6 }
+        shuffle_set_prince = { target_prince = governor8 empty_slot = governor7 }
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor5 } }
+        clear_global_event_target = timurids_governor5
+        shuffle_set_prince = { target_prince = governor6 empty_slot = governor5 }
+        shuffle_set_prince = { target_prince = governor7 empty_slot = governor6 }
+        shuffle_set_prince = { target_prince = governor8 empty_slot = governor7 }
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor6 } }
+        clear_global_event_target = timurids_governor6
+        shuffle_set_prince = { target_prince = governor7 empty_slot = governor6 }
+        shuffle_set_prince = { target_prince = governor8 empty_slot = governor7 }
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor7 } }
+        clear_global_event_target = timurids_governor7
+        shuffle_set_prince = { target_prince = governor8 empty_slot = governor7 }
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor8 } }
+        clear_global_event_target = timurids_governor8
+        shuffle_set_prince = { target_prince = governor9 empty_slot = governor8 }
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor9 } }
+        clear_global_event_target = timurids_governor9
+        shuffle_set_prince = { target_prince = governor10 empty_slot = governor9 }
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor10 } }
+        clear_global_event_target = timurids_governor10
+        shuffle_set_prince = { target_prince = governor11 empty_slot = governor10 }
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor11 } }
+        clear_global_event_target = timurids_governor11
+        shuffle_set_prince = { target_prince = governor12 empty_slot = governor11 }
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor12 } }
+        clear_global_event_target = timurids_governor12
+        shuffle_set_prince = { target_prince = governor13 empty_slot = governor12 }
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor13 } }
+        clear_global_event_target = timurids_governor13
+        shuffle_set_prince = { target_prince = governor14 empty_slot = governor13 }
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor14 } }
+        clear_global_event_target = timurids_governor14
+        shuffle_set_prince = { target_prince = governor15 empty_slot = governor14 }
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor15 } }
+        clear_global_event_target = timurids_governor15
+        shuffle_set_prince = { target_prince = governor16 empty_slot = governor15 }
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor16 } }
+        clear_global_event_target = timurids_governor16
+        shuffle_set_prince = { target_prince = governor17 empty_slot = governor16 }
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor17 } }
+        clear_global_event_target = timurids_governor17
+        shuffle_set_prince = { target_prince = governor18 empty_slot = governor17 }
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor18 } }
+        clear_global_event_target = timurids_governor18
+        shuffle_set_prince = { target_prince = governor19 empty_slot = governor18 }
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor19 } }
+        clear_global_event_target = timurids_governor19
+        shuffle_set_prince = { target_prince = governor20 empty_slot = governor19 }
+    }
+    if = {
+        limit = { $scope$ = { tag = event_target:timurids_governor20 } }
+        clear_global_event_target = timurids_governor20
+    }
+}
+
+# ROOT = Tag made into a prince
+make_tag_prince = {
+    add_government_reform = uach_prince
+    if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince1 } }
+        save_global_event_target_as = timurids_prince1
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince2 } }
+        save_global_event_target_as = timurids_prince2      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince3 } }
+        save_global_event_target_as = timurids_prince3      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince4 } }
+        save_global_event_target_as = timurids_prince4      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince5 } }
+        save_global_event_target_as = timurids_prince5     
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince6 } }
+        save_global_event_target_as = timurids_prince6     
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince7 } }
+        save_global_event_target_as = timurids_prince7      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince8 } }
+        save_global_event_target_as = timurids_prince8     
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince9 } }
+        save_global_event_target_as = timurids_prince9      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince10 } }
+        save_global_event_target_as = timurids_prince10      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince11 } }
+        save_global_event_target_as = timurids_prince11      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince12 } }
+        save_global_event_target_as = timurids_prince12      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince13 } }
+        save_global_event_target_as = timurids_prince13      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince14 } }
+        save_global_event_target_as = timurids_prince14      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince15 } }
+        save_global_event_target_as = timurids_prince15      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince16 } }
+        save_global_event_target_as = timurids_prince16      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince17 } }
+        save_global_event_target_as = timurids_prince17      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince18 } }
+        save_global_event_target_as = timurids_prince18      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince19 } }
+        save_global_event_target_as = timurids_prince19      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_prince20 } }
+        save_global_event_target_as = timurids_prince20      
+    }
+    uach_add_timurid_faction_if_not_has = yes
+}
+
+# ROOT = Tag made into a governor
+make_tag_governor = {
+    add_government_reform = uach_governor
+    if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor1 } }
+        save_global_event_target_as = timurids_governor1
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor2 } }
+        save_global_event_target_as = timurids_governor2      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor3 } }
+        save_global_event_target_as = timurids_governor3      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor4 } }
+        save_global_event_target_as = timurids_governor4      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor5 } }
+        save_global_event_target_as = timurids_governor5     
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor6 } }
+        save_global_event_target_as = timurids_governor6     
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor7 } }
+        save_global_event_target_as = timurids_governor7      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor8 } }
+        save_global_event_target_as = timurids_governor8     
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor9 } }
+        save_global_event_target_as = timurids_governor9      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor10 } }
+        save_global_event_target_as = timurids_governor10      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor11 } }
+        save_global_event_target_as = timurids_governor11      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor12 } }
+        save_global_event_target_as = timurids_governor12      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor13 } }
+        save_global_event_target_as = timurids_governor13      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor14 } }
+        save_global_event_target_as = timurids_governor14      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor15 } }
+        save_global_event_target_as = timurids_governor15      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor16 } }
+        save_global_event_target_as = timurids_governor16      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor17 } }
+        save_global_event_target_as = timurids_governor17      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor18 } }
+        save_global_event_target_as = timurids_governor18      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor19 } }
+        save_global_event_target_as = timurids_governor19      
+    }
+    else_if = {
+        limit = { NOT = { has_saved_global_event_target = timurids_governor20 } }
+        save_global_event_target_as = timurids_governor20      
+    }
+    uach_add_timurid_faction_if_not_has = yes
+}
+
+uach_add_timurid_faction_if_not_has = {
+    # run in a country scope
+    if = {
+        limit = {
+            NOT = {
+                has_faction = timurid_faction
+            }
+        }
+        add_faction = timurid_faction
+    }
+}
+
+# Adds governor to the war
+uach_add_governor_to_war = {
+    # Every single independent prince declares war on this mf
+    every_country = {
+        limit = {
+            AND = {
+                is_prince = yes
+                NOT = { is_subject = yes }
+            }
+        }
+
+        declare_war_with_cb = {
+            casus_belli = cb_enforce_loyalty_governor
+            who = PREV
+        }
+    }
+
+    # Then every single independent governor without the uach_still_considering flag declares war on this mf
+    every_country = {
+        limit = {
+            AND = {
+                is_governor = yes
+                NOT = { is_subject = yes }
+                NOT = { has_country_flag = uach_still_considering }
+            }
+        }
+
+        declare_war_with_cb = {
+            casus_belli = cb_enforce_loyalty_governor
+            who = PREV
+        }
+    }
+
+    go_to_war_with_resp_interlopers = yes
+}
+
+# New tag to the war, send it to war with interlopers
+go_to_war_with_resp_interlopers = {
+    every_owned_province = {
+        # we check for every owned province
+        # Which PG it is in
+        # And set region_int accordingly in the helper effect
+        if = {
+            limit = {
+                province_group = uach_tr_0
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 0 region_int_inc = 1 } }
+        } else_if = {
+            limit = {
+                province_group = uach_tr_1
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 1 region_int_inc = 2 } }
+        } else_if = {
+            limit = {
+                province_group = uach_tr_2
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 2 region_int_inc = 3 } }
+        } else_if = {
+            limit = {
+                province_group = uach_tr_3
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 3 region_int_inc = 4 } }
+        } else_if = {
+            limit = {
+                province_group = uach_tr_4
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 4 region_int_inc = 5 } }
+        } else_if = {
+            limit = {
+                province_group = uach_tr_5
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 5 region_int_inc = 6 } }
+        } else_if = {
+            limit = {
+                province_group = uach_tr_6
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 6 region_int_inc = 7 } }
+        } else_if = {
+            limit = {
+                province_group = uach_tr_7
+            }
+            PREV = { attack_interlopers_at_region_int = { region_int = 7 region_int_inc = 8 } }
+        }
+    }
+}
+
+attack_interlopers_at_region_int = { # region_int region_int_inc
+    # Should be run in a country scope
+    every_country = {
+        limit = {
+            AND = {
+                is_interloper = yes
+                OR = {
+                    has_country_flag = uach_big_money_flag
+                    AND = {
+                        check_variable = {
+                            which = uach_interloper_region
+                            value = $region_int$
+                        }
+                        NOT = {
+                            check_variable = {
+                                which = uach_interloper_region
+                                value = $region_int_inc$
+                            }
+                        }
+                    }
+                }
+                NOT = {
+                    OR = {
+                        defensive_war_with = PREV
+                        offensive_war_with = PREV
+                    }
+                }
+            }
+        }
+        declare_war_with_cb = {
+            casus_belli = cb_uach_interloper_conquest
+            who = PREV
+        }
+    }
+}
+
+# Adds prince to the war
+uach_add_prince_to_war = {
+    # Every single independent prince declares war on this mf
+    every_country = {
+        limit = {
+            AND = {
+                is_prince = yes
+                NOT = { is_subject = yes }
+            }
+        }
+
+        declare_war_with_cb = {
+            casus_belli = cb_challange_claimant
+            who = PREV
+        }
+    }
+
+    # Then declare war on every independent governor without the uach_still_considering flag
+    every_country = {
+        limit = {
+            AND = {
+                is_governor = yes
+                NOT = { is_subject = yes }
+                NOT = { has_country_flag = uach_still_considering }
+            }
+        }
+
+        PREV = {
+            declare_war_with_cb = {
+                casus_belli = cb_enforce_loyalty_governor
+                who = PREV
+            }
+        }
+    }
+
+    go_to_war_with_resp_interlopers = yes
+}
+
+# Adds interloper to the full scope of the war, if they are going for the big money
+uach_add_interloper_to_war_fully = {
+    every_country = {
+        limit = {
+            AND = {
+                OR = {
+                    is_prince = yes
+                    is_interloper = yes
+                    is_governor = yes
+                }
+                NOT = { is_subject = yes }
+                NOT = {
+                    OR = {
+                        defensive_war_with = PREV
+                        offensive_war_with = PREV
+                    }
+                }
+            }
+        }
+
+        declare_war_with_cb = {
+            casus_belli = cb_uach_interloper_conquest
+            who = PREV
+        }
+    }
+}
+
+shuffle_interlopers = {
+    shuffle_rint_interloper = { i = 0 }
+    shuffle_rint_interloper = { i = 1 }
+    shuffle_rint_interloper = { i = 2 }
+    shuffle_rint_interloper = { i = 3 }
+    shuffle_rint_interloper = { i = 4 }
+    shuffle_rint_interloper = { i = 5 }
+    shuffle_rint_interloper = { i = 6 }
+    shuffle_rint_interloper = { i = 7 }
+}
+
+shuffle_rint_interloper = { #i
+    if = {
+        limit = { NOT = { has_saved_global_event_target = uach_int_$i$_0 } }
+        if = {
+            limit = { has_saved_global_event_target = uach_int_$i$_1 }
+            event_target:uach_int_$i$_1 = {
+                save_global_event_target_as = uach_int_$i$_0
+            }
+            clear_global_event_target = uach_int_$i$_1
+        }
+        if = {
+            limit = { has_saved_global_event_target = uach_int_$i$_2 }
+            event_target:uach_int_$i$_2 = {
+                save_global_event_target_as = uach_int_$i$_1
+            }
+            clear_global_event_target = uach_int_$i$_2
+        }
+    } else_if = {
+        limit = { NOT = { has_saved_global_event_target = uach_int_$i$_1 } }
+        if = {
+            limit = { has_saved_global_event_target = uach_int_$i$_2 }
+            event_target:uach_int_$i$_2 = {
+                save_global_event_target_as = uach_int_$i$_1
+            }
+            clear_global_event_target = uach_int_$i$_2
+        }
+    }
+}
+
+# Creates an interloper
+# This effect should be run in a country scope, and expects a numeric input for the thematic region parameter $region_int$
+# Thematic regions:
+#   0: ajam
+#   1: fars
+#   2: khorasan
+#   3: herat
+#   4: afghanistan
+#   5: marw
+#   6: fergana
+#   7: samarkand
+uach_create_interloper = { # region_int
+    # Interlopers are perfectly allowed to be in other wars, and other people can always declare on them
+    # The only condition to be an interloper is to border one of the interloper regions or already own a province in it
+    # use the trigger: uach_valid_interloper_0 - 7 for the 7 regions
+
+    # Add interloper to the war:
+    # declare war on any prince / governor holding a province in the region
+    # This should (ideally) bring them to war with any overlords of subjects
+    # Then in the peace deal on_action we need to reevaluate whether or not they need to go to war with anyone else
+    # :)
+
+    # The assumption here is the interloper is already checked to be valid for the region_int
+    # If you call this effect without checking validity, then woe, plague be upon ye
+    set_country_flag = uach_interloper
+    set_variable = {
+        which = uach_interloper_region
+        value = $region_int$
+    }
+
+    # Save event target for UI
+    if = {
+        limit = { NOT = { has_saved_global_event_target = uach_int_$region_int$_0 } }
+        save_global_event_target_as = uach_int_$region_int$_0
+    } else_if = {
+        limit = { NOT = { has_saved_global_event_target = uach_int_$region_int$_1 } }
+        save_global_event_target_as = uach_int_$region_int$_1
+    } else_if = {
+        limit = { NOT = { has_saved_global_event_target = uach_int_$region_int$_2 } }
+        save_global_event_target_as = uach_int_$region_int$_2
+    }
+
+    # Add interloper to the war
+    every_country = {
+        # every prince / gov with a province in the thematic region province group
+        limit = {
+            AND = {
+                OR = {
+                    is_prince = yes
+                    is_governor = yes
+                }
+                any_owned_province = {
+                    province_group = uach_tr_$region_int$
+                }
+            }
+        }
+
+        PREV = {
+            declare_war_with_cb	= {
+                casus_belli = cb_uach_interloper_conquest
+                who = PREV
+            }
+        }
+    }
+
+    # Declare war on any other interloper with same region
+    every_country = {
+        limit = {
+            AND = {
+                has_country_flag = uach_interloper
+                check_variable = {
+                    which = uach_interloper_region
+                    value = $region_int$
+                }
+                NOT = { tag = PREV }
+            }
+        }
+        # This country is definitely an interloper
+        # However, we need to check the region_int properly
+        
+        # This is ugly: create a new variable at that value, add 1 to it, and then check if the old one is greater than it
+        # If it is, then its not actually in the right region
+        set_variable = {
+            which = uach_temp_var_ic
+            value = $region_int$
+        }
+        change_variable = {
+            which = uach_temp_var_ic
+            value = 1
+        }
+
+        if = {
+            limit = {
+                NOT = {
+                    check_variable = {
+                        which = uach_interloper_region
+                        value = uach_temp_var_ic
+                    }
+                }
+            }
+            # Now this is where we actually do the war
+            declare_war_with_cb	= {
+                casus_belli = cb_uach_interloper_conquest
+                who = PREV
+            }
+        }
+    }
+
+    # Declare war on any interloper with the big money flag 
+    every_country = {
+        limit = {
+            AND = {
+                has_country_flag = uach_interloper
+                has_country_flag = uach_big_money_flag
+                NOT = { tag = PREV }
+                NOT = {
+                    OR = {
+                        defensive_war_with = PREV
+                        offensive_war_with = PREV
+                    }
+                }
+            }
+        }
+        declare_war_with_cb	= {
+            casus_belli = cb_uach_interloper_conquest
+            who = PREV
+        }
+    }
+}
+
+# Delete interloper from war
+# This effect should be run in a tag scope
+uach_remove_interloper_from_war = {
+    clr_country_flag = uach_interloper
+    remove_int_et_based_on_var = yes
+    shuffle_interlopers = yes
+
+    # Delete all second crisis wars
+    # Add a 5 year truce with all participants
+    every_country = {
+        limit = {
+            AND = {
+                OR = {
+                    defensive_war_with = PREV
+                    offensive_war_with = PREV
+                }
+                is_part_of_second_crisis = yes
+            }
+        }
+
+        white_peace = PREV
+        add_truce_with = PREV
+    }
+}
+
+remove_int_et_based_on_var = {
+    if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 7
+            }
+        }
+        remove_int_et_at_region_id = { i = 7 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 6
+            }
+        }
+        remove_int_et_at_region_id = { i = 6 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 5
+            }
+        }
+        remove_int_et_at_region_id = { i = 5 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 4
+            }
+        }
+        remove_int_et_at_region_id = { i = 4 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 3
+            }
+        }
+        remove_int_et_at_region_id = { i = 3 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 2
+            }
+        }
+        remove_int_et_at_region_id = { i = 2 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 1
+            }
+        }
+        remove_int_et_at_region_id = { i = 1 }
+    } else = {
+        remove_int_et_at_region_id = { i = 0 }
+    }
+}
+
+remove_int_et_at_region_id = { #i
+    if = {
+        limit  = {
+            event_target:uach_int_$i$_0 = {
+                tag = PREV
+            }
+        }
+        clear_global_event_target = uach_int_$i$_0
+    } else_if = {
+        limit  = {
+            event_target:uach_int_$i$_1 = {
+                tag = PREV
+            }
+        }
+        clear_global_event_target = uach_int_$i$_1
+    } else_if = {
+        limit  = {
+            event_target:uach_int_$i$_2 = {
+                tag = PREV
+            }
+        }
+        clear_global_event_target = uach_int_$i$_2
+    }
+}
+
+# Reclaim Timurs Legacy
+# This assumes youve already checked for the trigger
+uach_reclaim_timurs_legacy_effect = {
+    custom_tooltip = UACH_RTL_EFFECT_TT
+    hidden_effect = {
+        # Add interwar lull flag (enables govt mechanics)
+        set_country_flag = uach_interwar_lull
+
+        # Save old tag as event target
+        save_global_event_target_as = uach_old_timurid_tag
+
+        # Change Tag to TIM
+        change_tag = TIM
+
+        # Integrate all OPM subjects
+        every_subject_country = {
+            limit = {
+                NOT = { num_of_cities = 2 }
+            }
+            PREV = {
+                inherit = PREV
+            }
+        }
+
+        # Grant cores over every single thematic region
+        uach_tr_0 = { add_core = TIM }
+        uach_tr_1 = { add_core = TIM }
+        uach_tr_2 = { add_core = TIM }
+        uach_tr_3 = { add_core = TIM }
+        uach_tr_4 = { add_core = TIM }
+        uach_tr_5 = { add_core = TIM }
+        uach_tr_6 = { add_core = TIM }
+        uach_tr_7 = { add_core = TIM }
+        
+        # Remove disaster from everyone
+        every_country = {
+            limit = {
+                has_disaster = timurid_succession_crisis
+            }
+            end_disaster = timurid_succession_crisis
+        }
+
+        # Delete disaster
+        every_country = {
+            limit = {
+                has_disaster = repeatable_timurid_succession_crisis
+            }
+            end_disaster = repeatable_timurid_succession_crisis
+        }
+        
+        # Some cleanup
+        every_country = {
+            limit = { has_country_flag = uach_second_succession_crisis_war_flag }
+            clr_country_flag = uach_second_succession_crisis_war_flag
+        }
+
+		clr_global_flag = uach_succession_crisis_started
+
+        # Actually enable the govt reform mechanics
+        #remove_government_reform = uach_prince # stupid workaround for stupid paradox being annoying
+        add_government_reform = uach_interwar_timurid_state # stupid workaround for stupid paradox being annoying
+        set_country_flag = uach_interwar_lull
+        regenerate_government_mechanics = yes
+        uach_add_timurid_faction_if_not_has = yes
+
+        # Informational event
+        country_event = {
+            id = UaCH.99
+        }
+
+        # country_event = {
+        #     id = UaCH.109
+        #     days = 1
+        # }
+    }
+}
+
+# End Timurs Legacy
+uach_end_timurs_legacy_effect = {
+    custom_tooltip = UACH_ETL_EFFECT_TOOLTIP
+    add_country_modifier = {
+        name = uach_slain_the_crimson_horse
+        duration = -1
+    }
+    hidden_effect = {
+        # clr global flag
+		clr_global_flag = uach_succession_crisis_started
+
+        # Remove all timurid cores from the map
+        # Do herat too
+        every_province = {
+            limit = {
+                is_core = TIM
+            }
+            remove_core = TIM
+        }
+
+        every_province = {
+            limit = {
+                is_core = HER
+                NOT = { owner = { tag = HER } }
+            }
+            remove_core = HER
+        }
+
+        # If you are an interloper, cede all provinces in thematic region
+        if = {
+            limit = {
+                is_interloper = yes
+            }
+            uach_cede_thematic_region = yes
+        }
+
+        # interloper cleanup p1
+        every_country = {
+            limit = {
+                is_interloper = yes
+            }
+
+            country_event = {
+                id = UaCH.77
+            }
+        }
+
+        # Remove disaster from everyone
+        every_country = {
+            limit = {
+                has_disaster = timurid_succession_crisis
+            }
+            end_disaster = timurid_succession_crisis
+        }
+
+        # Delete all sucession crisis wars
+        every_country = {
+            limit = {
+                is_part_of_second_crisis = yes
+            }
+            every_country = {
+                limit = {
+                    is_part_of_second_crisis = yes
+                    war_with = PREV
+                }
+                white_peace = PREV
+            }
+        }
+
+        # Delete disaster
+        every_country = {
+            limit = {
+                has_disaster = timurid_succession_crisis
+            }
+            end_disaster = timurid_succession_crisis
+        }
+
+        # Delete disaster
+        every_country = {
+            limit = {
+                has_disaster = repeatable_timurid_succession_crisis
+            }
+            end_disaster = repeatable_timurid_succession_crisis
+        }
+
+        # interloper cleanup p2
+        every_country = {
+            limit = {
+                is_interloper = yes
+            }
+            clr_country_flag = uach_interloper
+            remove_int_et_based_on_var = yes
+            shuffle_interlopers = yes
+        }
+
+        # Cleanup big money flag
+        every_country = {
+            limit = {
+                has_country_flag = uach_big_money_flag
+            }
+            clr_country_flag = uach_big_money_flag
+        }
+
+        # Free everyone's emirates (governor subject type in code)
+        every_country = {
+            limit = {
+                AND = {
+                    NOT = {
+                        tag = PREV
+                    }
+                    has_subject_of_type = governor
+                }
+            }
+            # Go to their emirate subjects
+            every_subject_country = {
+                limit = {
+                    is_subject_of_type = governor
+                }
+                # and free em
+                grant_independence = yes
+            }
+        }
+
+        # Turn emirates into vassals
+        every_subject_country = {
+            set_country_flag = uach_free_em_then_vassalize
+        }
+
+        release_all_subjects = yes
+
+        every_country = {
+            limit = {
+                has_country_flag = uach_free_em_then_vassalize
+            }
+            PREV = {
+                create_subject = {
+					subject_type = vassal
+					subject = PREV
+				}
+            }
+        }
+
+        # All princes and governors become simple iqtas, except us
+        every_country = {
+            limit = {
+                AND = {
+                    OR = {
+                        is_prince = yes
+                        is_governor = yes
+                    }
+                    NOT = { tag = ROOT }
+                }
+            }
+            if = {
+                limit = {
+                    is_prince = yes
+                }
+                remove_government_reform = uach_prince
+            }
+            if = {
+                limit = {
+                    is_governor = yes
+                }
+                remove_government_reform = uach_governor
+            }
+            set_country_flag = uach_was_in_succession_crisis_for_etl_effect	
+        }
+
+        # Demand subjugation
+        save_global_event_target_as = uach_timurid_legacy_ender
+        every_country = {
+            limit = {
+                AND = {
+                    has_country_flag = uach_was_in_succession_crisis_for_etl_effect
+                    NOT = { is_subject = yes }
+                }
+            }
+            country_event = {
+                id = UaCH.78
+            }
+        }
+
+        # cleanup
+        every_country = {
+            limit = { has_country_flag = uach_was_in_succession_crisis_for_etl_effect }
+            clr_country_flag = uach_was_in_succession_crisis_for_etl_effect
+        }
+
+        # event to remove prince gov reform from yourself
+        if = {
+            limit = {
+                is_governor = yes
+            }
+            country_event = {
+                id = UaCH.81
+                days = 1
+            }
+            set_country_flag = uach_ignore_me_in_ceasefire
+        }
+    }
+    
+    country_event = {
+        id = UaCH.104
+    }
+}
+
+# cede thematic region to interloper
+uach_cede_thematic_region = {
+    # must be run in country scope
+    if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 7
+            }
+        }
+        uach_ctrh = { i = 7 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 6
+            }
+        }
+        uach_ctrh = { i = 6 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 5
+            }
+        }
+        uach_ctrh = { i = 5 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 4
+            }
+        }
+        uach_ctrh = { i = 4 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 3
+            }
+        }
+        uach_ctrh = { i = 3 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 2
+            }
+        }
+        uach_ctrh = { i = 2 }
+    } else_if = {
+        limit = {
+            check_variable = {
+                which = uach_interloper_region
+                value = 1
+            }
+        }
+        uach_ctrh = { i = 1 }
+    } else = {
+        uach_ctrh = { i = 0 }
+    }
+}
+
+# helper effect
+# dont use
+uach_ctrh = { # i
+    every_province = {
+        limit = {
+            AND = { 
+                province_group = uach_tr_$i$
+                owner = {
+                    is_part_of_second_crisis = yes
+                }
+            }
+        }
+        cede_province = PREV
+    }
+}
+
+# Flee to india
+uach_flee_to_india_effect = {
+    # no longer prince / gov just iqta
+    #add_government_reform = iqta
+    
+    # Cede a province in india
+    random_province = {
+        limit = {
+            province_group = uach_escape_to_india_pg
+        }
+        cede_province = PREV
+        add_core = PREV
+        set_province_flag = uach_ignore_me_next_flag
+    }
+
+    # End disaster
+    if = {
+        limit = {
+            has_disaster = timurid_succession_crisis
+        }
+        end_disaster = timurid_succession_crisis
+    }
+    if = {
+        limit = {
+            has_disaster = repeatable_timurid_succession_crisis
+        }
+        end_disaster = repeatable_timurid_succession_crisis
+    }
+
+    # Every owned province, occupied, ceded to occupier
+    every_owned_province = {
+        limit = {
+            AND = {
+                NOT = { has_province_flag = uach_ignore_me_next_flag }
+                NOT = { controlled_by = PREV }
+                NOT = { controlled_by = REB }
+            }
+        }
+        controller = {
+            PREV = {
+                cede_province = PREV
+            }
+        }
+    }
+
+    # Every subject goes free, and joins the war
+    every_subject_country = {
+        set_country_flag = uach_fti_add_to_cw_flag
+    }
+
+    release_all_subjects = yes
+
+    every_country = {
+        limit = {
+            has_country_flag = uach_fti_add_to_cw_flag
+        }
+        if = {
+            limit = { is_prince = yes }
+            uach_add_prince_to_war = yes
+        }
+        else_if = {
+            limit = { is_governor = yes }
+            uach_add_governor_to_war = yes
+        }
+        clr_country_flag = uach_fti_add_to_cw_flag
+    }
+
+    # every owned province, unoccupied, spits out opm
+    every_owned_province = {
+        limit = {
+            NOT = { has_province_flag = uach_ignore_me_next_flag }
+        }
+        uach_spawn_opm_bt = yes
+    }
+
+    # Any remaining owned provinces get ceded to a random neighbor
+    every_owned_province = {
+        limit = {
+            NOT = { has_province_flag = uach_ignore_me_next_flag }
+        }
+        random_neighbor_province = {
+            limit = {
+                owner = {
+                    NOT = {
+                        tag = ROOT
+                    }
+                }
+            }
+            owner = {
+                save_event_target_as = uach_temp_et_flee
+            }
+        }
+        cede_province = event_target:uach_temp_et_flee
+    }
+
+    # Remove from Civil War (delete all wars)
+    every_country = {
+        limit = {
+            OR = {
+                defensive_war_with = PREV
+                offensive_war_with = PREV
+            }
+        }
+        white_peace = PREV
+        add_truce_with = PREV
+    }
+
+    # End disaster
+    end_disaster = timurid_succession_crisis
+
+    # delete all units
+    kill_units = { who = THIS }
+
+    # spawn new units in the india province
+    # 20 inf, 4 cav
+    every_province = {
+        limit = { has_province_flag = uach_ignore_me_next_flag }
+        PREV = {
+            #infantry = PREV
+            for = {
+                amount = 20
+                effect = "
+                infantry = PREV
+                "
+            }
+            for = {
+                amount = 4
+                effect = "
+                cavalry = PREV
+                "
+            }
+        }
+    }
+
+    
+    # Popup some event talking about conquering india
+    country_event = {
+        id = UaCH.79
+    }
+
+    # cleanup
+    every_province = {
+        limit = { has_province_flag = uach_ignore_me_next_flag }
+        clr_province_flag = uach_ignore_me_next_flag
+    }
+
+    # event to remove prince gov reform from yourself
+    if = {
+        limit = {
+            is_governor = yes
+        }
+        country_event = {
+            id = UaCH.81
+            days = 1
+        }
+        set_country_flag = uach_ignore_me_in_ceasefire
+    } else = {
+        country_event = {
+            id = UaCH.82
+            days = 1
+        }
+        set_country_flag = uach_ignore_me_in_ceasefire
+    }
+}
+
+uach_elevate_to_prince_effect = {
+    add_stability = -2
+    add_legitimacy = -50
+    custom_tooltip = UACH_REPLACE_TIMURID_NATION_TT
+    hidden_effect = {
+        define_ruler = {
+            dynasty = "Timurid"
+        }
+        if = {
+            limit = {
+                has_heir = yes
+            }
+            remove_heir = {}
+        }
+        define_heir = {
+            dynasty = "Timurid"
+        }
+        make_tag_prince = yes
+        shuffle_governors = { scope = ROOT }
+    }
+}
+
+# decreases persianization towards 0
+uach_add_or_subtract_persianization = { # value
+    if = {
+        limit = {
+            # Above positive value
+            has_government_power = {
+                mechanic_type = uach_reform_state_mechanic
+                power_type = uach_persianization
+                value = $value$
+            }
+        }
+        add_government_power = {
+            mechanic_type = uach_reform_state_mechanic
+            power_type = uach_persianization
+            value = -$value$
+        }
+    } else_if = {
+        limit = {
+            # below negative value
+            NOT = {
+                has_government_power = {
+                    mechanic_type = uach_reform_state_mechanic
+                    power_type = uach_persianization
+                    value = -$value$
+                }
+            }
+        }
+        add_government_power = {
+            mechanic_type = uach_reform_state_mechanic
+            power_type = uach_persianization
+            value = $value$
+        }
+    } else = {
+        set_government_power = {
+            mechanic_type = uach_reform_state_mechanic
+            power_type = uach_persianization
+            value = 0
+        }
+    }
+}
+
+# increases persianization away from 0
+uach_outward_persianization = { # value
+    if = {
+        limit = {
+            # Above positive value
+            has_government_power = {
+                mechanic_type = uach_reform_state_mechanic
+                power_type = uach_persianization
+                value = $value$
+            }
+        }
+        add_government_power = {
+            mechanic_type = uach_reform_state_mechanic
+            power_type = uach_persianization
+            value = $value$
+        }
+    } else_if = {
+        limit = {
+            # below negative value
+            NOT = {
+                has_government_power = {
+                    mechanic_type = uach_reform_state_mechanic
+                    power_type = uach_persianization
+                    value = -$value$
+                }
+            }
+        }
+        add_government_power = {
+            mechanic_type = uach_reform_state_mechanic
+            power_type = uach_persianization
+            value = -$value$
+        }
+    } else = {
+        # Increase it if exactly at 0
+        add_government_power = {
+            mechanic_type = uach_reform_state_mechanic
+            power_type = uach_persianization
+            value = $value$
+        }
+    }
+}

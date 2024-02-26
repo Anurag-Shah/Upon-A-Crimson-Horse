@@ -100,15 +100,16 @@ change_estate_land_share = {
 	set_ruler_flag = timurids_peace_ruler
 }
 
-1444.6.1 = { #Serious illness of Shahrukh. Goharshad makes Firuzshah (governor of Balkh) swear bayqat to Ala al-Dawla
+1444.6.1 = { #Serious illness of Shahrukh. Goharshad makes Firuzshah (governor of Balkh) swear bayqat to Ala al-Dawla (Fuck off, PDX, he wasn't the favored heir)
 	heir = {
-		name = "Ala al-Dawla Abd Allah"
+		name = "Muhammad Juki"
 		dynasty = "Timurid"
-		birth_date = 1417.1.1
-		death_date = 1457.7.19
+		birth_date = 1402.1.1
+		death_date = 1446.1.1
+		claim = 90
 		adm = 3
-		dip = 3
-		mil = 2
+		dip = 5
+		mil = 5
 	}
 }
 

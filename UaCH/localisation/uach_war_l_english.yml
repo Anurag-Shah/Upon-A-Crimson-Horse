@@ -1,0 +1,42 @@
+﻿l_english:
+ # cb
+ TEST_TEST_TEST: "$FIRST$ Intervention in $SECOND$"
+ cb_interloper_conquest: "loc"
+ cb_interloper_conquest_desc: "loc"
+ # ENFORCE_LOYALTY_WAR
+ ENFORCE_LOYALTY_WAR: "$FIRST$-$SECOND$ War to Enforce Loyalty"
+ cb_enforce_loyalty_governor: "Enforce Loyalty War"
+ cb_enforce_loyalty_governor_desc: "Enforce the loyalty of a governor to the Timurid Empire"
+ w_enforce_loyalty_governor: "Take the Capital"
+ w_enforce_loyalty_governor_desc: "The War goal is to control the enemy's capital."
+ PEACE_po_make_governor: "§YEnforce Loyalty§!"
+ CB_ALLOWED_po_make_governor: "§YEnforce Loyalty§!"
+ po_make_governor_desc: "They will be come our §YEmirate§!, and we will enforce their loyalty to us."
+
+# CHALLENGE_CLAIMANT_WAR
+ SUPERIORITY_CLAIMANT_WAR: "$FIRST$-$SECOND$ War for Claimant Superiority"
+ cb_challange_claimant: "Claimant Superiority War"
+ cb_challange_claimant_desc: "Challenge the claimant to the throne of the Timurid Empire"
+ w_superiority_claimant: "Show Superiority"
+ w_superiority_claimant_desc: "The war goal is to win battles."
+ PEACE_po_defeated_claimant: "§YSubdue Claimant§!"
+ CB_ALLOWED_po_defeated_claimant: "§YSubdue Claimant§!"
+ po_defeated_claimant_desc: "We will force them to become our §YEmirate§!, and will be able to decide what to do with their ruler (and their status as a Timurid Prince)."
+ 
+# SULTAN MUHAMMAD'S REBELLION
+ REBELLION_OF_SULTAN_MUHAMMAD: "§GSultan Muhammad's§! Rebellion"
+ PEACE_po_shah_rukhs_rule: "§YShah Rukh's Rule§!"
+ CB_ALLOWED_po_shah_rukhs_rule: "§YShah Rukh's Rule§!"
+ po_shah_rukhs_rule_desc: "The rebellious @QOM §YAjam§! will be forcefully integrated."
+ PEACE_po_take_our_place: "§YTake Our Place§!"
+ CB_ALLOWED_po_take_our_place: "§YTake Our Place§!"
+ po_take_our_place_desc: "We will become the true heir of the @TIM §YTimurids§!, inheriting them and all their woes."
+ w_rebellion_of_sultan_muhammad: "Take the Capital"
+ w_rebellion_of_sultan_muhammad_desc: "The War goal is to control the enemy's capital."
+
+# Interloper
+ TEST_TEST_TEST: "$FIRST$ Intervention in $SECOND$"
+ cb_interloper_conquest: "Interloper's Conquest"
+ cb_interloper_conquest_desc: "An outsider's attempt to interfere in the Timurid Succession Crisis, and seize land for themselves."
+ w_uach_interloper_conquest: "Show Superiority"
+ w_uach_interloper_conquest_desc: "The war goal is to win battles"

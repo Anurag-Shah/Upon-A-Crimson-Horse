@@ -12,7 +12,7 @@ religious_school = hanafi_school
 
 1413.1.1 = {
 	monarch = {
-		name = "Hussein"
+		name = "Hosayn"
 		dynasty = "Khorshidi"
 		adm = 2
 		dip = 3
