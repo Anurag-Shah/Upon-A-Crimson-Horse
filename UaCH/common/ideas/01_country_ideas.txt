@@ -1,7 +1,7 @@
 BLK_ideas = {
 	start = {
 		defensiveness = 0.10
-		cavalry_shock = 1
+		cavarly_shock = 0.5
 	}
 	
 	bonus = {
@@ -65,8 +65,8 @@ ISF_ideas = {
 		trade_steering = 0.25
 	}
 	isf_idea_3 = {
-		cavalry_cost = -0.5
-		cavalry_shock = 1
+		cavalry_cost = -0.15
+		cavalry_shock = 0.5
 	}
 	isf_idea_4 = {
 		development_cost = -0.1
@@ -111,7 +111,6 @@ YZD_ideas = {
 	}
 	yzd_idea_3 = {
 		cavalry_cost = -0.5
-		cavalry_shock = 1
 	}
 	yzd_idea_4 = {
 		development_cost = -0.1
@@ -156,7 +155,7 @@ KRM_ideas = {
 	}
 	krm_idea_3 = {
 		cavalry_cost = -0.5
-		cavalry_shock = 1
+		cavarly_shock = 0.5
 	}
 	krm_idea_4 = {
 		development_cost = -0.1
@@ -171,6 +170,91 @@ KRM_ideas = {
 	krm_idea_7 = {
 		mil_tech_cost_modifier = -0.1
 		fort_maintenance_modifier = -0.2
+	}
+}
+
+SLU_ideas = {
+	start = {
+		cav_to_inf_ratio = 0.25
+		cavalry_power = 0.1
+	}
+	
+	bonus = {
+		leader_siege = 1
+	}	
+
+	trigger = {
+		tag = SLU
+	}
+	free = yes
+	
+	slu_idea_1 = {
+		land_attrition = -0.25
+	}
+	slu_idea_2 = {
+		culture_conversion_cost = -0.1
+		num_accepted_cultures = 2
+	}
+	slu_idea_3 = {
+		cavalry_flanking = 0.25
+	}
+	slu_idea_4 = {
+		legitimacy = 1
+		horde_unity = 1
+	}
+	slu_idea_5 = {
+		raze_power_gain = 0.2
+		loot_amount = 0.1	
+	}
+	slu_idea_6	 = {
+		movement_speed = 0.25
+	}
+	slu_idea_7 = {
+		core_creation = -0.1
+		fabricate_claims_cost = -0.1
+	
+	}
+}
+
+BDK_ideas = {
+	start = {
+		advisor_cost=-0.1
+		land_morale=0.1
+	}
+	
+	bonus = {
+		trade_efficiency = 0.10
+	}	
+
+	trigger = {
+		tag = BDK
+	}
+	free = yes
+	
+	bdk_idea_1 = {
+		missionary_maintenance_cost = -0.1
+		global_missionary_strength = 0.03
+	}
+	bdk_idea_2 = {
+		tolerance_own = 1
+		num_accepted_cultures = 1
+	}
+	bdk_idea_3 = {
+		production_efficiency = 0.1
+	}
+	bdk_idea_4 = {
+		defensiveness = 0.15
+	}
+	bdk_idea_5 = {
+		institution_spread_from_true_faith = 0.1
+	}
+	bdk_idea_6	 = {
+		tolerance_heathen = 2
+		tolerance_heretic = 2
+	}
+	bdk_idea_7 = {
+		legitimacy = 1
+		core_creation = -0.2
 	}
 }
 
@@ -374,7 +458,7 @@ U04_ideas = {
 	}	
 		
 	U04_idea_4 = {	
-		cavalry_shock = 1
+		cavarly_shock = 0.5
 	}	
 		
 	U04_idea_5 = {	
@@ -392,7 +476,7 @@ U04_ideas = {
 
 U05_ideas = {		
 	start = {	
-		cavalry_shock = 1
+		cavarly_shock = 0.5
 		prestige_per_development_from_conversion = 0.1
 	}	
 	bonus = {	
@@ -1156,7 +1240,7 @@ U22_ideas = {
 	}	
 		
 	U22_idea_6 = {	
-		cavalry_shock = 1
+		cavarly_shock = 0.5
 	}	
 		
 	U22_idea_7 = {	
@@ -1252,7 +1336,7 @@ U24_ideas = {
 
 U25_ideas = {		
 	start = {	
-		cavalry_shock = 1
+		cavarly_shock = 0.5
 		force_march_free = yes  
 	}	
 	bonus = {	
@@ -2107,7 +2191,7 @@ U44_ideas = {
 	}	
 		
 	U44_idea_7 = {	
-		cavalry_shock = 1
+		cavarly_shock = 0.5
 	}	
 }		
 
@@ -2478,7 +2562,7 @@ U53_ideas = {
 	}	
 		
 	U53_idea_3 = {	
-		years_of_nationalism = -10
+		envoy_travel_time = -0.20
 	}	
 		
 	U53_idea_4 = {	

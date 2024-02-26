@@ -369,7 +369,7 @@ country_event = {
 		add_stability = 1
 		add_estate_influence_modifier = {
 			influence = -10
-			duration = -1
+			duration = 3650
 			estate = estate_nobles
 		}
 
