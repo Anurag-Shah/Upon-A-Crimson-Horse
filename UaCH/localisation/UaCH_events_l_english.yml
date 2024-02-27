@@ -663,3 +663,25 @@
  UACH_CB_1_RR_TT_C: "We will replace their ruler with the candidate from our Ulama, demoting them from a §GPrince§! to a §GGovernor§!."
  UACH_CB_1_RR_TT_B: "We will replace their ruler with a local of prominence, demoting them from a §GPrince§! to a §GGovernor§!."
  nobody_lives_here_anymore_drought: "Abandoned city"
+ 
+ UaCH.111.t:0 "Death of a local sufi"
+ UaCH.111.d:0 "My emir, we have received the last will of a local sufi, who died a few weeks ago. While the contents are sealed, it is well know that this man was a great supporter of art and philosophy, and his personal wealth was not unconsiderable. Without a last will, this would go directly to us, but there are already too many people knowing about this letter..."
+ UaCH.111.a:0 "Burn it."
+ UaCH.111.b:0 "Let his will be."
+ 
+ UaCH.112.t:0 "Apperance of a Xal"
+ UaCH.112.d:0 "My lord, there is a riot in the city! It seems some women have died lately during childbirth, and a nasty rumor have begun to circulate about a Xal running free. Though the old text have stated that 'they have clay noses and fiery eyes, and appear with sharp fangs, disheveled hair, copper claws, iron teeth, the tusks of a wild boar and sagging breasts, resembling a crone' , some younger folk have decided that the description is fitting to the elderly nurses in our city hospital, and raised a mob to stone them!"
+ UaCH.112.a:0 "Send in the guards."
+ UaCH.112.b:0 "Superstitious fools!"
+ 
+ UaCH.113.t:0 "The hunt of the Hadhayosh"
+ UaCH.113.d:0 "My lord! There has been rumours about people spotting the mysterious beast of Hadhayosh! If the myths are true, the blood of this creature has amazing healing properties. If...."
+ UaCH.113.a:0 "Organize a hunt!"
+ UaCH.113.b:0 "Bah! Fools, all of them!"
+ 
+ UaCH.114.t:0 "Nobleman turns faqir"
+ UaCH.114.d:0 "My liege, a most peculiar news have reached our court earlier today. One of our noblemen had a vision from God while fasting, and he just renounced all of his worldly posessions in search for enlightment. While it is customary to give out said valuables to the poor in such cases, this nobleman owned some of the land that could be recollected for the crown."
+ UaCH.114.a:0 "Follow the customs."
+ UaCH.114.b:0 "Desperate times..."
+ UaCH.114.c:0 "Send someone to beat some sense into him."
+ uach_gain_crownladn_5:0"Nobility loses 5% crownland and §R20%§! loyalty."

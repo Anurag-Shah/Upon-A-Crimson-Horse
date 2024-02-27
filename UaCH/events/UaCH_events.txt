@@ -369,7 +369,7 @@ country_event = {
 		add_stability = 1
 		add_estate_influence_modifier = {
 			influence = -10
-			duration = 3650
+			duration = -1
 			estate = estate_nobles
 		}
 
@@ -3252,13 +3252,6 @@ country_event = {
 			event_target:interloper_qoyunlu = {
 				uach_create_interloper = { region_int = 0 }
 				vassalize = ROOT
-			}
-			if = {
-				limit = { is_prince = yes }
-				shuffle_princes = { scope = ROOT }
-			}
-			else = {
-				shuffle_governors = { scope = ROOT }
 			}
 		}
 
@@ -6219,19 +6212,20 @@ country_event = {
 # 	desc = UaCH.102.d	  
 # 	picture = PLAGUE_eventPicture
 
+#	is_triggered_only = yes
+
+#	mean_time_to_happen = {
+#		days = 1
+#	}
+
 	
 # 	trigger = {
-# 		AND = {
 # 			OR = {
 # 				has_disaster = timurid_succession_crisis
 # 				is_in_war = { casus_belli = cb_challange_claimant }
 # 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
 # 			}
-# 			had_country_flag = { 
-# 				flag = uach_disaster_event_timer
-# 				days = 60
-# 				}
-# 			}
+# 
 # 		}
 # 	immediate = {
 # 		clr_country_flag = uach_disaster_event_timer
@@ -6239,11 +6233,11 @@ country_event = {
 # 		}
 		
 # 	option = {
-# 		name = UaCh.102.a
+# 		name = UaCH.102.a
 # 		}
 		
 # 	option = {
-# 		name = UaCh.102.b
+# 		name = UaCH.102.b
 # 	}
 # }
 
@@ -6300,10 +6294,21 @@ country_event = {
 		
 	option = {
 		name = UaCH.103.b
-		event_target:uach_to_be_changed_prov = {
-			change_religion = shiite
-		}
-	}
+					random_list = {
+							75 = {event_target:uach_to_be_changed_prov = {
+								  change_religion = shiite
+									}
+								}
+							20 = {event_target:uach_to_be_changed_prov = {
+								  change_religion = ibadi
+									}
+								}
+							5 = {event_target:uach_to_be_changed_prov = {
+								  change_religion = zoroastrian
+									}
+							}
+						}
+					}
 	
 	option = {
 		name = UaCH.103.c
@@ -6481,3 +6486,199 @@ country_event = {
 	}
 }
 
+
+#Pulse event - Death of a local sufi
+country_event = {
+
+ 	id = UaCH.111
+ 	title = UaCH.111.t  
+ 	desc = UaCH.111.d	  
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+ 	trigger = {
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+ 			}
+ 
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+		
+ 	option = {
+ 		name = UaCH.111.a
+		add_treasury = 100
+		add_legitimacy = -10
+		add_piety = -0.25
+ 		}
+		
+ 	option = {
+ 		name = UaCH.111.b
+		add_legitimacy = 10
+		add_adm_power = -50
+		add_piety = 0.25
+ 	}
+}
+
+#Pulse event - apperance of a xal
+country_event = {
+
+ 	id = UaCH.112
+ 	title = UaCH.112.t  
+ 	desc = UaCH.112.d	  
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+ 	trigger = {
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+ 			}
+ 
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+		
+ 	option = {
+ 		name = UaCH.112.a
+		add_piety = -0.25
+		add_manpower = -3
+		random_owned_province = {
+			spawn_rebels = {
+				size = 1
+				type = leadered_peasant_rebels
+			}
+		}
+ 	}
+		
+ 	option = {
+ 		name = UaCH.112.b
+			add_prestige = 25
+			add_piety = 0.25
+			random_province = {
+			spawn_rebels = {
+				size = 2
+				type = leadered_peasant_rebels
+			}
+		}
+		
+		
+ 	}
+}
+
+#pulse event - the hunt of the Hadhayosh
+country_event = {
+
+ 	id = UaCH.113
+ 	title = UaCH.113.t  
+ 	desc = UaCH.113.d	  
+ 	picture = PLAGUE_eventPicture
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+ 	trigger = {
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+ 			}
+ 
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+		
+ 	option = {
+ 		name = UaCH.113.a
+		random_list = {
+			90 = { add_manpower = -0.5}
+			9 = {add_mil_power = 25}
+			1 = {add_mil_power = 200}	
+ 		}
+	}
+		
+ 	option = {
+ 		name = UaCH.113.b
+		add_prestige = 25
+		add_piety = 0.25
+ 	}
+}
+
+#pulse event - nobleman turns faqir
+country_event = {
+
+ 	id = UaCH.114
+ 	title = UaCH.114.t  
+ 	desc = UaCH.114.d	  
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+ 	trigger = {
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+ 			}
+ 
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+		
+ 	option = {
+ 		name = UaCH.114.a
+			add_legitimacy = 5
+			add_piety = 0.25
+			
+ 		}
+		
+ 	option = {
+ 		name = UaCH.114.b
+			custom_tooltip = uach_gain_crownladn_5
+			add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = -20
+			}
+			hidden_effect = {
+						change_estate_land_share = {
+							estate = estate_nobles
+							share = -5
+						}
+					}
+ 	}
+	
+	option = {
+ 		name = UaCH.114.c
+			add_legitimacy = -5
+			add_piety = -0.25
+			
+ 	}
+}

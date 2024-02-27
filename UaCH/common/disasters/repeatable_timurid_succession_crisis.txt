@@ -116,11 +116,15 @@ repeatable_timurid_succession_crisis = {
 			50	= UaCH.40   #defections among our people
 			100 = UaCH.38	#Low supplies
 			100 = UaCH.29	#raids
-			60 = UaCH.92	# cetai event
-			30 = UaCH.94	# cetai event
-			20 = UaCH.95	# cetai event
-			60 = UaCH.101   # cetai event
-			30 = UaCH.103  # cetai event
+			60 = UaCH.92	# Drought
+			30 = UaCH.94	# Drought worsen
+			20 = UaCH.95	# Drought f*cks everybody mother up
+			60 = UaCH.101   # variant of UaCH.92
+			30 = UaCH.103   # Religious uproar
+			30 = UaCH.111	# Death of a local sufi
+			30 = UaCH.112	# Apperance of a Xal
+			30 = UaCH.113	# The hunt of the Hadhayosh
+			30 = UaCH.114	# Nobleman turns faqir
 		}
 	}
 }

@@ -1,7 +1,7 @@
 BLK_ideas = {
 	start = {
 		defensiveness = 0.10
-		cavarly_shock = 0.5
+		cavalry_flanking = 0.5
 	}
 	
 	bonus = {
@@ -155,7 +155,7 @@ KRM_ideas = {
 	}
 	krm_idea_3 = {
 		cavalry_cost = -0.5
-		cavarly_shock = 0.5
+		cavalry_flanking = 0.5
 	}
 	krm_idea_4 = {
 		development_cost = -0.1
@@ -458,7 +458,7 @@ U04_ideas = {
 	}	
 		
 	U04_idea_4 = {	
-		cavarly_shock = 0.5
+		cavalry_flanking = 0.5
 	}	
 		
 	U04_idea_5 = {	
@@ -476,7 +476,7 @@ U04_ideas = {
 
 U05_ideas = {		
 	start = {	
-		cavarly_shock = 0.5
+		cavalry_flanking = 0.5
 		prestige_per_development_from_conversion = 0.1
 	}	
 	bonus = {	
@@ -1240,7 +1240,7 @@ U22_ideas = {
 	}	
 		
 	U22_idea_6 = {	
-		cavarly_shock = 0.5
+		cavalry_flanking = 0.5
 	}	
 		
 	U22_idea_7 = {	
@@ -1336,7 +1336,7 @@ U24_ideas = {
 
 U25_ideas = {		
 	start = {	
-		cavarly_shock = 0.5
+		cavalry_flanking = 0.5
 		force_march_free = yes  
 	}	
 	bonus = {	
@@ -2191,7 +2191,7 @@ U44_ideas = {
 	}	
 		
 	U44_idea_7 = {	
-		cavarly_shock = 0.5
+		cavalry_flanking = 0.5
 	}	
 }		
 

@@ -94,9 +94,22 @@ defined_text = {
     }
 	
 		text = {
+        localisation_key = string_screen_title_KHI
+        trigger = {
+			tag = KHI
+        }
+    }
+		text = {
         localisation_key = string_screen_title_BDK
         trigger = {
 			tag = BDK
+        }
+    }
+	
+		text = {
+        localisation_key = string_screen_title_QOM
+        trigger = {
+			tag = QOM
         }
     }
 	
@@ -118,6 +131,13 @@ defined_text = {
         localisation_key = string_screen_title_SHY
         trigger = {
 			tag = SHY
+        }
+    }
+	
+	text = {
+        localisation_key = string_screen_title_LRI
+        trigger = {
+			tag = LRI
         }
     }
 	
@@ -202,6 +222,13 @@ defined_text = {
 	}
 	
 	text = {
+		localisation_key = string_start_title_KHI
+		trigger = {
+			tag = SLU
+		}
+	}
+	
+	text = {
 		localisation_key = string_start_title_KHU
 		trigger = {
 			tag = KHU
@@ -212,6 +239,13 @@ defined_text = {
 		localisation_key = string_start_title_SHY
 		trigger = {
 			tag = SHY
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_LRI
+		trigger = {
+			tag = LRI
 		}
 	}
 	
@@ -229,7 +263,12 @@ defined_text = {
 		}
 	}
 	
-	
+	text = {
+		localisation_key = string_start_title_QOM
+		trigger = {
+			tag = QOM
+		}
+	}
 	
 	#Africa
 	
@@ -809,10 +848,24 @@ defined_text = {
         }
     }	
 	
+		text = {
+        localisation_key = string_start_LRI
+        trigger = {
+			tag = LRI
+        }
+    }	
+	
 	text = {
         localisation_key = string_start_BDK
         trigger = {
 			tag = BDK
+        }
+    }	
+	
+	text = {
+        localisation_key = string_start_QOM
+        trigger = {
+			tag = QOM
         }
     }	
 	
@@ -823,7 +876,12 @@ defined_text = {
         }
     }	
 	
-	
+	text = {
+        localisation_key = string_start_KHI
+        trigger = {
+			tag = KHI
+        }
+    }	
 	
 	
 	#Africa
