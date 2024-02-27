@@ -21,6 +21,7 @@ timurid_succession_crisis = {
 			}
 		}
 		NOT = { has_global_flag = tim_repeatable_now }
+		NOT = { has_country_flag = disable_disasters }
 	}
 	
 	can_start = {

@@ -17,6 +17,7 @@ repeatable_timurid_succession_crisis = {
 				}
 			}
 		}
+		NOT = { has_country_flag = disable_disasters }
 	}
 	
 	can_start = {

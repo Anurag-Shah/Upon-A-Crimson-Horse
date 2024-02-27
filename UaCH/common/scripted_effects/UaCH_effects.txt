@@ -1900,6 +1900,9 @@ uach_flee_to_india_effect = {
         end_disaster = repeatable_timurid_succession_crisis
     }
 
+    # Prevent disaster from firing again.
+    set_country_flag = disable_disasters
+
     # Every owned province, occupied, ceded to occupier
     every_owned_province = {
         limit = {
@@ -1977,9 +1980,6 @@ uach_flee_to_india_effect = {
         white_peace = PREV
         add_truce_with = PREV
     }
-
-    # End disaster
-    end_disaster = timurid_succession_crisis
 
     # delete all units
     kill_units = { who = THIS }
