@@ -3253,6 +3253,13 @@ country_event = {
 				uach_create_interloper = { region_int = 0 }
 				vassalize = ROOT
 			}
+			if = {
+				limit = { is_prince = yes }
+				shuffle_princes = { scope = ROOT }
+			}
+			else = {
+				shuffle_governors = { scope = ROOT }
+			}
 		}
 
 		ai_chance = {
