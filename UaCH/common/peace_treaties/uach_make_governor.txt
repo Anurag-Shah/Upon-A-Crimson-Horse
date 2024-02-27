@@ -4,7 +4,7 @@ po_make_governor = {
 	category = 6
 	power_projection = enforced_loyalty_on_governor
 	power_cost_base = 1.0
-	prestige_base = 1.0
+	prestige_base = 0.1
 	ae_base = 0
 
 	warscore_cost = {
