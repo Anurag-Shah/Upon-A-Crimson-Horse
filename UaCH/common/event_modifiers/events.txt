@@ -157,3 +157,24 @@ nobody_lives_here_anymore_drought = {
 	tax_income = -1
 	
 }
+
+uach_legit_to_defoff_lvl1 = {
+	defensiveness = -0.4
+	siege_ability = -0.4
+}
+uach_legit_to_defoff_lvl2 = {
+	defensiveness = -0.3
+	siege_ability = -0.3
+}
+uach_legit_to_defoff_lvl3 = {
+	defensiveness = -0.2
+	siege_ability = -0.2
+}
+uach_legit_to_defoff_lvl4= {
+	defensiveness = -0.1
+	siege_ability = -0.1
+}
+uach_legit_to_defoff_lvl5 = {
+	defensiveness = 0.1
+	siege_ability = 0.1
+}

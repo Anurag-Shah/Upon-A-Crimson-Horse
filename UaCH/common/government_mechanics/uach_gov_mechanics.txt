@@ -94,14 +94,19 @@ uach_mechanics_prince = {
 				}
 			}
 			effect = {
-				add_yearly_manpower = 2
-				add_years_of_income = 2
-				add_legitimacy = -10
+				add_yearly_manpower = 1
+				add_years_of_income = 1
+				add_legitimacy = -15
 				add_prestige = -15
 				random_neighbor_country = {
 					add_opinion = {
 						who = PREV
 						modifier = supported_us_in_timurid_success_crisis
+					}
+					add_trust = {
+						who = ROOT 
+						value = 10
+						mutual = yes 
 					}
 					add_prestige = 5
 				}

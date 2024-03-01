@@ -201,7 +201,7 @@
  UaCH.34.b: "The work should be award enough for someone loyal."
  
  UaCH.35.t: "Stab in the Back"
- UaCH.35.d: "The Empire after the death of §GShah Rukh§! fell into a chaotic succession. While most of the fighting has died down by now, the ripples are still felt everywhere. §GRoot.Monarch.GetName§! has attempted to resolve the issues between the various factions and emirs, even going as far as alienating his own son §GAbdal-Aziz§!. Though it seems all of this was in vain, as even someone as loyal as §GAbu Sa'id§! seems to have developed new ideas. Previously posted on the northern front, he abandoned his post, and gathered a small number of clansmen to raid the city of Samarkand."
+ UaCH.35.d: "The Empire after the death of §GShah Rukh§! fell into a chaotic succession. While most of the fighting has died down by now, the ripples are still felt everywhere. §G$RULER$§! has attempted to resolve the issues between the various factions and emirs, even going as far as alienating his own son §GAbdal-Aziz§!. Though it seems all of this was in vain, as even someone as loyal as §GAbu Sa'id§! seems to have developed new ideas. Previously posted on the northern front, he abandoned his post, and gathered a small number of clansmen to raid the city of Samarkand."
  UaCH.35.a: "Alas, ambition is the enemy of man."
  
  UaCH.36.t: "Gawhar Shad under fire"
@@ -244,7 +244,7 @@
  UaCH.42.a: "Now, [Root.Monarch.GetTitle], is this not a little hasty?"
  
  UaCH.43.t: "Tragedy on the Battlefield"
- UaCH.43.d: "What we were afraid of has happened! Our ruler, [Root.Monarch.GetTitle] §G[Root.Monarch.GetName]§! has fallen on the battlefield to foreign arms, and while our troops have managed to recover his body the following chaos forced their retreat. The unexpected demise of our ruler has left us with no clear succession, as he has not designated a heir."
+ UaCH.43.d: "What we were afraid of has happened! Our ruler, [Root.Monarch.GetTitle] §G$RULER$§! has fallen on the battlefield to foreign arms, and while our troops have managed to recover his body the following chaos forced their retreat. The unexpected demise of our ruler has left us with no clear succession, as he has not designated a heir."
  UaCH.43.a: "Don't you traitors get any ideas!"
  uach_all_subjects_join_succession_crisis:0 "All of our subjects will become independent and join the §YTimurid Succession Crisis§!."
  uach_all_opms:0 "All possible releasables will gain independence and join the §YTimurid Succession Crisis§!."
@@ -685,3 +685,100 @@
  UaCH.114.b:0 "Desperate times..."
  UaCH.114.c:0 "Send someone to beat some sense into him."
  uach_gain_crownladn_5:0"Nobility loses 5% crownland and §R20%§! loyalty."
+ 
+ UaCH.115.t:0 "Soldiers losing Faith"
+ UaCH.115.d:0 "Due to the actions of our ruling Emir §G$RULER$§!, many of our soldiers have completely lost their faith in the legitimacy of our royal family. This has caused not only dissent, and loss of morale, but increased number of defections."
+ UaCH.115.a:0 "Let the cowards run"
+ UaCH.115.b:0 "A little gold should solve this problem"
+ uach_no_heir_or_low_heir:0"This will §Rbreak§! our country if we have dont have heir, or have low legitimacy heir."
+ 
+ UaCH.116.t:0 "A usurper rises"
+ UaCH.116.d:0 "My lord! Terrible news, one of your cousins, encouraged by §GGawhar Shad§!, has decided it is time to end your rule! He has organized an army and preparing to march into our capital!"
+ UaCH.116.a:0 "Time to teach him a lesson."
+ UaCH.116.b:0 "He is not that big of a problem"
+ UaCH.116.c:0 "Send someone to kill him. Discretely."
+ uach_hidden_pretender:0"The pretender evades our attempt, he may return in the future."
+ uach_shameful_pretender:0"The pretender dies."
+ 
+ UaCH.117.t:0 "A usurper strikes back"
+ UaCH.117.d:0 "My Emir! There is an army at the gates of our capital! It is rumored that theyre led by one of your cousins, but we havent received confirmation about this yet."
+ UaCH.117.a:0 "We will fight this menace"
+ UaCH.117.b:0 "Send in the royal guard"
+ UaCH.117.c:0 "You again!"
+ UaCH.117.e:0 "Where have I gone wrong...."
+ 
+ UaCH.118.t:0 "Chaos"
+ UaCH.118.d:0 "My lord! The past months have been trying for all of us, with our army falling apart and the estates are at each others throats. Amids this instability, a seemingly minor case of thievery has pushed the whole country into chaos!"
+ UaCH.118.a:0 "Let the lord of chaos rule."
+ UaCH.118.b:0 "At least save whatever we can."
+ 
+ UaCH.119.t:0 "Delusions of grandeour"
+ UaCH.119.d:0 "Within the fortress walls of the capital, §G$RULER$§!, helds a feast, which has been ongoing for three days and nights already. Intoxicated by delusions of grandeur, he believes himself Timur reborn, or worse, all while discontent is spreading among the populace like wildfire. While the situation has yet to reach the point of no return, it is only matter of time until our enemies take advantage of it."
+ UaCH.119.a:0 "Let me be!"
+ UaCH.119.b:0 "Bah, peasants dont worry me!"
+ 
+ UaCH.120.t:0 "Disloyalty among the nobility"
+ UaCH.120.d:0 "There is no greater honor to be named noble in our society, and as such, theyre above most of the commoner laws. Either by birthright or deed, theyre the backbone of our armies and administration. Recently though some unfortunate events have angered most of the nobility to the point that there is a growing voice of dissent among them."
+ UaCH.120.a:0 "Make amends."
+ UaCH.120.b:0 "Silence!"
+ 
+ UaCH.121.t:0 "Treason in the nobility"
+ UaCH.121.d:0 "The relationship between our court and the nobility has sunk to such a low levels, that our nobles feel theyre entitled to compesation for past injustice. While some of their demands may even be fair, most of it is ridiculously overblown."
+ UaCH.121.a:0 "We need them... for now."
+ UaCH.121.b:0 "They will gain no such thing!"
+ 
+ UaCH.122.t:0 "Demands of tithe"
+ UaCH.122.d:0 "The relationship between our court and the priesthood has soured like never before. Many believers are now questioning our right to rule, fueled by constant rumors coming from the local imams. Perhaps a small gift could help repair the situation."
+ UaCH.122.a:0 "Give money!"
+ UaCH.122.b:0 "Give land!"
+ UaCH.122.c:0 "Superstitious fools, give them nothing!"
+ 
+ UaCH.123.t:0 "Trader goes bankrupt"
+ UaCH.123.d:0 "Thanks to the constant warfare in our realm, many traders have lost their business. As caravans are having harder time to get through the Silk Road anymore, one of our prominent merchants have just lost his entire shipment of spices, causing him to be unable to pay back his debtors. While we could help him out, maybe this situation presents an opportunity for us to gain some wealth for ourselves."
+ UaCH.123.a:0 "Seize his wealth, but pay his debt."
+ UaCH.123.b:0 "So Lady Luck doesnt favor you anymore, eh?"
+ 
+ UaCH.124.t:0 "Unsuccesful gamble"
+ UaCH.124.d:0 "While most of the wealth of the palace comes from direct taxation of the common people, royalty dabbling in trade is not unheard of. Alas, one of our rulers latest trade deals have turned out to be a disaster when we received a shipment of excellent grade of iron, only for it to turn out as painted stones! The merchant who sold it to us is long gone, and the rumors circling around have made our ruler a laughingstock among the burghers."
+ UaCH.124.a:0 "This was the worst deal in the history of deals."
+ UaCH.124.b:0 "Attempt to recoup our losses."
+ UaCH.124.c:0 "Win some, lose some."
+ 
+ UaCH.125.t:0 "Dhimmi disloyalty"
+ UaCH.125.d:0 "Our nation is made up by multiple different faiths, and this inevitably leads to conflict. So far, we have been able to evade major conflicts between the different sects, but our luck seems to have ran out. A group of faithful in a nearby village have decided upon taking this matter into their own hands, they have burned some homes and murdered a prominent merchant family. This cannot be tolerated."
+ UaCH.125.a:0 "Send in the guard."
+ UaCH.125.b:0 "This will blow over."
+ UaCH.125.c:0 "Let them run wild... as long as it serves us."
+ 
+ UaCH.126.t:0 "Heretics among us"
+ UaCH.126.d:0 "War has came to our land. With the descendants of §GTimur§! running amok, there are many who see this opportunity to rise. Among our population, there are elements who are tolerated in time of peace and prosperity, but these are not such times. After all, who knows when will they side with our enemies?"
+ UaCH.126.a:0 "Purge them."
+ UaCH.126.b:0 "This is madness speaking!"
+ 
+ UaCH.127.t:0 "A prophet comes forward"
+ UaCH.127.d:0 "A self proclaimed prophet has arrived to our capital, with quite a retinue. He proclaims that our war against our brethen in faith is misguided, we should turn our eyes towards the heathen lands! "
+ UaCH.127.a:0 "Promise him eternal war!"
+ UaCH.127.b:0 "Make vague promises."
+ UaCH.127.c:0 "Another false prophet, run him out of the city!"
+
+ UaCH.128.t:0 "Mystery illness"
+ UaCH.128.d:0 "As dawns breaks upon our majestic palace, a horrified shriek echoes down the chambers of the royal family. A veritable horde of servants came running right to the doors of the Emirs own room, where a terrified maid is crying and shaking unstoppably. It seems that during the night, some mystery illness had freed our ruler from his earthly chains."
+ UaCH.128.a:0 "Prepare the funeral rites."
+ UaCH.128.b:0 "In these trying times, let the Vizier take command."
+ UaCH.128.c:0 "A mystery illness? Again?"
+ 
+ UaCH.129.t:0 ""
+ UaCH.129.d:0 ""
+ UaCH.129.a:0 ""
+ UaCH.129.b:0 ""
+
+ UaCH.130.t:0 ""
+ UaCH.130.d:0 ""
+ UaCH.130.a:0 ""
+ UaCH.130.b:0 ""
+ 
+ uach_legit_to_defoff_lvl5:0"High legitimacy"
+ uach_legit_to_defoff_lvl4:0"Average legitimacy"
+ uach_legit_to_defoff_lvl3:0"Low legitimacy"
+ uach_legit_to_defoff_lvl2:0"Abysmal legitimacy"
+ uach_legit_to_defoff_lvl1:0"No legitimacy"

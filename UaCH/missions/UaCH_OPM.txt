@@ -1,0 +1,207 @@
+opm_missions_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		is_governor = yes
+		NOT = {
+			tag = LRE
+			tag = AFG
+			tag = ISF
+			tag = KHI
+			tag = SIS
+			tag = KRM
+			tag = KHO
+			tag = ARD
+			tag = KHU
+			tag = FRS
+			tag = LRI
+		}
+	}
+
+	uach_opm_31 = {
+		icon = uach_opm_31
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = { num_of_generals = 2 } 
+
+		effect = {
+			random_owned_province = {
+				add_unit_construction = {
+					type = cavalry
+					cost = 0
+					speed = -0.25
+					amount = 3
+				}
+				add_unit_construction = {
+					type = infantry
+					cost = 0
+					speed = -0.25
+					amount = 3
+				}
+			}
+		}
+	}
+
+	uach_opm_32 = {
+		icon = uach_opm_32
+		position = 2
+		required_missions = { uach_opm_31 } 
+		provinces_to_highlight = {  } 
+
+		trigger = { any_owned_province = { fort_level = 3 }  } 
+
+		effect = {
+			add_legitimacy = 50
+			add_adm_power = 50
+		}
+	}
+}
+opm_missions_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		is_governor = yes
+		NOT = {
+			tag = LRE
+			tag = AFG
+			tag = ISF
+			tag = KHI
+			tag = SIS
+			tag = KRM
+			tag = KHO
+			tag = ARD
+			tag = KHU
+			tag = FRS
+			tag = LRI
+		}
+	}
+
+	uach_opm_22 = {
+		icon = uach_opm_22
+		position = 2
+		required_missions = { uach_opm_31 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			OR = {
+				inquisitor = 2
+				spymaster = 2
+				fortification_expert = 2
+			}
+		}
+
+		effect = {
+			add_dip_power = 50
+			add_legitimacy = 50
+		}
+	}
+}
+opm_missions_slot4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		is_governor = yes
+		NOT = {
+			tag = LRE
+			tag = AFG
+			tag = ISF
+			tag = KHI
+			tag = SIS
+			tag = KRM
+			tag = KHO
+			tag = ARD
+			tag = KHU
+			tag = FRS
+			tag = LRI
+		}
+	}
+
+	uach_opm_42 = {
+		icon = uach_opm_42
+		position = 2
+		required_missions = { uach_opm_31 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			check_variable = {
+				which = num_won_battles
+				value = 1
+			}
+		}
+
+		effect = {
+			add_legitimacy = 50
+			add_mil_power = 50
+		}
+	}
+}
+opm_missions_slot3_luri = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = luri
+		is_governor = yes
+		NOT = { tag = LRI } 
+	}
+
+	uach_opm_33_luri = {
+		icon = uach_opm_luri
+		position = 3
+		required_missions = {
+			uach_opm_32
+			uach_opm_42
+			uach_opm_22
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			LRI = { exist = no } 
+			development = 50
+		}
+
+		effect = {
+			change_tag = LRI
+			make_tag_prince = yes
+			swap_non_generic_missions = yes
+		}
+	}
+}
+opm_missions_slot3_afghan = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = afghani
+		is_governor = yes
+		NOT = { tag = AFG } 
+	}
+
+	uach_opm_33_afghan = {
+		icon = mission_placeholder
+		position = 4
+		required_missions = {
+			uach_opm_32
+			uach_opm_42
+			uach_opm_22
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = { AFG = { exist = no }  } 
+
+		effect = {
+			change_tag = AFG
+			make_tag_prince = yes
+			swap_non_generic_missions = yes
+		}
+	}
+}
