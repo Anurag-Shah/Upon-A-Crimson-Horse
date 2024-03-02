@@ -14,6 +14,48 @@ cb_challange_claimant = {
 		is_part_of_second_crisis = yes
 	}
 
+	attacker_disabled_po = {
+		po_become_protectorate
+		po_become_tributary_state
+		po_become_vassal
+		po_change_government
+		po_change_hre_religion
+		po_change_religion
+		po_concede_colonial_region
+		po_concede_defeat
+		po_demand_provinces
+		po_dismantle_forts
+		po_dismantle_revolution
+		po_end_rivalry
+		po_enforce_fleet_basing_rights
+		po_enforce_military_access
+		po_enforce_rebel_demands
+		po_force_migration
+		po_force_out_colonizers
+		po_form_personal_union
+		po_give_up_claim
+		po_guaranteed_join_empire
+		po_humiliate
+		po_humiliate_rival
+		po_independence
+		po_join_empire
+		po_nodemand
+		po_pillage_capital_state
+		po_release_annexed
+		po_release_vassals
+		po_return_cores
+		po_revoke_cores
+		po_revoke_elector
+		po_spread_revolution
+		po_steer_trade
+		po_subjugate_tributary_state
+		po_subjugate_vassal
+		po_take_mandate
+		po_trade_power
+		po_transfer_vassals
+		po_war_reparations
+	}
+
 	war_goal = w_superiority_claimant
 }
 
@@ -32,6 +74,48 @@ cb_enforce_loyalty_governor = {
 		# is_part_of_second_crisis = yes
 	}
 
+	attacker_disabled_po = {
+		po_become_protectorate
+		po_become_tributary_state
+		po_become_vassal
+		po_change_government
+		po_change_hre_religion
+		po_change_religion
+		po_concede_colonial_region
+		po_concede_defeat
+		po_demand_provinces
+		po_dismantle_forts
+		po_dismantle_revolution
+		po_end_rivalry
+		po_enforce_fleet_basing_rights
+		po_enforce_military_access
+		po_enforce_rebel_demands
+		po_force_migration
+		po_force_out_colonizers
+		po_form_personal_union
+		po_give_up_claim
+		po_guaranteed_join_empire
+		po_humiliate
+		po_humiliate_rival
+		po_independence
+		po_join_empire
+		po_nodemand
+		po_pillage_capital_state
+		po_release_annexed
+		po_release_vassals
+		po_return_cores
+		po_revoke_cores
+		po_revoke_elector
+		po_spread_revolution
+		po_steer_trade
+		po_subjugate_tributary_state
+		po_subjugate_vassal
+		po_take_mandate
+		po_trade_power
+		po_transfer_vassals
+		po_war_reparations
+	}
+
 	war_goal = w_enforce_loyalty_governor
 }
 
@@ -44,6 +128,48 @@ cb_rebellion_of_sultan_muhammad = {
 
 	is_triggered_only = yes
 	months = -1
+
+	attacker_disabled_po = {
+		po_become_protectorate
+		po_become_tributary_state
+		po_become_vassal
+		po_change_government
+		po_change_hre_religion
+		po_change_religion
+		po_concede_colonial_region
+		po_concede_defeat
+		po_demand_provinces
+		po_dismantle_forts
+		po_dismantle_revolution
+		po_end_rivalry
+		po_enforce_fleet_basing_rights
+		po_enforce_military_access
+		po_enforce_rebel_demands
+		po_force_migration
+		po_force_out_colonizers
+		po_form_personal_union
+		po_give_up_claim
+		po_guaranteed_join_empire
+		po_humiliate
+		po_humiliate_rival
+		po_independence
+		po_join_empire
+		po_nodemand
+		po_pillage_capital_state
+		po_release_annexed
+		po_release_vassals
+		po_return_cores
+		po_revoke_cores
+		po_revoke_elector
+		po_spread_revolution
+		po_steer_trade
+		po_subjugate_tributary_state
+		po_subjugate_vassal
+		po_take_mandate
+		po_trade_power
+		po_transfer_vassals
+		po_war_reparations
+	}
 
 	war_goal = w_rebellion_of_sultan_muhammad
 }
@@ -62,6 +188,48 @@ cb_uach_interloper_conquest = {
 
 	prerequisites = {
 		is_part_of_second_crisis = yes
+	}
+
+	attacker_disabled_po = {
+		po_become_protectorate
+		po_become_tributary_state
+		po_become_vassal
+		po_change_government
+		po_change_hre_religion
+		po_change_religion
+		po_concede_colonial_region
+		po_concede_defeat
+		po_demand_provinces
+		po_dismantle_forts
+		po_dismantle_revolution
+		po_end_rivalry
+		po_enforce_fleet_basing_rights
+		po_enforce_military_access
+		po_enforce_rebel_demands
+		po_force_migration
+		po_force_out_colonizers
+		po_form_personal_union
+		po_give_up_claim
+		po_guaranteed_join_empire
+		po_humiliate
+		po_humiliate_rival
+		po_independence
+		po_join_empire
+		po_nodemand
+		po_pillage_capital_state
+		po_release_annexed
+		po_release_vassals
+		po_return_cores
+		po_revoke_cores
+		po_revoke_elector
+		po_spread_revolution
+		po_steer_trade
+		po_subjugate_tributary_state
+		po_subjugate_vassal
+		po_take_mandate
+		po_trade_power
+		po_transfer_vassals
+		po_war_reparations
 	}
 
 	war_goal = w_uach_interloper_conquest
