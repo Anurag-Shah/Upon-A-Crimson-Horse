@@ -323,20 +323,7 @@ allianceaction = {
 	condition = {
 		tooltip = NO_ALLIANCE_TOOLTIP
 		potential = {
-			OR = {
-				FROM = {
-					OR = {
-						is_prince = yes
-						is_governor = yes
-					}
-				}
-				ROOT = {
-					OR = {
-						is_prince = yes
-						is_governor = yes
-					}
-				}
-			}
+			uach_disable_diplo_action_trigger = yes
 		}
 		allow = {
 			hidden_trigger = {
@@ -386,20 +373,7 @@ enforce_peace = {
 	condition = {
 		tooltip = NO_ENFORCE_PEACE_TT
 		potential = {
-			OR = {
-				FROM = {
-					OR = {
-						is_prince = yes
-						is_governor = yes
-					}
-				}
-				ROOT = {
-					OR = {
-						is_prince = yes
-						is_governor = yes
-					}
-				}
-			}
+			uach_disable_diplo_action_trigger = yes
 		}
 		allow = {
 			hidden_trigger = {
@@ -430,12 +404,7 @@ guaranteeaction = {
 	condition = {
 		tooltip = NO_GUARANTEE_TT
 		potential = {
-			FROM = {
-				OR = {
-					is_prince = yes
-					is_governor = yes
-				}
-			}
+			uach_disable_diplo_action_trigger = yes
 		}
 		allow = {
 			hidden_trigger = {
@@ -451,20 +420,7 @@ threaten_war = {
 	condition = {
 		tooltip = NO_THREATEN_WAR_TT
 		potential = {
-			OR = {
-				FROM = {
-					OR = {
-						is_prince = yes
-						is_governor = yes
-					}
-				}
-				ROOT = {
-					OR = {
-						is_prince = yes
-						is_governor = yes
-					}
-				}
-			}
+			uach_disable_diplo_action_trigger = yes
 		}
 		allow = {
 			hidden_trigger = {
@@ -510,20 +466,7 @@ intervene_in_war = {
 	condition = {
 		tooltip = NO_INTERVENE_WAR_TT
 		potential = {
-			OR = {
-				FROM = {
-					OR = {
-						is_prince = yes
-						is_governor = yes
-					}
-				}
-				ROOT = {
-					OR = {
-						is_prince = yes
-						is_governor = yes
-					}
-				}
-			}
+			uach_disable_diplo_action_trigger = yes
 		}
 		allow = {
 			hidden_trigger = {

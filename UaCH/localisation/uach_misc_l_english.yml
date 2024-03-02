@@ -30,7 +30,7 @@
  UACH_D_W_E_TT: "§RThe Collapse of the Timurid State will bring an end to our various wars, internal or external, as every Prince makes their bid for the throne.§!"
  NO_ALLIANCE_TOOLTIP: "§YTimurid Princes§! and §YTimurid Governors§! cannot form alliances."
  NO_ENFORCE_PEACE_TT: "You cannot enforce peace on the §YTimurid Succession Crisis§!, or as a §yTimurid Prince§! or §YTimurid Governor§!."
- NO_GUARANTEE_TT: "You cannot Guarantee a §YTimurid Prince§! or §YTimurid Governor§!."
+ NO_GUARANTEE_TT: "You cannot Guarantee a §YTimurid Prince§! or §YTimurid Governor§!, and §YTimurid Princes§! and §YTimurid Governors§! are too preoccupied with internal affairs to Guarantee foreign nations."
  NO_THREATEN_WAR_TT: "You cannot threaten war on a §YTimurid Prince§! or §YTimurid Governor§!, and §YTimurid Princes§! and §YTimurid Governors§! cannot threaten war."
  NO_INTERVENE_WAR_TT: "You cannot intervene during the §YTimurid Sucession Crisis§!. Use the Intervention method provided in the §YSpecial Mechanics UI§! tab."
 

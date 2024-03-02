@@ -5915,6 +5915,25 @@ country_event = {
 
 			set_global_flag = uach_succession_crisis_started
 
+			# Removes every ally of every prince / governor
+			# There should only be one, ROOT
+			# But just to be safe :)
+			every_country = {
+				limit = {
+					OR = {
+						is_prince = yes
+						is_governor = yes
+						has_country_flag = uach_interwar_lull
+					}
+				}
+				every_country = {
+					limit = {
+						alliance_with = PREV
+					}
+					break_alliance = PREV
+				}
+			}
+
 			clr_country_flag = uach_interwar_lull
 
 			remove_government_reform = uach_interwar_timurid_state
