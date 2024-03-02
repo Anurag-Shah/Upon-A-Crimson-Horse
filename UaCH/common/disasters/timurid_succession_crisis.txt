@@ -114,8 +114,6 @@ timurid_succession_crisis = {
 			100 = UaCH.126	# Pulse event - dhimmi disloyal 2
 			100 = UaCH.127	# Pulse event - clergy disloyal 2
 			300 = UaCH.128	#Pulse event - bad legitimacy 5 - mystery illness
-			
-			
 		}
 	}
 }
