@@ -5245,10 +5245,6 @@ country_event = {
 
 	is_triggered_only = yes
 
-	mean_time_to_happen = {
-		months = 1
-	}
-
 	# Keep your gains and leave. AI Will always do this
 	option = {
 		name = "UaCH.86.a"
@@ -6913,14 +6909,13 @@ country_event = {
 	#im dying of shame
 	option = {
  		name = UaCH.117.e
-			kill_ruler = yes
-			kill_heir = yes
-			}
+		kill_ruler = yes
+		kill_heir = yes
+	}
 }
 
 #Pulse event - bad legitimacy 4 - chaos
 country_event = {
-
  	id = UaCH.118
  	title = UaCH.118.t  
  	desc = UaCH.118.d	  
@@ -6933,19 +6928,19 @@ country_event = {
 	}
 	
  	trigger = {
- 			AND = { NOT = {legitimacy = 10}
- 			OR = {
- 				has_disaster = timurid_succession_crisis
- 				is_in_war = { casus_belli = cb_challange_claimant }
- 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
-				}
+		AND = { NOT = { legitimacy = 10 }
+		OR = {
+			has_disaster = timurid_succession_crisis
+			is_in_war = { casus_belli = cb_challange_claimant }
+			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
 			}
+		}
  
- 		}
+ 	}
  	immediate = {
  		clr_country_flag = uach_disaster_event_timer
  		set_country_flag = uach_disaster_event_timer
- 		}
+ 	}
 	#let the lord of chaos rule
  	option = {
  		name = UaCH.118.a
@@ -6975,12 +6970,10 @@ country_event = {
 	#at least save whatever we can
  	option = {
  		name = UaCH.118.b
-			every_owned_province = {add_devastation = 25}
-			add_corruption = 5
-			add_treasury = -1000
-		}
-		
-		
+		every_owned_province = {add_devastation = 25}
+		add_corruption = 5
+		add_treasury = -1000
+	}
 }
 
 # Pulse event - delusions of grandeour
@@ -7557,7 +7550,7 @@ country_event = {
 				adm = 1
 				dip = 1
 				mil = 2
-				legitimacy = 75
+				claim = 75
 			}
 		convert_ruler_to_general = yes
 		}
@@ -7605,7 +7598,7 @@ country_event = {
 	#31 days modifier, ends 1 month after disaster is over
 	option = {
 		name = UaCH.129.a	
-		IF = { limit = { legitimacy = 80 } 
+		if = { limit = { legitimacy = 80 } 
 				add_country_modifier = {
 						name = uach_legit_to_defoff_lvl5
 						duration = 31}
@@ -7613,7 +7606,7 @@ country_event = {
 			}
 			
 				
-		ELSE_IF = { limit = { AND = {legitimacy = 60
+		else_if = { limit = { AND = {legitimacy = 60
 		      NOT = {has_country_flag = uach_legit_to_defoff_donenow}}
 			  }
 						add_country_modifier = {
@@ -7622,7 +7615,7 @@ country_event = {
 					set_country_flag = uach_legit_to_defoff_donenow
 			}
 		
-		ELSE_IF = { limit = { AND = {legitimacy = 40
+		else_if = { limit = { AND = {legitimacy = 40
 		      NOT = {has_country_flag = uach_legit_to_defoff_donenow}}
 					}
 						add_country_modifier = {
@@ -7631,24 +7624,31 @@ country_event = {
 						set_country_flag = uach_legit_to_defoff_donenow
 				}
 		
-		ELSE_IF = { limit = { AND = {legitimacy = 20
-		      NOT = {has_country_flag = uach_legit_to_defoff_donenow}}
-					}	 
-					add_country_modifier = {
-								name = uach_legit_to_defoff_lvl2
-								duration = 31}
-						set_country_flag = uach_legit_to_defoff_donenow
-				}	
-		ELSE = { limit = {{NOT = {has_country_flag = uach_legit_to_defoff_donenow}}
-							}
-					add_country_modifier = {
-								name = uach_legit_to_defoff_lvl1
-								duration = 31}
-						set_country_flag = uach_legit_to_defoff_donenow			
+		else_if = {
+			limit = {
+				AND = {
+					legitimacy = 20
+					NOT = {
+						has_country_flag = uach_legit_to_defoff_donenow
+					}
 				}
-		
-		##### sue me. add the modifier
-	
+			}	 
+			add_country_modifier = {
+				name = uach_legit_to_defoff_lvl2
+				duration = 31
+			}
+			set_country_flag = uach_legit_to_defoff_donenow
+		}	
+		else_if = {
+			limit = {
+				NOT = { has_country_flag = uach_legit_to_defoff_donenow }
+			}
+			add_country_modifier = {
+				name = uach_legit_to_defoff_lvl1
+				duration = 31
+			}
+			set_country_flag = uach_legit_to_defoff_donenow			
+		}
 	}
 }
 
