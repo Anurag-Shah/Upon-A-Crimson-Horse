@@ -60,6 +60,10 @@
  interloper_tr_conquest_5_desc: "We have embroiled ourselves in the Timurid Succession Crisis, in order to capture land for ourselves. It is imperative that we focus on this conquest, to ensure no Timurid Prince can oppose our ambitions."
  interloper_tr_conquest_6_desc: "We have embroiled ourselves in the Timurid Succession Crisis, in order to capture land for ourselves. It is imperative that we focus on this conquest, to ensure no Timurid Prince can oppose our ambitions."
  interloper_tr_conquest_7_desc: "We have embroiled ourselves in the Timurid Succession Crisis, in order to capture land for ourselves. It is imperative that we focus on this conquest, to ensure no Timurid Prince can oppose our ambitions."
+ uach_reform_tutorial_decision_title: "Upon a Crimson Horse: Reformation Mechanics"
+ uach_reform_tutorial_decision_desc: "If you need a refresher on the Government Reformation Mechanics, you can use this decision to re-open the tutorial event."
+ uach_wartime_tutorial_decision_title: "Upon a Crimson Horse: Crisis Mechanics"
+ uach_wartime_tutorial_decision_desc: "If you need a refresher on the Succession Crisis Mechanics, you can use this decision to re-open the tutorial event."
 
  # disasters
  repeatable_timurid_succession_crisis: "Third Timurid Succession Crisis"
