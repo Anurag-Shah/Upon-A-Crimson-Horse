@@ -28,9 +28,14 @@
  UACH_REPLACE_TIMURID_NATION_TT: "We will place a Timurid Prince on the throne, and elevate our status accordingly!"
  uach_reform_state_do_it_idiot: "Can be stopped by successfully reforming the state through the Persianization / Mongolization government mechanics."
  UACH_D_W_E_TT: "§RThe Collapse of the Timurid State will bring an end to our various wars, internal or external, as every Prince makes their bid for the throne.§!"
+ NO_ALLIANCE_TOOLTIP: "§YTimurid Princes§! and §YTimurid Governors§! cannot form alliances."
+ NO_ENFORCE_PEACE_TT: "You cannot enforce peace on the §YTimurid Succession Crisis§!, or as a §yTimurid Prince§! or §YTimurid Governor§!."
+ NO_GUARANTEE_TT: "You cannot Guarantee a §YTimurid Prince§! or §YTimurid Governor§!."
+ NO_THREATEN_WAR_TT: "You cannot threaten war on a §YTimurid Prince§! or §YTimurid Governor§!, and §YTimurid Princes§! and §YTimurid Governors§! cannot threaten war."
+ NO_INTERVENE_WAR_TT: "You cannot intervene during the §YTimurid Sucession Crisis§!. Use the Intervention method provided in the §YSpecial Mechanics UI§! tab."
 
  # modifiers
- uach_slain_the_crimson_horse: "Slain the Crimson Horse"
+ uach_slain_the_crimson_horse: "§RSlain the Crimson Horse§!"
  uach_gaining_a_foothold: "Gaining a Foothold"
  successful_interloper_intervention: "Successful Intervention"
  uach_shah_rukhs_mausoleum: "Mausoleum of Shah Rukh Mirza"

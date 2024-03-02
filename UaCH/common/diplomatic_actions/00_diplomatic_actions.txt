@@ -320,6 +320,30 @@ allianceaction = {
 			NOT = { FROM = { has_government_attribute = cannot_form_alliances } }
 		}
 	}
+	condition = {
+		tooltip = NO_ALLIANCE_TOOLTIP
+		potential = {
+			OR = {
+				FROM = {
+					OR = {
+						is_prince = yes
+						is_governor = yes
+					}
+				}
+				ROOT = {
+					OR = {
+						is_prince = yes
+						is_governor = yes
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+	}
 	effect = {
 		change_asha_vahishta = { value = 2 }
 	}
@@ -359,6 +383,30 @@ enforce_peace = {
 			change_asha_vahishta = { value = 5 }
 		}
 	}
+	condition = {
+		tooltip = NO_ENFORCE_PEACE_TT
+		potential = {
+			OR = {
+				FROM = {
+					OR = {
+						is_prince = yes
+						is_governor = yes
+					}
+				}
+				ROOT = {
+					OR = {
+						is_prince = yes
+						is_governor = yes
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+	}
 }
 
 royal_marriage = {
@@ -379,10 +427,50 @@ guaranteeaction = {
 	effect = {
 		change_asha_vahishta = { value = 1 }
 	}
+	condition = {
+		tooltip = NO_GUARANTEE_TT
+		potential = {
+			FROM = {
+				OR = {
+					is_prince = yes
+					is_governor = yes
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+	}
 }
 threaten_war = {
 	effect = {
 		change_asha_vahishta = { value = -10 }
+	}
+	condition = {
+		tooltip = NO_THREATEN_WAR_TT
+		potential = {
+			OR = {
+				FROM = {
+					OR = {
+						is_prince = yes
+						is_governor = yes
+					}
+				}
+				ROOT = {
+					OR = {
+						is_prince = yes
+						is_governor = yes
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				always = no
+			}
+		}
 	}
 }
 insultaction = {
@@ -418,6 +506,30 @@ influence_nation = {
 intervene_in_war = {
 	effect = {
 		change_asha_vahishta = { value = 50 }
+	}
+	condition = {
+		tooltip = NO_INTERVENE_WAR_TT
+		potential = {
+			OR = {
+				FROM = {
+					OR = {
+						is_prince = yes
+						is_governor = yes
+					}
+				}
+				ROOT = {
+					OR = {
+						is_prince = yes
+						is_governor = yes
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				always = no
+			}
+		}
 	}
 }
 
