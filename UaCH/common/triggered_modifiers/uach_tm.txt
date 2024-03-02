@@ -25,3 +25,40 @@ uach_reform_at_war = {
 
     monthly_uach_persianization = -0.2
 }
+
+
+lost_control_of_herat = {
+	potential = {
+		is_governor_or_prince = yes
+	}
+
+trigger = {
+		OR = {
+			NOT = { 446 = { country_or_non_sovereign_subject_holds = ROOT } }
+		}
+	}
+
+	ai_weight = {
+		factor = -1000 # Do what you can to avoid this modifier
+	}
+
+	legitimacy = -2
+}
+
+lost_control_of_samarkand = {
+	potential = {
+		is_governor_or_prince = yes
+	}
+
+	trigger = {
+		OR = {
+			NOT = { 454 = { country_or_non_sovereign_subject_holds = ROOT } }
+		}
+	}
+
+	ai_weight = {
+		factor = -1000 # Do what you can to avoid this modifier
+	}
+
+	legitimacy = -2
+}
