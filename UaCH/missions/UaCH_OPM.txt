@@ -164,7 +164,7 @@ opm_missions_slot3_luri = {
 		provinces_to_highlight = {  } 
 
 		trigger = {
-			LRI = { exist = no } 
+			LRI = { exists = no } 
 			development = 50
 		}
 
@@ -196,7 +196,7 @@ opm_missions_slot3_afghan = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = { AFG = { exist = no }  } 
+		trigger = { AFG = { exists = no }  } 
 
 		effect = {
 			change_tag = AFG

@@ -1197,6 +1197,7 @@ uach_add_prince_to_war = {
 
 # Adds interloper to the full scope of the war, if they are going for the big money
 uach_add_interloper_to_war_fully = {
+    # Run in the country scope of the interloper that's going for big money
     every_country = {
         limit = {
             AND = {
@@ -1214,10 +1215,11 @@ uach_add_interloper_to_war_fully = {
                 }
             }
         }
-
-        declare_war_with_cb = {
-            casus_belli = cb_uach_interloper_conquest
-            who = PREV
+        PREV = {
+            declare_war_with_cb = {
+                casus_belli = cb_uach_interloper_conquest
+                who = PREV
+            }
         }
     }
 }
@@ -1865,6 +1867,7 @@ uach_ctrh = { # i
         }
         cede_province = PREV
     }
+    uach_ae_with_distance = { scope = uach_tr_$i$ }
 }
 
 # Flee to india
