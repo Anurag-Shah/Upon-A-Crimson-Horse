@@ -1916,6 +1916,9 @@ country_event = {
 	# Option for Ajam
 	option = {
 		name = "UaCH.26.f"
+		trigger = {
+			exists = QOM
+		}
 
 		clr_country_flag = uach_still_considering
 		QOM = {
