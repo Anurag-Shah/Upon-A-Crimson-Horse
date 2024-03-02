@@ -1720,6 +1720,9 @@ country_event = {
 	# We maintain our allegiance to he who rules in Herat.
 	option = {
 		name = "UaCH.26.a"
+		trigger = {
+			exists = HER
+		}
 		
 		clr_country_flag = uach_still_considering
 		HER = {
@@ -1784,7 +1787,10 @@ country_event = {
 	# He who rules in Samarkand shall lead us forward.
 	option = {
 		name = "UaCH.26.b"
-		
+		trigger = {
+			exists = TRS
+		}
+
 		clr_country_flag = uach_still_considering
 		TRS = {
 			create_subject = {
@@ -1852,7 +1858,10 @@ country_event = {
 	# The lords of Khorasan shall have our might
 	option = {
 		name = "UaCH.26.c"
-		
+		trigger = {
+			exists = KHO
+		}
+
 		clr_country_flag = uach_still_considering
 		KHO = {
 			create_subject = {
@@ -1988,6 +1997,9 @@ country_event = {
 	# Option for Fars
 	option = {
 		name = "UaCH.26.g"
+		trigger = {
+			exists = FRS
+		}
 
 		clr_country_flag = uach_still_considering
 		FRS = {
@@ -2057,6 +2069,9 @@ country_event = {
 	# Option for Afghanistan
 	option = {
 		name = "UaCH.26.h"
+		trigger = {
+			exists = AFG
+		}
 
 		clr_country_flag = uach_still_considering
 		AFG = {
@@ -2121,6 +2136,9 @@ country_event = {
 	# Option for Khutallan
 	option = {
 		name = "UaCH.26.i"
+		trigger = {
+			exists = KHU
+		}
 
 		clr_country_flag = uach_still_considering
 		KHU = {
@@ -2185,6 +2203,9 @@ country_event = {
 	# Option for Balkh
 	option = {
 		name = "UaCH.26.j"
+		trigger = {
+			exists = BLK
+		}
 
 		clr_country_flag = uach_still_considering
 		BLK = {
