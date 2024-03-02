@@ -5273,6 +5273,7 @@ country_event = {
 	option = {
 		name = "UaCH.86.b"
 		set_country_flag = uach_big_money_flag
+		custom_tooltip = UACH_INTERLOPER_BIG_MONEY_EVENT_TT
 		hidden_effect = {
 			uach_add_interloper_to_war_fully = yes
 		}

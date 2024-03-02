@@ -13,7 +13,7 @@
  UACH_81_A_TOOLTIP: "§RDue to a paradox bug, please do not click this option while you have the Special Mechanics UI screen open, as it will crash your game§!"
  ETP_D_TR_A_TT: "The Timurid Succession Crisis must be ongoing."
  UACH_INTERLOPER_BUTTON_TT: "We will be able to choose the region to intervene in, and assert ourselves as an §GInterloper§!."
- UACH_86_A_TT: "All provinces that we have intervened for will be ceded to us."
+ UACH_86_A_TT: "All provinces that we have intervened for will be ceded to us.\n§RThere is a 3-year cooldown between interventions§!"
  UACH_86_B_TT: "Enables the §REnd Timur's Legacy§! Mechanic. We will only conquer the provinces we intervened for after Ending Timur's Legacy. If we lose the war, or the Timurid Realm is Reunited or Destroyed before that, we will §Rnever§! get those provinces."
  UACH_ETL_GOV_TR_INTBM_TT: "Is an interloper and has chosen to attempt and End Timur's Legacy."
  itrcdec_TT_0: "Controls all provinces in §GIraq-e Ajam§! that are a part of the Timurid Succession Crisis."
@@ -33,6 +33,7 @@
  NO_GUARANTEE_TT: "You cannot Guarantee a §YTimurid Prince§! or §YTimurid Governor§!, and §YTimurid Princes§! and §YTimurid Governors§! are too preoccupied with internal affairs to Guarantee foreign nations."
  NO_THREATEN_WAR_TT: "You cannot threaten war on a §YTimurid Prince§! or §YTimurid Governor§!, and §YTimurid Princes§! and §YTimurid Governors§! cannot threaten war."
  NO_INTERVENE_WAR_TT: "You cannot intervene during the §YTimurid Sucession Crisis§!. Use the Intervention method provided in the §YSpecial Mechanics UI§! tab."
+ UACH_INTERLOPER_BIG_MONEY_EVENT_TT: "We will unlock the ability to §YEnd Timur's Legacy§! as an interloper.\nWe will go to war with every §YTimurid Prince§!, §YTimurid Governor§!, and §YInterloper§!.\n§RWe will only conquer the provinces we declared our intervention for when we§! §YEnd Timur's Legacy§!§R. If we lose a Succession Crisis war before then, or someone else§! §YEnds Timur's Legacy§!§R, we will never get those provinces§!."
 
  # modifiers
  uach_slain_the_crimson_horse: "§RSlain the Crimson Horse§!"
