@@ -1,3 +1,1040 @@
+uach_ae_with_distance = { # scope
+    # Applies AE after ROOT conquers every province in $scope$
+    # Params:
+    # Scope: the scope of provinces for culture calculation
+    # Computes a modified version of the AE Formula
+    # Modifications:
+    # Culture: applies based on any province in the scope. ex if any province is same as primary culture of a country they get the +50%
+    # HRE: applies based on if any province in the scope is in the HRE
+    # Religion: applies based on if any province in the scope is the same religion / group as the country
+    # Infidel Conquest: similar to above
+    # distance: uses border_distance instead between ROOT and the country, because it can be exported to variable
+    
+    # The max amount of AE that can be applied through this effect is 999. Which is fine cuz AE Caps at 999 anyways
+    # The increment level is 0.1
+    # Performance be damned, this will get run a handful of times total in the campaign who cares
+
+	# Compute base AE based on dev of the scope
+	set_variable = {
+		which = uach_effect_ae
+		value = 0
+	}
+	$scope$ = {
+		export_to_variable = {
+			which = uach_effect_ae
+			value = development
+		}
+		ROOT = {
+			change_variable = {
+				which = uach_effect_ae
+				which = PREV
+			}
+		}
+	}
+	multiply_variable = {
+		which = uach_effect_ae
+		value = 0.2
+	}
+
+    every_country = {
+        # Scope to target
+        limit = {
+            NOT = { tag = ROOT }
+        }
+
+		# base ae from root lets not repeat that calculation
+		set_variable = {
+			which = uach_effect_ae
+			which = ROOT
+		}
+
+		# initialize factor var
+        set_variable = {
+            which = uach_effect_ae_factor
+            value = 1
+        }
+
+        # Religion modifier
+        # If any province in $scope$ has religion of target, religion factor is 0.5
+        if = {
+            limit = {
+                $scope$ = {
+                    religion = PREV
+                }
+            }
+            change_variable = {
+                which = uach_effect_ae_factor
+                value = 0.5
+            }
+        }
+        # If no province in $scope$ has religion group of target, religion factor is -0.5
+        else_if = {
+            limit = {
+                NOT = {
+                    $scope$ = {
+                        religion_group = PREV
+                    }
+                }
+            }
+            change_variable = {
+                which = uach_effect_ae_factor
+                value = -0.5
+            }
+        }
+        # else religion factor is 0 (not included for obvious reasons)
+        
+        # Infidel Conquest Modifier - if any province in $scope$ has same religion as target, and ROOT does not have that religion
+        if = {
+            limit = {
+                AND = {
+                    $scope$ = {
+                        religion = PREV
+                    }
+                    NOT = {
+                        religion = ROOT
+                    }
+                }
+            }
+            change_variable = {
+                which = uach_effect_ae_factor
+                value = 0.5
+            }
+        }
+
+        # Culture modifier
+        # If same primary culture as any province in $scope$, + 0.5
+        if = {
+            limit = {
+                $scope$ = {
+                    culture = PREV
+                }
+            }
+            change_variable = {
+                which = uach_effect_ae_factor
+                value = 0.5
+            }
+        }
+        # Else if same primary culture group as any province in $scope$, + 0.25
+        else_if = {
+            limit = {
+                $scope$ = {
+                    culture_group = PREV
+                }
+            }
+            change_variable = {
+                which = uach_effect_ae_factor
+                value = 0.25
+            }
+        }
+        # Else none
+
+        #HRE Modifier
+        if = {
+            limit = {
+                $scope$ = {
+                    is_part_of_hre = yes
+                }
+            }
+            change_variable = {
+                which = uach_effect_ae_factor
+                value = 0.5
+            }
+        }
+
+        # Distance
+        export_to_variable = {
+            value = border_distance
+            which = uach_ae_border_distance
+            who = ROOT
+        }
+        divide_variable = {
+            which = uach_ae_border_distance
+            value = 100
+        }
+        multiply_variable = {
+            which = uach_ae_border_distance
+            value = 0.75
+        }
+        change_variable = {
+            which = uach_ae_border_distance
+            value = 1
+        }
+        set_variable = {
+            which = uach_ae_border_factor
+            value = 1
+        }
+        divide_variable = {
+            which = uach_ae_border_factor
+            which = uach_ae_border_distance
+        }
+
+        # Spy Network Factor
+		uach_spy_calc_effect = yes
+		# the variable uach_ae_spy_value stores spy network value
+		# we divide this by 1000 then subtract it from 1
+		divide_variable = {
+			which = uach_ae_spy_value
+			value = 1000
+		}
+		set_variable = {
+			which = uach_ae_spy_factor
+			value = 1
+		}
+		subtract_variable = {
+			which = uach_ae_spy_factor
+			which = uach_ae_spy_value
+		}
+
+		# Compute AE so far
+		multiply_variable = {
+			which = uach_effect_ae
+			which = uach_effect_ae_factor
+		}
+		multiply_variable = {
+			which = uach_effect_ae
+			which = uach_ae_border_factor
+		}
+		multiply_variable = {
+			which = uach_effect_ae
+			which = uach_ae_spy_factor
+		}
+
+		# Ally factor
+		if = {
+			limit = {
+				alliance_with = ROOT
+			}
+			multiply_variable = {
+				which = uach_effect_ae
+				value = 2
+			}
+			divide_variable = {
+				which = uach_effect_ae
+				value = 3
+			}
+		}
+
+		# Subject factor
+		if = {
+			limit = {
+				is_subject_of = ROOT
+			}
+			divide_variable = {
+				which = uach_effect_ae
+				value = 10
+			}
+		}
+
+		# Apply AE
+		uach_add_ae_effect = yes
+    }
+}
+
+
+uach_spy_calc_effect = {
+	if = {
+		limit = {
+			has_spy_network_from = { who = ROOT value = 50 }
+		}
+		if = {
+			limit = {
+				has_spy_network_from = { who = ROOT value = 75 }
+			}
+			if = {
+				limit = {
+					has_spy_network_from = { who = ROOT value = 88 }
+				}
+				if = {
+					limit = {
+						has_spy_network_from = { who = ROOT value = 94 }
+					}
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 97 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 99 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 100 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 100 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 99 }
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 98 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 98 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 97 }
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 95 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 96 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 96 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 95 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 94 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 91 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 92 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 93 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 93 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 92 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 91 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 89 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 90 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 90 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 89 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 88 }
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_spy_network_from = { who = ROOT value = 81 }
+					}
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 84 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 86 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 87 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 87 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 86 }
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 85 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 85 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 84 }
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 82 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 83 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 83 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 82 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 81 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 78 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 79 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 80 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 80 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 79 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 78 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 76 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 77 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 77 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 76 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 75 }
+						}
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					has_spy_network_from = { who = ROOT value = 62 }
+				}
+				if = {
+					limit = {
+						has_spy_network_from = { who = ROOT value = 68 }
+					}
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 71 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 73 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 74 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 74 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 73 }
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 72 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 72 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 71 }
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 69 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 70 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 70 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 69 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 68 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 65 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 66 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 67 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 67 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 66 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 65 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 63 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 64 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 64 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 63 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 62 }
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_spy_network_from = { who = ROOT value = 56 }
+					}
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 59 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 60 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 61 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 61 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 60 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 59 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 57 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 58 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 58 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 57 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 56 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 53 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 54 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 55 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 55 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 54 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 53 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 51 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 52 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 52 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 51 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 50 }
+						}
+					}
+				}
+			}
+		}
+	}
+	else = {
+		if = {
+			limit = {
+				has_spy_network_from = { who = ROOT value = 25 }
+			}
+			if = {
+				limit = {
+					has_spy_network_from = { who = ROOT value = 37 }
+				}
+				if = {
+					limit = {
+						has_spy_network_from = { who = ROOT value = 43 }
+					}
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 46 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 48 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 49 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 49 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 48 }
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 47 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 47 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 46 }
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 44 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 45 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 45 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 44 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 43 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 40 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 41 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 42 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 42 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 41 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 40 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 38 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 39 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 39 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 38 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 37 }
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_spy_network_from = { who = ROOT value = 31 }
+					}
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 34 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 35 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 36 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 36 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 35 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 34 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 32 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 33 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 33 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 32 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 31 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 28 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 29 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 30 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 30 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 29 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 28 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 26 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 27 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 27 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 26 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 25 }
+						}
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					has_spy_network_from = { who = ROOT value = 12 }
+				}
+				if = {
+					limit = {
+						has_spy_network_from = { who = ROOT value = 18 }
+					}
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 21 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 23 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 24 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 24 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 23 }
+							}
+						}
+						else = {
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 22 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 22 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 21 }
+							}
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 19 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 20 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 20 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 19 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 18 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 15 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 16 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 17 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 17 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 16 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 15 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 13 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 14 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 14 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 13 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 12 }
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_spy_network_from = { who = ROOT value = 6 }
+					}
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 9 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 10 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 11 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 11 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 10 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 9 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 7 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 8 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 8 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 7 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 6 }
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = {
+							has_spy_network_from = { who = ROOT value = 3 }
+						}
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 4 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 5 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 5 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 4 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 3 }
+						}
+					}
+					else = {
+						if = {
+							limit = {
+								has_spy_network_from = { who = ROOT value = 1 }
+							}
+							if = {
+								limit = {
+									has_spy_network_from = { who = ROOT value = 2 }
+								}
+								set_variable = { which = uach_ae_spy_value value = 2 }
+							}
+							else = {
+								set_variable = { which = uach_ae_spy_value value = 1 }
+							}
+						}
+						else = {
+							set_variable = { which = uach_ae_spy_value value = 0 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 uach_add_ae_effect = { #var #effect
 	if = {
 		limit = {

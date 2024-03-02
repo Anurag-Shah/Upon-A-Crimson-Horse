@@ -1867,6 +1867,7 @@ uach_ctrh = { # i
         }
         cede_province = PREV
     }
+    uach_ae_with_distance = { scope = uach_tr_$i$ }
 }
 
 # Flee to india

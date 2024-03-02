@@ -5256,13 +5256,6 @@ country_event = {
 		hidden_effect = {
 			uach_cede_thematic_region = yes
 			uach_remove_interloper_from_war = yes
-			# every_known_country = {
-			# 	add_aggressive_expansion = {
-			# 		who = PREV
-			# 		value = 20
-			# 		apply_calc = yes
-			# 	}
-			# }
 		}
 		ai_chance = {
 			factor = 100
@@ -6929,11 +6922,12 @@ country_event = {
 	}
 	
  	trigger = {
-		AND = { NOT = { legitimacy = 10 }
-		OR = {
-			has_disaster = timurid_succession_crisis
-			is_in_war = { casus_belli = cb_challange_claimant }
-			is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+		AND = {
+			NOT = { legitimacy = 10 }
+			OR = {
+				has_disaster = timurid_succession_crisis
+				is_in_war = { casus_belli = cb_challange_claimant }
+				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
 			}
 		}
  

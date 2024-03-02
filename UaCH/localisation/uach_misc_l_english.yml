@@ -13,7 +13,7 @@
  UACH_81_A_TOOLTIP: "§RDue to a paradox bug, please do not click this option while you have the Special Mechanics UI screen open, as it will crash your game§!"
  ETP_D_TR_A_TT: "The Timurid Succession Crisis must be ongoing."
  UACH_INTERLOPER_BUTTON_TT: "We will be able to choose the region to intervene in, and assert ourselves as an §GInterloper§!."
- UACH_86_A_TT: "All provinces that we have intervened for will be ceded to us.\n§RThere is a 3-year cooldown between interventions§!"
+ UACH_86_A_TT: "All provinces that we have intervened for will be ceded to us.\n§RWe will incur an Aggressive Expansion penalty based on the development of the provinces we conquered.§!\n\n§RThere is a 3-year cooldown between interventions§!"
  UACH_86_B_TT: "Enables the §REnd Timur's Legacy§! Mechanic. We will only conquer the provinces we intervened for after Ending Timur's Legacy. If we lose the war, or the Timurid Realm is Reunited or Destroyed before that, we will §Rnever§! get those provinces."
  UACH_ETL_GOV_TR_INTBM_TT: "Is an interloper and has chosen to attempt and End Timur's Legacy."
  itrcdec_TT_0: "Controls all provinces in §GIraq-e Ajam§! that are a part of the Timurid Succession Crisis."
