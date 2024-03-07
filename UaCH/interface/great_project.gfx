@@ -1,0 +1,7 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_great_project_gawhar_shad_mausoleum"	
+		texturefile = "gfx//interface//great_projects//great_project_gawhar_shad_mausoleum.dds"
+	}
+}
