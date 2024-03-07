@@ -73,6 +73,9 @@ uach_spawn_opm = { #TAG #PROV
 			75 = {
 				# governor
 				$TAG$ = {
+				#fixing double government reforms - cetai
+					remove_government_reform = uach_governor
+					remove_government_reform = uach_prince
 					add_government_reform = uach_governor
 					make_tag_governor = yes
         			shuffle_governors = { scope = $TAG$ }
@@ -138,6 +141,8 @@ uach_spawn_opm = { #TAG #PROV
 			25 = {
 				# prince
 				$TAG$ = {
+					remove_government_reform = uach_governor
+					remove_government_reform = uach_prince
 					add_government_reform = uach_prince
 					kill_ruler = yes
 					set_dynasty = "Timurid"

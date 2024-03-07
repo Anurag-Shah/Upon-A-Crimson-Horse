@@ -1,0 +1,84 @@
+spriteTypes = {
+#GOVT missions
+spriteType = {
+		name = "uach_opm_31"
+		texturefile = "gfx//interface//missions//uach_opm_31.dds"
+	}
+
+spriteType = {
+		name = "uach_opm_32"
+		texturefile = "gfx//interface//missions//uach_opm_32.dds"
+	}
+
+spriteType = {
+		name = "uach_opm_22"
+		texturefile = "gfx//interface//missions//uach_opm_22.dds"
+	}
+
+spriteType = {
+		name = "uach_opm_42"
+		texturefile = "gfx//interface//missions//uach_opm_42.dds"
+	}
+
+spriteType = {
+		name = "uach_opm_luri"
+		texturefile = "gfx//interface//missions//uach_opm_luri.dds"
+	}
+	
+spriteType = {
+		name = "uach_opm_azeri"
+		texturefile = "gfx//interface//missions//uach_opm_azeri.dds"
+	}
+	
+spriteType = {
+		name = "uach_opm_kurd"
+		texturefile = "gfx//interface//missions//uach_opm_kurd.dds"
+	}
+
+spriteType = {
+		name = "uach_opm_khorasani"
+		texturefile = "gfx//interface//missions//uach_opm_khorasani.dds"
+	}
+
+spriteType = {
+		name = "uach_opm_afghan"
+		texturefile = "gfx//interface//missions//uach_opm_afghan.dds"
+	}
+	
+spriteType = {
+		name = "uach_opm_baluchi"
+		texturefile = "gfx//interface//missions//uach_opm_baluchi.dds"
+	}	
+
+spriteType = {
+		name = "uach_opm_uzbek"
+		texturefile = "gfx//interface//missions//uach_opm_uzbek.dds"
+	}	
+	
+spriteType = {
+		name = "uach_opm_kazakh"
+		texturefile = "gfx//interface//missions//uach_opm_kazakh.dds"		
+	}	
+	
+spriteType = {
+		name = "uach_opm_maza"
+		texturefile = "gfx//interface//missions//uach_opm_maza.dds"	
+	}	
+
+spriteType = {
+		name = "uach_opm_nogai"
+		texturefile = "gfx//interface//missions//uach_opm_nogai.dds"	
+	}	
+	
+spriteType = {
+		name = "uach_opm_smallpersia"
+		texturefile = "gfx//interface//missions//uach_opm_smallpersia.dds"	
+	}	
+
+spriteType = {
+		name = "uach_opm_xiva"
+		texturefile = "gfx//interface//missions//uach_opm_xiva.dds"	
+	}	
+
+
+}

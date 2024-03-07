@@ -17,6 +17,7 @@ repeatable_timurid_succession_crisis = {
 				}
 			}
 		}
+		NOT = { has_country_flag = disable_disasters }
 	}
 	
 	can_start = {
@@ -115,11 +116,29 @@ repeatable_timurid_succession_crisis = {
 			50	= UaCH.40   #defections among our people
 			100 = UaCH.38	#Low supplies
 			100 = UaCH.29	#raids
-			60 = UaCH.92	# cetai event
-			30 = UaCH.94	# cetai event
-			20 = UaCH.95	# cetai event
-			60 = UaCH.101   # cetai event
-			30 = UaCH.103  # cetai event
+			60 = UaCH.92	# Drought
+			30 = UaCH.94	# Drought worsen
+			20 = UaCH.95	# Drought f*cks everybody mother up
+			60 = UaCH.101   # variant of UaCH.92
+			30 = UaCH.103   # Religious uproar
+			30 = UaCH.111	# Death of a local sufi
+			30 = UaCH.112	# Apperance of a Xal
+			30 = UaCH.113	# The hunt of the Hadhayosh
+			30 = UaCH.114	# Nobleman turns faqir
+			300 = UaCH.115	#Pulse event - bad legitimacy 1 - our soldiers leave us
+			300 = UaCH.116	#Pulse event - bad legitimacy 2 - an usurper rises
+			300 = UaCH.117	#Pulse event - bad legitimacy 3 - an usurper strikes back
+			300 = UaCH.118	#Pulse event - bad legitimacy 4 - chaos
+			50 = UaCH.119	#Pulse event - delusions of grandeour
+			100 = UaCH.120	# Pulse event - nobles disloyal 1
+			100 = UaCH.121	# Pulse event - nobles disloyal 2
+			100 = UaCH.122	# Pulse event - clergy disloyal 1
+			100 = UaCH.123	# Pulse event - merchants disloyal 1
+			100 = UaCH.124	# Pulse event - merchants disloyal 2
+			100 = UaCH.125	# Pulse event - dhimmi disloyal 1
+			100 = UaCH.126	# Pulse event - dhimmi disloyal 2
+			100 = UaCH.127	# Pulse event - clergy disloyal 2
+			300 = UaCH.128	#Pulse event - bad legitimacy 5 - mystery illness
 		}
 	}
 }

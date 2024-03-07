@@ -1,0 +1,139 @@
+gawhar_shad_mausoleum = {
+	
+	
+	
+	#can we move it?
+	can_be_moved = no
+	
+	#time to move the project one unit of distance, in days
+	move_days_per_unit_distance = 2
+	
+	#tier that the project starts at when first placed in the game (be that at game start or when built by a country as the game progresses)
+	starting_tier = 3
+	
+	#project type
+	type = monument
+
+	#can we build it?
+	build_trigger = {
+		has_province_flag = gawhar_shad_mausoleum_building
+	}
+
+	#what to do when it's built
+	on_built = {
+	}
+	
+	#what to do when it's destroyed
+	on_destroyed = {
+	}
+
+	#can our country use it?
+	can_use_modifiers_trigger = {
+	}
+
+	#can our country upgrade it?
+	can_upgrade_trigger = {
+	}
+
+	#can our country keep it or is it destroyed when we get hold of it?
+	keep_trigger = {
+	}
+
+	#tier data
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+
+		cost_to_upgrade = {
+			factor = 0
+		}
+
+		province_modifiers = {
+		}
+
+		area_modifier = {
+		}
+
+		country_modifiers = {
+		}
+
+		on_upgraded = {
+		}
+	}
+
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+
+		cost_to_upgrade = {
+			factor = 1000
+		}
+
+		province_modifiers = {
+		}
+
+		area_modifier = {
+		}
+
+		country_modifiers = {
+			legitimacy = 1
+			manpower_recovery_speed = 0.05
+		}
+
+		on_upgraded = {
+		}
+	}
+
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+
+		cost_to_upgrade = {
+			factor = 2500
+		}
+
+		province_modifiers = {
+		}
+
+		area_modifier = {
+		}
+
+		country_modifiers = {
+			yearly_legitimacy = 1
+			manpower_recovery_speed = 0.1
+		}
+
+		on_upgraded = {
+		}
+	}
+
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+
+		cost_to_upgrade = {
+			factor = 5000
+		}
+
+		province_modifiers = {
+		}
+
+		area_modifier = {
+			local_development_cost = -0.1
+			local_monthly_devastation = -0.05
+		}
+
+		country_modifiers = {
+			diplomatic_reputation = 2
+			legitimacy = 1
+			manpower_recovery_speed = 0.15
+		}
+
+		on_upgraded = {
+		}
+	}
+}

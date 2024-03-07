@@ -38,3 +38,48 @@ country_decisions = {
 		}
 	}
 }
+
+country_decisions = {
+	intercept_shah_rukhs_body = {
+		major = yes
+		potential = {
+			is_governor_or_prince = yes
+			has_global_flag = uach_hunt_for_sr_body
+			NOT = {has_country_flag = uach_where_is_waldo_rukh}
+		}
+
+		allow = {
+			AND = {has_global_flag = uach_hunt_for_sr_body
+					mil_power = 50 }
+					}
+
+		effect = {
+			add_mil_power = -50
+			random_list = {
+					90 = {country_event = {
+									id = UaCH.131
+									}
+						}
+					10 = {country_event	= {
+									id = UaCH.132
+									}		
+								
+								}
+							}
+					}
+		
+		
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { mil_power = 150 }
+			}
+			modifier = {
+				factor = 0.3
+				NOT = { stability = 2 }
+			}
+		}
+	}
+}

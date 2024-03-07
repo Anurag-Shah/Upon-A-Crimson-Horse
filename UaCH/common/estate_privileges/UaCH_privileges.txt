@@ -11,8 +11,9 @@ estate_nobles_the_eternal_regency = {
 		has_estate_privilege = estate_nobles_the_eternal_regency
 	}
 	penalties = {
-        all_power_cost = 0.1
-        legitimacy = -2
+        all_power_cost = 0.05
+		interest = 0.25
+        legitimacy = -1
 	}
 	benefits = {
 		country_admin_power = 1

@@ -107,6 +107,13 @@ defined_text = {
     }
 	
 		text = {
+        localisation_key = string_screen_title_QOM
+        trigger = {
+			tag = QOM
+        }
+    }
+	
+		text = {
         localisation_key = string_screen_title_LRE
         trigger = {
 			tag = LRE
@@ -256,7 +263,12 @@ defined_text = {
 		}
 	}
 	
-	
+	text = {
+		localisation_key = string_start_title_QOM
+		trigger = {
+			tag = QOM
+		}
+	}
 	
 	#Africa
 	
@@ -847,6 +859,13 @@ defined_text = {
         localisation_key = string_start_BDK
         trigger = {
 			tag = BDK
+        }
+    }	
+	
+	text = {
+        localisation_key = string_start_QOM
+        trigger = {
+			tag = QOM
         }
     }	
 	

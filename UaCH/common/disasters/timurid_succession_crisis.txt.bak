@@ -1,0 +1,106 @@
+timurid_succession_crisis = {
+	potential = {
+		OR = {
+			AND = {
+				normal_or_historical_nations = yes
+				OR = {
+					tag = TIM
+					was_tag = TIM
+				}
+				NOT = { has_country_flag = timurids_reformed_government }
+				NOT = { has_country_flag = uach_interwar_lull }
+			}
+			AND = {
+				OR = {
+					is_prince = yes
+					is_governor = yes
+				}
+				any_country = {
+					has_disaster = timurid_succession_crisis
+				}
+			}
+		}
+		NOT = { has_global_flag = tim_repeatable_now }
+		NOT = { has_country_flag = disable_disasters }
+	}
+	
+	can_start = {
+		custom_trigger_tooltip = {
+			tooltip = uach_shah_rukh_or_death
+			NOT = { has_ruler_flag = timurids_peace_ruler }
+		}
+	}
+	
+	can_stop = {
+		custom_trigger_tooltip = {
+			tooltip = uach_nuh_uh
+			always = no
+		}		
+	}
+	
+	progress = {
+		modifier = {
+			factor = 5
+			always = yes
+		}
+		
+		modifier = {
+			factor = -1
+			has_country_flag = uach_yuki_lives_slower_disaster
+		}
+		
+		modifier = {
+			factor = 1
+			has_country_flag = uach_yuki_dies_disaster_faster
+		}
+
+		modifier = {
+			factor = 1000
+			any_country = {
+				has_disaster = timurid_succession_crisis
+			}
+		}
+		
+	}
+	
+	can_end = {
+		custom_trigger_tooltip = {
+			tooltip = uach_via_timur_legacy_buttons
+			always = no
+		}
+	}
+	
+	modifier = {
+		global_unrest = 5
+		manpower_recovery_speed = 0.33
+		custom_tooltip = UACH_D_W_E_TT
+	}
+	
+	on_start = UaCH.25
+	on_end = UaCH.1 # Entirely unused.
+	
+	on_monthly = {
+		events = {
+			
+		}
+		random_events = {
+			3300 = 0
+			500	= UaCH.27	#Yar ali besieges herat
+			100 = UaCH.39	#policies of the local emir
+			40	= UaCH.40   #defections among our people
+			2500 = UaCH.41	#Flight of the western emirs
+			100 = UaCH.38	#Low supplies
+			100 = UaCH.29	#raids
+			60 = UaCH.92	# Drought
+			30 = UaCH.94	# Drought worsen
+			20 = UaCH.95	# Drought f*cks everybody mother up
+			60 = UaCH.101   # variant of UaCH.92
+			30 = UaCH.103   # Religious uproar
+			30 = UaCH.111	# Death of a local sufi
+			30 = UaCH.112	# Apperance of a Xal
+			30 = UaCH.113	# The hunt of the Hadhayosh
+			30 = UaCH.114	# Nobleman turns faqir
+			
+		}
+	}
+}

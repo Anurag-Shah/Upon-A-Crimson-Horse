@@ -21,24 +21,42 @@ opm_missions_slot3 = {
 	}
 
 	uach_opm_31 = {
-		icon = mission_placeholder
+		icon = uach_opm_31
 		position = 1
 		provinces_to_highlight = {  } 
 
 		trigger = { num_of_generals = 2 } 
 
-		effect = {  } 
+		effect = {
+			random_owned_province = {
+				add_unit_construction = {
+					type = cavalry
+					cost = 0
+					speed = -0.25
+					amount = 3
+				}
+				add_unit_construction = {
+					type = infantry
+					cost = 0
+					speed = -0.25
+					amount = 3
+				}
+			}
+		}
 	}
 
 	uach_opm_32 = {
-		icon = mission_placeholder
+		icon = uach_opm_32
 		position = 2
 		required_missions = { uach_opm_31 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = { any_owned_province = { fort_level = 3 }  } 
 
-		effect = {  } 
+		effect = {
+			add_legitimacy = 50
+			add_adm_power = 50
+		}
 	}
 }
 opm_missions_slot2 = {
@@ -46,7 +64,8 @@ opm_missions_slot2 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { is_governor = yes
+	potential = {
+		is_governor = yes
 		NOT = {
 			tag = LRE
 			tag = AFG
@@ -58,18 +77,28 @@ opm_missions_slot2 = {
 			tag = ARD
 			tag = KHU
 			tag = FRS
-			tag = LRI } 
+			tag = LRI
 		}
-		
+	}
+
 	uach_opm_22 = {
-		icon = mission_placeholder
+		icon = uach_opm_22
 		position = 2
 		required_missions = { uach_opm_31 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			OR = {
+				inquisitor = 2
+				spymaster = 2
+				fortification_expert = 2
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			add_dip_power = 50
+			add_legitimacy = 50
+		}
 	}
 }
 opm_missions_slot4 = {
@@ -77,7 +106,8 @@ opm_missions_slot4 = {
 	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { is_governor = yes
+	potential = {
+		is_governor = yes
 		NOT = {
 			tag = LRE
 			tag = AFG
@@ -89,33 +119,44 @@ opm_missions_slot4 = {
 			tag = ARD
 			tag = KHU
 			tag = FRS
-			tag = LRI } 
+			tag = LRI
 		}
+	}
 
 	uach_opm_42 = {
-		icon = mission_placeholder
+		icon = uach_opm_42
 		position = 2
 		required_missions = { uach_opm_31 } 
 		provinces_to_highlight = {  } 
 
-		trigger = {  } 
+		trigger = {
+			check_variable = {
+				which = num_won_battles
+				value = 1
+			}
+		}
 
-		effect = {  } 
+		effect = {
+			add_legitimacy = 50
+			add_mil_power = 50
+		}
 	}
 }
-
+### OPM Finisher missions to upgrade them into Princes (reclaim x country)
+#Luristan
 opm_missions_slot3_luri = {
-	slot = 1
-	generic = yes
+	slot = 3
+	generic = no
 	ai = yes
 	has_country_shield = yes
-	potential = { primary_culture = luri
-					is_governor = yes
-					NOT = {tag = LRI}
-				}
+	potential = {
+		primary_culture = luri
+		is_governor = yes
+		NOT = { tag = LRI } 
+	}
 
-	uach_opm_33 = {
-		icon = mission_placeholder
+	uach_opm_33_luri = {
+		icon = uach_opm_luri
 		position = 3
 		required_missions = {
 			uach_opm_32
@@ -124,8 +165,425 @@ opm_missions_slot3_luri = {
 		}
 		provinces_to_highlight = {  } 
 
-		trigger = { NOT = { exist = LRI }  } 
+		trigger = {
+			AND = {
+						LRI = { exists = no }
+						development = 25
+					}
+				} 
 
-		effect = { change_tag = LRI } 
+		effect = {
+			change_tag = LRI
+			make_tag_prince = yes
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+#Afghanistan
+opm_missions_slot3_afghan = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = afghani
+		is_governor = yes
+		NOT = { tag = AFG } 
+	}
+
+	uach_opm_33_afghan = {
+		icon = uach_opm_afghani
+		position = 3
+		required_missions = {
+			uach_opm_32
+			uach_opm_42
+			uach_opm_22
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = { 
+			AND = {
+						AFG = { exists = no }
+						development = 25
+					}
+				} 
+
+		effect = {
+			change_tag = AFG
+			make_tag_prince = yes
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+#Khorasan
+opm_missions_slot3_khorasan = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = khorasani
+		is_governor = yes
+		NOT = { tag = KHO } 
+	}
+
+	uach_opm_33_khorasani = {
+		icon = uach_opm_khorasani
+		position = 3
+		required_missions = {
+			uach_opm_32
+			uach_opm_42
+			uach_opm_22
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			AND = {
+						KHO = { exists = no }
+						development = 25
+					}
+				} 
+
+		effect = {
+			change_tag = KHO
+			make_tag_prince = yes
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+#Azerbaijan(Ardalan)
+opm_missions_slot3_azeri = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = azerbaijani
+		is_governor = yes
+		NOT = { tag = ARL } 
+	}
+
+	uach_opm_33_azeri = {
+		icon = uach_opm_azeri
+		position = 3
+		required_missions = {
+			uach_opm_32
+			uach_opm_42
+			uach_opm_22
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			AND = {
+						ARL = { exists = no }
+						development = 25
+					}
+				} 
+
+		effect = {
+			change_tag = ARL
+			
+			make_tag_prince = yes
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+#Baluchistan
+opm_missions_slot3_baluchi = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = baluchi
+		is_governor = yes
+		NOT = { tag = BAL } 
+	}
+
+	uach_opm_33_baluchi = {
+		icon = uach_opm_baluchi
+		position = 3
+		required_missions = {
+			uach_opm_32
+			uach_opm_42
+			uach_opm_22
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			AND = {
+						BAL = { exists = no }
+						development = 25
+					}
+				} 
+
+		effect = {
+			change_tag = BAL
+			make_tag_prince = yes
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+#KZH
+opm_missions_slot3_kazakh = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = kazakh
+		is_governor = yes
+		NOT = { tag = KZH } 
+	}
+
+	uach_opm_33_kazakh = {
+		icon = uach_opm_kazakh
+		position = 3
+		required_missions = {
+			uach_opm_32
+			uach_opm_42
+			uach_opm_22
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			AND = {
+						KZH = { exists = no }
+						development = 25
+					}
+				} 
+
+		effect = {
+			change_tag = KZH
+			make_tag_prince = yes
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+#Kurdistan (Ardabil)
+opm_missions_slot3_kurd = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = kurdish
+		is_governor = yes
+		NOT = { tag = ARD } 
+	}
+
+	uach_opm_33_kurd = {
+		icon = uach_opm_kurd
+		position = 3
+		required_missions = {
+			uach_opm_32
+			uach_opm_42
+			uach_opm_22
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			AND = {
+						ARD = { exists = no }
+						development = 25
+					}
+				} 
+
+		effect = {
+			change_tag = ARD
+			make_tag_prince = yes
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+#Mazadaran
+opm_missions_slot3_maza = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = mazandarani
+		is_governor = yes
+		NOT = { tag = TAB } 
+	}
+
+	uach_opm_33_maza = {
+		icon = uach_opm_maza
+		position = 3
+		required_missions = {
+			uach_opm_32
+			uach_opm_42
+			uach_opm_22
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			AND = {
+						TAB = { exists = no }
+						development = 25
+					}
+				} 
+
+		effect = {
+			change_tag = TAB
+			make_tag_prince = yes
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+#Nogai
+opm_missions_slot3_yesgay = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = nogai
+		is_governor = yes
+		NOT = { tag = NOG } 
+	}
+
+	uach_opm_33_nogai = {
+		icon = uach_opm_nogai
+		position = 3
+		required_missions = {
+			uach_opm_32
+			uach_opm_42
+			uach_opm_22
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			AND = {
+						NOG = { exists = no }
+						development = 25
+					}
+				} 
+
+		effect = {
+			change_tag = NOG
+			make_tag_prince = yes
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+#Persia(Ajam)
+opm_missions_slot3_smallpersia = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = persian
+		is_governor = yes
+		NOT = { tag = QOM } 
+	}
+
+	uach_opm_33_smallpersia = {
+		icon = uach_opm_smallpersia
+		position = 3
+		required_missions = {
+			uach_opm_32
+			uach_opm_42
+			uach_opm_22
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			AND = {
+						QOM = { exists = no }
+						development = 25
+					}
+				} 
+
+		effect = {
+			change_tag = QOM
+			make_tag_prince = yes
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+#Turkmenistan\Khiva
+opm_missions_slot3_xiva = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = turkmeni
+		is_governor = yes
+		NOT = { tag = KHI } 
+	}
+
+	uach_opm_33_xiva = {
+		icon = uach_opm_xiva
+		position = 3
+		required_missions = {
+			uach_opm_32
+			uach_opm_42
+			uach_opm_22
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			AND = {
+						KHI = { exists = no }
+						development = 25
+					}
+				} 
+
+		effect = {
+			change_tag = KHI
+			make_tag_prince = yes
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+#Uzbek (Shaybanids)
+opm_missions_slot3_uzbekh = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = uzbekh
+		is_governor = yes
+		NOT = { tag = SHY } 
+	}
+
+	uach_opm_33_shaybanid = {
+		icon = uach_opm_shaybanid
+		position = 3
+		required_missions = {
+			uach_opm_32
+			uach_opm_42
+			uach_opm_22
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = {
+			AND = {
+						SHY = { exists = no }
+						development = 25
+					}
+				} 
+
+		effect = {
+			change_tag = SHY
+			make_tag_prince = yes
+			swap_non_generic_missions = yes
+		}
 	}
 }

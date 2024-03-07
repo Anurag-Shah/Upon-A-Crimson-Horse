@@ -209,6 +209,8 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		tag = QOM
+		NOT = { has_global_flag = uach_succession_crisis_started }
+		NOT = { TIM = { has_country_flag = uach_interwar_lull } }
 	}
 	major = yes
 	major_trigger = {
@@ -444,6 +446,7 @@ country_event = {
 						} 
 					}
 					NOT = { tag = ISF }
+					NOT = { tag = QOM }
 				}
 				country_event = {
 					id = UaCH.9
@@ -700,8 +703,20 @@ country_event = {
 	option = {
 		name = "flavor_tim.2.a" 
 		trigger = { dynasty = Timurid }
-		custom_tooltip = flavor_tim.2.a.tt
-	}
+			custom_tooltip = flavor_tim.2.a.tt
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_years_of_income = 2
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.5
+						cavalry = 0.5
+					}
+				}
+			}
+		}
 
 	# lol no comment here
 	option = {
@@ -726,8 +741,21 @@ country_event = {
 				religion_group = muslim
 			}
 		custom_tooltip = flavor_tim.2.b.tt
+		
+				if = {
+				limit = {
+					ai = yes 
+				}
+				add_years_of_income = 2
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.5
+						cavalry = 0.5
+						}
+					}
+				}
+			}
 		}
-	}
 }
 
 # The body of Shah Rukh
@@ -836,7 +864,7 @@ country_event = {
 	major_trigger = {
 		is_governor_or_prince = yes
 	}
-
+	
 	mean_time_to_happen = {
 		days = 1
 	}
@@ -856,12 +884,11 @@ country_event = {
 		}
 
 		custom_tooltip = uach_trs_declares_in_6
-		hidden_effect = {
-			country_event = {
+			TIM = { country_event = {
 				id = UaCH.17
-				days = 180
+				days = 30
+				}
 			}
-		}
 		
 		ai_chance = {
 			factor = 1
@@ -904,7 +931,7 @@ country_event = {
 	
 	fire_only_once = yes
 	is_triggered_only = yes
-
+	ai = yes
 	hidden = yes
 
 	immediate = {
@@ -940,23 +967,30 @@ country_event = {
 	}
 	
 	trigger = {
-		tag = TIM
+		OR = {	tag = TIM
+				tag = HER}
 	}
 
 	mean_time_to_happen = {
 		days = 1
 	}
 	
+	
 	# Intolerable!
 	option = { 
 		name = "UaCH.17.a" 
-
+		
+		
 		TRS = {
 			add_liberty_desire = 100
-			hidden_effect = {
-				country_event = {
-					id = UaCH.90
-					days = 1
+			hidden = {set_country_flag = uach_where_is_waldo_rukh
+					  set_global_flag = uach_hunt_for_sr_body}
+			hidden = {
+				TRS = {
+					country_event = {
+						id = UaCH.90
+						days = 180
+					}	
 				}
 			}
 		}
@@ -968,24 +1002,19 @@ country_event = {
 		}
 	}
 
-	# I'm dying of shame.
-	option = {
-		name = "UaCH.17.b"
-		trigger = {
-			has_ruler = "Muhammad Juki"
-		}
-		kill_ruler = yes
-		
-
-		ai_chance = {
-			factor = 1
-		}
-	}
-
 	# Accept the new reality
 	option = {
 		name = "UaCH.17.c"
 		custom_tooltip = uach_new_reality
+		trigger = { AND = {
+						NOT = {
+							tag = HER
+							}
+						exist = TRS
+						}
+					}
+		set_global_flag = uach_hunt_for_sr_body				
+		hidden = {TRS = {set_country_flag = uach_where_is_waldo_rukh}}
 		hidden_effect = {
 			TIM = {
 				every_subject_country = {
@@ -1025,9 +1054,9 @@ country_event = {
 		
 		TRS = {
 			add_liberty_desire = 100
-			country_event = {
-				id = UaCH.31
-			}
+		#	country_event = {
+		#		id = UaCH.31
+		#	}
 			hidden_effect = {
 				country_event = {
 					id = UaCH.90
@@ -1035,28 +1064,33 @@ country_event = {
 				}
 			}
 		}
-		hidden_effect = {
+		custom_tooltip = uach_try_to_sway_latif
 			random_list = {
 				50 = {
-					country_event = {
-						id = UaCH.49
-						days = 60
+					TRS = { 
+						country_event = {
+							id = UaCH.49
+							days = 30
+						}
 					}
 				}
 				25 = {
-					country_event = {
-						id = UaCH.50
-						days = 60
+					TRS = { 
+						country_event = {
+							id = UaCH.50
+							days = 30
+						}
 					}
 				}
 				25 = {
-					country_event = {
-						id = UaCH.51
-						days = 30
+					TIM = {
+						country_event = {
+							id = UaCH.51
+							days = 15
+						}
 					}
 				}
 			}
-		}
 		ai_chance = {
 			factor = 0
 		}
@@ -1890,6 +1924,9 @@ country_event = {
 	# Option for Ajam
 	option = {
 		name = "UaCH.26.f"
+		trigger = {
+			exists = QOM
+		}
 
 		clr_country_flag = uach_still_considering
 		QOM = {
@@ -2571,7 +2608,7 @@ country_event = {
 	option = {
 		name = "UaCH.31.a"
 		
-		random_province = {
+		random_owned_province = {
 			limit = {
 				NOT = { is_capital = yes } 
 			}
@@ -3709,29 +3746,36 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	
+	major = yes
+	major_trigger = {
+		is_governor_or_prince = yes
+	}
 	trigger = {
-		tag = TRS
 	}
 
 	mean_time_to_happen = {
 		days = 1
 	}
 	
+	immediate = {set_global_flag = uach_hunt_for_sr_body}
+	
 	# Good. Good. Our forces will be operational by then.
 	option = { 
 		name = "UaCH.49.a" 
 
 		add_legitimacy = 25
-		TIM = {
-			set_country_flag = uach_may_intercept_body
+		hidden = {
+			every_country = { 
+				limit = {
+					is_governor_or_prince = yes 
+					}
+				set_country_flag = uach_may_intercept_body
+			}
 		}
+		TRS = {set_country_flag = uach_where_is_waldo_rukh}
 		
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				# TODO
-			}
 		}
 	}
 }
@@ -3745,21 +3789,34 @@ country_event = {
 	
 	is_triggered_only = yes
 	fire_only_once = yes
+	major = yes
+	major_trigger = {
+		is_governor_or_prince = yes
+	}
 	
 	trigger = {
-		tag = TRS
 	}
 
 	mean_time_to_happen = {
 		days = 1
 	}
 	
+	immediate = {set_global_flag = uach_hunt_for_sr_body}
+	
 	# Insolent boy!
 	option = { 
 		name = "UaCH.50.a" 
-
+		hidden = {
+		every_country = { 
+			limit = {
+				is_governor_or_prince = yes 
+				}
+			set_country_flag = uach_may_intercept_body
+			}
+		}
+		TIM = {set_country_flag = uach_where_is_waldo_rukh }
+		
 		add_legitimacy = -25
-		set_country_flag = uach_may_intercept_body
 		
 		ai_chance = {
 			factor = 1
@@ -3782,7 +3839,6 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		tag = TIM
 	}
 
 	mean_time_to_happen = {
@@ -3908,15 +3964,19 @@ country_event = {
 		add_mil_power = 50
 		random_list = {
 			90 = {
-				country_event = {
-					id = UaCH.49
-					days = 1
-				}
+				TRS = {
+					country_event = {
+						id = UaCH.49
+						days = 1
+						}
+					}
 			}
 			10 = {
-				country_event = {
-					id = UaCH.50
-					days = 1
+				TRS = {
+					country_event = {
+						id = UaCH.50
+						days = 1
+					}
 				}
 			}
 		}
@@ -3933,113 +3993,12 @@ country_event = {
 
 # A Deal with the Devil scrapped
 
-# Decision - Intercept the body
-country_event = {
-	id = UaCH.54 
-	title = UaCH.54.t 
-	desc = UaCH.54.d
-	picture = DEATH_OF_HEIR_eventPicture
-	
-	is_triggered_only = yes
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	# We ride! 
-	option = { 
-		name = "UaCH.51.a" 
+# Decision - Intercept the body - it is a decision, what is it even doing in events?
 
-		random_list = {
-			50 = {
+# The body arrives - scrapped. whole event is rewritten
 
-			}
-			50 = {
-				custom_tooltip = uach_becomes_holder_of_body
-				# TODO Set holder of body and enable for others again				
-			}
-		}
+# Stolen - scrapped. no need for another event
 
-	}
-}
-
-# The body arrives
-country_event = {
-	id = UaCH.55 
-	title = UaCH.55.t 
-	desc = UaCH.55.d
-	picture = DEATH_OF_HEIR_eventPicture
-	
-	is_triggered_only = yes
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	trigger = {
-		OR = {
-			tag = TRS
-			tag = TIM
-		}
-	}
-	
-	# Do it.
-	option = { 
-		name = "UaCH.55.a" 
-
-		add_treasury = -200
-
-		capital_scope = {
-			add_province_modifier = {
-				# The modifiers has no effect, but it is used to trigger the event UaCH.56 and UaCH.57
-				name = uach_shah_rukhs_mausoleum
-				duration = -1
-			}
-			set_province_flag = uach_shah_rukhs_mausoleum
-		}
-	}
-}
-
-# Stolen
-country_event = {
-	id = UaCH.56 
-	title = UaCH.56.t 
-	desc = UaCH.56.d
-	picture = DEATH_OF_HEIR_eventPicture
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	trigger = {
-		capital_scope = {
-			has_province_modifier = uach_shah_rukhs_mausoleum
-			OR = {
-				AND = {
-					NOT = { owner = { tag = TRS } }
-					sieged_by = TIM
-				}
-				AND = {
-					NOT = { owner = { tag = TIM } }
-					sieged_by = TRS
-				}
-			}
-		}
-	}
-	
-	# Tragedy!
-	option = { 
-		name = "UaCH.56.a" 
-
-		capital_scope = {
-			remove_province_modifier = uach_shah_rukhs_mausoleum
-		}
-
-		add_country_modifier = {
-			name = uach_shah_rukhs_mausoleum_desecrated
-			duration = 365
-		}
-	}
-}
 
 # The mausoleum is complete
 country_event = {
@@ -4047,7 +4006,7 @@ country_event = {
 	title = UaCH.57.t 
 	desc = UaCH.57.d
 	picture = DEATH_OF_HEIR_eventPicture
-
+	is_triggered_only = yes
 	fire_only_once = yes
 	
 	mean_time_to_happen = {
@@ -4055,16 +4014,6 @@ country_event = {
 	}
 
 	trigger = {
-		AND = {
-			capital_scope = {
-				has_province_modifier = uach_shah_rukhs_mausoleum
-				had_province_flag = {
-					flag = uach_shah_rukhs_mausoleum
-					days = 365
-				}
-			}
-			NOT = { has_country_flag = uach_masoleum_event_already_fired_for_you }
-		}
 	}
 	
 	# With this, peace shall be upon this land.
@@ -4072,16 +4021,18 @@ country_event = {
 		name = "UaCH.57.a" 
 
 		every_subject_country = {
-			add_liberty_desire = -15
-			add_country_modifier = {
-				name = uach_shah_rukhs_mausoleum_completed
-				duration = 730
+			add_liberty_desire = -10
+		}
+		ROOT = {
+			capital_scope = {
+				set_province_flag = gawhar_shad_mausoleum_building
+				add_great_project = {
+					type = gawhar_shad_mausoleum
+					instant = yes
+				}
 			}
 		}
-
-		hidden_effect = {
-			set_country_flag = uach_masoleum_event_already_fired_for_you
-		}
+			
 	}
 }
 
@@ -5219,10 +5170,6 @@ country_event = {
 
 	is_triggered_only = yes
 
-	mean_time_to_happen = {
-		months = 1
-	}
-
 	# Keep your gains and leave. AI Will always do this
 	option = {
 		name = "UaCH.86.a"
@@ -5234,13 +5181,6 @@ country_event = {
 		hidden_effect = {
 			uach_cede_thematic_region = yes
 			uach_remove_interloper_from_war = yes
-			# every_known_country = {
-			# 	add_aggressive_expansion = {
-			# 		who = PREV
-			# 		value = 20
-			# 		apply_calc = yes
-			# 	}
-			# }
 		}
 		ai_chance = {
 			factor = 100
@@ -5251,6 +5191,7 @@ country_event = {
 	option = {
 		name = "UaCH.86.b"
 		set_country_flag = uach_big_money_flag
+		custom_tooltip = UACH_INTERLOPER_BIG_MONEY_EVENT_TT
 		hidden_effect = {
 			uach_add_interloper_to_war_fully = yes
 		}
@@ -5888,6 +5829,25 @@ country_event = {
 			set_country_flag = uach_second_succession_crisis_war_flag
 
 			set_global_flag = uach_succession_crisis_started
+
+			# Removes every ally of every prince / governor
+			# There should only be one, ROOT
+			# But just to be safe :)
+			every_country = {
+				limit = {
+					OR = {
+						is_prince = yes
+						is_governor = yes
+						has_country_flag = uach_interwar_lull
+					}
+				}
+				every_country = {
+					limit = {
+						alliance_with = PREV
+					}
+					break_alliance = PREV
+				}
+			}
 
 			clr_country_flag = uach_interwar_lull
 
@@ -6572,7 +6532,7 @@ country_event = {
  		name = UaCH.112.b
 			add_prestige = 25
 			add_piety = 0.25
-			random_province = {
+			random_owned_province = {
 			spawn_rebels = {
 				size = 2
 				type = leadered_peasant_rebels
@@ -6682,3 +6642,1018 @@ country_event = {
 			
  	}
 }
+
+#Pulse event - bad legitimacy 1 - our soldiers leave us
+country_event = {
+
+ 	id = UaCH.115
+ 	title = UaCH.115.t  
+ 	desc = UaCH.115.d	  
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+ 	trigger = {
+			AND = { NOT = {legitimacy = 50}
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+				}
+			}
+ 
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+	#let the cowards run
+ 	option = {
+ 		name = UaCH.115.a
+		add_manpower = -3
+		add_legitimacy = -10
+ 		}
+	#a little gold should solve this problem
+ 	option = {
+ 		name = UaCH.115.b
+		add_legitimacy = 10
+		add_treasury = -100
+		add_adm_power = -50
+ 	}
+}
+
+#Pulse event - bad legitimacy 2 - an usurper rises
+country_event = {
+
+ 	id = UaCH.116
+ 	title = UaCH.116.t  
+ 	desc = UaCH.116.d	  
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+ 	trigger = {
+ 			AND = { NOT = {legitimacy = 50}
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+				}
+			}
+ 
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+		#send for the guard
+ 	option = {
+ 		name = UaCH.116.a
+		add_manpower = -3
+		add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = -20
+			}
+		random_owned_province = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+			}
+		}
+ 	}
+		#he is not that big of a problem
+ 	option = {
+ 		name = UaCH.116.b
+		random_owned_province = {
+			spawn_rebels = {
+				size = 2
+				type = pretender_rebels
+			}
+		}	
+ 	}
+	#send someone to kill him. discretely.
+	option = {
+ 		name = UaCH.116.c
+			add_prestige = -25
+			add_legitimacy = -10
+			add_mil_power = 25
+			random_list = {
+						60 = { random_owned_province = {
+								spawn_rebels = {
+									size = 2
+									type = pretender_rebels
+									}
+								}
+							}
+				30 = { custom_tooltip = uach_hidden_pretender
+						set_country_flag = uach_hidden_pretender_hidden }
+				10 = { custom_tooltip = uach_shameful_pretender }
+					}
+		}	
+}
+
+
+
+
+#Pulse event - bad legitimacy 4 - chaos
+country_event = {
+ 	id = UaCH.118
+ 	title = UaCH.118.t  
+ 	desc = UaCH.118.d	  
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+ 	trigger = {
+		AND = {
+			NOT = { legitimacy = 10 }
+			OR = {
+				has_disaster = timurid_succession_crisis
+				is_in_war = { casus_belli = cb_challange_claimant }
+				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+			}
+		}
+ 
+ 	}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 	}
+	#let the lord of chaos rule
+ 	option = {
+ 		name = UaCH.118.a
+		add_manpower = -5
+		random_owned_province = {
+			add_devastation = 50
+			spawn_rebels = {
+				size = 3
+				type = noble_rebels
+			}	
+		}
+		random_owned_province = {
+			add_devastation = 50
+			spawn_rebels = {
+				size = 3
+				type = leadered_peasant_rebels
+			}	
+		}
+		random_owned_province = {
+			add_devastation = 50
+			spawn_rebels = {
+				size = 3
+				type = religious_rebels
+			}	
+		}
+ 	}
+	#at least save whatever we can
+ 	option = {
+ 		name = UaCH.118.b
+		every_owned_province = {add_devastation = 25}
+		add_corruption = 5
+		add_treasury = -1000
+	}
+}
+
+
+
+# Pulse event - delusions of grandeour
+country_event = {
+
+ 	id = UaCH.119
+ 	title = UaCH.119.t  #Delusions of grandeour
+ 	desc = UaCH.119.d	#Within the fortress walls of the capital, §G[ROOT.GetName]§!, helds a feast, which has been ongoing for three days and nights already. Intoxicated by delusions of grandeur, he believes himself Timur reborn, or worse, all while discontent is spreading among the populace like wildfire. While the situation has yet to reach the point of no return, it is only matter of time until our enemies take advantage of it.
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+ 	trigger = {
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+ 			}
+ 
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+	#Let me be!
+ 	option = {
+ 		name = UaCH.119.a
+		add_corruption = 2
+		add_treasury = -100
+		add_splendor = 10
+ 		}
+	#Bah, peasants dont worry me
+ 	option = {
+ 		name = UaCH.119.b
+		add_legitimacy = 10
+		add_stability = -1
+		
+ 	}
+ }
+ 
+ # Pulse event - nobles disloyal 1
+ country_event = {
+
+ 	id = UaCH.120
+ 	title = UaCH.120.t  #Disloyalty among the nobility
+ 	desc = UaCH.120.d	#Grumbling nobles, harr harr. Gib land.
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+ 	trigger = {
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+ 			}
+			NOT = {
+				estate_loyalty = { 
+					estate = estate_nobles
+					loyalty = 30
+				}
+			}
+ 
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+	#Make amends
+ 	option = {
+ 		name = UaCH.120.a
+		add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 10
+				}
+		change_estate_land_share = {
+							estate = estate_nobles
+							share = 5
+						}
+		
+ 		}
+	#Silence!
+ 	option = {
+ 		name = UaCH.120.b
+		add_legitimacy = -15
+		add_prestige = -20	
+		
+ 	}
+ }
+ 
+# Pulse event - nobles disloyal 2
+ country_event = {
+
+ 	id = UaCH.121
+ 	title = UaCH.121.t  #Treason in the nobility
+ 	desc = UaCH.121.d	#Local nobles have came to us with outrageous demands. Do we cave in?
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+ 	trigger = {
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+			}
+			NOT = {
+				estate_loyalty = { 
+					estate = estate_nobles
+					loyalty = 30
+				}
+			}
+ 
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+		
+	#We need them... for now.
+ 	option = {
+ 		name = UaCH.121.a
+		add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 10
+				}
+		change_estate_land_share = {
+							estate = estate_nobles
+							share = 5
+						}
+		
+			}
+	#They will gain no such thing!
+ 	option = {
+ 		name = UaCH.121.b
+		add_legitimacy = 5
+		random_owned_province = {
+			spawn_rebels = {
+				size = 2
+				type = noble_rebels
+			}
+		}
+		
+		
+ 	}
+ }
+ 
+
+ 
+ # Pulse event - merchants disloyal 1
+ country_event = {
+
+ 	id = UaCH.123
+ 	title = UaCH.123.t  #Trader goes bankrupt
+ 	desc = UaCH.123.d	#Thanks to the constant warfare in our realm, many traders have lost their business. As caravans are having harder time to get through the Silk Road anymore, one of our prominent merchants have just lost his entire shipment of spices, causing him to be unable to pay back his debtors. While we could help him out, maybe this situation presents an opportunity for us to gain some wealth for ourselves.
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+ 	trigger = {
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+ 			}
+			NOT = {
+				estate_loyalty = { 
+					estate = estate_burghers
+					loyalty = 30
+				}
+			}
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+	#Seize his wealth, but pay his debt.
+ 	option = {
+ 		name = UaCH.123.a
+		add_corruption = 2
+		add_treasury = -100
+		add_legitimacy = 10
+		add_prestige = 10
+ 		}
+	#So Lady Luck doesnt favor you anymore, eh?
+ 	option = {
+ 		name = UaCH.123.b
+		add_legitimacy = -15
+		add_estate_loyalty = {
+					estate = estate_burghers
+					loyalty = -10
+				}
+		change_estate_land_share = {
+							estate = estate_burghers
+							share = -5
+						}
+		
+ 	}
+ }
+ 
+ # Pulse event - merchants disloyal 2
+ country_event = {
+
+ 	id = UaCH.124
+ 	title = UaCH.124.t  #Unsuccesful gamble
+ 	desc = UaCH.124.d	#While most of the wealth of the palace comes from direct taxation of the common people, royalty dabbling in trade is not unheard of. Alas, one of our rulers latest trade deals have turned out to be a disaster when we received a shipment of excellent grade of iron, only for it to turn out as painted stones! The merchant who sold it to us is long gone, and the rumors circling around have made our ruler a laughingstock among the burghers.
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+ 	trigger = {
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+ 			}
+			NOT = {
+				estate_loyalty = { 
+					estate = estate_burghers 
+					loyalty = 30
+				}
+			}
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+	#This was the worst deal in the history of deals.
+ 	option = {
+ 		name = UaCH.124.a
+		add_legitimacy = -10
+		add_treasury = -100
+ 		}
+	#Attempt to recoup our losses.
+ 	option = {
+ 		name = UaCH.124.b
+		add_treasury = -50
+		add_legitimacy = -5
+		
+ 	}
+	#Win some, lose some.
+ 	option = {
+ 		name = UaCH.124.c
+		add_adm_power = -50
+		add_legitimacy = 10
+	
+		
+ 	}
+	
+ }
+ 
+ # Pulse event - dhimmi disloyal 1
+ country_event = {
+
+ 	id = UaCH.125
+ 	title = UaCH.125.t  #Dhimmi disloyalty
+ 	desc = UaCH.125.d	#Our nation is made up by multiple different faiths, and this inevitably leads to conflict. So far, we have been able to evade major conflicts between the different sects, but our luck seems to have ran out. A group of faithful in a nearby village have decided upon taking this matter into their own hands, they have burned some homes and murdered a prominent merchant family. This cannot be tolerated.
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+ 	trigger = {
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+ 			}
+			has_estate = estate_dhimmi
+			NOT = {
+				estate_loyalty = { 
+					estate = estate_dhimmi 
+					loyalty = 30
+				}
+			}
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+	#Send in the guard
+ 	option = {
+ 		name = UaCH.125.a
+		add_legitimacy = 10
+		random_owned_province = {
+			spawn_rebels = {
+				size = 2
+				type = peasant_rebels
+			}
+		}
+		add_estate_loyalty = {
+					estate = estate_dhimmi
+					loyalty = 10
+				}
+ 		}
+	#This will blow over
+ 	option = {
+ 		name = UaCH.125.b
+		add_stability = -1
+		add_estate_loyalty = {
+					estate = estate_dhimmi
+					loyalty = -10
+				}
+		
+ 	}
+	#Let them run wild... as long as it serves us.
+ 	option = {
+ 		name = UaCH.125.c
+		add_legitimacy = -5
+		add_estate_loyalty = {
+					estate = estate_burghers
+					loyalty = -10
+				}
+		change_estate_land_share = {
+							estate = estate_burghers
+							share = -5
+						}
+		add_estate_loyalty = {
+					estate = estate_dhimmi
+					loyalty = -10
+				}
+		change_estate_land_share = {
+							estate = estate_dhimmi
+							share = -5
+						}				
+		
+		
+ 	}
+ }
+ 
+ # Pulse event - dhimmi disloyal 2
+ country_event = {
+
+ 	id = UaCH.126
+ 	title = UaCH.126.t  #Heretics among us
+ 	desc = UaCH.126.d	#War has came to our land. With the descendants of §GTimur§! running amok, there are many who see this opportunity to rise. Among our population, there are elements who are tolerated in time of peace and prosperity, but these are not such times. After all, who knows when will they side with our enemies?
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+ 	trigger = {
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+ 			}
+			has_estate = estate_dhimmi
+			NOT = {
+				estate_loyalty = { 
+					estate = estate_dhimmi 
+					loyalty = 30
+				}
+			}
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+	#Purge them.
+ 	option = {
+ 		name = UaCH.126.a
+		add_estate_loyalty = {
+					estate = estate_dhimmi
+					loyalty = -10
+				}
+				
+		random_owned_province = {
+			spawn_rebels = {
+				size = 2
+				type = leadered_peasant_rebels
+				}
+			uach_add_random_development = { AMOUNT = 1 VALUE = -3}
+			}
+		change_estate_land_share = {
+							estate = estate_dhimmi
+							share = 5
+						}		
+		
+		
+ 		}
+	#This is madness speaking!
+ 	option = {
+ 		name = UaCH.126.b
+		add_legitimacy = -10
+		add_stability = -1
+		
+ 	}
+ }
+ 
+ 
+ # Pulse event - church disloyal 1
+ country_event = {
+
+ 	id = UaCH.122
+ 	title = UaCH.122.t  #Demands of tithe
+ 	desc = UaCH.122.d	#Gib money, now.
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+ 	trigger = {
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+ 			}
+			NOT = {
+				estate_loyalty = { 
+					estate = estate_church
+					loyalty = 30
+				}
+			}
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+	#Give money
+ 	option = {
+ 		name = UaCH.122.a
+		add_corruption = 2
+		add_treasury = -100
+		add_legitimacy = 10
+ 		}
+	#give land
+ 	option = {
+ 		name = UaCH.122.b
+		add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 15
+				}
+		change_estate_land_share = {
+							estate = church
+							share = 5
+						}
+		
+		
+ 	}
+	#give them nothing.
+	option = {
+ 		name = UaCH.122.c
+		add_estate_loyalty = {
+					estate = estate_church
+					loyalty = -10
+				}	
+ 	}
+ }
+ 
+ # Pulse event - church disloyal 2
+country_event = {
+
+ 	id = UaCH.127
+ 	title = UaCH.127.t  #A prophet comes forward
+ 	desc = UaCH.127.d	#A self proclaimed prophet has arrived to our capital, with quite a retinue. He proclaims that our war against our brethen in faith is misguided, we should turn our eyes towards the heathen lands! 
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+ 	trigger = {
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+ 			}
+			NOT = {
+			estate_loyalty = { 
+					estate = estate_church
+					loyalty = 30
+				}
+			}
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+	#Promise him eternal war
+ 	option = {
+ 		name = UaCH.127.a
+		add_corruption = 2
+		add_manpower = 2
+		add_legitimacy = -10
+ 		}
+	#Make vague promises
+ 	option = {
+ 		name = UaCH.127.b
+		add_legitimacy = -5
+		add_prestige = 20
+ 	}
+	#Another false prophet, run him out of the city!
+ 	option = {
+ 		name = UaCH.127.c
+		add_legitimacy = 10
+		add_stability = -1
+ 	}
+ }
+
+#pulse event - bad legitimacy 6 
+country_event = {
+
+ 	id = UaCH.128
+ 	title = UaCH.128.t  #Mystery illness
+ 	desc = UaCH.128.d	#As dawns breaks upon our majestic palace, a horrified shriek echoes down the chambers of the royal family. A veritable horde of servants came running right to the doors of the Emirs own room, where a terrified maid is crying and shaking unstoppably. It seems that during the night, some mystery illness had freed our ruler from his earthly chains.
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	
+ 	trigger = {
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+ 			}
+			NOT = {legitimacy = 15}
+ 
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+	#Prepare the funeral ceremonies.
+ 	option = {
+ 		name = UaCH.128.a
+		ROOT = {kill_ruler = yes}	
+		custom_tooltip = uach_no_heir_or_low_heir
+ 		}
+	#In these trying times, let the Vizier take command
+ 	option = {
+		name = UaCH.128.b
+ 		ROOT = {kill_ruler = yes
+		define_ruler = {
+				adm = 1
+				dip = 1
+				mil = 2
+				claim = 75
+			}
+		convert_ruler_to_general = yes
+		}
+		
+ 	}
+	#A mystery illness? Again?
+ 	option = {
+ 		name = UaCH.128.c
+		highlight = yes
+		trigger = { OR = {tag = TIM
+					was_tag = TIM}
+					}
+		ROOT = {kill_ruler = yes}	
+ 	}
+ }
+ 
+ 
+ ## Legitimacy to defensiveness+siege ability
+ 
+country_event = {
+
+ 	id = UaCH.129
+ 	title = UaCH.129.t  
+ 	desc = UaCH.129.d	
+ 	picture = PLAGUE_eventPicture
+
+
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	hidden = yes
+	## only triggers during disaster
+	trigger = {
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+ 			}
+	}
+	immediate = {
+		clr_country_flag = uach_legit_to_defoff_donenow
+	}
+
+	#31 days modifier, ends 1 month after disaster is over
+	option = {
+		name = UaCH.129.a	
+		if = { limit = { legitimacy = 80 } 
+				add_country_modifier = {
+						name = uach_legit_to_defoff_lvl5
+						duration = 31}
+				set_country_flag = uach_legit_to_defoff_donenow
+			}
+			
+				
+		else_if = { limit = { AND = {legitimacy = 60
+		      NOT = {has_country_flag = uach_legit_to_defoff_donenow}}
+			  }
+						add_country_modifier = {
+							name = uach_legit_to_defoff_lvl4
+							duration = 31}
+					set_country_flag = uach_legit_to_defoff_donenow
+			}
+		
+		else_if = { limit = { AND = {legitimacy = 40
+		      NOT = {has_country_flag = uach_legit_to_defoff_donenow}}
+					}
+						add_country_modifier = {
+								name = uach_legit_to_defoff_lvl3
+								duration = 31}
+						set_country_flag = uach_legit_to_defoff_donenow
+				}
+		
+		else_if = {
+			limit = {
+				AND = {
+					legitimacy = 20
+					NOT = {
+						has_country_flag = uach_legit_to_defoff_donenow
+					}
+				}
+			}	 
+			add_country_modifier = {
+				name = uach_legit_to_defoff_lvl2
+				duration = 31
+			}
+			set_country_flag = uach_legit_to_defoff_donenow
+		}	
+		else_if = {
+			limit = {
+				NOT = { has_country_flag = uach_legit_to_defoff_donenow }
+			}
+			add_country_modifier = {
+				name = uach_legit_to_defoff_lvl1
+				duration = 31
+			}
+			set_country_flag = uach_legit_to_defoff_donenow			
+		}
+	}
+}
+
+## SR Body Unsuccesful interception
+country_event = {
+
+ 	id = UaCH.131
+ 	title = UaCH.131.t  
+ 	desc = UaCH.131.d	
+ 	picture = PLAGUE_eventPicture
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {}
+	
+	option = {
+		name = UaCH.131.a
+		random_list = {
+			25 = {add_manpower = -0.5
+				  custom_tooltip = uach_131_tt1}
+			25 = {add_prestige = -20
+				  custom_tooltip = uach_131_tt2}
+			25 = {add_legitimacy = -10
+				  custom_tooltip = uach_131_tt3}
+			25 = {add_manpower = 2
+				  custom_tooltip = uach_131_tt4}
+		}
+	}
+}
+
+## SR Body Succesful interception	
+country_event = {
+
+ 	id = UaCH.132
+ 	title = UaCH.132.t  
+ 	desc = UaCH.132.d	
+ 	picture = PLAGUE_eventPicture
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {}
+	
+	option = {
+			name = UaCH.132.a
+			every_country = {
+					limit = {
+						has_country_flag = uach_where_is_waldo_rukh
+						}
+						clr_country_flag = uach_where_is_waldo_rukh
+						}
+			ROOT = {set_country_flag = uach_where_is_waldo_rukh}
+			custom_tooltip = uach_132_great_success
+	}
+}
+
+## SR Body Arrives at destination	
+country_event = {
+
+ 	id = UaCH.133
+ 	title = UaCH.133.t  
+ 	desc = UaCH.133.d	
+ 	picture = PLAGUE_eventPicture
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {clr_global_flag = uach_hunt_for_sr_body}
+	trigger = {
+				AND = { has_country_flag = uach_where_is_waldo_rukh 
+						had_country_flag = {
+							flag = uach_where_is_waldo_rukh
+							days = 365}
+						}
+				}
+				
+	option = {
+				#Let us build a proper mausoleum.
+				name = UaCH.133.a
+				add_legitimacy = 25
+				ROOT = {
+					country_event = {
+									id = UaCH.57
+									days = 365}
+					clr_country_flag = uach_where_is_waldo_rukh
+				}
+		}
+}
+
+#Pulse event - bad legitimacy 3 - an usurper strikes back
+country_event = {
+
+ 	id = UaCH.117
+ 	title = UaCH.117.t  
+ 	desc = UaCH.117.d	  
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+ 	trigger = {
+ 			AND = { NOT = {legitimacy = 30}
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+				}
+			}
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+		
+	#we will fight this menace
+ 	option = {
+ 		name = UaCH.117.a
+		trigger = { NOT = {has_country_flag = uach_hidden_pretender_hidden} }
+		add_legitimacy = 10
+		random_owned_province = {
+			spawn_rebels = {
+				size = 3
+				type = pretender_rebels
+			}
+		}	
+ 	}
+	
+	#send in the royal guard	
+ 	option = {
+ 		name = UaCH.117.b
+			add_mil_power = -100
+			add_manpower = -2
+		}
+		
+	#im dying of shame
+	option = {
+ 		name = UaCH.117.e
+		ROOT = {kill_ruler = yes}
+	}
+}
+

@@ -312,7 +312,6 @@ uach_interloper_conquest_over_trigger_helper = { #region_int
 # Should be run in a country tag
 uach_flee_to_india_possible = {
 	AND = {
-		NOT = { war_score = -75 }
 		capital_scope = {
 			NOT = {
 				controlled_by = PREV
@@ -331,6 +330,33 @@ uach_flee_to_india_possible = {
 						NOT = { is_prince = yes }
 						NOT = { is_governor = yes }
 					}
+				}
+			}
+		}
+	}
+}
+
+uach_disable_diplo_action_trigger = {
+	OR = {
+		FROM = {
+			AND = {
+				OR = {
+					is_prince = yes
+					is_governor = yes
+				}
+				NOT = {
+					has_country_flag = uach_interwar_lull
+				}
+			}
+		}
+		ROOT = {
+			AND = {
+				OR = {
+					is_prince = yes
+					is_governor = yes
+				}
+				NOT = {
+					has_country_flag = uach_interwar_lull
 				}
 			}
 		}

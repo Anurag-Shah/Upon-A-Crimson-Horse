@@ -1,0 +1,814 @@
+﻿khiva_missions_slot_5 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = KHI 
+				  has_country_flag = uach_khi_eastward} 
+
+	miss_khi_55 = {
+		icon = khi_miss_55
+		position = 5
+		required_missions = { miss_khi_44 } 
+		provinces_to_highlight = { province_id = 442 } 
+
+		trigger = {
+			442 = {
+				owned_by = ROOT
+				development = 25
+			}
+		}
+
+		effect = {
+			set_capital = 442
+			442 = {
+				add_base_tax = 7
+				add_base_production = 8
+				add_base_manpower = 6
+				add_prosperity = 100
+			}
+		}
+	}
+}
+khiva_missions_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = KHI 
+				 has_country_flag = uach_khi_westward} 
+
+	miss_khi_15 = {
+		icon = khi_miss_15
+		position = 5
+		required_missions = { miss_khi_24 } 
+		provinces_to_highlight = {  } 
+
+		trigger = { development = 500 } 
+
+		effect = { }  
+			} 
+	}
+
+khiva_missions_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = KHI
+				has_country_flag = uach_khi_westward} 
+
+	miss_khi_24 = {
+		icon = khi_miss_24
+		position = 4
+		required_missions = { miss_khi_33 } 
+		provinces_to_highlight = {
+			area = transcaspia_area
+			area = nogai_area
+			area = lower_yik_area
+		}
+
+		trigger = {
+			transcaspia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			nogai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_yik_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+
+		effect = {
+			saratov_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			tambov_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_don_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			astrakhan_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	miss_khi_25 = {
+		icon = khi_miss_25
+		position = 5
+		required_missions = { miss_khi_24 } 
+		provinces_to_highlight = {
+			area = saratov_area
+			area = tambov_area
+			area = lower_don_area
+			area = astrakhan_area
+		}
+
+		trigger = {
+			saratov_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tambov_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_don_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			astrakhan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			NOT = { exists = GLH } 
+		}
+
+		effect = {
+			galich_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			vladimir_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			ryazan_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			suzdal_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	miss_khi_26 = {
+		icon = khi_miss_26
+		position = 6
+		required_missions = {
+			AND
+			miss_khi_25
+			miss_khi_15
+		}
+		provinces_to_highlight = {
+			area = galich_area
+			area = vladimir_area
+			area = ryazan_area
+			area = suzdal_area
+		}
+
+		trigger = {
+			galich_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vladimir_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ryazan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			suzdal_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+
+		effect = {
+			add_mil_power = 200
+			
+			add_casus_belli = {
+						target = MOS
+						type = cb_vassalize_mission                 
+						months = 300
+							 }
+		}
+	}
+
+	miss_khi_27 = {
+		icon = khi_miss_27
+		position = 7
+		required_missions = { miss_khi_26 } 
+		provinces_to_highlight = {  } 
+
+		trigger = { moscow_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}  } 
+
+		effect = {
+			add_country_modifier = {
+				name = "miss_khi_27_rew"
+				duration = -1
+			}
+			russia_region = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+
+		}
+	}
+}
+khiva_missions_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = KHI } 
+
+	miss_khi_31 = {
+		icon = khi_miss_31
+		position = 1
+		provinces_to_highlight = {  } 
+
+		trigger = { army_size_percentage = 1 } 
+
+		effect = {
+			country_event = {id = ron_iran_khi_flavor.1000} 
+		}
+	}
+
+	miss_khi_32 = {
+		icon = khi_miss_32
+		position = 2
+		required_missions = { miss_khi_31 } 
+		provinces_to_highlight = {  } 
+
+		trigger = { OR = {is_subject = no
+					is_in_war = { casus_belli = cb_independence_war }} } 
+
+		effect = {
+			add_country_modifier = {
+				name = "miss_khi_32_rew"
+				duration = 3650
+			}
+		}
+	}
+
+	miss_khi_33 = {
+		icon = khi_miss_33
+		position = 3
+		required_missions = { miss_khi_32 } 
+		provinces_to_highlight = {  } 
+
+		trigger = { is_subject = no 
+					is_at_war = no} 
+
+		effect = {
+			
+			add_country_modifier = {
+				name = "miss_khi_33_rew"
+				duration = -1
+			}
+			transoxiana_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	miss_khi_34 = {
+		icon = khi_miss_34
+		position = 4
+		required_missions = { miss_khi_33 } 
+		provinces_to_highlight = {  } 
+
+		trigger = { transoxiana_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				} 
+				
+			} 
+
+		effect = {
+			ferghana_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			termez_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	miss_khi_35 = {
+		icon = khi_miss_35
+		position = 5
+		required_missions = { miss_khi_34 } 
+		provinces_to_highlight = {
+			area = termez_area
+			area = ferghana_area
+		}
+
+		trigger = {
+			termez_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ferghana_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+
+		effect = {
+			balkh_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			mashhad_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			herat_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	miss_khi_36 = {
+		icon = khi_miss_36
+		position = 6
+		required_missions = { miss_khi_35 } 
+		provinces_to_highlight = {
+			area = herat_area
+			area = mashhad_area
+		}
+
+		trigger = {
+			herat_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mashhad_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+
+		effect = {
+			kabulistan_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			sistan_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			birjand_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			kerman_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	miss_khi_37 = {
+		icon = khi_miss_37
+		position = 7
+		required_missions = { miss_khi_36 } 
+		provinces_to_highlight = { area = kerman_area } 
+
+		trigger = {
+			kerman_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+
+		effect = {
+			mogostan_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	miss_khi_38 = {
+		icon = khi_miss_38
+		position = 8
+		required_missions = { miss_khi_37 } 
+		provinces_to_highlight = {  } 
+
+		trigger = { has_port = yes } 
+
+		effect = {
+			persian_gulf_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			farsistan_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			makran_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			iraq_e_ajam_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			isfahan_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	miss_khi_39 = {
+		icon = khi_miss_39
+		position = 3
+		required_missions = { miss_khi_38 } 
+		provinces_to_highlight = {
+			area = makran_area
+			area = persian_gulf_area
+		}
+
+		trigger = {
+			makran_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			persian_gulf_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+
+		effect = {
+			mashriq_region = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			khuzestan_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			bahrain_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			pirate_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			mascat_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+khiva_missions_slot_4 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = KHI
+				 has_country_flag = eastward} 
+
+	miss_khi_44 = {
+		icon = khi_miss_44
+		position = 4
+		required_missions = { miss_khi_33 } 
+		provinces_to_highlight = {
+			area = kyzylkum_area
+			area = arys_area
+			area = ferghana_area
+		}
+
+		trigger = {
+			kyzylkum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			arys_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ferghana_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+
+		effect = {
+			kashmir_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			kashgaria_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			tarim_basin_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+			}
+			
+			}
+		}
+
+	miss_khi_45 = {
+		icon = khi_miss_45
+		position = 5
+		required_missions = { miss_khi_44 } 
+		provinces_to_highlight = {  } 
+
+		trigger = { 
+			kashmir_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kashgaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tarim_basin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			
+		} 
+
+		effect = {
+					  add_casus_belli = {
+						target = CHG
+						type =  cb_vassalize_mission                  
+						months = 300
+										}
+				}
+				
+					else = { 
+				amdo_area = {
+				limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+							}			
+						}
+		}
+
+	miss_khi_46 = {
+		icon = khi_miss_46
+		position = 6
+		required_missions = {
+			miss_khi_55
+			miss_khi_45
+		}
+		provinces_to_highlight = {  } 
+
+		trigger = { NOT = { exist = CHG }
+					} 
+
+		effect = { 
+				amdo_area = {
+					limit = {
+						NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+							}				
+				west_gansu_area = {
+					limit = {
+						NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+							}
+				ordos_area = {
+					limit = {
+						NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+							}
+				} 
+	}
+
+	miss_khi_47 = {
+		icon = khi_miss_47
+		position = 7
+		required_missions = { miss_khi_46 } 
+		provinces_to_highlight = {  } 
+
+		trigger = { 
+				amdo_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+										}		
+				ordos_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+									}
+									
+				west_gansu_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+					}
+			
+			} 
+
+		effect = { north_china_region = {
+					limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+				}
+				add_permanent_claim = ROOT
+				}
+			}
+	}
+
+	miss_khi_49 = {
+		icon = khi_miss_49
+		position = 9
+		required_missions = { miss_khi_38 } 
+		provinces_to_highlight = {  } 
+
+		trigger = {
+				isfahan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+							}	
+
+				iraq_e_ajam_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+							}
+
+
+			} 
+
+		effect = {
+				add_casus_belli = {
+						target = TIM
+						type = cb_vassalize_mission                 
+						months = 300
+										}
+				
+				
+				add_casus_belli = {
+						target = PER
+						type = cb_vassalize_mission                
+						months = 300
+										}
+				
+					add_casus_belli = {
+						target = IRA
+						type = cb_vassalize_mission                
+						months = 300
+										}
+										
+				persia_region = {
+					limit = {
+					NOT = { is_core = ROOT } 
+					NOT = { is_permanent_claim = ROOT } 
+					}
+				add_permanent_claim = ROOT
+				}
+			}	
+					
+			}
+}
+
+khiva_missions_slot_4 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = { tag = KHI} 
+		
+	miss_khi_placeholder = {icon = mission_placeholder
+							position = 5
+							required_missions = {  } 
+							provinces_to_highlight = {  } 
+							
+							trigger = {}
+							
+							effect = { custom_tooltip = uach_khi_mission_changer }
+							
+							}
+	}
+							
+	
+	
