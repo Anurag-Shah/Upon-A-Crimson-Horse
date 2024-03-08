@@ -30,4 +30,22 @@ country_decisions = {
 			}
 		}
 	}
-}
+	
+	
+	uach_difficulty_selector = {
+		major = yes
+			potential = {
+				NOT = {has_country_flag = uach_difficulty_selected}
+				NOT = { ai = yes }
+			}
+		allow = {
+			always = yes
+		}
+		
+		effect = {
+			ROOT = {country_event = {
+				id = UaCH.diff.1
+				}
+			}
+		}	
+	}

@@ -76,3 +76,15 @@
  # Start
  UPON_A_CRIMSON_HORSE: "Upon a Crimson Horse"
  uach_preserve_ruler: "Loyalty of former enemy"
+ 
+ UaCH.diff.1.t:0"Difficulty setting"
+ UaCH.diff.1.d:0"Please select the desired difficulty. The mod is intended to be played on Medium, and on higher levels AI receives numerous buffs to aid its gameplay."
+ UaCH.diff.1.a:0"§GEasy§! - Please don't hurt me"
+ UaCH.diff.1.b:0"§GMedium§! - I live for challenge"
+ UaCH.diff.1.c:0"§GHard§! - This won't hurt at all"
+ UaCH.diff.1.e:0"§RInsane§! - I AM TIMUR INCARNATE"
+ uach_difficulty_lvl1:0"Difficulty modifier"
+ uach_difficulty_lvl2:0"Difficulty modifier"
+ uach_difficulty_lvl3:0"Difficulty modifier"
+ 
+ 
