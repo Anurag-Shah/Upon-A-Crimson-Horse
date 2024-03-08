@@ -421,3 +421,13 @@ on_bi_yearly_pulse_5 = {
 		1000000 = uach_reform.1008
 	}
 }
+
+on_create_vassal = {
+	if = {
+		limit = {
+			FROM = {is_governor_or_prince = yes}
+		}
+		remove_government_reform = iqta
+		add_government_reform = uach_governor
+	}
+}

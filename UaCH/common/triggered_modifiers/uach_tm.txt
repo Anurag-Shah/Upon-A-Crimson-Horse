@@ -42,7 +42,7 @@ trigger = {
 		factor = -1000 # Do what you can to avoid this modifier
 	}
 
-	legitimacy = -2
+	legitimacy = -1
 }
 
 lost_control_of_samarkand = {
@@ -60,5 +60,5 @@ lost_control_of_samarkand = {
 		factor = -1000 # Do what you can to avoid this modifier
 	}
 
-	legitimacy = -2
+	legitimacy = -1
 }
