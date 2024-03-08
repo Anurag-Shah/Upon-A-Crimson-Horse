@@ -103,6 +103,10 @@
  UaCH.17.c: "Accept the new reality."
  UaCH.17.e: "An ambitious young man, too bad about his father..."
  uach_new_reality:0"We will transfer all our subjects to §YTransoxiana§!.\nCountry changes to §YHerat§!\n§YTransoxiana§! becomes §YTimurids§!"
+ uach_try_to_sway_latif:0"We will attempt to sway §GAbdal-Latif's§! loyalty."
+ uach_hunt_for_sr_body:0"The hunt is on!"
+ intercept_shah_rukhs_body_title:0"Rescue §GGawhar Shad§!"
+ intercept_shah_rukhs_body_desc:0"Our Empress-Dowager has fallen into the traitors hands!We should mount a rescue operation, and if we could gain possession of §GShah Rukh's§! corpse in the meantime, that would be extremely 'fortunate'."
  
  UaCH.18.t: "A Chance to Return"
  UaCH.18.d: "Grave news! §GSultan Muhammad§!, upon hearing of §GShah Rukh's§! death, marches east, retaking §YAjam§! and becoming the Timurid Emperor of §YFars§!. He rewarded the surviving nobles of §YIsfahan§!, and many nobles of other regions defected to him. Whilst §YIsfahan§! enjoys a tax relief, other regions suffered immensely, with §YYazd§! being heavily taxed, with its emirs being frequently replaced."
@@ -287,11 +291,11 @@
  UaCH.47.a: "So, this is how she treats us!"
  
  UaCH.49.t: "Abdal-Latif complies"
- UaCH.49.d: "Abdal-Latif has received his fathers letter, and acted accordingly. The body is now en route to our capital and will arive in the next 3 months."
+ UaCH.49.d: "Abdal-Latif has received his fathers letter, and acted accordingly. The body is now en route to Samarkand and will arive in a year."
  UaCH.49.a: "Good. Good. Our forces will be operational by then."
 
  UaCH.50.t: "Abdal Latif defiant!"
- UaCH.50.d: "Abdal-Latif has received his fathers letter, but defied his command. The body is now en route to Herat and will arive in the next 3 months."
+ UaCH.50.d: "Abdal-Latif has received his fathers letter, but defied his command. The body is now en route to Herat and will arive in a year."
  UaCH.50.a: "Insolent boy!"
 
  UaCH.51.t: "Abdul-Latif's demands"
@@ -318,6 +322,7 @@
  UaCH.57.t: "The mausoleum is complete"
  UaCH.57.d: "Our loyal servants have reported the completion of the Mausoleum of §GShah Rukh§!. With this done, our legitimacy should no longer be in question."
  UaCH.57.a: "Peace shall be upon this land."
+ gawhar_shad_mausoleum:0"§BMausoleum of Gawhar Shad§!"
  
  UaCH.58.t: "Collapse of the State"
  UaCH.58.d: "Terrible news! Even thought our [Root.GetTitle] has risen to the throne, his legitimacy was always in question. While this wasn't a major problem for a while, tensions have now erupted in the court, threatening to tear our country apart!"
@@ -660,7 +665,7 @@
  UaCH.114.a:0 "Follow the customs."
  UaCH.114.b:0 "Desperate times..."
  UaCH.114.c:0 "Send someone to beat some sense into him."
- uach_gain_crownladn_5:0"Nobility loses 5% crownland and §R20%§! loyalty."
+ uach_gain_crownladn_5:0"Nobility loses 5% crownland."
  
  UaCH.115.t:0 "Soldiers losing Faith"
  UaCH.115.d:0 "Due to the actions of our ruling Emir §G$RULER$§!, many of our soldiers have completely lost their faith in the legitimacy of our royal family. This has caused not only dissent, and loss of morale, but increased number of defections."
@@ -752,6 +757,26 @@
  UaCH.130.d:0 ""
  UaCH.130.a:0 ""
  UaCH.130.b:0 ""
+ 
+ UaCH.131.t:0 "Unsuccesful interception"
+ UaCH.131.d:0 "We have received a letter from our forces sent to capture the late Emperor §GShah Rukh's§! corpse. They have encountered heavy resistance, and were scattered in battle. The captain reports, that he is currently collecting the remainder of our forces to return back to our capital."
+ UaCH.131.a:0 "Curses!"
+ uach_131_tt1:0"We lose most of our men sent there."
+ uach_131_tt2:0"Our soldiers incompetence becomes known."
+ uach_131_tt3:0"False rumors about the forces led by royalty circulate."
+ uach_131_tt4:0"During the retreat, some local rebels decide to join."
+ 
+ UaCH.132.t:0 "Succesful interception"
+ UaCH.132.d:0 "This has been a glorious day! Our vizier has reported a great success in overcoming the meager guard of §GGawhar Shad's§! captors, and we have gained the possession of the late Emperor §GShah Rukh's§! corpse. While the whereabouts of §GGawhar Shad§! and §GAbdal-Latif§! are unknown, it was reported that our soldiers are making way to our capital with all haste. "
+ UaCH.132.a:0 "Glory to me!"
+ uach_132_great_success:0"§GShah Rukh's§! corpse is on the way to our capital, and will arrive in 365 days."
+ 
+ UaCH.133.t:0 "Shah Rukhs corpse arrives to $CAPITAL$"
+ UaCH.133.d:0 "The late Emperor §GShah Rukh's§! body has finally arrived to our capital. Despite traveling for almost a year while his guard was beset by bandits, thieves and other outlaws, it is finally here. Now no longer can any Prince or Governor question our legitimacy, ever again."
+ UaCH.133.a:0 "Let us build a proper mausoleum."
+ 
+ 
+ uach_shah_rukhs_mausoleum_completed:0"Gawhar Shad Mausoleum"
  
  uach_legit_to_defoff_lvl5:0"High legitimacy"
  uach_legit_to_defoff_lvl4:0"Average legitimacy"

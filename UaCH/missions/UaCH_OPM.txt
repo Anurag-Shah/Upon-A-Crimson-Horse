@@ -194,7 +194,7 @@ opm_missions_slot3_afghan = {
 
 	uach_opm_33_afghan = {
 		icon = uach_opm_afghani
-		position = 4
+		position = 3
 		required_missions = {
 			uach_opm_32
 			uach_opm_42
@@ -229,9 +229,9 @@ opm_missions_slot3_khorasan = {
 		NOT = { tag = KHO } 
 	}
 
-	uach_opm_33_afghan = {
+	uach_opm_33_khorasani = {
 		icon = uach_opm_khorasani
-		position = 4
+		position = 3
 		required_missions = {
 			uach_opm_32
 			uach_opm_42
@@ -266,9 +266,9 @@ opm_missions_slot3_azeri = {
 		NOT = { tag = ARL } 
 	}
 
-	uach_opm_33_afghan = {
+	uach_opm_33_azeri = {
 		icon = uach_opm_azeri
-		position = 4
+		position = 3
 		required_missions = {
 			uach_opm_32
 			uach_opm_42
@@ -304,9 +304,9 @@ opm_missions_slot3_baluchi = {
 		NOT = { tag = BAL } 
 	}
 
-	uach_opm_33_afghan = {
+	uach_opm_33_baluchi = {
 		icon = uach_opm_baluchi
-		position = 4
+		position = 3
 		required_missions = {
 			uach_opm_32
 			uach_opm_42
@@ -341,9 +341,9 @@ opm_missions_slot3_kazakh = {
 		NOT = { tag = KZH } 
 	}
 
-	uach_opm_33_afghan = {
+	uach_opm_33_kazakh = {
 		icon = uach_opm_kazakh
-		position = 4
+		position = 3
 		required_missions = {
 			uach_opm_32
 			uach_opm_42
@@ -378,9 +378,9 @@ opm_missions_slot3_kurd = {
 		NOT = { tag = ARD } 
 	}
 
-	uach_opm_33_afghan = {
+	uach_opm_33_kurd = {
 		icon = uach_opm_kurd
-		position = 4
+		position = 3
 		required_missions = {
 			uach_opm_32
 			uach_opm_42
@@ -415,9 +415,9 @@ opm_missions_slot3_maza = {
 		NOT = { tag = TAB } 
 	}
 
-	uach_opm_33_afghan = {
+	uach_opm_33_maza = {
 		icon = uach_opm_maza
-		position = 4
+		position = 3
 		required_missions = {
 			uach_opm_32
 			uach_opm_42
@@ -452,9 +452,9 @@ opm_missions_slot3_yesgay = {
 		NOT = { tag = NOG } 
 	}
 
-	uach_opm_33_afghan = {
-		icon = uach_opm_maza
-		position = 4
+	uach_opm_33_nogai = {
+		icon = uach_opm_nogai
+		position = 3
 		required_missions = {
 			uach_opm_32
 			uach_opm_42
@@ -489,9 +489,9 @@ opm_missions_slot3_smallpersia = {
 		NOT = { tag = QOM } 
 	}
 
-	uach_opm_33_afghan = {
+	uach_opm_33_smallpersia = {
 		icon = uach_opm_smallpersia
-		position = 4
+		position = 3
 		required_missions = {
 			uach_opm_32
 			uach_opm_42
@@ -526,9 +526,9 @@ opm_missions_slot3_xiva = {
 		NOT = { tag = KHI } 
 	}
 
-	uach_opm_33_afghan = {
+	uach_opm_33_xiva = {
 		icon = uach_opm_xiva
-		position = 4
+		position = 3
 		required_missions = {
 			uach_opm_32
 			uach_opm_42
@@ -563,9 +563,9 @@ opm_missions_slot3_uzbekh = {
 		NOT = { tag = SHY } 
 	}
 
-	uach_opm_33_afghan = {
+	uach_opm_33_shaybanid = {
 		icon = uach_opm_shaybanid
-		position = 4
+		position = 3
 		required_missions = {
 			uach_opm_32
 			uach_opm_42

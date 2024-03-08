@@ -209,6 +209,8 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		tag = QOM
+		NOT = { has_global_flag = uach_succession_crisis_started }
+		NOT = { TIM = { has_country_flag = uach_interwar_lull } }
 	}
 	major = yes
 	major_trigger = {
@@ -862,7 +864,7 @@ country_event = {
 	major_trigger = {
 		is_governor_or_prince = yes
 	}
-
+	
 	mean_time_to_happen = {
 		days = 1
 	}
@@ -882,12 +884,11 @@ country_event = {
 		}
 
 		custom_tooltip = uach_trs_declares_in_6
-		hidden_effect = {
-			country_event = {
+			TIM = { country_event = {
 				id = UaCH.17
-				days = 180
+				days = 30
+				}
 			}
-		}
 		
 		ai_chance = {
 			factor = 1
@@ -930,7 +931,7 @@ country_event = {
 	
 	fire_only_once = yes
 	is_triggered_only = yes
-
+	ai = yes
 	hidden = yes
 
 	immediate = {
@@ -966,23 +967,30 @@ country_event = {
 	}
 	
 	trigger = {
-		tag = TIM
+		OR = {	tag = TIM
+				tag = HER}
 	}
 
 	mean_time_to_happen = {
 		days = 1
 	}
 	
+	
 	# Intolerable!
 	option = { 
 		name = "UaCH.17.a" 
-
+		
+		
 		TRS = {
 			add_liberty_desire = 100
-			hidden_effect = {
-				country_event = {
-					id = UaCH.90
-					days = 1
+			hidden = {set_country_flag = uach_where_is_waldo_rukh
+					  set_global_flag = uach_hunt_for_sr_body}
+			hidden = {
+				TRS = {
+					country_event = {
+						id = UaCH.90
+						days = 180
+					}	
 				}
 			}
 		}
@@ -994,24 +1002,19 @@ country_event = {
 		}
 	}
 
-	# I'm dying of shame.
-	option = {
-		name = "UaCH.17.b"
-		trigger = {
-			has_ruler = "Muhammad Juki"
-		}
-		ROOT = {kill_ruler = yes}
-		
-
-		ai_chance = {
-			factor = 1
-		}
-	}
-
 	# Accept the new reality
 	option = {
 		name = "UaCH.17.c"
 		custom_tooltip = uach_new_reality
+		trigger = { AND = {
+						NOT = {
+							tag = HER
+							}
+						exist = TRS
+						}
+					}
+		set_global_flag = uach_hunt_for_sr_body				
+		hidden = {TRS = {set_country_flag = uach_where_is_waldo_rukh}}
 		hidden_effect = {
 			TIM = {
 				every_subject_country = {
@@ -1051,9 +1054,9 @@ country_event = {
 		
 		TRS = {
 			add_liberty_desire = 100
-			country_event = {
-				id = UaCH.31
-			}
+		#	country_event = {
+		#		id = UaCH.31
+		#	}
 			hidden_effect = {
 				country_event = {
 					id = UaCH.90
@@ -1061,28 +1064,33 @@ country_event = {
 				}
 			}
 		}
-		hidden_effect = {
+		custom_tooltip = uach_try_to_sway_latif
 			random_list = {
 				50 = {
-					country_event = {
-						id = UaCH.49
-						days = 60
+					TRS = { 
+						country_event = {
+							id = UaCH.49
+							days = 30
+						}
 					}
 				}
 				25 = {
-					country_event = {
-						id = UaCH.50
-						days = 60
+					TRS = { 
+						country_event = {
+							id = UaCH.50
+							days = 30
+						}
 					}
 				}
 				25 = {
-					country_event = {
-						id = UaCH.51
-						days = 30
+					TIM = {
+						country_event = {
+							id = UaCH.51
+							days = 15
+						}
 					}
 				}
 			}
-		}
 		ai_chance = {
 			factor = 0
 		}
@@ -1720,9 +1728,6 @@ country_event = {
 	# We maintain our allegiance to he who rules in Herat.
 	option = {
 		name = "UaCH.26.a"
-		trigger = {
-			exists = HER
-		}
 		
 		clr_country_flag = uach_still_considering
 		HER = {
@@ -1787,10 +1792,7 @@ country_event = {
 	# He who rules in Samarkand shall lead us forward.
 	option = {
 		name = "UaCH.26.b"
-		trigger = {
-			exists = TRS
-		}
-
+		
 		clr_country_flag = uach_still_considering
 		TRS = {
 			create_subject = {
@@ -1858,10 +1860,7 @@ country_event = {
 	# The lords of Khorasan shall have our might
 	option = {
 		name = "UaCH.26.c"
-		trigger = {
-			exists = KHO
-		}
-
+		
 		clr_country_flag = uach_still_considering
 		KHO = {
 			create_subject = {
@@ -1997,9 +1996,6 @@ country_event = {
 	# Option for Fars
 	option = {
 		name = "UaCH.26.g"
-		trigger = {
-			exists = FRS
-		}
 
 		clr_country_flag = uach_still_considering
 		FRS = {
@@ -2069,9 +2065,6 @@ country_event = {
 	# Option for Afghanistan
 	option = {
 		name = "UaCH.26.h"
-		trigger = {
-			exists = AFG
-		}
 
 		clr_country_flag = uach_still_considering
 		AFG = {
@@ -2136,9 +2129,6 @@ country_event = {
 	# Option for Khutallan
 	option = {
 		name = "UaCH.26.i"
-		trigger = {
-			exists = KHU
-		}
 
 		clr_country_flag = uach_still_considering
 		KHU = {
@@ -2203,9 +2193,6 @@ country_event = {
 	# Option for Balkh
 	option = {
 		name = "UaCH.26.j"
-		trigger = {
-			exists = BLK
-		}
 
 		clr_country_flag = uach_still_considering
 		BLK = {
@@ -3759,29 +3746,36 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	
+	major = yes
+	major_trigger = {
+		is_governor_or_prince = yes
+	}
 	trigger = {
-		tag = TRS
 	}
 
 	mean_time_to_happen = {
 		days = 1
 	}
 	
+	immediate = {set_global_flag = uach_hunt_for_sr_body}
+	
 	# Good. Good. Our forces will be operational by then.
 	option = { 
 		name = "UaCH.49.a" 
 
 		add_legitimacy = 25
-		TIM = {
-			set_country_flag = uach_may_intercept_body
+		hidden = {
+			every_country = { 
+				limit = {
+					is_governor_or_prince = yes 
+					}
+				set_country_flag = uach_may_intercept_body
+			}
 		}
+		TRS = {set_country_flag = uach_where_is_waldo_rukh}
 		
 		ai_chance = {
 			factor = 1
-			modifier = {
-				factor = 0
-				# TODO
-			}
 		}
 	}
 }
@@ -3795,21 +3789,34 @@ country_event = {
 	
 	is_triggered_only = yes
 	fire_only_once = yes
+	major = yes
+	major_trigger = {
+		is_governor_or_prince = yes
+	}
 	
 	trigger = {
-		tag = TRS
 	}
 
 	mean_time_to_happen = {
 		days = 1
 	}
 	
+	immediate = {set_global_flag = uach_hunt_for_sr_body}
+	
 	# Insolent boy!
 	option = { 
 		name = "UaCH.50.a" 
-
+		hidden = {
+		every_country = { 
+			limit = {
+				is_governor_or_prince = yes 
+				}
+			set_country_flag = uach_may_intercept_body
+			}
+		}
+		TIM = {set_country_flag = uach_where_is_waldo_rukh }
+		
 		add_legitimacy = -25
-		set_country_flag = uach_may_intercept_body
 		
 		ai_chance = {
 			factor = 1
@@ -3832,7 +3839,6 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		tag = TIM
 	}
 
 	mean_time_to_happen = {
@@ -3958,15 +3964,19 @@ country_event = {
 		add_mil_power = 50
 		random_list = {
 			90 = {
-				country_event = {
-					id = UaCH.49
-					days = 1
-				}
+				TRS = {
+					country_event = {
+						id = UaCH.49
+						days = 1
+						}
+					}
 			}
 			10 = {
-				country_event = {
-					id = UaCH.50
-					days = 1
+				TRS = {
+					country_event = {
+						id = UaCH.50
+						days = 1
+					}
 				}
 			}
 		}
@@ -3983,113 +3993,12 @@ country_event = {
 
 # A Deal with the Devil scrapped
 
-# Decision - Intercept the body
-country_event = {
-	id = UaCH.54 
-	title = UaCH.54.t 
-	desc = UaCH.54.d
-	picture = DEATH_OF_HEIR_eventPicture
-	
-	is_triggered_only = yes
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	# We ride! 
-	option = { 
-		name = "UaCH.51.a" 
+# Decision - Intercept the body - it is a decision, what is it even doing in events?
 
-		random_list = {
-			50 = {
+# The body arrives - scrapped. whole event is rewritten
 
-			}
-			50 = {
-				custom_tooltip = uach_becomes_holder_of_body
-				# TODO Set holder of body and enable for others again				
-			}
-		}
+# Stolen - scrapped. no need for another event
 
-	}
-}
-
-# The body arrives
-country_event = {
-	id = UaCH.55 
-	title = UaCH.55.t 
-	desc = UaCH.55.d
-	picture = DEATH_OF_HEIR_eventPicture
-	
-	is_triggered_only = yes
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	trigger = {
-		OR = {
-			tag = TRS
-			tag = TIM
-		}
-	}
-	
-	# Do it.
-	option = { 
-		name = "UaCH.55.a" 
-
-		add_treasury = -200
-
-		capital_scope = {
-			add_province_modifier = {
-				# The modifiers has no effect, but it is used to trigger the event UaCH.56 and UaCH.57
-				name = uach_shah_rukhs_mausoleum
-				duration = -1
-			}
-			set_province_flag = uach_shah_rukhs_mausoleum
-		}
-	}
-}
-
-# Stolen
-country_event = {
-	id = UaCH.56 
-	title = UaCH.56.t 
-	desc = UaCH.56.d
-	picture = DEATH_OF_HEIR_eventPicture
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	trigger = {
-		capital_scope = {
-			has_province_modifier = uach_shah_rukhs_mausoleum
-			OR = {
-				AND = {
-					NOT = { owner = { tag = TRS } }
-					sieged_by = TIM
-				}
-				AND = {
-					NOT = { owner = { tag = TIM } }
-					sieged_by = TRS
-				}
-			}
-		}
-	}
-	
-	# Tragedy!
-	option = { 
-		name = "UaCH.56.a" 
-
-		capital_scope = {
-			remove_province_modifier = uach_shah_rukhs_mausoleum
-		}
-
-		add_country_modifier = {
-			name = uach_shah_rukhs_mausoleum_desecrated
-			duration = 365
-		}
-	}
-}
 
 # The mausoleum is complete
 country_event = {
@@ -4097,7 +4006,7 @@ country_event = {
 	title = UaCH.57.t 
 	desc = UaCH.57.d
 	picture = DEATH_OF_HEIR_eventPicture
-
+	is_triggered_only = yes
 	fire_only_once = yes
 	
 	mean_time_to_happen = {
@@ -4105,16 +4014,6 @@ country_event = {
 	}
 
 	trigger = {
-		AND = {
-			capital_scope = {
-				has_province_modifier = uach_shah_rukhs_mausoleum
-				had_province_flag = {
-					flag = uach_shah_rukhs_mausoleum
-					days = 365
-				}
-			}
-			NOT = { has_country_flag = uach_masoleum_event_already_fired_for_you }
-		}
 	}
 	
 	# With this, peace shall be upon this land.
@@ -4122,16 +4021,18 @@ country_event = {
 		name = "UaCH.57.a" 
 
 		every_subject_country = {
-			add_liberty_desire = -15
-			add_country_modifier = {
-				name = uach_shah_rukhs_mausoleum_completed
-				duration = 730
+			add_liberty_desire = -10
+		}
+		ROOT = {
+			capital_scope = {
+				set_province_flag = gawhar_shad_mausoleum_building
+				add_great_project = {
+					type = gawhar_shad_mausoleum
+					instant = yes
+				}
 			}
 		}
-
-		hidden_effect = {
-			set_country_flag = uach_masoleum_event_already_fired_for_you
-		}
+			
 	}
 }
 
@@ -6857,80 +6758,10 @@ country_event = {
 				10 = { custom_tooltip = uach_shameful_pretender }
 					}
 		}	
- 	}
-
-
-#Pulse event - bad legitimacy 3 - an usurper strikes back
-country_event = {
-
- 	id = UaCH.117
- 	title = UaCH.117.t  
- 	desc = UaCH.117.d	  
- 	picture = PLAGUE_eventPicture
-
-	is_triggered_only = yes
-
-	mean_time_to_happen = {
-		days = 1
-	}
-	
- 	trigger = {
- 			AND = { NOT = {legitimacy = 30}
- 			OR = {
- 				has_disaster = timurid_succession_crisis
- 				is_in_war = { casus_belli = cb_challange_claimant }
- 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
-				}
-			}
- 
- 		}
- 	immediate = {
- 		clr_country_flag = uach_disaster_event_timer
- 		set_country_flag = uach_disaster_event_timer
- 		}
-		
-	#we will fight this menace
- 	option = {
-		trigger = { NOT = {has_country_flag = uach_hidden_pretender_hidden} }
- 		name = UaCH.117.a
-		add_legitimacy = 10
-		random_owned_province = {
-			spawn_rebels = {
-				size = 3
-				type = pretender_rebels
-			}
-		}	
- 	}
-	
-	#send in the royal guard	
- 	option = {
- 		name = UaCH.117.b
-			add_mil_power = -100
-			add_manpower = -2
-		}
-		
-		
-	#you again!
-	option = {
- 		name = UaCH.117.c
-			trigger = { has_country_flag = uach_hidden_pretender_hidden }
-			add_prestige = -25
-			add_mil_power = -50
-			random_owned_province = {
-				add_devastation = 25
-				spawn_rebels = {
-				size = 2
-				type = pretender_rebels
-			}
-			}
-		}
-	#im dying of shame
-	option = {
- 		name = UaCH.117.e
-		kill_ruler = yes
-		kill_heir = yes
-	}
 }
+
+
+
 
 #Pulse event - bad legitimacy 4 - chaos
 country_event = {
@@ -6995,8 +6826,10 @@ country_event = {
 	}
 }
 
+
+
 # Pulse event - delusions of grandeour
- country_event = {
+country_event = {
 
  	id = UaCH.119
  	title = UaCH.119.t  #Delusions of grandeour
@@ -7113,7 +6946,13 @@ country_event = {
  				has_disaster = timurid_succession_crisis
  				is_in_war = { casus_belli = cb_challange_claimant }
  				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
- 			}
+			}
+			NOT = {
+				estate_loyalty = { 
+					estate = estate_nobles
+					loyalty = 30
+				}
+			}
  
  		}
  	immediate = {
@@ -7137,7 +6976,7 @@ country_event = {
 	#They will gain no such thing!
  	option = {
  		name = UaCH.121.b
-		add_legitimacy = -10
+		add_legitimacy = 5
 		random_owned_province = {
 			spawn_rebels = {
 				size = 2
@@ -7497,7 +7336,7 @@ country_event = {
  			}
 			NOT = {
 			estate_loyalty = { 
-					estate = church
+					estate = estate_church
 					loyalty = 30
 				}
 			}
@@ -7668,6 +7507,153 @@ country_event = {
 			}
 			set_country_flag = uach_legit_to_defoff_donenow			
 		}
+	}
+}
+
+## SR Body Unsuccesful interception
+country_event = {
+
+ 	id = UaCH.131
+ 	title = UaCH.131.t  
+ 	desc = UaCH.131.d	
+ 	picture = PLAGUE_eventPicture
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {}
+	
+	option = {
+		name = UaCH.131.a
+		random_list = {
+			25 = {add_manpower = -0.5
+				  custom_tooltip = uach_131_tt1}
+			25 = {add_prestige = -20
+				  custom_tooltip = uach_131_tt2}
+			25 = {add_legitimacy = -10
+				  custom_tooltip = uach_131_tt3}
+			25 = {add_manpower = 2
+				  custom_tooltip = uach_131_tt4}
+		}
+	}
+}
+
+## SR Body Succesful interception	
+country_event = {
+
+ 	id = UaCH.132
+ 	title = UaCH.132.t  
+ 	desc = UaCH.132.d	
+ 	picture = PLAGUE_eventPicture
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {}
+	
+	option = {
+			name = UaCH.132.a
+			every_country = {
+					limit = {
+						has_country_flag = uach_where_is_waldo_rukh
+						}
+						clr_country_flag = uach_where_is_waldo_rukh
+						}
+			ROOT = {set_country_flag = uach_where_is_waldo_rukh}
+			custom_tooltip = uach_132_great_success
+	}
+}
+
+## SR Body Arrives at destination	
+country_event = {
+
+ 	id = UaCH.133
+ 	title = UaCH.133.t  
+ 	desc = UaCH.133.d	
+ 	picture = PLAGUE_eventPicture
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {clr_global_flag = uach_hunt_for_sr_body}
+	trigger = {
+				AND = { has_country_flag = uach_where_is_waldo_rukh 
+						had_country_flag = {
+							flag = uach_where_is_waldo_rukh
+							days = 365}
+						}
+				}
+				
+	option = {
+				#Let us build a proper mausoleum.
+				name = UaCH.133.a
+				add_legitimacy = 25
+				ROOT = {
+					country_event = {
+									id = UaCH.57
+									days = 365}
+					clr_country_flag = uach_where_is_waldo_rukh
+				}
+		}
+}
+
+#Pulse event - bad legitimacy 3 - an usurper strikes back
+country_event = {
+
+ 	id = UaCH.117
+ 	title = UaCH.117.t  
+ 	desc = UaCH.117.d	  
+ 	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+ 	trigger = {
+ 			AND = { NOT = {legitimacy = 30}
+ 			OR = {
+ 				has_disaster = timurid_succession_crisis
+ 				is_in_war = { casus_belli = cb_challange_claimant }
+ 				is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+				}
+			}
+ 		}
+ 	immediate = {
+ 		clr_country_flag = uach_disaster_event_timer
+ 		set_country_flag = uach_disaster_event_timer
+ 		}
+		
+	#we will fight this menace
+ 	option = {
+ 		name = UaCH.117.a
+		trigger = { NOT = {has_country_flag = uach_hidden_pretender_hidden} }
+		add_legitimacy = 10
+		random_owned_province = {
+			spawn_rebels = {
+				size = 3
+				type = pretender_rebels
+			}
+		}	
+ 	}
+	
+	#send in the royal guard	
+ 	option = {
+ 		name = UaCH.117.b
+			add_mil_power = -100
+			add_manpower = -2
+		}
+		
+	#im dying of shame
+	option = {
+ 		name = UaCH.117.e
+		ROOT = {kill_ruler = yes}
 	}
 }
 
