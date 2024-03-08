@@ -77,6 +77,9 @@
  UPON_A_CRIMSON_HORSE: "Upon a Crimson Horse"
  uach_preserve_ruler: "Loyalty of former enemy"
  
+ 
+ uach_difficulty_selector_title:0"Difficulty setting"
+ uach_difficulty_selector:0"Set your desired difficulty."
  UaCH.diff.1.t:0"Difficulty setting"
  UaCH.diff.1.d:0"Please select the desired difficulty. The mod is intended to be played on Medium, and on higher levels AI receives numerous buffs to aid its gameplay."
  UaCH.diff.1.a:0"§GEasy§! - Please don't hurt me"

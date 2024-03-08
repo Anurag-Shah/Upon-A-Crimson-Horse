@@ -43,9 +43,9 @@ country_decisions = {
 		}
 		
 		effect = {
-			ROOT = {country_event = {
-				id = UaCH.diff.1
+				country_event = {
+					id = UaCH.diff
 				}
-			}
-		}	
+			}	
 	}
+}

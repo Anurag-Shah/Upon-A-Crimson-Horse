@@ -7657,3 +7657,72 @@ country_event = {
 	}
 }
 
+## DIFFICULTY SELECTOR EVENT
+country_event = {
+	id = UaCH.diff
+	title = UaCH.diff.1.t
+	desc = UaCH.diff.1.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {}
+	
+	immediate = {set_country_flag = uach_difficulty_selected}
+	
+	#EASY
+	option = {
+		name =  UaCH.diff.1.a
+	}
+	
+	#MEDIUM
+	option = {
+		name =  UaCH.diff.1.b
+		
+		every_country = {
+			limit = {
+				AND = {is_governor_or_prince = yes
+					   ai = yes}
+			}
+			add_country_modifier = {
+						name = uach_difficulty_lvl1
+						duration = 9125}
+				
+		}
+	}
+	
+	#HARD
+	option = {
+		name =  UaCH.diff.1.c
+		
+		every_country = {
+			limit = {
+				AND = {is_governor_or_prince = yes
+					   ai = yes}
+			}
+			add_country_modifier = {
+						name = uach_difficulty_lvl2
+						duration = 9125}
+				
+		}
+	}
+	
+	#INSANE
+	option = {
+		name =  UaCH.diff.1.e
+		
+		every_country = {
+			limit = {
+				AND = {is_governor_or_prince = yes
+					   ai = yes}
+			}
+			add_country_modifier = {
+						name = uach_difficulty_lvl3
+						duration = 9125}
+				
+		}
+	}
+		
+	
+}
