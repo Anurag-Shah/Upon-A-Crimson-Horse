@@ -192,8 +192,6 @@ uach_difficulty_lvl2 ={
 	land_forcelimit_modifier = 0.75
 	global_tax_modifier = 0.30
 	interest = -1
-	mercenary_cost = -0.10
-	global_unrest = -1
 	
 }
 
@@ -207,5 +205,9 @@ uach_difficulty_lvl3 ={
 	interest = -1
 	mercenary_cost = -0.25
 	global_unrest = -3
-	
+}
+
+uach_exiled_royalty = {
+	legitimacy = 1
+	diplomatic_reputation = -2
 }

@@ -12,11 +12,12 @@
  UaCH.1.t: "The Ailing Emperor"
  UaCH.1.d: "Early in 1444, @TIM §GShah Rukh Mirza§!, ruler of the Timurid empire, youngest son of §GTimur§!, has fallen ill. While the nature of his illness is not disclosed outside his court, news are spreading that he will not survive the year. This news had sent the royal family and the high nobles into a frenzied preparation for chaos, as Shah Rukh's designated successor has died a few years prior. Many elders still remember the days after Timurs death followed by a decade of campaigning before relative peace could return to the land.\n\nIn the north, one of Shah Rukhs children, the scholarly @TRS §GUlugh beg§! and his ambitious son §GAbdal Latif§!, long time viceroy of §YTransoxiana§! are already putting plans in motion.\n\nThe de facto independent prince of §YAjam§!, @QOM §GSultan Muhammad§! is eyeing the neighbouring §YIsfahan§!, where the old and decrepit @ISF §GMahmudshah§! is still clinging to power.\n\nShah Rukh's favorite son @BLK §GMuhammad Juki§!, the governor of §YBalkh§! is more than willing to step up, but there are rumors about him being ill too.\n\nAnother grandson, amir of §YHerat§!, @HER §GAla al-Dawla Mirza§! is also watching the throne with interest and gathering his armies, with the full support of his grandmother, Shah Rukhs chief consort §GGawhar Shad§!." 
  UaCH.1.a: "To the strongest!"
- UaCH.2.t: "Secret Plot"
- UaCH.2.t: "Secret Plot"
- UaCH.2.d: "During the most recent ill period of §GShah Rukh§!, the governor of §YBalkh§!, §GFiruzshah§! has began to gather armies and taxes for himself rather than the crown. However, this was discovered by §GMuhammad Juki§!, and he reported the issue to the recovering Emperor. "
- UaCH.2.a: "Remove Firuzshah from his position."
- UaCH.2.b: "A stern talk should do the trick."
+ UaCH.2.t: "Coup in $CAPITAL$"
+ UaCH.2.d: "'Your Majesty, this has gone on long enough' - A man, draped in a kaftan worth at least one of the wealthy merchants houses, stands before our ruler. The Vizier speaks calmly, and there is no doubt in his conviction. - 'Our armies have suffered defeat after defeat, our coffers are almost empty and whats worse yet, people no longer believe in your house.' \nHe pulls out a ceremonial knife from his sash, and looks deeply into the eyes of §G$RULER$§!, before striding away towards the ornamented doors. His final words echo in the solemn chamber.\n'This is for the best.'"
+ UaCH.2.a: "This is the end..."
+ UaCH.2.b: "I still have some loyal friends!"
+ uach_exiled_royalty:0"Exiled royalty"
+ 
  UaCH.3.t: "Fate of Firuzshah"
  UaCH.3.d: "§GFiruzshah§! has been demoted and exiled due to his actions during last winter. News have reached the court that he has died as of last week, due to his shame." 
  UaCH.3.a: "Shame." 
@@ -84,7 +85,7 @@
  UaCH.12.a: "Scorn them all."
  UaCH.15.t: "The body of Shah Rukh"
  UaCH.15.d: "With the preparations complete, §GShah Rukh's§! body starts the journey east, accompanied by §GGawhar Shad§! and §GAbdal-Latif§!. This leaves our army behind in disarray."
- UaCH.15.a: "Send a small honor guard"
+ UaCH.15.a: "Send a token guard"
  UaCH.15.b: "A true heir should be able to handle this."
  UaCH.15.c: "Assemble the Royal guard!"
  
@@ -106,7 +107,9 @@
  uach_try_to_sway_latif:0"We will attempt to sway §GAbdal-Latif's§! loyalty."
  uach_hunt_for_sr_body:0"The hunt is on!"
  intercept_shah_rukhs_body_title:0"Rescue §GGawhar Shad§!"
- intercept_shah_rukhs_body_desc:0"Our Empress-Dowager has fallen into the traitors hands!We should mount a rescue operation, and if we could gain possession of §GShah Rukh's§! corpse in the meantime, that would be extremely 'fortunate'."
+ intercept_shah_rukhs_body_desc:0"Our Empress-Dowager has fallen into the traitors hands!We should mount a rescue operation, and if we could gain possession of §GShah Rukh's§! corpse in the meantime, that would be extremely 'fortunate'.\n\nCurrently her captors from @[event_target_name.uach_holder_of_sr.GetTag]§Y[event_target_name.uach_holder_of_sr.GetName]§! are en route to §O[event_target_name.uach_holder_of_sr.Capital.GetCapitalName]§!"
+ uach_where_is_waldo_rukh:0"We are in posession of §GShah Rukh's§! corpse."
+ 
  
  UaCH.18.t: "A Chance to Return"
  UaCH.18.d: "Grave news! §GSultan Muhammad§!, upon hearing of §GShah Rukh's§! death, marches east, retaking §YAjam§! and becoming the Timurid Emperor of §YFars§!. He rewarded the surviving nobles of §YIsfahan§!, and many nobles of other regions defected to him. Whilst §YIsfahan§! enjoys a tax relief, other regions suffered immensely, with §YYazd§! being heavily taxed, with its emirs being frequently replaced."
@@ -786,3 +789,9 @@
  
  lost_control_of_herat:0"Doesn't own or control Herat"
  lost_control_of_samarkand:0"Doesn't own or control Samarkand"
+ 
+ UaCH.134.a:0 "Intervene in the Crisis!"
+ UaCH.135.a:0 "Lets slay this horse!"
+ UaCH.136.a:0 "A great game begins!"
+ UaCH.137.a:0 "Something something Abu said"
+ UaCH.138.a:0 "Ha ha! A soft underbelly!"

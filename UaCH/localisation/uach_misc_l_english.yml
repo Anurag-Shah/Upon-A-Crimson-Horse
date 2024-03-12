@@ -86,8 +86,8 @@
  UaCH.diff.1.b:0"§GMedium§! - I live for challenge"
  UaCH.diff.1.c:0"§GHard§! - This won't hurt at all"
  UaCH.diff.1.e:0"§RInsane§! - I AM TIMUR INCARNATE"
- uach_difficulty_lvl1:0"Difficulty modifier"
- uach_difficulty_lvl2:0"Difficulty modifier"
- uach_difficulty_lvl3:0"Difficulty modifier"
+ uach_difficulty_medium:0"Medium rare, at best"
+ uach_difficulty_hard:0"Hard mode engage"
+ uach_difficulty_insane:0"Bring it on"
  
  

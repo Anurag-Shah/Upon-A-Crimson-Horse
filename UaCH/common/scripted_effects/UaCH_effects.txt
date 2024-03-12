@@ -853,6 +853,7 @@ shuffle_governors = {
 
 # ROOT = Tag made into a prince
 make_tag_prince = {
+	remove_government_reform = uach_governor
     add_government_reform = uach_prince
     if = {
         limit = { NOT = { has_saved_global_event_target = timurids_prince1 } }
@@ -939,6 +940,7 @@ make_tag_prince = {
 
 # ROOT = Tag made into a governor
 make_tag_governor = {
+	remove_government_reform = uach_prince
     add_government_reform = uach_governor
     if = {
         limit = { NOT = { has_saved_global_event_target = timurids_governor1 } }

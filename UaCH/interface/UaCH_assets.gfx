@@ -97,10 +97,10 @@ spriteTypes = {
 	# Gov Reform icons
 	spriteType = {
 	  	name = "government_reform_uach_governor"
-	 	texturefile = "gfx//interface//governor_gov_reform_icon.dds"
+	 	texturefile = "gfx//interface//government_reform_icons//uach_governor.dds"
 	}
 	spriteType = {
 	  	name = "government_reform_uach_prince"
-	 	texturefile = "gfx//interface//prince_gov_reform_icon.dds"
+	 	texturefile = "gfx//interface//government_reform_icons//uach_prince.dds"
 	}
 }

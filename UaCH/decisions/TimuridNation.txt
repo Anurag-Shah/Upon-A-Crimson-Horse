@@ -41,26 +41,30 @@ country_decisions = {
 
 country_decisions = {
 	intercept_shah_rukhs_body = {
+		color = { 190 40 35 }
 		major = yes
 		potential = {
 			is_governor_or_prince = yes
 			has_global_flag = uach_hunt_for_sr_body
-			NOT = {has_country_flag = uach_where_is_waldo_rukh}
 		}
 
 		allow = {
-			AND = {has_global_flag = uach_hunt_for_sr_body
-					mil_power = 50 }
+			AND = {	has_global_flag = uach_hunt_for_sr_body
+					mil_power = 50	
 					}
+				NOT = {has_country_flag = uach_where_is_waldo_rukh}
+				NOT = {has_country_flag = uach_event_ongoing}
+				}
 
-		effect = {
+		effect = {		
+			set_country_flag = uach_event_ongoing
 			add_mil_power = -50
 			random_list = {
 					90 = {country_event = {
 									id = UaCH.131
 									}
 						}
-					10 = {country_event	= {
+					10 = { country_event	= {
 									id = UaCH.132
 									}		
 								

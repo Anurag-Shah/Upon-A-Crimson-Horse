@@ -979,21 +979,13 @@ country_event = {
 	# Intolerable!
 	option = { 
 		name = "UaCH.17.a" 
-		
+		set_global_flag = uach_hunt_for_sr_body
 		
 		TRS = {
 			add_liberty_desire = 100
-			hidden = {set_country_flag = uach_where_is_waldo_rukh
-					  set_global_flag = uach_hunt_for_sr_body}
-			hidden = {
-				TRS = {
-					country_event = {
-						id = UaCH.90
-						days = 180
-					}	
+			set_country_flag = uach_where_is_waldo_rukh
+			save_global_event_target_as = uach_holder_of_sr
 				}
-			}
-		}
 		
 		ai_chance = {
 			factor = 1
@@ -1012,9 +1004,10 @@ country_event = {
 							}
 						exist = TRS
 						}
-					}
-		set_global_flag = uach_hunt_for_sr_body				
-		hidden = {TRS = {set_country_flag = uach_where_is_waldo_rukh}}
+					}		
+		set_global_flag = uach_hunt_for_sr_body
+		TRS = {save_global_event_target_as = uach_holder_of_sr} 
+		TRS = {set_country_flag = uach_where_is_waldo_rukh}
 		hidden_effect = {
 			TIM = {
 				every_subject_country = {
@@ -1057,12 +1050,6 @@ country_event = {
 		#	country_event = {
 		#		id = UaCH.31
 		#	}
-			hidden_effect = {
-				country_event = {
-					id = UaCH.90
-					days = 180
-				}
-			}
 		}
 		custom_tooltip = uach_try_to_sway_latif
 			random_list = {
@@ -3772,7 +3759,8 @@ country_event = {
 				set_country_flag = uach_may_intercept_body
 			}
 		}
-		TRS = {set_country_flag = uach_where_is_waldo_rukh}
+		TRS = {set_country_flag = uach_where_is_waldo_rukh
+			   save_global_event_target_as = uach_holder_of_sr}
 		
 		ai_chance = {
 			factor = 1
@@ -3814,7 +3802,8 @@ country_event = {
 			set_country_flag = uach_may_intercept_body
 			}
 		}
-		TIM = {set_country_flag = uach_where_is_waldo_rukh }
+		TIM = {	set_country_flag = uach_where_is_waldo_rukh 
+				save_global_event_target_as = uach_holder_of_sr}
 		
 		add_legitimacy = -25
 		
@@ -7297,7 +7286,7 @@ country_event = {
 					loyalty = 15
 				}
 		change_estate_land_share = {
-							estate = church
+							estate = estate_church
 							share = 5
 						}
 		
@@ -7537,6 +7526,7 @@ country_event = {
 			25 = {add_manpower = 2
 				  custom_tooltip = uach_131_tt4}
 		}
+		clr_country_flag = uach_event_ongoing
 	}
 }
 
@@ -7565,7 +7555,10 @@ country_event = {
 						}
 			ROOT = {set_country_flag = uach_where_is_waldo_rukh}
 			custom_tooltip = uach_132_great_success
+			ROOT = { save_global_event_target_as = uach_holder_of_sr }
+			clr_country_flag = uach_event_ongoing
 	}
+	
 }
 
 ## SR Body Arrives at destination	
@@ -7597,7 +7590,14 @@ country_event = {
 					country_event = {
 									id = UaCH.57
 									days = 365}
+					capital_scope = {
+									add_province_modifier = {
+										name = uach_shah_rukhs_mausoleum
+										duration = 700
+										}
+									}
 					clr_country_flag = uach_where_is_waldo_rukh
+					
 				}
 		}
 }
@@ -7679,50 +7679,389 @@ country_event = {
 	#MEDIUM
 	option = {
 		name =  UaCH.diff.1.b
-		
-		every_country = {
-			limit = {
-				AND = {is_governor_or_prince = yes
-					   ai = yes}
-			}
-			add_country_modifier = {
-						name = uach_difficulty_lvl1
-						duration = 9125}
-				
-		}
+		set_global_flag = uach_diff_medium
+		#every_country = {
+		#	limit = {
+		#		AND = {is_governor_or_prince = yes
+		#			   ai = yes}
+		#	}
+		#	add_country_modifier = {
+		#				name = uach_difficulty_lvl1
+		#				duration = 9125}
+		#		
+		#}
 	}
 	
 	#HARD
 	option = {
 		name =  UaCH.diff.1.c
-		
-		every_country = {
-			limit = {
-				AND = {is_governor_or_prince = yes
-					   ai = yes}
-			}
-			add_country_modifier = {
-						name = uach_difficulty_lvl2
-						duration = 9125}
-				
-		}
+		set_global_flag = uach_diff_hard
+		#every_country = {
+		#	limit = {
+		#		AND = {is_governor_or_prince = yes
+		#			   ai = yes}
+		#	}
+		#	add_country_modifier = {
+		#				name = uach_difficulty_lvl2
+		#				duration = 9125}
+		#		
+		#}
 	}
 	
 	#INSANE
 	option = {
 		name =  UaCH.diff.1.e
+		set_global_flag = uach_diff_insane
 		
-		every_country = {
-			limit = {
-				AND = {is_governor_or_prince = yes
-					   ai = yes}
-			}
-			add_country_modifier = {
-						name = uach_difficulty_lvl3
-						duration = 9125}
-				
-		}
+		#every_country = {
+		#	limit = {
+		#		AND = {is_governor_or_prince = yes
+		#			   ai = yes}
+		#	}
+		#	add_country_modifier = {
+		#				name = uach_difficulty_lvl3
+		#				duration = 9125}
+		#		
+		#}
 	}
 		
 	
+}
+
+#SwitchToOPM repurposed UaCH.2
+country_event = {
+	id = UaCH.2
+	title = UaCH.2.t  #Coup in [ROOT.Capital.GetCapitalName]
+	desc = UaCH.2.d	  #'Your Majesty, this has gone on long enough' - A man, draped in a kaftan worth at least one of the wealthy merchants houses, stands before our ruler. The Vizier speaks calmly, and there is no doubt in his conviction. - 'Our armies have suffered defeat after defeat, our coffers are almost empty and whats worse yet, people no longer believe in your house.' \nHe pulls out a ceremonial knife from his sash, and looks deeply into §G$RULER$'s§! eye, before striding away towards the ornamented doors. His final words echo in the solemn chamber.\n'This is for the best.'"
+	picture = COUNTRY_COLLAPSE_eventPicture
+
+	trigger = {
+		AND = {
+				random_neighbor_country = {  NOT = {num_of_cities = 2}}
+				OR = {
+							has_disaster = timurid_succession_crisis
+							is_in_war = { casus_belli = cb_challange_claimant }
+							is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+						}
+				is_bankrupt = yes
+				}
+			}
+			
+	mean_time_to_happen = { months = 12 }
+				
+	option = {
+			name = UaCH.2.a	#this is the end...
+			ROOT = {kill_ruler = yes}
+				}
+	option = {
+			name = UaCH.2.b	#I still have some loyal friends!
+			random_neighbor_country = { limit = { NOT = {num_of_cities = 2}}
+				save_event_target_as = uach_sw_tag1}
+				
+				switch_tag = event_target:uach_sw_tag1
+				event_target:uach_sw_tag1 = {add_manpower = 5
+											add_treasury = 150
+											add_country_modifier = {
+												name = uach_exiled_royalty
+												duration = 1000
+												}
+											}
+									}
+}
+
+						
+
+
+
+#INTERLOPER AIS
+# Interloper test - Moghulistan
+# Ajam - 0
+# Fars - 1
+# Khorasan -2
+# Herat -3
+# Afghanistan -4
+# Marw -5
+# Fergana-6
+# Samarkand-7
+
+
+#Any tag 
+country_event = {
+	id = UaCH.134
+	title = UaCH.134.t  #no need for loc, AI only
+	desc = UaCH.134.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	
+	major = yes
+	ai = yes
+	
+	
+	trigger = {	AND = {
+					NOT = {has_country_flag = uach_interloped_already}
+					is_interloper = no
+					army_strength = {
+							who = HER
+							value = 0.4
+							}
+					any_neighbor_country = {
+						OR = {
+							has_disaster = timurid_succession_crisis
+							is_in_war = { casus_belli = cb_challange_claimant }
+							is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+						}
+					}
+				}
+			}
+	
+	mean_time_to_happen = {
+		months = 600
+ 	}
+	
+	option = {
+		name = "UaCH.134.a" #Intervene in the Crisis!
+		ROOT = {
+			random_list = {
+				1 = {uach_create_interloper = { region_int = 0 }}
+				1 = {uach_create_interloper = { region_int = 1 }}
+				1 = {uach_create_interloper = { region_int = 2 }}
+				1 = {uach_create_interloper = { region_int = 3 }}
+				1 = {uach_create_interloper = { region_int = 4 }}
+				1 = {uach_create_interloper = { region_int = 5 }}
+				1 = {uach_create_interloper = { region_int = 6 }}
+				1 = {uach_create_interloper = { region_int = 7 }}
+				
+			}
+		}
+	}
+}
+
+
+#consider strenght neighbors - Chagatai(Moghulistan)/Yarkand(if independent)/Delhi/Sirhind/Multan/Mushahsa/Haasa 135
+country_event = {
+	id = UaCH.135
+	title = UaCH.135.t 
+	desc = UaCH.135.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	
+	major = yes
+	ai = yes
+	
+	trigger = {
+		AND = {
+			NOT = {has_country_flag = uach_interloped_already}
+			OR = {	tag = CHG
+					tag = DLH
+					tag = SRH
+					tag = MUL
+					tag = MSY
+					tag = ALH
+					tag = BAL
+					AND = { tag = KAS
+						  KAS = { is_subject = no }
+						  }
+				}
+			is_interloper = no
+			army_strength = {
+				who = HER
+				value = 0.6
+				}
+				
+			any_neighbor_country = {
+				OR = {
+					has_disaster = timurid_succession_crisis
+					is_in_war = { casus_belli = cb_challange_claimant }
+					is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+ 	}
+	
+	option = {
+		name = "UaCH.135.a" #Lets slay this horse!
+		IF = {
+					limit = {
+						OR = {tag = DLH
+							  tag = SRH
+							  tag = MUL}
+							 }
+					ROOT = {
+						uach_create_interloper = { region_int = 4 }
+					}
+				}
+		ELSE_IF = {
+			limit = { 
+				OR = {	tag = CHG
+						tag = KAS }
+				ROOT = {
+						uach_create_interloper = { region_int = 3 }
+					}
+				}
+			}
+		ELSE_IF = {
+			limit = { 
+				OR = {	tag = ALH
+						tag = MSY }
+				ROOT = {
+						uach_create_interloper = { region_int = 1 }
+					}
+				}
+			}
+			
+		ELSE_IF = {
+			limit = { tag = BAL }
+				ROOT = {
+						uach_create_interloper = { region_int = 5 }
+					}
+				}
+			}
+		
+		
+		}
+	}
+}
+
+#Definitely intervene - Muscovy/Russia/GreatBritain/Ming/Ottoman/Mamluk - the great game 136
+country_event = {
+	id = UaCH.136
+	title = UaCH.136.t 
+	desc = UaCH.136.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	
+	major = yes
+	ai = yes
+	
+	trigger = {
+		NOT = {has_country_flag = uach_interloped_already}
+		AND = {
+			is_interloper = no
+			OR = {
+					tag = MOS
+					tag = RUS
+					tag = GBR
+					tag = TUR
+					tag = MAM
+					tag = MNG
+				}
+				
+			any_neighbor_country = {
+					OR = {
+						has_disaster = timurid_succession_crisis
+						is_in_war = { casus_belli = cb_challange_claimant }
+						is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+					}
+				}
+			}
+		}
+	
+	mean_time_to_happen = {
+		months = 120
+ 	}
+	
+	option = {
+		name = "UaCH.136.a" #A great game begins!
+				IF = {
+					limit = {
+						OR = {tag = RUS
+							  tag = MOS}
+							 }
+					ROOT = {
+						uach_create_interloper = { region_int = 2 }
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						OR = {tag = TUR
+							  tag = MAM}
+							 }
+					ROOT = {
+						uach_create_interloper = { region_int = 0 }
+					}
+				}
+				ELSE_IF = { limit = {tag = GBR}
+					ROOT = {
+						uach_create_interloper = { region_int = 1 }
+					}
+				}
+				ELSE_IF = {limit = {tag = MNG}
+					ROOT = {
+						uach_create_interloper = { region_int = 6 }
+					}
+				}
+	}
+}
+
+#badakshan 137 - abu saids incursions
+country_event = {
+	id = UaCH.137
+	title = UaCH.137.t 
+	desc = UaCH.137.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		AND = {
+			is_interloper = no
+			NOT = {has_country_flag = uach_interloped_already}
+			tag = BDK
+			any_neighbor_country = {
+					OR = {
+						has_disaster = timurid_succession_crisis
+						is_in_war = { casus_belli = cb_challange_claimant }
+						is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+					}
+				}
+			}
+		}
+	
+	mean_time_to_happen = {
+		months = 120
+ 	}
+	
+	option = {
+		name = "UaCH.137.a"#Something something Abu said
+		ROOT = {
+			uach_create_interloper = { region_int = 7 }
+		}
+	}
+}
+
+#Hormuz
+country_event = {
+	id = UaCH.138
+	title = UaCH.138.t 
+	desc = UaCH.138.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		AND = {
+			is_interloper = no
+			NOT = {has_country_flag = uach_interloped_already}
+			tag = ORM
+			any_neighbor_country = {
+					OR = {
+						has_disaster = timurid_succession_crisis
+						is_in_war = { casus_belli = cb_challange_claimant }
+						is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+					}
+				}
+			}
+		}
+	
+	mean_time_to_happen = {
+		months = 120
+ 	}
+	
+	option = {
+		name = "UaCH.138.a"
+		ROOT = {
+			uach_create_interloper = { region_int = 1 }
+		}
+	}
 }
