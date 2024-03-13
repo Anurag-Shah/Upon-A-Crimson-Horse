@@ -793,5 +793,20 @@
  UaCH.134.a:0 "Intervene in the Crisis!"
  UaCH.135.a:0 "Lets slay this horse!"
  UaCH.136.a:0 "A great game begins!"
- UaCH.137.a:0 "Something something Abu said"
+ 
+ UaCH.137.t:0"Incident at the Khyber Pass"
+ UaCH.137.d:0"Today, we have received reports from our outpost slightly beyond the Valley of Khyber, the most important mountain pass through our lands. The army of §G[HER.GetRuler]§! have been spotted making camp, clearly preparing for invasion. There seems to have been already a clash between the local militia and them, in which a young child was killed, causing an outcry. While the Timurid realm is in flames, this intrusion into our lands cannot stand!"
+ UaCH.137.a:0 "Sound the horns!"
+ UaCH.137.b:0 "What can a man do against such reckless hate..."
+ 
+ UaCH.138.t:0"Preemptive strike"
+ UaCH.138.d:0"The collapse of the Timurid state presents both a threat and an opportunity for us. Our lands on the northern bank of the Persian gulf are under constant raids either for slaves, goods or both, making trade along the Silk Road next to impossible. Although our power mostly lies in maritime forces, this seems to be the perfect opportunity to secure the Farsi borders, while the Timurid princes are being busy killing each other."
  UaCH.138.a:0 "Ha ha! A soft underbelly!"
+ UaCH.138.b:0 "Let them eat each other."
+ 
+ #ARGHUNIDS - Losing in AFG, they start a civil war in BAL OR BAL accepts them as new rulers (AI wont). If win, switch to BAL and add as interloper.
+ #UaCH.139.t:0"Baluchistan"
+ #UaCH.138.d:0""
+ #UaCH.138.a:0 "Ha ha! A soft underbelly!"
+ #UaCH.138.b:0 "Let them eat each other."
+ 

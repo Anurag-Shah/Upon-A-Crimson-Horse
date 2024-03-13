@@ -5939,6 +5939,12 @@ country_event = {
 			# Why do i need to do this
 			# I genuinely hate paradox man
 			uach_add_timurid_faction_if_not_has = yes
+			
+			#clear previous interlopers so they can interlop again
+			every_country = {
+				limit = { has_country_flag  = uach_interloped_already }
+					clr_country_flag = uach_interloped_already
+					}
 		}
 		ai_chance = {
 			factor = 1
@@ -7856,6 +7862,8 @@ country_event = {
 					tag = MSY
 					tag = ALH
 					tag = BAL
+					tag = ORM
+					tag = BDK
 					AND = { tag = KAS
 						  KAS = { is_subject = no }
 						  }
@@ -7882,6 +7890,7 @@ country_event = {
 	
 	option = {
 		name = "UaCH.135.a" #Lets slay this horse!
+		ROOT = {set_country_flag = uach_interloped_already}
 		IF = {
 					limit = {
 						OR = {tag = DLH
@@ -7904,7 +7913,8 @@ country_event = {
 		ELSE_IF = {
 			limit = { 
 				OR = {	tag = ALH
-						tag = MSY }
+						tag = MSY
+						tag = ORM }
 				ROOT = {
 						uach_create_interloper = { region_int = 1 }
 					}
@@ -7917,12 +7927,17 @@ country_event = {
 						uach_create_interloper = { region_int = 5 }
 					}
 				}
+				
+		ELSE_IF = {
+			limit = { 
+				tag = BDK }
+				ROOT = {
+						uach_create_interloper = { region_int = 7 }
+					}
+				}
 			}
-		
-		
-		}
 	}
-}
+		
 
 #Definitely intervene - Muscovy/Russia/GreatBritain/Ming/Ottoman/Mamluk - the great game 136
 country_event = {
@@ -7963,6 +7978,7 @@ country_event = {
 	
 	option = {
 		name = "UaCH.136.a" #A great game begins!
+		ROOT = {set_country_flag = uach_interloped_already}
 				IF = {
 					limit = {
 						OR = {tag = RUS
@@ -8023,18 +8039,23 @@ country_event = {
  	}
 	
 	option = {
-		name = "UaCH.137.a"#Something something Abu said
+		name = "UaCH.137.a"#Something something Abu said Intervene yes in Samarkand
 		ROOT = {
 			uach_create_interloper = { region_int = 7 }
 		}
 	}
+	
+	option = {
+		name = "UaCH.137.b" #nah, dont wanna
+		add_prestige = -10
+	}
 }
 
-#Hormuz
+#Hormuz - 138
 country_event = {
 	id = UaCH.138
-	title = UaCH.138.t 
-	desc = UaCH.138.d
+	title = UaCH.138.t #Preemptive strikes
+	desc = UaCH.138.d #The collapse of the Timurid state presents both a threat and an opportunity for us. Our lands on the northern bank of the Persian gulf are under constant raids either for slaves, goods or both, making trade along the Silk Road next to impossible. Although our power mostly lies in maritime forces, this seems to be the perfect opportunity to secure the Farsi borders, while the Timurid princes are being busy killing each other.
 	picture = COUNTRY_COLLAPSE_eventPicture
 	
 	major = yes
@@ -8059,9 +8080,56 @@ country_event = {
  	}
 	
 	option = {
-		name = "UaCH.138.a"
+		name = "UaCH.138.a"#Something something Intervene yes in Fars
 		ROOT = {
 			uach_create_interloper = { region_int = 1 }
 		}
 	}
+	
+	option = {
+		name = "UaCH.138.b" #nah, dont wanna
+		add_prestige = -10
+	}
 }
+
+# on hold for now
+#Baluchistan -139  - escape from Kandahar
+#country_event = {
+#	id = UaCH.139
+#	title = UaCH.139.t 
+#	desc = UaCH.139.d
+#	picture = COUNTRY_COLLAPSE_eventPicture
+#	
+#	major = yes
+#	
+#	trigger = {
+#		AND = {
+#			is_interloper = no
+#			NOT = {has_country_flag = uach_interloped_already}
+#			tag = BAL
+#			any_neighbor_country = {
+#					OR = {
+#						has_disaster = timurid_succession_crisis
+#						is_in_war = { casus_belli = cb_challange_claimant }
+#						is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+#					}
+#				}
+#			}
+#		}
+#	
+#	mean_time_to_happen = {
+#		months = 120
+#	}
+#	
+#	option = {
+#		name = "UaCH.139.a"#Something something Intervene yes in Marw
+#		ROOT = {
+#			uach_create_interloper = { region_int = 5 }
+#		}
+#	}
+#	
+#	option = {
+#		name = "UaCH.139.b" #nah, dont wanna
+#		add_prestige = -10
+#	}
+#}
