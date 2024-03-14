@@ -790,9 +790,13 @@
  lost_control_of_herat:0"Doesn't own or control Herat"
  lost_control_of_samarkand:0"Doesn't own or control Samarkand"
  
+ UaCH.134.t:0 "The Timurid Succession Crisis" 
  UaCH.134.a:0 "Intervene in the Crisis!"
- UaCH.135.a:0 "Lets slay this horse!"
- UaCH.136.a:0 "A great game begins!"
+ UaCH.134.d:0 "Intervene in the Crisis!"
+ UaCH.135.t:0 "The Timurid Succession Crisis" 
+ UaCH.135.d:0 "Lets slay this horse!"
+ UaCH.136.t:0 "The Timurid Succession Crisis" 
+ UaCH.136.d:0 "A great game begins!"
  
  UaCH.137.t:0"Incident at the Khyber Pass"
  UaCH.137.d:0"Today, we have received reports from our outpost slightly beyond the Valley of Khyber, the most important mountain pass through our lands. The army of §G[HER.GetRuler]§! have been spotted making camp, clearly preparing for invasion. There seems to have been already a clash between the local militia and them, in which a young child was killed, causing an outcry. While the Timurid realm is in flames, this intrusion into our lands cannot stand!"
@@ -810,3 +814,25 @@
  #UaCH.138.a:0 "Ha ha! A soft underbelly!"
  #UaCH.138.b:0 "Let them eat each other."
  
+ UaCH.139.t:0""
+ UaCH.139.d:0""
+ UaCH.139.a:0""
+ UaCH.139.b:0""
+ 
+ UaCH.140.t:0"Escape from Kandahar"
+ UaCH.140.d:0"With the loss of the great fortress of Kandahar, our hopes of claiming the title of Timurid Emperor have grown thin. There is some left at least,because for years we have been preparing to march south into §YBaluchistan§!. We have many agents already in place, quite a few local little lords and emirs already bribed and ready to take up arms once we arrive."
+ UaCH.140.a:0"Gather whatever remains of our army..."
+ UaCH.140.b:0"Surrender? NEVER."
+ 
+ UaCH.141.t:0"The Arghunids invade"
+ UaCH.141.d:0"In [GetYear], the Arghunids dynasty of Kandahar have suffered serious losses during the Timurid Succession Crisis. The remainder of their armies, led by §GShah Shuja Beg§! have gathered for a final retreat towards the south, where the Baluchi people have long carved out a kingdom for themselves. Unbeknown to them, this wasn't a hasty flight, as the invasion was planned for a decade prior."
+ UaCH.141.a:0"Repel the invasion!"
+ UaCH.141.b:0"Submit to the Arghunids"
+ 
+ UaCH.143.t:0"Victory in Baluchistan"
+ UaCH.143.d:0"We have been victorious in our conquest of Baluchistan. But all of that is only a band-aid on our pride, as the Timurid Succession crisis still rages on without us."
+ UaCH.143.a:0"Time for a triumpanht return!"
+ 
+ UaCH.144.t:0"The Arghunids defeated"
+ UaCH.144.d:0"The invaders have been repelled! After months of brutal fighting, we have finally retaken the last holdout of the Arghunid's armies. Our country is ready to rebuild, however the threat by the Timurid princes have not diminished at all. It is time to bring the fight to them."
+ UaCH.144.a:0"They will pay for this!"

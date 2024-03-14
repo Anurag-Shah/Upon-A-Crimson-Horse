@@ -35,11 +35,8 @@ country_decisions = {
 	uach_difficulty_selector = {
 		major = yes
 			potential = {
-				NOT = {has_country_flag = uach_difficulty_selected}
+				NOT = {has_global_flag = uach_difficulty_selected}
 				NOT = { ai = yes }
-				NOT = { OR = {has_global_flag = uach_diff_hard
-							  has_global_flag = uach_diff_medium
-							  has_global_flag = uach_diff_insane}
 						}
 			}
 		allow = {

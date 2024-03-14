@@ -1,0 +1,19 @@
+#UACH event governor: U69 - ARGHUNIDS
+government = monarchy
+add_government_reform = iqta
+government_rank = 1
+primary_culture = afghani
+religion = sunni
+technology_group = muslim
+capital = 577
+
+1430.1.1 = {
+	monarch = {
+		name = "Shah Shuja Beg"
+		dynasty = "Arghun"
+		adm = 4
+		dip = 2
+		mil = 4
+	}
+	add_piety = 0.3
+}

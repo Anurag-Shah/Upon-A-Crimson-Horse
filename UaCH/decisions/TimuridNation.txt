@@ -46,6 +46,7 @@ country_decisions = {
 		potential = {
 			is_governor_or_prince = yes
 			has_global_flag = uach_hunt_for_sr_body
+			NOT = {has_country_flag = uach_event_ongoing}
 		}
 
 		allow = {
@@ -53,18 +54,17 @@ country_decisions = {
 					mil_power = 50	
 					}
 				NOT = {has_country_flag = uach_where_is_waldo_rukh}
-				NOT = {has_country_flag = uach_event_ongoing}
 				}
 
 		effect = {		
 			set_country_flag = uach_event_ongoing
 			add_mil_power = -50
 			random_list = {
-					90 = {country_event = {
+					70 = {country_event = {
 									id = UaCH.131
 									}
 						}
-					10 = { country_event	= {
+					30 = { country_event	= {
 									id = UaCH.132
 									}		
 								

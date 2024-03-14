@@ -7675,7 +7675,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {}
 	
-	immediate = {set_country_flag = uach_difficulty_selected}
+	immediate = {set_global_flag = uach_difficulty_selected}
 	
 	#EASY
 	option = {
@@ -7738,12 +7738,12 @@ country_event = {
 country_event = {
 	id = UaCH.2
 	title = UaCH.2.t  #Coup in [ROOT.Capital.GetCapitalName]
-	desc = UaCH.2.d	  #'Your Majesty, this has gone on long enough' - A man, draped in a kaftan worth at least one of the wealthy merchants houses, stands before our ruler. The Vizier speaks calmly, and there is no doubt in his conviction. - 'Our armies have suffered defeat after defeat, our coffers are almost empty and whats worse yet, people no longer believe in your house.' \nHe pulls out a ceremonial knife from his sash, and looks deeply into §G$RULER$'s§! eye, before striding away towards the ornamented doors. His final words echo in the solemn chamber.\n'This is for the best.'"
+	desc = UaCH.2.d	  #'Your Majesty, this has gone on long enough' - A man, draped in a kaftan worth at least one of the wealthy merchants houses, stands before our ruler. The Vizier speaks calmly, and there is no doubt in his conviction. - 'Our armies have suffered defeat after defeat, our coffers are almost empty and whats worse yet, people no longer believe in your house.' \nHe pulls out a ceremonial knife from his sash, and looks deeply into §G$RULER$'s§! eye, before striding away towards the ornamented doors. His final words echo in the solemn chamber.\n'§OThis is for the best.§!'"
 	picture = COUNTRY_COLLAPSE_eventPicture
 
 	trigger = {
 		AND = {
-				random_neighbor_country = {  NOT = {num_of_cities = 2}}
+				any_neighbor_country = {  NOT = {num_of_cities = 2}}
 				OR = {
 							has_disaster = timurid_succession_crisis
 							is_in_war = { casus_belli = cb_challange_claimant }
@@ -7794,8 +7794,8 @@ country_event = {
 #Any tag 
 country_event = {
 	id = UaCH.134
-	title = UaCH.134.t  #no need for loc, AI only
-	desc = UaCH.134.d
+	title = UaCH.134.t  #fuck i need loc cause major...
+	desc = UaCH.134.d	#no need for loc, AI only
 	picture = COUNTRY_COLLAPSE_eventPicture
 	
 	major = yes
@@ -7803,6 +7803,7 @@ country_event = {
 	
 	
 	trigger = {	AND = {
+					is_governor_or_prince = no
 					NOT = {has_country_flag = uach_interloped_already}
 					is_interloper = no
 					army_strength = {
@@ -7816,6 +7817,11 @@ country_event = {
 							is_in_war = { casus_belli = cb_enforce_loyalty_governor }
 						}
 					}
+					NOT = { tag = BAL
+						    tag = ORM
+							tag = BDK
+							tag = U69
+							}
 				}
 			}
 	
@@ -7905,20 +7911,20 @@ country_event = {
 			limit = { 
 				OR = {	tag = CHG
 						tag = KAS }
+					}
 				ROOT = {
 						uach_create_interloper = { region_int = 3 }
 					}
-				}
 			}
 		ELSE_IF = {
 			limit = { 
 				OR = {	tag = ALH
 						tag = MSY
 						tag = ORM }
+					}
 				ROOT = {
 						uach_create_interloper = { region_int = 1 }
 					}
-				}
 			}
 			
 		ELSE_IF = {
@@ -7929,14 +7935,13 @@ country_event = {
 				}
 				
 		ELSE_IF = {
-			limit = { 
-				tag = BDK }
+			limit = { tag = BDK }
 				ROOT = {
 						uach_create_interloper = { region_int = 7 }
 					}
 				}
 			}
-	}
+}
 		
 
 #Definitely intervene - Muscovy/Russia/GreatBritain/Ming/Ottoman/Mamluk - the great game 136
@@ -7960,6 +7965,7 @@ country_event = {
 					tag = TUR
 					tag = MAM
 					tag = MNG
+					tag = POR
 				}
 				
 			any_neighbor_country = {
@@ -7997,7 +8003,10 @@ country_event = {
 						uach_create_interloper = { region_int = 0 }
 					}
 				}
-				ELSE_IF = { limit = {tag = GBR}
+				ELSE_IF = { limit = {						
+						OR = {tag = GBR
+							  tag = POR}			
+							  }
 					ROOT = {
 						uach_create_interloper = { region_int = 1 }
 					}
@@ -8007,6 +8016,7 @@ country_event = {
 						uach_create_interloper = { region_int = 6 }
 					}
 				}
+	
 	}
 }
 
@@ -8021,6 +8031,7 @@ country_event = {
 	
 	trigger = {
 		AND = {
+			is_governor_or_prince = no
 			is_interloper = no
 			NOT = {has_country_flag = uach_interloped_already}
 			tag = BDK
@@ -8093,43 +8104,200 @@ country_event = {
 }
 
 # on hold for now
-#Baluchistan -139  - escape from Kandahar
-#country_event = {
-#	id = UaCH.139
-#	title = UaCH.139.t 
-#	desc = UaCH.139.d
-#	picture = COUNTRY_COLLAPSE_eventPicture
-#	
-#	major = yes
-#	
-#	trigger = {
-#		AND = {
-#			is_interloper = no
-#			NOT = {has_country_flag = uach_interloped_already}
-#			tag = BAL
-#			any_neighbor_country = {
-#					OR = {
-#						has_disaster = timurid_succession_crisis
-#						is_in_war = { casus_belli = cb_challange_claimant }
-#						is_in_war = { casus_belli = cb_enforce_loyalty_governor }
-#					}
-#				}
-#			}
-#		}
-#	
-#	mean_time_to_happen = {
-#		months = 120
-#	}
-#	
-#	option = {
-#		name = "UaCH.139.a"#Something something Intervene yes in Marw
-#		ROOT = {
-#			uach_create_interloper = { region_int = 5 }
-#		}
-#	}
-#	
-#	option = {
-#		name = "UaCH.139.b" #nah, dont wanna
-#		add_prestige = -10
-#	}
-#}
+#Baluchistan -140  - escape from Kandahar ARGHUIDS 1
+country_event = {
+	id = UaCH.140
+	title = UaCH.140.t #Escape from Kandahar
+	desc = UaCH.140.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	fire_only_once = yes
+	
+	trigger = {
+		AND = {
+			OR = {
+						has_disaster = timurid_succession_crisis
+						is_in_war = { casus_belli = cb_challange_claimant }
+						is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+					}
+			tag = AFG
+			447 = { NOT = { controlled_by = AFG } }	
+				}
+			}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = "UaCH.140.a" #Gather whatever remains of our army...		
+		every_province = { 
+				limit = { 
+						AND = {
+							owned_by = BAL
+							is_capital = no
+							NOT = {has_province_flag = uach_bal_cw_check}
+							}
+						}
+							
+			random_list = {
+				40 = {add_core = U69
+					  cede_province = U69
+					  set_province_flag = uach_bal_cw_check
+						}
+				60 = {set_province_flag = uach_bal_cw_check}
+				}
+			}
+			
+			BAL = {
+				country_event = {
+						id = UaCH.141	
+						days = 1
+							}
+					}
+							
+			IF = { 
+				limit = {
+					U69 = {num_of_cities = 1}}
+				switch_tag = U69
+				U69 = { add_manpower = 10 
+						add_treasury = 200
+						add_stability = 2
+					}
+				U69 = {
+					define_ruler = {
+							name = "Shah Shuja Beg"
+							dynasty = "Arghunid"
+							dip = 4
+							adm = 2
+							mil = 4
+							}
+					}
+			}
+			ROOT = {kill_ruler = yes}
+			ai_chance = { factor = 100 }
+		}
+		
+	option = {
+		name = "UaCH.140.b" #Surrender? NEVER.
+		add_prestige = 10
+		ai_chance = { factor = 0 }
+	}
+}
+
+country_event = {
+	id = UaCH.141
+	title = UaCH.141.t #The Arghunids invade
+	desc = UaCH.141.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {}
+	immediate = {set_country_flag = uach_argh_invasion}
+	option = {
+		name = "UaCH.141.a" #Repel the invasion!
+		ROOT = {
+				declare_war_with_cb = {
+					casus_belli = cb_annex
+					who = U69
+				}
+			}
+		ai_chance = {factor = 50}
+		}
+	option = {
+		name = "UaCH.141.b" #Submit to the Arghunids
+		switch_tag = U69
+		hidden = {
+		U69 = {country_event = {id = UaCH.142
+								days = 1}}
+				}
+		ai_chance = { factor = 5}
+	}
+}
+
+#inherit baluchistan... cause it wont work otherwise
+country_event = {
+	id = UaCH.142
+	title = UaCH.142.t #The Arghunids invade
+	desc = UaCH.142.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {}
+	
+	hidden = yes
+	option = {
+		U69 = { inherit = BAL 
+				remove_government_reform = iqta
+				make_tag_prince = yes}
+			}
+}
+
+#143 Arghuids win cw - make them prince
+country_event = {
+	id = UaCH.143
+	title = UaCH.143.t #Victory in Baluchistan
+	desc = UaCH.143.d  #We have been victorious in our conquest of Baluchistan. But all of that is only a band-aid on our pride, as the Timurid Succession crisis still rages on without us.
+	picture = COUNTRY_COLLAPSE_eventPicture
+	fire_only_once = yes
+	trigger = {
+				AND = {
+					tag = U69
+					NOT = {exist = BAL}
+					any_neighbor_country = {
+						OR = {
+							has_disaster = timurid_succession_crisis
+							is_in_war = { casus_belli = cb_challange_claimant }
+							is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+							}
+						}
+				}
+			}
+			
+	mean_time_to_happen = {days = 30}
+	
+	option = {
+		name = UaCH.143.a # Time for a triumpanht return!
+			add_manpower = 10
+			add_treasury = 300
+			add_mil_power = 100
+			add_war_exhaustion = -10
+			add_stability = 1
+			make_tag_prince = yes
+			}
+}
+
+#144 BAL wins cw - make them interlop
+country_event = {
+	id = UaCH.144
+	title = UaCH.144.t #The Arghunids defeated
+	desc = UaCH.144.d #The invaders have been repelled! After months of brutal fighting, we have finally retaken the last holdout of the Arghunid's armies. Our country is ready to rebuild, however the threat by the Timurid princes have not diminished at all. It is time to bring the fight to them.
+	picture = COUNTRY_COLLAPSE_eventPicture
+	fire_only_once = yes
+	trigger = {
+				AND = {
+					tag = BAL
+					NOT = {exist = U69}
+					has_country_flag = uach_argh_invasion
+					any_neighbor_country = {
+						OR = {
+								has_disaster = timurid_succession_crisis
+								is_in_war = { casus_belli = cb_challange_claimant }
+								is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+							}
+					}
+				}
+			}
+	mean_time_to_happen = {days = 30}
+	
+	option = {
+		name = UaCH.144.a # They will pay for this!
+			add_manpower = 10
+			add_treasury = 300
+			add_mil_power = 100
+			add_war_exhaustion = -10
+			add_stability = 1
+			ROOT = {
+					uach_create_interloper = { region_int = 4 }
+					}
+			}
+}

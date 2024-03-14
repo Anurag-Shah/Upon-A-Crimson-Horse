@@ -738,7 +738,7 @@ U11_ideas = {
 		warscore_cost_vs_other_religion = 10
 	}	
 	bonus = {	
-		global_autonomy = 0.05
+		global_autonomy = -0.05
 	}	
 		
 	trigger = {	
@@ -763,7 +763,7 @@ U11_ideas = {
 	}	
 		
 	U11_idea_5 = {	
-		global_autonomy = 0.05
+		global_autonomy = -0.05
 	}	
 		
 	U11_idea_6 = {	
@@ -2226,7 +2226,7 @@ U45_ideas = {
 	}	
 		
 	U45_idea_5 = {	
-		global_autonomy = 0.05
+		global_autonomy = -0.05
 	}	
 		
 	U45_idea_6 = {	
@@ -3230,10 +3230,10 @@ U68_ideas = {
 U69_ideas = {		
 	start = {	
 		missionary_maintenance_cost = -0.1
-		monarch_admin_power = 1
+		land_morale=0.1
 	}	
 	bonus = {	
-		global_autonomy = 0.05
+		global_autonomy = -0.05
 	}	
 		
 	trigger = {	
