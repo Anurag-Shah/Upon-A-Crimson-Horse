@@ -44,34 +44,42 @@ spriteTypes = {
 	spriteType = {
 	  	name = "GFX_timurids_map_ajam"
 	 	texturefile = "gfx/interface/ui/map/timurids_map_ajam.dds"
+		noOfFrames = 6
 	}
 	spriteType = {
 	  	name = "GFX_timurids_map_khorasan"
 	 	texturefile = "gfx/interface/ui/map/timurids_map_khorasan.dds"
+		noOfFrames = 6
 	}
 	spriteType = {
 	  	name = "GFX_timurids_map_fars"
 	 	texturefile = "gfx/interface/ui/map/timurids_map_fars.dds"
+		noOfFrames = 6
 	}
 	spriteType = {
 	  	name = "GFX_timurids_map_herat"
 	 	texturefile = "gfx/interface/ui/map/timurids_map_herat.dds"
+		noOfFrames = 6
 	}
 	spriteType = {
 	  	name = "GFX_timurids_map_merv"
 	 	texturefile = "gfx/interface/ui/map/timurids_map_merv.dds"
+		noOfFrames = 6
 	}
 	spriteType = {
 	  	name = "GFX_timurids_map_samarkand"
 	 	texturefile = "gfx/interface/ui/map/timurids_map_samarkand.dds"
+		noOfFrames = 6
 	}
 	spriteType = {
 	  	name = "GFX_timurids_map_ferghana"
 	 	texturefile = "gfx/interface/ui/map/timurids_map_ferghana.dds"
+		noOfFrames = 6
 	}
 	spriteType = {
 	  	name = "GFX_timurids_map_afghanistan"
 	 	texturefile = "gfx/interface/ui/map/timurids_map_afghanistan.dds"
+		noOfFrames = 6
 	}
 	spriteType = {
 	  	name = "GFX_abandon_our_claims"
@@ -97,10 +105,29 @@ spriteTypes = {
 	# Gov Reform icons
 	spriteType = {
 	  	name = "government_reform_uach_governor"
-	 	texturefile = "gfx//interface//government_reform_icons//uach_governor.dds"
+	 	texturefile = "gfx/interface/government_reform_icons/uach_governor.dds"
 	}
 	spriteType = {
 	  	name = "government_reform_uach_prince"
-	 	texturefile = "gfx//interface//government_reform_icons//uach_prince.dds"
+	 	texturefile = "gfx/interface/government_reform_icons/uach_prince.dds"
+	}
+	
+	# Govt icons test
+	spriteType = {
+		name = "GFX_legitimacy_to_defoff_icons"
+		texturefile = "gfx/interface/legitimacy_to_defoff_icons.dds"
+		noOfFrames = 4
+	}
+	
+	spriteType = {
+		name = "GFX_gawhar_shad_story_icons"
+		texturefile = "gfx/interface/gawhar_shad_story_icons.dds"
+		noOfFrames = 4
+	}
+	
+	spriteType = {
+		name = "GFX_diff_setting"
+		texturefile = "gfx/interface/difficulty_setting_icons.dds"
+		noOfFrames = 5
 	}
 }

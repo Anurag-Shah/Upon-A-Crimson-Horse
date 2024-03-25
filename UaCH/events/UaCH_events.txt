@@ -329,6 +329,7 @@ country_event = {
 		}
 
 		add_estate_influence_modifier = {
+			estate = estate_nobles
 			influence = 10
 			duration = -1
 		}
@@ -783,16 +784,7 @@ country_event = {
 					id = UaCH.16
 					days = 30
 				}
-				country_event = {
-					id = UaCH.55
-					days = 111
-				}
 			}
-			TIM = {
-				country_event = {
-					id = UaCH.55
-					days = 111
-				}
 			}
 		}
 	}
@@ -931,7 +923,6 @@ country_event = {
 	
 	fire_only_once = yes
 	is_triggered_only = yes
-	ai = yes
 	hidden = yes
 
 	immediate = {
@@ -1002,7 +993,7 @@ country_event = {
 						NOT = {
 							tag = HER
 							}
-						exist = TRS
+						exists = TRS
 						}
 					}		
 		set_global_flag = uach_hunt_for_sr_body
@@ -2848,126 +2839,9 @@ country_event = {
 	}
 }
 
-# Gawhar Shad Besieged
-country_event = {
-	id = UaCH.36 
-	title = UaCH.36.t 
-	desc = UaCH.36.d
-	picture = SIEGE_eventPicture
+# Gawhar Shad Besieged UaCH.148
 
-	trigger = {
-		any_province = {
-			owner = {
-				NOT = { tag = ROOT } 
-			}
-			has_province_flag = uach_gawhar_shad_province
-			sieged_by = ROOT
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	# Ensnare her
-	option = {
-		name = "UaCH.36.a"
-		
-		she_may_flee = yes
-
-		ai_chance = {
-			factor = 1
-		}
-	}
-}
-
-# The Fate of Gawhar Shad
-country_event = {
-	id = UaCH.37 
-	title = UaCH.37.t 
-	desc = UaCH.37.d
-	picture = COUNTRY_COLLAPSE_eventPicture
-
-	trigger = {
-		any_province = {
-			owner = {
-				NOT = { tag = ROOT } 
-			}
-			has_province_flag = uach_gawhar_shad_province
-			sieged_by = ROOT
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	# She cannot be trusted alive.
-	option = {
-		name = "UaCH.37.a"
-		
-		add_prestige = 10
-		set_country_flag = uach_gawhar_shad_dead
-
-		every_country = {
-			limit = {
-				has_country_flag = uach_second_succession_crisis_war_flag
-			}
-			add_opinion = {
-				who = THIS
-				modifier = executed_gawhar_shad
-			}
-			every_neighbor_country = {
-				limit = {
-					NOT = { 
-						has_opinion_modifier = {
-						who = THIS
-						modifier = executed_gawhar_shad_muslim
-						} 
-					} 		
-				}
-				add_opinion = {
-					who = THIS
-					modifier = executed_gawhar_shad_muslim
-				}
-			}
-		}		
-
-		ai_chance = {
-			factor = 1
-		}
-	}
-
-	# Imprisionment should be fine.
-	option = {
-		name = "UaCH.37.b"
-		
-		add_prestige = -10
-		set_country_flag = uach_gawhar_shad_dead
-
-		if = {
-			limit = {
-				capital_scope = {
-					NOT = { controlled_by = root } 
-				}
-			}
-			capital_scope = {
-				clr_province_flag = uach_gawhar_shad_province
-			}
-			capital_scope = {
-				controller = {
-					capital_scope = {
-						set_province_flag = uach_gawhar_shad_province
-					}
-				}
-			}			
-		}		
-
-		ai_chance = {
-			factor = 1
-		}
-	}
-}
+# The Fate of Gawhar Shad UaCH.149
 
 # Pulse event of disaster
 # Supplies Running Low
@@ -3400,328 +3274,13 @@ country_event = {
 	}
 }
 
-# The Influence of Gawhar Shad
-country_event = {
-	id = UaCH.44 
-	title = UaCH.44.t 
-	desc = UaCH.44.d
-	picture = GENERALS_DISCUSSING_eventPicture
+# The Influence of Gawhar Shad 153
 
-	fire_only_once = yes
-	trigger = {
-		tag = TIM
-		has_country_flag = uach_yuki_dies_fo_sho
-		NOT = {
-			was_tag = TRS
-		}
-		NOT = {
-			has_ruler = "Shah Rukh"
-		}
-	}
-	mean_time_to_happen = {
-		months = 1
-	}
-				
-	# So it will be, mother of the realm...
-	option = {
-		name = "UaCH.44.a"
-		set_estate_privilege = estate_nobles_the_eternal_regency
+# Gawhar Shad's Demands 150
 
-		ai_chance = {
-			factor = 0
-		}
-	}
+# Aftermath of the Empress-Dowager's Demands 151
 
-	# How about no?
-	option = {
-		name = "UaCH.44.b"
-		trigger = {
-			NOT = {
-				has_ruler = "Ala al-Dawla Mirza"
-			}
-		}
-		custom_tooltip = gawhar_shad_rebels
-		add_stability = -1 
-		random_owned_province = {
-			noble_rebels = 2
-		}
-		hidden_effect = {
-			clr_country_flag = uach_yuki_dies_fo_sho
-		}
-
-		ai_chance = {
-			factor = 1
-		}
-	}
-}
-
-# Gawhar Shad's Demands
-country_event = {
-	id = UaCH.45 
-	title = UaCH.45.t 
-	desc = UaCH.45.d
-	picture = GENERALS_DISCUSSING_eventPicture
-
-	trigger = {
-		# had_country_flag = { 
-		# 	flag = uach_disaster_event_timer
-		# 	days = 60
-		# }
-		any_owned_province = {
-			has_province_flag = uach_gawhar_shad_province
-		}
-		has_estate_privilege = estate_nobles_the_eternal_regency
-		NOT = {
-			OR = {
-				has_country_flag = uach_gawhar_shad_1
-				has_country_flag = uach_gawhar_shad_2
-				has_country_flag = uach_gawhar_shad_3
-			}
-		}
-		has_disaster = timurid_succession_crisis
-	}
-	mean_time_to_happen = {
-		days = 45
-	}
-
-	immediate = {
-		hidden_effect = {
-			clr_country_flag = uach_disaster_event_timer
-			set_country_flag = uach_disaster_event_timer
-			random_list = {
-				1 = {
-					trigger = {
-						NOT = { stability = 1 }
-					}
-					set_country_flag = uach_gawhar_shad_1
-				}
-				1 = {
-					set_country_flag = uach_gawhar_shad_2
-				}
-				1 = {
-					set_country_flag = uach_gawhar_shad_3
-				}
-			}
-		}
-	}
-				
-	# Let us restore stability.
-	option = {
-		name = "UaCH.45.a"
-		trigger = {
-			has_country_flag = uach_gawhar_shad_1
-		}
-		custom_tooltip = uach_restore_stability_or_rebellion
-		hidden_effect = {
-			set_country_flag = uach_stab_agenda
-			country_event = {
-				id = UaCH.46
-				days = 365
-			}
-		}
-	}
-
-	# Let us show our might.
-	option = {
-		name = "UaCH.45.b"
-		trigger = {
-			has_country_flag = uach_gawhar_shad_2
-		}
-		custom_tooltip = uach_win_a_war_or_rebellion
-		hidden_effect = {
-			set_country_flag = uach_war_agenda
-			country_event = {
-				id = UaCH.46
-				days = 365
-			}
-		}
-	}
-
-	# Let us attempt to restore some amount of prosperity.
-	option = {
-		name = "UaCH.45.c"
-		trigger = {
-			has_country_flag = uach_gawhar_shad_3
-		}
-		custom_tooltip = uach_dev_a_prov_or_rebellion
-		hidden_effect = {
-			set_country_flag = uach_dev_agenda
-			country_event = {
-				id = UaCH.46
-				days = 365
-			}
-		}
-	}
-}
-
-# Aftermath of the Empress-Dowager's Demands
-
-country_event = {
-	id = UaCH.46 
-	title = UaCH.46.t 
-	desc = {
-		trigger = {
-			OR = {
-				AND = {
-					has_country_flag = uach_stab_agenda
-					stability = 1
-				}
-				AND = {
-					has_country_flag = uach_war_agenda
-					has_country_flag = uach_war_agenda_completed
-				}
-				AND = {
-					has_country_flag = uach_dev_agenda
-					has_country_flag = uach_dev_agenda_completed					
-				}
-			}
-		}
-		desc = UaCH.46.d1
-	}
-	desc = {
-		trigger = {
-			NOT = {
-				OR = {
-					AND = {
-						has_country_flag = uach_stab_agenda
-						stability = 1
-					}
-					AND = {
-						has_country_flag = uach_war_agenda
-						has_country_flag = uach_war_agenda_completed
-					}
-					AND = {
-						has_country_flag = uach_dev_agenda
-						has_country_flag = uach_dev_agenda_completed					
-					}
-				}
-			}
-		}
-		desc = UaCH.46.d2
-	}
-	picture = GENERALS_DISCUSSING_eventPicture
-
-	is_triggered_only = yes
-
-	after = {
-		hidden_effect = {
-			clr_country_flag = uach_stab_agenda
-			clr_country_flag = uach_war_agenda
-			clr_country_flag = uach_war_agenda_completed
-			clr_country_flag = uach_dev_agenda
-			clr_country_flag = uach_dev_agenda_completed
-		}
-	}
-				
-	# At least she is satisified...
-	option = {
-		name = "UaCH.46.a"
-		trigger = {
-			OR = {
-				AND = {
-					has_country_flag = uach_stab_agenda
-					stability = 1
-				}
-				AND = {
-					has_country_flag = uach_war_agenda
-					has_country_flag = uach_war_agenda_completed
-				}
-				AND = {
-					has_country_flag = uach_dev_agenda
-					has_country_flag = uach_dev_agenda_completed					
-				}
-			}
-		}
-		if = {
-			limit = { has_country_flag = uach_stab_agenda }
-			add_adm_power = 50
-			add_country_modifier = {
-				name = uach_restoration_of_stability
-				duration = 1825
-			}
-		}
-		else_if = {
-			limit = { has_country_flag = uach_war_agenda }
-			add_country_modifier = {
-				name = uach_onwards_to_glory
-				duration = 1825
-			}
-		}
-		else_if = {
-			limit = { has_country_flag = uach_dev_agenda }
-			add_years_of_income = 0.5
-		}
-	}
-
-	# Oh dear...
-	option = {
-		name = "UaCH.46.b"
-		trigger = {
-			NOT = {
-				OR = {
-					AND = {
-						has_country_flag = uach_stab_agenda
-						stability = 1
-					}
-					AND = {
-						has_country_flag = uach_war_agenda
-						has_country_flag = uach_war_agenda_completed
-					}
-					AND = {
-						has_country_flag = uach_dev_agenda
-						has_country_flag = uach_dev_agenda_completed					
-					}
-				}
-			}
-		}
-		add_stability = -1 
-		random_owned_province = {
-			noble_rebels = 3
-		}
-	}
-}
-
-# The Scheming Empress=Dowager
-country_event = {
-	id = UaCH.47 
-	title = UaCH.47.t 
-	desc = UaCH.47.d
-	picture = GENERALS_DISCUSSING_eventPicture
-
-	trigger = {
-		# had_country_flag = { 
-		# 	flag = uach_disaster_event_timer
-		# 	days = 60
-		# }
-		any_owned_province = {
-			has_province_flag = uach_gawhar_shad_province
-		}
-		NOT = { has_estate_privilege = estate_nobles_the_eternal_regency }
-		NOT = {
-			any_owned_province = {
-				has_rebel_faction = noble_rebels
-			}
-		}
-	}
-	mean_time_to_happen = {
-		days = 45
-	}
-
-	immediate = {
-		hidden_effect = {
-			clr_country_flag = uach_disaster_event_timer
-			set_country_flag = uach_disaster_event_timer
-		}
-	}
-				
-	# Traitors!
-	option = {
-		name = "UaCH.47.a"
-		random_owned_province = {
-			noble_rebels = 3
-		}
-	}
-}
+# The Scheming Empress=Dowager 152
 
 # Betrayal - Abdul Latifs stays loyal
 country_event = {
@@ -3751,7 +3310,7 @@ country_event = {
 		name = "UaCH.49.a" 
 
 		add_legitimacy = 25
-		hidden = {
+		hidden_effect = {
 			every_country = { 
 				limit = {
 					is_governor_or_prince = yes 
@@ -3794,16 +3353,16 @@ country_event = {
 	# Insolent boy!
 	option = { 
 		name = "UaCH.50.a" 
-		hidden = {
+		hidden_effect = {
 		every_country = { 
 			limit = {
 				is_governor_or_prince = yes 
 				}
 			set_country_flag = uach_may_intercept_body
 			}
-		}
 		TIM = {	set_country_flag = uach_where_is_waldo_rukh 
 				save_global_event_target_as = uach_holder_of_sr}
+		}
 		
 		add_legitimacy = -25
 		
@@ -7454,9 +7013,11 @@ country_event = {
 		if = { limit = { legitimacy = 80 } 
 				add_country_modifier = {
 						name = uach_legit_to_defoff_lvl5
-						duration = 31}
+						duration = 31
+						hidden = yes}
 				set_country_flag = uach_legit_to_defoff_donenow
 			}
+			
 			
 				
 		else_if = { limit = { AND = {legitimacy = 60
@@ -7464,18 +7025,20 @@ country_event = {
 			  }
 						add_country_modifier = {
 							name = uach_legit_to_defoff_lvl4
-							duration = 31}
+							duration = 31
+							hidden = yes}
 					set_country_flag = uach_legit_to_defoff_donenow
-			}
+				}
 		
 		else_if = { limit = { AND = {legitimacy = 40
 		      NOT = {has_country_flag = uach_legit_to_defoff_donenow}}
 					}
 						add_country_modifier = {
 								name = uach_legit_to_defoff_lvl3
-								duration = 31}
+								duration = 31
+								hidden = yes}
 						set_country_flag = uach_legit_to_defoff_donenow
-				}
+					}
 		
 		else_if = {
 			limit = {
@@ -7485,23 +7048,25 @@ country_event = {
 						has_country_flag = uach_legit_to_defoff_donenow
 					}
 				}
-			}	 
-			add_country_modifier = {
-				name = uach_legit_to_defoff_lvl2
-				duration = 31
 			}
-			set_country_flag = uach_legit_to_defoff_donenow
-		}	
+				add_country_modifier = {
+					name = uach_legit_to_defoff_lvl2
+					duration = 31
+					hidden = yes
+				}
+				set_country_flag = uach_legit_to_defoff_donenow
+			}	
 		else_if = {
 			limit = {
 				NOT = { has_country_flag = uach_legit_to_defoff_donenow }
 			}
-			add_country_modifier = {
-				name = uach_legit_to_defoff_lvl1
-				duration = 31
+				add_country_modifier = {
+					name = uach_legit_to_defoff_lvl1
+					duration = 31
+					hidden = yes
+				}
+				set_country_flag = uach_legit_to_defoff_donenow			
 			}
-			set_country_flag = uach_legit_to_defoff_donenow			
-		}
 	}
 }
 
@@ -7799,10 +7364,10 @@ country_event = {
 	picture = COUNTRY_COLLAPSE_eventPicture
 	
 	major = yes
-	ai = yes
 	
 	
 	trigger = {	AND = {
+					ai = yes
 					is_governor_or_prince = no
 					NOT = {has_country_flag = uach_interloped_already}
 					is_interloper = no
@@ -7856,10 +7421,10 @@ country_event = {
 	picture = COUNTRY_COLLAPSE_eventPicture
 	
 	major = yes
-	ai = yes
 	
 	trigger = {
 		AND = {
+			ai = yes
 			NOT = {has_country_flag = uach_interloped_already}
 			OR = {	tag = CHG
 					tag = DLH
@@ -7952,11 +7517,11 @@ country_event = {
 	picture = COUNTRY_COLLAPSE_eventPicture
 	
 	major = yes
-	ai = yes
 	
 	trigger = {
 		NOT = {has_country_flag = uach_interloped_already}
 		AND = {
+			ai = yes
 			is_interloper = no
 			OR = {
 					tag = MOS
@@ -8103,7 +7668,6 @@ country_event = {
 	}
 }
 
-# on hold for now
 #Baluchistan -140  - escape from Kandahar ARGHUIDS 1
 country_event = {
 	id = UaCH.140
@@ -8206,7 +7770,7 @@ country_event = {
 	option = {
 		name = "UaCH.141.b" #Submit to the Arghunids
 		switch_tag = U69
-		hidden = {
+		hidden_effect = {
 		U69 = {country_event = {id = UaCH.142
 								days = 1}}
 				}
@@ -8242,7 +7806,7 @@ country_event = {
 	trigger = {
 				AND = {
 					tag = U69
-					NOT = {exist = BAL}
+					NOT = {exists = BAL}
 					any_neighbor_country = {
 						OR = {
 							has_disaster = timurid_succession_crisis
@@ -8262,7 +7826,14 @@ country_event = {
 			add_mil_power = 100
 			add_war_exhaustion = -10
 			add_stability = 1
-			make_tag_prince = yes
+			remove_government_reform = iqta
+			add_government_reform = uach_governor
+			
+			country_event = {
+					id = UaCH.26
+					days = 1
+				}
+				
 			}
 }
 
@@ -8276,7 +7847,7 @@ country_event = {
 	trigger = {
 				AND = {
 					tag = BAL
-					NOT = {exist = U69}
+					NOT = {exists = U69}
 					has_country_flag = uach_argh_invasion
 					any_neighbor_country = {
 						OR = {
@@ -8301,3 +7872,92 @@ country_event = {
 					}
 			}
 }
+
+#146 test event - 
+
+province_event = {
+	id = UaCH.146
+	title = UaCH.146.t 
+	desc = UaCH.146.d 
+	picture = COUNTRY_COLLAPSE_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = { 	
+					AND = {
+						2213 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+						413 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+						429 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+						}
+				}
+				
+	option = {
+		name = UaCH.146a
+		}
+	
+}
+
+#GawharShad events rework
+
+#Flight of Gawhar Shad
+country_event = {
+	id = UaCH.147
+	title = UaCH.147.t #The flight of Gawhar Shad
+	desc = UaCH.147.d #After the betrayal of §GAbdal-Latif§!, chaos erupted in the Timurid warcamp immediately. Most of §GShah Rukh's§! guard was killed immediately, and his servants and followers taken prisoner. However, §GGawhar Shad§! has managed to evade capture thanks to some loyalists, by disguising herself as a lowly campfollower. Her current whereabouts are unknown
+	picture = SIEGE_eventPicture
+	fire_only_once = yes
+
+	trigger = { has_global_flag = uach_hunt_for_sr_body }
+	
+	mean_time_to_happen = { days = 60}
+	
+	option = {
+		name = UaCH.gs.1.a #She will emerge in due time
+			IF = { limit = {has_country_flag = uach_yuki_dies_fo_sho}
+					446 = {set_province_flag = uach_gawhar_shad_province}
+					}
+			ELSE = {		
+					random_province = {
+						limit = {superregion = persia_superregion}
+						set_province_flag = uach_gawhar_shad_province
+						}
+					}
+			}
+}
+	

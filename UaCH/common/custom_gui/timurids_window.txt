@@ -642,45 +642,572 @@ custom_shield = {
 
 # Map pieces
 
+#tr_0
 custom_icon = {
 	name = timurids_map_ajam
     potential = { has_faction = timurid_faction }
 	tooltip = timurids_map_ajam_tooltip
+	
+	frame = { number = 2
+			trigger = {
+					AND = {
+						2213 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+						413 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+						429 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+						}
+					}
+				}
+			
+	frame = { number = 3
+			 trigger = {
+						AND = { 	is_governor_or_prince = yes
+									uach_is_in_crisis = yes
+									2213 	= {country_or_non_sovereign_subject_holds = ROOT}
+									413		= {country_or_non_sovereign_subject_holds = ROOT}
+									429		= {country_or_non_sovereign_subject_holds = ROOT}
+								}
+						}
+			 }		
+			
+	frame = { number = 4
+			 trigger = { 
+						AND = { 	2213 	= {controlled_by = QAR}
+									413		= {controlled_by = QAR}
+									429		= {controlled_by = QAR}
+								}
+						}
+			 }
+			 
+	frame = { number = 5
+			 trigger = { 
+						AND = { 	2213 	= {controlled_by = SHY}
+									413		= {controlled_by = SHY}
+									429		= {controlled_by = SHY}
+								}
+						}
+			 }
+			 
+	frame = { number = 6
+			 trigger = { 
+						AND = { 	2213 	= {controlled_by = MUG}
+									413		= {controlled_by = MUG}
+									429		= {controlled_by = MUG}
+								}
+						}
+			 }
 }
+
+#tr_2
 custom_icon = {
 	name = timurids_map_khorasan
     potential = { has_faction = timurid_faction }
 	tooltip = timurids_map_khorasan_tooltip
+	
+	frame = { number = 2
+			trigger = {
+						2214 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+					
+				}
+			}
+			
+	frame = { 	number = 3	
+				trigger = { AND = { is_governor_or_prince = yes
+									uach_is_in_crisis = yes
+									2214	= {country_or_non_sovereign_subject_holds = ROOT}
+								}
+					}
+			}
+	
+	
+	
+	frame = { 	number = 4		
+				trigger = { 	
+					2214	= {controlled_by = QAR}
+					}
+			}
+			
+	frame = { 	number = 5		
+				trigger = { 	
+					2214	= {controlled_by = SHY}
+					}
+			}
+			
+	frame = { 	number = 6		
+				trigger = { 	
+					2214	= {controlled_by = MUG}
+					}
+			}
 }
+
+#tr_1
 custom_icon = {
 	name = timurids_map_fars
     potential = { has_faction = timurid_faction }
 	tooltip = timurids_map_fars_tooltip
-}
+	
+	frame = { number = 2
+			trigger = {
+					AND = {
+						2218 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+						2223 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+						}
+					}
+				}
+	
+	frame = { 	number = 3		
+				trigger = { 	
+					AND = { 	is_governor_or_prince = yes
+								uach_is_in_crisis = yes
+								2218	= {country_or_non_sovereign_subject_holds = ROOT}
+								2223	= {country_or_non_sovereign_subject_holds = ROOT}	
+								}
+				}
+			}
+	
+	frame = { 	number = 4		
+				trigger = { 
+					AND = { 	2218	= {controlled_by = QAR}
+								2223	= {controlled_by = QAR}	
+								}
+				}
+			}
+			
+	frame = { 	number = 5		
+				trigger = { 	
+					AND = { 	2218	= {controlled_by = SHY}
+								2223	= {controlled_by = SHY}	
+								}
+				}
+			}
+			
+	frame = { 	number = 6		
+				trigger = { 	
+					AND = { 	2218	= {controlled_by = MUG}
+								2223	= {controlled_by = MUG}	
+								}
+				}
+			}
+	
+	}
+	
+##tr_3
 custom_icon = {
 	name = timurids_map_herat
     potential = { has_faction = timurid_faction }
 	tooltip = timurids_map_herat_tooltip
+	
+	frame = { number = 2
+			trigger = {
+					AND = {
+						2230 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+						432 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+						433 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+						}
+					}
+				}
+	
+	frame = { 	number = 3		
+				trigger = { 
+					AND = { 	is_governor_or_prince = yes
+								uach_is_in_crisis = yes
+								2230	= {country_or_non_sovereign_subject_holds = ROOT}	
+								432		= {country_or_non_sovereign_subject_holds = ROOT}	
+								433		= {country_or_non_sovereign_subject_holds = ROOT}
+								}
+				}
+			}
+	
+	frame = { 	number = 4		
+				trigger = { 
+					AND = { 
+								2230	= {controlled_by = QAR}	
+								432		= {controlled_by = QAR}	
+								433		= {controlled_by = QAR}
+								}
+				}
+			}
+			
+	frame = { 	number = 5		
+				trigger = { 
+					AND = { 
+								2230	= {controlled_by = SHY}	
+								432		= {controlled_by = SHY}	
+								433		= {controlled_by = SHY}
+								}
+				}
+			}
+	frame = { 	number = 6		
+				trigger = { 
+					AND = { 
+								2230	= {controlled_by = MUG}	
+								432		= {controlled_by = MUG}	
+								433		= {controlled_by = MUG}
+								}
+				}
+			}
 }
+
+#tr_5
 custom_icon = {
 	name = timurids_map_merv
     potential = { has_faction = timurid_faction }
 	tooltip = timurids_map_merv_tooltip
+	
+	frame = { number = 2
+			trigger = {
+						446 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+					
+				}
+			}
+	
+	frame = { 	number = 3	
+				trigger = {	AND = { is_governor_or_prince = yes
+									uach_is_in_crisis = yes
+									446		= {country_or_non_sovereign_subject_holds = ROOT}
+								  }
+							
+				}
+				}
+	
+	frame = { 	number = 4		
+				trigger = {
+					446		= {controlled_by = QAR}
+							
+				}
+			}
+			
+	frame = { 	number = 5	
+				trigger = { 
+					446		= {controlled_by = SHY}
+							
+				}
+			}
+
+	frame = { 	number = 6		
+				trigger = { 
+					446		= {controlled_by = MUG}
+							
+				}
+			}
 }
+
+#tr_7
 custom_icon = {
 	name = timurids_map_samarkand
     potential = { has_faction = timurid_faction }
 	tooltip = timurids_map_samarkand_tooltip
+	
+	frame = { number = 2
+			trigger = {
+					AND = {
+						454 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+						1973 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+						}
+					}
+				}
+	
+	frame = { 	number = 3	
+				trigger = { 
+					AND = { 	is_governor_or_prince = yes
+								uach_is_in_crisis = yes
+								454		= {country_or_non_sovereign_subject_holds = ROOT}
+								1973	= {country_or_non_sovereign_subject_holds = ROOT}	
+								}
+				}
+			}
+	
+	frame = { 	number = 4		
+				trigger = { 	
+					AND = { 	454		= {controlled_by = QAR}
+								1973	= {controlled_by = QAR}		
+								}
+				}
+			}
+			
+	frame = { 	number = 5	
+				trigger = { 	
+					AND = { 	454		= {controlled_by = SHY}
+								1973	= {controlled_by = SHY}		
+								}
+				}
+			}
+			
+	frame = { 	number = 6		
+				trigger = { 	
+					AND = { 	454		= {controlled_by = MUG}
+								1973	= {controlled_by = MUG}		
+								}
+				}
+			}
 }
+
+#tr_6
 custom_icon = {
 	name = timurids_map_ferghana
     potential = { has_faction = timurid_faction }
 	tooltip = timurids_map_ferghana_tooltip
+	
+	frame = { number = 2
+			trigger = {
+					AND = {
+						1968 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+						450 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+						}
+					}
+				}
+	
+	frame = { 	number = 3	
+				trigger = { 
+					AND = { 	is_governor_or_prince = yes
+								uach_is_in_crisis = yes
+								1968	= {country_or_non_sovereign_subject_holds = ROOT}
+								450		= {country_or_non_sovereign_subject_holds = ROOT}	
+								}
+				}
+			}
+	
+	frame = { 	number = 4		
+				trigger = { 	
+					AND = { 	1968	= {controlled_by = QAR}
+								450		= {controlled_by = QAR}	
+								}
+				}
+			}
+			
+	frame = { 	number = 5		
+				trigger = { 	
+					AND = { 	1968	= {controlled_by = QAR}
+								450		= {controlled_by = QAR}	
+								}
+				}
+			}
+			
+	frame = { 	number = 6		
+				trigger = { 	
+					AND = { 	1968	= {controlled_by = QAR}
+								450		= {controlled_by = QAR}	
+								}
+				}
+			}
 }
+
 custom_icon = {
 	name = timurids_map_afghanistan
     potential = { has_faction = timurid_faction }
 	tooltip = timurids_map_afghanistan_tooltip
+		
+	frame = { number = 2
+			trigger = {
+						451 = {
+							controller = {
+									AND = {
+										is_governor_or_prince = no}
+										NOT = {
+											OR ={
+													tag = QAR
+													tag = MUG
+													tag = SHY
+													}
+												}
+										}
+							}
+					
+				}
+			}	
+	
+	frame = { 	number = 3		
+				trigger = {		AND = {
+									is_governor_or_prince = yes
+									uach_is_in_crisis = yes
+									451		= {country_or_non_sovereign_subject_holds = ROOT}	
+									}
+								}
+				}
+	
+	frame = { 	number = 4		
+				trigger = {		
+								451		= {controlled_by = QAR}	
+								}
+				}
+	frame = { 	number = 5		
+				trigger = {		
+								451		= {controlled_by = SHY}	
+								}
+				}
+				
+	frame = { 	number = 6		
+				trigger = {		
+								451		= {controlled_by = MUG}	
+								}
+				}
 }
 
 # Buttons
@@ -816,4 +1343,101 @@ custom_button = {
 		uach_reclaim_timurs_legacy_effect = yes
 	}
     tooltip = reclaim_timurs_legacy_tt
+}
+
+custom_icon = {
+	name = uach_legit_to_defoff_icon
+    potential = { 	has_faction = timurid_faction
+					is_governor_or_prince = yes}
+	
+	tooltip = uach_legit_to_defoff_info
+	
+	frame = { 
+			number = 2
+			trigger = {	AND = {	uach_is_in_crisis = yes
+								has_country_modifier = uach_legit_to_defoff_lvl5}
+					}
+			}
+	frame = { 
+			number = 3
+			trigger = {	AND = {	uach_is_in_crisis = yes
+								OR = {
+										has_country_modifier = uach_legit_to_defoff_lvl2
+										has_country_modifier = uach_legit_to_defoff_lvl3
+										has_country_modifier = uach_legit_to_defoff_lvl4
+										}
+								}
+					}			
+			}
+	frame = { 
+			number = 4
+			trigger = {	AND = {	uach_is_in_crisis = yes
+								has_country_modifier = uach_legit_to_defoff_lvl1}
+					}
+			}					
+				
+}
+
+custom_icon = {
+	name = uach_gs_demands_icon
+    potential = { 	has_faction = timurid_faction
+					is_governor_or_prince = yes}
+	tooltip = uach_gs_story_tt
+	frame = { 
+			number = 1
+			trigger = { has_global_flag = uach_hunt_for_sr_body }
+			}
+	frame = { 
+			number = 2
+			trigger = {AND = {	uach_is_in_crisis = yes
+								any_owned_province = {
+									has_province_flag = uach_gawhar_shad_province
+										}
+							}
+						}
+			}
+	frame = { 
+			number = 3
+			trigger = {	AND = {	uach_is_in_crisis = yes
+								has_global_flag =  uach_gawhar_shad_dead}
+							}
+			}					
+				
+}
+
+custom_icon = {
+	name = uach_diff_setting_icon
+    potential = { 	has_faction = timurid_faction
+					is_governor_or_prince = yes}
+	tooltip = uach_difficulty_info
+	
+	frame = { 
+			number = 1
+			trigger = {	NOT = {has_global_flag = uach_difficulty_selected}}
+			}
+	frame = { 
+			number = 2
+			trigger = {	AND = {has_global_flag = uach_difficulty_selected
+								NOT = {OR= {
+											has_global_flag = uach_diff_medium
+											has_global_flag = uach_diff_hard
+											has_global_flag = uach_diff_insane
+										}
+									}
+								}
+				}
+			}
+	frame = { 
+			number = 3
+			trigger = {	has_global_flag = uach_diff_medium}
+			}
+	frame = { 
+			number = 4
+			trigger = {	has_global_flag = uach_diff_hard}
+			}
+	frame = { 
+			number = 5
+			trigger = {	has_global_flag = uach_diff_insane}
+			}
+				
 }

@@ -86,8 +86,9 @@
  UaCH.diff.1.b:0"§GMedium§! - I live for challenge"
  UaCH.diff.1.c:0"§GHard§! - This won't hurt at all"
  UaCH.diff.1.e:0"§RInsane§! - I AM TIMUR INCARNATE"
- uach_difficulty_medium:0"Medium rare, at best"
- uach_difficulty_hard:0"Hard mode engage"
- uach_difficulty_insane:0"Bring it on"
- 
+ uach_difficulty_easy:0"Difficulty setting : §GEasy§!\n\nAI will not receive any buffs."
+ uach_difficulty_medium:0"Difficulty setting : §GMedium§!\n\nAI will receive the following buffs during the Timurid Succession Crisis:\n\n§G-10%§! Land maintenance cost\n§G+10%§! Manpower recovery speed\n§G+15%§! National tax income"
+ uach_difficulty_hard:0"Difficulty setting : §GHard§!\n\nAI will receive the following buffs during the Timurid Succession Crisis:\n\n§G-15%§! Land maintenance cost\n§G+25%§! Manpower recovery speed\n§G+30%§! National tax income\n§G+75%§! Land force limit\n§G-1%§! Interest per annum"
+ uach_difficulty_insane:0"Difficulty setting : §RInsane§!\n\nAI will receive the following buffs during the Timurid Succession Crisis:\n\n§G-20%§! Land maintenance cost\n§G+50%§! Manpower recovery speed\n§G+50%§! National tax income\n§G+100%§! Land force limit\n§G-1%§! Interest per annum\n§G-15%§! Advisor cost\n§G-0.10§! War exhaustion\n§G-25%§! Mercenary cost\n§G-3§! National unrest\n\n §YGood luck. You gonna need it.§!"
+ uach_difficulty_info:0"[GetDiffLevel]"
  

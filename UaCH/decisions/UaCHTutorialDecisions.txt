@@ -36,12 +36,10 @@ country_decisions = {
 		major = yes
 			potential = {
 				NOT = {has_global_flag = uach_difficulty_selected}
-				NOT = { ai = yes }
+				ai = no
 						}
-			}
-		allow = {
-			always = yes
-		}
+						
+		allow = { always = yes}
 		
 		effect = {
 				country_event = {

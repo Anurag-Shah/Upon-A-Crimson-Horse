@@ -1,0 +1,132 @@
+defined_text = {
+    name = GetAjamStatus
+	random = no
+	
+    text = {
+        localisation_key = contested_by_x_and_x_ajam
+        trigger = {
+			has_saved_event_target = ajam_interloper_1
+			has_saved_event_target = ajam_interloper_2
+        }
+    }
+    text = {
+        localisation_key = contested_by_x_ajam
+        trigger = {
+			has_saved_event_target = ajam_interloper_1
+			NOT = { has_saved_event_target = ajam_interloper_2 }
+        }
+    }
+	text = {
+        localisation_key = not_contested
+        trigger = {
+			NOT = { has_saved_event_target = ajam_interloper_1 }
+        }
+	}
+}
+
+defined_text = {
+    name = GetDiffLevel
+	random = no
+	
+	text = {
+        localisation_key = uach_difficulty_selector
+        trigger = {
+			NOT = {has_global_flag = uach_difficulty_selected}
+        }
+    }
+	
+	text = {
+        localisation_key = uach_difficulty_easy
+        trigger = {
+			has_global_flag = uach_difficulty_selected
+								NOT = {OR= {
+											has_global_flag = uach_diff_medium
+											has_global_flag = uach_diff_hard
+											has_global_flag = uach_diff_insane
+											}
+										}
+        }
+    }
+	
+	text = {
+        localisation_key = uach_difficulty_medium
+        trigger = {
+			has_global_flag = uach_diff_medium
+			}
+ 
+    }
+	
+	text = {
+        localisation_key = uach_difficulty_hard
+        trigger = {
+			has_global_flag = uach_diff_hard
+        }
+    }
+	
+	text = {
+        localisation_key = uach_difficulty_insane
+        trigger = {
+			has_global_flag = uach_diff_insane
+        }
+    }
+}
+
+
+
+defined_text = {
+    name = GetLegitToDefOff
+	random = no
+	
+	text = {
+        localisation_key = uach_legit_to_defoff_info
+        trigger = {
+			uach_is_in_crisis = no	
+        }
+    }
+	
+	text = {
+        localisation_key = uach_legit_to_defoff_lvl5
+        trigger = {AND = {
+						uach_is_in_crisis = yes
+						has_country_modifier = uach_legit_to_defoff_lvl5
+						}
+					}
+    }
+	
+	text = {
+        localisation_key = uach_legit_to_defoff_lvl4
+        trigger = {AND = {
+						uach_is_in_crisis = yes
+						has_country_modifier = uach_legit_to_defoff_lvl4
+						}
+					}
+ 
+    }
+	
+	text = {
+        localisation_key = uach_legit_to_defoff_lvl3
+        trigger = {AND = {
+						uach_is_in_crisis = yes
+						has_country_modifier = uach_legit_to_defoff_lvl3
+						}
+					}
+    }
+	
+	text = {
+        localisation_key = uach_legit_to_defoff_lvl2
+        trigger = {AND = {
+						uach_is_in_crisis = yes
+						has_country_modifier = uach_legit_to_defoff_lvl2
+						}
+					}
+    }
+	
+	text = {
+        localisation_key = uach_legit_to_defoff_lvl1
+        trigger = {AND = {
+						uach_is_in_crisis = yes
+						has_country_modifier = uach_legit_to_defoff_lvl1
+						}
+					}
+    }
+}

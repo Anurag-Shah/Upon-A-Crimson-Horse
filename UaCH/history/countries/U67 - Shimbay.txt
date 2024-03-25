@@ -2,7 +2,7 @@
 government = monarchy
 add_government_reform = uach_governor
 government_rank = 1
-primary_culture = uzbekh
+primary_culture = uzbehk
 religion = shiite
 technology_group = muslim
 capital = 440

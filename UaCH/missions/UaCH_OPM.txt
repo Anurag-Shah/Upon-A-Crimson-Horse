@@ -336,7 +336,7 @@ opm_missions_slot3_kazakh = {
 	ai = yes
 	has_country_shield = yes
 	potential = {
-		primary_culture = kazakh
+		primary_culture = khazak
 		is_governor = yes
 		NOT = { tag = KZH } 
 	}
@@ -447,7 +447,7 @@ opm_missions_slot3_yesgay = {
 	ai = yes
 	has_country_shield = yes
 	potential = {
-		primary_culture = nogai
+		primary_culture = nogaibak
 		is_governor = yes
 		NOT = { tag = NOG } 
 	}
@@ -558,7 +558,7 @@ opm_missions_slot3_uzbekh = {
 	ai = yes
 	has_country_shield = yes
 	potential = {
-		primary_culture = uzbekh
+		primary_culture = uzbehk
 		is_governor = yes
 		NOT = { tag = SHY } 
 	}

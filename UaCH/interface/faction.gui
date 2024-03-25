@@ -356,56 +356,56 @@ guiTypes = {
 		iconType = {
 			name ="timurids_map_ajam"
 			scripted = yes
-			spriteType = "GFX_timurids_map_ajam"
+			quadTextureSprite = "GFX_timurids_map_ajam"
 			position = { x= 55 y = 298 }
 		}
 		
 		iconType = {
 			name ="timurids_map_khorasan"
 			scripted = yes
-			spriteType = "GFX_timurids_map_khorasan"
+			quadTextureSprite = "GFX_timurids_map_khorasan"
 			position = { x= 123 y = 296 }
 		}
 		
 		iconType = {
 			name ="timurids_map_fars"
 			scripted = yes
-			spriteType = "GFX_timurids_map_fars"
+			quadTextureSprite = "GFX_timurids_map_fars"
 			position = { x= 131 y = 445 }
 		}
 		
 		iconType = {
 			name ="timurids_map_herat"
 			scripted = yes
-			spriteType = "GFX_timurids_map_herat"
+			quadTextureSprite = "GFX_timurids_map_herat"
 			position = { x= 176 y = 347 }
 		}
 		
 		iconType = {
 			name ="timurids_map_merv"
 			scripted = yes
-			spriteType = "GFX_timurids_map_merv"
+			quadTextureSprite = "GFX_timurids_map_merv"
 			position = { x= 276 y = 270 }
 		}
 		
 		iconType = {
 			name ="timurids_map_samarkand"
 			scripted = yes
-			spriteType = "GFX_timurids_map_samarkand"
+			quadTextureSprite = "GFX_timurids_map_samarkand"
 			position = { x= 247 y = 152 }
 		}
 		
 		iconType = {
 			name ="timurids_map_ferghana"
 			scripted = yes
-			spriteType = "GFX_timurids_map_ferghana"
+			quadTextureSprite = "GFX_timurids_map_ferghana"
 			position = { x= 410 y = 195 }
 		}
 		
 		iconType = {
 			name ="timurids_map_afghanistan"
 			scripted = yes
-			spriteType = "GFX_timurids_map_afghanistan"
+			quadTextureSprite = "GFX_timurids_map_afghanistan"
 			position = { x= 362 y = 330 }
 		}
 

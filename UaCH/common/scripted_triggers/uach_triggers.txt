@@ -362,3 +362,11 @@ uach_disable_diplo_action_trigger = {
 		}
 	}
 }
+
+uach_is_in_crisis = {
+	OR = {
+							has_disaster = timurid_succession_crisis
+							is_in_war = { casus_belli = cb_challange_claimant }
+							is_in_war = { casus_belli = cb_enforce_loyalty_governor }
+							}
+}

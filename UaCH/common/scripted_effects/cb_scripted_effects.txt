@@ -122,8 +122,12 @@ she_may_flee = {
 	#TODO
 	random_list = {
 		20 = {
-			country_event = {
-				id = UaCH.37
+				country_event = {
+				id = UaCH.149
+				days = 30
+				}
+								
+					}
 			}
 		}
 		# TODO decrease the chance of her fleeing to anouther country each time.
