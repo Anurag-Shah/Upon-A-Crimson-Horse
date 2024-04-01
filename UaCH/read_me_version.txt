@@ -30,4 +30,14 @@ fixed AI being able to select difficulty (they couldnt anyway....)
 removed almost all GS events for now, needs to be implemented - not like i feel doing that rn...
 fixed OPM primary cultures. Turns out Kazakh and Uzbekh are Khazak and Uzbehk, actually.... Not to talk about nogaibak.
 
+v1.51
+fixed a missing bracket in events
+fixed Legitimacy-To-Siege-Defensiveness icon tooltip
+somehow the government icons fixed themselves. dont ask me how.
+added a time limiter to Shah Rukhs corpse mechanic. The decision to intercept will become unavaible after 5 years.
+tweaked the Gawhar Shad monument. Completing it now grants a selectable Persianization reward too.
+changed OPM mission finisher. now it requires having 25 dev and either primary tag not existing, or being subject to the OPM. added 3 missing icons.
+fixed difficulty settings not working properly. again.
+
+
 

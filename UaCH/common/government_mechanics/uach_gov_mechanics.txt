@@ -25,7 +25,7 @@ uach_mechanics_prince = {
 			effect = {
 				add_years_of_income = 1.5
 				add_manpower = 1.5
-				random_subject_country =  { save_event_target_as = uach_subject_to }
+				hidden_effect = {random_subject_country =  { save_event_target_as = uach_subject_to }}
 				event_target:uach_subject_to = { add_manpower = -1.5 }
 				event_target:uach_subject_to = { add_liberty_desire = 20 }
 					

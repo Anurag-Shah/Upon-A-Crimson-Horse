@@ -1,5 +1,3 @@
-namespace = UaCH.CB
-
 country_event = {
 	id = UaCH.CB.1 
 	title = UaCH.CB.1.t 

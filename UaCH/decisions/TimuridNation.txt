@@ -46,6 +46,10 @@ country_decisions = {
 		potential = {
 			is_governor_or_prince = yes
 			has_global_flag = uach_hunt_for_sr_body
+			NOT = {had_global_flag = {
+						flag = uach_hunt_for_sr_body 
+						days = 1825
+						}			
 			NOT = {has_country_flag = uach_event_ongoing}
 		}
 

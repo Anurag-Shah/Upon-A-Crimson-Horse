@@ -85,7 +85,7 @@ defined_text = {
     }
 	
 	text = {
-        localisation_key = uach_legit_to_defoff_lvl5
+        localisation_key = uach_legit_to_defoff_lvl5_desc
         trigger = {AND = {
 						uach_is_in_crisis = yes
 						has_country_modifier = uach_legit_to_defoff_lvl5
@@ -94,7 +94,7 @@ defined_text = {
     }
 	
 	text = {
-        localisation_key = uach_legit_to_defoff_lvl4
+        localisation_key = uach_legit_to_defoff_lvl4_desc
         trigger = {AND = {
 						uach_is_in_crisis = yes
 						has_country_modifier = uach_legit_to_defoff_lvl4
@@ -104,7 +104,7 @@ defined_text = {
     }
 	
 	text = {
-        localisation_key = uach_legit_to_defoff_lvl3
+        localisation_key = uach_legit_to_defoff_lvl3_desc
         trigger = {AND = {
 						uach_is_in_crisis = yes
 						has_country_modifier = uach_legit_to_defoff_lvl3
@@ -113,7 +113,7 @@ defined_text = {
     }
 	
 	text = {
-        localisation_key = uach_legit_to_defoff_lvl2
+        localisation_key = uach_legit_to_defoff_lvl2_desc
         trigger = {AND = {
 						uach_is_in_crisis = yes
 						has_country_modifier = uach_legit_to_defoff_lvl2
@@ -122,7 +122,7 @@ defined_text = {
     }
 	
 	text = {
-        localisation_key = uach_legit_to_defoff_lvl1
+        localisation_key = uach_legit_to_defoff_lvl1_desc
         trigger = {AND = {
 						uach_is_in_crisis = yes
 						has_country_modifier = uach_legit_to_defoff_lvl1

@@ -142,8 +142,8 @@ opm_missions_slot4 = {
 		}
 	}
 }
-### OPM Finisher missions to upgrade them into Princes (reclaim x country)
-#Luristan
+### OPM Finisher missions to upgrade them into Princes (reclaim x country) 
+#Luristan flag done
 opm_missions_slot3_luri = {
 	slot = 3
 	generic = no
@@ -167,12 +167,16 @@ opm_missions_slot3_luri = {
 
 		trigger = {
 			AND = {
-						LRI = { exists = no }
+						OR = {	LRI = { exists = no }
+								LRI = {is_subject_of = ROOT}
+							}
 						development = 25
 					}
 				} 
 
 		effect = {
+			ROOT = { inherit = LRI }
+			add_legitimacy = 50
 			change_tag = LRI
 			make_tag_prince = yes
 			swap_non_generic_missions = yes
@@ -180,7 +184,7 @@ opm_missions_slot3_luri = {
 	}
 }
 
-#Afghanistan
+#Afghanistan flag done
 opm_missions_slot3_afghan = {
 	slot = 3
 	generic = no
@@ -204,12 +208,16 @@ opm_missions_slot3_afghan = {
 
 		trigger = { 
 			AND = {
-						AFG = { exists = no }
+						OR = {	AFG = { exists = no }
+								AFG = {is_subject_of = ROOT}
+							}
 						development = 25
 					}
 				} 
 
 		effect = {
+			ROOT = { inherit = AFG }
+			add_legitimacy = 50
 			change_tag = AFG
 			make_tag_prince = yes
 			swap_non_generic_missions = yes
@@ -217,7 +225,7 @@ opm_missions_slot3_afghan = {
 	}
 }
 
-#Khorasan
+#Khorasan flag done
 opm_missions_slot3_khorasan = {
 	slot = 3
 	generic = no
@@ -241,12 +249,16 @@ opm_missions_slot3_khorasan = {
 
 		trigger = {
 			AND = {
-						KHO = { exists = no }
+						OR = {	KHO = { exists = no }
+								KHO = {is_subject_of = ROOT}
+							}
 						development = 25
 					}
 				} 
 
 		effect = {
+			ROOT = { inherit = KHO }
+			add_legitimacy = 50
 			change_tag = KHO
 			make_tag_prince = yes
 			swap_non_generic_missions = yes
@@ -254,7 +266,7 @@ opm_missions_slot3_khorasan = {
 	}
 }
 
-#Azerbaijan(Ardalan)
+#Azerbaijan(Ardalan) flag done
 opm_missions_slot3_azeri = {
 	slot = 3
 	generic = no
@@ -278,12 +290,16 @@ opm_missions_slot3_azeri = {
 
 		trigger = {
 			AND = {
-						ARL = { exists = no }
+						OR = {	ARL = { exists = no }
+								ARL = {is_subject_of = ROOT}
+							}
 						development = 25
 					}
 				} 
 
 		effect = {
+			ROOT = { inherit = ARL }
+			add_legitimacy = 50
 			change_tag = ARL
 			
 			make_tag_prince = yes
@@ -292,7 +308,7 @@ opm_missions_slot3_azeri = {
 	}
 }
 
-#Baluchistan
+#Baluchistan flag done
 opm_missions_slot3_baluchi = {
 	slot = 3
 	generic = no
@@ -316,12 +332,16 @@ opm_missions_slot3_baluchi = {
 
 		trigger = {
 			AND = {
-						BAL = { exists = no }
+						OR = {	BAL = { exists = no }
+								BAL = {is_subject_of = ROOT}
+							}
 						development = 25
 					}
 				} 
 
 		effect = {
+			ROOT = { inherit = BAL }
+			add_legitimacy = 50
 			change_tag = BAL
 			make_tag_prince = yes
 			swap_non_generic_missions = yes
@@ -329,7 +349,7 @@ opm_missions_slot3_baluchi = {
 	}
 }
 
-#KZH
+#KZH flag done
 opm_missions_slot3_kazakh = {
 	slot = 3
 	generic = no
@@ -353,12 +373,16 @@ opm_missions_slot3_kazakh = {
 
 		trigger = {
 			AND = {
-						KZH = { exists = no }
+						OR = {	KZH = { exists = no }
+								KZH = {is_subject_of = ROOT}
+							}
 						development = 25
 					}
 				} 
 
 		effect = {
+			ROOT = { inherit = KZH }
+			add_legitimacy = 50
 			change_tag = KZH
 			make_tag_prince = yes
 			swap_non_generic_missions = yes
@@ -366,7 +390,7 @@ opm_missions_slot3_kazakh = {
 	}
 }
 
-#Kurdistan (Ardabil)
+#Kurdistan (Ardabil) flag done
 opm_missions_slot3_kurd = {
 	slot = 3
 	generic = no
@@ -390,12 +414,16 @@ opm_missions_slot3_kurd = {
 
 		trigger = {
 			AND = {
-						ARD = { exists = no }
+						OR = {	ARD = { exists = no }
+								ARD = {is_subject_of = ROOT}
+							}
 						development = 25
 					}
 				} 
 
 		effect = {
+			ROOT = { inherit = ARD }
+			add_legitimacy = 50
 			change_tag = ARD
 			make_tag_prince = yes
 			swap_non_generic_missions = yes
@@ -403,7 +431,7 @@ opm_missions_slot3_kurd = {
 	}
 }
 
-#Mazadaran
+#Mazadaran flag done (just dont check)
 opm_missions_slot3_maza = {
 	slot = 3
 	generic = no
@@ -427,12 +455,16 @@ opm_missions_slot3_maza = {
 
 		trigger = {
 			AND = {
-						TAB = { exists = no }
+						OR = {	TAB = { exists = no }
+								TAB = {is_subject_of = ROOT}
+							}
 						development = 25
 					}
 				} 
 
 		effect = {
+			ROOT = { inherit = TAB }
+			add_legitimacy = 50
 			change_tag = TAB
 			make_tag_prince = yes
 			swap_non_generic_missions = yes
@@ -464,12 +496,16 @@ opm_missions_slot3_yesgay = {
 
 		trigger = {
 			AND = {
-						NOG = { exists = no }
+						OR = {	NOG = { exists = no }
+								NOG = {is_subject_of = ROOT}
+							}
 						development = 25
 					}
 				} 
 
 		effect = {
+			ROOT = { inherit = NOG }
+			add_legitimacy = 50
 			change_tag = NOG
 			make_tag_prince = yes
 			swap_non_generic_missions = yes

@@ -107,7 +107,7 @@
  uach_try_to_sway_latif:0"We will attempt to sway §GAbdal-Latif's§! loyalty."
  uach_hunt_for_sr_body:0"The hunt is on!"
  intercept_shah_rukhs_body_title:0"Rescue §GGawhar Shad§!"
- intercept_shah_rukhs_body_desc:0"Our Empress-Dowager has fallen into the traitors hands!We should mount a rescue operation, and if we could gain possession of §GShah Rukh's§! corpse in the meantime, that would be extremely 'fortunate'.\n\nCurrently her captors from @[event_target_name.uach_holder_of_sr.GetTag]§Y[event_target_name.uach_holder_of_sr.GetName]§! are en route to §O[event_target_name.uach_holder_of_sr.Capital.GetCapitalName]§!"
+ intercept_shah_rukhs_body_desc:0"Our Empress-Dowager has fallen into the traitors hands!We must mount a rescue operation, and if we could gain possession of §GShah Rukh's§! corpse in the meantime, that would be extremely 'fortunate'.\n\nCurrently her captors from @[event_target_name.uach_holder_of_sr.GetTag]§Y[event_target_name.uach_holder_of_sr.GetName]§! are en route to §O[event_target_name.uach_holder_of_sr.Capital.GetCapitalName]§!\n\n§RThis is a time limited decision, as §GShah Rukh's§! body won't last more than 5 years after his death.§!"
  uach_where_is_waldo_rukh:0"We are in posession of §GShah Rukh's§! corpse."
  
  UaCH.18.t: "A Chance to Return"
@@ -321,9 +321,13 @@
  UaCH.56.d: "The enemy has occupied our capital, burned and pillaged our cities, and what's worse: has stolen the body of §GShah Rukh§!!"
  UaCH.56.a: "Tragedy!"
  
- UaCH.57.t: "The mausoleum is complete"
- UaCH.57.d: "Our loyal servants have reported the completion of the Mausoleum of §GShah Rukh§!. With this done, our legitimacy should no longer be in question."
- UaCH.57.a: "Peace shall be upon this land."
+ UaCH.57.t:0 "The mausoleum is complete"
+ UaCH.57.d:0 "Our loyal servants have reported the completion of the Mausoleum of §GShah Rukh§!. With this done, our legitimacy should no longer be in question."
+ UaCH.57.a:0 "Peace shall be upon this land."
+ uach_gsm_complete_persianize:0"We will gain progress towards §OPersianization§! upon the end of the §RTimurid Succession Crisis§!."
+ UaCH.57.b:0 "We honor our ancestors!"
+ uach_gsm_complete_mongolize:0"We will gain progress towards §OMongolization§! upon the end of the §RTimurid Succession Crisis§!"
+ 
  gawhar_shad_mausoleum:0"§BMausoleum of Gawhar Shad§!"
  
  UaCH.58.t: "Collapse of the State"
@@ -779,11 +783,11 @@
  
  
  uach_shah_rukhs_mausoleum_completed:0"Gawhar Shad Mausoleum"
- uach_legit_to_defoff_lvl5:0"Legitimacy directly influences the capability to attack our enemies and to defend our nation during the Timurid Succession Crisis, and the chance of nasty events. \n\nOur current legitimacy grants us the following effects :\n\n§G+10%§! Siege ability\n§G+10%§! Defensiveness"
- uach_legit_to_defoff_lvl4:0"Legitimacy directly influences the capability to attack our enemies and to defend our nation during the Timurid Succession Crisis, and the chance of nasty events. \n\nOur current legitimacy grants us the following effects :\n\n§R-10%§! Siege ability\n§R-10%§! Defensiveness"
- uach_legit_to_defoff_lvl3:0"Legitimacy directly influences the capability to attack our enemies and to defend our nation during the Timurid Succession Crisis, and the chance of nasty events. \n\nOur current legitimacy grants us the following effects :\n\n§R-20%§! Siege ability\n§R-20%§! Defensiveness"
- uach_legit_to_defoff_lvl2:0"Legitimacy directly influences the capability to attack our enemies and to defend our nation during the Timurid Succession Crisis, and the chance of nasty events. \n\nOur current legitimacy grants us the following effects :\n\n§R-30%§! Siege ability\n§R-30%§! Defensiveness"
- uach_legit_to_defoff_lvl1:0"Legitimacy directly influences the capability to attack our enemies and to defend our nation during the Timurid Succession Crisis, and the chance of nasty events. \n\nOur current legitimacy grants us the following effects :\n\n§R-40%§! Siege ability\n§R-40%§! Defensiveness"
+ uach_legit_to_defoff_lvl5_desc:0"Legitimacy directly influences the capability to attack our enemies and to defend our nation during the Timurid Succession Crisis, and the chance of nasty events. \n\nOur current legitimacy grants us the following effects :\n\n§G+10%§! Siege ability\n§G+10%§! Defensiveness"
+ uach_legit_to_defoff_lvl4_desc:0"Legitimacy directly influences the capability to attack our enemies and to defend our nation during the Timurid Succession Crisis, and the chance of nasty events. \n\nOur current legitimacy grants us the following effects :\n\n§R-10%§! Siege ability\n§R-10%§! Defensiveness"
+ uach_legit_to_defoff_lvl3_desc:0"Legitimacy directly influences the capability to attack our enemies and to defend our nation during the Timurid Succession Crisis, and the chance of nasty events. \n\nOur current legitimacy grants us the following effects :\n\n§R-20%§! Siege ability\n§R-20%§! Defensiveness"
+ uach_legit_to_defoff_lvl2_desc:0"Legitimacy directly influences the capability to attack our enemies and to defend our nation during the Timurid Succession Crisis, and the chance of nasty events. \n\nOur current legitimacy grants us the following effects :\n\n§R-30%§! Siege ability\n§R-30%§! Defensiveness"
+ uach_legit_to_defoff_lvl1_desc:0"Legitimacy directly influences the capability to attack our enemies and to defend our nation during the Timurid Succession Crisis, and the chance of nasty events. \n\nOur current legitimacy grants us the following effects :\n\n§R-40%§! Siege ability\n§R-40%§! Defensiveness"
  uach_legit_to_defoff_info:0"§RThis is in effect only during the Timurid Succession Crisis disaster§!\n\nLegitimacy directly influences the capability to attack our enemies and to defend our nation during the Timurid Succession Crisis, and the chance of nasty events. \n\n§GHigh§! legitimacy (over 80):\n§G+10%§! Siege ability\n§G+10%§! Defensiveness\n\n§YAverage legitimacy§! (60-80)\n§R-10%§! Siege ability\n§R-10%§! Defensiveness\n\n§YLow legitimacy§! (40-60)\n§R-20%§! Siege ability\n§R-20%§! Defensiveness\n\n§YAbyssmal legitimacy§! (20-40)\n§R-30%§! Siege ability\n§R-30%§! Defensiveness\n\n§RNo legitimacy§! (under 20)\n§R-40%§! Siege ability\n§R-40%§! Defensiveness "
  uach_legit_to_defoff_call:0"[GetLegitToDefOff]
  
