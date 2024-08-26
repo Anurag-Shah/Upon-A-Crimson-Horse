@@ -1522,6 +1522,8 @@ uach_reclaim_timurs_legacy_effect = {
         # Change Tag to TIM
         change_tag = TIM
 
+        swap_non_generic_missions = yes
+        
         # Integrate all OPM subjects
         every_subject_country = {
             limit = {

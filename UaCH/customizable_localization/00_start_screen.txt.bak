@@ -1772,14 +1772,6 @@ defined_text = {
 			}
         }
     }
-	text = { #Arabia
-		localisation_key = string_start_tag_arabia
-		trigger	= {
-			capital_scope = {
-				region = arabia_region
-			}
-		}
-	}
 	text = { # Central Asia
         localisation_key = string_start_tag_central_asia
         trigger = {

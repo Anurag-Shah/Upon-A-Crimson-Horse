@@ -2,7 +2,7 @@
 
 uach_mechanics_prince = {
 	alert_icon_gfx = GFX_alerticons_government_mechanics
-	alert_icon_index = 22
+	alert_icon_index = 18
 
 	available = {
 		NOT = { has_country_flag = uach_interwar_lull }
@@ -561,18 +561,23 @@ uach_reform_state_mechanic = {
 						id = UaCH.104
 					}
 				}
-				# change_government = tribal - Gov reform now a Monarchy one
-				add_government_reform = uach_heirs_of_timur_reform # Plunder Economy built into this
+				remove_government_reform = uach_prince
+				change_government = tribal
+				add_government_reform = uach_heirs_of_timur_reform
 				regenerate_government_mechanics = yes
 				add_country_modifier = {
 					name = "centralization_modifier"
 					duration = 7300
 				}
-
-				custom_tooltip = TIM_HORDE_MISSIONS
 				hidden_effect = {
-					set_country_flag = TIM_nomad_missions
-					swap_non_generic_missions = yes
+					if = {
+						limit = {
+							has_custom_ideas = no
+							NOT = { has_idea_group = TIM_ideas }
+						}
+						country_event = { id = ideagroups.1 } #Swap Ideas
+					}
+					country_event = { id = ideagroups.1 }
 					clr_country_flag = uach_interwar_lull
 					country_event = {
 						id = UaCH.812
@@ -683,6 +688,39 @@ uach_reform_state_mechanic = {
 				}
 			}
 			effect = {
+				# Base game
+				change_tag = PER
+				on_change_tag_effect = yes
+				swap_non_generic_missions = yes
+				remove_non_electors_emperors_from_empire_effect = yes
+				if = {
+					limit = {
+						NOT = { government = monarchy }
+						is_revolutionary = no
+					}
+					change_government = monarchy
+				}
+				set_government_rank = 3
+				add_prestige = 25
+				# persia_region = {
+				# 	limit = {
+				# 		NOT = { owned_by = ROOT }
+				# 		NOT = { is_core = ROOT }
+				# 	}
+				# 	add_permanent_claim = PER
+				# }
+				every_province = {
+					limit = {
+						region = persia_region
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = PER
+				}
+				add_country_modifier = {
+					name = "centralization_modifier"
+					duration = 7300
+				}
 				custom_tooltip = UACH_PERSIANIZED_EFFECT_RESULT_TT
 				hidden_effect = {
 					set_country_flag = timurids_reformed_government
@@ -709,6 +747,20 @@ uach_reform_state_mechanic = {
 							vassalize = PREV
 						}
 					}
+					if = {
+						limit = { is_revolutionary = no NOT = { religion_group = zoroastrian_group } }
+						add_government_reform = persian_government_reform
+					}
+					if = {
+						limit = { is_revolutionary = no religion_group = zoroastrian_group }
+						add_government_reform = zoroastrian_persian_government_reform
+					}
+					if = {
+						limit = {
+							has_reform = states_general_reform
+						}
+						remove_government_reform = states_general_reform
+					}
 					country_event = {
 						id = UaCH.104
 					}
@@ -724,6 +776,24 @@ uach_reform_state_mechanic = {
 							id = UaCH.812
 							days = 1
 						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							NOT = { has_dlc = "King of Kings" }
+							NOT = { primary_culture = mazandarani }
+						}
+						NOT = { primary_culture = persian }
+					}
+					change_primary_culture = persian
+				}
+				set_country_flag = formed_persia_flag
+				country_event = { id = ideagroups.1 }
+				if = {
+					limit = { has_dlc = "King of Kings" }
+					unlock_estate = {
+						estate = estate_qizilbash
 					}
 				}
 			}

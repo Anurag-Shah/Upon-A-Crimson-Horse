@@ -1554,6 +1554,7 @@ country_event = {
 		
 		custom_tooltip = UACH_25_A_CUSTOM_TOOLTIP
 		hidden_effect = {
+			swap_non_generic_missions = yes
 			set_country_flag = uach_second_succession_crisis_war_flag
 
 			set_global_flag = uach_succession_crisis_started

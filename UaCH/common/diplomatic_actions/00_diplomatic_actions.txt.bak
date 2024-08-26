@@ -780,16 +780,11 @@ invite_to_trade_league = {
 		potential = {
 		}
 		allow = {
-			if = {
-				limit = {
-					NOT = { has_country_flag = ven_easier_to_invite_trade_league_members_yes_flag }
-				}
-				from = {
-					home_trade_node = {
-						trade_share = {
-							country = root
-							share = 1
-						}
+			from = {
+				home_trade_node = {
+					trade_share = {
+						country = root
+						share = 1
 					}
 				}
 			}

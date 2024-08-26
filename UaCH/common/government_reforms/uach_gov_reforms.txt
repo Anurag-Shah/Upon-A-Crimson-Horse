@@ -109,21 +109,29 @@ uach_heirs_of_timur_reform = {
 	legacy_equivalent = great_mongol_state_legacy
 	fixed_rank = 3
 	valid_for_nation_designer = no
-	nomad = yes
 	raze_province = yes
 	modifiers = {
-		horde_unity = 1
 		global_manpower_modifier = 0.2
 		land_forcelimit_modifier = 0.2
 		loot_amount = 0.50
 		reinforce_cost_modifier = -0.5
 		cav_to_inf_ratio = 0.5
 		movement_speed = 0.2
-		raze_power_gain = 0.1
+		raze_power_gain = -0.5
 	}
 	custom_attributes = {
 		enables_horde_idea_group = yes
-		enables_aristocratic_idea_group = yes
+	}
+		conditional = {
+		allow = {
+			OR = {
+				has_dlc = "Cradle of Civilization"
+				has_dlc = "Winds of Change"
+			}
+		}
+		government_abilities = {
+			iqta_mechanic
+		}
 	}
 	ai = {
 		factor = 1000
