@@ -684,6 +684,7 @@ uach_reform_state_mechanic = {
 			}
 			effect = {
 				custom_tooltip = UACH_PERSIANIZED_EFFECT_RESULT_TT
+				add_government_reform = iqta
 				hidden_effect = {
 					set_country_flag = timurids_reformed_government
 					clr_country_flag = uach_interwar_lull

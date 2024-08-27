@@ -21,7 +21,10 @@ uach_governor = {
 		factor = 1
 	}
 
-	government_abilities = { uach_mechanics_governor }
+	government_abilities = { 
+		uach_mechanics_governor 
+		iqta_mechanic
+	}
 }
 
 uach_prince = {
@@ -53,7 +56,10 @@ uach_prince = {
 		government_abilities = { uach_reform_state_mechanic }
 	}
 
-	government_abilities = { uach_mechanics_prince }
+	government_abilities = { 
+		uach_mechanics_prince 
+		iqta_mechanic
+	}
 
 	factions = { timurid_faction }
 
@@ -86,7 +92,10 @@ uach_interwar_timurid_state = {
 		reduced_liberty_desire = 10
 	}
 	
-	government_abilities = { uach_reform_state_mechanic }
+	government_abilities = { 
+		uach_reform_state_mechanic 
+		iqta_mechanic
+	}
 
 	factions = { timurid_faction }
 

@@ -20,6 +20,9 @@ change_estate_land_share = {
 	estate = estate_nobles
 	share = 12
 }
+set_estate_privilege = estate_church_TIM_yasa_supremacy
+set_estate_privilege = estate_nobles_TIM_soyurghal_grants
+set_estate_privilege = estate_burghers_patronage_of_the_arts
 
 1370.1.1 = {
 	monarch = {
@@ -89,6 +92,7 @@ change_estate_land_share = {
 		death_date = 1457.7.19
 		dynasty = "Tarkhan"
 		culture = persian
+		female = yes # No more Shah Woke
 		adm = 4
 		dip = 5
 		mil = 3
