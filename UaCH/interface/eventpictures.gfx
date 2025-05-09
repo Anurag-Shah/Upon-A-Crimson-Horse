@@ -1,0 +1,45 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "UACH_TEAM_eventPicture"
+		texturefile = "gfx/event_pictures//UACH_TEAM_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	#conspiring nobles
+	spriteType = {
+		name = "UaCH_event_1"
+		texturefile = "gfx/event_pictures//UaCH_event_1.dds"
+		alwaystransparent = yes
+	}
+	#ulema disloyal
+	spriteType = {
+		name = "UaCH_event_2"
+		texturefile = "gfx/event_pictures//UaCH_event_2.dds"
+		alwaystransparent = yes
+	}
+	#merchants disloyal
+	spriteType = {
+		name = "UaCH_event_3"
+		texturefile = "gfx/event_pictures//UaCH_event_3.dds"
+		alwaystransparent = yes
+	}
+	#nobles disloyal
+	spriteType = {
+		name = "UaCH_event_4"
+		texturefile = "gfx/event_pictures//UaCH_event_4.dds"
+		alwaystransparent = yes
+	}
+	#troubled sultan
+	spriteType = {
+		name = "UaCH_event_5"
+		texturefile = "gfx/event_pictures//UaCH_event_5.dds"
+		alwaystransparent = yes
+	}
+	
+	#troubled sultan - bad legitimacy
+	spriteType = {
+		name = "UaCH_event_6"
+		texturefile = "gfx/event_pictures//UaCH_event_6.dds"
+		alwaystransparent = yes
+	}
+}
